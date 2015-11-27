@@ -1,0 +1,20 @@
+{
+    "require": {
+        "notadd/framework": "0.1.*"
+    },
+    "require-dev": {
+        "notadd/framework": "0.1.*"
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://packagist.phpcomposer.com"
+        },
+        {
+            "packagist": false
+        }
+    ]
+}

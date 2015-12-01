@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6d5eef8bb45e1d9f76d10ed61758e467",
+    "hash": "ced2033932296772daa7a39575320012",
     "content-hash": "8a7e707a461acf7e91475561724631ad",
     "packages": [
         {
@@ -2362,16 +2362,16 @@
         },
         {
             "name": "notadd/framework",
-            "version": "0.1.1",
+            "version": "0.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/notadd/framework.git",
-                "reference": "60bde0077d39b14d9457799107fe80e3e881935d"
+                "reference": "f726b81208e401f5ef9f94919ff14a60eb95b5d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/notadd/framework/zipball/60bde0077d39b14d9457799107fe80e3e881935d",
-                "reference": "60bde0077d39b14d9457799107fe80e3e881935d",
+                "url": "https://api.github.com/repos/notadd/framework/zipball/f726b81208e401f5ef9f94919ff14a60eb95b5d8",
+                "reference": "f726b81208e401f5ef9f94919ff14a60eb95b5d8",
                 "shasum": ""
             },
             "require": {
@@ -2450,7 +2450,7 @@
                 "framework",
                 "notadd"
             ],
-            "time": "2015-11-27 09:55:52"
+            "time": "2015-11-30 15:41:33"
         },
         {
             "name": "predis/predis",

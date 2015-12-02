@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+/**
+ * This file is part of Notadd.
+ * @author TwilRoad <269044570@qq.com>
+ * @copyright (c) 2015, iBenchu.org
+ * @datetime 2015-12-01 23:06
+ */
+require './vendor/autoload.php';
+$app = new \Notadd\Foundation\Application(realpath(__DIR__));
+$kernel = $app->make('Illuminate\Contracts\Console\Kernel');
+$status = $kernel->handle(
+    $input = new \Symfony\Component\Console\Input\ArgvInput,
+    new \Symfony\Component\Console\Output\ConsoleOutput
+);
+$kernel->terminate($input, $status);
+exit($status);

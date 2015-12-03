@@ -7,11 +7,4 @@
  * @datetime 2015-12-01 23:06
  */
 require './vendor/autoload.php';
-$app = new \Notadd\Foundation\Application(realpath(__DIR__));
-$kernel = $app->make('Illuminate\Contracts\Console\Kernel');
-$status = $kernel->handle(
-    $input = new \Symfony\Component\Console\Input\ArgvInput,
-    new \Symfony\Component\Console\Output\ConsoleOutput
-);
-$kernel->terminate($input, $status);
-exit($status);
+(new \Notadd\Server(__DIR__))->console();

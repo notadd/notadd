@@ -6,4 +6,4 @@
  * @datetime 2015-11-27 18:50
  */
 require '../vendor/autoload.php';
-(new \Notadd\Server(__DIR__ . '/../'))->init()->terminate();
+(new \Notadd\Foundation\Server(__DIR__ . '/../'))->init()->terminate();

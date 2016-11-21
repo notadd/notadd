@@ -13,6 +13,3 @@
 [submodule "extensions/socket"]
 	path = extensions/socket
 	url = https://github.com/notadd/socket.git
-[submodule "vendor/notadd/framework"]
-	path = vendor/notadd/framework
-	url = https://github.com/notadd/framework.git

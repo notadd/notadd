@@ -3,8 +3,12 @@
 /**
  * This file is part of Notadd.
  * @author TwilRoad <269044570@qq.com>
- * @copyright (c) 2015, iBenchu.org
- * @datetime 2015-12-01 23:06
+ * @copyright (c) 2016, iBenchu.org
+ * @datetime 2016-10-21 13:32
  */
-require './vendor/autoload.php';
-(new \Notadd\Foundation\Server(__DIR__))->console();
+require __DIR__ . '/storage/bootstraps/autoload.php';
+$application = require_once __DIR__ . '/storage/bootstraps/application.php';
+$kernel = $application->make(Illuminate\Contracts\Console\Kernel::class);
+$status = $kernel->handle($input = new Symfony\Component\Console\Input\ArgvInput, new Symfony\Component\Console\Output\ConsoleOutput);
+$kernel->terminate($input, $status);
+exit($status);

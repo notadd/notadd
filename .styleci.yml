@@ -1,0 +1,32 @@
+#
+# StyleCI bot config file.
+# @link https://styleci.readme.io/docs
+#
+
+# 修复等级
+# psr1, psr2, symfony, laravel, recommended
+# 按照规范严格程度排列。
+preset: psr2
+
+# 是否启用危险的修复
+# true | false
+risky: false
+
+# 在开启修复等级的基础上额外开启的修复项目, 下面先注销，可以逐步开启修复要求，达到风格严谨的目的。
+# enabled:
+#     - long_array_syntax
+#     - strict
+
+# 禁用的修复项目，在修复等级中，期望不被修改的风格.
+# disabled:
+#     [... -]
+
+# 查找修复文件规则配置
+finder:
+    name:
+        - "*.php" # 查找.php文件
+    # 排除查找配置
+    exclude:
+        - "extensions"
+        - "resources"
+        - "storage"

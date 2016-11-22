@@ -16,3 +16,6 @@
 [submodule "vendor/notadd/framework"]
 	path = vendor/notadd/framework
 	url = https://github.com/notadd/framework.git
+[submodule "extensions/git"]
+	path = extensions/git
+	url = https://git.oschina.net/notadd/git.git

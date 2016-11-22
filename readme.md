@@ -1,2 +1,6 @@
-# Notadd Framework
-A magical Content Management Framework development based on Laravel 5.3!
+# 说明
+## Notadd是什么？
+Notadd是基于Laravel5.3+VueJS2 的开源CMS、商城、论坛、博客、问答、微信系统，它将可以任意拓展。
+我们在内部还整合了swoole （非强制依赖，后面版本发布）以对接APP及硬件。  
+
+——————————————————————————————————————————————————————————待完善————————————————————————————————————————————————————

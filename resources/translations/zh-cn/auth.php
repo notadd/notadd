@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'failed'   => '登陆失败！',
-    'throttle' => '已进行过多次认证请求，请在:seconds秒后重试！',
+    'failed' => '用户名或密码错误。',
+    'throttle' => '您的尝试登录次数过多. 请 :seconds 秒后再试。',
 ];

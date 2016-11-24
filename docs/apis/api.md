@@ -18,3 +18,12 @@ API 使用基于令牌的身份验证机制。某些终端不需要身份验证�
 * Handler 主要实现 DataHandler、SetHandler 两种类型的 Handler。
 * ApiResponse 为 \Psr\Http\Message\ResponseInterface 契约的一个实现。
 * ApiResponse 实例所提供的并返回至前端调用的数据主要包含：code、data、message。
+
+## 所支持的相关API操作
+
+* /oauth/access 验证是否拥有API访问Token
+* /oauth/access/authorize
+* /oauth/access/token
+* /oauth/authorize
+* /oauth/clients
+* /oauth/refresh

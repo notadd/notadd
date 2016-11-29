@@ -16,7 +16,7 @@
             "databases"
         ],
         "psr-4": {
-            "App\\": "src/"
+            "Application\\": "src/"
         }
     },
     "require": {

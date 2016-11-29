@@ -8,6 +8,7 @@
  */
 namespace Application\Console;
 
+use Illuminate\Console\Scheduling\Schedule;
 use Notadd\Foundation\Console\Kernel as NotaddKernel;
 
 /**
@@ -15,5 +16,24 @@ use Notadd\Foundation\Console\Kernel as NotaddKernel;
  */
 class Kernel extends NotaddKernel
 {
+    /**
+     * @var array
+     */
+    protected $commands = [];
 
+    /**
+     * @param  \Illuminate\Console\Scheduling\Schedule $schedule
+     *
+     * @return void
+     */
+    protected function schedule(Schedule $schedule)
+    {
+    }
+
+    /**
+     * @return void
+     */
+    protected function commands()
+    {
+    }
 }

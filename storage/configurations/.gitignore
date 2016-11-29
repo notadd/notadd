@@ -1,0 +1,14 @@
+*
+!.gitignore
+!app.php
+!auth.php
+!broadcasting.php
+!cache.php
+!compile.php
+!database.php
+!filesystems.php
+!mail.php
+!queue.php
+!services.php
+!session.php
+!view.php

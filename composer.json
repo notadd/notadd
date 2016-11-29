@@ -14,7 +14,10 @@
     "autoload": {
         "classmap": [
             "databases"
-        ]
+        ],
+        "psr-4": {
+            "App\\": "src/"
+        }
     },
     "require": {
         "php": ">=5.6.28",

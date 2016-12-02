@@ -31,6 +31,7 @@ return [
         Notadd\Foundation\Mail\MailServiceProvider::class,
         Notadd\Foundation\Member\MemberServiceProvider::class,
         Notadd\Foundation\Database\MigrationServiceProvider::class,
+        Notadd\Foundation\Module\ModuleServiceProvider::class,
         Notadd\Foundation\Notification\NotificationServiceProvider::class,
         Illuminate\Pagination\PaginationServiceProvider::class,
         Notadd\Foundation\Passport\PassportServiceProvider::class,

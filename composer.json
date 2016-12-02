@@ -1,7 +1,12 @@
 {
     "name": "notadd/notadd",
     "description": "The Notadd Framework.",
-    "keywords": ["notadd", "cms", "foundation", "framework"],
+    "keywords": [
+        "notadd",
+        "cms",
+        "foundation",
+        "framework"
+    ],
     "homepage": "https://notadd.com",
     "license": "Apache-2.0",
     "type": "project",
@@ -46,5 +51,15 @@
             "Notadd\\Foundation\\Composer\\ComposerScripts::postUpdate",
             "php notadd optimize"
         ]
+    },
+    "extra": {
+        "merge-plugin": {
+            "include": [
+                "extensions/*/*/composer.json"
+            ],
+            "recurse": true,
+            "replace": false,
+            "merge-dev": false
+        }
     }
 }

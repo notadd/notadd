@@ -53,6 +53,14 @@
         ]
     },
     "extra": {
+        "installer-paths": {
+            "modules/{$name}/": [
+                "type:notadd-module"
+            ],
+            "extensions/{$name}/": [
+                "type:notadd-extension"
+            ]
+        },
         "merge-plugin": {
             "include": [
                 "extensions/*/*/composer.json"

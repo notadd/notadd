@@ -26,7 +26,11 @@
     },
     "require": {
         "php": ">=7.0",
+        "notadd/administration": "0.1.*",
+        "notadd/content": "0.1.*",
         "notadd/framework": "0.1.*",
+        "notadd/member": "0.1.*",
+        "notadd/wechat": "0.1.*",
         "wikimedia/composer-merge-plugin": "dev-master"
     },
     "require-dev": {

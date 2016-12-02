@@ -20,8 +20,9 @@
         }
     },
     "require": {
-        "php": ">=5.6.28",
-        "notadd/framework": "0.1.*"
+        "php": ">=7.0",
+        "notadd/framework": "0.1.*",
+        "wikimedia/composer-merge-plugin": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

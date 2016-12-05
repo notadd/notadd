@@ -22,6 +22,7 @@ use Laravel\Passport\Http\Middleware\CheckScopes;
 use Notadd\Foundation\Http\Kernel as NotaddKernel;
 use Notadd\Foundation\Http\Middlewares\CheckForMaintenanceMode;
 use Notadd\Foundation\Http\Middlewares\RedirectIfAuthenticated;
+use Notadd\Foundation\Http\Middlewares\ShareMessagesFromSession;
 use Notadd\Foundation\Http\Middlewares\VerifyCsrfToken;
 
 /**
@@ -45,7 +46,7 @@ class Kernel extends NotaddKernel
             AddQueuedCookiesToResponse::class,
             StartSession::class,
             ShareErrorsFromSession::class,
-            //ShareMessagesFromSession::class,
+            ShareMessagesFromSession::class,
             VerifyCsrfToken::class,
             SubstituteBindings::class,
         ],

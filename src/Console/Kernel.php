@@ -22,16 +22,16 @@ class Kernel extends NotaddKernel
     protected $commands = [];
 
     /**
-     * @param  \Illuminate\Console\Scheduling\Schedule $schedule
+     * TODO: Method schedule Description
      *
-     * @return void
+     * @param \Illuminate\Console\Scheduling\Schedule $schedule
      */
     protected function schedule(Schedule $schedule)
     {
     }
 
     /**
-     * @return void
+     * TODO: Method commands Description
      */
     protected function commands()
     {

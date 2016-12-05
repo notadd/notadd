@@ -16,6 +16,8 @@ use Notadd\Foundation\Routing\Abstracts\Controller;
 class IndexController extends Controller
 {
     /**
+     * TODO: Method index Description
+     *
      * @return \Illuminate\Contracts\View\View
      */
     public function index()

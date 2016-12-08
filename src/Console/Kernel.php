@@ -22,7 +22,7 @@ class Kernel extends NotaddKernel
     protected $commands = [];
 
     /**
-     * TODO: Method schedule Description
+     * Define the application's command schedule.
      *
      * @param \Illuminate\Console\Scheduling\Schedule $schedule
      */
@@ -31,7 +31,7 @@ class Kernel extends NotaddKernel
     }
 
     /**
-     * TODO: Method commands Description
+     * Register the Closure based commands for the application.
      */
     protected function commands()
     {

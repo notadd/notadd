@@ -12,6 +12,7 @@ return [
     'log' => env('APP_LOG', 'daily'),
     'log_level' => env('APP_LOG_LEVEL', 'debug'),
     'providers' => [
+        Application\ApplicationServiceProvider::class,
         Notadd\Foundation\Console\ArtisanServiceProvider::class,
         Notadd\Foundation\Attachment\AttachmentServiceProvider::class,
         Notadd\Foundation\Auth\AuthServiceProvider::class,

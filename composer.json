@@ -16,14 +16,6 @@
             "email": "269044570@qq.com"
         }
     ],
-    "autoload": {
-        "classmap": [
-            "databases"
-        ],
-        "psr-4": {
-            "Application\\": "src/"
-        }
-    },
     "require": {
         "php": ">=7.0",
         "notadd/administration": "0.1.*",

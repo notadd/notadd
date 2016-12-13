@@ -12,7 +12,6 @@ return [
     'log' => env('APP_LOG', 'daily'),
     'log_level' => env('APP_LOG_LEVEL', 'debug'),
     'providers' => [
-        Application\ApplicationServiceProvider::class,
         Notadd\Foundation\Console\ArtisanServiceProvider::class,
         Notadd\Foundation\Attachment\AttachmentServiceProvider::class,
         Notadd\Foundation\Auth\AuthServiceProvider::class,
@@ -32,6 +31,7 @@ return [
         Notadd\Foundation\Mail\MailServiceProvider::class,
         Notadd\Foundation\Member\MemberServiceProvider::class,
         Notadd\Foundation\Database\MigrationServiceProvider::class,
+        Application\ModuleServiceProvider::class,
         Notadd\Foundation\Module\ModuleServiceProvider::class,
         Notadd\Foundation\Notification\NotificationServiceProvider::class,
         Illuminate\Pagination\PaginationServiceProvider::class,

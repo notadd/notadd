@@ -16,4 +16,5 @@
 
 # 其他说明
 
-暂无
+* composer.json 中需定义 type 为 **notadd-module**
+* composer.json 中需依赖 package **notadd/installers**

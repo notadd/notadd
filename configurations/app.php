@@ -27,7 +27,7 @@ return [
         Notadd\Foundation\Extension\ExtensionServiceProvider::class,
         Illuminate\Filesystem\FilesystemServiceProvider::class,
         Illuminate\Hashing\HashServiceProvider::class,
-        Notadd\Install\InstallServiceProvider::class,
+        \Notadd\Installer\InstallerServiceProvider::class,
         Notadd\Foundation\Mail\MailServiceProvider::class,
         Notadd\Foundation\Member\MemberServiceProvider::class,
         Notadd\Foundation\Database\MigrationServiceProvider::class,

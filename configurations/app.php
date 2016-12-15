@@ -45,6 +45,7 @@ return [
         Notadd\Foundation\SearchEngine\SearchEngineServiceProvider::class,
         Notadd\Foundation\Session\SessionServiceProvider::class,
         Notadd\Foundation\Setting\SettingServiceProvider::class,
+        Notadd\Foundation\Theme\ThemeServiceProvider::class,
         Illuminate\Translation\TranslationServiceProvider::class,
         Notadd\Foundation\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,

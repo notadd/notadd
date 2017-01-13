@@ -4,10 +4,12 @@
 
 ## 目录结构
 
-**主题**位于 `themes` 目录下，目录结构如下：
+**主题**位于 **`themes`** 目录下，目录结构如下：
 
-    theme                                                        主题目录
-        composer.json                                            Composer 配置文件
+```
+theme                                                        主题目录
+    composer.json                                            Composer 配置文件
+```
 
 ## 其他说明
 

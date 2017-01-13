@@ -6,13 +6,15 @@
 
 **模块**位于目录 **modules** 下，每个模块在一个独立的文件夹内，模块内部的目录结构如下：
 
-    module                                             模块目录
-        resoucres                                      资源目录
-            translations                               翻译文件目录
-            views                                      视图目录
-        src                                            源码目录
-            ModuleServiceProvider.php                  模块服务提供者定义文件
-        composer.json                                  Composer 配置文件
+```
+module                                             模块目录
+    resoucres                                      资源目录
+        translations                               翻译文件目录
+        views                                      视图目录
+    src                                            源码目录
+        ModuleServiceProvider.php                  模块服务提供者定义文件
+    composer.json                                  Composer 配置文件
+```
 
 # 其他说明
 

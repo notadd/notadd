@@ -19,16 +19,16 @@ $this->app->make(Dispatcher::class)->subscribe(RouteRegister::class);
 ```php
 namespace Notadd\Content\Listeners;
 
-use Notadd\Content\Controllers\Api\ArticleController as ArticleApiController;
-use Notadd\Content\Controllers\Api\ArticleTemplateController as ArticleTemplateApiController;
-use Notadd\Content\Controllers\Api\CategoryController as CategoryApiController;
-use Notadd\Content\Controllers\Api\CategoryTemplateController as CategoryTemplateApiController;
-use Notadd\Content\Controllers\Api\CategoryTypeController as CategoryTypeApiController;
-use Notadd\Content\Controllers\Api\PageController as PageApiController;
-use Notadd\Content\Controllers\Api\PageTemplateController as PageTemplateApiController;
-use Notadd\Content\Controllers\Api\PageTypeController as PageTypeApiController;
+use Notadd\Content\Controllers\Api\Article\ArticleController as ArticleApiController;
+use Notadd\Content\Controllers\Api\Article\ArticleTemplateController as ArticleTemplateApiController;
+use Notadd\Content\Controllers\Api\Category\CategoryController as CategoryApiController;
+use Notadd\Content\Controllers\Api\Category\CategoryTemplateController as CategoryTemplateApiController;
+use Notadd\Content\Controllers\Api\Category\CategoryTypeController as CategoryTypeApiController;
+use Notadd\Content\Controllers\Api\Page\PageController as PageApiController;
+use Notadd\Content\Controllers\Api\Page\PageTemplateController as PageTemplateApiController;
+use Notadd\Content\Controllers\Api\Page\PageTypeController as PageTypeApiController;
 use Notadd\Content\Controllers\ArticleController;
-use Notadd\Content\Controllers\Api\ArticleTypeController as ArticleTypeApiController;
+use Notadd\Content\Controllers\Api\Article\ArticleTypeController as ArticleTypeApiController;
 use Notadd\Content\Controllers\CategoryController;
 use Notadd\Content\Controllers\PageController;
 use Notadd\Foundation\Routing\Abstracts\RouteRegistrar as AbstractRouteRegistrar;

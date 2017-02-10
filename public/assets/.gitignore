@@ -1,0 +1,6 @@
+*
+!.gitignore
+!admin/
+!default/
+!install/
+!ueditor/

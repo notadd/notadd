@@ -25,8 +25,8 @@ vendor                                                       厂商目录
         composer.json                                        Composer 配置文件
 ```
 
+* [Extension](provider.md)
 * [Resources](resources.md)
-* [Provider](provider.md)
 * [Composer](composer.md)
 
 # 其他说明

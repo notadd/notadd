@@ -19,4 +19,3 @@ Notadd 是朝着可扩展功能和可扩展组件的方向发展的，但是这�
 * 遵循 composer 包管理规范的 package
 * 不需要对源代码做出过多的修改，即可达到 package 的加载
 * Module 和 Extension 两个级别的功能扩展级别
-

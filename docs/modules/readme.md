@@ -8,7 +8,7 @@
 
 ```
 module                                             模块目录
-    resoucres                                      资源目录
+    resources                                      资源目录
         translations                               翻译文件目录
         views                                      视图目录
     src                                            源码目录
@@ -16,7 +16,6 @@ module                                             模块目录
     composer.json                                  Composer 配置文件
 ```
 
-# 其他说明
-
-* composer.json 中需定义 type 为 **notadd-module**
-* composer.json 中需依赖 package **notadd/installers**
+* [Resources](resources.md)
+* [Provider](provider.md)
+* [Composer](composer.md)

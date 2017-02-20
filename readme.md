@@ -3,31 +3,21 @@
 Notadd 是基于 Laravel 5.3 + Vue.js 的开源 CMS、商城、论坛、博客、问答、微信...
 可以是任何你想要的，我们将其分为模块（实现大功能，诸如用户系统、商城系统、CMS 系统）、插件（增强模块功能）、模板（改变前台界面）。
 
-## 新技术的运用
+## 系统环境
 
-### SPA 单页面应用
+操作系统： Linux（推荐）/Mac OS/ Windows 2008+
 
-虽然 SPA 单页应用在国内尤其是对于外包团队，还未能普及，但是它带来的体验是有质的飞跃的，页面无刷新，使得网页看起来更像本地应用。而且手机网页、电脑网页、APP 可以共用同一个后端，为后期的拓展性打下坚实的基础。
-在性能上，由于后端只负责 API 调用，由前端负责页面渲染，大大提升了网站的性能。
-Notadd 目前原生支持 SPA 单页应用。
+PHP版本 ： 7.0+
 
-### WebP 图片 
+数据库： PostgreSQL（推荐）/MariaDB/MySQL/SQLite3
 
-其实就是 WebP 实现了更小的体积，以及图片质量。带来加载速度上的提升。（目前微信文章里的图片默认 WebP 格式）
-当然，对 IE 全系列（Edge 是兼容的），以及 iOS 9 以下不兼容， IE 兼容方案可以使用 WebPJS，iOS 相对来说更新版本的用户比较多，问题不是很严重。
-考虑到 ngx_pagespeed 以及一些云存储商已经有现成方案，所以作为可选功能，尤其是目前前后端分离（SPA 单页应用）后期可能以插件形式实现。
 
-### Swoole
+### [系统需要安装的拓展](https://docs.notadd.com/installations/first.html)
 
-PHP 的确有很多局限性，比如 Unix 系统编程、网络通信编程、异步 IO，大部分 PHPer 不懂。PHP 界也确实没有这样的东西。Swoole 开源项目就是为了弥补 PHP 在这些方面的缺陷诞生的。与 WordPress 这些产品不同，Swoole 实际上是一个网络通信和异步 IO 的引擎，一个基础库。PHPer 可以基于 Swoole 去实现过去 PHP 无法实现的功能。Swoole 为 PHPer 打开了通往另一个世界的大门。
-诸如我们可以做智能家居的管理平台，通过 TCP/IP 协议与硬件设备通讯。
+### [独立服务器及VPS安装](https://docs.notadd.com/installations/vps.html)
 
-### PostgreSQL
+### [虚拟主机安装](https://docs.notadd.com/installations/vhost.html)
 
-尽管 PostgreSQL 在国内还不算普及，一些人甚至还没有听过它的大名，但这并不意味着 PostgreSQL 没有前景，阿里云、腾讯云、亚马逊云、谷歌云、微软云已经支持。平安集团更是全线使用。
-PostgreSQL 比 MySQL 性能更好，数据安全性也更高，对事务的支持也更好。
-同时，我们也兼顾到一些嵌入式开发的用户，所以 Notadd 同时支持 SQLite、MySQL、PostgreSQL
+### [编译安装](https://docs.notadd.com/installations/compile.html)
 
----
-
-Beta1 即将发布
+### [Apache及Nginx 伪静态/路由配置](https://docs.notadd.com/installations/conf.html)

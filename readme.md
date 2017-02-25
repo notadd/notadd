@@ -1,5 +1,7 @@
 ![notadd](https://www.notadd.com/src/notadd_logo.svg)
 
+## Notadd是什么
+
 Notadd 是基于Laravel 和 Vue 的开源PHP框架， 由于其本身的灵活性和先进的技术架构，使得你通过模块（主功能）、插件（功能增强）、模板（前端样式）像搭积木一样组合成你想要的，诸如：商城、CMS、微信、论坛...  快速完成开发。
 Notadd 像操作系统一样，你可以通过安装“软件”，成为适用于你的“电脑”。
 
@@ -45,10 +47,10 @@ PHP版本 ： 7.0+
 **[编译安装](https://docs.notadd.com/installations/compile.html)**
 
 
-## 贡献代码
+## 贡献
 
-https://docs.notadd.com/introductions/contributing.html
+**[贡献代码](https://docs.notadd.com/introductions/contributing.html)**
 
-**[捐赠](https://git.oschina.net/notadd/notadd?donate=true)
+**[捐赠](https://git.oschina.net/notadd/notadd?donate=true)**
 
 

@@ -1,4 +1,4 @@
-# notadd
+![notadd](https://www.notadd.com/src/notadd_logo.svg)
 
 Notadd 是基于 Laravel 5.3 + Vue.js 的开源 CMS、商城、论坛、博客、问答、微信...
 可以是任何你想要的，我们将其分为模块（实现大功能，诸如用户系统、商城系统、CMS 系统）、插件（增强模块功能）、模板（改变前台界面）。

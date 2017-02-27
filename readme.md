@@ -41,6 +41,8 @@ PHP版本 ： 7.0+
 
 **[系统需要安装的拓展](https://docs.notadd.com/installations/first.html)**
 
+## 安装
+
 **[独立服务器及VPS安装](https://docs.notadd.com/installations/vps.html)**
 
 **[虚拟主机安装](https://docs.notadd.com/installations/vhost.html)**

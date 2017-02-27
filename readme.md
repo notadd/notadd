@@ -45,7 +45,7 @@ PHP版本 ： 7.0+
 
 **[独立服务器及VPS安装](https://docs.notadd.com/installations/vps.html)**
 
-**[虚拟主机安装](https://docs.notadd.com/installations/vhost.html)**
+**[虚拟主机安装（暂不支持）](https://docs.notadd.com/installations/vhost.html)**
 
 **[编译安装](https://docs.notadd.com/installations/compile.html)**
 

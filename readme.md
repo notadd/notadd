@@ -28,6 +28,7 @@ Notadd 像操作系统一样，你可以通过安装“软件”，成为适用�
 
 https://docs.notadd.com/
 
+官方交流Q群：321735506
 
 ## 系统环境
 
@@ -40,9 +41,11 @@ PHP版本 ： 7.0+
 
 **[系统需要安装的拓展](https://docs.notadd.com/installations/first.html)**
 
+## 安装
+
 **[独立服务器及VPS安装](https://docs.notadd.com/installations/vps.html)**
 
-**[虚拟主机安装](https://docs.notadd.com/installations/vhost.html)**
+**[虚拟主机安装（暂不支持）](https://docs.notadd.com/installations/vhost.html)**
 
 **[编译安装](https://docs.notadd.com/installations/compile.html)**
 

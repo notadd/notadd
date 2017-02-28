@@ -26,8 +26,6 @@
         "notadd/administration": "0.2.*",
         "notadd/content": "0.2.*",
         "notadd/framework": "0.2.*",
-        "notadd/member": "0.2.*",
-        "notadd/wechat": "0.2.*",
         "wikimedia/composer-merge-plugin": "dev-master"
     },
     "require-dev": {

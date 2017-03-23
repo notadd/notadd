@@ -24,6 +24,7 @@
     "require": {
         "php": ">=7.0",
         "notadd/framework": "0.2.*",
+        "notadd/installers": "0.1.*",
         "wikimedia/composer-merge-plugin": "dev-master"
     },
     "require-dev": {

@@ -1,0 +1,90 @@
+.wrapper{margin: 20px;}
+
+.searchBar{height:30px;text-align:left;}
+.searchBtn{
+    font-size: 13px;
+    height: 28px;
+    border-radius: 5px;
+    border: 1px solid #3498db;
+    width: 80px;
+    background-color: #3498db;
+    color: #fff;
+    margin-left: 6px;
+}
+
+.resultBar{width:589px;height:357px;margin-top: 20px;border: 1px solid #CCC;border-radius: 5px;box-shadow: 2px 2px 5px #D3D6DA;overflow: hidden;}
+
+.listPanel{overflow: hidden;}
+.panelon{display:block;}
+.paneloff{display:none}
+
+.page{width:220px;margin:20px auto;overflow: hidden;display: flex;justify-content: center;flex-direction: row-reverse;}
+.pageon{float:right;width:26px;line-height:26px;height:26px;margin-right: 5px;border: none;color: #fff;font-weight: bold;text-align:center;
+    background-color: #3498db;border-radius: 5px;}
+.pageoff{float:right;width:24px;line-height:24px;height:24px;cursor:pointer;background-color: #fff;
+    color: #ccc;margin-right: 5px;text-decoration: none;text-align:center;}
+
+.m-box{width:589px;}
+.m-m{float: left;line-height: 26px;height: 26px;display: flex;}
+.m-h{height:30px;line-height:30px;padding-left: 70px;background-color:#f3f3f3;font-weight: bold;font-size: 12px;color: #666;}
+.m-l{float:left;width:40px; margin-top: 8px; margin-left: 17px;margin-right: 10px;}
+.m-t{float:left;width:142px;}
+.m-s{float:left;width:142px;}
+.m-z{float:left;width:142px;}
+.m-try-t{float: left;width: 60px;;}
+
+/*.m-try{float:left;width:20px;height:20px;background:url('http://static.tieba.baidu.com/tb/editor/images/try_music.gif') no-repeat ;}*/
+.m-try {
+    width: 4px;
+    display: flex;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-left: 8px solid #9e9e9e;
+    border-bottom: 5px solid transparent;
+    margin-top: 8px;
+}
+/*.m-trying{float:left;width:20px;height:20px;background:url('http://static.tieba.baidu.com/tb/editor/images/stop_music.gif') no-repeat ;}*/
+
+.m-trying {
+    display: flex;
+    width: 3px;
+    height: 12px;
+    background-color: #3498db;
+    margin-top: 8px;
+    position: relative;
+}
+.m-trying:after {
+    width: 3px;
+    height: 12px;
+    background-color: #3498db;
+    left : 5px;
+    display: block;
+    position: absolute;
+    content: " ";
+}
+.loading{
+    width: 113px;
+    height: 95px;
+    font-size: 7px;
+    margin: 114px auto;
+    background: url(balls.svg) no-repeat;
+}
+.empty{
+    width: 300px;
+    height: 40px;
+    padding: 2px;
+    margin: 157px auto;
+    line-height: 40px;
+    color: #666;
+    text-align: center;
+}
+
+#J_searchName{
+    height: 26px;
+    width: 295px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.listPanel input[type="radio"] {
+    background-color: #fff;
+}

@@ -49,11 +49,13 @@ PHP版本：7.0+
 
 `git clone https://github.com/notadd/notadd.git`
 
+
 2. 部署代码，修改 public、storage 目录权限；
 
 Linux：
 
 `chown -R www-data:www-data notadd`    
+
  
 参见执行 php 的用户名及用户组
 or

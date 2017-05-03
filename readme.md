@@ -54,12 +54,15 @@ PHP版本：7.0+
 Linux：
 
 `chown -R www-data:www-data notadd`    
-部分 
+ 
+参见执行 php 的用户名及用户组
 or
 
 `chmod 755 notadd/public notadd/storage`
 
+
 Windows请跳过此步。
+
 
 3. 执行 安装；  
  

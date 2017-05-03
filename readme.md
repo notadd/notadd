@@ -41,13 +41,32 @@ PHP版本：7.0+
 
 **[系统需要安装的拓展](https://docs.notadd.com/installations/first.html)**
 
-## 安装
+## 快速开始
 
-**[独立服务器及 VPS 安装](https://docs.notadd.com/installations/vps.html)**
+1. 下载或克隆仓库：
+`git clone https://github.com/notadd/notadd.git`
 
-**[虚拟主机安装（暂不支持）](https://docs.notadd.com/installations/vhost.html)**
+2. 部署代码，修改 public、storage 目录权限；
+`chown -R www-data:www-data notadd`
+or
+`chmod 755 notadd/public notadd storage`
 
-**[编译安装](https://docs.notadd.com/installations/compile.html)**
+3. 执行 安装；
+`composer install` 
+
+`cd notadd`
+
+`php notadd vendor:publish --force`
+
+4. 绑定域名到 notadd/public 目录
+
+5. 访问后台入口 http://yourdomain/admin
+ 
+**什么？你一个都看不懂，请参照文档提供的其他方法**
+
+[独立服务器及 VPS 完整包](https://docs.notadd.com/#/v1.0/zh-CN/installations/vps)
+
+
 
 
 ## 贡献

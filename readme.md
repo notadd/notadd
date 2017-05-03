@@ -72,8 +72,7 @@ php notadd vendor:publish --force
 
 
  
-**！！！什么？你一个都看不懂，请直接 [下载完整包安装](https://docs.notadd.com/#/v1.0/zh-CN/installations/vps)
-** 
+**！！！什么？你一个都看不懂，请直接 [下载完整包安装](https://docs.notadd.com/#/v1.0/zh-CN/installations/vps)** 
 
  
 

@@ -70,11 +70,12 @@ php notadd vendor:publish --force
 
 5. 访问后台入口 http://yourdomain/admin
 
+
  
-**！！！什么？你一个都看不懂，请参照文档提供的其他方法：** 
+**！！！什么？你一个都看不懂，请直接 [下载完整包安装](https://docs.notadd.com/#/v1.0/zh-CN/installations/vps)
+** 
 
-
-[下载完整包](https://docs.notadd.com/#/v1.0/zh-CN/installations/vps)
+ 
 
 
 

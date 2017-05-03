@@ -51,7 +51,7 @@ PHP版本：7.0+
 or
 `chmod 755 notadd/public notadd storage`
 
-3. 执行 安装；
+3. 执行 安装；    
 `composer install` 
 
 `cd notadd`
@@ -60,9 +60,9 @@ or
 
 4. 绑定域名到 notadd/public 目录
 
-5. 访问后台入口 http://yourdomain/admin
+5. 访问后台入口 http://yourdomain/admin    
  
-**什么？你一个都看不懂，请参照文档提供的其他方法**
+**什么？你一个都看不懂，请参照文档提供的其他方法**    
 
 [独立服务器及 VPS 完整包](https://docs.notadd.com/#/v1.0/zh-CN/installations/vps)
 

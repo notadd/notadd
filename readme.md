@@ -42,20 +42,26 @@ PHP版本：7.0+
 **[系统需要安装的拓展](https://docs.notadd.com/installations/first.html)**
 
 ## 快速开始
-
+ 
+开始前 ，请确保`git` `php` `composer` 可用。
+ 
 1. 下载或克隆仓库：
 
 `git clone https://github.com/notadd/notadd.git`
 
 2. 部署代码，修改 public、storage 目录权限；
 
-`chown -R www-data:www-data notadd`
+Linux：
 
+`chown -R www-data:www-data notadd`    
+部分 
 or
 
 `chmod 755 notadd/public notadd/storage`
 
-3. 执行 安装；    
+Windows请跳过此步。
+
+3. 执行 安装；  
  
 ```
 cd notadd

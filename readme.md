@@ -26,7 +26,7 @@ Notadd 像操作系统一样，你可以通过安装「软件」，成为适用�
 
 ## 文档
 
-[https://docs.notadd.com/]()
+[https://docs.notadd.com/](https://docs.notadd.com/)
 
 ## 系统环境
 
@@ -37,7 +37,7 @@ PHP 版本：≥7.0
 数据库：PostgreSQL（推荐）/ MariaDB / MySQL / SQLite 3
 
 
-> 此处查看 [安装需要的环境依赖](https://docs.notadd.com/installations/first.html)
+> 此处查看 [安装需要的环境依赖](https://docs.notadd.com/#/v1.0/zh-CN/installations/first)
 
 ## 快速开始
 

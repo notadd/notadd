@@ -69,7 +69,7 @@ $ composer install
 $ php notadd vendor:publish --force
 ```
 
-绑定域名到 `notadd/public` 目录
+将域名绑定到 `notadd/public` 目录
 
 
 访问后台入口 `http://yourdomain/admin`

@@ -49,7 +49,7 @@ $ git clone https://github.com/notadd/notadd.git
 
 ### 2. 修改 public、storage 目录权限
 
-设置为 php-fpm 的用户及用户组，Windows 请跳过此步
+设置为 php-fpm 的用户及用户组(部分一键安装包为 `www:www` )，Windows 请跳过此步
 
 ```bash
 $ chown -R www-data:www-data notadd

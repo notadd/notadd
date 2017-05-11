@@ -1,0 +1,20 @@
+language: php
+
+php:
+  - 7.0
+  - 7.1
+
+matrix:
+  allow_failures:
+    - php: 7.0
+    - php: 7.1
+  
+sudo: false
+
+install:
+  - composer self-update
+  - travis_retry composer install --no-interaction --prefer-source
+
+before_script: git reset --hard HEAD
+
+script: vendor/bin/phpunit

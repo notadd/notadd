@@ -2,7 +2,6 @@ language: php
 
 php:
     - 7.0
-    - 7.1
     
     
 services:
@@ -12,8 +11,6 @@ services:
 matrix:
   fast_finish: true
   include:
-    - php: 7.0
-    - php: 7.1
     - service: postgresql
       env: sql=postgres
     - service: mysql

@@ -13,7 +13,8 @@ services:
 
   
 before_install:
-     - mysql -e 'CREATE DATABASE IF NOT EXISTS notadd;'    
+     - mysql -e 'CREATE DATABASE IF NOT EXISTS notadd;'  
+     - psql -c 'create database notadd;' -U postgres
   
     
 sudo: false
@@ -28,10 +29,10 @@ install:
 
 before_script: 
     - git reset --hard HEAD
-    - psql -c 'create database notadd;' -U postgres
+    
     
 script:    
-    - php notadd integration:configuration —driver=pgsql —host=127.0.0.1 —port=5432 —database=notadd —username=postgres —password= —prefix=pre_; fi
+    - php notadd integration:configuration —driver=mysql —host=127.0.0.1 —port=3306 —database=notadd —username=root —password= —prefix=pre_
     - php notadd integration
 
 

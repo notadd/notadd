@@ -5,16 +5,26 @@ php:
     - 7.1
     - hhvm
 services:
-  - postgresql
-  - mysql
+    - postgresql
+    - mysql
   
 before_install:
-  - mysql -e 'CREATE DATABASE IF NOT EXISTS notadd;'
+     - mysql -e 'CREATE DATABASE IF NOT EXISTS notadd;'
 
 before_script:
     - psql -c 'create database notadd;' -U postgres
-    - travis_retry composer self-update
-    - travis_retry composer install --no-interaction --prefer-source --dev
+    
+sudo: false
+
+install:
+    - composer self-update
+    - travis_retry composer install --no-interaction --prefer-source
+
+before_script: git reset --hard HEAD
+
 
 script:
-    - vendor/bin/phpunit
+    - vendor/bin/phpunit --coverage-clover=coverage.xml
+
+after_success:
+    - bash <(curl -s https://codecov.io/bash)

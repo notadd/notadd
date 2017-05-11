@@ -17,4 +17,8 @@ install:
 
 before_script: git reset --hard HEAD
 
-script: vendor/bin/phpunit
+script:
+    - vendor/bin/phpunit --coverage-clover=coverage.xml
+
+after_success:
+    - bash <(curl -s https://codecov.io/bash) -t 4916eb3f-d129-4484-a792-deda1c4f809c

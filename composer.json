@@ -25,8 +25,7 @@
         "php": ">=7.0",
         "notadd/administration": "0.5.*",
         "notadd/framework": "0.7.*",
-        "notadd/installers": "0.5.*",
-        "wikimedia/composer-merge-plugin": "dev-master"
+        "notadd/installers": "0.5.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

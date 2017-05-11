@@ -3,16 +3,19 @@ language: php
 php:
     - 7.0
     - 7.1
-    - hhvm
+    
+matrix:
+  allow_failures:
+    - php: 7.0
+    - php: 7.1
+    
 services:
     - postgresql
     - mysql
   
 before_install:
-     - mysql -e 'CREATE DATABASE IF NOT EXISTS notadd;'
-
-before_script:
-    - psql -c 'create database notadd;' -U postgres
+     - mysql -e 'CREATE DATABASE IF NOT EXISTS notadd;'    
+  
     
 sudo: false
 
@@ -20,11 +23,14 @@ install:
     - composer self-update
     - travis_retry composer install --no-interaction --prefer-source
 
-before_script: git reset --hard HEAD
+before_script: 
+    - git reset --hard HEAD
+    - psql -c 'create database notadd;' -U postgres
+
 
 
 script:
     - vendor/bin/phpunit --coverage-clover=coverage.xml
 
 after_success:
-    - bash <(curl -s https://codecov.io/bash)
+    - bash <(curl -s https://codecov.io/bash) -t 4916eb3f-d129-4484-a792-deda1c4f809c

@@ -4,20 +4,29 @@ php:
     - 7.0
     - 7.1
     
-matrix:
-  allow_failures:
-    - php: 7.0
-    - php: 7.1
     
 services:
     - postgresql
     - mysql
+    
+matrix:
+  fast_finish: true
+  include:
+    - service: postgresql
+      env: sql=postgres
+    - service: mysql
+      env: sql=mysql
+
   
 before_install:
      - mysql -e 'CREATE DATABASE IF NOT EXISTS notadd;'    
   
     
 sudo: false
+
+cache:
+  directories:
+    - $HOME/.composer/cache
 
 install:
     - composer self-update
@@ -26,7 +35,11 @@ install:
 before_script: 
     - git reset --hard HEAD
     - psql -c 'create database notadd;' -U postgres
-
+    
+script:
+    - if [[ $sql = 'mysql' ]]; then php notadd integration:configuration —driver=mysql —host=127.0.0.1 —port=3306 —database=notadd —username=root —password= —prefix=pre_; fi
+    - if [[ $sql = 'postgres' ]]; then php notadd integration:configuration —driver=pgsql —host=127.0.0.1 —port=5432 —database=notadd —username=postgres —password= —prefix=pre_; fi
+    - php notadd integration
 
 
 after_success:

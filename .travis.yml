@@ -4,8 +4,15 @@ php:
     - 7.0
     - 7.1
     - hhvm
+services:
+  - postgresql
+  - mysql
+  
+before_install:
+  - mysql -e 'CREATE DATABASE IF NOT EXISTS notadd;'
 
 before_script:
+    - psql -c 'create database notadd;' -U postgres
     - travis_retry composer self-update
     - travis_retry composer install --no-interaction --prefer-source --dev
 

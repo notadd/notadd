@@ -1,7 +1,9 @@
 ![notadd](https://www.notadd.com/src/notadd_logo.svg)
 
 [![codecov](https://codecov.io/gh/notadd/notadd/branch/master/graph/badge.svg)](https://codecov.io/gh/notadd/notadd)
-[![Build Status](https://travis-ci.org/notadd/notadd.svg?branch=master)](https://travis-ci.org/notadd/notadd)
+[![Build Status](https://travis-ci.org/notadd/notadd.svg?branch=master)](https://travis-ci.org/notadd/notadd) 
+![Packagist](https://img.shields.io/packagist/v/notadd/notadd.svg) 
+![Downloads](https://img.shields.io/packagist/dt/notadd/framework.svg)
 
 ## Notadd是什么 
 

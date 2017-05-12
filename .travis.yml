@@ -1,20 +1,40 @@
 language: php
 
 php:
-  - 7.0
-  - 7.1
+   - 7.0
+   - 7.1
+ 
+    
+services:
+    - postgresql
+    - mysql
+    
 
-matrix:
-  allow_failures:
-    - php: 7.0
-    - php: 7.1
+
   
+before_install:
+     - mysql -e 'CREATE DATABASE IF NOT EXISTS notadd;'  
+     - psql -c 'create database notadd;' -U postgres
+  
+    
 sudo: false
 
+cache:
+  directories:
+    - $HOME/.composer/cache
+
 install:
-  - composer self-update
-  - travis_retry composer install --no-interaction --prefer-source
+    - composer self-update
+    - travis_retry composer install --no-interaction --prefer-source
 
-before_script: git reset --hard HEAD
+before_script: 
+    - git reset --hard HEAD
+    
+    
+script:    
+    - php notadd integration:configuration --driver=mysql --host=127.0.0.1 --port=3306 --database=notadd --username=root --password='' --prefix=pre_
+    - php notadd integration
 
-script: vendor/bin/phpunit
+
+after_success:
+    - bash <(curl -s https://codecov.io/bash) -t 4916eb3f-d129-4484-a792-deda1c4f809c

@@ -32,7 +32,7 @@ before_script:
     
     
 script:    
-    - php notadd integration:configuration -—driver=mysql -—host=127.0.0.1 -—port=3306 -—database=notadd -—username=root -—password= -—prefix=pre_
+    - php notadd integration:configuration --driver=mysql --host=127.0.0.1 --port=3306 --database=notadd --username=root --password='' --prefix=pre_
     - php notadd integration
 
 

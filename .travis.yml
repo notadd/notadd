@@ -28,6 +28,7 @@ before_script:
 script:
     - php notadd integration:configuration --driver=mysql --host=127.0.0.1 --port=3306 --database=notadd --username=root --prefix=pre_
     - php notadd integration
+    - vendor/bin/phpunit --verbose
 
 after_success:
     - bash <(curl -s https://codecov.io/bash) -t 4916eb3f-d129-4484-a792-deda1c4f809c

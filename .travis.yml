@@ -15,8 +15,8 @@ before_install:
 sudo: false
 
 cache:
-  directories:
-    - $HOME/.composer/cache
+    directories:
+        - $HOME/.composer/cache
 
 install:
     - composer self-update

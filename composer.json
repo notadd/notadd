@@ -21,6 +21,11 @@
             "storage/databases"
         ]
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Notadd\\Tests\\": "tests/"
+        }
+    },
     "require": {
         "php": ">=7.0",
         "notadd/administration": "0.5.*",

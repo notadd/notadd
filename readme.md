@@ -1,9 +1,10 @@
 ![notadd](https://www.notadd.com/src/notadd_logo.svg)
 
-[![codecov](https://codecov.io/gh/notadd/notadd/branch/master/graph/badge.svg)](https://codecov.io/gh/notadd/notadd)
 [![Build Status](https://travis-ci.org/notadd/notadd.svg?branch=master)](https://travis-ci.org/notadd/notadd) 
 ![Packagist](https://img.shields.io/packagist/v/notadd/notadd.svg) 
 ![Downloads](https://img.shields.io/packagist/dt/notadd/framework.svg)
+[![codecov](https://codecov.io/gh/notadd/notadd/branch/master/graph/badge.svg)](https://codecov.io/gh/notadd/notadd)
+
 
 ## Notadd是什么 
 
@@ -89,5 +90,8 @@ $ php notadd vendor:publish --force
 
 **[捐赠](https://git.oschina.net/notadd/notadd?donate=true)**
 
-QQ 群：321735506
+## 交流
 
+QQ 群：`321735506`
+ 
+论坛 ：https://bbs.notadd.com

@@ -1,12 +1,12 @@
 ![notadd](https://www.notadd.com/src/notadd_logo.svg)
 
-[![Build Status](https://travis-ci.org/notadd/notadd.svg?branch=master)](https://travis-ci.org/notadd/notadd) 
-![Packagist](https://img.shields.io/packagist/v/notadd/notadd.svg) 
+[![codecov](https://codecov.io/gh/notadd/notadd/branch/master/graph/badge.svg)](https://codecov.io/gh/notadd/notadd)
+[![Build Status](https://travis-ci.org/notadd/notadd.svg?branch=master)](https://travis-ci.org/notadd/notadd)
+![Packagist](https://img.shields.io/packagist/v/notadd/notadd.svg)
 ![Downloads](https://img.shields.io/packagist/dt/notadd/framework.svg)
 [![codecov](https://codecov.io/gh/notadd/notadd/branch/master/graph/badge.svg)](https://codecov.io/gh/notadd/notadd)
 
-
-## Notadd是什么 
+## Notadd是什么
 
 Notadd 是基于 Laravel 和 Vue 的开源 PHP 框架， 由于其本身的灵活性和先进的技术架构，使得你通过模块（主功能）、插件（功能增强）、模板（前端样式）像搭积木一样组合成你想要的，能够快速完成商城、CMS、微信、论坛的开发。
 Notadd 像操作系统一样，你可以通过安装「软件」，成为适用于你的「电脑」。
@@ -41,7 +41,6 @@ Notadd 像操作系统一样，你可以通过安装「软件」，成为适用�
 PHP 版本：≥7.0
 
 数据库：PostgreSQL（推荐）/ MariaDB / MySQL / SQLite 3
-
 
 > 此处查看 [安装需要的环境依赖](https://docs.notadd.com/#/v1.0/zh-CN/installations/first)
 
@@ -96,5 +95,5 @@ $ php notadd vendor:publish --force
 ## 交流
 
 QQ 群：`321735506`
- 
+
 论坛 ：https://bbs.notadd.com

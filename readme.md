@@ -77,6 +77,9 @@ $ php notadd vendor:publish --force
 
 将域名绑定到 `notadd/public` 目录
 
+访问 `http://yourdomain/`  输入数据库和后台账号相关信息安装
+
+### 4. 成功
 
 访问后台入口 `http://yourdomain/admin`
 

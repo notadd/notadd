@@ -1,6 +1,5 @@
 ![notadd](https://www.notadd.com/src/notadd_logo.svg)
 
-[![codecov](https://codecov.io/gh/notadd/notadd/branch/master/graph/badge.svg)](https://codecov.io/gh/notadd/notadd)
 [![Build Status](https://travis-ci.org/notadd/notadd.svg?branch=master)](https://travis-ci.org/notadd/notadd)
 ![Packagist](https://img.shields.io/packagist/v/notadd/notadd.svg)
 ![Downloads](https://img.shields.io/packagist/dt/notadd/framework.svg)
@@ -42,7 +41,7 @@ PHP 版本：≥7.0
 
 数据库：PostgreSQL（推荐）/ MariaDB / MySQL / SQLite 3
 
-> 此处查看 [安装需要的环境依赖](https://docs.notadd.com/#/v1.0/zh-CN/installations/first)
+> 此处查看 [环境要求](hhttps://docs.notadd.com/gettingtarted/#环境要求)
 
 ## 快速开始
 
@@ -88,7 +87,7 @@ $ php notadd vendor:publish --force
 
 ## 贡献
 
-**[贡献代码](https://docs.notadd.com/introductions/contributing.html)**
+**[贡献代码](https://docs.notadd.com/introductions/#贡献)**
 
 **[捐赠](https://git.oschina.net/notadd/notadd?donate=true)**
 

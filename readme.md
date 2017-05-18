@@ -81,9 +81,10 @@ $ php notadd vendor:publish --force
 
 访问后台入口 `http://yourdomain/admin`
 
-## 使用完整包安装
+## 使用PHP 单文件在线安装
 
-[下载完整包安装](https://docs.notadd.com/#/v1.0/zh-CN/installations/vps)
+（暂未提供）
+
 
 ## 贡献
 

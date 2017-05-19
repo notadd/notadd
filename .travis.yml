@@ -34,4 +34,6 @@ after_success:
     - bash <(curl -s https://codecov.io/bash) -t 4916eb3f-d129-4484-a792-deda1c4f809c
 
 notifications:
-    webhooks: https://hook.bearychat.com/=bwA22/travis/52fa443470377f35e5a3d068b8d2d5ca
+    webhooks:
+        - https://hook.bearychat.com/=bwA22/travis/52fa443470377f35e5a3d068b8d2d5ca
+        - https://hook.bearychat.com/=bwA7K/travis/3c04d191a6066d3e178ab8d93643e708

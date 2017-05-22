@@ -39,7 +39,7 @@ Notadd 像操作系统一样，你可以通过安装「软件」，成为适用�
 
 PHP 版本：≥7.0
 
-数据库：PostgreSQL（推荐）/ MariaDB / MySQL / SQLite 3
+数据库：PostgreSQL 9.4+（推荐）/ MySQL 5.7+ / SQLite 3.9+
 
 > 此处查看 [环境要求](hhttps://docs.notadd.com/gettingtarted/#环境要求)
 

@@ -85,7 +85,7 @@ $ php notadd vendor:publish --force
 
 （暂未提供）
 
-## docker 安装
+## Docker 安装
 
 ```
 docker run -p 8080:80 --name notadd notadd/notadd

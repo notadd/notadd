@@ -81,9 +81,19 @@ $ php notadd vendor:publish --force
 
 访问后台入口 `http://yourdomain/admin`
 
-## 使用PHP 单文件在线安装
+## 在线安装
 
 （暂未提供）
+
+## docker 安装
+
+```
+docker run -p 8080:80 --name notadd notadd/notadd
+```
+
+访问 http://localhost:8080
+
+更多文档请访问： https://github.com/notadd/docker-notadd
 
 
 ## 贡献

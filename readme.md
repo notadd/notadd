@@ -83,7 +83,7 @@ $ php notadd vendor:publish --force
 
 ## 在线安装
 
-（暂未提供）
+（即将推出）
 
 ## Docker 安装
 

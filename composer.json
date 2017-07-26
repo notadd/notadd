@@ -27,7 +27,7 @@
         }
     },
     "config": {
-        "preferred-install": "dist"
+        "preferred-install": "source"
     },
     "minimum-stability": "dev",
     "require": {

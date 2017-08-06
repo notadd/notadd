@@ -109,3 +109,6 @@ docker 安装相关文档请访问： https://github.com/notadd/docker-notadd
 QQ 群：`321735506`
 
 论坛 ：https://bbs.notadd.com
+
+
+[![upyun](https://www.notadd.com/src/upyun.svg "又拍云")](https://console.upyun.com/register/?invite=r17EYO3BW) 提供赞助

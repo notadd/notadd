@@ -27,9 +27,9 @@
         }
     },
     "config": {
-        "preferred-install": "source"
+        "preferred-install": "dist"
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
         "php": ">=7.0",
         "notadd/administration": "0.9.*",

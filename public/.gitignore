@@ -1,0 +1,8 @@
+*
+!.gitignore
+!.htaccess
+!favicon.ico
+!boot.php
+!index.html
+!robots.txt
+!assets/

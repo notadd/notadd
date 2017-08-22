@@ -2,7 +2,5 @@
 !.gitignore
 !.htaccess
 !favicon.ico
-!boot.php
-!index.html
+!index.php
 !robots.txt
-!assets/

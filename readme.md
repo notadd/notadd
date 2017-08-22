@@ -5,7 +5,6 @@
 ![Downloads](https://img.shields.io/packagist/dt/notadd/framework.svg)
 [![codecov](https://codecov.io/gh/notadd/notadd/branch/master/graph/badge.svg)](https://codecov.io/gh/notadd/notadd)
 
-# Beta3 即将发布，请勿下载当前版
 
 ## Notadd是什么
 

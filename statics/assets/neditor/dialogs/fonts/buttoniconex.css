@@ -1,0 +1,265 @@
+
+@font-face {font-family: "edui-notadd";
+  src: url('iconfont.eot?t=1485141939806'); /* IE9*/
+  src: url('iconfont.eot?t=1485141939806#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1485141939806') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1485141939806') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1485141939806#edui-notadd') format('svg'); /* iOS 4.1- */
+}
+
+.edui-notadd .edui-icon{
+  font-family:"edui-notadd" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.edui-for-close .edui-icon:before { content: "\e654"; }
+
+.edui-for-italic .edui-icon:before { content: "\e62d"; }
+
+.edui-for-insertcaption .edui-icon:before { content: "\e657"; }
+
+.edui-for-insertparagraph .edui-icon:before { content: "\e62e"; }
+
+.edui-for-inserttitlecol .edui-icon:before { content: "\e659"; }
+
+.edui-for-insertimage .edui-icon:before { content: "\e617"; }
+
+.edui-for-previousstep .edui-icon:before { content: "\e630"; }
+
+.edui-for-nextstep .edui-icon:before { content: "\e631"; }
+
+.edui-for-scaleboard .edui-icon:before { content: "\e632"; }
+
+.edui-for-brush .edui-icon:before { content: "\e633"; }
+
+.edui-for-background .edui-icon:before { content: "\e65d"; }
+
+.edui-for-strikethrough .edui-icon:before { content: "\e60c"; }
+
+.edui-for-spechars .edui-icon:before { content: "\e603"; }
+
+.edui-for-clearboard .edui-icon:before { content: "\e634"; }
+
+.edui-for-bold .edui-icon:before { content: "\e604"; }
+
+.edui-for-fullscreen .edui-icon:before { content: "\e656"; }
+
+.edui-for-formatmatch .edui-icon:before { content: "\e60d"; }
+
+.edui-for-underline .edui-icon:before { content: "\e605"; }
+
+.edui-for-removeformat .edui-icon:before { content: "\e60e"; }
+
+.edui-for-blockquote .edui-icon:before { content: "\e60f"; }
+
+.edui-for-anchor .edui-icon:before { content: "\e618"; }
+
+.edui-for-help .edui-icon:before { content: "\e619"; }
+
+.edui-for-horizontal .edui-icon:before { content: "\e638"; }
+
+.edui-for-simpleupload .edui-icon:before { content: "\e61a"; }
+
+.edui-for-indent .edui-icon:before { content: "\e61b"; }
+
+.edui-for-justifycenter .edui-icon:before { content: "\e61c"; }
+
+.edui-for-justifyleft .edui-icon:before { content: "\e61d"; }
+
+.edui-for-justifyjustify .edui-icon:before { content: "\e61e"; }
+
+.edui-for-justifyright .edui-icon:before { content: "\e61f"; }
+
+.edui-for-link .edui-icon:before { content: "\e620"; }
+
+.edui-for-cleardoc .edui-icon:before { content: "\e621"; }
+
+.edui-for-drafts .edui-icon:before { content: "\e610"; }
+
+.edui-for-subscript .edui-icon:before { content: "\e611"; }
+
+.edui-for-unlink .edui-icon:before { content: "\e622"; }
+
+.edui-for-superscript .edui-icon:before { content: "\e612"; }
+
+.edui-for-forecolor .edui-icon:before { content: "\e63a"; }
+
+.edui-for-backcolor .edui-icon:before { content: "\e655"; }
+
+.edui-for-touppercase .edui-icon:before { content: "\e623"; }
+
+.edui-for-tolowercase .edui-icon:before { content: "\e624"; }
+
+.edui-for-insertvideo .edui-icon:before { content: "\e627"; }
+
+.edui-for-emotion .edui-icon:before { content: "\e606"; }
+
+.edui-for-pasteplain .edui-icon:before { content: "\e613"; }
+
+.edui-for-preview .edui-icon:before { content: "\e63b"; }
+
+.edui-for-print .edui-icon:before { content: "\e63c"; }
+
+.edui-for-searchreplace .edui-icon:before { content: "\e65e"; }
+
+.edui-for-selectall .edui-icon:before { content: "\e614"; }
+
+.edui-for-mergecells .edui-icon:before { content: "\e63d"; }
+
+.edui-for-deletecol .edui-icon:before { content: "\e63e"; }
+
+.edui-for-deleterow .edui-icon:before { content: "\e63f"; }
+
+.edui-for-attachment .edui-icon:before { content: "\e628"; }
+
+.edui-for-music .edui-icon:before { content: "\e640"; }
+
+.edui-for-gmap .edui-icon:before { content: "\e629"; }
+
+.edui-for-insertframe .edui-icon:before { content: "\e645"; }
+
+.edui-for-pdfformat .edui-icon:before { content: "\e62f"; }
+
+.edui-for-word .edui-icon:before { content: "\e646"; }
+
+.edui-for-excel .edui-icon:before { content: "\e647"; }
+
+.edui-for-time .edui-icon:before { content: "\e64a"; }
+
+.edui-for-snapscreen .edui-icon:before { content: "\e650"; }
+
+.edui-for-wordimage .edui-icon:before { content: "\e652"; }
+
+.edui-for-edittd .edui-icon:before { content: "\e65a"; }
+
+.edui-for-lineheight .edui-icon:before { content: "\e62a"; }
+
+.edui-for-rowspacingbottom .edui-icon:before { content: "\e62b"; }
+
+.edui-for-rowspacingtop .edui-icon:before { content: "\e62c"; }
+
+.edui-for-scrawl .edui-icon:before { content: "\e616"; }
+
+.edui-for-redo .edui-icon:before { content: "\e609"; }
+
+.edui-for-undo .edui-icon:before { content: "\e600"; }
+
+.edui-for-inserttitle .edui-icon:before { content: "\e65b"; }
+
+.edui-for-insertparagraphtrue .edui-icon:before { content: "\e660"; }
+
+.edui-for-aligntable .edui-icon:before { content: "\e662"; }
+
+.edui-for-table .edui-icon:before { content: "\e664"; }
+
+.edui-for-tablealignment-left .edui-icon:before { content: "\e663"; }
+
+.edui-for-tablealignment-center .edui-icon:before { content: "\e665"; }
+
+.edui-for-tablealignment-right .edui-icon:before { content: "\e666"; }
+
+.edui-for-paste .edui-icon:before { content: "\e667"; }
+
+.edui-for-map .edui-icon:before { content: "\e668"; }
+
+.edui-for-directionalityrtl .edui-icon:before { content: "\e601"; }
+
+.edui-for-imagecenter .edui-icon:before { content: "\e602"; }
+
+.edui-for-imagenone .edui-icon:before { content: "\e607"; }
+
+.edui-for-fontborder .edui-icon:before { content: "\e608"; }
+
+.edui-for-edittable .edui-icon:before { content: "\e60a"; }
+
+.edui-for-imageleft .edui-icon:before { content: "\e60b"; }
+
+.edui-for-imageright .edui-icon:before { content: "\e615"; }
+
+.edui-for-insertcol .edui-icon:before { content: "\e625"; }
+
+.edui-for-insertcolnext .edui-icon:before { content: "\e626"; }
+
+.edui-for-insertorderedlist .edui-icon:before { content: "\e635"; }
+
+.edui-for-insertparagraphbeforetable .edui-icon:before { content: "\e636"; }
+
+.edui-for-insertrow .edui-icon:before { content: "\e637"; }
+
+.edui-for-insertrownext .edui-icon:before { content: "\e639"; }
+
+.edui-for-insertunorderedlist .edui-icon:before { content: "\e641"; }
+
+.edui-for-mergeright .edui-icon:before { content: "\e642"; }
+
+.edui-for-mergedown .edui-icon:before { content: "\e643"; }
+
+.edui-for-inserttable .edui-icon:before { content: "\e644"; }
+
+.edui-for-pagebreak .edui-icon:before { content: "\e648"; }
+
+.edui-for-source .edui-icon:before { content: "\e649"; }
+
+.edui-for-splittorows .edui-icon:before { content: "\e64b"; }
+
+.edui-for-splittocols .edui-icon:before { content: "\e64c"; }
+
+.edui-for-splittocells .edui-icon:before { content: "\e64d"; }
+
+.edui-for-arrow .edui-icon:before { content: "\e64f"; }
+
+.edui-for-aligntd .edui-icon:before { content: "\e651"; }
+
+.edui-for-autotypeset .edui-icon:before { content: "\e653"; }
+
+.edui-for-charts .edui-icon:before { content: "\e658"; }
+
+.edui-for-closeerror .edui-icon:before { content: "\e65c"; }
+
+.edui-for-copy .edui-icon:before { content: "\e65f"; }
+
+.edui-for-date .edui-icon:before { content: "\e661"; }
+
+.edui-for-deletetable .edui-icon:before { content: "\e669"; }
+
+.edui-for-directionalityltr .edui-icon:before { content: "\e66a"; }
+
+.edui-for-arrowright .edui-icon:before { content: "\e66b"; }
+
+.edui-for-tableleft .edui-icon:before { content: "\e66c"; }
+
+.edui-for-tableright .edui-icon:before { content: "\e66d"; }
+
+.edui-for-tablecenter .edui-icon:before { content: "\e66e"; }
+
+.edui-for-videoleft .edui-icon:before { content: "\e66f"; }
+
+.edui-for-videocenter .edui-icon:before { content: "\e670"; }
+
+.edui-for-videonone .edui-icon:before { content: "\e671"; }
+
+.edui-for-videoright .edui-icon:before { content: "\e672"; }
+
+.edui-for-template .edui-icon:before { content: "\e64e"; }
+
+.edui-for-addfile .edui-icon:before { content: "\e673"; }
+
+.edui-for-selected .edui-icon:before { content: "\e674"; }
+
+.edui-for-pickarea .edui-icon:before { content: "\e675"; }
+
+.edui-for-overlay .edui-icon:before { content: "\e676"; }
+
+.edui-for-preitem .edui-icon:before { content: "\e677"; }
+
+.edui-for-preitem1 .edui-icon:before { content: "\e678"; }
+
+.edui-for-preitem2 .edui-icon:before { content: "\e679"; }
+
+.edui-for-preitem3 .edui-icon:before { content: "\e67a"; }
+
+.edui-for-preitem4 .edui-icon:before { content: "\e67b"; }
+

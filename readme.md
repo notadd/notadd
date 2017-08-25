@@ -46,6 +46,8 @@ PHP 版本：≥7.0
 
 ## 快速开始
 
+![Nginx/Apache/Caddy 伪静态配置](https://docs.notadd.com/gettingstarted/#nginx-apache-caddy)
+
 ### 1. 下载源代码
 
 ```bash

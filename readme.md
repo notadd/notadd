@@ -5,10 +5,10 @@
 ![Downloads](https://img.shields.io/packagist/dt/notadd/framework.svg)
 [![codecov](https://codecov.io/gh/notadd/notadd/branch/master/graph/badge.svg)](https://codecov.io/gh/notadd/notadd)
 
+## Notadd是什么？
 
-## Notadd是什么
-
-Notadd 是基于 Laravel 和 Vue 的开源 PHP 框架， 由于其本身的灵活性和先进的技术架构，使得你通过模块（主功能）、插件（功能增强）、拓展（PHP拓展增强）像搭积木一样组合成你想要的，能够快速完成商城、CMS、微信、论坛的开发。 Notadd 像操作系统一样，你可以通过安装「软件」，成为适用于你的「电脑」。
+Notadd 是基于 Laravel 和 Vue 的开源 PHP 框架， 由于其本身的灵活性和先进的技术架构，使得你通过模块（主功能）、插件（功能增强）、模板（前端样式）像搭积木一样组合成你想要的，能够快速完成商城、CMS、微信、论坛的开发。
+Notadd 像操作系统一样，你可以通过安装「软件」，成为适用于你的「电脑」。
 
 先进的技术方案，使得你无需担心后期功能拓展与迭代问题，大大降低了维护成本。对于一个超过三年生命周期的项目来说，Notadd 最适合不过。
 
@@ -20,7 +20,6 @@ Notadd 是基于 Laravel 和 Vue 的开源 PHP 框架， 由于其本身的灵�
 - Laravel
 - Vue
 - Composer
-- SPA 单页应用
 
 ## 特点
 
@@ -46,8 +45,6 @@ PHP 版本：≥7.0
 
 ## 快速开始
 
-[Nginx/Apache/Caddy Rewrite配置](https://docs.notadd.com/gettingstarted/#nginx-apache-caddy)
-
 ### 1. 下载源代码
 
 ```bash
@@ -65,7 +62,7 @@ $ chown -R www-data:www-data notadd
 或
 
 ```bash
-$ chmod 755 notadd/public notadd/storage notadd/statics
+$ chmod 755 notadd/public notadd/storage
 ```
 
 ### 3. 安装

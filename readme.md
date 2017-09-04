@@ -34,6 +34,11 @@ Notadd 是基于 Laravel 和 Vue 的开源 PHP 框架， 由于其本身的灵�
 
 [https://docs.notadd.com/](https://docs.notadd.com/)
 
+## 应用商店（临时）
+
+[https://notadd.store/](https://notadd.store/)
+
+
 ## 系统环境
 
 支持系统：Linux（推荐）/ macOS / Windows 2008 及以上版本

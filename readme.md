@@ -33,6 +33,11 @@ Notadd 像操作系统一样，你可以通过安装「软件」，成为适用�
 
 [https://docs.notadd.com/](https://docs.notadd.com/)
 
+## 应用商店（临时）
+
+[https://notadd.store/](https://notadd.store/)
+
+
 ## 系统环境
 
 支持系统：Linux（推荐）/ macOS / Windows 2008 及以上版本
@@ -47,8 +52,10 @@ PHP 版本：≥7.0
 
 ### 1. 下载源代码
 
+**滚动更新期间，请勿下载 `master` 分支**
+
 ```bash
-$ git clone https://github.com/notadd/notadd.git
+$ git clone -b 0.7.40  https://github.com/notadd/notadd.git
 ```
 
 ### 2. 修改 public、storage 目录权限

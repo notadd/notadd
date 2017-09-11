@@ -29,6 +29,28 @@ Notadd 像操作系统一样，你可以通过安装「软件」，成为适用�
 - 系统模块化，低耦合度
 - 支持所有平台
 
+## 模块化设计
+
+
+![notadd](https://www.notadd.com/src/app.svg)
+
+企业官网： CMS模块 + Neditor插件、留言板插件
+
+信息发布： CMS模块、用户模块 + CMS多用户插件、Neditor插件
+
+微信商城： 用户模块、商城模块、微信模块 + 微信大转盘、支付插件、线下核验插件
+
+餐饮方案： 用户模块、商城模块、微信模块 + 点餐插件、扫码支付插件、客流监测插件... + 红外传感拓展、WIFI探针拓展
+
+酒店方案： 用户模块、酒店模块、微信模块 + 预定插件、支付插件、智能WIFI插件 + WIFI探针拓展、门卡系统拓展
+
+CRM系统： 用户模块、CRM模块...
+
+更多可畅想的...
+
+## 推荐 CDN 方案
+![cdn](https://www.notadd.com/src/cdn.svg)
+
 ## 文档
 
 [https://docs.notadd.com/](https://docs.notadd.com/)

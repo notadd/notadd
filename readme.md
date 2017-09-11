@@ -33,7 +33,7 @@ Notadd 是基于 Laravel 和 Vue 的开源 PHP 框架， 由于其本身的灵�
 ## 模块化设计
 
 
-![notadd](https://www.notadd.com/src/apps.svg)
+![notadd](https://www.notadd.com/src/app.svg)
 
 企业官网： CMS模块 + Neditor插件、留言板插件
 信息发布： CMS模块、用户模块 + CMS多用户插件、Neditor插件

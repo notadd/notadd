@@ -1,4 +1,4 @@
-![notadd](https://www.notadd.com/src/notado_logo420x96.svg)
+![notadd](https://www.notadd.com/src/notadd_logo.svg)
 
 [![Build Status](https://travis-ci.org/notadd/notadd.svg?branch=master)](https://travis-ci.org/notadd/notadd)
 ![Packagist](https://img.shields.io/packagist/v/notadd/notadd.svg)

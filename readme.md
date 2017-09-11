@@ -1,4 +1,4 @@
-![notadd](https://www.notadd.com/src/notadd_logo.svg)
+![notadd](https://www.notadd.com/src/notado_logo420x96.svg)
 
 [![Build Status](https://travis-ci.org/notadd/notadd.svg?branch=master)](https://travis-ci.org/notadd/notadd)
 ![Packagist](https://img.shields.io/packagist/v/notadd/notadd.svg)
@@ -29,6 +29,28 @@ Notadd 是基于 Laravel 和 Vue 的开源 PHP 框架， 由于其本身的灵�
 - 页面无刷新，响应速度快
 - 系统模块化，低耦合度
 - 支持所有平台
+
+## 模块化设计
+
+
+![notadd](https://www.notadd.com/src/app.svg)
+
+企业官网： CMS模块 + Neditor插件、留言板插件
+
+信息发布： CMS模块、用户模块 + CMS多用户插件、Neditor插件
+
+微信商城： 用户模块、商城模块、微信模块 + 微信大转盘、支付插件、线下核验插件
+
+餐饮方案： 用户模块、商城模块、微信模块 + 点餐插件、扫码支付插件、客流监测插件... + 红外传感拓展、WIFI探针拓展
+
+酒店方案： 用户模块、酒店模块、微信模块 + 预定插件、支付插件、智能WIFI插件 + WIFI探针拓展、门卡系统拓展
+
+CRM系统： 用户模块、CRM模块...
+
+更多可畅想的...
+
+## 推荐 CDN 方案
+![cdn](https://www.notadd.com/src/cdn.svg)
 
 ## 文档
 

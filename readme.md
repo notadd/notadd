@@ -1,4 +1,4 @@
-![notadd](https://www.notadd.com/src/notadd_logo.svg)
+![notadd](https://www.notadd.com/src/notado_logo420x96.svg)
 
 [![Build Status](https://travis-ci.org/notadd/notadd.svg?branch=master)](https://travis-ci.org/notadd/notadd)
 ![Packagist](https://img.shields.io/packagist/v/notadd/notadd.svg)
@@ -29,6 +29,9 @@ Notadd 是基于 Laravel 和 Vue 的开源 PHP 框架， 由于其本身的灵�
 - 页面无刷新，响应速度快
 - 系统模块化，低耦合度
 - 支持所有平台
+
+## 推荐 CDN 方案
+![cdn](https://www.notadd.com/src/cdn.svg)
 
 ## 文档
 

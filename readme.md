@@ -1,18 +1,17 @@
-![notadd](https://www.notadd.com/src/notadd_logo.svg)
+![notadd](https://www.notadd.com/src/notado_logo420x96.svg)
 
 [![Build Status](https://travis-ci.org/notadd/notadd.svg?branch=master)](https://travis-ci.org/notadd/notadd)
 ![Packagist](https://img.shields.io/packagist/v/notadd/notadd.svg)
 ![Downloads](https://img.shields.io/packagist/dt/notadd/framework.svg)
 [![codecov](https://codecov.io/gh/notadd/notadd/branch/master/graph/badge.svg)](https://codecov.io/gh/notadd/notadd)
 
+### 像搭积木一样快速满足自己的开发需求
 
-## Notadd是什么
+### 运用新的技术，从传统的开发中解放出来
 
-Notadd 是基于 Laravel 和 Vue 的开源 PHP 框架， 由于其本身的灵活性和先进的技术架构，使得你通过模块（主功能）、插件（功能增强）、拓展（PHP拓展增强）像搭积木一样组合成你想要的，能够快速完成商城、CMS、微信、论坛的开发。 Notadd 像操作系统一样，你可以通过安装「软件」，成为适用于你的「电脑」。
+### 代码优雅，便于维护和二次开发
 
-先进的技术方案，使得你无需担心后期功能拓展与迭代问题，大大降低了维护成本。对于一个超过三年生命周期的项目来说，Notadd 最适合不过。
-
-总之，Notadd 是新的技术方向标，能让每个 web 艺术家像构建工程一样构建程序。
+### 让 PHP 实现...更多的可能
 
 ## 相关技术
 
@@ -21,6 +20,7 @@ Notadd 是基于 Laravel 和 Vue 的开源 PHP 框架， 由于其本身的灵�
 - Vue
 - Composer
 - SPA 单页应用
+- Redis
 
 ## 特点
 
@@ -66,7 +66,7 @@ CRM系统： 用户模块、CRM模块...
 支持系统：Linux（推荐）/ macOS / Windows 2008 及以上版本
 
 PHP 版本：≥7.0
-
+youya
 数据库：PostgreSQL 9.4+（推荐）/ MySQL 5.7+ / SQLite 3.9+
 
 > 此处查看 [环境要求](hhttps://docs.notadd.com/gettingtarted/#环境要求)

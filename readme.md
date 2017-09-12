@@ -1,4 +1,4 @@
-![notadd](https://www.notadd.com/src/notado_logo420x96.svg)
+![notadd](https://www.notadd.com/src/notadd_logo.svg)
 
 [![Build Status](https://travis-ci.org/notadd/notadd.svg?branch=master)](https://travis-ci.org/notadd/notadd)
 ![Packagist](https://img.shields.io/packagist/v/notadd/notadd.svg)
@@ -66,7 +66,7 @@ CRM系统： 用户模块、CRM模块...
 支持系统：Linux（推荐）/ macOS / Windows 2008 及以上版本
 
 PHP 版本：≥7.0
-youya
+
 数据库：PostgreSQL 9.4+（推荐）/ MySQL 5.7+ / SQLite 3.9+
 
 > 此处查看 [环境要求](hhttps://docs.notadd.com/gettingtarted/#环境要求)

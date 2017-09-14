@@ -29,12 +29,12 @@
     "config": {
         "preferred-install": "dist"
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
         "php": ">=7.0",
-        "notadd/administration": "0.9.*",
-        "notadd/framework": "0.9.*",
-        "notadd/installers": "0.7.*"
+        "notadd/administration": "0.11.*",
+        "notadd/framework": "0.11.*",
+        "notadd/installers": "0.9.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

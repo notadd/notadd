@@ -1,38 +1,39 @@
+sudo: false
+
 language: php
 
 php:
     - 7.0
     - 7.1
+    - 7.2
 
 services:
     - postgresql
     - mysql
-
-before_install:
-     - mysql -e 'CREATE DATABASE IF NOT EXISTS notadd;'  
-     - psql -c 'create database notadd;' -U postgres
-
-sudo: false
+    
+env:
+    - DB=mysql
+    - DB=postgres
 
 cache:
     directories:
         - $HOME/.composer/cache
+        
+before_install:
+     - sh -c "if [ '$DB' = 'postgres' ]; then psql -c 'create database notadd;' -U postgres; echo "$DB"; fi"
+     - sh -c "if [ '$DB' = 'mysql' ]; then mysql -e 'CREATE DATABASE IF NOT EXISTS notadd;'; echo "$DB"; fi"
 
 install:
-    - composer self-update
     - travis_retry composer install --no-interaction --prefer-source
-
-before_script:
-    - git reset --hard HEAD
+    - sh -c "if [ '$DB' = 'postgres' ]; then php notadd integration:configuration --driver=pgsql --host=127.0.0.1 --port=5432 --database=notadd --username=postgres --password=postgres --prefix=pre_; fi"
+    - sh -c "if [ '$DB' = 'mysql' ]; then php notadd integration:configuration --driver=mysql --host=127.0.0.1 --port=3306 --database=notadd --username=root --prefix=pre_; fi"
+    - php notadd integration
 
 script:
-    - php notadd integration:configuration --driver=mysql --host=127.0.0.1 --port=3306 --database=notadd --username=root --prefix=pre_
-    - php notadd integration
     - vendor/bin/phpunit --verbose
 
 after_success:
-    - bash <(curl -s https://codecov.io/bash) -t "$CODACY_PROJECT_TOKEN"
-    
+    - bash <(curl -s https://codecov.io/bash) -t 4916eb3f-d129-4484-a792-deda1c4f809c
 
 notifications:
     webhooks:

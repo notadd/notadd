@@ -10,6 +10,11 @@
 
 ### 运用新的技术，从传统的开发中解放出来
 
+## Notadd是什么
+
+Notadd 是基于 Laravel 和 Vue 的开源 PHP 框架， 由于其本身的灵活性和先进的技术架构，使得你通过模块（主功能）、插件（功能增强）、模板（前端样式）像搭积木一样组合成你想要的，能够快速完成商城、CMS、微信、论坛的开发。
+Notadd 像操作系统一样，你可以通过安装「软件」，成为适用于你的「电脑」。
+
 ### 代码优雅，便于维护和二次开发
 
 ### 让 PHP 实现...更多的可能
@@ -75,8 +80,6 @@ Redis: 3.2+
 > 此处查看 [环境要求](hhttps://docs.notadd.com/gettingtarted/#环境要求)
 
 ## 快速开始
-
-[Nginx/Apache/Caddy Rewrite配置](https://docs.notadd.com/gettingstarted/#nginx-apache-caddy)
 
 ### 1. 下载源代码
 

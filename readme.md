@@ -81,6 +81,8 @@ Redis: 3.2+
 
 ## 快速开始
 
+[Nginx/Apache/Caddy Rewrite配置](https://docs.notadd.com/gettingstarted/#nginx-apache-caddy)
+
 ### 1. 下载源代码
 
 **滚动更新期间，请勿下载 `master` 分支**

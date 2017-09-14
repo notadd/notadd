@@ -3,7 +3,8 @@
 [![Build Status](https://travis-ci.org/notadd/notadd.svg?branch=master)](https://travis-ci.org/notadd/notadd)
 ![Packagist](https://img.shields.io/packagist/v/notadd/notadd.svg)
 ![Downloads](https://img.shields.io/packagist/dt/notadd/framework.svg)
-[![codecov](https://codecov.io/gh/notadd/notadd/branch/master/graph/badge.svg)](https://codecov.io/gh/notadd/notadd)
+[![Notadd 官方技术交流群](https://img.shields.io/badge/QQ%20Group-321735506-6782d6.svg?style=flat-square)](https://jq.qq.com/?_wv=1027&k=5qVzRh4)
+
 
 ### 像搭积木一样快速满足自己的开发需求
 

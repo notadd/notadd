@@ -142,6 +142,8 @@ docker 安装相关文档请访问： https://github.com/notadd/docker-notadd
 
 QQ 群：`321735506`
 
+你可以点击 [![Notadd 官方技术交流群](https://img.shields.io/badge/QQ-Group-blue.svg)](https://jq.qq.com/?_wv=1027&k=5qVzRh4) 加入我们的 QQ 群，如果链接失效或者无法点击，我们的群号是 `321735506`，你可以手动查找加入。
+
 论坛 ：https://bbs.notadd.com
 
 

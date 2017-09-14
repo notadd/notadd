@@ -102,7 +102,7 @@ $ chown -R www-data:www-data notadd
 或
 
 ```bash
-$ chmod -R 755 notadd/storage notadd/statics
+$ chmod -R 777 notadd/storage notadd/statics
 ```
 
 ### 3. 安装

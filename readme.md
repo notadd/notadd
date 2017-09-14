@@ -3,7 +3,8 @@
 [![Build Status](https://travis-ci.org/notadd/notadd.svg?branch=master)](https://travis-ci.org/notadd/notadd)
 ![Packagist](https://img.shields.io/packagist/v/notadd/notadd.svg)
 ![Downloads](https://img.shields.io/packagist/dt/notadd/framework.svg)
-[![codecov](https://codecov.io/gh/notadd/notadd/branch/master/graph/badge.svg)](https://codecov.io/gh/notadd/notadd)
+[![Notadd 官方技术交流群](https://img.shields.io/badge/QQ%20Group-321735506-6782d6.svg?style=flat-square)]((https://jq.qq.com/?_wv=1027&k=5qVzRh4))
+
 
 ### 像搭积木一样快速满足自己的开发需求
 
@@ -141,8 +142,6 @@ docker 安装相关文档请访问： https://github.com/notadd/docker-notadd
 ## 交流
 
 QQ 群：`321735506`
-
-你可以点击 [![Notadd 官方技术交流群](https://img.shields.io/badge/QQ-Group-blue.svg)](https://jq.qq.com/?_wv=1027&k=5qVzRh4) 加入我们的 QQ 群，如果链接失效或者无法点击，我们的群号是 `321735506`，你可以手动查找加入。
 
 论坛 ：https://bbs.notadd.com
 

@@ -30,7 +30,7 @@ $app = require_once __DIR__.'/storage/bootstraps/application.php';
 |
 */
 
-$kernel = $app->mark(\Illuminate\Contracts\Contracts\Kernel::class);
+$kernel = $app->make(\Illuminate\Contracts\Contracts\Kernel::class);
 
 $status = $app->handle(
     $input = new \Symfony\Component\Console\Input\ArgvInput(),

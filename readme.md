@@ -29,7 +29,8 @@
 - 前端渲染模板，大大降低后端负载
 - 页面无刷新，响应速度快
 - 系统模块化，低耦合度
-- 支持所有平台
+- REST ful 接口
+- 使用 PHP 7 并启用严格模式
 
 ## 模块化设计
 
@@ -50,7 +51,7 @@ CRM系统： 用户模块、CRM模块...
 
 更多可畅想的...
 
-## 推荐 CDN 方案
+## CDN 方案
 ![cdn](https://www.notadd.com/src/cdn.svg)
 
 ## 文档
@@ -72,66 +73,18 @@ PHP 版本：≥7.0
 
 Redis: 3.2+
 
-> 此处查看 [环境要求](hhttps://docs.notadd.com/gettingtarted/#环境要求)
+> 此处查看 [环境要求](https://docs.notadd.com/gettingtarted/#环境要求)
 
 ## 快速开始
 
 [Nginx/Apache/Caddy Rewrite配置](https://docs.notadd.com/gettingstarted/#nginx-apache-caddy)
 
-### 1. 下载源代码
-
-**滚动更新期间，请勿下载 `master` 分支**
-
-```bash
-$ git clone -b 0.9.1  https://github.com/notadd/notadd.git
-```
-
-### 2. 修改 public、storage 目录权限
-
-设置为 php-fpm 的用户及用户组(部分一键安装包为 `www:www` )，Windows 请跳过此步
-
-```bash
-$ chown -R www-data:www-data notadd
-```
-
-或
-
-```bash
-$ chmod -R 777 notadd/storage notadd/statics
-```
-
-### 3. 安装
-
-```bash
-$ cd notadd
-$ composer install
-$ php notadd vendor:publish --force
-```
-
-将域名绑定到 `notadd/public` 目录
-
-访问 `http://yourdomain/`  输入数据库和后台账号相关信息安装
-
-### 4. 成功
-
-访问后台入口 `http://yourdomain/admin`
-
-## 在线安装
-
-（即将推出）
-
-## Docker 安装
-
-```
-docker run -p 8080:80 --name notadd notadd/notadd
-```
-
-访问 http://localhost:8080
-
-docker 安装相关文档请访问： https://github.com/notadd/docker-notadd
+安装 Notadd 非常简单，但是我们为你准备了更好的文档来供你阅读，请参阅[安装文档](https://docs.notadd.com/gettingstarted/#编译安装) 。
 
 ## 使用laradock 安装
+
 参见： https://docs.notadd.com/laradock/
+
 
 ## 贡献
 
@@ -144,6 +97,14 @@ docker 安装相关文档请访问： https://github.com/notadd/docker-notadd
 QQ 群：`321735506`
 
 论坛 ：https://bbs.notadd.com
+
+## 优秀仓库推荐
+
+- [Neditor](https://github.com/notadd/neditor) 基于 ueditor 的现代化编辑器。
+- [ThinkSNS Plus](https://github.com/slimkit/thinksns-plus)基于 Laravel 开发的用户生态系统
+
+
+
 
 
 [![upyun](https://www.notadd.com/src/upyun.svg "又拍云")](https://console.upyun.com/register/?invite=r17EYO3BW) 提供赞助

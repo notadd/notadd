@@ -73,7 +73,7 @@ PHP 版本：≥7.0
 
 Redis: 3.2+
 
-> 此处查看 [环境要求](https://docs.notadd.com/gettingtarted/#环境要求)
+> 此处查看 [环境要求](https://docs.notadd.com/gettingstarted/#环境要求)
 
 ## 快速开始
 
@@ -102,8 +102,6 @@ QQ 群：`321735506`
 
 - [Neditor](https://github.com/notadd/neditor) 基于 ueditor 的现代化编辑器。
 - [ThinkSNS Plus](https://github.com/slimkit/thinksns-plus)基于 Laravel 开发的用户生态系统
-
-
 
 
 

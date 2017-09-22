@@ -87,9 +87,9 @@ Redis: 3.2+
 
 ## 月报
 
-[2017年 8月](https://blog.notadd.com/2017/09/01/2017-08/)
+[2017年 8月](https://blog.notadd.com/2017/09/01/2017-08/){:target="_blank"}
 
-[2017年 7月](https://blog.notadd.com/2017/08/01/2017-07/)
+[2017年 7月](https://blog.notadd.com/2017/08/01/2017-07/){:target="_blank"}
 
 
 
@@ -97,15 +97,15 @@ Redis: 3.2+
 
 欢迎使用 Pull requests。对于重大变更，请先提出 Issue，和我们一起来讨论你想改变的内容。
 
-> 感谢你考虑为 Notadd 作出贡献！具体贡献指南可以在 [Notadd 文档-贡献](https://docs.notadd.com/introductions/#贡献) 中查看。
+> 感谢你考虑为 Notadd 作出贡献！具体贡献指南可以在 [Notadd 文档-贡献](https://docs.notadd.com/introductions/#贡献){:target="_blank"} 中查看。
 
 
 ## 赞助
 
-我们要感谢以下赞助商，资助我们 Notadd 的开发。如果你有兴趣成为赞助商，请访问 Notadd 的[码云页面](https://gitee.com/notadd/notadd?donate=true)：
+我们要感谢以下赞助商，资助我们 Notadd 的开发。如果你有兴趣成为赞助商，请访问 Notadd 的[码云页面](https://gitee.com/notadd/notadd?donate=true){:target="_blank"}：
 
-- [西安 · 本初网络](https://www.ibenchu.com)
-- [杭州 · 又拍云](https://www.upyun.com)
+- [西安 · 本初网络](https://www.ibenchu.com){:target="_blank"}
+- [杭州 · 又拍云](https://www.upyun.com){:target="_blank"}
 - 西安 · 马达信息
 
 

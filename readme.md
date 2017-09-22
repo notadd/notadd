@@ -3,7 +3,7 @@
 <a href="https://jq.qq.com/?_wv=1027&k=5qVzRh4" title="Notadd 官方技术交流群"><img src="https://img.shields.io/badge/QQ%20Group-321735506-6782d6.svg?style=flat-square"></a>
 <a href="https://travis-ci.org/notadd/notadd" title="Build Status"><img src="https://travis-ci.org/notadd/notadd.svg?branch=master"></a>
 <a href="https://packagist.org/packages/notadd/notadd" title="Packagist"><img src="https://img.shields.io/packagist/v/notadd/notadd.svg"></a>
-<a href="https://github.com/notadd/notadd/releases" title="Downloads"><img src="hhttps://img.shields.io/packagist/dt/notadd/framework.svg"></a>
+<a href="https://github.com/notadd/notadd/releases" title="Downloads"><img src="https://img.shields.io/packagist/dt/notadd/framework.svg"></a>
 </p>
 
 > 像搭积木一样快速满足自己的开发需求

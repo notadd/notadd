@@ -1,23 +1,18 @@
-![notadd](https://www.notadd.com/src/notado_logo420x96.svg)
+<p align="center"><img src="https://www.notadd.com/src/notado_logo420x96.svg" alt="Notadd Logo."></p>
+<p align="center">
+<a href="https://jq.qq.com/?_wv=1027&k=5qVzRh4" title="Notadd 官方技术交流群"><img src="https://img.shields.io/badge/QQ%20Group-321735506-6782d6.svg?style=flat-square"></a>
+<a href="https://travis-ci.org/notadd/notadd" title="Build Status"><img src="https://travis-ci.org/notadd/notadd.svg?branch=master"></a>
+<a href="https://packagist.org/packages/notadd/notadd" title="Packagist"><img src="https://img.shields.io/packagist/v/notadd/notadd.svg"></a>
+<a href="https://github.com/notadd/notadd/releases" title="Downloads"><img src="https://img.shields.io/packagist/dt/notadd/framework.svg"></a>
+</p>
 
-[![Build Status](https://travis-ci.org/notadd/notadd.svg?branch=master)](https://travis-ci.org/notadd/notadd)
-![Packagist](https://img.shields.io/packagist/v/notadd/notadd.svg)
-![Downloads](https://img.shields.io/packagist/dt/notadd/framework.svg)
-[![Notadd 官方技术交流群](https://img.shields.io/badge/QQ%20Group-321735506-6782d6.svg?style=flat-square)](https://jq.qq.com/?_wv=1027&k=5qVzRh4)
-
-
-### 像搭积木一样快速满足自己的开发需求
-
-### 运用新的技术，从传统的开发中解放出来
-
-## Notadd是什么
-
-Notadd 是基于 Laravel 和 Vue 的开源 PHP 框架， 由于其本身的灵活性和先进的技术架构，使得你通过模块（主功能）、插件（功能增强）、模板（前端样式）像搭积木一样组合成你想要的，能够快速完成商城、CMS、微信、论坛的开发。
-Notadd 像操作系统一样，你可以通过安装「软件」，成为适用于你的「电脑」。
-
-### 代码优雅，便于维护和二次开发
-
-### 让 PHP 实现...更多的可能
+> 像搭积木一样快速满足自己的开发需求
+>
+> 运用新的技术，从传统的开发中解放出来
+>
+> 代码优雅，便于维护和二次开发
+>
+> 让 PHP 实现...更多的可能
 
 ## 相关技术
 

@@ -85,18 +85,42 @@ Redis: 3.2+
 
 参见： https://docs.notadd.com/laradock/
 
+## 月报
+
+[2017年 8月](https://blog.notadd.com/2017/09/01/2017-08/)
+
+[2017年 7月](https://blog.notadd.com/2017/08/01/2017-07/)
+
+
 
 ## 贡献
 
-**[贡献代码](https://docs.notadd.com/introductions/#贡献)**
+欢迎使用 Pull requests。对于重大变更，请先提出 Issue，和我们一起来讨论你想改变的内容。
 
-**[捐赠](https://git.oschina.net/notadd/notadd?donate=true)**
+> 感谢你考虑为 Notadd 作出贡献！具体贡献指南可以在 [Notadd 文档-贡献](https://docs.notadd.com/introductions/#贡献) 中查看。
+
+
+## 赞助
+
+我们要感谢以下赞助商，资助我们 Notadd 的开发。如果你有兴趣成为赞助商，请访问 Notadd 的[码云页面](https://gitee.com/notadd/notadd?donate=true)：
+
+- [西安 · 本初网络](https://www.ibenchu.com)
+- [杭州 · 又拍云](https://www.upyun.com)
+- 西安 · 马达信息
+
 
 ## 交流
 
-QQ 群：`321735506`
+QQ 群：[321735506](https://jq.qq.com/?_wv=1027&k=5qVzRh4)
 
 论坛 ：https://bbs.notadd.com
+
+博客 ：https://blog.notadd.com
+
+
+## 开源协议
+
+Notadd 代码遵循 Apache 2.0 许可证发布，请参阅完整的 [许可证文本](LICENSE)
 
 ## 优秀仓库推荐
 

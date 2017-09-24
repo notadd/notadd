@@ -6,6 +6,9 @@
 <a href="https://github.com/notadd/notadd/releases" title="Downloads"><img src="https://img.shields.io/packagist/dt/notadd/framework.svg"></a>
 </p>
 
+
+- [English](README_zh.md)
+
 > 像搭积木一样快速满足自己的开发需求
 >
 > 运用新的技术，从传统的开发中解放出来

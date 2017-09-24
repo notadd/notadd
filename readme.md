@@ -6,32 +6,33 @@
 <a href="https://github.com/notadd/notadd/releases" title="Downloads"><img src="https://img.shields.io/packagist/dt/notadd/framework.svg"></a>
 </p>
 
-> 像搭积木一样快速满足自己的开发需求
+> Meet your development needs as fast as building blocks.
 >
-> 运用新的技术，从传统的开发中解放出来
+> The use of new technology to liberate from traditional development.
 >
-> 代码优雅，便于维护和二次开发
+> The code is elegant, easy to maintain and secondary development
 >
-> 让 PHP 实现...更多的可能
+> Let PHP implement... More likely.
 
-## 相关技术
+## Stack
 
 - PHP 7
 - Laravel
 - Vue
 - Composer
-- SPA 单页应用
+- Single Page Application
 - Redis
 
-## 特点
+## Feature
 
-- 前后端完全分离
-- 前端渲染模板，大大降低后端负载
-- 页面无刷新，响应速度快
-- 系统模块化，低耦合度
-- 支持所有平台
+- End-to-end separation.
+- Front-end rendering templates that greatly reduce the backend load.
+- The page does not refresh, the response speed is fast.
+- System modularity, low coupling.
+- REST ful 接口
+- Use PHP 7 and enable strict mode.
 
-## 模块化设计
+## Modular design
 
 
 ![notadd](https://www.notadd.com/src/app.svg)
@@ -50,100 +51,82 @@ CRM系统： 用户模块、CRM模块...
 
 更多可畅想的...
 
-## 推荐 CDN 方案
+## CDN Scheme
 ![cdn](https://www.notadd.com/src/cdn.svg)
 
-## 文档
+## Documentation
 
 [https://docs.notadd.com/](https://docs.notadd.com/)
 
-## 应用商店（临时）
+## App Store（AD hoc）
 
 [https://notadd.store/](https://notadd.store/)
 
 
-## 系统环境
+## System environment
 
-支持系统：Linux（推荐）/ macOS / Windows 2008 及以上版本
+Support system: Linux (recommended)/macOS/Windows 2008 and above
 
-PHP 版本：≥7.0
+PHP version：≥7.0
 
-数据库：PostgreSQL 9.4+（推荐）/ MySQL 5.7+ / MariaDB 10.2.28+ / SQLite 3.9+
+database：PostgreSQL 9.4+（👍）/ MySQL 5.7+ / MariaDB 10.2.28+ / SQLite 3.9+
 
 Redis: 3.2+
 
-> 此处查看 [环境要求](hhttps://docs.notadd.com/gettingtarted/#环境要求)
+> Here for [Environmental requirements](https://docs.notadd.com/gettingstarted/#环境要求)
 
-## 快速开始
+## Quick start
 
-[Nginx/Apache/Caddy Rewrite配置](https://docs.notadd.com/gettingstarted/#nginx-apache-caddy)
+[Nginx/Apache/Caddy Rewrite](https://docs.notadd.com/gettingstarted/#nginx-apache-caddy)
 
-### 1. 下载源代码
+It's easy to install Notadd, but we've prepared a better document for you to read, please refer to [installation documentation](https://docs.notadd.com/gettingstarted/#编译安装) .
 
-**滚动更新期间，请勿下载 `master` 分支**
+## Install with Laradock
 
-```bash
-$ git clone -b 0.9.1  https://github.com/notadd/notadd.git
-```
+see： https://docs.notadd.com/laradock/
 
-### 2. 修改 public、storage 目录权限
+## Monthly report
 
-设置为 php-fpm 的用户及用户组(部分一键安装包为 `www:www` )，Windows 请跳过此步
+[August 2017](https://blog.notadd.com/2017/09/01/2017-08/)
 
-```bash
-$ chown -R www-data:www-data notadd
-```
+[July 2017](https://blog.notadd.com/2017/08/01/2017-07/)
 
-或
 
-```bash
-$ chmod -R 777 notadd/storage notadd/statics
-```
 
-### 3. 安装
+## Contribution
 
-```bash
-$ cd notadd
-$ composer install
-$ php notadd vendor:publish --force
-```
+Pull requests is welcome. For major changes, please put forward the Issue first and join us in discussing what you want to change.
 
-将域名绑定到 `notadd/public` 目录
+> Thank you for thinking about contributing to Notadd! Specific contribution guides can be viewed at [Notadd document-contributions](https://docs.notadd.com/introductions/#贡献).
 
-访问 `http://yourdomain/`  输入数据库和后台账号相关信息安装
 
-### 4. 成功
+## 赞助
 
-访问后台入口 `http://yourdomain/admin`
 
-## 在线安装
+We would like to extend our thanks to the following sponsors for helping fund on-going ThinkSNS Plus development. If you are interested in becoming a sponsor, please visit the ThinkSNS+ [Gitee page](https://gitee.com/notadd/notadd?donate=true):
 
-（即将推出）
+- [China Xian · Benchu Network](https://www.ibenchu.com)
+- [China Hanzhou · upyun](https://www.upyun.com)
+- China ian · 马达信息
 
-## Docker 安装
 
-```
-docker run -p 8080:80 --name notadd notadd/notadd
-```
+## communication
 
-访问 http://localhost:8080
+QQ Group：[321735506](https://jq.qq.com/?_wv=1027&k=5qVzRh4)
 
-docker 安装相关文档请访问： https://github.com/notadd/docker-notadd
+Forum ：https://bbs.notadd.com
 
-## 使用laradock 安装
-参见： https://docs.notadd.com/laradock/
+Blog ：https://blog.notadd.com
 
-## 贡献
+## Excellent Repositories
 
-**[贡献代码](https://docs.notadd.com/introductions/#贡献)**
+- [ThinkSNS Plus](https://github.com/slimkit/thinksns-plus) Use of Laravel framework to achieve the user ecosystem.
+- [Neditor](https://github.com/notadd/neditor) A modern editor based on the Ueditor.
 
-**[捐赠](https://git.oschina.net/notadd/notadd?donate=true)**
+## License
 
-## 交流
+The Notadd is open-sourced software licensed under the [Apache 2.0 license](LICENSE).
 
-QQ 群：`321735506`
-
-论坛 ：https://bbs.notadd.com
-
+----------
 
 [![upyun](https://www.notadd.com/src/upyun.svg "又拍云")](https://console.upyun.com/register/?invite=r17EYO3BW) 提供赞助

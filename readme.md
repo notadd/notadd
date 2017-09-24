@@ -67,7 +67,7 @@ More can be imagined ...
 
 ## System environment
 
-Support system: Linux (recommended)/macOS/Windows 2008 and above
+Support system: Linux (👍)/macOS/Windows 2008 and above
 
 PHP version：≥7.0
 

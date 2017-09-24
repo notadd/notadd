@@ -68,11 +68,11 @@ CRM系统： 用户模块、CRM模块...
 
 ## 系统环境
 
-支持系统：Linux（推荐）/ macOS / Windows 2008 及以上版本
+支持系统：Linux（👍）/ macOS / Windows 2008 及以上版本
 
 PHP 版本：≥7.0
 
-数据库：PostgreSQL 9.4+（推荐）/ MySQL 5.7+ / MariaDB 10.2.28+ / SQLite 3.9+
+数据库：PostgreSQL 9.4+（👍）/ MySQL 5.7+ / MariaDB 10.2.28+ / SQLite 3.9+
 
 Redis: 3.2+
 

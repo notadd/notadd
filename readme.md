@@ -107,7 +107,7 @@ We would like to extend our thanks to the following sponsors for helping fund on
 
 - [China Xian · Benchu Network](https://www.ibenchu.com)
 - [China Hanzhou · upyun](https://www.upyun.com)
-- China ian · 马达信息
+- China Xian · Mada Network 
 
 
 ## communication

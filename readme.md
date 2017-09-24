@@ -31,7 +31,7 @@
 - Front-end rendering templates that greatly reduce the backend load.
 - The page does not refresh, the response speed is fast.
 - System modularity, low coupling.
-- REST ful 接口
+- REST ful API
 - Use PHP 7 and enable strict mode.
 
 ## Modular design
@@ -39,19 +39,19 @@
 
 ![notadd](https://www.notadd.com/src/app.svg)
 
-企业官网： CMS模块 + Neditor插件、留言板插件
+Enterprise Official Website: CMS module + neditor plugin, message board plugin
 
-信息发布： CMS模块、用户模块 + CMS多用户插件、Neditor插件
+Information release: CMS module, user module + CMS multi-user plug-in, Neditor plugin
 
-微信商城： 用户模块、商城模块、微信模块 + 微信大转盘、支付插件、线下核验插件
+Micro-letter Mall: User module, mall module, micro-letter module + micro-letter large turntable, payment plug-in, offline verification plug-in
 
-餐饮方案： 用户模块、商城模块、微信模块 + 点餐插件、扫码支付插件、客流监测插件... + 红外传感拓展、WIFI探针拓展
+Catering Program: User module, mall module, micro-letter module + Point meal Plug-in, sweep code payment plug-ins, passenger flow monitoring plug-ins ... + infrared sensor expansion, WiFi probe expansion
 
-酒店方案： 用户模块、酒店模块、微信模块 + 预定插件、支付插件、智能WIFI插件 + WIFI探针拓展、门卡系统拓展
+Hotel Program: User module, hotel module, micro-letter module + booking plug-in, payment plug-in, intelligent WiFi plugin + WiFi probe expansion, door card system expansion
 
-CRM系统： 用户模块、CRM模块...
+CRM system: User module, CRM module ...
 
-更多可畅想的...
+More can be imagined ...
 
 ## CDN Scheme
 ![cdn](https://www.notadd.com/src/cdn.svg)
@@ -129,4 +129,4 @@ The Notadd is open-sourced software licensed under the [Apache 2.0 license](LICE
 
 ----------
 
-[![upyun](https://www.notadd.com/src/upyun.svg "又拍云")](https://console.upyun.com/register/?invite=r17EYO3BW) 提供赞助
+[![upyun](https://www.notadd.com/src/upyun.svg "又拍云")](https://console.upyun.com/register/?invite=r17EYO3BW) Provide sponsorship

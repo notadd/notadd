@@ -103,7 +103,7 @@ Pull requests is welcome. For major changes, please put forward the Issue first 
 
 ## Sponsors
 
-We would like to extend our thanks to the following sponsors for helping fund on-going ThinkSNS Plus development. If you are interested in becoming a sponsor, please visit the ThinkSNS+ [Gitee page](https://gitee.com/notadd/notadd?donate=true):
+We would like to extend our thanks to the following sponsors for helping fund on-going Notadd development. If you are interested in becoming a sponsor, please visit the Notadd [Gitee page](https://gitee.com/notadd/notadd?donate=true):
 
 - [China Xian · Benchu Network](https://www.ibenchu.com)
 - [China Hanzhou · upyun](https://www.upyun.com)

@@ -32,9 +32,9 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">=7.0",
-        "notadd/administration": "0.11.*",
-        "notadd/framework": "0.11.*",
-        "notadd/installers": "0.9.*"
+        "notadd/administration": "0.13.*",
+        "notadd/framework": "0.13.*",
+        "notadd/installers": "0.11.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

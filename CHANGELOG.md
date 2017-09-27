@@ -4,7 +4,8 @@
 
 1. 修复安装的问题
 2. 修复模块和插件加载的问题
-3. 添加后台登录静默 reCAPTCHA 验证，基于谷歌 reCAPTCHA API
+3. 修复树莓派下不能安装的问题
+4. 后台添加 Redis 版本的显示
 
 ## Release Beta 5
 

@@ -1,11 +1,11 @@
 sudo: false
-
+ee
 language: php
 
 php:
     - 7.0
     - 7.1
-    - 7.2
+    - 7e.2
 
 services:
     - postgresql

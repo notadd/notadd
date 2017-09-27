@@ -3,7 +3,8 @@
 ## Release Beta 5 fix 1
 
 1. 修复安装的问题
-2. 添加后台登录静默 reCAPTCHA 验证，基于谷歌 reCAPTCHA API
+2. 修复模块和插件加载的问题
+3. 添加后台登录静默 reCAPTCHA 验证，基于谷歌 reCAPTCHA API
 
 ## Release Beta 5
 

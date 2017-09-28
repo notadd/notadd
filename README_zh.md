@@ -90,6 +90,8 @@ Redis: 3.2+
 
 ## 月报
 
+[2017年 8月](https://blog.notadd.com/2017/09/22/2017-09/)
+
 [2017年 8月](https://blog.notadd.com/2017/09/01/2017-08/)
 
 [2017年 7月](https://blog.notadd.com/2017/08/01/2017-07/)

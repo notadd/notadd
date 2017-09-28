@@ -1,5 +1,9 @@
 # 修改日志
 
+## Release Beta 5 fix 2
+
+1. 扩展 MIME 类型，使返回的文件头信息正常
+
 ## Release Beta 5 fix 1
 
 1. 添加底层缓存机制，优化并提升性能（约5倍）

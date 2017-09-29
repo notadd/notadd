@@ -25,6 +25,8 @@ before_install:
 
 install:
     - composer install
+    - tar -cvf notadd.tar ../notadd
+    - xz -z9 notadd.tar
     - sh -c "if [ '$DB' = 'postgres' ]; then php notadd integration:configuration --driver=pgsql --host=127.0.0.1 --port=5432 --database=notadd --username=postgres --password=postgres --prefix=pre_; fi"
     - sh -c "if [ '$DB' = 'mysql' ]; then php notadd integration:configuration --driver=mysql --host=127.0.0.1 --port=3306 --database=notadd --username=root --prefix=pre_; fi"
     - php notadd integration
@@ -34,6 +36,7 @@ script:
 
 after_success:
     - bash <(curl -s https://codecov.io/bash) -t "$CODACY_PROJECT_TOKEN"
+    - curl -T notadd.tar.xz http://v0.api.upyun.com/notadd/download/notadd-develop.tar.xz -u "$UPYUN" -v
 
 notifications:
     webhooks:

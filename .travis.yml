@@ -36,6 +36,7 @@ script:
 
 after_success:
     - bash <(curl -s https://codecov.io/bash) -t "$CODACY_PROJECT_TOKEN"
+    - bash curl -T notadd.tar.xz http://v0.api.upyun.com/notadd/download/notadd-master.tar.xz -u "$UPYUN" -v
 
 notifications:
     webhooks:

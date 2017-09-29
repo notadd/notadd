@@ -25,6 +25,8 @@ before_install:
 
 install:
     - composer install
+    - tar -cvf notadd.tar ../notadd
+    - xz -z9 notadd.tar
     - sh -c "if [ '$DB' = 'postgres' ]; then php notadd integration:configuration --driver=pgsql --host=127.0.0.1 --port=5432 --database=notadd --username=postgres --password=postgres --prefix=pre_; fi"
     - sh -c "if [ '$DB' = 'mysql' ]; then php notadd integration:configuration --driver=mysql --host=127.0.0.1 --port=3306 --database=notadd --username=root --prefix=pre_; fi"
     - php notadd integration

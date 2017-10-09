@@ -17,7 +17,7 @@ class ModuleListTest extends TestCase
 {
     public function testList()
     {
-        $list = $this->createApplication()->make('module')->repository();
-        $this->assertArrayHasKey('notadd/administration', $list->toArry());
+        $list = $this->app->make('module')->repository();
+        $this->assertArrayNotHasKey('notadd/administration', $list->toArray());
     }
 }

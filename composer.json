@@ -23,11 +23,13 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Notadd\\Tests\\": "tests/"
+            "Tests\\": "tests/"
         }
     },
     "config": {
-        "preferred-install": "dist"
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true
     },
     "minimum-stability": "stable",
     "require": {

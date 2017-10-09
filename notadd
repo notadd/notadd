@@ -1,14 +1,54 @@
 #!/usr/bin/env php
 <?php
-/**
- * This file is part of Notadd.
- * @author TwilRoad <heshudong@ibenchu.com>
- * @copyright (c) 2016, notadd.com
- * @datetime 2016-10-21 13:32
- */
-require __DIR__ . '/storage/bootstraps/autoload.php';
-$application = require_once __DIR__ . '/storage/bootstraps/application.php';
-$kernel = $application->make(Illuminate\Contracts\Console\Kernel::class);
-$status = $kernel->handle($input = new Symfony\Component\Console\Input\ArgvInput, new Symfony\Component\Console\Output\ConsoleOutput);
+
+// +----------------------------------------------------------------------+
+// | The Notadd Application.                                              |
+// +----------------------------------------------------------------------+
+// | Copyright (c) 2016-2017 Shanxi Benchu Network Technology Co,.Ltd     |
+// +----------------------------------------------------------------------+
+// | This source file is subject to version 2.0 of the Apache license,    |
+// | that is bundled with this package in the file LICENSE, and is        |
+// | available through the world-wide-web at the following url:           |
+// | http://www.apache.org/licenses/LICENSE-2.0.html                      |
+// +----------------------------------------------------------------------+
+// | Author: TwilRoad <heshudong@ibenchu.com>                             |
+// |         Seven Du <shiweidu@outlook.com>                              |
+// +----------------------------------------------------------------------+
+
+require __DIR__.'/storage/bootstraps/autoload.php';
+
+$app = require_once __DIR__.'/storage/bootstraps/application.php';
+
+/*
+|--------------------------------------------------------------------------
+| Run The Notadd Application
+|--------------------------------------------------------------------------
+|
+| When we run the console application, the current CLI command will be
+| executed in this console and the response sent back to a terminal
+| or another output device for the developers. Here goes nothing!
+|
+*/
+
+$kernel = $app->make(\Illuminate\Contracts\Console\Kernel::class);
+
+$status = $kernel->handle(
+    $input = new Symfony\Component\Console\Input\ArgvInput,
+    new Symfony\Component\Console\Output\ConsoleOutput
+);
+
+/*
+|--------------------------------------------------------------------------
+| Shutdown The Application
+|--------------------------------------------------------------------------
+|
+| Once Notadd has finished running, we will fire off the shutdown events
+| so that any final work may be done by the application before we shut
+| down the process. This is the last thing to happen to the request.
+|
+*/
+
 $kernel->terminate($input, $status);
+
 exit($status);
+                 

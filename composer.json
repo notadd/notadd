@@ -43,15 +43,15 @@
     },
     "scripts": {
         "post-create-project-cmd": [
-            "@php notadd key:generate"
+            "php notadd key:generate"
         ],
         "post-install-cmd": [
             "Notadd\\Foundation\\Composer\\ComposerScripts::postInstall",
-            "@php notadd key:generate"
+            "php notadd key:generate"
         ],
         "post-update-cmd": [
             "Notadd\\Foundation\\Composer\\ComposerScripts::postUpdate",
-            "@php notadd key:generate"
+            "php notadd key:generate"
         ]
     }
 }

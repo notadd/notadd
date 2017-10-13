@@ -7,7 +7,7 @@
 </p>
 
 
-- [English](README_zh.md)
+## [English](README_zh.md)
 
 > 像搭积木一样快速满足自己的开发需求
 >
@@ -82,13 +82,17 @@ Redis: 3.2+
 
 [Nginx/Apache/Caddy Rewrite配置](https://docs.notadd.com/gettingstarted/#nginx-apache-caddy)
 
-安装 Notadd 非常简单，但是我们为你准备了更好的文档来供你阅读，请参阅[安装文档](https://docs.notadd.com/gettingstarted/#编译安装) 。
+[完整安装包](https://www.notadd.com/download/notadd-master.tar.xz)
+
+安装 Notadd 非常简单，但是我们为你准备了更好的文档来供你阅读，请参阅[完整安装文档](https://docs.notadd.com/gettingstarted/#完整安装包) 或者 [编译安装文档](https://docs.notadd.com/gettingstarted/#编译安装) 。
 
 ## 使用laradock 安装
 
 参见： https://docs.notadd.com/laradock/
 
 ## 月报
+
+[2017年 9月](https://blog.notadd.com/2017/09/22/2017-09/)
 
 [2017年 8月](https://blog.notadd.com/2017/09/01/2017-08/)
 

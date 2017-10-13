@@ -6,7 +6,7 @@
 <a href="https://github.com/notadd/notadd/releases" title="Downloads"><img src="https://img.shields.io/packagist/dt/notadd/framework.svg"></a>
 </p>
 
-- [中文](README_zh.md)
+## [中文](README_zh.md)
 
 > Meet your development needs as fast as building blocks.
 >
@@ -81,6 +81,8 @@ Redis: 3.2+
 
 [Nginx/Apache/Caddy Rewrite](https://docs.notadd.com/gettingstarted/#nginx-apache-caddy)
 
+[Complete installation package](https://www.notadd.com/download/notadd-master.tar.xz)
+
 It's easy to install Notadd, but we've prepared a better document for you to read, please refer to [installation documentation](https://docs.notadd.com/gettingstarted/#编译安装) .
 
 ## Install with Laradock
@@ -88,6 +90,8 @@ It's easy to install Notadd, but we've prepared a better document for you to rea
 see： https://docs.notadd.com/laradock/
 
 ## Monthly report
+
+[September 2017](https://blog.notadd.com/2017/09/22/2017-09/)
 
 [August 2017](https://blog.notadd.com/2017/09/01/2017-08/)
 

@@ -24,6 +24,7 @@ before_install:
      - sh -c "if [ '$DB' = 'mysql' ]; then mysql -e 'CREATE DATABASE IF NOT EXISTS notadd;'; echo "$DB"; fi"
 
 install:
+    - composer clearcache
     - composer install
     - tar -cvf notadd.tar --exclude=.git ../notadd
     - xz -z9 notadd.tar

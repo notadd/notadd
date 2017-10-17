@@ -4,7 +4,7 @@ language: php
 
 env:
     global:
-        - php=pass
+        - archive=no
         - DB=mysql
 
 matrix:
@@ -16,7 +16,7 @@ matrix:
     - php: 7.1
     - php: 7.1
       env: 
-        - php=deny
+        - archive=yes
         - DB=postgres
     - php: 7.2
     - php: 7.2
@@ -37,8 +37,8 @@ before_install:
 install:
     - composer clearcache
     - composer install
-    - sh -c "if [ '$php' = 'deny' ]; then tar -cvf notadd.tar --exclude=.git ../notadd; fi"
-    - sh -c "if [ '$php' = 'deny' ]; then xz -z9 notadd.tar; fi"
+    - sh -c "if [ '$archive' = 'yes' ]; then tar -cvf notadd.tar --exclude=.git ../notadd; fi"
+    - sh -c "if [ '$archive' = 'yes' ]; then xz -z9 notadd.tar; fi"
     - sh -c "if [ '$DB' = 'postgres' ]; then php notadd integration:configuration --driver=pgsql --host=127.0.0.1 --port=5432 --database=notadd --username=postgres --password=postgres --prefix=pre_; fi"
     - sh -c "if [ '$DB' = 'mysql' ]; then php notadd integration:configuration --driver=mysql --host=127.0.0.1 --port=3306 --database=notadd --username=root --prefix=pre_; fi"
     - php notadd integration
@@ -48,7 +48,7 @@ script:
 
 after_success:
     - bash <(curl -s https://codecov.io/bash) -t "$CODACY_PROJECT_TOKEN"
-    - sh -c "if [ '$php' = 'deny' ]; then curl -T notadd.tar.xz http://v0.api.upyun.com/notadd/download/notadd-master.tar.xz -u "$UPYUN" -v; fi"
+    - sh -c "if [ '$archive' = 'yes' ]; then curl -T notadd.tar.xz http://v0.api.upyun.com/notadd/download/notadd-master.tar.xz -u "$UPYUN" -v; fi"
     
 notifications:
     webhooks:

@@ -29,7 +29,7 @@ services:
 cache:
     directories:
         - $HOME/.composer/cache
-        
+
 before_install:
      - sh -c "if [ '$DB' = 'postgres' ]; then psql -c 'create database notadd;' -U postgres; echo "$DB"; fi"
      - sh -c "if [ '$DB' = 'mysql' ]; then mysql -e 'CREATE DATABASE IF NOT EXISTS notadd;'; echo "$DB"; fi"
@@ -37,19 +37,19 @@ before_install:
 install:
     - composer clearcache
     - composer install
-    - php notadd integration
-    - sh -c "if [ '$archive' = 'yes' ]; then tar -cvf notadd.tar --exclude=.git ../notadd; fi"
-    - sh -c "if [ '$archive' = 'yes' ]; then xz -z9 notadd.tar; fi"
     - sh -c "if [ '$DB' = 'postgres' ]; then php notadd integration:configuration --driver=pgsql --host=127.0.0.1 --port=5432 --database=notadd --username=postgres --password=postgres --prefix=pre_; fi"
     - sh -c "if [ '$DB' = 'mysql' ]; then php notadd integration:configuration --driver=mysql --host=127.0.0.1 --port=3306 --database=notadd --username=root --prefix=pre_; fi"
+    - php notadd integration
 
 script:
     - vendor/bin/phpunit --verbose
 
 after_success:
-    - bash <(curl -s https://codecov.io/bash) -t "$CODACY_PROJECT_TOKEN"
+    - sh -c "if [ '$archive' = 'yes' ]; then tar -cvf notadd.tar --exclude=.git ../notadd; fi"
+    - sh -c "if [ '$archive' = 'yes' ]; then xz -z9 notadd.tar; fi"
     - sh -c "if [ '$archive' = 'yes' ]; then curl -T notadd.tar.xz http://v0.api.upyun.com/notadd/download/notadd-master.tar.xz -u "$UPYUN" -v; fi"
-    
+    - bash <(curl -s https://codecov.io/bash) -t "$CODACY_PROJECT_TOKEN"
+
 notifications:
     webhooks:
         - https://hook.bearychat.com/=bwA22/travis/52fa443470377f35e5a3d068b8d2d5ca

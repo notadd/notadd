@@ -25,6 +25,7 @@ before_install:
 
 install:
     - composer clearcache
+    - composer -all show notadd/framework
     - composer install
     - tar -cvf notadd.tar --exclude=.git ../notadd
     - xz -z9 notadd.tar

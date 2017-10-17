@@ -2,19 +2,29 @@ sudo: false
 
 language: php
 
-php:
-    - 7.0
-    - 7.1
-      env: php=7.1
-    - 7.2
+env:
+    global:
+        - archive=no
+        - DB=mysql
+
+matrix:
+  fast_finish: true
+  include:
+    - php: 7.0
+    - php: 7.0
+      env: DB=postgres
+    - php: 7.1
+    - php: 7.1
+      env: 
+        - archive=yes
+        - DB=postgres
+    - php: 7.2
+    - php: 7.2
+      env: DB=postgres
 
 services:
     - postgresql
     - mysql
-    
-env:
-    - DB=mysql
-    - DB=postgres
 
 cache:
     directories:
@@ -27,8 +37,8 @@ before_install:
 install:
     - composer clearcache
     - composer install
-    - sh -c "if [ '$php' = '7.1' ]; then tar -cvf notadd.tar --exclude=.git ../notadd; fi"
-    - sh -c "if [ '$php' = '7.1' ]; then xz -z9 notadd.tar --exclude=.git ../notadd; fi"
+    - sh -c "if [ '$archive' = 'yes' ]; then tar -cvf notadd.tar --exclude=.git ../notadd; fi"
+    - sh -c "if [ '$archive' = 'yes' ]; then xz -z9 notadd.tar; fi"
     - sh -c "if [ '$DB' = 'postgres' ]; then php notadd integration:configuration --driver=pgsql --host=127.0.0.1 --port=5432 --database=notadd --username=postgres --password=postgres --prefix=pre_; fi"
     - sh -c "if [ '$DB' = 'mysql' ]; then php notadd integration:configuration --driver=mysql --host=127.0.0.1 --port=3306 --database=notadd --username=root --prefix=pre_; fi"
     - php notadd integration
@@ -38,8 +48,8 @@ script:
 
 after_success:
     - bash <(curl -s https://codecov.io/bash) -t "$CODACY_PROJECT_TOKEN"
-    - curl -T notadd.tar.xz http://v0.api.upyun.com/notadd/download/notadd-master.tar.xz -u "$UPYUN" -v
-
+    - sh -c "if [ '$archive' = 'yes' ]; then curl -T notadd.tar.xz http://v0.api.upyun.com/notadd/download/notadd-master.tar.xz -u "$UPYUN" -v; fi"
+    
 notifications:
     webhooks:
         - https://hook.bearychat.com/=bwA22/travis/52fa443470377f35e5a3d068b8d2d5ca

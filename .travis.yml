@@ -26,7 +26,7 @@ before_install:
 install:
     - composer clearcache
     - composer install
-    - tar -cvf notadd.tar --exclude=.git ../notadd
+    - sh -c "if [ '$php' = '7.1' ]; then tar -cvf notadd.tar --exclude=.git ../notadd; fi"
     - xz -z9 notadd.tar
     - sh -c "if [ '$DB' = 'postgres' ]; then php notadd integration:configuration --driver=pgsql --host=127.0.0.1 --port=5432 --database=notadd --username=postgres --password=postgres --prefix=pre_; fi"
     - sh -c "if [ '$DB' = 'mysql' ]; then php notadd integration:configuration --driver=mysql --host=127.0.0.1 --port=3306 --database=notadd --username=root --prefix=pre_; fi"

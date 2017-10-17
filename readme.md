@@ -54,6 +54,7 @@ CRM system: User module, CRM module ...
 More can be imagined ...
 
 ## CDN Scheme
+
 ![cdn](https://www.notadd.com/src/cdn.svg)
 
 ## Documentation

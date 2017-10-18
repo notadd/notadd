@@ -8,9 +8,9 @@
 
 ## [中文](README_zh.md)
 
-> Meet your development needs as fast as building blocks.
+> Meet your development needs as fast as building blocks
 >
-> The use of new technology to liberate from traditional development.
+> The use of new technology to liberate from traditional development
 >
 > The code is elegant, easy to maintain and secondary development
 >
@@ -27,27 +27,27 @@
 
 ## Feature
 
-- End-to-end separation.
-- Front-end rendering templates that greatly reduce the backend load.
-- The page does not refresh, the response speed is fast.
-- System modularity, low coupling.
+- End-to-end separation
+- Front-end rendering templates that greatly reduce the backend load
+- The page does not refresh, the response speed is fast
+- System modularity, low coupling
 - REST ful API
-- Use PHP 7 and enable strict mode.
+- Use PHP 7 and enable strict mode
 
 ## Modular design
 
 
 ![notadd](https://www.notadd.com/src/app.svg)
 
-Enterprise Official Website: CMS module + neditor plugin, message board plugin
+Enterprise Official Website: CMS module + neditor plugin, message board plugin.
 
-Information release: CMS module, user module + CMS multi-user plug-in, Neditor plugin
+Information release: CMS module, user module + CMS multi-user plug-in, Neditor plugin.
 
-Micro-letter Mall: User module, mall module, micro-letter module + micro-letter large turntable, payment plug-in, offline verification plug-in
+Micro-letter Mall: User module, mall module, micro-letter module + micro-letter large turntable, payment plug-in, offline verification plug-in.
 
-Catering Program: User module, mall module, micro-letter module + Point meal Plug-in, sweep code payment plug-ins, passenger flow monitoring plug-ins ... + infrared sensor expansion, WiFi probe expansion
+Catering Program: User module, mall module, micro-letter module + Point meal Plug-in, sweep code payment plug-ins, passenger flow monitoring plug-ins ... + infrared sensor expansion, WiFi probe expansion.
 
-Hotel Program: User module, hotel module, micro-letter module + booking plug-in, payment plug-in, intelligent WiFi plugin + WiFi probe expansion, door card system expansion
+Hotel Program: User module, hotel module, micro-letter module + booking plug-in, payment plug-in, intelligent WiFi plugin + WiFi probe expansion, door card system expansion.
 
 CRM system: User module, CRM module ...
 

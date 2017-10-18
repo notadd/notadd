@@ -15,9 +15,13 @@ use Tests\TestCase;
  */
 class ModuleListTest extends TestCase
 {
+    /**
+     * Test Module List.
+     */
     public function testList()
     {
         $list = $this->app->make('module')->repository();
-//        $this->assertEmpty($list->toArray());
+        $this->assertArrayHasKey('notadd/administration', $list->toArray());
+        $this->assertNotEmpty($list->toArray());
     }
 }

@@ -106,6 +106,8 @@ Pull requests is welcome. For major changes, please put forward the Issue first 
 
 > Thank you for thinking about contributing to Notadd! Specific contribution guides can be viewed at [Notadd document-contributions](https://docs.notadd.com/introductions/#贡献).
 
+> [Apply to join Notadd Development Group](https://github.com/notadd/notadd/issues/195)
+
 ## Sponsors
 
 We would like to extend our thanks to the following sponsors for helping fund on-going Notadd development. If you are interested in becoming a sponsor, please visit the Notadd [Gitee page](https://gitee.com/notadd/notadd?donate=true):

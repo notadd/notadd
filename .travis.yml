@@ -1,13 +1,19 @@
-sudo: false
+language: node_js
+node_js:
+  - "7"
+before_install:
+  - "curl -L https://raw.githubusercontent.com/arunoda/travis-ci-meteor-packages/master/configure.sh | /bin/sh"
+before_script:
+  - "export PATH=$HOME/.meteor:$PATH"
 
-language: php
+#language: php
 
-env:
+#env:
     global:
         - archive=no
         - DB=mysql
 
-matrix:
+#matrix:
     fast_finish: true
     include:
         - php: 7.0

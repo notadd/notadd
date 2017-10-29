@@ -3,6 +3,7 @@
 ## Release Beta6
 
 > 添加对 GraphQL 的支持
+> 修复安装时数据库地址不能输入 IP 的问题
 
 ## Release Beta5 fix 2
 

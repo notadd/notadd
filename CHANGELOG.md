@@ -2,8 +2,9 @@
 
 ## Release Beta6
 
-> 添加对 GraphQL 的支持
+> 默认 GraphQL API
 > 修复安装时数据库地址不能输入 IP 的问题
+> 修复安装时数据库密码不能输入"." 的BUG
 
 ## Release Beta5 fix 2
 

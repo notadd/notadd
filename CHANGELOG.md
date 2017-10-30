@@ -1,5 +1,9 @@
 # 修改日志
 
+## Release Beta6 fix 1
+
+* 
+
 ## Release Beta6
 
 * 默认 GraphQL API

@@ -34,10 +34,10 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">=7.0",
-        "notadd/administration": "0.15.*",
-        "notadd/framework": "0.15.*",
-        "notadd/installers": "0.13.*",
-        "notadd/testing": "0.3.*"
+        "notadd/administration": "0.16.*",
+        "notadd/framework": "0.16.*",
+        "notadd/installers": "0.14.*",
+        "notadd/testing": "0.4.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -31,7 +31,7 @@
 - Front-end rendering templates that greatly reduce the backend load
 - The page does not refresh, the response speed is fast
 - System modularity, low coupling
-- REST ful API
+- GraphQL API
 - Use PHP 7 and enable strict mode
 
 ## Modular design

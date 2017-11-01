@@ -43,7 +43,7 @@ $app->singleton(
 
 $app->singleton(
     \Illuminate\Contracts\Debug\ExceptionHandler::class,
-    \Notadd\Foundation\Exception\Handler::class
+    \Notadd\Foundation\Http\ExceptionHandler::class
 );
 
 /*

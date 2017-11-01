@@ -46,6 +46,8 @@ install:
 
 script:
     - vendor/bin/phpunit --verbose
+    - test -f ./storage/privateKey.pem
+    - test -f ./storage/storage/publicKey.pem
 
 after_success:
     - sh -c "if [ '$archive' = 'yes' ]; then curl -T notadd.tar.xz http://v0.api.upyun.com/notadd/download/notadd-master.tar.xz -u "$UPYUN" -v; fi"

@@ -6,6 +6,7 @@
 <a href="https://github.com/notadd/notadd/releases" title="Downloads"><img src="https://img.shields.io/packagist/dt/notadd/framework.svg"></a>
 </p>
 
+注： PHP7 请直接下载完整包！！！ PHP7 请直接下载完整包！！！ PHP7 请直接下载完整包！！！
 
 ## [English](README_zh.md)
 

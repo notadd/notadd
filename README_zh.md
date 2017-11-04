@@ -10,7 +10,7 @@
 
 PHP7.0 请直接下载完整包！！！ PHP7.0 请直接下载完整包！！！ PHP7.0 请直接下载完整包！！！
 
-## [English](README_zh.md)
+## [English](README_en.md)
 
 > 像搭积木一样快速满足自己的开发需求
 >

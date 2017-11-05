@@ -4,6 +4,7 @@
 
 * 安装时，Redis 的检测及状态提示更加详细
 * 添加更多的 GraphQL 接口
+* 修复其他 bug
 
 ## Release Beta6
 

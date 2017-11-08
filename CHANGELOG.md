@@ -1,5 +1,12 @@
 # 修改日志
 
+## Release Beta6 fix 2
+
+* 开发者名单展示优化
+* 更全面及精准的系统信息显示
+* 增加清除 OPcache 的命令行
+* 其他 bug 修复
+
 ## Release Beta6 fix 1
 
 * 安装时，Redis 的检测及状态提示更加详细

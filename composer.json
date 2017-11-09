@@ -56,5 +56,9 @@
             "Notadd\\Foundation\\Composer\\ComposerScripts::postUpdate",
             "php notadd key:generate"
         ]
+    },
+    "support": {
+        "issues": "https://github.com/notadd/notadd/issues",
+        "source": "https://github.com/notadd/notadd"
     }
 }

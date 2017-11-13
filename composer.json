@@ -37,6 +37,7 @@
         "notadd/administration": "0.17.*",
         "notadd/framework": "0.17.*",
         "notadd/installers": "0.14.*",
+        "notadd/server": "0.1.*",
         "notadd/testing": "0.4.*"
     },
     "require-dev": {

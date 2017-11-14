@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 if (PHP_MAJOR_VERSION < 7) {
-    echo "Aerys must be run with at least PHP 7.\nUsed PHP version: " . phpversion() . "\n";
+    echo "Notadd must be run with at least PHP 7.\nUsed PHP version: " . phpversion() . "\n";
     exit(1);
 }
 $help = <<<EOT
@@ -117,7 +117,7 @@ try {
 Amp\Loop::run(function () use ($console) {
     $logger = new Aerys\ConsoleLogger($console);
     $process = ($console->isArgDefined("debug") || PHP_SAPI === "phpdbg")
-        ? new Aerys\DebugProcess($logger)
-        : new Aerys\WatcherProcess($logger);
+        ? new \Notadd\Foundation\Server\Processes\DebugProcess($logger)
+        : new \Notadd\Foundation\Server\Processes\WatcherProcess($logger);
     yield from $process->start($console);
 });

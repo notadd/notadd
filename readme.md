@@ -79,19 +79,19 @@ PHP 版本：≥7.0
 
 Redis: 3.2+
 
-> 此处查看 [环境要求](https://docs.notadd.com/gettingstarted/#环境要求)
+> 此处查看 [环境要求](https://docs.notadd.com/#/v1/zh-cn/gettingstarted?id=%e7%8e%af%e5%a2%83%e8%a6%81%e6%b1%82)
 
 ## 快速开始
 
-[Nginx/Apache/Caddy Rewrite配置](https://docs.notadd.com/gettingstarted/#nginx-apache-caddy)
+[Nginx/Apache/Caddy Rewrite配置](https://docs.notadd.com/#/v1/zh-cn/gettingstarted?id=nginxapachecaddy)
 
 [完整安装包](https://www.notadd.com/download/notadd-master.tar.xz)
 
-安装 Notadd 非常简单，但是我们为你准备了更好的文档来供你阅读，请参阅[完整安装文档](https://docs.notadd.com/gettingstarted/#完整安装包) 或者 [编译安装文档](https://docs.notadd.com/gettingstarted/#编译安装) 。
+安装 Notadd 非常简单，但是我们为你准备了更好的文档来供你阅读，请参阅[完整安装文档](https://docs.notadd.com/#/v1/zh-cn/gettingstarted?id=%e5%ae%8c%e6%95%b4%e5%ae%89%e8%a3%85%e5%8c%85) 或者 [编译安装文档](https://docs.notadd.com/#/v1/zh-cn/gettingstarted?id=%e7%bc%96%e8%af%91%e5%ae%89%e8%a3%85) 。
 
 ## 使用laradock 安装
 
-参见： https://docs.notadd.com/laradock/
+参见： https://docs.notadd.com/#/v1/zh-cn/laradock
 
 ## 月报
 
@@ -107,7 +107,7 @@ Redis: 3.2+
 
 欢迎使用 Pull requests。对于重大变更，请先提出 Issue，和我们一起来讨论你想改变的内容。
 
-> 感谢你考虑为 Notadd 作出贡献！具体贡献指南可以在 [Notadd 文档-贡献](https://docs.notadd.com/introductions/#贡献) 中查看。
+> 感谢你考虑为 Notadd 作出贡献！具体贡献指南可以在 [Notadd 文档-贡献](https://docs.notadd.com/#/v1/?id=%e8%b4%a1%e7%8c%ae) 中查看。
 
 
 ## 赞助

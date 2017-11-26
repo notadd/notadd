@@ -31,7 +31,7 @@
         "sort-packages": true,
         "optimize-autoloader": true
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "require": {
         "php": ">=7.0",
         "notadd/administration": "0.17.*",
@@ -56,5 +56,9 @@
             "Notadd\\Foundation\\Composer\\ComposerScripts::postUpdate",
             "php notadd key:generate"
         ]
+    },
+    "support": {
+        "issues": "https://github.com/notadd/notadd/issues",
+        "source": "https://github.com/notadd/notadd"
     }
 }

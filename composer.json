@@ -34,8 +34,8 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">=7.0",
-        "notadd/administration": "0.17.*",
-        "notadd/framework": "0.17.*",
+        "notadd/administration": "0.18.*",
+        "notadd/framework": "0.18.*",
         "notadd/installers": "0.14.*",
         "notadd/testing": "0.4.*"
     },

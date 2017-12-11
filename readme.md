@@ -8,9 +8,8 @@
 
 建议直接使用[完整安装包](https://www.notadd.com/download/notadd-master.tar.xz)
 
-## [English](README_en.md)
+## [English](README_en.md)  [Node.js 版本(开发中)](https://github.com/notadd/notadd/tree/2.0-dev)
 
-## [Node.js 版本(开发中)](https://github.com/notadd/notadd/tree/2.0-dev)
 
 > 像搭积木一样快速满足自己的开发需求
 >

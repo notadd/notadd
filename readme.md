@@ -8,11 +8,7 @@
 
 [English](README_en.md)
 
-[查看 Node.js 版本(开发中)](https://github.com/notadd/notadd/tree/2.0-dev)
 
-
-
-## [PHP版 完整安装包](https://www.notadd.com/download/notadd-master.tar.xz)
 
 
 > 像搭积木一样快速满足自己的开发需求
@@ -22,6 +18,13 @@
 > 代码优雅，便于维护和二次开发
 >
 > 让 PHP 实现...更多的可能
+
+
+[查看 Node.js 版本(开发中)](https://github.com/notadd/notadd/tree/2.0-dev)
+
+
+[PHP版 完整安装包](https://www.notadd.com/download/notadd-master.tar.xz)
+
 
 ## 相关技术
 

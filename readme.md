@@ -6,9 +6,13 @@
 <a href="https://github.com/notadd/notadd/releases" title="Downloads"><img src="https://img.shields.io/packagist/dt/notadd/framework.svg?style=flat-square"></a>
 </p>
 
-建议直接使用[完整安装包](https://www.notadd.com/download/notadd-master.tar.xz)
+[English](README_en.md)
 
-## [English](README_en.md)  [Node.js 版本(开发中)](https://github.com/notadd/notadd/tree/2.0-dev)
+[查看 Node.js 版本(开发中)](https://github.com/notadd/notadd/tree/2.0-dev)
+
+
+
+## [PHP版 完整安装包](https://www.notadd.com/download/notadd-master.tar.xz)
 
 
 > 像搭积木一样快速满足自己的开发需求

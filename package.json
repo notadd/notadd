@@ -14,9 +14,13 @@
         "@notadd/common": "^2.1.12",
         "@notadd/core": "^2.1.12",
         "@notadd/server": "^2.1.12",
-        "@notadd/user": "^2.1.12"
+        "@notadd/user": "^2.1.12",
+        "pg": "^7.4.1"
     },
     "engines": {
         "node": ">=6.11.0"
+    },
+    "devDependencies": {
+        "ip": "^1.1.5"
     }
 }

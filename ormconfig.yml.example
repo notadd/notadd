@@ -1,0 +1,16 @@
+default:
+    type: "postgres"
+    host: "192.168.109.120"
+    port: 5432
+    username: "postgres"
+    password: "123qwe"
+    database: "new"
+    entities:
+        - '**/*.entity.js'
+    migrations:
+        - '**/*.migration.js'
+    logging: true
+    migrationsRun: true
+    subscribers:
+        - '**/*.entity.subscriber.js'
+    synchronize: false

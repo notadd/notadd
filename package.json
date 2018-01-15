@@ -1,0 +1,30 @@
+{
+    "name": "notadd-src",
+    "version": "2.1.2",
+    "author": "notadd",
+    "description": "Modern, fast, powerful node.js web framework",
+    "main": "index.js",
+    "license": "Apache-2.0",
+    "scripts": {
+        "build": "gulp build",
+        "build:packages": "gulp build --dist packages",
+        "build:watch": "gulp watch --dist packages",
+        "dev": "gulp --dist packages",
+        "dev:backend-mix": "gulp backend-mix-server --dist packages",
+        "prepublish": "npm run build:packages",
+        "publish": "./node_modules/.bin/lerna publish -m \"chore(release): publish %s\"",
+        "server": "node ./node_modules/@notadd/server/bootstrap.js",
+        "react-scripts": "./node_modules/.bin/react-scripts"
+    },
+    "dependencies": {
+        "@notadd/authentication": "^2.1.1",
+        "@notadd/backend": "^2.1.12",
+        "@notadd/common": "^2.1.12",
+        "@notadd/core": "^2.1.12",
+        "@notadd/server": "^2.1.12",
+        "@notadd/user": "^2.1.12"
+    },
+    "engines": {
+        "node": ">=6.11.0"
+    }
+}

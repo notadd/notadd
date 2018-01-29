@@ -20,10 +20,9 @@
 
 ## 相关技术
 
-- Node.js
-- Nest.js
 - Typescript
-- React.js
+- Node.js & Nest.js
+- React.js & material-ui
 - GraphQL API
 - Redis
 

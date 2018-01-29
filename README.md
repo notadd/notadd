@@ -71,25 +71,18 @@ CRM系统： 用户模块、CRM模块...
 
 支持系统：Linux（👍）/ macOS / Windows 2008 及以上版本
 
-PHP 版本：≥7.0
+Node.js 版本：≥7.0
 
-数据库：PostgreSQL 9.4+（👍）/ MySQL 5.7+ / MariaDB 10.2.28+ / SQLite 3.9+
+数据库：PostgreSQL 9.4+（👍）/ MySQL 5.7+ / Oracle 12+ / MS SQL Server 2012+ / MariaDB 10.2.28+ / SQLite 3.9+ 
 
 Redis: 3.2+
 
-> 此处查看 [环境要求](https://docs.notadd.com/#/v1/zh-cn/gettingstarted?id=%e7%8e%af%e5%a2%83%e8%a6%81%e6%b1%82)
 
 ## 快速开始
 
-[Nginx/Apache/Caddy Rewrite配置](https://docs.notadd.com/#/v1/zh-cn/gettingstarted?id=nginxapachecaddy)
 
-[完整安装包](https://www.notadd.com/download/notadd-master.tar.xz)
+待填充
 
-安装 Notadd 非常简单，但是我们为你准备了更好的文档来供你阅读，请参阅[完整安装文档](https://docs.notadd.com/#/v1/zh-cn/gettingstarted?id=%e5%ae%8c%e6%95%b4%e5%ae%89%e8%a3%85%e5%8c%85) 或者 [编译安装文档](https://docs.notadd.com/#/v1/zh-cn/gettingstarted?id=%e7%bc%96%e8%af%91%e5%ae%89%e8%a3%85) 。
-
-## 使用laradock 安装
-
-参见： https://docs.notadd.com/#/v1/zh-cn/laradock
 
 ## 月报
 

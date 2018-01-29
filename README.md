@@ -34,6 +34,7 @@
 - 支持 SSR 渲染，更好的 SEO
 - 支持 React 动态表单生成
 - GraphQL 接口，多次请求合并
+- Typeorm 原生支持超过6种数据库
 - 原生支持 Websocket 实时通信
 - 原生支持 Grpc ，可跨进程，跨语言，跨服务器通信
 
@@ -77,7 +78,7 @@ Node.js 版本：≥7.0
 
 数据库：PostgreSQL 9.4+（👍）/ MySQL 5.7+ / Oracle 12+ / MS SQL Server 2012+ / MariaDB 10.2.28+ / SQLite 3.9+ 
 
-Redis: 3.2+
+缓存： Redis 3.2+
 
 
 ## 快速开始

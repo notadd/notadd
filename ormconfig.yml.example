@@ -10,7 +10,7 @@ default:
     migrations:
         - '**/*.migration.js'
     logging: true
-    migrationsRun: true
+    migrationsRun: false
     subscribers:
         - '**/*.entity.subscriber.js'
-    synchronize: false
+    synchronize: true

@@ -81,9 +81,9 @@ CRM系统： 用户模块、CRM模块...
 
 PHP 版本：≥7.0
 
-数据库：PostgreSQL 9.4+（👍）/ MySQL 5.7+ / MariaDB 10.2.28+ / SQLite 3.9+
+数据库： PostgreSQL 9.4+（👍）/ MySQL 5.7+ / MariaDB 10.2.28+ / SQLite 3.9+
 
-Redis: 3.2+
+缓存： Redis 3.2+
 
 > 此处查看 [环境要求](https://docs.notadd.com/#/v1/zh-cn/gettingstarted?id=%e7%8e%af%e5%a2%83%e8%a6%81%e6%b1%82)
 

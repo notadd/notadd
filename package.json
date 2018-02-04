@@ -6,22 +6,22 @@
     "main": "index.js",
     "license": "Apache-2.0",
     "scripts": {
+        "run:install": "node ./node_modules/@notadd/server/install.js",
         "server": "node ./node_modules/@notadd/server/bootstrap.js"
     },
     "dependencies": {
-        "@notadd/authentication": "^2.1.1",
+        "@notadd/authentication": "^2.2.0",
         "@notadd/backend": "^2.1.1",
         "@notadd/backend-mix": "^2.1.1",
-        "@notadd/configuration": "^2.1.1",
-        "@notadd/core": "^2.1.1",
-        "@notadd/injection": "^2.1.1",
-        "@notadd/logger": "^2.1.1",
+        "@notadd/configuration": "^2.2.0",
+        "@notadd/core": "^2.2.0",
+        "@notadd/injection": "^2.2.0",
+        "@notadd/logger": "^2.2.0",
         "@notadd/react-scripts": "^2.1.1",
-        "@notadd/server": "^2.1.1",
-        "@notadd/setting": "^2.1.1",
-        "@notadd/user": "^2.1.1",
-        "@notadd/websocket": "^2.1.1",
-        "pg": "^7.4.1"
+        "@notadd/server": "^2.2.0",
+        "@notadd/setting": "^2.2.0",
+        "@notadd/user": "^2.2.0",
+        "@notadd/websocket": "^2.2.0"
     },
     "engines": {
         "node": ">=6.11.0"

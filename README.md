@@ -58,12 +58,17 @@ CRM系统： 用户模块、CRM模块...
 
 更多可畅想的...
 
-## CDN 方案
+## CDN 方案 
+
 ![cdn](https://www.notadd.com/src/cdn.svg)
+
+(图是 PHP 的，后续修改)
 
 ## 文档
 
 [https://docs.notadd.com/](https://docs.notadd.com/)
+
+(图是 PHP 的，后续修改)
 
 ## 应用商店（临时）
 

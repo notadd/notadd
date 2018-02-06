@@ -83,19 +83,33 @@ Node.js 版本：≥7.0
 
 ## 快速开始
 
+## 下载
+
+```
+git clone https://github.com/notadd/notadd.git
+```
+
+码云高速下载：
+
+```
+https://gitee.com/notadd/notadd.git
+```
 
 ### 安装
 
 执行 NPM 包安装，并选择数据库，填入对应信息
 
-> yarn install
+```
+yarn install
+```
 
 必须使用 yarn ！！！必须使用 yarn ！！！必须使用 yarn ！！！
 
 ## 运行
 
-> yarn dev
-
+```
+yarn dev
+```
 
 ## 月报
 

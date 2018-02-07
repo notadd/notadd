@@ -20,7 +20,7 @@
 > 让 PHP 实现...更多的可能
 
 
-[查看 Node.js 版本(开发中)](https://github.com/notadd/tree/next)
+[查看 Node.js 版本(开发中)](https://github.com/notadd/notadd/tree/next)
 
 
 [PHP版 完整安装包](https://www.notadd.com/download/notadd-master.tar.xz)

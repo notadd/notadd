@@ -20,7 +20,7 @@
 > 让 PHP 实现...更多的可能
 
 
-[查看 Node.js 版本(开发中)](https://github.com/notadd/next)
+[查看 Node.js 版本(开发中)](https://github.com/notadd/tree/next)
 
 
 [PHP版 完整安装包](https://www.notadd.com/download/notadd-master.tar.xz)
@@ -81,9 +81,9 @@ CRM系统： 用户模块、CRM模块...
 
 PHP 版本：≥7.0
 
-数据库：PostgreSQL 9.4+（👍）/ MySQL 5.7+ / MariaDB 10.2.28+ / SQLite 3.9+
+数据库： PostgreSQL 9.4+（👍）/ MySQL 5.7+ / MariaDB 10.2.28+ / SQLite 3.9+
 
-Redis: 3.2+
+缓存： Redis 3.2+
 
 > 此处查看 [环境要求](https://docs.notadd.com/#/v1/zh-cn/gettingstarted?id=%e7%8e%af%e5%a2%83%e8%a6%81%e6%b1%82)
 
@@ -100,6 +100,14 @@ Redis: 3.2+
 参见： https://docs.notadd.com/#/v1/zh-cn/laradock
 
 ## 月报
+
+[2018年 1月](https://blog.notadd.com/2018/01/01/2018-01/)
+
+[2017年 12月](https://blog.notadd.com/2017/12/08/2017-12/)
+
+[2017年 11月](https://blog.notadd.com/2017/11/11/2017-11/)
+
+[2017年 10月](https://blog.notadd.com/2017/10/11/2017-10/)
 
 [2017年 9月](https://blog.notadd.com/2017/09/22/2017-09/)
 

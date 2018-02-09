@@ -2,7 +2,6 @@
 <p align="center">
 <a href="https://jq.qq.com/?_wv=1027&k=5qVzRh4" title="Notadd 官方技术交流群"><img src="https://img.shields.io/badge/QQ%20Group-321735506-6782d6.svg?style=flat-square"></a>
 <a href="https://travis-ci.org/notadd/notadd/next" title="Build Status"><img src="https://img.shields.io/travis/notadd/notadd/next.svg?style=flat-square"></a>
-<a href="https://github.com/notadd/notadd/releases" title="Downloads"><img src="https://img.shields.io/packagist/dt/notadd/framework.svg?style=flat-square"></a>
 </p>
 
 [English](README_en.md)
@@ -91,13 +90,13 @@ Node.js 版本：≥7.0
 ## 下载
 
 ```
-git clone https://github.com/notadd/notadd.git
+git clone https://github.com/notadd/notadd.git --branch=next
 ```
 
 码云高速下载：
 
 ```
-https://gitee.com/notadd/notadd.git
+https://gitee.com/notadd/notadd.git --branch=next
 ```
 
 ### 安装

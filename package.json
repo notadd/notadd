@@ -21,7 +21,8 @@
         "@notadd/server": "^2.2.0",
         "@notadd/setting": "^2.2.0",
         "@notadd/user": "^2.2.0",
-        "@notadd/websocket": "^2.2.0"
+        "@notadd/websocket": "^2.2.0",
+        "@notadd/workflow": "^2.2.0"
     },
     "engines": {
         "node": ">=6.11.0"

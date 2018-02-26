@@ -6,7 +6,7 @@
 <a href="https://github.com/notadd/notadd/releases" title="Downloads"><img src="https://img.shields.io/packagist/dt/notadd/framework.svg"></a>
 </p>
 
-## [中文](README.md)
+## [中文](README_zh.md)
 
 > Meet your development needs as fast as building blocks
 >

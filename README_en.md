@@ -6,7 +6,7 @@
 <a href="https://github.com/notadd/notadd/releases" title="Downloads"><img src="https://img.shields.io/packagist/dt/notadd/framework.svg"></a>
 </p>
 
-## [中文](README_zh.md)
+## [中文](README.md)
 
 > Meet your development needs as fast as building blocks
 >
@@ -70,7 +70,7 @@ More can be imagined ...
 
 Support system: Linux (👍)/macOS/Windows 2008 and above
 
-PHP version：≥7.0
+PHP version：≥7.1
 
 database：PostgreSQL 9.4+（👍）/ MySQL 5.7+ / MariaDB 10.2.28+ / SQLite 3.9+
 

@@ -18,6 +18,8 @@
 >
 > Let PHP implement... More likely.
 
+[One-click Download Complete installation package of PHP version](https://www.notadd.com/download/notadd-master.tar.xz)
+
 ## Stack
 
 - PHP 7

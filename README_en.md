@@ -8,6 +8,8 @@
 
 ## [中文说明](README_zh.md)
 
+[View Node.js Version](notadd/notadd/tree/next)
+
 > Meet your development needs as fast as building blocks
 >
 > The use of new technology to liberate from traditional development

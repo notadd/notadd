@@ -6,7 +6,7 @@
 <a href="https://github.com/notadd/notadd/releases" title="Downloads"><img src="https://img.shields.io/packagist/dt/notadd/framework.svg"></a>
 </p>
 
-## [中文](README.md)
+## [中文](README_zh.md)
 
 > Meet your development needs as fast as building blocks
 >
@@ -129,6 +129,37 @@ Blog ：https://blog.notadd.com
 
 - [ThinkSNS Plus](https://github.com/slimkit/thinksns-plus) Use of Laravel framework to achieve the user ecosystem.
 - [Neditor](https://github.com/notadd/neditor) A modern editor based on the Ueditor.
+
+## Credits
+
+
+### Contributors
+
+Thank you to all the people who have already contributed to notadd!
+<a href="graphs/contributors"><img src="https://opencollective.com/notadd/contributors.svg?width=890&button=false" /></a>
+
+
+### Backers
+
+Thank you to all our backers! [[Become a backer](https://opencollective.com/notadd#backer)]
+
+<a href="https://opencollective.com/notadd#backers" target="_blank"><img src="https://opencollective.com/notadd/backers.svg?width=890"></a>
+
+
+### Sponsors
+
+Thank you to all our sponsors! (please ask your company to also support this open source project by [becoming a sponsor](https://opencollective.com/notadd#sponsor))
+
+<a href="https://opencollective.com/notadd/sponsor/0/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/0/avatar.svg"></a>
+<a href="https://opencollective.com/notadd/sponsor/1/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/1/avatar.svg"></a>
+<a href="https://opencollective.com/notadd/sponsor/2/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/2/avatar.svg"></a>
+<a href="https://opencollective.com/notadd/sponsor/3/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/3/avatar.svg"></a>
+<a href="https://opencollective.com/notadd/sponsor/4/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/4/avatar.svg"></a>
+<a href="https://opencollective.com/notadd/sponsor/5/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/5/avatar.svg"></a>
+<a href="https://opencollective.com/notadd/sponsor/6/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/6/avatar.svg"></a>
+<a href="https://opencollective.com/notadd/sponsor/7/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/7/avatar.svg"></a>
+<a href="https://opencollective.com/notadd/sponsor/8/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/8/avatar.svg"></a>
+<a href="https://opencollective.com/notadd/sponsor/9/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/9/avatar.svg"></a>
 
 ## License
 

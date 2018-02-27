@@ -146,6 +146,37 @@ QQ 群：[321735506](https://jq.qq.com/?_wv=1027&k=5qVzRh4)
 - [Neditor](https://github.com/notadd/neditor) 基于 ueditor 的现代化编辑器。
 - [ThinkSNS Plus](https://github.com/slimkit/thinksns-plus) 基于 Laravel 开发的用户生态系统。
 
+## 感谢
+
+
+### 贡献者
+
+感谢所有已经为notadd做出贡献的人！
+<a href="graphs/contributors"><img src="https://opencollective.com/notadd/contributors.svg?width=890&button=false" /></a>
+
+
+### 支持者
+
+感谢所有的支持者！ [ 成为支持者 ](https://opencollective.com/notadd#backer)]
+
+<a href="https://opencollective.com/notadd#backers" target="_blank"><img src="https://opencollective.com/notadd/backers.svg?width=890"></a>
+
+
+### Sponsors
+
+感谢所有赞助商！（请您的公司通过[成为赞助商](https://opencollective.com/notadd#sponsor)来支持这个开源项目）
+
+<a href="https://opencollective.com/notadd/sponsor/0/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/0/avatar.svg"></a>
+<a href="https://opencollective.com/notadd/sponsor/1/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/1/avatar.svg"></a>
+<a href="https://opencollective.com/notadd/sponsor/2/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/2/avatar.svg"></a>
+<a href="https://opencollective.com/notadd/sponsor/3/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/3/avatar.svg"></a>
+<a href="https://opencollective.com/notadd/sponsor/4/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/4/avatar.svg"></a>
+<a href="https://opencollective.com/notadd/sponsor/5/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/5/avatar.svg"></a>
+<a href="https://opencollective.com/notadd/sponsor/6/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/6/avatar.svg"></a>
+<a href="https://opencollective.com/notadd/sponsor/7/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/7/avatar.svg"></a>
+<a href="https://opencollective.com/notadd/sponsor/8/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/8/avatar.svg"></a>
+<a href="https://opencollective.com/notadd/sponsor/9/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/9/avatar.svg"></a>
+
 
 ## 开源协议
 

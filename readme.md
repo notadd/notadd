@@ -6,151 +6,169 @@
 <a href="https://github.com/notadd/notadd/releases" title="Downloads"><img src="https://img.shields.io/packagist/dt/notadd/framework.svg?style=flat-square"></a>
 </p>
 
-[English](README_en.md)
+## [中文说明](README_zh.md)
 
+[View Node.js Version](/notadd/notadd/tree/next)
 
-
-
-> 像搭积木一样快速满足自己的开发需求
+> Meet your development needs as fast as building blocks
 >
-> 运用新的技术，从传统的开发中解放出来
+> The use of new technology to liberate from traditional development
 >
-> 代码优雅，便于维护和二次开发
+> The code is elegant, easy to maintain and secondary development
 >
-> 让 PHP 实现...更多的可能
+> Let PHP implement... More likely.
 
+[One-click Download Complete installation package of PHP version](https://www.notadd.com/download/notadd-master.tar.xz)
 
-[查看 Node.js 版本(开发中)](https://github.com/notadd/notadd/tree/next)
-
-
-[PHP版 完整安装包](https://www.notadd.com/download/notadd-master.tar.xz)
-
-
-## 相关技术
+## Stack
 
 - PHP 7
 - Laravel
 - Vue
 - Composer
-- SPA 单页应用
+- Single Page Application
 - Redis
 
-## 特点
+## Feature
 
-- 前后端完全分离
-- 前端渲染模板，大大降低后端负载
-- 页面无刷新，响应速度快
-- 系统模块化，低耦合度
-- GraphQL 接口
-- 使用 PHP 7 并启用严格模式
+- End-to-end separation
+- Front-end rendering templates that greatly reduce the backend load
+- The page does not refresh, the response speed is fast
+- System modularity, low coupling
+- GraphQL API
+- Use PHP 7 and enable strict mode
 
-## 模块化设计
+## Modular design
 
 
 ![notadd](https://www.notadd.com/src/app.svg)
 
-企业官网： CMS模块 + Neditor插件、留言板插件
+Enterprise Official Website: CMS module + neditor plugin, message board plugin.
 
-信息发布： CMS模块、用户模块 + CMS多用户插件、Neditor插件
+Information release: CMS module, user module + CMS multi-user plug-in, Neditor plugin.
 
-微信商城： 用户模块、商城模块、微信模块 + 微信大转盘、支付插件、线下核验插件
+Micro-letter Mall: User module, mall module, micro-letter module + micro-letter large turntable, payment plug-in, offline verification plug-in.
 
-餐饮方案： 用户模块、商城模块、微信模块 + 点餐插件、扫码支付插件、客流监测插件... + 红外传感拓展、WIFI探针拓展
+Catering Program: User module, mall module, micro-letter module + Point meal Plug-in, sweep code payment plug-ins, passenger flow monitoring plug-ins ... + infrared sensor expansion, WiFi probe expansion.
 
-酒店方案： 用户模块、酒店模块、微信模块 + 预定插件、支付插件、智能WIFI插件 + WIFI探针拓展、门卡系统拓展
+Hotel Program: User module, hotel module, micro-letter module + booking plug-in, payment plug-in, intelligent WiFi plugin + WiFi probe expansion, door card system expansion.
 
-CRM系统： 用户模块、CRM模块...
+CRM system: User module, CRM module ...
 
-更多可畅想的...
+More can be imagined ...
 
-## CDN 方案
+## CDN Scheme
+
 ![cdn](https://www.notadd.com/src/cdn.svg)
 
-## 文档
+## Documentation
 
 [https://docs.notadd.com/](https://docs.notadd.com/)
 
-## 应用商店（临时）
+## App Store（AD hoc）
 
 [https://notadd.store/](https://notadd.store/)
 
 
-## 系统环境
+## System environment
 
-支持系统：Linux（👍）/ macOS / Windows 2008 及以上版本
+Support system: Linux (👍)/macOS/Windows 2008 and above
 
-PHP 版本：≥7.1
+PHP version：≥7.1
 
-数据库： PostgreSQL 9.4+（👍）/ MySQL 5.7+ / MariaDB 10.2.28+ / SQLite 3.9+
+database：PostgreSQL 9.4+（👍）/ MySQL 5.7+ / MariaDB 10.2.28+ / SQLite 3.9+
 
-缓存： Redis 3.2+
+Redis: 3.2+
 
-> 此处查看 [环境要求](https://docs.notadd.com/#/v1/zh-cn/gettingstarted?id=%e7%8e%af%e5%a2%83%e8%a6%81%e6%b1%82)
+> Here for [Environmental requirements](https://docs.notadd.com/gettingstarted/#环境要求)
 
-## 快速开始
+## Quick start
 
-[Nginx/Apache/Caddy Rewrite配置](https://docs.notadd.com/#/v1/zh-cn/gettingstarted?id=nginxapachecaddy)
+[Nginx/Apache/Caddy Rewrite](https://docs.notadd.com/gettingstarted/#nginx-apache-caddy)
 
-[完整安装包](https://www.notadd.com/download/notadd-master.tar.xz)
+[Complete installation package](https://www.notadd.com/download/notadd-master.tar.xz)
 
-安装 Notadd 非常简单，但是我们为你准备了更好的文档来供你阅读，请参阅[完整安装文档](https://docs.notadd.com/#/v1/zh-cn/gettingstarted?id=%e5%ae%8c%e6%95%b4%e5%ae%89%e8%a3%85%e5%8c%85) 或者 [编译安装文档](https://docs.notadd.com/#/v1/zh-cn/gettingstarted?id=%e7%bc%96%e8%af%91%e5%ae%89%e8%a3%85) 。
+It's easy to install Notadd, but we've prepared a better document for you to read, please refer to [installation documentation](https://docs.notadd.com/gettingstarted/#编译安装) .
 
-## 使用laradock 安装
+## Install with Laradock
 
-参见： https://docs.notadd.com/#/v1/zh-cn/laradock
+see： https://docs.notadd.com/laradock/
 
-## 月报
+## Monthly report
 
-[2018年 1月](https://blog.notadd.com/2018/01/01/2018-01/)
+[September 2017](https://blog.notadd.com/2017/09/22/2017-09/)
 
-[2017年 12月](https://blog.notadd.com/2017/12/08/2017-12/)
+[August 2017](https://blog.notadd.com/2017/09/01/2017-08/)
 
-[2017年 11月](https://blog.notadd.com/2017/11/11/2017-11/)
-
-[2017年 10月](https://blog.notadd.com/2017/10/11/2017-10/)
-
-[2017年 9月](https://blog.notadd.com/2017/09/22/2017-09/)
-
-[2017年 8月](https://blog.notadd.com/2017/09/01/2017-08/)
-
-[2017年 7月](https://blog.notadd.com/2017/08/01/2017-07/)
+[July 2017](https://blog.notadd.com/2017/08/01/2017-07/)
 
 
 
-## 贡献
+## Contribution
 
-欢迎使用 Pull requests。对于重大变更，请先提出 Issue，和我们一起来讨论你想改变的内容。
+Pull requests is welcome. For major changes, please put forward the Issue first and join us in discussing what you want to change.
 
-> 感谢你考虑为 Notadd 作出贡献！具体贡献指南可以在 [Notadd 文档-贡献](https://docs.notadd.com/#/v1/?id=%e8%b4%a1%e7%8c%ae) 中查看。
+> Thank you for thinking about contributing to Notadd! Specific contribution guides can be viewed at [Notadd document-contributions](https://docs.notadd.com/introductions/#贡献).
 
+> [Apply to join Notadd Development Group](https://github.com/notadd/notadd/issues/195)
 
-## 赞助
+## Sponsors
 
-我们要感谢以下赞助商，资助我们 Notadd 的开发。如果你有兴趣成为赞助商，请访问 Notadd 的[码云页面](https://gitee.com/notadd/notadd?donate=true)：
+We would like to extend our thanks to the following sponsors for helping fund on-going Notadd development. If you are interested in becoming a sponsor, please visit the Notadd [Gitee page](https://gitee.com/notadd/notadd?donate=true):
 
-- [西安 · 本初网络](https://www.ibenchu.com)
-- [杭州 · 又拍云](https://www.upyun.com)
-- [西安 · 马达信息](#)
-
-
-## 交流
-
-QQ 群：[321735506](https://jq.qq.com/?_wv=1027&k=5qVzRh4)
-
-论坛 ：https://bbs.notadd.com
-
-博客 ：https://blog.notadd.com
-
-## 优秀仓库推荐
-
-- [Neditor](https://github.com/notadd/neditor) 基于 ueditor 的现代化编辑器。
-- [ThinkSNS Plus](https://github.com/slimkit/thinksns-plus) 基于 Laravel 开发的用户生态系统。
+- [China Xian · Benchu Network](https://www.ibenchu.com)
+- [China Hanzhou · upyun](https://www.upyun.com)
+- China Xian · Mada Network 
 
 
-## 开源协议
+## communication
 
-Notadd 代码遵循 Apache 2.0 许可证发布，请参阅完整的 [许可证文本](LICENSE)
+QQ Group：[321735506](https://jq.qq.com/?_wv=1027&k=5qVzRh4)
+
+Forum ：https://bbs.notadd.com
+
+Blog ：https://blog.notadd.com
+
+## Excellent Repositories
+
+- [ThinkSNS Plus](https://github.com/slimkit/thinksns-plus) Use of Laravel framework to achieve the user ecosystem.
+- [Neditor](https://github.com/notadd/neditor) A modern editor based on the Ueditor.
+
+## Credits
+
+
+### Contributors
+
+Thank you to all the people who have already contributed to notadd!
+<a href="graphs/contributors"><img src="https://opencollective.com/notadd/contributors.svg?width=890&button=false" /></a>
+
+
+### Backers
+
+Thank you to all our backers! [[Become a backer](https://opencollective.com/notadd#backer)]
+
+<a href="https://opencollective.com/notadd#backers" target="_blank"><img src="https://opencollective.com/notadd/backers.svg?width=890"></a>
+
+
+### Sponsors
+
+Thank you to all our sponsors! (please ask your company to also support this open source project by [becoming a sponsor](https://opencollective.com/notadd#sponsor))
+
+<a href="https://opencollective.com/notadd/sponsor/0/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/0/avatar.svg"></a>
+<a href="https://opencollective.com/notadd/sponsor/1/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/1/avatar.svg"></a>
+<a href="https://opencollective.com/notadd/sponsor/2/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/2/avatar.svg"></a>
+<a href="https://opencollective.com/notadd/sponsor/3/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/3/avatar.svg"></a>
+<a href="https://opencollective.com/notadd/sponsor/4/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/4/avatar.svg"></a>
+<a href="https://opencollective.com/notadd/sponsor/5/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/5/avatar.svg"></a>
+<a href="https://opencollective.com/notadd/sponsor/6/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/6/avatar.svg"></a>
+<a href="https://opencollective.com/notadd/sponsor/7/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/7/avatar.svg"></a>
+<a href="https://opencollective.com/notadd/sponsor/8/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/8/avatar.svg"></a>
+<a href="https://opencollective.com/notadd/sponsor/9/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/9/avatar.svg"></a>
+
+## License
+
+The Notadd is open-sourced software licensed under the [Apache 2.0 license](LICENSE).
 
 ----------
 
-[![upyun](https://www.notadd.com/src/upyun.svg "又拍云")](https://console.upyun.com/register/?invite=r17EYO3BW) 提供赞助
+[![upyun](https://www.notadd.com/src/upyun.svg "又拍云")](https://console.upyun.com/register/?invite=r17EYO3BW) Provide sponsorship

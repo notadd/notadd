@@ -4,7 +4,7 @@ img {
     height: auto;
 }
 .view {
-    height: 250px !important;
+    height: 340px !important;
     overflow: auto !important;
     padding: 0 4px;
 }

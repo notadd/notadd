@@ -10,19 +10,24 @@
         "server": "node ./node_modules/@notadd/server/bootstrap.js"
     },
     "dependencies": {
-        "@notadd/authentication": "^2.2.0",
-        "@notadd/backend": "^2.1.1",
-        "@notadd/backend-mix": "^2.1.1",
-        "@notadd/configuration": "^2.2.0",
-        "@notadd/core": "^2.2.0",
-        "@notadd/injection": "^2.2.0",
-        "@notadd/logger": "^2.2.0",
+        "@notadd/addon-demo": "^2.3.0",
+        "@notadd/authentication": "^2.3.0",
+        "@notadd/backend": "^2.3.0",
+        "@notadd/backend-mix": "^2.3.0",
+        "@notadd/core": "^2.3.0",
+        "@notadd/extension-demo": "^2.3.0",
+        "@notadd/graphql": "^2.3.0",
+        "@notadd/injection": "^2.3.0",
+        "@notadd/internationalization": "^2.3.0",
+        "@notadd/logger": "^2.3.0",
+        "@notadd/module-demo": "^2.3.0",
         "@notadd/react-scripts": "^2.1.1",
-        "@notadd/server": "^2.2.0",
-        "@notadd/setting": "^2.2.0",
-        "@notadd/user": "^2.2.0",
-        "@notadd/websocket": "^2.2.0",
-        "@notadd/workflow": "^2.2.0"
+        "@notadd/rpc": "^2.3.0",
+        "@notadd/server": "^2.3.0",
+        "@notadd/setting": "^2.3.0",
+        "@notadd/user": "^2.3.0",
+        "@notadd/websocket": "^2.3.0",
+        "@notadd/workflow": "^2.3.0"
     },
     "engines": {
         "node": ">=6.11.0"

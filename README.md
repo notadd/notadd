@@ -72,27 +72,35 @@ More can be imagined ...
 
 ## System environment
 
-Support system: Linux (👍)/macOS/Windows 2008 and above
+System：Linux（👍）/ macOS / Windows 2008+
 
-PHP version：≥7.1
+Node.js ：≥8.0
 
-database：PostgreSQL 9.4+（👍）/ MySQL 5.7+ / MariaDB 10.2.28+ / SQLite 3.9+
+SQL：PostgreSQL 9.4+（👍）/ MySQL 5.7+ / Oracle 12+ / MS SQL Server 2012+ / MariaDB 10.2.28+ / SQLite 3.9+ 
 
-Redis: 3.2+
-
-> Here for [Environmental requirements](https://docs.notadd.com/gettingstarted/#环境要求)
+Redis： Redis 3.2+
 
 ## Quick start
 
-[Nginx/Apache/Caddy Rewrite](https://docs.notadd.com/gettingstarted/#nginx-apache-caddy)
+```
+git clone https://github.com/notadd/notadd.git --branch=next
+```
 
-[Complete installation package](https://www.notadd.com/download/notadd-master.tar.xz)
+### Install 
 
-It's easy to install Notadd, but we've prepared a better document for you to read, please refer to [installation documentation](https://docs.notadd.com/gettingstarted/#编译安装) .
+```
+yarn install
+```
 
-## Install with Laradock
+```
+yarn run:install
 
-see： https://docs.notadd.com/laradock/
+```
+### RUN
+
+```
+yarn dev
+```
 
 ## Monthly report
 

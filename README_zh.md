@@ -4,7 +4,9 @@
 <a href="https://travis-ci.org/notadd/notadd/next" title="Build Status"><img src="https://img.shields.io/travis/notadd/notadd/next.svg?style=flat-square"></a>
 </p>
 
-[English](README.md)
+## [English](README.md)
+
+[查看 PHP 版](https://github.com/notadd/notadd/tree/php-master)
 
 
 

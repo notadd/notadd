@@ -27,15 +27,15 @@
 
 ## Features
 
--[x] Complete separation of front and back, no refresh on page, significantly lower back-end load
--[x] Asynchronous High-performance applications, single machine concurrency easy tens of thousands
--[] Support SSR rendering, better SEO
--[x] supports react dynamic form generation
--[x] GRAPHQL interface, multiple request merging
--[x] more than 6 databases based on Typeorm native support
--[x] native support Websocket real-time communication
--[x] native support GRPC, cross-process, cross-language, cross-server communication
--[] to support the PWA technology, the realization of disconnected network reminders, broken network form save, Web page offline message push.
+- [x] Complete separation of front and back, no refresh on page, significantly lower back-end load
+- [x] Asynchronous High-performance applications, single machine concurrency easy tens of thousands
+- [ ] Support SSR rendering, better SEO
+- [x] supports react dynamic form generation
+- [x] GRAPHQL interface, multiple request merging
+- [x] more than 6 databases based on Typeorm native support
+- [x] native support Websocket real-time communication
+- [x] native support GRPC, cross-process, cross-language, cross-server communication
+- [ ] to support the PWA technology, the realization of disconnected network reminders, broken network form save, Web page offline message push.
 
 
 ## Modular design

@@ -8,7 +8,7 @@
 
 ## [English](README_en.md)
 
-[查看 Node.js 版本(开发中)](https://github.com/notadd/notadd/tree/next)
+[查看 Node.js 版本 (高并发，支持更多特性)](https://github.com/notadd/notadd/tree/next)
 
 
 > 像搭积木一样快速满足自己的开发需求

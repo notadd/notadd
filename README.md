@@ -6,7 +6,7 @@
 
 ## [中文文档](README_zh.md)
 
-[View PHP  Version](https://github.com/notadd/notadd/tree/-master)
+[View PHP  Version](https://github.com/notadd/notadd/tree/php-master)
 
 
 > "Development fast" like building blocks as fast as you meet your development needs
@@ -27,15 +27,15 @@
 
 ## Features
 
--[x] Complete separation of front and back, no refresh on page, significantly lower back-end load
--[x] Asynchronous High-performance applications, single machine concurrency easy tens of thousands
--[] Support SSR rendering, better SEO
--[x] supports react dynamic form generation
--[x] GRAPHQL interface, multiple request merging
--[x] more than 6 databases based on Typeorm native support
--[x] native support Websocket real-time communication
--[x] native support GRPC, cross-process, cross-language, cross-server communication
--[] to support the PWA technology, the realization of disconnected network reminders, broken network form save, Web page offline message push.
+- [x] Complete separation of front and back, no refresh on page, significantly lower back-end load
+- [x] Asynchronous High-performance applications, single machine concurrency easy tens of thousands
+- [ ] Support SSR rendering, better SEO
+- [x] supports react dynamic form generation
+- [x] GRAPHQL interface, multiple request merging
+- [x] more than 6 databases based on Typeorm native support
+- [x] native support Websocket real-time communication
+- [x] native support GRPC, cross-process, cross-language, cross-server communication
+- [ ] to support the PWA technology, the realization of disconnected network reminders, broken network form save, Web page offline message push.
 
 
 ## Modular design
@@ -139,6 +139,7 @@ Blog ：https://blog.notadd.com
 
 ## Excellent Repositories
 
+- [Swoft](https://github.com/swoft-cloud/swoft) Modern High performance AOP and Coroutine PHP Framework, base on Swoole 2
 - [ThinkSNS Plus](https://github.com/slimkit/thinksns-plus) Use of Laravel framework to achieve the user ecosystem.
 - [Neditor](https://github.com/notadd/neditor) A modern editor based on the Ueditor.
 

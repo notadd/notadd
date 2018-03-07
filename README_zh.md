@@ -166,6 +166,7 @@ QQ 群：[321735506](https://jq.qq.com/?_wv=1027&k=5qVzRh4)
 
 ## 优秀仓库推荐
 
+- [Swoft](https://github.com/swoft-cloud/swoft) 首个基于 Swoole 原生协程，新时代PHP协程框架。
 - [Neditor](https://github.com/notadd/neditor) 基于 ueditor 的现代化编辑器。
 - [ThinkSNS Plus](https://github.com/slimkit/thinksns-plus) 基于 Laravel 开发的用户生态系统。
 

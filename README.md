@@ -99,7 +99,7 @@ yarn run:install
 ### RUN
 
 ```
-yarn dev
+yarn server
 ```
 
 ## Monthly report

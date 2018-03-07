@@ -139,7 +139,7 @@ Blog ：https://blog.notadd.com
 
 ## Excellent Repositories
 
-- [swoft](https://github.com/swoft-cloud/swoft) Modern High performance AOP and Coroutine PHP Framework, base on Swoole 2
+- [Swoft](https://github.com/swoft-cloud/swoft) Modern High performance AOP and Coroutine PHP Framework, base on Swoole 2
 - [ThinkSNS Plus](https://github.com/slimkit/thinksns-plus) Use of Laravel framework to achieve the user ecosystem.
 - [Neditor](https://github.com/notadd/neditor) A modern editor based on the Ueditor.
 

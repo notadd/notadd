@@ -7,7 +7,7 @@
     "license": "Apache-2.0",
     "scripts": {
         "run:install": "node ./node_modules/@notadd/server/install.js",
-        "server": "node ./node_modules/@notadd/server/bootstrap.js"
+        "serve": "node ./node_modules/@notadd/server/bootstrap.js"
     },
     "dependencies": {
         "@notadd/addon-demo": "^2.3.0",

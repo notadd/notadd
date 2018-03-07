@@ -119,7 +119,7 @@ yarn run:install
 ## 运行
 
 ```
-yarn dev
+yarn server
 ```
 
 ## 月报

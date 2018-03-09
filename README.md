@@ -19,10 +19,10 @@
 
 ## Related Technology
 
-- Typescript
+- [TypeScript](http://www.typescriptlang.org/)
 - Node.js & Nest.js
-- React.js & Material-ui
-- GRAPHQL API
+- React.js & [Material-UI](https://material-ui-next.com/)
+- GraphQL API
 - Redis
 
 ## Features
@@ -37,9 +37,7 @@
 - [x] native support GRPC, cross-process, cross-language, cross-server communication
 - [ ] to support the PWA technology, the realization of disconnected network reminders, broken network form save, Web page offline message push.
 
-
-## Modular design
-
+## Modular Design
 
 ![notadd](https://www.notadd.com/src/app.svg)
 
@@ -70,55 +68,44 @@ More can be imagined ...
 [https://notadd.store/](https://notadd.store/)
 
 
-## System environment
+## System Environment
 
-System：Linux（👍）/ macOS / Windows 2008+
+- System：`Linux（👍）`/ `macOS` / `Windows 2008+`
+- Node.js ：`≥` **8.0**
+- Database：`PostgreSQL 9.4+（👍）`/ `MySQL 5.7+` / `Oracle 12+` / `MS SQL Server 2012+` / `MariaDB 10.2.28+` / `SQLite 3.9+` 
+- Redis：`Redis 3.2+`
 
-Node.js ：≥8.0
+## Quick Start
 
-SQL：PostgreSQL 9.4+（👍）/ MySQL 5.7+ / Oracle 12+ / MS SQL Server 2012+ / MariaDB 10.2.28+ / SQLite 3.9+ 
+Downloading the Notadd `Node.js` version:
 
-Redis： Redis 3.2+
-
-## Quick start
-
-```
-git clone https://github.com/notadd/notadd.git --branch=next
+```shell
+git clone --branch https://github.com/notadd/notadd
+cd notadd
 ```
 
 ### Install 
 
-```
+> Copy `ormconfig.yml.example` named `ormconfig.yml` and modify its database configuration.
+
+Installing Dependency Packages and Installing Databases：
+
+```shell
 yarn install
-```
-
-```
 yarn run:install
-
 ```
-### RUN
 
-```
+### Run
+
+```shell
 yarn serve
 ```
 
-## Monthly report
+## Monthly Report
 
-[September 2017](https://blog.notadd.com/2017/09/22/2017-09/)
-
-[August 2017](https://blog.notadd.com/2017/09/01/2017-08/)
-
-[July 2017](https://blog.notadd.com/2017/08/01/2017-07/)
-
-
-
-## Contribution
-
-Pull requests is welcome. For major changes, please put forward the Issue first and join us in discussing what you want to change.
-
-> Thank you for thinking about contributing to Notadd! Specific contribution guides can be viewed at [Notadd document-contributions](https://docs.notadd.com/introductions/#贡献).
-
-> [Apply to join Notadd Development Group](https://github.com/notadd/notadd/issues/195)
+- [September 2017](https://blog.notadd.com/2017/09/22/2017-09/)
+- [August 2017](https://blog.notadd.com/2017/09/01/2017-08/)
+- [July 2017](https://blog.notadd.com/2017/08/01/2017-07/)
 
 ## Sponsors
 
@@ -129,7 +116,7 @@ We would like to extend our thanks to the following sponsors for helping fund on
 - China Xian · Mada Network 
 
 
-## communication
+## Communication
 
 QQ Group：[321735506](https://jq.qq.com/?_wv=1027&k=5qVzRh4)
 
@@ -151,6 +138,11 @@ Blog ：https://blog.notadd.com
 Thank you to all the people who have already contributed to notadd!
 <a href="graphs/contributors"><img src="https://opencollective.com/notadd/contributors.svg?width=890&button=false" /></a>
 
+Pull requests is welcome. For major changes, please put forward the Issue first and join us in discussing what you want to change.
+
+> Thank you for thinking about contributing to Notadd! Specific contribution guides can be viewed at [Notadd document-contributions](https://docs.notadd.com/introductions/#贡献).
+>
+> [Apply to join Notadd Development Group](https://github.com/notadd/notadd/issues/195)
 
 ### Backers
 

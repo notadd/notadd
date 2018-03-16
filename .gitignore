@@ -1,5 +1,6 @@
 .idea/
 node_modules/
+*.sqlite
 graphql.config.json
 graphql.schema.json
 lerna-debug.log

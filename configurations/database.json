@@ -1,2 +1,17 @@
 {
+    "type": "postgres",
+    "host": "192.168.120.120",
+    "port": "5432",
+    "username": "postgres",
+    "password": "123qwe",
+    "database": "next",
+    "entities": [
+        "**/*.entity.js"
+    ],
+    "migrations": [
+        "**/*.migration.js"
+    ],
+    "logging": true,
+    "migrationsRun": true,
+    "synchronize": true
 }

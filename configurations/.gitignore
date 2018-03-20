@@ -1,4 +1,4 @@
 *
 !.gitignore
 !database.json
-!global.json
+!server.json

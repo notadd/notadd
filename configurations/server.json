@@ -1,0 +1,12 @@
+{
+    "http": {
+        "host": "*",
+        "port": 3000,
+        "protocol": "http"
+    },
+    "websocket": {
+        "host": "*",
+        "port": "3000",
+        "protocol": "ws"
+    }
+}

@@ -7,7 +7,7 @@
     "license": "Apache-2.0",
     "scripts": {
         "run:install": "node ./node_modules/@notadd/server/install.js",
-        "serve": "node ./node_modules/@notadd/server/bootstrap.js"
+        "serve": "node ./node_modules/gulp/bin/gulp.js"
     },
     "dependencies": {
         "@notadd/addon-demo": "^2.3.0",
@@ -29,6 +29,8 @@
         "@notadd/user": "^2.3.0",
         "@notadd/websocket": "^2.3.0",
         "@notadd/workflow": "^2.3.0",
+        "gulp": "^3.9.1",
+        "gulp-nodemon": "^2.2.1",
         "pg": "^7.4.1"
     },
     "engines": {

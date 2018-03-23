@@ -1,0 +1,13 @@
+{
+    "global":{
+        "http":{
+            "host": "*",
+            "port": 3000,
+            "schema": "http"
+        },
+        "websocket":{
+            "host": "ws://notadd.com:3000"
+        }
+    },
+    "admin": {}
+}

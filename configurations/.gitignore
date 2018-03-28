@@ -1,4 +1,5 @@
 *
 !.gitignore
 !database.json
+!graphql.json
 !server.json

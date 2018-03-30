@@ -1,6 +1,4 @@
 *
-!addons/
 !caches/
-!extensions/
-!modules/
+!logs/
 !.gitignore

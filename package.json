@@ -14,6 +14,7 @@
         "@notadd/authentication": "^2.3.0",
         "@notadd/backend": "^2.3.0",
         "@notadd/backend-mix": "^2.3.0",
+        "@notadd/cms": "^2.0.1",
         "@notadd/core": "^2.3.0",
         "@notadd/extension-demo": "^2.3.0",
         "@notadd/graphql": "^2.3.0",
@@ -29,7 +30,8 @@
         "@notadd/websocket": "^2.3.0",
         "@notadd/workflow": "^2.3.0",
         "gulp": "^3.9.1",
-        "gulp-nodemon": "^2.2.1"
+        "gulp-nodemon": "^2.2.1",
+        "pg": "^7.4.1"
     },
     "engines": {
         "node": ">=6.11.0"

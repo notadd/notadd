@@ -1,0 +1,156 @@
+{
+    "extends": "tslint:latest",
+    "rules": {
+        "array-type": [
+            true,
+            "generic"
+        ],
+        "ban-types": [
+            true,
+            [
+                "Object",
+                "Avoid using the `Object` type. Did you mean `object`?"
+            ],
+            [
+                "Boolean",
+                "Avoid using the `Boolean` type. Did you mean `boolean`?"
+            ],
+            [
+                "Number",
+                "Avoid using the `Number` type. Did you mean `number`?"
+            ],
+            [
+                "String",
+                "Avoid using the `String` type. Did you mean `string`?"
+            ]
+        ],
+        "class-name": true,
+        "comment-format": [
+            true,
+            "check-space"
+        ],
+        "curly": true,
+        "indent": [
+            true,
+            "spaces",
+            4
+        ],
+        "interface-name": [
+            true,
+            "never-prefix"
+        ],
+        "interface-over-type-literal": true,
+        "jsdoc-format": true,
+        "linebreak-style": false,
+        "next-line": false,
+        "no-inferrable-types": true,
+        "no-internal-module": true,
+        "no-null-keyword": true,
+        "no-switch-case-fall-through": true,
+        "no-trailing-whitespace": true,
+        "no-var-keyword": true,
+        "object-literal-shorthand": true,
+        "one-line": [
+            true,
+            "check-open-brace",
+            "check-whitespace"
+        ],
+        "prefer-const": true,
+        "quotemark": [
+            true,
+            "double",
+            "avoid-escape"
+        ],
+        "semicolon": [
+            true,
+            "always"
+        ],
+        "space-within-parens": true,
+        "triple-equals": true,
+        "typedef-whitespace": [
+            true,
+            {
+                "call-signature": "nospace",
+                "index-signature": "nospace",
+                "parameter": "nospace",
+                "property-declaration": "nospace",
+                "variable-declaration": "nospace"
+            },
+            {
+                "call-signature": "onespace",
+                "index-signature": "onespace",
+                "parameter": "onespace",
+                "property-declaration": "onespace",
+                "variable-declaration": "onespace"
+            }
+        ],
+        "whitespace": [
+            true,
+            "check-branch",
+            "check-decl",
+            "check-operator",
+            "check-module",
+            "check-separator",
+            "check-type"
+        ],
+        "no-implicit-dependencies": false,
+        "object-literal-key-quotes": [
+            true,
+            "consistent-as-needed"
+        ],
+        "variable-name": [
+            true,
+            "ban-keywords",
+            "check-format",
+            "allow-leading-underscore",
+            "allow-pascal-case"
+        ],
+        "arrow-parens": false,
+        "arrow-return-shorthand": true,
+        "forin": false,
+        "member-access": false,
+        "no-conditional-assignment": false,
+        "no-console": false,
+        "no-debugger": false,
+        "no-empty": false,
+        "no-empty-interface": false,
+        "no-eval": false,
+        "no-object-literal-type-assertion": false,
+        "no-shadowed-variable": false,
+        "no-submodule-imports": false,
+        "no-var-requires": false,
+        "ordered-imports": false,
+        "prefer-conditional-expression": false,
+        "radix": false,
+        "trailing-comma": false,
+        "align": false,
+        "eofline": true,
+        "max-line-length": false,
+        "no-consecutive-blank-lines": true,
+        "space-before-function-paren": false,
+        "ban-comma-operator": false,
+        "max-classes-per-file": false,
+        "member-ordering": false,
+        "no-angle-bracket-type-assertion": false,
+        "no-bitwise": false,
+        "no-namespace": false,
+        "no-reference": false,
+        "object-literal-sort-keys": false,
+        "one-variable-per-declaration": false,
+        "type-operator-spacing": false,
+        "no-type-assertion-whitespace": false,
+        "object-literal-surrounding-space": false,
+        "no-increment-decrement": false,
+        "no-in-operator": false,
+        "no-double-space": false,
+        "no-unnecessary-type-assertion-2": false,
+        "no-bom": false,
+        "boolean-trivia": false,
+        "debug-assert": false,
+        "no-unused-expression": [
+            true,
+            "allow-fast-null-checks"
+        ],
+        "prefer-for-of": false
+    }
+}

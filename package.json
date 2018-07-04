@@ -1,0 +1,25 @@
+{
+  "name": "notadd-node",
+  "version": "1.0.0",
+  "description": "notadd node",
+  "main": "index.ts",
+  "repository": "git@github.com:notadd/node.git",
+  "author": "dzzzzzy <insistyao_0522@163.com>",
+  "license": "Apache-2.0",
+  "private": false,
+  "dependencies": {
+    "@nestjs/common": "^5.0.1",
+    "@nestjs/core": "^5.0.1",
+    "@nestjs/microservices": "^5.0.1",
+    "@nestjs/typeorm": "^5.0.2",
+    "reflect-metadata": "^0.1.12",
+    "rxjs": "^6.2.1",
+    "typescript": "^2.9.2"
+  },
+  "devDependencies": {
+    "@types/node": "^10.5.1",
+    "ts-node": "^7.0.0",
+    "tsconfig-paths": "^3.4.2",
+    "tslint": "^5.10.0"
+  }
+}

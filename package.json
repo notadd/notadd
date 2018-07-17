@@ -1,36 +1,36 @@
 {
-    "name": "notadd-node",
-    "version": "1.0.0",
-    "description": "notadd node",
-    "main": "index.ts",
-    "repository": "git@github.com:notadd/node.git",
-    "author": "dzzzzzy <insistyao_0522@163.com>",
-    "license": "Apache-2.0",
-    "private": false,
-    "scripts": {
-        "check": "tslint -p tsconfig.json -c tslint.json",
-        "fix": "tslint -p tsconfig.json -c tslint.json --fix"
-    },
-    "dependencies": {
-        "@nestjs/common": "5.1.0",
-        "@nestjs/core": "5.1.0",
-        "@nestjs/graphql": "3.0.0",
-        "@nestjs/microservices": "5.1.0",
-        "@nestjs/testing": "5.1.0",
-        "@nestjs/typeorm": "5.0.2",
-        "@nestjs/websockets": "5.1.0",
-        "@notadd/addon-sms": "2.4.2",
-        "graphql": "0.13.2",
-        "graphql-tools": "3.0.5",
-        "reflect-metadata": "0.1.12",
-        "rxjs": "6.2.1",
-        "typeorm": "0.2.7",
-        "typescript": "2.9.2"
-    },
-    "devDependencies": {
-        "@types/node": "10.5.2",
-        "ts-node": "7.0.0",
-        "tsconfig-paths": "3.4.2",
-        "tslint": "5.10.0"
-    }
+   "name": "notadd-node",
+   "version": "1.0.0",
+   "description": "notadd node",
+   "main": "index.ts",
+   "repository": "git@github.com:notadd/node.git",
+   "author": "dzzzzzy <insistyao_0522@163.com>",
+   "license": "Apache-2.0",
+   "private": false,
+   "scripts": {
+      "check": "tslint -p tsconfig.json -c tslint.json",
+      "fix": "tslint -p tsconfig.json -c tslint.json --fix",
+      "start": "ts-node src/index.ts"
+   },
+   "dependencies": {
+      "@nestjs/common": "5.1.0",
+      "@nestjs/core": "5.1.0",
+      "@nestjs/graphql": "3.0.0",
+      "@nestjs/microservices": "5.1.0",
+      "@nestjs/testing": "5.1.0",
+      "@nestjs/typeorm": "5.0.2",
+      "@nestjs/websockets": "5.1.0",
+      "graphql": "0.13.2",
+      "graphql-tools": "3.0.5",
+      "reflect-metadata": "^0.1.10",
+      "rxjs": "6.2.1",
+      "typeorm": "0.2.7",
+      "typescript": "2.9.2"
+   },
+   "devDependencies": {
+      "@types/node": "10.5.2",
+      "ts-node": "3.3.0",
+      "tsconfig-paths": "3.4.2",
+      "tslint": "5.10.0"
+   }
 }

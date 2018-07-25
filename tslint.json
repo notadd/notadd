@@ -3,13 +3,17 @@
     "rules": {
         "array-type": [
             true,
-            "generic"
+            "array"
         ],
         "ban-types": {
             "options": [
                 [
                     "Object",
                     "Avoid using the `Object` type. Did you mean `object`?"
+                ],
+                [
+                    "Function",
+                    "Avoid using the `Function` type. Prefer a specific function type, like `() => void`, or use `ts.AnyFunction`."
                 ],
                 [
                     "Boolean",

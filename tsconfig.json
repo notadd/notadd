@@ -1,0 +1,31 @@
+{
+    "compilerOptions": {
+        "allowJs": false,
+        "baseUrl": "./",
+        "declaration": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "module": "commonjs",
+        "noImplicitAny": false,
+        "noLib": false,
+        "lib": [
+            "es6",
+            "dom",
+            "esnext.asynciterable"
+        ],
+        "noUnusedLocals": false,
+        "removeComments": true,
+        "strict": false,
+        "strictPropertyInitialization": false,
+        "target": "es6",
+        "outDir": "dist"
+    },
+    "include": [
+        "src/*.ts",
+        "src/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "test"
+    ]
+}

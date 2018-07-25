@@ -11,6 +11,4 @@ import { ApplicationService } from "./application.service";
     providers: [ApplicationResolver, ApplicationService],
     exports: []
 })
-export class ApplicationModule {
-
-}
+export class ApplicationModule { }

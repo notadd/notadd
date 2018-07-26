@@ -3,33 +3,41 @@
     "rules": {
         "array-type": [
             true,
-            "generic"
+            "array"
         ],
-        "ban-types": [
-            true,
-            [
-                "Object",
-                "Avoid using the `Object` type. Did you mean `object`?"
-            ],
-            [
-                "Boolean",
-                "Avoid using the `Boolean` type. Did you mean `boolean`?"
-            ],
-            [
-                "Number",
-                "Avoid using the `Number` type. Did you mean `number`?"
-            ],
-            [
-                "String",
-                "Avoid using the `String` type. Did you mean `string`?"
+        "ban-types": {
+            "options": [
+                [
+                    "Object",
+                    "Avoid using the `Object` type. Did you mean `object`?"
+                ],
+                [
+                    "Function",
+                    "Avoid using the `Function` type. Prefer a specific function type, like `() => void`, or use `ts.AnyFunction`."
+                ],
+                [
+                    "Boolean",
+                    "Avoid using the `Boolean` type. Did you mean `boolean`?"
+                ],
+                [
+                    "Number",
+                    "Avoid using the `Number` type. Did you mean `number`?"
+                ],
+                [
+                    "String",
+                    "Avoid using the `String` type. Did you mean `string`?"
+                ]
             ]
-        ],
+        },
         "class-name": true,
         "comment-format": [
             true,
             "check-space"
         ],
-        "curly": true,
+        "curly": [
+            true,
+            "ignore-same-line"
+        ],
         "indent": [
             true,
             "spaces",
@@ -47,7 +55,10 @@
         "no-internal-module": true,
         "no-null-keyword": true,
         "no-switch-case-fall-through": true,
-        "no-trailing-whitespace": true,
+        "no-trailing-whitespace": [
+            true,
+            "ignore-template-strings"
+        ],
         "no-var-keyword": true,
         "object-literal-shorthand": true,
         "one-line": [
@@ -63,7 +74,8 @@
         ],
         "semicolon": [
             true,
-            "always"
+            "always",
+            "ignore-bound-class-methods"
         ],
         "space-within-parens": true,
         "triple-equals": true,
@@ -124,9 +136,9 @@
         "radix": false,
         "trailing-comma": false,
         "align": false,
-        "eofline": true,
+        "eofline": false,
         "max-line-length": false,
-        "no-consecutive-blank-lines": true,
+        "no-consecutive-blank-lines": false,
         "space-before-function-paren": false,
         "ban-comma-operator": false,
         "max-classes-per-file": false,

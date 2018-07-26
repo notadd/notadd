@@ -1,3 +1,3 @@
 # Notadd node 版框架
 
-[文档](./docs/_navbar.md)
+[开发者文档](./docs/development.md)

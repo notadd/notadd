@@ -11,6 +11,5 @@ export class AppController {
     @Get()
     async root(): Promise<string> {
         return this.appService.root();
-
     }
 }

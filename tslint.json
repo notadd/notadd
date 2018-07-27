@@ -1,5 +1,11 @@
 {
-    "extends": "tslint:latest",
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "jsRules": {
+        "no-unused-expression": true
+    },
     "rules": {
         "array-type": [
             true,
@@ -41,11 +47,19 @@
         "indent": [
             true,
             "spaces",
-            4
+            2
         ],
-        "interface-name": [
+        "max-line-length": [
             true,
-            "never-prefix"
+            150
+        ],
+        "quotemark": [
+            true,
+            "single"
+        ],
+        "semicolon": [
+            true,
+            "always"
         ],
         "interface-over-type-literal": true,
         "jsdoc-format": true,
@@ -67,16 +81,11 @@
             "check-whitespace"
         ],
         "prefer-const": true,
-        "quotemark": [
+        "prefer-conditional-expression": [
             true,
-            "double",
-            "avoid-escape"
+            "check-else-if"
         ],
-        "semicolon": [
-            true,
-            "always",
-            "ignore-bound-class-methods"
-        ],
+        "prefer-for-of": true,
         "space-within-parens": true,
         "triple-equals": true,
         "typedef-whitespace": [
@@ -87,13 +96,6 @@
                 "parameter": "nospace",
                 "property-declaration": "nospace",
                 "variable-declaration": "nospace"
-            },
-            {
-                "call-signature": "onespace",
-                "index-signature": "onespace",
-                "parameter": "onespace",
-                "property-declaration": "onespace",
-                "variable-declaration": "onespace"
             }
         ],
         "whitespace": [
@@ -101,7 +103,6 @@
             "check-branch",
             "check-decl",
             "check-operator",
-            "check-module",
             "check-separator",
             "check-type"
         ],
@@ -132,12 +133,10 @@
         "no-submodule-imports": false,
         "no-var-requires": false,
         "ordered-imports": false,
-        "prefer-conditional-expression": false,
         "radix": false,
         "trailing-comma": false,
         "align": false,
         "eofline": false,
-        "max-line-length": false,
         "no-consecutive-blank-lines": false,
         "space-before-function-paren": false,
         "ban-comma-operator": false,
@@ -159,10 +158,6 @@
         "no-bom": false,
         "boolean-trivia": false,
         "debug-assert": false,
-        "no-unused-expression": [
-            true,
-            "allow-fast-null-checks"
-        ],
-        "prefer-for-of": false
+        "no-unused-expression": false,
     }
 }

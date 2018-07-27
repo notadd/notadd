@@ -55,7 +55,7 @@ src
   app.resolver.ts
   app.service.ts
   app.types.graphql
-  main.ts   // 主程序入库
+  main.ts   // 主程序入口
 ```
 
 备注：如开发过程中出现上述约定不能满足，请告知规范制定者：dzzzzzy (624382709@qq.com)

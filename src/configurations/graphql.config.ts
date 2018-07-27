@@ -1,9 +1,9 @@
 export const graphqlConfig = {
-    typeDefsPath: "./**/*.types.graphql",
-    prefix: "/graphql",
+    typeDefsPath: './**/*.types.graphql',
+    prefix: '/graphql',
     ide: {
         enable: true,
-        prefix: "/graphiql",
-        endpoint: "/graphql"
+        prefix: '/graphiql',
+        endpoint: '/graphql'
     }
 };

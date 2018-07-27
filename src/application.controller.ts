@@ -1,6 +1,6 @@
-import { Controller, Get, Inject } from "@nestjs/common";
+import { Controller, Get, Inject } from '@nestjs/common';
 
-import { ApplicationService } from "./application.service";
+import { ApplicationService } from './application.service';
 
 @Controller()
 export class ApplicationController {
@@ -11,5 +11,6 @@ export class ApplicationController {
     @Get()
     async root(): Promise<string> {
         return this.appService.root();
+
     }
 }

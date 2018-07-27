@@ -1,1 +1,1 @@
-export * from "./graphql.config";
+export * from './graphql.config';

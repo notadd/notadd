@@ -1,9 +1,9 @@
-import { FastifyAdapter, NestFactory } from "@nestjs/core";
-import { GraphQLFactory } from "@nestjs/graphql";
-import { graphiqlFastify, graphqlFastify } from "fastify-graphql";
+import { FastifyAdapter, NestFactory } from '@nestjs/core';
+import { GraphQLFactory } from '@nestjs/graphql';
+import { graphiqlFastify, graphqlFastify } from 'fastify-graphql';
 
-import { ApplicationModule } from "./application.module";
-import { graphqlConfig } from "./configurations";
+import { ApplicationModule } from './application.module';
+import { graphqlConfig } from './configurations';
 
 async function bootstrap() {
     const app = await NestFactory.create(ApplicationModule, new FastifyAdapter());

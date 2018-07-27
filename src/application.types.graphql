@@ -1,3 +1,54 @@
 type Query {
     root: String
+    findAddons: [AddonResult]
+    findModules: [ModuleResult]
+}
+
+type Mutation {
+    # 插件相关接口
+    enableAddon(id: String!): Boolean
+    disableAddon(id: String!): Boolean
+    installAddon(id: String!): Boolean
+    removeAddon(id: String!): Boolean
+    # 模块相关接口
+    enableModule(id: String!): Boolean
+    disableModule(id: String!): Boolean
+    installModule(id: String!): Boolean
+    removeModule(id: String!): Boolean
+}
+
+type AddonResult {
+    code: Int
+    message: String
+    # 插件信息
+    data: AddonInfo
+}
+
+type AddonInfo {
+    # ID
+    id: String
+    # 名称
+    name: String
+    # 版本
+    version: String
+    # 安装路径
+    installationPath: String
+}
+
+type ModuleResult {
+    code: Int
+    message: String
+    # 模块信息
+    data: ModuleInfo
+}
+
+type ModuleInfo {
+    # ID
+    id: String
+    # 名称
+    name: String
+    # 版本
+    version: String
+    # 安装路径
+    installationPath: String
 }

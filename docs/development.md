@@ -50,6 +50,12 @@ src
     - entities
       artical.entity.ts
     artical.module.ts
+  app.controller.ts
+  app.module.ts   // 应用程序主模块，用于导入其他子模块
+  app.resolver.ts
+  app.service.ts
+  app.types.graphql
+  main.ts   // 主程序入库
 ```
 
 备注：如开发过程中出现上述约定不能满足，请告知规范制定者：dzzzzzy (624382709@qq.com)

@@ -1,12 +1,12 @@
 import { Inject } from '@nestjs/common';
 import { Query, Resolver } from '@nestjs/graphql';
 
-import { ApplicationService } from './application.service';
+import { AppService } from './app.service';
 
 @Resolver()
-export class ApplicationResolver {
+export class AppResolver {
     constructor(
-        @Inject(ApplicationService) private readonly appService: ApplicationService,
+        @Inject(AppService) private readonly appService: AppService,
     ) { }
 
     @Query('root')

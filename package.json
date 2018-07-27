@@ -3,9 +3,9 @@
     "version": "1.0.0",
     "description": "The starter application for notadd.",
     "scripts": {
-        "start": "ts-node -r tsconfig-paths/register src/server.ts",
+        "start": "ts-node -r tsconfig-paths/register src/main.ts",
         "start:watch": "nodemon",
-        "debug": "node --inspect-brk -r ts-node/register src/server.ts",
+        "debug": "node --inspect-brk -r ts-node/register src/main.ts",
         "debug:watch": "nodemon --config nodemon-debug.json",
         "check": "tslint -p tsconfig.json -c tslint.json",
         "fix": "tslint -p tsconfig.json -c tslint.json --fix"

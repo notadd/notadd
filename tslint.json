@@ -158,6 +158,6 @@
         "no-bom": false,
         "boolean-trivia": false,
         "debug-assert": false,
-        "no-unused-expression": false,
+        "no-unused-expression": false
     }
 }

@@ -17,7 +17,7 @@
         "@nestjs/common": "^5.1.0",
         "@nestjs/core": "^5.1.0",
         "@nestjs/graphql": "^3.0.0",
-        "@nestjs/typeorm": "^5.0.2",
+        "@nestjs/typeorm": "^5.1.0",
         "fastify": "^1.8.0",
         "fastify-formbody": "^2.0.1",
         "fastify-graphql": "^4.0.0",

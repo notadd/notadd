@@ -37,8 +37,6 @@
 ## 模块化设计
 
 
-![notadd](https://www.notadd.com/src/app.svg)
-
 企业官网： CMS模块 + Neditor插件、留言板插件
 
 信息发布： CMS模块、用户模块 + CMS多用户插件、Neditor插件

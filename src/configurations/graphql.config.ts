@@ -4,6 +4,6 @@ export const graphqlConfig = {
     ide: {
         enable: true,
         prefix: '/graphiql',
-        endpoint: '/graphql'
+        endpointURL: '/graphql'
     }
 };

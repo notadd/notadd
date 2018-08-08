@@ -115,7 +115,7 @@ QQ 群：[321735506](https://jq.qq.com/?_wv=1027&k=5qVzRh4)
 ### 贡献者
 
 感谢所有已经为notadd做出贡献的人！
-<a href="graphs/contributors"><img src="https://opencollective.com/notadd/contributors.svg?width=890&button=false" /></a>
+<a href="https://github.com/notadd/notadd/graphs/contributors"><img src="https://opencollective.com/notadd/contributors.svg?width=890&button=false" /></a>
 
 
 ### 支持者

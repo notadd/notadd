@@ -8,11 +8,13 @@
 
 源码根目录：`src`
 
-公共模块目录：`common`，是 `src` 的直接子级目录
+公共模块目录：用于存放应用程序的公共模块代码，公共模块中的业务逻辑可以被其他模块复用，目录名为：`common`
 
-项目配置文件目录：`configurations`，是 `src` 的直接子级目录
+项目配置文件目录：用于存放整个项目运行时所需要的配置文件，目录名为：`configuration`
 
-特性模块目录：`特性名复数单词`，如 `articals`，是 `src` 的直接子级目录
+功能模块目录：用于存放某一功能的所有代码，如：文章管理，目录名为：`artical`
+
+注：公共模块目录、项目配置文件目录、功能模块目录都是 `src` 的直接子级目录
 
 ## 模块、插件开发规范约定
 
@@ -27,16 +29,16 @@
 * interfaces        -- 接口定义目录，子级文件名为 xxx.interface.ts
 * entities          -- 实体类目录，命名和表名对应，如 User 对应 user 表，子级文件名为 xxx.entity.ts
 
-## 例子
+## 项目骨架例子
 
 ```none
 src
   - common
     common.module.ts
-  - configurations
+  - configuration
     application.config.ts
     index.ts    // 用于导出所有配置文件
-  - articals
+  - artical
     - controllers
       artical.controller.ts
     - resolvers

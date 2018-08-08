@@ -1,16 +1,10 @@
+<img src="https://www.notadd.com/src/notado_logo420x96.svg" alt="Notadd Logo." align="right" height="100px">
 
-<p align="center"><img src="https://www.notadd.com/src/notado_logo420x96.svg" alt="Notadd Logo."></p>
-<p align="center">
-<a href="https://jq.qq.com/?_wv=1027&k=5qVzRh4" title="Notadd 官方技术交流群"><img src="https://img.shields.io/badge/QQ%20Group-321735506-6782d6.svg?style=flat-square"></a>
-<a href="https://travis-ci.org/notadd/notadd/next" title="Build Status"><img src="https://img.shields.io/travis/notadd/notadd/next.svg?style=flat-square"></a>
-</p>
-
-
-> 【微服务】支持单机部署和微服务化
->
-> 【高性能】异步高性能应用，单机并发轻松上万
-> 
-> 【易维护】AOP（面向切面编程）
+[![Notadd 官方技术交流群](https://img.shields.io/badge/QQ%20Group-321735506-6782d6.svg?style=flat-square)](https://jq.qq.com/?_wv=1027&k=5qVzRh4)
+[![Build Status](https://img.shields.io/travis/notadd/notadd/next.svg?style=flat-squar)](https://travis-ci.org/notadd/notadd/next)
+* **【微服务】** 支持单机部署和微服务化
+* **【高性能】** 异步高性能应用，单机并发轻松上万
+* **【易维护】** AOP（面向切面编程）
 
 [开发者文档](./docs/development.md)
 

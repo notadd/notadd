@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package notadd_rpc_demo;
+
+service RootService {
+    rpc SayHello (SayHelloRequest) returns (SayHelloResponse) { }
+}
+
+message SayHelloRequest {
+    string name = 1;
+}
+
+message SayHelloResponse {
+    string msg = 1;
+}

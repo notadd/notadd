@@ -73,7 +73,13 @@ Node.js 版本：≥8.0
 
 ## 快速开始
 
-
+1. 下载 [rpc-demo](https://github.com/notadd/rpc-demo)
+2. 根据 rpc-demo 使用说明，启动微服务
+3. 下载本项目
+4. 安装依赖 `yarn install`
+5. 启动 `yarn start`
+6. 打开浏览器，访问 `localhost:5000/graphql`
+7. 测试 `sayHello` 接口
 
 ## 贡献
 

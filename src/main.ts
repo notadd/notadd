@@ -1,26 +1,21 @@
-import { FastifyAdapter, NestFactory } from '@nestjs/core';
-import { GraphQLFactory } from '@nestjs/graphql';
-import * as bodyParser from 'body-parser';
-import { fastifyGraphiQL, fastifyGraphQL } from 'fastify-graphql-middleware';
+import { Logger } from '@nestjs/common';
+import { NestFactory } from '@nestjs/core';
 
 import { AppModule } from './app.module';
-import { graphqlConfig } from './configurations';
+import { APP_CONFIG } from './configuration/app.config';
 
 async function bootstrap() {
-    const app = await NestFactory.create(AppModule, new FastifyAdapter());
+    const logger = new Logger('Notadd');
+    logger.log(APP_CONFIG.banner);
 
-    if (graphqlConfig.ide.enable) {
-        app.use(graphqlConfig.ide.prefix, fastifyGraphiQL({ endpointURL: graphqlConfig.ide.endpointURL }));
-    }
+    const app = await NestFactory.create(AppModule);
 
-    app.use('/graphql', bodyParser.json());
+    const appModule = app.get(AppModule);
+    appModule.configureGraphQL(app);
 
-    const graphQLFactory = app.get(GraphQLFactory);
-    const typeDefs = graphQLFactory.mergeTypesByPaths(graphqlConfig.typeDefsPath);
-    const schema = graphQLFactory.createSchema({ typeDefs });
-    app.use('/graphql', fastifyGraphQL(req => ({ schema, rootValue: req })));
-
-    await app.listen(3000);
+    await app.listen(5000, '0.0.0.0', () => {
+        logger.log('Notadd GraphQL IDE Server started on: http://localhost:5000/graphql');
+    });
 }
 
 bootstrap();

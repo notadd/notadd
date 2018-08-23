@@ -55,11 +55,6 @@ CRM系统： 用户模块、CRM模块...
 更多可畅想的...
 
 
-## 应用商店（临时）
-
-[https://notadd.store/](https://notadd.store/)
-
-
 ## 系统环境
 
 支持系统：Linux（👍）/ macOS / Windows 2008 及以上版本
@@ -122,7 +117,7 @@ QQ 群：[321735506](https://jq.qq.com/?_wv=1027&k=5qVzRh4)
 
 ### 支持者
 
-感谢所有的支持者！ [ 成为支持者 ](https://opencollective.com/notadd#backer)]
+感谢所有的支持者！ [ 成为支持者 ](https://opencollective.com/notadd#backer)
 
 <a href="https://opencollective.com/notadd#backers" target="_blank"><img src="https://opencollective.com/notadd/backers.svg?width=890"></a>
 

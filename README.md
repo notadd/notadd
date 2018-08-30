@@ -24,18 +24,18 @@
 
 ## Characteristics
 
--[x] Typescript-based AOP (tangent-oriented programming)
--[x] Flexible annotation Features
--[x] Global Dependency Injection container
--[x] Scalable, high-performance RPC
--[x] node. JS-based microservices Design
--[x] Asynchronous high-performance applications, single-machine concurrency easily tens of thousands
--[x] GRAPHQL interface, multiple requests for merging
--[x] based on Typeorm native support for more than 6 types of databases
--[x] Database connection pool-[x] based on GRPC, can cross-process, cross-language, cross-server communication
--[ ] Internationalization (i18n) support
--[ ] service governance, fuse, downgrade, load, registration and discovery
--[ ] Support PWA technology, implement off-screen reminders, web-off form saving, webpage offline message push.
+- [x] Typescript-based AOP (tangent-oriented programming)
+- [x] Flexible annotation Features
+- [x] Global Dependency Injection container
+- [x] Scalable, high-performance RPC
+- [x] node. JS-based microservices Design
+- [x] Asynchronous high-performance applications, single-machine concurrency easily tens of thousands
+- [x] GRAPHQL interface, multiple requests for merging
+- [x] based on Typeorm native support for more than 6 types of databases
+- [x] Database connection pool-[x] based on GRPC, can cross-process, cross-language, cross-server communication
+- [ ] Internationalization (i18n) support
+- [ ] service governance, fuse, downgrade, load, registration and discovery
+- [ ] Support PWA technology, implement off-screen reminders, web-off form saving, webpage offline message push.
 
 
 ## Modular design

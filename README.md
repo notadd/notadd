@@ -4,15 +4,17 @@
 <a href="https://jq.qq.com/?_wv=1027&k=5qVzRh4" title="Notadd 官方技术交流群"><img src="https://img.shields.io/badge/QQ%20Group-321735506-6782d6.svg?style=flat-square"></a>	
 <a href="https://travis-ci.org/notadd/notadd/next" title="Build Status"><img src="https://img.shields.io/travis/notadd/notadd/next.svg?style=flat-square"></a></p>
 
-* **【微服务】** 支持单机部署和微服务化
-* **【高性能】** 异步高性能应用，单机并发轻松上万
-* **【易维护】** AOP（面向切面编程）
+* **【micro-service】** Support single-machine deployment and micro-service
+* **【Performance】** High performance asynchronous high-performance applications, single-machine concurrency easily tens of thousands
+* **【EASY maintenance】** AOP(Aspect Oriented Programming)
 
-[开发者文档](./docs/development.md)
+## [中文文档](README_zh.md)
+
+[Developer Documentation](./docs/development.md)
 
 ![](https://wx3.sinaimg.cn/mw690/0060lm7Tly1ftrqx9mcymj30l40kxgnb.jpg)
 
-## 相关技术
+## Technology stack
 
 - Typescript
 - Nest.js
@@ -20,111 +22,107 @@
 - Grpc
 - Redis
 
-## 特点
+## Characteristics
 
-- [x] 基于 Typescript 的 AOP (面向切面编程)
-- [x] 灵活完善的注解功能
-- [x] 全局的依赖注入容器
-- [x] 可扩展的高性能 RPC
-- [x] 基于 node.js 的微服务设计
-- [x] 异步高性能应用，单机并发轻松上万
-- [x] GraphQL 接口，多次请求合并
-- [x] 基于Typeorm 原生支持超过6种数据库
-- [x] 数据库连接池 
-- [x] 基于 Grpc ，可跨进程，跨语言，跨服务器通信
-- [ ] 国际化(i18n)支持
-- [ ] 服务治理，熔断，降级，负载，注册与发现
-- [ ] 支持 PWA 技术，实现断网提醒，断网表单保存，网页离线消息推送。
-
-
-## 模块化设计
+-[x] Typescript-based AOP (tangent-oriented programming)
+-[x] Flexible annotation Features
+-[x] Global Dependency Injection container
+-[x] Scalable, high-performance RPC
+-[x] node. JS-based microservices Design
+-[x] Asynchronous high-performance applications, single-machine concurrency easily tens of thousands
+-[x] GRAPHQL interface, multiple requests for merging
+-[x] based on Typeorm native support for more than 6 types of databases
+-[x] Database connection pool-[x] based on GRPC, can cross-process, cross-language, cross-server communication
+-[ ] Internationalization (i18n) support
+-[ ] service governance, fuse, downgrade, load, registration and discovery
+-[ ] Support PWA technology, implement off-screen reminders, web-off form saving, webpage offline message push.
 
 
-企业官网： CMS模块 + Neditor插件、留言板插件
+## Modular design
 
-信息发布： CMS模块、用户模块 + CMS多用户插件、Neditor插件
+Enterprise Official Website: CMS module + neditor plug-in, message board plugin
 
-微信商城： 用户模块、商城模块、微信模块 + 微信大转盘、支付插件、线下核验插件
+Information release: CMS module, user module + CMS multi-user plugin, Neditor plugin
 
-餐饮方案： 用户模块、商城模块、微信模块 + 点餐插件、扫码支付插件、客流监测插件... + 红外传感拓展、WIFI探针拓展
+WeChat Mall: User module, Mall module, WeChat module + WeChat big turntable, payment plug-in, offline verification plug-in
 
-酒店方案： 用户模块、酒店模块、微信模块 + 预定插件、支付插件、智能WIFI插件 + WIFI探针拓展、门卡系统拓展
+Dining plan: User module, Mall module, WeChat module + ordering plugin, scan code payment plug-in, passenger flow monitoring plug-in ... + infrared sensor development, WiFi probe expansion
 
-CRM系统： 用户模块、CRM模块...
+Hotel Program: User module, Hotel module, WeChat module + booking plugin, payment plug-in, smart WiFi plugin + WiFi probe expansion, door card system expansion
 
-更多可畅想的...
+CRM system: User module, CRM module ...
 
-
-## 系统环境
-
-支持系统：Linux（👍）/ macOS / Windows 2008 及以上版本
-
-Node.js 版本：≥8.0
-
-数据库：PostgreSQL 9.4+（👍）/ MySQL 5.7+ / Oracle 12+ / MS SQL Server 2012+ / MariaDB 10.2.28+ / SQLite 3.9+ 
-
-缓存： Redis 3.2+
+More to imagine ...
 
 
-## 快速开始
+## System environment
 
-1. 下载 [rpc-demo](https://github.com/notadd/rpc-demo)
-2. 根据 rpc-demo 使用说明，启动微服务
-3. 下载本项目
-4. 安装依赖 `yarn install`
-5. 启动 `yarn start`
-6. 打开浏览器，访问 `localhost:5000/graphql`
-7. 测试 `sayHello` 接口
+Support：Linux（👍）/ macOS / Windows 2008 +
 
-## 贡献
+Node.js ：≥8.0
 
-欢迎使用 Pull requests。对于重大变更，请先提出 Issue，和我们一起来讨论你想改变的内容。
+DB：PostgreSQL 9.4+（👍）/ MySQL 5.7+ / Oracle 12+ / MS SQL Server 2012+ / MariaDB 10.2.28+ / SQLite 3.9+ 
 
-> 感谢你考虑为 Notadd 作出贡献！具体贡献指南可以在 [Notadd 文档-贡献](https://docs.notadd.com/#/v2/?id=%e8%b4%a1%e7%8c%ae) 中查看。
+cache： Redis 3.2+
 
 
-## 赞助
+## Quick Start
 
-我们要感谢以下赞助商，资助我们 Notadd 的开发。如果你有兴趣成为赞助商，请访问 Notadd 的[码云页面](https://gitee.com/notadd/notadd?donate=true)：
-
-- [西安 · 本初网络](https://www.ibenchu.com)
-- [杭州 · 又拍云](https://www.upyun.com)
-- [西安 · 马达信息](#)
-
-
-## 交流
-
-QQ 群：[321735506](https://jq.qq.com/?_wv=1027&k=5qVzRh4)
-
-论坛 ：https://bbs.notadd.com
-
-博客 ：https://blog.notadd.com
-
-## 优秀仓库推荐
-
-- [Swoft](https://github.com/swoft-cloud/swoft) 首个基于 Swoole 原生协程，新时代PHP协程框架。
-- [Neditor](https://github.com/notadd/neditor) 基于 ueditor 的现代化编辑器。
-- [Plus(ThinkSNS+)](https://github.com/slimkit/thinksns-plus) 使用 Laravel 框架开发；一个功能强大、易于开发和动态拓展的社交系统。
-
-## 感谢
+1. Download [rpc-demo](https://github.com/notadd/rpc-demo)
+2. Use the Rpc-demo instructions to start the MicroServices service.
+3. Download Notadd project.
+4. then `yarn install`
+5. `yarn start`
+6. view: `localhost:5000/graphql`
+7. test  `sayHello` Interface
 
 
-### 贡献者
+## Sponsors
 
-感谢所有已经为notadd做出贡献的人！
-<a href="https://github.com/notadd/notadd/graphs/contributors"><img src="https://opencollective.com/notadd/contributors.svg?width=890&button=false" /></a>
+We would like to extend our thanks to the following sponsors for helping fund on-going Notadd development. If you are interested in becoming a sponsor, please visit the Notadd [Gitee page](https://gitee.com/notadd/notadd?donate=true):
+
+- [China Xian · Benchu Network](https://www.ibenchu.com)
+- [China Hanzhou · upyun](https://www.upyun.com)
+- China Xian · Mada Network 
 
 
-### 支持者
+## Communication
 
-感谢所有的支持者！ [ 成为支持者 ](https://opencollective.com/notadd#backer)
+QQ Group：[321735506](https://jq.qq.com/?_wv=1027&k=5qVzRh4)
+
+Forum ：https://bbs.notadd.com
+
+Blog ：https://blog.notadd.com
+
+## Excellent Repositories
+
+- [Swoft](https://github.com/swoft-cloud/swoft) Modern High performance AOP and Coroutine PHP Framework, base on Swoole 2
+- [ThinkSNS Plus](https://github.com/slimkit/thinksns-plus) Use of Laravel framework to achieve the user ecosystem.
+- [Neditor](https://github.com/notadd/neditor) A modern editor based on the Ueditor.
+
+
+
+### Contributors
+
+Thank you to all the people who have already contributed to notadd!
+<a href="graphs/contributors"><img src="https://opencollective.com/notadd/contributors.svg?width=890&button=false" /></a>
+
+Pull requests is welcome. For major changes, please put forward the Issue first and join us in discussing what you want to change.
+
+> Thank you for thinking about contributing to Notadd! Specific contribution guides can be viewed at [Notadd document-contributions](https://docs.notadd.com/introductions/#贡献).
+>
+> [Apply to join Notadd Development Group](https://github.com/notadd/notadd/issues/195)
+
+### Backers
+
+Thank you to all our backers! [[Become a backer](https://opencollective.com/notadd#backer)]
 
 <a href="https://opencollective.com/notadd#backers" target="_blank"><img src="https://opencollective.com/notadd/backers.svg?width=890"></a>
 
 
-### 赞助
+### Sponsors
 
-感谢所有赞助商！（请您的公司通过[成为赞助商](https://opencollective.com/notadd#sponsor)来支持这个开源项目）
+Thank you to all our sponsors! (please ask your company to also support this open source project by [becoming a sponsor](https://opencollective.com/notadd#sponsor))
 
 <a href="https://opencollective.com/notadd/sponsor/0/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/0/avatar.svg"></a>
 <a href="https://opencollective.com/notadd/sponsor/1/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/1/avatar.svg"></a>
@@ -137,15 +135,14 @@ QQ 群：[321735506](https://jq.qq.com/?_wv=1027&k=5qVzRh4)
 <a href="https://opencollective.com/notadd/sponsor/8/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/8/avatar.svg"></a>
 <a href="https://opencollective.com/notadd/sponsor/9/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/9/avatar.svg"></a>
 
-## 开源协议
+## License
 
-Notadd 代码遵循 Apache 2.0 许可证发布，请参阅完整的 [许可证文本](LICENSE)
+The Notadd is open-sourced software licensed under the [Apache 2.0 license](LICENSE).
 
 ----------
 
-[![upyun](https://www.notadd.com/src/upyun.svg "又拍云")](https://console.upyun.com/register/?invite=r17EYO3BW) 提供赞助
+[![upyun](https://www.notadd.com/src/upyun.svg "又拍云")](https://console.upyun.com/register/?invite=r17EYO3BW) Provide sponsorship
 
 ## TODO
 
-- [ ] Notadd 底层框架（微服务架构）
-- [ ] Notadd 插件、模块的构建工具，微服务部署工具（Notadd-cli）
+- [ ] Notadd-cli

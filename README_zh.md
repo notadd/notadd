@@ -8,11 +8,11 @@
 * **【高性能】** 异步高性能应用，单机并发轻松上万
 * **【易维护】** AOP（面向切面编程）
 
-[中文文档]（./READMD_zh.md）
+[English document]（./READMD.md）
 
 [开发者文档](./docs/development.md)
 
-![](https://wx3.sinaimg.cn/mw690/0060lm7Tly1ftrqx9mcymj30l40kxgnb.jpg)
+![](https://www.notadd.com/src/notadd-arch-cn.svg)
 
 ## 相关技术
 

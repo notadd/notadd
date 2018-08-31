@@ -12,7 +12,7 @@
 
 [Developer Documentation](./docs/development.md)
 
-![](https://wx3.sinaimg.cn/mw690/0060lm7Tly1ftrqx9mcymj30l40kxgnb.jpg)
+![](https://www.notadd.com/src/notadd-arch.svg)
 
 ## Technology stack
 

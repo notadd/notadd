@@ -14,7 +14,7 @@ export class ErrorsInterceptor implements NestInterceptor {
             }
             return Promise.resolve({
                 code: 500,
-                message: `出现了意外错误：${error.toString()}`
+                message: `An unexpected error has occurred: ${error.toString()}`
             });
         }));
     }

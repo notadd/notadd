@@ -1,15 +1,17 @@
-import { Inject, Module } from '@nestjs/common';
+import { Module } from '@nestjs/common';
 import { APP_INTERCEPTOR } from '@nestjs/core';
-import { GraphQLFactory, GraphQLModule } from '@nestjs/graphql';
-import { ApolloServer } from 'apollo-server-express';
+import { GraphQLModule } from '@nestjs/graphql';
 
 import { AppResolver } from './app.resolver';
 import { ErrorsInterceptor } from './common/interceptors/errors.interceptor';
+import { GraphQLConfigService } from './graphql-config.service';
 import { NotaddGrpcClientFactory } from './grpc/grpc.client-factory';
 
 @Module({
     imports: [
-        GraphQLModule
+        GraphQLModule.forRootAsync({
+            useClass: GraphQLConfigService
+        }),
     ],
     providers: [
         {
@@ -21,27 +23,4 @@ import { NotaddGrpcClientFactory } from './grpc/grpc.client-factory';
     ],
     exports: []
 })
-export class AppModule {
-    constructor(
-        @Inject(GraphQLFactory) private readonly graphQLFactory: GraphQLFactory
-    ) { }
-
-    configureGraphQL(app: any) {
-        const typeDefs = this.graphQLFactory.mergeTypesByPaths('./**/*.types.graphql');
-        const schema = this.graphQLFactory.createSchema({ typeDefs });
-
-        const server = new ApolloServer({
-            schema,
-            context: async ({ req }) => {
-                return { req };
-            },
-            playground: {
-                settings: {
-                    'editor.theme': 'light',
-                    'editor.cursorShape': 'line'
-                }
-            }
-        });
-        server.applyMiddleware({ app });
-    }
-}
+export class AppModule { }

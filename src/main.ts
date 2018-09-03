@@ -10,9 +10,6 @@ async function bootstrap() {
 
     const app = await NestFactory.create(AppModule);
 
-    const appModule = app.get(AppModule);
-    appModule.configureGraphQL(app);
-
     await app.listen(5000, '0.0.0.0', () => {
         logger.log('Notadd GraphQL IDE Server started on: http://localhost:5000/graphql');
     });

@@ -12,10 +12,12 @@ export class ErrorsInterceptor implements NestInterceptor {
                     message: error.getResponse()
                 });
             }
-            return Promise.resolve({
-                code: 500,
-                message: `An unexpected error has occurred: ${error.toString()}`
-            });
+            if (error.code && error.details) {
+                return Promise.resolve({
+                    code: error.code,
+                    message: error.details
+                });
+            }
         }));
     }
 }

@@ -15,24 +15,30 @@
     "private": false,
     "dependencies": {
         "@grpc/proto-loader": "^0.3.0",
-        "@nestjs/common": "^5.3.6",
-        "@nestjs/core": "^5.3.6",
-        "@nestjs/graphql": "^5.2.0",
-        "@nestjs/microservices": "^5.3.6",
+        "@nestjs/common": "^5.3.7",
+        "@nestjs/core": "^5.3.7",
+        "@nestjs/graphql": "^5.3.0",
+        "@nestjs/microservices": "^5.3.7",
         "apollo-server-express": "^2.0.6",
         "graphql": "^14.0.2",
         "graphql-tools": "^3.1.1",
-        "grpc": "^1.14.2",
+        "graphql-type-json": "^0.2.1",
+        "grpc": "^1.15.0",
+        "i18n": "^0.8.3",
+        "jsonwebtoken": "^8.3.0",
         "reflect-metadata": "^0.1.12",
         "rxjs": "^6.3.2",
         "typescript": "^3.0.1"
     },
     "devDependencies": {
         "@types/graphql": "^14.0.0",
+        "@types/graphql-type-json": "^0.1.2",
+        "@types/i18n": "^0.8.3",
+        "@types/jsonwebtoken": "^7.2.8",
         "@types/node": "^10.5.2",
         "nodemon": "^1.18.3",
         "ts-node": "^7.0.0",
-        "tsconfig-paths": "^3.4.2",
+        "tsconfig-paths": "^3.6.0",
         "tslint": "^5.11.0"
     }
 }

@@ -1,0 +1,10 @@
+# User module universal response body
+type UserModuleCommonResult {
+    # status code
+    code: Int
+    # response message
+    message: String
+}
+
+# JSON data
+scalar JSON

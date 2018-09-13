@@ -21,7 +21,7 @@
     },
     "include": [
         "src/*.ts",
-        "src/**/*.ts"
+        "src/**/*.ts", "e2e/user/info-group.e2e-spec.ts"
     ],
     "exclude": [
         "node_modules",

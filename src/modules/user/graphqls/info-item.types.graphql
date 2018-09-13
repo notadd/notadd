@@ -1,0 +1,68 @@
+type Query {
+    # Query all information items
+    findAllInfoItem: InfoItemResult
+}
+
+type Mutation {
+    # Create a new information item
+    createInfoItem(infoItemInput: InfoItemInput): UserModuleCommonResult
+    # Delete the information item of the specified ID
+    deleteInfoItem(infoItemId: Int!): UserModuleCommonResult
+    # Update the item name, label, description, and type of the specified ID
+    updateInfoItem(updateInfoItemInput: UpdateInfoItemInput): UserModuleCommonResult
+}
+
+input InfoItemInput {
+    # Information item's ordering
+    order: Int!
+    # Information item's type
+    type: String!
+    # Information item's name
+    name: String!
+    # Information item's description
+    description: String
+    # Whether the information item is displayed on the registration page
+    registerDisplay: Boolean!
+    # Whether the information item is displayed on the profile page
+    informationDisplay: Boolean!
+}
+
+type InfoItemResult {
+    code: Int
+    message: String
+    data: [InfoItemData]
+}
+
+type InfoItemData {
+    # Information item's id
+    id: Int
+    # Information item's type
+    type: String
+    # Information item's ordering
+    order: Int
+    # Information item's name
+    name: String
+    # Information item's description
+    description: String
+    # Whether the information item is displayed on the registration page
+    registerDisplay: Boolean
+    # Whether the information item is displayed on the profile page
+    informationDisplay: Boolean
+}
+
+input UpdateInfoItemInput {
+    # Information item's id
+    id: Int
+    # Information item's type
+    type: String
+    # Information item's ordering
+    order: Int
+    # Information item's name
+    name: String
+    # Information item's description
+    description: String
+    # Whether the information item is displayed on the registration page
+    registerDisplay: Boolean
+    # Whether the information item is displayed on the profile page
+    informationDisplay: Boolean
+}

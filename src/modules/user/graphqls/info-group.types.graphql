@@ -1,0 +1,29 @@
+type Query {
+    # Query all groups
+    findAllInfoGroup: InfoGroupResult
+    # Query all information items under the specified group ID
+    findInfoItemsByGroupId(groupId: Int!): InfoItemResult
+}
+
+type Mutation {
+    # Create a new information group
+    createInfoGroup(name: String!, roleId: Int!): UserModuleCommonResult
+    # Delete the information group of the specified ID
+    deleteInfoGroup(groupId: Int!): UserModuleCommonResult
+    # Update the information group, this can update group's name or the role which this belongs to
+    updateInfoGroup(groupId: Int!, name: String, roleId: Int): UserModuleCommonResult
+    # Add a specified information item to the specified information group
+    addInfoItemToInfoGroup(infoGroupId: Int!, infoItemIds: [Int]!): UserModuleCommonResult
+    # Delete the specified information item of the specified information group
+    deleteIntoItemFromInfoGroup(infoGroupId: Int!, infoItemIds: [Int]!): UserModuleCommonResult
+}
+
+type InfoGroupResult {
+    code: Int
+    message: String
+    data: [InfoGroupData]
+}
+
+type InfoGroupData {
+    name: String
+}

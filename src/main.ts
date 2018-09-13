@@ -2,7 +2,7 @@ import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 
 import { AppModule } from './app.module';
-import { APP_CONFIG } from './configuration/app.config';
+import { APP_CONFIG } from './configurations/app.config';
 
 async function bootstrap() {
     const logger = new Logger('Notadd');

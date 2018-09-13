@@ -1,0 +1,24 @@
+type Query {
+    # Query all resource and it's permissions
+    findResources: ResourcesResult
+}
+
+type ResourcesResult {
+    code: Int
+    message: String
+    data: [ResourceData]
+}
+
+type ResourceData {
+    id: Int
+    name: String
+    identify: String
+    permissions: [PermissionData]
+}
+
+type PermissionData {
+    id: Int
+    name: String
+    action: String
+    identify: String
+}

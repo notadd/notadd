@@ -44,5 +44,8 @@
     "The authorization code prefix is incorrect. it should be: Bearer or bearer": "The authorization code prefix is incorrect. it should be: Bearer or bearer",
     "The authorization code is incorrect": "The authorization code is incorrect",
     "The authorization code has expired": "The authorization code has expired",
-    "You are not authorized to access": "You are not authorized to access"
+    "You are not authorized to access": "You are not authorized to access",
+    "ban_user": "ban_user",
+	"revert_banned_user": "revert_banned_user",
+	"revert_recycled_user": "revert_recycled_user"
 }

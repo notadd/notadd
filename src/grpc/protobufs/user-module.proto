@@ -243,8 +243,11 @@ service UserService {
     rpc CreateUser (RegisterRequest) returns (StringDataResponse) { }
     rpc AddUserRole (AddOrDeleteUserRoleRequest) returns (StringDataResponse) { }
     rpc DeleteUserRole (AddOrDeleteUserRoleRequest) returns (StringDataResponse) { }
+    rpc BanUser (DeleteUserRequest) returns (StringDataResponse) { }
     rpc RecycleUser (DeleteUserRequest) returns (StringDataResponse) { }
     rpc DeleteRecycledUser (DeleteUserRequest) returns (StringDataResponse) { }
+    rpc RevertBannedUser (DeleteUserRequest) returns (StringDataResponse) { }
+    rpc RevertRecycledUser (DeleteUserRequest) returns (StringDataResponse) { }
     rpc UpdateUserInfoById (UpdateUserInfoByIdRequest) returns (StringDataResponse) { }
     rpc UpdateCurrentUserInfo (UpdateCurrentUserInfoRequest) returns (StringDataResponse) { }   
     rpc FindUserInfoByIds (FindUserInfoByIdsRequest) returns (FindUserInfoByIdsResponse) { }

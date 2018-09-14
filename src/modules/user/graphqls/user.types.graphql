@@ -22,12 +22,18 @@ type Mutation {
     createUser(createUserInput: CreateUserInput): UserModuleCommonResult
     # Add a role to the user
     addUserRole(userId: Int!, roleId: Int!): UserModuleCommonResult
+    # Ban user
+    banUser(userId: Int!): UserModuleCommonResult
     # Delete a role from the user
     deleteUserRole(userId: Int!, roleId: Int!): UserModuleCommonResult
     # Delete user to recycle bin
     recycleUser(userId: Int!): UserModuleCommonResult
     # Delete user in the recycle bin
     deleteRecycledUser(userId: Int!): UserModuleCommonResult
+    # Revert banned user
+    revertBannedUser(userId: Int!): UserModuleCommonResult
+    # Revert recycled user
+    revertRecycledUser(userId: Int!): UserModuleCommonResult
     # Specify user information by ID update
     updateUserInfoById(userId: Int!, updateUserInput: UpdateUserInput): UserModuleCommonResult
     # Update current login user information

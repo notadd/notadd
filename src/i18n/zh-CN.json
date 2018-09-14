@@ -44,5 +44,8 @@
 	"The authorization code prefix is incorrect. it should be: Bearer or bearer": "授权码前缀有误，前缀为 Bearer 或 bearer",
 	"The authorization code is incorrect": "授权码错误",
 	"The authorization code has expired": "授权码已过期",
-	"You are not authorized to access": "您无权访问"
+	"You are not authorized to access": "您无权访问",
+	"ban_user": "封禁用户",
+	"revert_banned_user": "解封用户",
+	"revert_recycled_user": "恢复用户"
 }

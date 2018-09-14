@@ -58,8 +58,14 @@ export class UserResolver {
         return this.userServiceInterface.deleteUserRole(body).toPromise();
     }
 
+    @Mutation('banUser')
+    @Permission({ name: 'ban_user', identify: 'user:banUser', action: 'update' })
+    async banUser(req, body: { userId: number }): Promise<CommonResult> {
+        return this.userServiceInterface.banUser(body).toPromise();
+    }
+
     @Mutation('recycleUser')
-    @Permission({ name: 'recycle_user', identify: 'user:recycleUser', action: 'delete' })
+    @Permission({ name: 'recycle_user', identify: 'user:recycleUser', action: 'update' })
     async recycleUser(req, body: { userId: number }): Promise<CommonResult> {
         return this.userServiceInterface.recycleUser(body).toPromise();
     }
@@ -68,6 +74,18 @@ export class UserResolver {
     @Permission({ name: 'delete_recycled_user', identify: 'user:deleteRecycledUser', action: 'delete' })
     async deleteRecycledUser(req, body: { userId: number }): Promise<CommonResult> {
         return this.userServiceInterface.deleteRecycledUser(body).toPromise();
+    }
+
+    @Mutation('revertBannedUser')
+    @Permission({ name: 'revert_banned_user', identify: 'user:revertBannedUser', action: 'update' })
+    async revertBannedUser(req, body: { userId: number }): Promise<CommonResult> {
+        return this.userServiceInterface.revertBannedUser(body).toPromise();
+    }
+
+    @Mutation('revertRecycledUser')
+    @Permission({ name: 'revert_recycled_user', identify: 'user:revertRecycledUser', action: 'update' })
+    async revertRecycledUser(req, body: { userId: number }): Promise<CommonResult> {
+        return this.userServiceInterface.revertRecycledUser(body).toPromise();
     }
 
     @Mutation('updateUserInfoById')

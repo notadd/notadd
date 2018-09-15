@@ -8,7 +8,7 @@
 * **【高性能】** 异步高性能应用，单机并发轻松上万
 * **【易维护】** AOP（面向切面编程）
 
-[English document](./READMD.md)
+[English document](./README.md)
 
 [开发者文档](./docs/development.md)
 

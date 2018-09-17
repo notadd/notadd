@@ -69,12 +69,13 @@ cache： Redis 3.2+
 ## Quick Start
 
 1. Download [rpc-demo](https://github.com/notadd/rpc-demo)
-2. Use the Rpc-demo instructions to start the MicroServices service.
-3. Download Notadd project.
-4. then `yarn install`
-5. `yarn start`
-6. view: `localhost:5000/graphql`
-7. test  `sayHello` Interface
+2. Download [ns-module-user](https://github.com/notadd/ns-module-user)
+3. Use the `rpc-demo` and `ns-module-user` instructions to start the MicroServices service.
+4. Download Notadd project.
+5. then `yarn install`
+6. `yarn start`
+7. view: `localhost:5000/graphql`
+8. test  `sayHello` Interface
 
 
 ## Sponsors

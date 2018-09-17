@@ -13,10 +13,10 @@
 ```none
 src
  |- controllers       -- Rpc控制器目录，子级文件名为 xxx.controller.ts
+ |- entities          -- 实体类目录，命名和表名对应，如 User 对应 user 表，子级文件名为 xxx.entity.ts
+ |- interfaces        -- 接口定义目录，子级文件名为 xxx.interface.ts
  |- protobufs         -- protobuf 文件目录，子级文件名为 xxx.proto
  |- services          -- 业务逻辑实现目录，子级文件名为 xxx.service.ts
- |- interfaces        -- 接口定义目录，子级文件名为 xxx.interface.ts
- |- entities          -- 实体类目录，命名和表名对应，如 User 对应 user 表，子级文件名为 xxx.entity.ts
  |- utils             -- 工具类目录，子级文件名为 xxx.util.ts
 xxx.module.ts         -- 模块根程序
 main.ts               -- 模块启动程序

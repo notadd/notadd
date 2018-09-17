@@ -68,9 +68,9 @@ cache： Redis 3.2+
 
 ## Quick Start
 
-1. Download [rpc-demo](https://github.com/notadd/rpc-demo)
+1. Download [nt-rpc-demo](https://github.com/notadd/nt-rpc-demo)
 2. Download [nt-module-user](https://github.com/notadd/nt-module-user)
-3. Use the `rpc-demo` and `nt-module-user` instructions to start the MicroServices service.
+3. Use the `nt-rpc-demo` and `nt-module-user` instructions to start the MicroServices service.
 4. Download Notadd project.
 5. then `yarn install`
 6. `yarn start`

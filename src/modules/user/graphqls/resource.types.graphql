@@ -1,5 +1,5 @@
 type Query {
-    # Query all resource and it's permissions
+    "Query all resource and it's permissions"
     findResources: ResourcesResult
 }
 

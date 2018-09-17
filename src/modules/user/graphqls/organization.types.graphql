@@ -1,22 +1,22 @@
 type Query {
-    # Query the roots node of organizations
+    "Query the roots node of organizations"
     findRootOrganizations: OrganizationsRootResult
-    # Query all organizations
+    "Query all organizations"
     findAllOrganizations: OrganizationsJsonResult
-    # Query all suborganizations under the specified organization
+    "Query all suborganizations under the specified organization"
     findChildrenOrganizations(id: Int!): OrganizationsJsonResult
 }
 
 type Mutation {
-    # Create an organization, when the parentId is empty, it means creating a root organization
+    "Create an organization, when the parentId is empty, it means creating a root organization"
     createOrganization(name: String!, parentId: Int): UserModuleCommonResult
-    # Update organization
+    "Update organization"
     updateOrganization(id: Int!, name: String!, parentId: Int!): UserModuleCommonResult
-    # Delete organization
+    "Delete organization"
     deleteOrganization(id: Int!): UserModuleCommonResult
-    # Add users to the specified organization
+    "Add users to the specified organization"
     addUsersToOrganization(id: Int!, userIds: [Int]!): UserModuleCommonResult
-    # Delete users from the specified organization
+    "Delete users from the specified organization"
     deleteUserFromOrganization(id: Int!, userIds: [Int]!): UserModuleCommonResult
 }
 

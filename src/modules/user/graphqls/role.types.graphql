@@ -1,18 +1,18 @@
 type Query {
-    # Query all roles
+    "Query all roles"
     findRoles: RolesResult
-    # Query a specified role's details
+    "Query a specified role's details"
     findOneRoleInfo(roleId: Int!): RoleInfoResult
 }
 
 type Mutation {
-    # Create a role
+    "Create a role"
     createRole(name: String!): UserModuleCommonResult
-    # Update the specified role's name
+    "Update the specified role's name"
     updateRole(id: Int!, name: String!): UserModuleCommonResult
-    # Delete the specified role
+    "Delete the specified role"
     deleteRole(id: Int!): UserModuleCommonResult
-    # Set permissions for a specified role
+    "Set permissions for a specified role"
     setPermissionsToRole(roleId: Int!, permissionIds: [Int]!): UserModuleCommonResult
 }
 

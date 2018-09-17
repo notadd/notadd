@@ -71,8 +71,8 @@ Node.js 版本：≥8.0
 ## 快速开始
 
 1. 下载 [rpc-demo](https://github.com/notadd/rpc-demo)
-2. 下载用户服务 [ns-module-user](https://github.com/notadd/ns-module-user)
-3. 根据 rpc-demo、ns-module-user 使用说明，启动微服务
+2. 下载用户服务 [nt-module-user](https://github.com/notadd/nt-module-user)
+3. 根据 rpc-demo、nt-module-user 使用说明，启动微服务
 4. 下载本项目
 5. 安装依赖 `yarn install`
 6. 启动 `yarn start`

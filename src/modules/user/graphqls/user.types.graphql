@@ -99,7 +99,7 @@ input UpdateInfoKV {
 input RoleOrOrganizationIdData {
     "Update previous ID"
     before: Int
-    "Updated ID
+    "Updated ID"
     after: Int
 }
 

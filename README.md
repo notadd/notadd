@@ -1,7 +1,7 @@
 <p align="center"><img src="https://www.notadd.com/src/notado_logo420x96.svg" alt="Notadd Logo."></p>
 <p align="center">
 
-<a href="https://jq.qq.com/?_wv=1027&k=5qVzRh4" title="Notadd 官方技术交流群"><img src="https://img.shields.io/badge/QQ%20Group-321735506-6782d6.svg?style=flat-square"></a>	
+<a href="https://jq.qq.com/?_wv=1027&k=5DYQglp" title="Notadd 官方技术交流群"><img src="https://img.shields.io/badge/QQ%20Group-322247106-6782d6.svg?style=flat-square"></a>	
 <a href="https://travis-ci.org/notadd/notadd/next" title="Build Status"><img src="https://img.shields.io/travis/notadd/notadd/next.svg?style=flat-square"></a></p>
 
 * **【micro-service】** Support single-machine deployment and micro-service
@@ -89,7 +89,7 @@ We would like to extend our thanks to the following sponsors for helping fund on
 
 ## Communication
 
-QQ Group：[321735506](https://jq.qq.com/?_wv=1027&k=5qVzRh4)
+QQ Group：[322247106](https://jq.qq.com/?_wv=1027&k=5DYQglp)
 
 Forum ：https://bbs.notadd.com
 

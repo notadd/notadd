@@ -1,11 +1,9 @@
 import 'reflect-metadata';
 
 import { DynamicModule, Global, Inject, Module, OnModuleInit } from '@nestjs/common';
-import { PATH_METADATA } from '@nestjs/common/constants';
 import { APP_GUARD } from '@nestjs/core';
 import { ModulesContainer } from '@nestjs/core/injector/modules-container';
 import { MetadataScanner } from '@nestjs/core/metadata-scanner';
-import { RESOLVER_TYPE_METADATA } from '@nestjs/graphql/dist/graphql.constants';
 import { __ as t, configure as i18nConfigure } from 'i18n';
 
 import { PERMISSION_DEFINITION, RESOURCE_DEFINITION } from '../../common/decorators';
@@ -57,37 +55,38 @@ export class UserModule implements OnModuleInit {
     }
 
     async onModuleInit() {
+        this.scanResourcesAndPermissions();
         await this.authService.saveResourcesAndPermissions(this.scanResourcesAndPermissions());
     }
 
     private scanResourcesAndPermissions() {
-        const metadataMap: Map<string, { resource: Resource, permissions: Permission[] }> = new Map();
-        this.modulesContainer.forEach(module => {
-            module.components.forEach(component => {
+        const metadataMap: Map<string, { name: string, resource: Resource[] }> = new Map();
+        this.modulesContainer.forEach((moduleValue, moduleKey) => {
+            for (const [componentKey, componentKeyValue] of [...moduleValue.components, ...moduleValue.routes]) {
                 const isResolverOrController =
-                    Reflect.getMetadataKeys(component.instance.constructor)
-                        .filter(key => [RESOLVER_TYPE_METADATA, PATH_METADATA]
+                    Reflect.getMetadataKeys(componentKeyValue.instance.constructor)
+                        .filter(key => ['graphql:resolver_type', 'path']
                             .includes(key)).length > 0;
 
                 if (isResolverOrController) {
-                    const resource: Resource = Reflect.getMetadata(RESOURCE_DEFINITION, component.instance.constructor);
-                    const prototype = Object.getPrototypeOf(component.instance);
+                    const resource: Resource = Reflect.getMetadata(RESOURCE_DEFINITION, componentKeyValue.instance.constructor);
+                    const prototype = Object.getPrototypeOf(componentKeyValue.instance);
 
-                    if (prototype) {
-                        const permissions: Permission[] = this.metadataScanner.scanFromPrototype(component.instance, prototype, name => {
-                            return Reflect.getMetadata(PERMISSION_DEFINITION, component.instance, name);
+                    if (resource && prototype) {
+                        const permissions: Permission[] = this.metadataScanner.scanFromPrototype(componentKeyValue.instance, prototype, name => {
+                            return Reflect.getMetadata(PERMISSION_DEFINITION, componentKeyValue.instance, name);
                         });
+                        resource.permissions = permissions;
 
-                        if (resource) {
-                            resource.name = t(resource.name);
-                            permissions.forEach(permission => {
-                                permission.name = t(permission.name);
-                            });
-                            metadataMap.set(resource.identify, { resource, permissions });
+                        if (metadataMap.has(moduleKey)) {
+                            metadataMap.get(moduleKey).name = t(moduleValue.metatype.name);
+                            metadataMap.get(moduleKey).resource.push(resource);
+                        } else {
+                            metadataMap.set(moduleKey, { name: t(moduleValue.metatype.name), resource: [resource] });
                         }
                     }
                 }
-            });
+            }
         });
         return metadataMap;
     }

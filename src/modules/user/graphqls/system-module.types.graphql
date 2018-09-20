@@ -1,0 +1,14 @@
+type Query {
+    findSystemModules: SystemModulesResult
+}
+
+type SystemModulesResult {
+    code: Int
+    message: String
+    data: [SystemModuleData]
+}
+
+type SystemModuleData {
+    id: Int
+    name: String
+}

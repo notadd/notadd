@@ -68,7 +68,7 @@ input UpdateUserInput {
     infoKVs: [UpdateInfoKV]
     "An array of role ID objects owned, each item must contain the role ID (before) before the update, and the role ID (after) after the update"
     roleIds: [RoleOrOrganizationIdData]
-    "An array of organization ID objects, each of which must contain the organization ID (before) before the update, and the organization ID (afer) after the update"
+    "An array of organization ID objects, each of which must contain the organization ID (before) before the update, and the organization ID (after) after the update"
     organizationIds: [RoleOrOrganizationIdData]
 }
 
@@ -76,7 +76,7 @@ input UpdateCurrentUserInput {
     email: String
     mobile: String
     password: String
-    "Information item value key-value pair, keyis the ID of the user information item (userInfo.id), and value is the value of the information item (userInfo.value)"
+    "Information item value key-value pair, key is the ID of the user information item (userInfo.id), and value is the value of the information item (userInfo.value)"
     infoKVs: [UpdateInfoKV]
 }
 

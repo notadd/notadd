@@ -157,9 +157,27 @@ message FindChildrenOrganizationsRequest {
     int32 id = 1;
 }
 
+service SystemModuleService {
+    rpc FindSystemModules (PlaceholderRequest) returns (FindSystemModuleResponse) { }
+}
+
+message FindSystemModuleResponse {
+    int32 code = 1;
+    string message = 2;
+    repeated SystemModule data = 3;
+    message SystemModule {
+        int32 id = 1;
+        string name = 2;
+    }
+}
+
 service ResourceService {
-    rpc FindResources (PlaceholderRequest) returns (FindResourcesResponse) { }
+    rpc FindResources (FindResourcesRequest) returns (FindResourcesResponse) { }
     rpc SaveResourcesAndPermissions (SaveResourcesAndPermissionsRequest) returns (StringDataResponse) { }
+}
+
+message FindResourcesRequest {
+    int32 systemModuleId = 1;
 }
 
 message SaveResourcesAndPermissionsRequest {

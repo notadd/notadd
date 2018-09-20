@@ -3,6 +3,7 @@
 	"user_manage": "用户管理",
 	"role_manage": "角色管理",
 	"resource_manage": "资源管理",
+	"system_module_manage": "系统模块管理",
 	"info_group_manage": "信息组管理",
 	"info_item_manage": "信息项管理",
 	"find_root_organizations": "查询根组织",
@@ -29,6 +30,7 @@
 	"find_roles": "查询所有角色",
 	"find_one_role_info": "查询角色信息",
 	"find_resources": "查询资源",
+	"find_system_modules": "查询系统模块",
 	"create_info_group": "创建信息组",
 	"delete_info_group": "删除信息组",
 	"update_info_group": "更新信息组",
@@ -47,5 +49,6 @@
 	"You are not authorized to access": "您无权访问",
 	"ban_user": "封禁用户",
 	"revert_banned_user": "解封用户",
-	"revert_recycled_user": "恢复用户"
+	"revert_recycled_user": "恢复用户",
+	"UserModule": "用户模块"
 }

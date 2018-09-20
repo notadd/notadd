@@ -1,6 +1,6 @@
 type Query {
-    "Query all resource and it's permissions"
-    findResources: ResourcesResult
+    "Query The specifed system module's all resources and it's permissions"
+    findResources(systemModuleId: Int!): ResourcesResult
 }
 
 type ResourcesResult {

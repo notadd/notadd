@@ -3,7 +3,7 @@ import { AuthenticationError } from 'apollo-server-core';
 import { __ as t } from 'i18n';
 import * as jwt from 'jsonwebtoken';
 
-import { Permission, Resource } from '../../../common/interfaces';
+import { Resource } from '../../../common/interfaces';
 import { NotaddGrpcClientFactory } from '../../../grpc/grpc.client-factory';
 
 @Injectable()
@@ -53,7 +53,14 @@ export class AuthService implements OnModuleInit {
         }
     }
 
-    async saveResourcesAndPermissions(metadataMap: Map<string, { resource: Resource, permissions: Permission[] }>) {
+    async saveResourcesAndPermissions(metadataMap: Map<string, { name: string, resource: Resource[] }>) {
+        metadataMap.forEach(value => {
+            value.resource.forEach(resource => {
+                resource.name = t(resource.name);
+                resource.permissions.forEach(p => p.name = t(p.name));
+            });
+        });
+
         const obj = {};
         metadataMap.forEach((v, k) => obj[k] = v);
         await this.authServiceInterface.saveResourcesAndPermissions({ metadata: JSON.stringify(obj) }).toPromise();

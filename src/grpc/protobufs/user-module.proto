@@ -206,6 +206,7 @@ service RoleService {
     rpc CreateRole (CreateRoleRequest) returns (StringDataResponse) { }
     rpc DeleteRole (DeleteRoleRequest) returns (StringDataResponse) { }
     rpc UpdateRole (UpdateRoleRequest) returns (StringDataResponse) { }
+    rpc RemovePermission (RemovePermissionRequest) returns (StringDataResponse);
     rpc SetPermissionsToRole (SetPermissionToRoleRequest) returns (StringDataResponse) { }
     rpc FindRoles (PlaceholderRequest) returns (FindRolesResponse) { }
     rpc FindOneRoleInfo (FindOneRoleInfoRequest) returns (FindOneRoleInfoResponse) { }
@@ -222,6 +223,11 @@ message DeleteRoleRequest {
 message UpdateRoleRequest {
     int32 id = 1;
     string name = 2;
+}
+
+message RemovePermissionRequest {
+    int32 roleId = 1;
+    int32 permissionId = 2;
 }
 
 message SetPermissionToRoleRequest {
@@ -448,13 +454,13 @@ message FindOneWithRolesAndPermissionsResponse {
         message UserRole {
             int32 id = 1;
             string name = 2;
-            repeated UserPermission permissions = 3;
-            message UserPermission {
-                int32 id = 1;
-                string name = 2;
-                string action = 3;
-                string identify = 4;
-            }
+            repeated Permission permissions = 3;
+        }
+        repeated PersonalPermission personalPermissions = 10;
+        message PersonalPermission {
+            int32 id = 1;
+            int32 status = 2;
+            Permission permission = 3;
         }
     }
 }

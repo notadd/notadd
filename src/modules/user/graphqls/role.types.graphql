@@ -12,6 +12,8 @@ type Mutation {
     updateRole(id: Int!, name: String!): UserModuleCommonResult
     "Delete the specified role"
     deleteRole(id: Int!): UserModuleCommonResult
+    "Remove a permission from role"
+    removePermissionFromRole(roleId: Int!, permissionId: Int!): UserModuleCommonResult
     "Set permissions for a specified role"
     setPermissionsToRole(roleId: Int!, permissionIds: [Int]!): UserModuleCommonResult
 }

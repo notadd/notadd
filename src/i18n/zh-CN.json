@@ -26,6 +26,7 @@
 	"create_role": "创建角色",
 	"delete_role": "删除角色",
 	"update_role": "更新角色",
+	"remove_permission_from_role": "删除角色权限",
 	"set_permissions_to_role": "设置角色权限",
 	"find_roles": "查询所有角色",
 	"find_one_role_info": "查询角色信息",

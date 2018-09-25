@@ -26,7 +26,7 @@
     "create_role": "create_role",
     "delete_role": "delete_role",
     "update_role": "update_role",
-    "remove_permission_from_role": "remove_permission_from_role",
+    "remove_permission_of_role": "remove_permission_from_role",
     "set_permissions_to_role": "set_permissions_to_role",
     "find_roles": "find_roles",
     "find_one_role_info": "find_one_role_info",

@@ -36,9 +36,9 @@ export class RoleResolver {
         return this.roleServiceInterface.updateRole(body).toPromise();
     }
 
-    @Mutation('removePermissionFromRole')
-    @Permission({ name: 'remove_permission_from_role', identify: 'role:removePermissionFromRole', action: 'delete' })
-    async removePermissionFromRole(req, body: { roleId: number, permissionId: number }): Promise<CommonResult> {
+    @Mutation('removePermissionOfRole')
+    @Permission({ name: 'remove_permission_of_role', identify: 'role:removePermissionOfRole', action: 'delete' })
+    async removePermissionOfRole(req, body: { roleId: number, permissionId: number }): Promise<CommonResult> {
         return this.roleServiceInterface.removePermission(body).toPromise();
     }
 

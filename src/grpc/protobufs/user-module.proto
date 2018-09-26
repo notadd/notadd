@@ -280,6 +280,8 @@ service UserService {
     rpc FindUsersInRole (FindUsersInRoleRequest) returns (FindUsersInRoleResponse) { }
     rpc FindUsersInOrganization (FindUsersInOrganizationRequest) returns (FindUsersInOrganizationResponse) { }
     rpc FindOneWithRolesAndPermissions (FindOneWithRolesAndPermissionsRequest) returns (FindOneWithRolesAndPermissionsResponse) { }
+    rpc AddPermissionToUser (AddOrDeleteUserPermRequest) returns (StringDataResponse) { }
+    rpc DeletePermissionOfUser (AddOrDeleteUserPermRequest) returns (StringDataResponse) { }
 }
 
 message LoginRequest {
@@ -463,4 +465,9 @@ message FindOneWithRolesAndPermissionsResponse {
             Permission permission = 3;
         }
     }
+}
+
+message AddOrDeleteUserPermRequest {
+    int32 userId = 1;
+    int32 permissionId = 2;
 }

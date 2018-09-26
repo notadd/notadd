@@ -22,6 +22,10 @@ type Mutation {
     createUser(createUserInput: CreateUserInput): UserModuleCommonResult
     "Add a role to the user"
     addUserRole(userId: Int!, roleId: Int!): UserModuleCommonResult
+    "Add a personal permission to user"
+    addPermissionToUser(userId: Int!, permissionId: Int!): UserModuleCommonResult
+    "Delete a permission of specified user"
+    deletePermissionOfUser(userId: Int!, permissionId: Int!): UserModuleCommonResult
     "Ban user"
     banUser(userId: Int!): UserModuleCommonResult
     "Delete a role from the user"
@@ -41,7 +45,7 @@ type Mutation {
 }
 
 input RegisterUserInput {
-    username: String!
+    username: String
     email: String
     mobile: String
     password: String!
@@ -50,7 +54,7 @@ input RegisterUserInput {
 }
 
 input CreateUserInput {
-    username: String!
+    username: String
     email: String
     mobile: String
     password: String!

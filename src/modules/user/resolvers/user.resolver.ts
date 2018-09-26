@@ -52,6 +52,18 @@ export class UserResolver {
         return this.userServiceInterface.addUserRole(body).toPromise();
     }
 
+    @Mutation('addPermissionToUser')
+    @Permission({ name: 'add_permission_to_user', identify: 'user:addPermissionToUser', action: 'create' })
+    async addPermissionToUser(req, body: { userId: number, permissionId: number }) {
+        return this.userServiceInterface.addPermissionToUser(body).toPromise();
+    }
+
+    @Mutation('deletePermissionOfUser')
+    @Permission({ name: 'delete_permission_of_user', identify: 'user:deletePermissionOfUser', action: 'delete' })
+    async deletePermissionOfUser(req, body: { userId: number, permissionId: number }) {
+        return this.userServiceInterface.deletePermissionOfUser(body).toPromise();
+    }
+
     @Mutation('deleteUserRole')
     @Permission({ name: 'delete_user_role', identify: 'user:deleteUserRole', action: 'delete' })
     async deleteUserRole(req, body: { userId: number, roleId: number }): Promise<CommonResult> {

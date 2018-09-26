@@ -16,6 +16,8 @@
 	"delete_user_from_organization": "删除组织中的用户",
 	"create_user": "创建用户",
 	"add_user_role": "添加用户角色",
+	"add_permission_to_user": "添加用户个人权限",
+	"delete_permission_of_user": "删除用户权限",
 	"delete_user_role": "删除用户角色",
 	"recycle_user": "删除用户到回收站",
 	"delete_recycled_user": "删除回收站内的用户",

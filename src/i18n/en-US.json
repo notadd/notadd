@@ -16,6 +16,8 @@
     "delete_user_from_organization": "delete_user_from_organization",
     "create_user": "create_user",
     "add_user_role": "add_user_role",
+    "add_permission_to_user": "add_permission_to_user",
+	"delete_permission_of_user": "delete_permission_of_user",
     "delete_user_role": "delete_user_role",
     "recycle_user": "recycle_user",
     "delete_recycled_user": "delete_recycled_user",

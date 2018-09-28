@@ -19,12 +19,7 @@ export function generateGrpcOptions(url: string, packageName: string, protoFileN
             package: packageName,
             protoPath: join(__dirname, 'protobufs/' + protoFileName),
             loader: {
-                arrays: true,
-                keepCase: true,
-                longs: String,
-                enums: String,
-                defaults: true,
-                oneofs: true
+                arrays: true
             }
         }
     };

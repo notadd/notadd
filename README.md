@@ -11,7 +11,7 @@ Notadd is an open source, Nest.js framework-based microservice development archi
 - **[Microservice]** Supports stand-alone deployment and microservice
 - **[High Performance]** Asynchronous high-performance applications, tens of thousands of concurrent
 - **[Easy to maintain]** Developed with Typescript, intelligent code hints and compile-time code checking mechanisms
-- **[pluggable]** modular development system, according to business needs, select the appropriate module, build the API layer
+- **[Pluggable]** modular development system, according to business needs, select the appropriate module, build the API layer
 
 ## Technology stack
 
@@ -55,7 +55,7 @@ More to imagine ...
 
 # Contribution
 
-Welcome to Pull requests. For major changes, please file a Issue and discuss with us what you want to change.。
+Welcome to Pull requests. For major changes, please file a Issue and discuss with us what you want to change.
 
 ## Contributors
 

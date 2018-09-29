@@ -69,9 +69,9 @@ CRM系统： 用户模块、CRM模块...
 
 1群(后端)：322247106
 
-论坛 ：https://bbs.notadd.com
+论坛 ：建设中
 
-博客 ：https://blog.notadd.com
+博客 ：建设中
 
 ## 优秀仓库推荐
 

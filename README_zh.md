@@ -58,6 +58,11 @@ CRM系统： 用户模块、CRM模块...
 
 欢迎使用 Pull requests。对于重大变更，请先提出 Issue，和我们一起来讨论你想改变的内容。
 
+### 贡献者
+
+感谢所有已经为notadd做出贡献的人！
+<a href="https://github.com/notadd/notadd/graphs/contributors"><img src="https://opencollective.com/notadd/contributors.svg?width=890&button=false" /></a>
+
 > 感谢你考虑为 Notadd 作出贡献！具体贡献指南可以在 [Notadd 文档-贡献](https://docs.notadd.com/#/v2/?id=%e8%b4%a1%e7%8c%ae) 中查看。
 
 ## 交流
@@ -77,11 +82,6 @@ CRM系统： 用户模块、CRM模块...
 ## 感谢
 
 感谢所有赞助商！
-
-### 贡献者
-
-感谢所有已经为notadd做出贡献的人！
-<a href="https://github.com/notadd/notadd/graphs/contributors"><img src="https://opencollective.com/notadd/contributors.svg?width=890&button=false" /></a>
 
 ### 支持者
 

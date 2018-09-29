@@ -17,7 +17,8 @@ Notadd 是一个开源的、基于 Nest.js 框架的微服务开发架构，您�
 
 - Typescript
 - Nest.js
-- GraphQL API
+- GraphQL
+- TypeORM
 - Grpc
 - Redis
 
@@ -43,7 +44,7 @@ CRM系统： 用户模块、CRM模块...
 
 # 快速开始
 
-1. 克隆 Rpc 示例服务 [nt-rpc-demo](https://github.com/notadd/nt-rpc-demo)
+1. 克隆 Rpc 示例服务到本地 [nt-rpc-demo](https://github.com/notadd/nt-rpc-demo)
 2. 克隆用户服务到本地 [nt-module-user](https://github.com/notadd/nt-module-user)
 3. 根据 `nt-rpc-demo`、`nt-module-user` 使用说明，启动微服务
 4. 克隆此项目到本地
@@ -52,20 +53,18 @@ CRM系统： 用户模块、CRM模块...
 7. 打开浏览器，访问 `localhost:5000/graphql`
 8. 测试接口
 
-> 注意：Notadd 主程序现阶段提供的是演示代码，不排除后期移除所有 graphql api 代码。
+> Note: The Notadd main program provides demo code at this stage, and does not rule out the removal of all graphql api code later.
 
-## 贡献
+# 贡献
 
 欢迎使用 Pull requests。对于重大变更，请先提出 Issue，和我们一起来讨论你想改变的内容。
 
-### 贡献者
+## 贡献者
 
 感谢所有已经为notadd做出贡献的人！
 <a href="https://github.com/notadd/notadd/graphs/contributors"><img src="https://opencollective.com/notadd/contributors.svg?width=890&button=false" /></a>
 
-> 感谢你考虑为 Notadd 作出贡献！具体贡献指南可以在 [Notadd 文档-贡献](https://docs.notadd.com/#/v2/?id=%e8%b4%a1%e7%8c%ae) 中查看。
-
-## 交流
+### 交流
 
 1群(后端)：322247106
 
@@ -73,33 +72,31 @@ CRM系统： 用户模块、CRM模块...
 
 博客 ：建设中
 
-## 优秀仓库推荐
+### 优秀仓库推荐
 
 - [Swoft](https://github.com/swoft-cloud/swoft) 首个基于 Swoole 原生协程，新时代PHP协程框架。
 - [Neditor](https://github.com/notadd/neditor) 基于 ueditor 的现代化编辑器。
 - [Plus(ThinkSNS+)](https://github.com/slimkit/thinksns-plus) 使用 Laravel 框架开发；一个功能强大、易于开发和动态拓展的社交系统。
 
-## 感谢
-
-## 赞助商
+# 赞助商
 
 我们要感谢以下赞助商，资助我们 Notadd 的开发。如果你有兴趣成为赞助商，请访问 Notadd 的[码云页面](https://gitee.com/notadd/notadd?donate=true)：
 
 - [西安 · 本初网络](https://www.ibenchu.com)
 - [杭州 · 又拍云](https://www.upyun.com)
-- [西安 · 马达信息](#)
+- 西安 · 马达信息
 
 （请您的公司通过[成为赞助商](https://opencollective.com/notadd#sponsor)来支持这个开源项目）
 
 [![upyun](https://www.notadd.com/src/upyun.svg "又拍云")](https://console.upyun.com/register/?invite=r17EYO3BW)
 
-### 支持者
+## 支持者
 
 感谢所有的支持者！ [成为支持者](https://opencollective.com/notadd#backer)
 
 <a href="https://opencollective.com/notadd#backers" target="_blank"><img src="https://opencollective.com/notadd/backers.svg?width=890"></a>
 
-## 开源协议
+# 开源协议
 
 Notadd 代码遵循 Apache 2.0 许可证发布，请参阅完整的 [许可证文本](LICENSE)
 
@@ -108,6 +105,6 @@ Notadd 代码遵循 Apache 2.0 许可证发布，请参阅完整的 [许可证�
 # TODO
 
 - [x] 国际化(i18n)支持
-- [ ] 通用服务 cms pay config storage、log 等
+- [ ] 公共服务，如 cms pay config storage、logger 等
 - [ ] 服务治理，熔断，降级，负载，注册与发现
 - [ ] 支持 PWA 技术，实现断网提醒，断网表单保存，网页离线消息推送。

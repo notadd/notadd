@@ -1,18 +1,17 @@
-<p align="center"><img src="https://www.notadd.com/src/notado_logo420x96.svg" alt="Notadd Logo."></p>
-<p align="center">
+<center><img src="https://www.notadd.com/src/notado_logo420x96.svg" alt="Notadd Logo."></center>
 
-<a href="https://jq.qq.com/?_wv=1027&k=5qVzRh4" title="Notadd 官方技术交流群"><img src="https://img.shields.io/badge/QQ%20Group-322247106-6782d6.svg?style=flat-square"></a>	
-<a href="https://travis-ci.org/notadd/notadd/next" title="Build Status"><img src="https://img.shields.io/travis/notadd/notadd/next.svg?style=flat-square"></a></p>
-
-* **【微服务】** 支持单机部署和微服务化
-* **【高性能】** 异步高性能应用，单机并发轻松上万
-* **【易维护】** AOP（面向切面编程）
+# 概述
 
 [English document](./README.md)
 
-[开发者文档](./docs/development.md)
+Notadd 是一个开源的、基于 Nest.js 框架的微服务开发架构，您可以根据不同的业务需求使用适合的模块、插件来搭建一个微服务系统。Notadd 官方提供了抽象化的公共服务层，在服务层内，每一个模块都提供了 Grpc 接口供 Notadd 主程序进行调用。比如一个 CMS 系统，您可以使用官方提供的 `nt-module-cms` 和 `nt-module-user` 模块作为基础服务层，然后依据服务层定义的 `protobuf` 消息协议，使用 Notadd 主程序编写您的 API 层代码。
 
-![](https://www.notadd.com/src/notadd-arch-cn.svg)
+# 特性
+
+- **【微服务】** 支持单机部署和微服务化
+- **【高性能】** 异步高性能应用，单机并发轻松上万
+- **【易维护】** 使用 Typescript 开发，智能化的代码提示和编译时的代码检查机制
+- **【可插拔】** 模块化开发系统，依据业务需求，选择合适的模块，进行 API 层的搭建
 
 ## 相关技术
 
@@ -22,25 +21,11 @@
 - Grpc
 - Redis
 
-## 特点
+# 系统架构
 
-- [x] 基于 Typescript 的 AOP (面向切面编程)
-- [x] 灵活完善的注解功能
-- [x] 全局的依赖注入容器
-- [x] 可扩展的高性能 RPC
-- [x] 基于 node.js 的微服务设计
-- [x] 异步高性能应用，单机并发轻松上万
-- [x] GraphQL 接口，多次请求合并
-- [x] 基于Typeorm 原生支持超过6种数据库
-- [x] 数据库连接池 
-- [x] 基于 Grpc ，可跨进程，跨语言，跨服务器通信
-- [ ] 国际化(i18n)支持
-- [ ] 服务治理，熔断，降级，负载，注册与发现
-- [ ] 支持 PWA 技术，实现断网提醒，断网表单保存，网页离线消息推送。
-
+![notadd-arch-cn](https://www.notadd.com/src/notadd-arch-cn.svg)
 
 ## 模块化设计
-
 
 企业官网： CMS模块 + Neditor插件、留言板插件
 
@@ -56,28 +41,18 @@ CRM系统： 用户模块、CRM模块...
 
 更多可畅想的...
 
+# 快速开始
 
-## 系统环境
-
-支持系统：Linux（👍）/ macOS / Windows 2008 及以上版本
-
-Node.js 版本：≥8.0
-
-数据库：PostgreSQL 9.4+（👍）/ MySQL 5.7+ / Oracle 12+ / MS SQL Server 2012+ / MariaDB 10.2.28+ / SQLite 3.9+ 
-
-缓存： Redis 3.2+
-
-
-## 快速开始
-
-1. 下载 [nt-rpc-demo](https://github.com/notadd/nt-rpc-demo)
-2. 下载用户服务 [nt-module-user](https://github.com/notadd/nt-module-user)
+1. 克隆 Rpc 示例服务 [nt-rpc-demo](https://github.com/notadd/nt-rpc-demo)
+2. 克隆用户服务到本地 [nt-module-user](https://github.com/notadd/nt-module-user)
 3. 根据 `nt-rpc-demo`、`nt-module-user` 使用说明，启动微服务
-4. 下载本项目
+4. 克隆此项目到本地
 5. 安装依赖 `yarn install`
 6. 启动 `yarn start`
 7. 打开浏览器，访问 `localhost:5000/graphql`
 8. 测试接口
+
+> 注意：Notadd 主程序现阶段提供的是演示代码，不排除后期移除所有 graphql api 代码。
 
 ## 贡献
 
@@ -85,20 +60,9 @@ Node.js 版本：≥8.0
 
 > 感谢你考虑为 Notadd 作出贡献！具体贡献指南可以在 [Notadd 文档-贡献](https://docs.notadd.com/#/v2/?id=%e8%b4%a1%e7%8c%ae) 中查看。
 
-
-## 赞助
-
-我们要感谢以下赞助商，资助我们 Notadd 的开发。如果你有兴趣成为赞助商，请访问 Notadd 的[码云页面](https://gitee.com/notadd/notadd?donate=true)：
-
-- [西安 · 本初网络](https://www.ibenchu.com)
-- [杭州 · 又拍云](https://www.upyun.com)
-- [西安 · 马达信息](#)
-
-
 ## 交流
 
 1群(后端)：322247106
-
 
 论坛 ：https://bbs.notadd.com
 
@@ -112,23 +76,30 @@ Node.js 版本：≥8.0
 
 ## 感谢
 
+感谢所有赞助商！
 
 ### 贡献者
 
 感谢所有已经为notadd做出贡献的人！
 <a href="https://github.com/notadd/notadd/graphs/contributors"><img src="https://opencollective.com/notadd/contributors.svg?width=890&button=false" /></a>
 
-
 ### 支持者
 
-感谢所有的支持者！ [ 成为支持者 ](https://opencollective.com/notadd#backer)
+感谢所有的支持者！ [成为支持者](https://opencollective.com/notadd#backer)
 
 <a href="https://opencollective.com/notadd#backers" target="_blank"><img src="https://opencollective.com/notadd/backers.svg?width=890"></a>
 
+## 赞助者
 
-### 赞助
+我们要感谢以下赞助商，资助我们 Notadd 的开发。如果你有兴趣成为赞助商，请访问 Notadd 的[码云页面](https://gitee.com/notadd/notadd?donate=true)：
 
-感谢所有赞助商！（请您的公司通过[成为赞助商](https://opencollective.com/notadd#sponsor)来支持这个开源项目）
+- [西安 · 本初网络](https://www.ibenchu.com)
+- [杭州 · 又拍云](https://www.upyun.com)
+- [西安 · 马达信息](#)
+
+（请您的公司通过[成为赞助商](https://opencollective.com/notadd#sponsor)来支持这个开源项目）
+
+[![upyun](https://www.notadd.com/src/upyun.svg "又拍云")](https://console.upyun.com/register/?invite=r17EYO3BW)
 
 <a href="https://opencollective.com/notadd/sponsor/0/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/0/avatar.svg"></a>
 <a href="https://opencollective.com/notadd/sponsor/1/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/1/avatar.svg"></a>
@@ -147,9 +118,9 @@ Notadd 代码遵循 Apache 2.0 许可证发布，请参阅完整的 [许可证�
 
 ----------
 
-[![upyun](https://www.notadd.com/src/upyun.svg "又拍云")](https://console.upyun.com/register/?invite=r17EYO3BW) 提供赞助
+# TODO
 
-## TODO
-
-- [ ] Notadd 底层框架（微服务架构）
-- [ ] Notadd 插件、模块的构建工具，微服务部署工具（Notadd-cli）
+- [x] 国际化(i18n)支持
+- [ ] 通用服务 cms pay config storage、log 等
+- [ ] 服务治理，熔断，降级，负载，注册与发现
+- [ ] 支持 PWA 技术，实现断网提醒，断网表单保存，网页离线消息推送。

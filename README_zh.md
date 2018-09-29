@@ -81,15 +81,7 @@ CRM系统： 用户模块、CRM模块...
 
 ## 感谢
 
-感谢所有赞助商！
-
-### 支持者
-
-感谢所有的支持者！ [成为支持者](https://opencollective.com/notadd#backer)
-
-<a href="https://opencollective.com/notadd#backers" target="_blank"><img src="https://opencollective.com/notadd/backers.svg?width=890"></a>
-
-## 赞助者
+## 赞助商
 
 我们要感谢以下赞助商，资助我们 Notadd 的开发。如果你有兴趣成为赞助商，请访问 Notadd 的[码云页面](https://gitee.com/notadd/notadd?donate=true)：
 
@@ -101,16 +93,11 @@ CRM系统： 用户模块、CRM模块...
 
 [![upyun](https://www.notadd.com/src/upyun.svg "又拍云")](https://console.upyun.com/register/?invite=r17EYO3BW)
 
-<a href="https://opencollective.com/notadd/sponsor/0/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/0/avatar.svg"></a>
-<a href="https://opencollective.com/notadd/sponsor/1/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/1/avatar.svg"></a>
-<a href="https://opencollective.com/notadd/sponsor/2/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/2/avatar.svg"></a>
-<a href="https://opencollective.com/notadd/sponsor/3/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/3/avatar.svg"></a>
-<a href="https://opencollective.com/notadd/sponsor/4/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/4/avatar.svg"></a>
-<a href="https://opencollective.com/notadd/sponsor/5/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/5/avatar.svg"></a>
-<a href="https://opencollective.com/notadd/sponsor/6/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/6/avatar.svg"></a>
-<a href="https://opencollective.com/notadd/sponsor/7/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/7/avatar.svg"></a>
-<a href="https://opencollective.com/notadd/sponsor/8/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/8/avatar.svg"></a>
-<a href="https://opencollective.com/notadd/sponsor/9/website" target="_blank"><img src="https://opencollective.com/notadd/sponsor/9/avatar.svg"></a>
+### 支持者
+
+感谢所有的支持者！ [成为支持者](https://opencollective.com/notadd#backer)
+
+<a href="https://opencollective.com/notadd#backers" target="_blank"><img src="https://opencollective.com/notadd/backers.svg?width=890"></a>
 
 ## 开源协议
 

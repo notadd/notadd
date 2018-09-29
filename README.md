@@ -53,6 +53,8 @@ More to imagine ...
 7. Open a browser and go to `localhost:5000/graphql`
 8. Test GraphQL API
 
+> Note: The Notadd main program provides demo code at this stage, and does not rule out the removal of all graphql api code later.
+
 # Contribution
 
 Welcome to Pull requests. For major changes, please file a Issue and discuss with us what you want to change.

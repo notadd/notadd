@@ -53,7 +53,7 @@ CRM系统： 用户模块、CRM模块...
 7. 打开浏览器，访问 `localhost:5000/graphql`
 8. 测试接口
 
-> Note: The Notadd main program provides demo code at this stage, and does not rule out the removal of all graphql api code later.
+> Note: Notadd 主程序在此阶段提供演示代码，并不排除后期删除所有 graphql api 代码。
 
 # 贡献
 

@@ -1,4 +1,4 @@
-<center><img src="https://www.notadd.com/src/notado_logo420x96.svg" alt="Notadd Logo."></center>
+<p align="center"><img src="https://www.notadd.com/src/notado_logo420x96.svg" alt="Notadd Logo."></p>
 
 # 概述
 

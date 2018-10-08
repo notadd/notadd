@@ -105,6 +105,6 @@ The Notadd is open-sourced software licensed under the [Apache 2.0 license](LICE
 # TODO
 
 - [x] Internationalization (i18n) support
-- [ ] Public services such as cms pay config storage, logger, etc.
+- [ ] Public services such as cms、pay、config、storage、logger, etc.
 - [ ] Service governance, fuse, downgrade, load, registration and discovery
 - [ ] Support PWA technology, implement off-screen reminders, web-off form saving, webpage offline message push

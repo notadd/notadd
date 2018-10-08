@@ -105,6 +105,6 @@ Notadd 代码遵循 Apache 2.0 许可证发布，请参阅完整的 [许可证�
 # TODO
 
 - [x] 国际化(i18n)支持
-- [ ] 公共服务，如 cms pay config storage、logger 等
+- [ ] 公共服务，如 cms、pay、config、storage、logger 等
 - [ ] 服务治理，熔断，降级，负载，注册与发现
 - [ ] 支持 PWA 技术，实现断网提醒，断网表单保存，网页离线消息推送。

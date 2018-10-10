@@ -264,7 +264,7 @@ message OneRoleInfoData {
 service UserService {
     rpc Login (LoginRequest) returns (LoginResponse) { }
     rpc Register (RegisterRequest) returns (StringDataResponse) { }
-    rpc CreateUser (RegisterRequest) returns (StringDataResponse) { }
+    rpc CreateUser (CreateUserRequest) returns (StringDataResponse) { }
     rpc AddUserRole (AddOrDeleteUserRoleRequest) returns (StringDataResponse) { }
     rpc DeleteUserRole (AddOrDeleteUserRoleRequest) returns (StringDataResponse) { }
     rpc BanUser (DeleteUserRequest) returns (StringDataResponse) { }
@@ -311,10 +311,22 @@ message RegisterRequest {
         string mobile = 3;
         string password = 4;
         repeated InfoKV infoKVs = 5;
+    }
+}
+
+message CreateUserRequest {
+    CreateUserInput createUserInput = 1;
+    message CreateUserInput {
+        string username = 1;
+        string email = 2;
+        string mobile = 3;
+        string password = 4;
+        repeated InfoKV infoKVs = 5;
         repeated int32 roleIds = 6;
         repeated int32 organizationIds = 7;
     }
 }
+
 message InfoKV {
     int32 key = 1;
     string value = 2;

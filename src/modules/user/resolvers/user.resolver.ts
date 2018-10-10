@@ -42,8 +42,8 @@ export class UserResolver {
 
     @Mutation('createUser')
     @Permission({ name: 'create_user', identify: 'user:createUser', action: 'create' })
-    async createUser(req, body): Promise<CommonResult> {
-        return this.userServiceInterface.createUser(body).toPromise();
+    async createUser(req, { createUserInput }): Promise<CommonResult> {
+        return this.userServiceInterface.createUser({ createUserInput }).toPromise();
     }
 
     @Mutation('addUserRole')

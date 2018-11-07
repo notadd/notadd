@@ -55,6 +55,20 @@ CRM系统： 用户模块、CRM模块...
 
 > Note: Notadd 主程序在此阶段提供演示代码，并不排除后期删除所有 graphql api 代码。
 
+## 模块、插件列表
+
+可以在 [Notadd](https://github.com/notadd) 下搜索 **nt-module**，会列出所有模块的仓库，搜索 **nt-addon**，会列出所有插件的仓库。
+
+### 模块列表
+
+- [nt-module-user](https://github.com/notadd/nt-module-user) 用户模块
+- [nt-module-cms](https://github.com/notadd/nt-module-cms)  CMS模块
+
+### 插件列表
+
+- [nt-addon-redis](https://github.com/notadd/nt-addon-redis) redis插件
+- [nt-addon-pay](https://github.com/notadd/nt-addon-pay) 支付插件
+
 # 贡献
 
 欢迎使用 Pull requests。对于重大变更，请先提出 Issue，和我们一起来讨论你想改变的内容。

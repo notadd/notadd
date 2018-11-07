@@ -55,6 +55,16 @@ More to imagine ...
 
 > Note: The Notadd main program provides demo code at this stage, and does not rule out the removal of all graphql api code later.
 
+## Module list
+
+- [nt-module-user](https://github.com/notadd/nt-module-user) user module
+- [nt-module-cms](https://github.com/notadd/nt-module-cms)  CMS module
+
+## Addon list
+
+- [nt-addon-redis](https://github.com/notadd/nt-addon-redis) redis addon
+- [nt-addon-pay](https://github.com/notadd/nt-addon-pay) payment addon
+
 # Contribution
 
 Welcome to Pull requests. For major changes, please file a Issue and discuss with us what you want to change.

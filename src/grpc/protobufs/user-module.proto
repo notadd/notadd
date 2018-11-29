@@ -310,7 +310,7 @@ message RegisterRequest {
         string email = 2;
         string mobile = 3;
         string password = 4;
-        repeated InfoKV infoKVs = 5;
+        repeated CreateUserInfoInfoKV infoKVs = 5;
     }
 }
 
@@ -321,15 +321,15 @@ message CreateUserRequest {
         string email = 2;
         string mobile = 3;
         string password = 4;
-        repeated InfoKV infoKVs = 5;
+        repeated CreateUserInfoInfoKV infoKVs = 5;
         repeated int32 roleIds = 6;
         repeated int32 organizationIds = 7;
     }
 }
 
-message InfoKV {
-    int32 key = 1;
-    string value = 2;
+message CreateUserInfoInfoKV {
+    int32 infoItemId = 1;
+    string userInfoValue = 2;
 }
 
 message AddOrDeleteUserRoleRequest {
@@ -351,9 +351,9 @@ message UpdateUserInfoByIdRequest {
         string password = 4;
         repeated UpdateUserInfoKV infoKVs = 5;
         message UpdateUserInfoKV {
-            int32 key = 1;
-            string value = 2;
-            int32 relationId = 3;
+            int32 userInfoId = 1;
+            string userInfoValue = 2;
+            int32 infoItemId = 3;
         }
         repeated ChangedUserRoleOrOrganization roleIds = 6;
         repeated ChangedUserRoleOrOrganization organizationIds = 7;
@@ -379,14 +379,14 @@ message FindUserInfoByIdsResponse {
     repeated UserData data = 3;
 }
 message UserData {
-    int32 userId = 1;
+    int32 id = 1;
     string username = 2;
     string email = 3;
     string mobile = 4;
     bool banned = 5;
     bool recycle = 6;
-    string createTime = 7;
-    string updateTime = 8;
+    string createdAt = 7;
+    string updatedAt = 8;
     repeated UserRoleData userRoles = 9;
     repeated UserOrganizationData userOrganizations = 10;
     repeated UserInfoData userInfos = 11;
@@ -402,7 +402,7 @@ message UserOrganizationData {
 message UserInfoData {
     int32 id = 1;
     int32 order = 2;
-    int32 relationId = 3;
+    int32 infoItemId = 3;
     string type = 4;
     string name = 5;
     string value = 6;
@@ -462,8 +462,8 @@ message FindOneWithRolesAndPermissionsResponse {
         string mobile = 4;
         bool banned = 5;
         bool recycle = 6;
-        string createTime = 7;
-        string updateTime = 8;
+        string createdAt = 7;
+        string updatedAt = 8;
         repeated UserRole roles = 9;
         message UserRole {
             int32 id = 1;
@@ -473,7 +473,7 @@ message FindOneWithRolesAndPermissionsResponse {
         repeated PersonalPermission personalPermissions = 10;
         message PersonalPermission {
             int32 id = 1;
-            int32 status = 2;
+            string status = 2;
             Permission permission = 3;
         }
     }

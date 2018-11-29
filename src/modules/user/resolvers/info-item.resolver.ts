@@ -37,7 +37,7 @@ export class InfoItemResolver {
     }
 
     @Query('findAllInfoItem')
-    @Permission({ name: 'find_all_info_item', identify: 'infoItem:findAllInfoItem', action: 'find' })
+    @Permission({ name: 'find_all_info_item', identify: 'infoItem:findAllInfoItem', action: 'read' })
     async findAllInfoItem(): Promise<CommonResult> {
         return this.infoItemServiceInterface.findAllInfoItem({}).toPromise();
     }

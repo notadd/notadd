@@ -19,7 +19,7 @@ export class ResourceResolver {
     private resourceServiceInterface;
 
     @Query('findResources')
-    @Permission({ name: 'find_resources', identify: 'resource:findResources', action: 'find' })
+    @Permission({ name: 'find_resources', identify: 'resource:findResources', action: 'read' })
     async findResources(req, body: { systemModuleId: number }): Promise<CommonResult> {
         return this.resourceServiceInterface.findResources(body).toPromise();
     }

@@ -19,13 +19,13 @@ export class OrganizationResolver {
     private organizationServiceInterface;
 
     @Query('findRootOrganizations')
-    @Permission({ name: 'find_root_organizations', identify: 'organization:findRootOrganizations', action: 'find' })
+    @Permission({ name: 'find_root_organizations', identify: 'organization:findRootOrganizations', action: 'read' })
     async findRootOrganizations(): Promise<CommonResult> {
         return this.organizationServiceInterface.findRootOrganizations({}).toPromise();
     }
 
     @Query('findAllOrganizations')
-    @Permission({ name: 'find_all_organizations', identify: 'organization:findAllOrganizations', action: 'find' })
+    @Permission({ name: 'find_all_organizations', identify: 'organization:findAllOrganizations', action: 'read' })
     async findAllOrganizations(): Promise<CommonResult> {
         const result = await this.organizationServiceInterface.findAllOrganizations({}).toPromise();
         result.data = JSON.parse(result.data);
@@ -33,7 +33,7 @@ export class OrganizationResolver {
     }
 
     @Query('findChildrenOrganizations')
-    @Permission({ name: 'find_children_organizations', identify: 'organization:findChildrenOrganizations', action: 'find' })
+    @Permission({ name: 'find_children_organizations', identify: 'organization:findChildrenOrganizations', action: 'read' })
     async findChildrenOrganizations(req, body: { id: number }): Promise<CommonResult> {
         const result = await this.organizationServiceInterface.findChildrenOrganizations(body).toPromise();
         result.data = JSON.parse(result.data);

@@ -49,13 +49,13 @@ export class InfoGroupResolver implements OnModuleInit {
     }
 
     @Query('findAllInfoGroup')
-    @Permission({ name: 'find_all_info_group', identify: 'infoGroup:findAllInfoGroup', action: 'find' })
+    @Permission({ name: 'find_all_info_group', identify: 'infoGroup:findAllInfoGroup', action: 'read' })
     async findAllInfoGroup(): Promise<CommonResult> {
         return this.infoGroupServiceInterface.findAllInfoGroup({}).toPromise();
     }
 
     @Query('findInfoItemsByGroupId')
-    @Permission({ name: 'find_info_items_by_group_id', identify: 'infoGroup:findInfoItemsByGroupId', action: 'find' })
+    @Permission({ name: 'find_info_items_by_group_id', identify: 'infoGroup:findInfoItemsByGroupId', action: 'read' })
     async findInfoItemsByGroupId(req, body: { groupId: number }): Promise<CommonResult> {
         return this.infoGroupServiceInterface.findInfoItemsByGroupId(body).toPromise();
     }

@@ -113,7 +113,7 @@ export class UserResolver {
     }
 
     @Query('findUserInfoByIds')
-    @Permission({ name: 'find_user_info_by_ids', identify: 'user:findUserInfoByIds', action: 'find' })
+    @Permission({ name: 'find_user_info_by_ids', identify: 'user:findUserInfoByIds', action: 'read' })
     async findUserInfoByIds(req, body: { userIds: number[] }): Promise<CommonResult> {
         return await this.userServiceInterface.findUserInfoByIds(body).toPromise();
     }
@@ -129,13 +129,13 @@ export class UserResolver {
     }
 
     @Query('findUsersInRole')
-    @Permission({ name: 'find_users_in_role', identify: 'user:findUsersInRole', action: 'find' })
+    @Permission({ name: 'find_users_in_role', identify: 'user:findUsersInRole', action: 'read' })
     async findUsersInRole(req, body: { roleId: number }): Promise<CommonResult> {
         return this.userServiceInterface.findUsersInRole(body).toPromise();
     }
 
     @Query('findUsersInOrganization')
-    @Permission({ name: 'find_users_in_organization', identify: 'user:findUsersInOrganization', action: 'find' })
+    @Permission({ name: 'find_users_in_organization', identify: 'user:findUsersInOrganization', action: 'read' })
     async findUsersInOrganization(req, body: { organizationId: number }): Promise<CommonResult> {
         return this.userServiceInterface.findUsersInOrganization(body).toPromise();
     }

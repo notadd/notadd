@@ -19,7 +19,7 @@ export class SystemModuleResolver implements OnModuleInit {
     private systemModuleServiceInterface;
 
     @Query('findSystemModules')
-    @Permission({ name: 'find_system_modules', identify: 'systemModule:findSystemModules', action: 'find' })
+    @Permission({ name: 'find_system_modules', identify: 'systemModule:findSystemModules', action: 'read' })
     async findSystemModules(): Promise<CommonResult> {
         return this.systemModuleServiceInterface.findSystemModules().toPromise();
     }

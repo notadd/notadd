@@ -49,13 +49,13 @@ export class RoleResolver {
     }
 
     @Query('findRoles')
-    @Permission({ name: 'find_roles', identify: 'role:findRoles', action: 'find' })
+    @Permission({ name: 'find_roles', identify: 'role:findRoles', action: 'read' })
     async findRoles(): Promise<CommonResult> {
         return this.roleServiceInterface.findRoles({}).toPromise();
     }
 
     @Query('findOneRoleInfo')
-    @Permission({ name: 'find_one_role_info', identify: 'role:findOneRoleInfo', action: 'find' })
+    @Permission({ name: 'find_one_role_info', identify: 'role:findOneRoleInfo', action: 'read' })
     async findOneRoleInfo(req, body: { roleId: number }): Promise<CommonResult> {
         return this.roleServiceInterface.findOneRoleInfo(body).toPromise();
     }

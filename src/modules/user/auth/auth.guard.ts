@@ -15,7 +15,7 @@ export class AuthGurad implements CanActivate {
         let userPerm: string[] = [];
         if (user && user.roles.length) {
             user.roles.forEach(role => {
-                user.personalPermissions.filter(pp => pp.status === 0).forEach(pp => {
+                user.personalPermissions.filter(pp => pp.status === 'decrease').forEach(pp => {
                     role.permissions.splice(role.permissions.indexOf(role.permissions.find(p => p.id === pp.permission.id)), 1);
                 });
 
@@ -25,7 +25,7 @@ export class AuthGurad implements CanActivate {
                     });
                 }
 
-                userPerm.push(...user.personalPermissions.filter(pp => pp.status === 1).map(pp => pp.permission.identify));
+                userPerm.push(...user.personalPermissions.filter(pp => pp.status === 'increase').map(pp => pp.permission.identify));
             });
         }
         userPerm = [...new Set(userPerm)];

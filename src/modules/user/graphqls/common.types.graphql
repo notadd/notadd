@@ -1,10 +1,10 @@
-"User module universal response body"
+"""User module universal response body"""
 type UserModuleCommonResult {
-    "status code"
+    """status code"""
     code: Int
-    "response message"
+    """response message"""
     message: String
 }
 
-"JSON data"
+"""JSON data"""
 scalar JSON

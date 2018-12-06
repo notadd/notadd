@@ -1,4 +1,5 @@
 type Query {
+    """Find all system modules"""
     findSystemModules: SystemModulesResult
 }
 

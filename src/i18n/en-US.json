@@ -17,7 +17,7 @@
     "create_user": "create_user",
     "add_user_role": "add_user_role",
     "add_permission_to_user": "add_permission_to_user",
-	"delete_permission_of_user": "delete_permission_of_user",
+    "delete_permission_of_user": "delete_permission_of_user",
     "delete_user_role": "delete_user_role",
     "recycle_user": "recycle_user",
     "delete_recycled_user": "delete_recycled_user",
@@ -45,12 +45,12 @@
     "delete_info_item": "delete_info_item",
     "update_info_item": "update_info_item",
     "find_all_info_item": "find_all_info_item",
-    "Request header lacks authorization parameters，it should be: Authorization or authorization": "Request header lacks authorization parameters，it should be: Authorization or authorization",
-    "The authorization code prefix is incorrect. it should be: Bearer or bearer": "The authorization code prefix is incorrect. it should be: Bearer or bearer",
+    "Request header lacks authorization parameters，it should be: Authorization": "Request header lacks authorization parameters，it should be: Authorization",
+    "The authorization code prefix is incorrect. it should be: Bearer": "The authorization code prefix is incorrect. it should be: Bearer",
     "The authorization code is incorrect": "The authorization code is incorrect",
     "The authorization code has expired": "The authorization code has expired",
     "You are not authorized to access": "You are not authorized to access",
     "ban_user": "ban_user",
-	"revert_banned_user": "revert_banned_user",
-	"revert_recycled_user": "revert_recycled_user"
+    "revert_banned_user": "revert_banned_user",
+    "revert_recycled_user": "revert_recycled_user"
 }

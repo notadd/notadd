@@ -62,8 +62,8 @@ More to imagine ...
 
 ## Addon list
 
-- [nt-addon-redis](https://github.com/notadd/nt-addon-redis) redis addon
 - [nt-addon-pay](https://github.com/notadd/nt-addon-pay) payment addon
+- [nt-addon-wechatapi](https://github.com/notadd/nt-addon-wechatapi) wechatapi addon
 
 # Contribution
 

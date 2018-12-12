@@ -66,8 +66,8 @@ CRM系统： 用户模块、CRM模块...
 
 ### 插件列表
 
-- [nt-addon-redis](https://github.com/notadd/nt-addon-redis) redis插件
 - [nt-addon-pay](https://github.com/notadd/nt-addon-pay) 支付插件
+- [nt-addon-wechatapi](https://github.com/notadd/nt-addon-wechatapi) 微信公众平台API插件
 
 # 贡献
 

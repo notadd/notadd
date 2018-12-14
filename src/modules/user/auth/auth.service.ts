@@ -24,7 +24,7 @@ export class AuthService implements OnModuleInit {
         /**
          * whitelist
          */
-        if (req.body && ['IntrospectionQuery', 'sayHello', 'login', 'adminLogin', 'register'].includes(req.body.operationName)) {
+        if (req.body && (['IntrospectionQuery', 'sayHello', 'login', 'adminLogin', 'register'].some(item => req.body.query.includes(item)))) {
             return;
         }
 
@@ -33,7 +33,7 @@ export class AuthService implements OnModuleInit {
             throw new AuthenticationError(t('Request header lacks authorization parameters，it should be: Authorization'));
         }
 
-        if (token.slice(0, 7) === 'Bearer') {
+        if (token.slice(0, 6) === 'Bearer') {
             token = token.slice(7);
         } else {
             throw new AuthenticationError(t('The authorization code prefix is incorrect. it should be: Bearer'));

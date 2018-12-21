@@ -53,5 +53,6 @@
 	"ban_user": "封禁用户",
 	"revert_banned_user": "解封用户",
 	"revert_recycled_user": "恢复用户",
-	"UserModule": "用户模块"
+	"UserModule": "用户模块",
+	"find_all_users": "查询所有用户"
 }

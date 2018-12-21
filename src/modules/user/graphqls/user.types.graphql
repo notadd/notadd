@@ -9,10 +9,12 @@ type Query {
     findCurrentUserInfo: UserInfoResult
     """Query user information by ID array"""
     findUserInfoByIds(userIds: [Int]!): UsersInfoResult
+    """Query all users"""
+    findAllUsers(pageNumber: Int, pageSize: Int): UsersInfoResult
     """Query all user information under the specified role ID"""
-    findUsersInRole(roleId: Int!): UsersInfoResult
+    findUsersInRole(roleId: Int!, pageNumber: Int, pageSize: Int): UsersInfoResult
     """Query all user information under the specified organization ID"""
-    findUsersInOrganization(organizationId: Int!): UsersInfoResult
+    findUsersInOrganization(organizationId: Int!, pageNumber: Int, pageSize: Int): UsersInfoResult
 }
 
 type Mutation {

@@ -50,8 +50,8 @@ export class InfoGroupResolver implements OnModuleInit {
 
     @Query('findAllInfoGroup')
     @Permission({ name: 'find_all_info_group', identify: 'infoGroup:findAllInfoGroup', action: 'read' })
-    async findAllInfoGroup(): Promise<CommonResult> {
-        return this.infoGroupServiceInterface.findAllInfoGroup({}).toPromise();
+    async findAllInfoGroup(req, body: { pageNumber: number, pageSize: number }): Promise<CommonResult> {
+        return this.infoGroupServiceInterface.findAllInfoGroup(body).toPromise();
     }
 
     @Query('findInfoItemsByGroupId')

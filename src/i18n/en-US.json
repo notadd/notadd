@@ -52,5 +52,7 @@
     "You are not authorized to access": "You are not authorized to access",
     "ban_user": "ban_user",
     "revert_banned_user": "revert_banned_user",
-    "revert_recycled_user": "revert_recycled_user"
+    "revert_recycled_user": "revert_recycled_user",
+    "UserModule": "UserModule",
+    "find_all_users": "find_all_users"
 }

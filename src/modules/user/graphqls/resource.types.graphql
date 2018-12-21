@@ -1,12 +1,13 @@
 type Query {
     """Query The specifed system module's all resources and it's permissions"""
-    findResources(systemModuleId: Int!): ResourcesResult
+    findResources(systemModuleId: Int!, pageNumber: Int, pageSize: Int): ResourcesResult
 }
 
 type ResourcesResult {
     code: Int
     message: String
     data: [ResourceData]
+    count: Int
 }
 
 type ResourceData {

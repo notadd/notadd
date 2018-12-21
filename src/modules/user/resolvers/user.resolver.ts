@@ -128,15 +128,21 @@ export class UserResolver {
         return this.userServiceInterface.findRegisterUserInputInfo({}).toPromise();
     }
 
+    @Query('findAllUsers')
+    @Permission({ name: 'find_all_users', identify: 'user:findAllUsers', action: 'read' })
+    async findAllUsers(req, body: { pageNumber: number, pageSize: number }) {
+        return this.userServiceInterface.findAllUsers(body).toPromise();
+    }
+
     @Query('findUsersInRole')
     @Permission({ name: 'find_users_in_role', identify: 'user:findUsersInRole', action: 'read' })
-    async findUsersInRole(req, body: { roleId: number }): Promise<CommonResult> {
+    async findUsersInRole(req, body: { roleId: number, pageNumber: number, pageSize: number }): Promise<CommonResult> {
         return this.userServiceInterface.findUsersInRole(body).toPromise();
     }
 
     @Query('findUsersInOrganization')
     @Permission({ name: 'find_users_in_organization', identify: 'user:findUsersInOrganization', action: 'read' })
-    async findUsersInOrganization(req, body: { organizationId: number }): Promise<CommonResult> {
+    async findUsersInOrganization(req, body: { organizationId: number, pageNumber: number, pageSize: number }): Promise<CommonResult> {
         return this.userServiceInterface.findUsersInOrganization(body).toPromise();
     }
 }

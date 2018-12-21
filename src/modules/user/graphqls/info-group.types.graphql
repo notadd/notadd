@@ -1,6 +1,6 @@
 type Query {
     """Query all groups"""
-    findAllInfoGroup: InfoGroupResult
+    findAllInfoGroup(pageNumber: Int, pageSize: Int): InfoGroupResult
     """Query all information items under the specified group ID"""
     findInfoItemsByGroupId(groupId: Int!): InfoItemResult
 }
@@ -22,6 +22,7 @@ type InfoGroupResult {
     code: Int
     message: String
     data: [InfoGroupData]
+    count: Int
 }
 
 type InfoGroupData {

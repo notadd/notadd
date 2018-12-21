@@ -20,7 +20,7 @@ export class SystemModuleResolver implements OnModuleInit {
 
     @Query('findSystemModules')
     @Permission({ name: 'find_system_modules', identify: 'systemModule:findSystemModules', action: 'read' })
-    async findSystemModules(): Promise<CommonResult> {
-        return this.systemModuleServiceInterface.findSystemModules().toPromise();
+    async findSystemModules(req, body: { pageNumber: number, pageSize: number }): Promise<CommonResult> {
+        return this.systemModuleServiceInterface.findSystemModules(body).toPromise();
     }
 }

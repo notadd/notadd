@@ -1,6 +1,6 @@
 type Query {
     """Query all roles"""
-    findRoles: RolesResult
+    findRoles(pageNumber: Int, pageSize: Int): RolesResult
     """Query a specified role's details"""
     findOneRoleInfo(roleId: Int!): RoleInfoResult
 }
@@ -22,6 +22,7 @@ type RolesResult {
     code: Int
     message: String
     data: [Role]
+    count: Int
 }
 
 type Role {

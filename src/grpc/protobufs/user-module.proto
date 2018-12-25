@@ -335,23 +335,24 @@ message DeleteUserRequest { int32 userId = 1; }
 message UpdateUserInfoByIdRequest {
   int32 userId = 1;
   UpdateUserInput updateUserInput = 2;
-  message UpdateUserInput {
-    string username = 1;
-    string email = 2;
-    string mobile = 3;
-    string password = 4;
-    repeated UpdateUserInfoKV infoKVs = 5;
-    message UpdateUserInfoKV {
-      int32 userInfoId = 1;
-      string userInfoValue = 2;
-      int32 infoItemId = 3;
-    }
-    repeated ChangedUserRoleOrOrganization roleIds = 6;
-    repeated ChangedUserRoleOrOrganization organizationIds = 7;
-    message ChangedUserRoleOrOrganization {
-      int32 before = 1;
-      int32 after = 2;
-    }
+}
+
+message UpdateUserInput {
+  string username = 1;
+  string email = 2;
+  string mobile = 3;
+  string password = 4;
+  repeated UpdateUserInfoKV infoKVs = 5;
+  message UpdateUserInfoKV {
+    int32 userInfoId = 1;
+    string userInfoValue = 2;
+    int32 infoItemId = 3;
+  }
+  repeated ChangedUserRoleOrOrganization roleIds = 6;
+  repeated ChangedUserRoleOrOrganization organizationIds = 7;
+  message ChangedUserRoleOrOrganization {
+    int32 before = 1;
+    int32 after = 2;
   }
 }
 

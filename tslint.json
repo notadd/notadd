@@ -3,6 +3,12 @@
     "extends": [
         "tslint:recommended"
     ],
+    "linterOptions": {
+        "exclude": [
+            "node_modules/**",
+            "src/grpc/generated.ts"
+        ]
+    },
     "jsRules": {
         "no-unused-expression": true
     },

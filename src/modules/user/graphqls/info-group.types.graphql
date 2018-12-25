@@ -2,7 +2,7 @@ type Query {
     """Query all groups"""
     findAllInfoGroup(pageNumber: Int, pageSize: Int): InfoGroupResult
     """Query all information items under the specified group ID"""
-    findInfoItemsByGroupId(groupId: Int!): InfoItemResult
+    findInfoItemsByGroupId(infoGroupId: Int!): InfoItemResult
 }
 
 type Mutation {

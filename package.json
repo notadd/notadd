@@ -8,7 +8,8 @@
         "debug": "node --inspect-brk -r ts-node/register src/main.ts",
         "debug:watch": "nodemon --config nodemon-debug.json",
         "check": "tslint -p tsconfig.json -c tslint.json",
-        "fix": "tslint -p tsconfig.json -c tslint.json --fix"
+        "fix": "tslint -p tsconfig.json -c tslint.json --fix",
+        "grpc:gen": "./node_modules/.bin/rxjs-grpc -o src/grpc/generated.ts src/grpc/protobufs/*.proto"
     },
     "author": "notadd",
     "license": "Apache-2.0",
@@ -37,6 +38,7 @@
         "@types/jsonwebtoken": "^8.3.0",
         "@types/node": "^10.12.12",
         "nodemon": "^1.18.7",
+        "rxjs-grpc": "^1.0.0-rxjs6.0",
         "ts-node": "^7.0.0",
         "tsconfig-paths": "^3.7.0",
         "tslint": "^5.11.0"

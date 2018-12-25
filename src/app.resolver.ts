@@ -1,20 +1,20 @@
 import { Inject, OnModuleInit } from '@nestjs/common';
 import { Query, Resolver } from '@nestjs/graphql';
 
-import { RootServiceInterface } from './app.interface';
+import { notadd_rpc_demo } from './grpc/generated';
 import { NotaddGrpcClientFactory } from './grpc/grpc.client-factory';
 
 @Resolver()
 export class AppResolver implements OnModuleInit {
     onModuleInit() {
-        this.rootServiceInterface = this.notaddGrpcClientFactory.rootServiceClient.getService<RootServiceInterface>('RootService');
+        this.rootServiceInterface = this.notaddGrpcClientFactory.rootServiceClient.getService('RootService');
     }
 
     constructor(
         @Inject(NotaddGrpcClientFactory) private readonly notaddGrpcClientFactory: NotaddGrpcClientFactory
     ) { }
 
-    private rootServiceInterface: RootServiceInterface;
+    private rootServiceInterface: notadd_rpc_demo.RootService;
 
     @Query('sayHello')
     async sayHello(req, body: { name: string }) {

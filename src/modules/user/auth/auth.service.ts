@@ -4,21 +4,22 @@ import { __ as t } from 'i18n';
 import * as jwt from 'jsonwebtoken';
 
 import { Resource } from '../../../common/interfaces';
+import { notadd_module_user } from '../../../grpc/generated';
 import { NotaddGrpcClientFactory } from '../../../grpc/grpc.client-factory';
 
 @Injectable()
 export class AuthService implements OnModuleInit {
     onModuleInit() {
-        this.authServiceInterface = this.notaddGrpcClientFactory.userModuleClient.getService('ResourceService');
-        this.userServiceInterface = this.notaddGrpcClientFactory.userModuleClient.getService('UserService');
+        this.resourceService = this.notaddGrpcClientFactory.userModuleClient.getService('ResourceService');
+        this.userService = this.notaddGrpcClientFactory.userModuleClient.getService('UserService');
     }
 
     constructor(
         @Inject(NotaddGrpcClientFactory) private readonly notaddGrpcClientFactory: NotaddGrpcClientFactory
     ) { }
 
-    private authServiceInterface;
-    private userServiceInterface;
+    private resourceService: notadd_module_user.ResourceService;
+    private userService: notadd_module_user.UserService;
 
     async validateUser(req: any) {
         /**
@@ -41,7 +42,7 @@ export class AuthService implements OnModuleInit {
 
         try {
             const decodedToken = <{ loginName: string }>jwt.verify(token, 'secretKey');
-            const { data } = await this.userServiceInterface.findOneWithRolesAndPermissions({ username: decodedToken.loginName }).toPromise();
+            const { data } = await this.userService.findOneWithRolesAndPermissions({ username: decodedToken.loginName }).toPromise();
             return data;
         } catch (error) {
             if (error instanceof jwt.JsonWebTokenError) {
@@ -63,6 +64,6 @@ export class AuthService implements OnModuleInit {
 
         const obj = {};
         metadataMap.forEach((v, k) => obj[k] = v);
-        await this.authServiceInterface.saveResourcesAndPermissions({ metadata: JSON.stringify(obj) }).toPromise();
+        await this.resourceService.saveResourcesAndPermissions({ metadata: JSON.stringify(obj) }).toPromise();
     }
 }

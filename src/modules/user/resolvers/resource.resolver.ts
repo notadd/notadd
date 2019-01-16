@@ -1,8 +1,8 @@
 import { Inject, OnModuleInit } from '@nestjs/common';
-import { Query, Resolver } from '@nestjs/graphql';
+import { Args, Query, Resolver } from '@nestjs/graphql';
 
 import { Permission, Resource } from '../../../common/decorators';
-import { notadd_module_user } from '../../../grpc/generated';
+import { nt_module_user } from '../../../grpc/generated';
 import { NotaddGrpcClientFactory } from '../../../grpc/grpc.client-factory';
 
 @Resolver()
@@ -16,11 +16,11 @@ export class ResourceResolver implements OnModuleInit {
         @Inject(NotaddGrpcClientFactory) private readonly notaddGrpcClientFactory: NotaddGrpcClientFactory
     ) { }
 
-    private resourceService: notadd_module_user.ResourceService;
+    private resourceService: nt_module_user.ResourceService;
 
     @Query('findResources')
     @Permission({ name: 'find_resources', identify: 'resource:findResources', action: 'read' })
-    async findResources(req, body: { systemModuleId: number, pageNumber: number, pageSize: number }) {
-        return this.resourceService.findResources(body).toPromise();
+    async findResources(@Args() args: { systemModuleId: number, pageNumber: number, pageSize: number }) {
+        return this.resourceService.findResources(args).toPromise();
     }
 }

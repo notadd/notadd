@@ -1,8 +1,8 @@
 import { Inject, OnModuleInit } from '@nestjs/common';
-import { Query, Resolver } from '@nestjs/graphql';
+import { Args, Query, Resolver } from '@nestjs/graphql';
 
 import { Permission, Resource } from '../../../common/decorators';
-import { notadd_module_user } from '../../../grpc/generated';
+import { nt_module_user } from '../../../grpc/generated';
 import { NotaddGrpcClientFactory } from '../../../grpc/grpc.client-factory';
 
 @Resolver()
@@ -16,11 +16,11 @@ export class SystemModuleResolver implements OnModuleInit {
         @Inject(NotaddGrpcClientFactory) private readonly notaddGrpcClientFactory: NotaddGrpcClientFactory
     ) { }
 
-    private systemModuleService: notadd_module_user.SystemModuleService;
+    private systemModuleService: nt_module_user.SystemModuleService;
 
     @Query('findSystemModules')
     @Permission({ name: 'find_system_modules', identify: 'systemModule:findSystemModules', action: 'read' })
-    async findSystemModules(req, body: { pageNumber: number, pageSize: number }) {
-        return this.systemModuleService.findSystemModules(body).toPromise();
+    async findSystemModules(@Args() args: { pageNumber: number, pageSize: number }) {
+        return this.systemModuleService.findSystemModules(args).toPromise();
     }
 }

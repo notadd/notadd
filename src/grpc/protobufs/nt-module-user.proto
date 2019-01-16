@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package notadd_module_user;
+package nt_module_user;
 
 message PlaceholderRequest {}
 
@@ -314,9 +314,10 @@ message CreateUserRequest {
     string email = 2;
     string mobile = 3;
     string password = 4;
-    repeated CreateUserInfoInfoKV infoKVs = 5;
-    repeated int32 roleIds = 6;
-    repeated int32 organizationIds = 7;
+    bool banned = 5;
+    repeated CreateUserInfoInfoKV infoKVs = 6;
+    repeated int32 roleIds = 7;
+    repeated int32 organizationIds = 8;
   }
 }
 
@@ -342,23 +343,34 @@ message UpdateUserInput {
   string email = 2;
   string mobile = 3;
   string password = 4;
-  repeated UpdateUserInfoKV infoKVs = 5;
-  message UpdateUserInfoKV {
-    int32 userInfoId = 1;
-    string userInfoValue = 2;
-    int32 infoItemId = 3;
-  }
-  repeated ChangedUserRoleOrOrganization roleIds = 6;
-  repeated ChangedUserRoleOrOrganization organizationIds = 7;
+  bool banned = 5;
+  bool recycle = 6;
+  repeated UpdateUserInfoKV infoKVs = 7;
+  repeated ChangedUserRoleOrOrganization roleIds = 8;
+  repeated ChangedUserRoleOrOrganization organizationIds = 9;
   message ChangedUserRoleOrOrganization {
     int32 before = 1;
     int32 after = 2;
   }
 }
 
+message UpdateUserInfoKV {
+  int32 userInfoId = 1;
+  string userInfoValue = 2;
+  int32 infoItemId = 3;
+}
+
 message UpdateCurrentUserInfoRequest {
   int32 userId = 1;
-  UpdateUserInput updateCurrentUserInput = 2;
+  UpdateCurrentUserInput updateCurrentUserInput = 2;
+}
+
+message UpdateCurrentUserInput {
+  string username = 1;
+  string email = 2;
+  string mobile = 3;
+  string password = 4;
+  repeated UpdateUserInfoKV infoKVs = 5;
 }
 
 message FindUserInfoByIdsRequest { repeated int32 userIds = 1; }

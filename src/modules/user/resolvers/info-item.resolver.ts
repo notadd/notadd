@@ -1,8 +1,8 @@
 import { Inject, OnModuleInit } from '@nestjs/common';
-import { Mutation, Query, Resolver } from '@nestjs/graphql';
+import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 
 import { Permission, Resource } from '../../../common/decorators';
-import { notadd_module_user } from '../../../grpc/generated';
+import { nt_module_user } from '../../../grpc/generated';
 import { NotaddGrpcClientFactory } from '../../../grpc/grpc.client-factory';
 
 @Resolver()
@@ -16,29 +16,29 @@ export class InfoItemResolver implements OnModuleInit {
         @Inject(NotaddGrpcClientFactory) private readonly notaddGrpcClientFactory: NotaddGrpcClientFactory
     ) { }
 
-    private infoItemService: notadd_module_user.InfoItemService;
+    private infoItemService: nt_module_user.InfoItemService;
 
     @Mutation('createInfoItem')
     @Permission({ name: 'create_info_item', identify: 'infoItem:createInfoItem', action: 'create' })
-    async createInfoItem(req, body) {
-        return this.infoItemService.createInfoItem(body).toPromise();
+    async createInfoItem(@Args() args: { order: number, type: string, name: string, description: string, registerDisplay: boolean, informationDisplay: boolean }) {
+        return this.infoItemService.createInfoItem({ infoItemInput: args }).toPromise();
     }
 
     @Mutation('deleteInfoItem')
     @Permission({ name: 'delete_info_item', identify: 'infoItem:deleteInfoItem', action: 'delete' })
-    async deleteInfoItem(req, body: { infoItemId: number }) {
-        return this.infoItemService.deleteInfoItem(body).toPromise();
+    async deleteInfoItem(@Args() args: { infoItemId: number }) {
+        return this.infoItemService.deleteInfoItem(args).toPromise();
     }
 
     @Mutation('updateInfoItem')
     @Permission({ name: 'update_info_item', identify: 'infoItem:updateInfoItem', action: 'update' })
-    async updateInfoItem(req, body) {
-        return this.infoItemService.updateInfoItem(body).toPromise();
+    async updateInfoItem(@Args() args: { id: number, order: number, type: string, name: string, description: string, registerDisplay: boolean, informationDisplay: boolean }) {
+        return this.infoItemService.updateInfoItem({ updateInfoItemInput: args }).toPromise();
     }
 
     @Query('findAllInfoItem')
     @Permission({ name: 'find_all_info_item', identify: 'infoItem:findAllInfoItem', action: 'read' })
-    async findAllInfoItem(req, body: { pageNumber: number, pageSize: number }) {
-        return this.infoItemService.findAllInfoItem(body).toPromise();
+    async findAllInfoItem(@Args() args: { pageNumber: number, pageSize: number }) {
+        return this.infoItemService.findAllInfoItem(args).toPromise();
     }
 }

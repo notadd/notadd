@@ -4,7 +4,7 @@ import { __ as t } from 'i18n';
 import * as jwt from 'jsonwebtoken';
 
 import { Resource } from '../../../common/interfaces';
-import { notadd_module_user } from '../../../grpc/generated';
+import { nt_module_user } from '../../../grpc/generated';
 import { NotaddGrpcClientFactory } from '../../../grpc/grpc.client-factory';
 
 @Injectable()
@@ -18,8 +18,8 @@ export class AuthService implements OnModuleInit {
         @Inject(NotaddGrpcClientFactory) private readonly notaddGrpcClientFactory: NotaddGrpcClientFactory
     ) { }
 
-    private resourceService: notadd_module_user.ResourceService;
-    private userService: notadd_module_user.UserService;
+    private resourceService: nt_module_user.ResourceService;
+    private userService: nt_module_user.UserService;
 
     async validateUser(req: any) {
         /**

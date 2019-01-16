@@ -7,7 +7,7 @@ export class NotaddGrpcClientFactory {
     @Client(generateGrpcOptions('localhost:50050', 'notadd_rpc_demo', 'root.proto'))
     public readonly rootServiceClient: ClientGrpc;
 
-    @Client(generateGrpcOptions('localhost:50051', 'notadd_module_user', 'user-module.proto'))
+    @Client(generateGrpcOptions('localhost:50051', 'nt_module_user', 'nt-module-user.proto'))
     public readonly userModuleClient: ClientGrpc;
 }
 

@@ -1,13 +1,16 @@
 import { User, Token } from '../models/model'
-import { AuthGuard, PassportStrategy } from '@nestjs/passport';
-import { Strategy } from 'passport-jwt';
+import { AuthGuard, PassportStrategy, } from '@nestjs/passport';
+import { Strategy, ExtractJwt } from 'passport-jwt';
 import { ExecutionContext, Injectable } from '@nestjs/common';
 import { Observable } from 'rxjs';
-// 这个自定义
-export abstract class UserService {
-    abstract createToken(user: User): Promise<Token>;
-}
+
 export abstract class JwtStrategy extends PassportStrategy(Strategy) {
+    constructor() {
+        super({
+            jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+            secretOrKey: 'secretKey',
+        });
+    }
     // token to user
     abstract validate(payload: Token): Promise<User>;
 }

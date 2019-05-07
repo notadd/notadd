@@ -1,0 +1,15 @@
+{
+  "name": "upms",
+  "version": "1.0.0",
+  "description": "Upms description.",
+  "license": "MIT",
+  "main": "src/main.ts",
+  "author": {
+    "name": "Your name",
+    "email": "name@company.com"
+  },
+  "homepage": "https://nstudio.io/xplat",
+  "repository": {
+    "url": "https://github.com/nstudio/xplat"
+  }
+}

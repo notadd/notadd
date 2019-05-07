@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.libs.spec.json",
+  "compilerOptions": {
+    "outDir": "../dist/out-tsc/xplat"
+  },
+  "files": ["test.xplat.ts"],
+  "include": [
+    "../libs/**/*.spec.ts",
+    "../libs/**/*.d.ts",
+    "../xplat/web/**/*.spec.ts",
+    "../xplat/web/**/*.d.ts"
+  ]
+}

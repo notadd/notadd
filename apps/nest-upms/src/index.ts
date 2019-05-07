@@ -1,5 +1,5 @@
-import { Module, DynamicModule } from "@nestjs/common";
-import { NestUpmsConfig, JwtStrategy } from './abstracts/index'
+import { Module, DynamicModule, Type } from "@nestjs/common";
+import { JwtStrategy } from './abstracts/index'
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
 
@@ -18,20 +18,20 @@ export class NestUpmsRootModule { }
 
 @Module({})
 export class NestUpmsModule {
-    static forRoot(jwtStrategy: JwtStrategy): DynamicModule {
+    static forRoot(jwtStrategy: Type<JwtStrategy>): DynamicModule {
         return {
             module: NestUpmsRootModule,
             providers: [
-                { provide: JwtStrategy, useValue: jwtStrategy }
+                { provide: JwtStrategy, useClass: jwtStrategy }
             ],
             exports: [JwtStrategy],
         }
     }
-    static forChild(jwtStrategy: JwtStrategy): DynamicModule {
+    static forChild(jwtStrategy: Type<JwtStrategy>): DynamicModule {
         return {
             module: NestUpmsModule,
             providers: [
-                { provide: JwtStrategy, useValue: jwtStrategy }
+                { provide: JwtStrategy, useClass: jwtStrategy }
             ],
             exports: [JwtStrategy],
         }

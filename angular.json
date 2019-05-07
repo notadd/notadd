@@ -58,6 +58,137 @@
           }
         }
       }
+    },
+    "web-admin": {
+      "root": "apps/web-admin/",
+      "sourceRoot": "apps/web-admin/src",
+      "projectType": "application",
+      "prefix": "foo",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/web-admin",
+            "index": "apps/web-admin/src/index.html",
+            "main": "apps/web-admin/src/main.ts",
+            "polyfills": "apps/web-admin/src/polyfills.ts",
+            "tsConfig": "apps/web-admin/tsconfig.app.json",
+            "assets": [
+              "apps/web-admin/src/favicon.ico",
+              "apps/web-admin/src/assets"
+            ],
+            "styles": [
+              "xplat/web/scss/_index.scss",
+              "apps/web-admin/src/styles.scss"
+            ],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/web-admin/src/environments/environment.ts",
+                  "with": "apps/web-admin/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "web-admin:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "web-admin:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "web-admin:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/web-admin/tsconfig.app.json",
+              "apps/web-admin/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/web-admin/src/test.ts",
+            "tsConfig": "apps/web-admin/tsconfig.spec.json",
+            "karmaConfig": "apps/web-admin/karma.conf.js",
+            "polyfills": "apps/web-admin/src/polyfills.ts",
+            "styles": [],
+            "scripts": [],
+            "assets": []
+          }
+        }
+      }
+    },
+    "web-admin-e2e": {
+      "root": "apps/web-admin-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/web-admin-e2e/protractor.conf.js",
+            "devServerTarget": "web-admin:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "web-admin:serve:production"
+            },
+            "ci": {
+              "protractorConfig": "apps/web-admin-e2e/protractor.headless.js"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/web-admin-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {

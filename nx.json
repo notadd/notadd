@@ -16,6 +16,12 @@
     },
     "nest-upms": {
       "tags": []
+    },
+    "web-admin": {
+      "tags": []
+    },
+    "web-admin-e2e": {
+      "tags": []
     }
   }
 }

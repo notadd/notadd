@@ -1,6 +1,6 @@
 import { Module, DynamicModule } from "@nestjs/common";
 import { NestUpmsConfig, JwtStrategy } from './abstracts/index'
-import { PassportModule } from '@nestjs/passport';
+import { PassportModule, Type } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
 
 @Module({
@@ -27,11 +27,11 @@ export class NestUpmsModule {
             exports: [JwtStrategy],
         }
     }
-    static forChild(jwtStrategy: JwtStrategy): DynamicModule {
+    static forChild(jwtStrategy: Type): DynamicModule {
         return {
             module: NestUpmsModule,
             providers: [
-                { provide: JwtStrategy, useValue: jwtStrategy }
+                { provide: JwtStrategy, useClass: jwtStrategy }
             ],
             exports: [JwtStrategy],
         }

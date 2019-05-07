@@ -11,5 +11,15 @@
   "homepage": "https://nstudio.io/xplat",
   "repository": {
     "url": "https://github.com/nstudio/xplat"
+  },
+  "dependencies": {
+    "@nestjs/common": "^6.1.1",
+    "@nestjs/passport": "^6.0.0",
+    "passport-jwt": "^4.0.0",
+    "rxjs": "^6.5.1"
+  },
+  "devDependencies": {
+    "@nestjs/core": "^6.1.1",
+    "@nestjs/jwt": "^6.0.0"
   }
 }

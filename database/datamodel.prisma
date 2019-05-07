@@ -1,4 +1,10 @@
-type User {
-  id: ID! @id
-  name: String!
-}
+type Log {}
+type Orgainization {}
+type Permission {}
+type RolePermission {}
+type Role {}
+type System {}
+type UserOrgainization {}
+type User {}
+type UserPermission{}
+type UserRole{}

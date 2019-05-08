@@ -1,8 +1,8 @@
-import { Injectable, Module, UnauthorizedException } from "@nestjs/common";
+import { Injectable, Module } from "@nestjs/common";
 import { JwtService } from "@nestjs/jwt";
-import { NestUpmsModule } from ".";
 import { AuthService, JwtStrategy } from "./abstracts";
 import { Token, User } from "./models/model";
+import { NestUpmsModule } from ".";
 
 @Injectable()
 export class TestJwtService extends AuthService {
@@ -19,10 +19,7 @@ export class TestJwtService extends AuthService {
 @Injectable()
 export class TestStrategy extends JwtStrategy {
     async validate(payload: Token): Promise<User> {
-        if (!user) {
-            throw new UnauthorizedException();
-        }
-        return user;
+        return {} as any;
     }
 }
 

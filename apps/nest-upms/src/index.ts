@@ -27,7 +27,11 @@ export class NestUpmsModule {
             exports: [JwtStrategy],
         }
     }
+<<<<<<< HEAD
+    static forChild(jwtStrategy: Type): DynamicModule {
+=======
     static forChild(jwtStrategy: Type<JwtStrategy>): DynamicModule {
+>>>>>>> aedb8c32b9820cba9c260e718ded3c75939a6bef
         return {
             module: NestUpmsModule,
             providers: [

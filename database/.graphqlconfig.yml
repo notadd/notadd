@@ -1,0 +1,11 @@
+projects:
+  database:
+    schemaPath: ../apps/nest-upms/src/prisma/prisma-types.graphql
+    extensions:
+      endpoints:
+        default: http://localhost:4466
+      codegen:
+        - generator: prisma-binding
+          language: typescript
+          output:
+            binding: ../apps/nest-upms/src/prisma/prisma.binding.ts

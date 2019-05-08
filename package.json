@@ -51,6 +51,8 @@
     "@nestjs/core": "^6.1.0",
     "@nestjs/graphql": "^6.0.5",
     "@nestjs/microservices": "^6.1.0",
+    "@nestjs/passport": "^6.0.0",
+    "@nestjs/platform-express": "^6.1.1",
     "@nestjs/testing": "^6.1.0",
     "@nestjs/websockets": "^6.1.0",
     "@ngrx/effects": "^7.0.0",
@@ -70,12 +72,11 @@
     "graphql": "^14.2.1",
     "graphql-tools": "^4.0.4",
     "helmet": "^3.15.0",
+    "passport-jwt": "^4.0.0",
     "prisma-binding": "^2.3.10",
     "reflect-metadata": "^0.1.12",
     "rxjs": "6.3.3",
-    "zone.js": "^0.8.26",
-    "@nestjs/passport": "^6.0.0",
-    "passport-jwt": "^4.0.0"
+    "zone.js": "^0.8.26"
   },
   "devDependencies": {
     "karma": "~3.0.0",

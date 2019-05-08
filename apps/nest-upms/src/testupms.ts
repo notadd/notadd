@@ -2,13 +2,13 @@ import { Injectable, Module, UnauthorizedException } from "@nestjs/common";
 import { JwtService } from "@nestjs/jwt";
 import { PassportStrategy } from "@nestjs/passport";
 import { Strategy } from 'passport-jwt';
-import { UserService } from "./abstracts";
+import { AuthService, JwtStrategy } from "./abstracts";
 import { User } from "./models/db";
 import { Token } from "./models/model";
 import { NestUpmsModule } from ".";
 
 @Injectable()
-export class TestJwtService extends UserService {
+export class TestJwtService extends AuthService {
     constructor(private readonly jwtService: JwtService) {
         super();
     }
@@ -20,8 +20,8 @@ export class TestJwtService extends UserService {
 }
 
 @Injectable()
-export class TestStrategy extends PassportStrategy(Strategy) {
-    async validate(user: User) {
+export class TestStrategy extends JwtStrategy {
+    async validate(payload: Token): Promise<User> {
         if (!user) {
             throw new UnauthorizedException();
         }
@@ -32,5 +32,5 @@ export class TestStrategy extends PassportStrategy(Strategy) {
 @Module({
     imports: [NestUpmsModule.forChild(TestStrategy)]
 })
-export class TestModule {}
+export class TestModule { }
 

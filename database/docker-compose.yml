@@ -20,7 +20,7 @@ services:
             port: 5432
             migrations: true
   postgres:
-    image: postgres-alpine
+    image: postgres:10-alpine
     restart: always
     # Uncomment the next two lines to connect to your your database from outside the Docker environment, e.g. using a database GUI like Postico
     # ports:

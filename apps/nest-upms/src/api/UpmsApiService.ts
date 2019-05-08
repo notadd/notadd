@@ -1,62 +1,63 @@
+import { Permission, Role, UserPermission, System, Orgainization, User } from '../models/db'
 export abstract class UpmsApiService {
     /**
      * 根据用户id获取所拥有的权限
      * @param upmsUserId
      * @return
      */
-    abstract selectUpmsPermissionByUpmsUserId(upmsUserId: number): any;
+    abstract selectUpmsPermissionByUpmsUserId(upmsUserId: number): Permission[];
     /**
      * 根据用户id获取所拥有的权限
      * @param upmsUserId
      * @return
      */
-    abstract selectUpmsPermissionByUpmsUserIdByCache(upmsUserId: number): any;
+    abstract selectUpmsPermissionByUpmsUserIdByCache(upmsUserId: number): Permission[];
     /**
      * 根据用户id获取所属的角色
      * @param upmsUserId
      * @return
      */
-    abstract selectUpmsRoleByUpmsUserId(upmsUserId: number): any;
+    abstract selectUpmsRoleByUpmsUserId(upmsUserId: number): Role[];
     /**
      * 根据用户id获取所属的角色
      * @param upmsUserId
      * @return
      */
-    abstract selectUpmsRoleByUpmsUserIdByCache(upmsUserId: number): any;
+    abstract selectUpmsRoleByUpmsUserIdByCache(upmsUserId: number): Role[];
     /**
      * 根据角色id获取所拥有的权限
      * @param upmsRoleId
      * @return
      */
-    abstract selectUpmsRolePermisstionByUpmsRoleId(upmsRoleId: number): any;
+    abstract selectUpmsRolePermisstionByUpmsRoleId(upmsRoleId: number): UserPermission[];
     /**
      * 根据用户id获取所拥有的权限
      * @param upmsUserId
      * @return
      */
-    abstract selectUpmsUserPermissionByUpmsUserId(upmsUserId: number): any;
+    abstract selectUpmsUserPermissionByUpmsUserId(upmsUserId: number): UserPermission[];
     /**
     * 根据条件获取系统数据
     * @param upmsSystemExample
     * @return
     */
-    abstract selectUpmsSystemByExample(upmsSystemExample: any): any;
+    abstract selectUpmsSystemByExample(upmsSystemExample: any): System[];
     /**
      * 根据条件获取组织数据
      * @param upmsOrganizationExample
      * @return
      */
-    abstract selectUpmsOrganizationByExample(upmsOrganizationExample: any): any;
+    abstract selectUpmsOrganizationByExample(upmsOrganizationExample: any): Orgainization[];
     /**
      * 根据username获取UpmsUser
      * @param username
      * @return
      */
-    abstract selectUpmsUserByUsername(username: string): any;
+    abstract selectUpmsUserByUsername(username: string): User;
     /**
     * 写入操作日志
     * @param record
     * @return
     */
-    abstract insertUpmsLogSelective(record: any): any;
+    abstract insertUpmsLogSelective(record: any): number;
 }

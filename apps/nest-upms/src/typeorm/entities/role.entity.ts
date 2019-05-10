@@ -1,7 +1,10 @@
 import { Entity, Column , PrimaryGeneratedColumn, Timestamp } from 'typeorm';
 
-@Entity('role')
+@Entity({
+    name: 'role'
+})
 export class Role {
+
     @PrimaryGeneratedColumn()
     role_id: number;
 
@@ -20,7 +23,7 @@ export class Role {
     title: string;
 
     @Column({
-        type: 'varchar',
+        type: 'text',
         comment: '描述备注'
     })
     description: string;

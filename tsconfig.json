@@ -1,6 +1,8 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
@@ -46,7 +48,12 @@
       "@notadd/web/*": [
         "xplat/web/*"
       ]
-    }
+    },
+    "plugins": [
+      {
+        "name": "@divyenduz/ts-graphql-plugin"
+      }
+    ]
   },
   "exclude": [
     "node_modules",

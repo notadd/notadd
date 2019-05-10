@@ -15,7 +15,7 @@
     "typeRoots": ["../../node_modules/@types"],
     "types": ["node", "jest"]
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "e2e/app/token.spec.ts", "e2e/app/token.e2e-spec.ts"],
   "exclude": [
     "../../node_modules",
     "**/*.spec.ts",

@@ -2,13 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { User } from './entitys/user.entity';
-import { Role } from './entitys/role.entity';
-import { RolePermission } from './entitys/role.permision';
-import { UserRole } from './entitys/user.role.entity';
-import { UserPermission } from './entitys/user.permission';
 import { GraphQLModule } from '@nestjs/graphql';
-import { PrismaModule } from './prisma/prisma.module';
 import { GraphqlOptions } from './graphql.options';
 
 @Module({
@@ -27,7 +21,7 @@ import { GraphqlOptions } from './graphql.options';
       useClass: GraphqlOptions,
     })
   ],
-  controllers: [AppController, UserController],
+  controllers: [AppController],
   providers: [AppService]
 })
 export class ApplicationModule { }

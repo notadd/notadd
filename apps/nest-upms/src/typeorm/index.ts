@@ -1,14 +1,10 @@
-import { Module } from '@nestjs/common'
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { AddonEntity, AddonPermissionEntity, PermissionEntity } from './entities'
-@Module({
-    imports: [
-        TypeOrmModule.forFeature([
-            AddonEntity,
-            AddonPermissionEntity,
-            PermissionEntity
-        ])
-    ]
-})
-export class TypeormModule { }
-
+export * from './entities/addon.entity'
+export * from './entities/addon_permission.entity'
+export * from './entities/logger.entity'
+export * from './entities/organization.entity'
+export * from './entities/permission'
+export * from './entities/role.entity'
+export * from './entities/role.permision'
+export * from './entities/user.entity'
+export * from './entities/user.permission'
+export * from './entities/user.role.entity'

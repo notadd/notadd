@@ -8,7 +8,6 @@ import { RolePermission } from './entitys/role.permision';
 import { UserRole } from './entitys/user.role.entity';
 import { UserPermission } from './entitys/user.permission';
 
-
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -22,10 +21,10 @@ import { UserPermission } from './entitys/user.permission';
       synchronize: true,
     }),
     TypeOrmModule.forFeature([
-      User,Role,RolePermission,UserRole,UserPermission
+      User, Role, RolePermission, UserRole, UserPermission
     ])
   ],
-  controllers: [AppController],
+  controllers: [AppController, UserController],
   providers: [AppService]
 })
-export class ApplicationModule {}
+export class ApplicationModule { }

@@ -17,7 +17,7 @@
     "lib": [
       "esnext",
       "dom",
-      "es2015",
+      
       "es2015.core",
       "es2015.collection",
       "es2015.generator",

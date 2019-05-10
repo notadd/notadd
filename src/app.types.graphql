@@ -1,9 +1,0 @@
-type Query {
-    sayHello(name: String!): SayHelloResponse
-}
-
-type SayHelloResponse {
-    code: Int
-    message: String
-    data: String
-}

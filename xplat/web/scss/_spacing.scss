@@ -1,0 +1,132 @@
+/**
+ * Convenient spacing classes
+ */
+$spacer: 5 !default;
+$spacer-x: $spacer !default;
+$spacer-y: $spacer !default;
+$spacer-alt: 4 !default;
+$spacer-x-alt: $spacer-alt !default;
+$spacer-y-alt: $spacer-alt !default;
+$spacers: (
+  0: (
+    x: 0,
+    y: 0
+  ),
+  2: (
+    x: 2,
+    y: 2
+  ),
+  4: (
+    x: $spacer-x-alt,
+    y: $spacer-y-alt
+  ),
+  5: (
+    x: $spacer-x,
+    y: $spacer-y
+  ),
+  8: (
+    x: $spacer-x-alt * 2,
+    y: $spacer-y-alt * 2
+  ),
+  10: (
+    x: (
+      $spacer-x * 2
+    ),
+    y: (
+      $spacer-y * 2
+    )
+  ),
+  12: (
+    x: $spacer-x-alt * 3,
+    y: $spacer-y-alt * 3
+  ),
+  15: (
+    x: (
+      $spacer-x * 3
+    ),
+    y: (
+      $spacer-y * 3
+    )
+  ),
+  16: (
+    x: $spacer-x-alt * 4,
+    y: $spacer-y-alt * 4
+  ),
+  20: (
+    x: (
+      $spacer-x * 4
+    ),
+    y: (
+      $spacer-y * 4
+    )
+  ),
+  24: (
+    x: $spacer-x-alt * 6,
+    y: $spacer-y-alt * 6
+  ),
+  25: (
+    x: (
+      $spacer-x * 5
+    ),
+    y: (
+      $spacer-y * 5
+    )
+  ),
+  28: (
+    x: $spacer-x-alt * 7,
+    y: $spacer-y-alt * 7
+  ),
+  30: (
+    x: (
+      $spacer-x * 6
+    ),
+    y: (
+      $spacer-y * 6
+    )
+  )
+) !default;
+
+/**
+ * Margin and Padding
+ * The following creates this pattern:
+ * .m-0{margin:0}.m-t-0{margin-top:0}.m-r-0{margin-right:0}.m-b-0{margin-bottom:0}.m-l-0{margin-left:0}.m-x-0{margin-right:0;margin-left:0}.m-y-0{margin-top:0;margin-bottom:0}
+ * Same for Padding (using the 'p' abbreviation)
+ * From 0, 2, 5, 10, 15, 20, 25, 30
+**/
+// sass-lint:disable-all
+@each $prop, $abbrev in (margin: m, padding: p) {
+  // sass-lint:enable-all
+  @each $size, $lengths in $spacers {
+    $length-x: map-get($lengths, x);
+    $length-y: map-get($lengths, y);
+
+    // sass-lint:disable-all
+    .#{$abbrev}-#{$size} {
+      #{$prop}: #{$length-y}px;
+    } // a = All sides (can just use one length)
+    // sass-lint:enable-all
+    .#{$abbrev}-t-#{$size} {
+      #{$prop}-top: #{$length-y}px;
+    }
+    .#{$abbrev}-r-#{$size} {
+      #{$prop}-right: #{$length-x}px;
+    }
+    .#{$abbrev}-b-#{$size} {
+      #{$prop}-bottom: #{$length-y}px;
+    }
+    .#{$abbrev}-l-#{$size} {
+      #{$prop}-left: #{$length-x}px;
+    }
+
+    // Axes
+    .#{$abbrev}-x-#{$size} {
+      #{$prop}-right: #{$length-x}px;
+      #{$prop}-left: #{$length-x}px;
+    }
+
+    .#{$abbrev}-y-#{$size} {
+      #{$prop}-top: #{$length-y}px;
+      #{$prop}-bottom: #{$length-y}px;
+    }
+  }
+}

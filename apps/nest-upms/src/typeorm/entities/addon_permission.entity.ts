@@ -1,7 +1,9 @@
 import { Entity, Column, PrimaryGeneratedColumn, Timestamp } from 'typeorm'
 
-@Entity()
-export class AddonPermission {
+@Entity({
+    name: 'permission'
+})
+export class AddonPermissionEntity {
     @PrimaryGeneratedColumn({
         type: 'int'
     })

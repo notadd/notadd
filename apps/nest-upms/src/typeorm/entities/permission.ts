@@ -1,8 +1,10 @@
 
 import { Entity, PrimaryGeneratedColumn, Column, Timestamp } from 'typeorm'
 
-@Entity()
-export class Permission {
+@Entity({
+    name: 'permission'
+})
+export class PermissionEntity {
 
     @PrimaryGeneratedColumn()
     permission_id: number;

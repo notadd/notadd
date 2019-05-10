@@ -1,8 +1,10 @@
 import { Entity, PrimaryColumn, Column, Timestamp } from 'typeorm';
 
 
-@Entity()
-export class Addon {
+@Entity({
+    name: 'addon'
+})
+export class AddonEntity {
 
     @PrimaryColumn({
         type: 'varchar',

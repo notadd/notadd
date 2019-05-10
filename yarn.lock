@@ -36,10 +36,10 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@nestjs/common@5.5.0":
-  version "5.5.0"
-  resolved "https://registry.yarnpkg.com/@nestjs/common/-/common-5.5.0.tgz#6427d440f96e23c38945620fd74cb6ec61da8224"
-  integrity sha512-Ifh1D4ypsJYs/3YBIocU+X5yuAZSVKuCsz8kaKB4ZUO5WwJjh4/x6hlr4A+9XUMe8fPLtYXVohJoRUU5HbwyIA==
+"@nestjs/common@5.7.4":
+  version "5.7.4"
+  resolved "https://registry.yarnpkg.com/@nestjs/common/-/common-5.7.4.tgz#32eaf1de87449ab56af7e3a15b9060811150429a"
+  integrity sha512-Fic27fW81cYdiGJn9KV1Ebz2jdyFCHSLb/jaU3ByiduP//CpZGkeZotA9bs8nEckSKigXTsGqiwXRFqvOSVRLQ==
   dependencies:
     axios "0.18.0"
     cli-color "1.2.0"
@@ -47,10 +47,10 @@
     multer "1.3.0"
     uuid "3.3.2"
 
-"@nestjs/core@5.5.0":
-  version "5.5.0"
-  resolved "https://registry.yarnpkg.com/@nestjs/core/-/core-5.5.0.tgz#4f80bcfda1b964a6e1702c32f0afcbcc4a1706f7"
-  integrity sha512-XPUjSJyex6KMdTUKK1oeD7ea9mNLcwlSEbcKV7OWaNHIVq/XJaFpbzjbmd+/U/ZZaO1IWhpisfLW9gr/O8eb4w==
+"@nestjs/core@5.7.4":
+  version "5.7.4"
+  resolved "https://registry.yarnpkg.com/@nestjs/core/-/core-5.7.4.tgz#f569d112d113e56a370dc563adec99a7224c7241"
+  integrity sha512-SohKRH5N3PuRQkgJDUcv5ETs0gzBSjuo16TWe7wFgmGSd0/uLnCVOXxmeWYXwcwC6TWi5K0KKnxQ3NOn3YeXwQ==
   dependencies:
     "@nuxtjs/opencollective" "0.1.0"
     body-parser "1.18.3"
@@ -76,10 +76,10 @@
     ts-morph "^1.1.0"
     uuid "3.3.2"
 
-"@nestjs/microservices@5.5.0":
-  version "5.5.0"
-  resolved "https://registry.yarnpkg.com/@nestjs/microservices/-/microservices-5.5.0.tgz#9fd6ef84dd1ccc955aed6fac910be874cbd9a1a8"
-  integrity sha512-sOZ2+dPxHvb+RNbmn4wo+MFg9ZHxx9N9RGZmlYQEJQ+s4zk0rJBalzJhKNuNkiL6oJDYYNom98YhWRVvuAkvwg==
+"@nestjs/microservices@5.7.4":
+  version "5.7.4"
+  resolved "https://registry.yarnpkg.com/@nestjs/microservices/-/microservices-5.7.4.tgz#e1818e0cd5e71167b7170b0c5cc265d6ffd5fed9"
+  integrity sha512-dEBOikFiVUhLJ8DidlkrKEtCq/+udgxMukLAgtZ+VWUZWiBt7+3fh+cjwdUR22f1S9g+DAVQuwMP06bhDrKlbA==
   dependencies:
     iterare "0.0.8"
     json-socket "^0.2.1"

@@ -76,6 +76,7 @@
     "prisma-binding": "^2.3.10",
     "reflect-metadata": "^0.1.12",
     "rxjs": "6.3.3",
+    "typeorm": "^0.2.17",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {

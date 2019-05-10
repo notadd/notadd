@@ -1,6 +1,8 @@
 import { Entity, PrimaryGeneratedColumn, Column, Timestamp } from 'typeorm';
 
-@Entity('logger')
+@Entity({
+    name: 'logger'
+})
 export class Logger {
     @PrimaryGeneratedColumn()
     logger_id: number;

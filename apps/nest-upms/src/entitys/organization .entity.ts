@@ -1,5 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column, Timestamp } from 'typeorm';
-@Entity('organization')
+@Entity({
+    name:'organization'
+})
 export class Organization {
     //自增id
     @PrimaryGeneratedColumn()

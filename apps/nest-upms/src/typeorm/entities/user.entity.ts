@@ -1,6 +1,8 @@
 import { Entity, Column , PrimaryGeneratedColumn, Timestamp } from 'typeorm';
 
-@Entity('user')
+@Entity({
+    name: 'user'
+})
 export class User {
     
     @PrimaryGeneratedColumn()
@@ -71,14 +73,17 @@ export class User {
     email: string;
 
     @Column({
-        type: 'tinyint',
-        length: 2,
+        type: 'smallint',
     })
     sex: number;
 
-    @Column('timestamp')
+    @Column({
+        type: 'timestamp'
+    })
     create_time: Timestamp;
 
-    @Column('timestamp')
+    @Column({
+        type: 'timestamp'
+    })
     update_time: Timestamp;
 }

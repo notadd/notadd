@@ -1,7 +1,10 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
-@Entity('user_permission')
+@Entity({
+    name: 'user_permission'
+})
 export class UserPermission {
+
     @PrimaryGeneratedColumn()
     user_permission_id: number;
 
@@ -12,13 +15,12 @@ export class UserPermission {
     openid: string;
 
     @Column({
-        type: 'integer',
+        type: 'int',
     })
     permission_id: number;
 
     @Column({
-        type: 'tinyint',
-        length: 2
+        type: 'smallint',
     })
     type: number;
 }

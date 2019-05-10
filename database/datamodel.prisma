@@ -1,7 +1,6 @@
 type Log {
     log_id: ID! @id
     description: String
-    username: String!
     start_time: Int!
     spend_time: Int!
     basepath: String!
@@ -13,89 +12,4 @@ type Log {
     ip: String
     result: String
     permission: String
-}
-
-type Orgainization {
-    orgainization_id: ID! @id 
-    pid: Int
-    name: String @unique
-    description: String 
-    ctime: DateTime! @createdAt
-}
-
-type Permission {
-    permission_id: ID! @id
-    system_id: Int! 
-    pid: Int 
-    name: String! 
-    type: Int! 
-    permission_value: String 
-    uri: String 
-    icon: String 
-    status: Int!
-    ctime: DateTime! @createdAt
-    orders: Int
-     
-}
-
-type RolePermission {
-    role_permission_id: ID! @id
-    role_id: Int 
-    permission_id: Int 
-}
-
-type Role {
-    role_id: ID! @id
-    name: String 
-    title: String 
-    description: String 
-    ctime: DateTime! @createdAt
-    orders: Int 
-}
-
-type System {
-    system_id: ID! @id
-    icon: String 
-    banner: String 
-    theme: String 
-    basepath: String 
-    status: Int!
-    name: String 
-    title: String 
-    description: String 
-    ctime: DateTime! @createdAt
-    orders: Int 
-}
-
-type UserOrgainization {
-    user_orgainization_id: ID! @id
-    user_id: Int 
-    orgainization_id: Int 
-}
-
-type User {
-    user_id: ID! @id
-    username: String @unique
-    password: String!
-    salt: String 
-    realname: String 
-    avatar: String 
-    phone: String @unique
-    email: String 
-    sex: Int!
-    locked: Int!
-    ctime: DateTime! @createdAt
-}
-
-type UserPermission{
-    user_permission_id: ID! @id
-    user_id: Int! 
-    permission_id: Int! 
-    type: Int!
-}
-
-type UserRole{
-    user_role_id: ID! @id
-    user_id: Int!
-    role_id: Int!
 }

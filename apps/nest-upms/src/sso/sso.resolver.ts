@@ -2,37 +2,43 @@ import {
     Query,
     Resolver
 } from '@nestjs/graphql';
-import { PrismaService } from '../prisma/prisma.service'
+import { SsoService } from './sso.service'
 
 @Resolver()
 export class SsoResolver {
-
-    constructor(public prisma: PrismaService) { }
-
+    constructor(public sso: SsoService) { }
     /**
      * 通过用户名和密码获取token
      */
     @Query()
-    token() { }
+    token() {
+        return this.sso.token();
+    }
 
     /**
      * 验证token
      */
     @Query()
-    verify() { }
+    verify() {
+        return this.sso.verify();
+    }
 
 
     /**
      * 刷新token
      */
     @Query()
-    refreshToken() { }
+    refreshToken() {
+        return this.sso.refreshToken();
+    }
 
 
     /**
      * 注销
      */
     @Query()
-    logout() { }
+    logout() {
+        return this.sso.logout();
+    }
 }
 

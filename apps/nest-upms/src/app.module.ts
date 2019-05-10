@@ -7,6 +7,9 @@ import { Role } from './entitys/role.entity';
 import { RolePermission } from './entitys/role.permision';
 import { UserRole } from './entitys/user.role.entity';
 import { UserPermission } from './entitys/user.permission';
+import { GraphQLModule } from '@nestjs/graphql';
+import { PrismaModule } from './prisma/prisma.module';
+import { GraphqlOptions } from './graphql.options';
 
 @Module({
   imports: [
@@ -20,9 +23,9 @@ import { UserPermission } from './entitys/user.permission';
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
-    TypeOrmModule.forFeature([
-      User, Role, RolePermission, UserRole, UserPermission
-    ])
+    GraphQLModule.forRootAsync({
+      useClass: GraphqlOptions,
+    })
   ],
   controllers: [AppController, UserController],
   providers: [AppService]

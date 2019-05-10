@@ -48,7 +48,12 @@
       "@notadd/web/*": [
         "xplat/web/*"
       ]
-    }
+    },
+    "plugins": [
+      {
+        "name": "@divyenduz/ts-graphql-plugin"
+      }
+    ]
   },
   "exclude": [
     "node_modules",

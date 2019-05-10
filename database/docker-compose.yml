@@ -23,8 +23,8 @@ services:
     image: postgres:10-alpine
     restart: always
     # Uncomment the next two lines to connect to your your database from outside the Docker environment, e.g. using a database GUI like Postico
-    # ports:
-    # - "5432:5432"
+    ports:
+      - "5432:5432"
     environment:
       POSTGRES_USER: prisma
       POSTGRES_PASSWORD: prisma

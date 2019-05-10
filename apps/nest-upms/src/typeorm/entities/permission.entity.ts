@@ -1,4 +1,3 @@
-
 import { Entity, PrimaryGeneratedColumn, Column, Timestamp } from 'typeorm'
 
 @Entity({
@@ -16,7 +15,7 @@ export class PermissionEntity {
     name: string;
 
     @Column({
-        type: 'tinyint'
+        type: 'smallint'
     })
     type: number;
 
@@ -27,14 +26,12 @@ export class PermissionEntity {
     icon: string;
 
     @Column({
-        type: 'tinyint',
-        length: 2
+        type: 'smallint',
     })
     status: number;
 
     @Column({
         type: 'int',
-        length: 11
     })
     displayorder: number;
 

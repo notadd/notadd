@@ -1,14 +1,20 @@
 import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
 
-@Entity('role_permission')
+@Entity({
+    name: 'role_permission'
+})
 export class RolePermission {
 
     @PrimaryGeneratedColumn()
-    id: number;
+    role_permission_id: number;
 
-    @Column()
+    @Column({
+        type: 'int',
+    })
     role_id: number;
 
-    @Column()
+    @Column({
+        type: 'int',
+    })
     permission_id: number;
 }

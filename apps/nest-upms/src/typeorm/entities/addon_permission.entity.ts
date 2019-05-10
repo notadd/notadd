@@ -1,9 +1,10 @@
 import { Entity, Column, PrimaryGeneratedColumn, Timestamp } from 'typeorm'
 
 @Entity({
-    name: 'permission'
+    name: 'addon_permission'
 })
 export class AddonPermissionEntity {
+    
     @PrimaryGeneratedColumn({
         type: 'int'
     })
@@ -11,13 +12,11 @@ export class AddonPermissionEntity {
 
     @Column({
         type: 'int',
-        length: 11
     })
     addon_id: number;
 
     @Column({
         type: 'int',
-        length: 11
     })
     permission_id: number;
 

@@ -1,33 +1,33 @@
 import { Entity, PrimaryGeneratedColumn, Column, Timestamp } from 'typeorm';
+
 @Entity({
-    name: 'organization'
+    name: 'refreshToken'
 })
-export class Organization {
-    
+export class RefreshToken {
     @PrimaryGeneratedColumn({
         type: 'int'
     })
-    organization_id: number;
+    refresh_token_id: number;
 
     @Column({
         type: 'varchar',
         length: 20,
-        comment: '英文名称'
-    })
-    name: string;
+        comment: 'access token的id'
 
+    })
+    token_id: string;
     @Column({
         type: 'varchar',
-        length: 20,
-        comment: '中文名称'
+        length: 50,
+        comment: '刷新凭证'
     })
-    title: string;
+    refresh_token: string;
 
     @Column({
-        type: 'text',
-        comment: '描述备注'
+        type: 'timestamp',
+        comment: '过期时间'
     })
-    description: string;
+    expires_in: Timestamp;
 
     @Column({
         type: 'timestamp',
@@ -41,10 +41,4 @@ export class Organization {
     })
     update_time: Timestamp;
 
-    @Column({
-        type: 'varchar',
-        length: 20,
-        comment: '排序'
-    })
-    displayorder: string;
 }

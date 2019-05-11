@@ -24,7 +24,7 @@
     "@nestjs/microservices": "5.5.0",
     "apollo-server-express": "2.5.0",
     "graphql": "14.3.0",
-    "graphql-tools": "4.0.3",
+    "graphql-tools": "4.0.4",
     "graphql-type-json": "0.2.1",
     "grpc": "1.20.3",
     "i18n": "0.8.3",

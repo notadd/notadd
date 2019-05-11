@@ -92,8 +92,8 @@
         "zone.js": "0.8.29"
     },
     "devDependencies": {
-        "@angular-devkit/build-angular": "0.13.8",
-        "@angular/cli": "7.3.1",
+        "@angular-devkit/build-angular": "0.13.9",
+        "@angular/cli": "7.3.9",
         "@angular/compiler-cli": "7.2.14",
         "@angular/language-service": "7.2.14",
         "@nestjs/core": "6.1.1",

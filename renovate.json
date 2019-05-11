@@ -1,6 +1,6 @@
 {
+  "baseBranch":"develop",
   "extends": [
-    "config:base",
-    "baseBranch":"develop"
+    "config:base"
   ]
 }

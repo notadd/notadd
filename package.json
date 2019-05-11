@@ -40,7 +40,7 @@
     "@types/i18n": "0.8.5",
     "@types/jsonwebtoken": "8.3.0",
     "@types/node": "10.14.6",
-    "nodemon": "1.18.9",
+    "nodemon": "1.19.0",
     "rxjs-grpc": "1.0.0-rxjs6.0",
     "ts-node": "7.0.1",
     "tsconfig-paths": "3.7.0",

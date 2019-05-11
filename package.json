@@ -102,7 +102,7 @@
         "@nrwl/builders": "7.8.5",
         "@nrwl/schematics": "7.8.5",
         "@nstudio/schematics": "7.4.8",
-        "@types/jasmine": "2.8.16",
+        "@types/jasmine": "3.3.12",
         "@types/jasminewd2": "2.0.6",
         "@types/jest": "20.0.8",
         "@types/node": "9.6.48",

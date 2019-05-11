@@ -1,4 +1,5 @@
 import { Column, Entity, PrimaryGeneratedColumn, Timestamp } from 'typeorm';
+import { PermissionEntity } from './permission.entity';
 
 @Entity({
     name: 'addon'
@@ -45,10 +46,15 @@ export class AddonEntity {
     @Column({
         type: 'timestamp',
     })
-    create_time: Timestamp;
+    create_time: Date;
 
     @Column({
         type: 'timestamp'
     })
-    update_time: Timestamp;
+    update_time: Date;
+
+    /**
+     * 应用权限
+     */
+    permissions: PermissionEntity[];
 }

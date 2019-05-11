@@ -1,9 +1,9 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import { Entity, Index, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity({
     name: 'user_permission'
 })
-export class UserPermission {
+export class UserPermissionEntity {
 
     @PrimaryGeneratedColumn()
     user_permission_id: number;
@@ -12,11 +12,13 @@ export class UserPermission {
         type: 'varchar',
         length: 20
     })
+    @Index()
     openid: string;
 
     @Column({
         type: 'int',
     })
+    @Index()
     permission_id: number;
 
     @Column({

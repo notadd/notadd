@@ -4,9 +4,10 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { GraphQLModule } from '@nestjs/graphql';
 import { GraphqlOptions } from './graphql.options';
-
+import { TypeormModule } from './typeorm/index'
 @Module({
   imports: [
+    TypeormModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: '192.168.1.238',

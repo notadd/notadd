@@ -1,6 +1,15 @@
-import { SsoService } from './sso.service'
-
+import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { UserEntity } from '../typeorm';
+import { AuthService, SsoService } from './core/index'
+@Injectable()
 export class SsoServiceImpl extends SsoService {
+    constructor(
+        @InjectRepository(UserEntity) public user: Repository<UserEntity>
+    ) {
+        super();
+    }
     /**
      * 注销登录
      */

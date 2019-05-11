@@ -2,7 +2,7 @@ import {
     Query,
     Resolver
 } from '@nestjs/graphql';
-import { SsoService } from './sso.service'
+import { SsoService } from './core/sso.service'
 
 @Resolver()
 export class SsoResolver {

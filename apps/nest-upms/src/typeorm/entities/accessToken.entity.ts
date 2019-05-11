@@ -1,19 +1,26 @@
-import { Entity, PrimaryGeneratedColumn, Column, Timestamp } from 'typeorm';
-
+import { Entity, Index, BeforeUpdate, PrimaryGeneratedColumn, Column, Timestamp, BeforeInsert, OneToOne } from 'typeorm';
+import { RefreshTokenEntity } from './refreshToken.entity';
+export const EXPRES_TIME = 60 * 60 * 24;
 @Entity({
     name: 'accessToken'
 })
-export class AccessToken {
+export class AccessTokenEntity {
     @PrimaryGeneratedColumn({
         type: 'int'
     })
     access_token_id: number;
+
+    /**
+     * 根据access_token查询用户Openid，添加Index
+     */
     @Column({
         type: 'varchar',
         length: 50,
         comment: '授权凭证'
     })
+    @Index()
     access_token: string;
+
     @Column({
         type: 'varchar',
         length: 20,
@@ -43,12 +50,6 @@ export class AccessToken {
     platform: string;
 
     @Column({
-        type: 'timestamp',
-        comment: '过期时间'
-    })
-    expires_in: Timestamp;
-
-    @Column({
         type: 'smallint',
         comment: '授权类型'
     })
@@ -62,15 +63,36 @@ export class AccessToken {
     scope: string;
 
     @Column({
-        type: 'timestamp',
-        comment: '创建时间'
+        type: 'timestamp without time zone',
+        comment: '过期时间'
     })
-    create_time: Timestamp;
+    expires_in: Date;
 
     @Column({
-        type: 'timestamp',
+        type: 'timestamp without time zone',
+        comment: '创建时间'
+    })
+    create_time: Date;
+
+    @Column({
+        type: 'timestamp without time zone',
         comment: '更新时间'
     })
-    update_time: Timestamp;
+    update_time: Date;
 
+    @BeforeInsert()
+    protected insterExpresIn() {
+        this.expires_in = new Date(new Date().setDate(new Date().getTime() + EXPRES_TIME));
+    }
+
+    @BeforeUpdate()
+    protected updateExpresIn() {
+        this.expires_in = new Date(new Date().setDate(new Date().getTime() + EXPRES_TIME));
+    }
+
+    /**
+     * 刷新凭证
+     */
+    @OneToOne(() => RefreshTokenEntity, type => type.token)
+    refreshToken: RefreshTokenEntity;
 }

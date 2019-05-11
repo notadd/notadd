@@ -3,7 +3,7 @@ import { Entity, PrimaryGeneratedColumn, Column, Timestamp } from 'typeorm';
 @Entity({
     name: 'logger'
 })
-export class Logger {
+export class LoggerEntity {
 
     @PrimaryGeneratedColumn({
         type: 'int'

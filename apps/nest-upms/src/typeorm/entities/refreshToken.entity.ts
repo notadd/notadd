@@ -1,4 +1,4 @@
-import { Entity, BeforeInsert, BeforeUpdate, PrimaryGeneratedColumn, Column, Timestamp, OneToOne } from 'typeorm';
+import { Entity, BeforeInsert, JoinColumn, BeforeUpdate, PrimaryGeneratedColumn, Column, Timestamp, OneToOne } from 'typeorm';
 import { EXPRES_TIME } from './accessToken.entity'
 import { AccessTokenEntity } from '..';
 @Entity({
@@ -17,6 +17,9 @@ export class RefreshTokenEntity {
     // })
     // token_id: number;
     @OneToOne(() => AccessTokenEntity, type => type.refreshToken)
+    @JoinColumn({
+        name: 'token_id'
+    })
     token: AccessTokenEntity;
 
     @Column({
@@ -44,13 +47,13 @@ export class RefreshTokenEntity {
     })
     update_time: Date;
 
-    @BeforeInsert()
-    protected insterExpresIn() {
-        this.expires_in = new Date(new Date().setDate(new Date().getTime() + EXPRES_TIME));
-    }
+    // @BeforeInsert()
+    // protected insterExpresIn() {
+    //     this.expires_in = new Date(new Date().setDate(new Date().getTime() + EXPRES_TIME));
+    // }
 
-    @BeforeUpdate()
-    protected updateExpresIn() {
-        this.expires_in = new Date(new Date().setDate(new Date().getTime() + EXPRES_TIME));
-    }
+    // @BeforeUpdate()
+    // protected updateExpresIn() {
+    //     this.expires_in = new Date(new Date().setDate(new Date().getTime() + EXPRES_TIME));
+    // }
 }

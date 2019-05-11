@@ -13,7 +13,7 @@ export class AuthServiceImpl extends AuthService {
         const accessToken = new AccessTokenEntity();
         accessToken.access_token = this.jwt.sign(user, {
             expiresIn: EXPRES_TIME
-        })
+        });
         accessToken.openid = user.openid;
         const refreshToken = new RefreshTokenEntity();
         accessToken.refreshToken = refreshToken;

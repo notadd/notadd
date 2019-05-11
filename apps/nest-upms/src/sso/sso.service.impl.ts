@@ -1,29 +1,52 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { UserEntity } from '../typeorm';
-import { AuthService, SsoService } from './core/index'
+import { UserEntity, AccessTokenEntity, RefreshTokenEntity, EXPRES_TIME } from '../typeorm';
+import { SsoService, AuthService } from './core/index'
 @Injectable()
 export class SsoServiceImpl extends SsoService {
     constructor(
-        @InjectRepository(UserEntity) public user: Repository<UserEntity>
+        @InjectRepository(UserEntity) private _user: Repository<UserEntity>,
+        @InjectRepository(AccessTokenEntity) private _accessToken: Repository<AccessTokenEntity>,
+        @InjectRepository(RefreshTokenEntity) private _refreshToken: Repository<RefreshTokenEntity>,
+        private _auth: AuthService
     ) {
         super();
     }
     /**
      * 注销登录
      */
-    logout(): any { }
+    async logout(user: UserEntity) {
+        // 清空缓存
+        // 更新数据库
+        await this._accessToken.update({
+            openid: user.openid
+        }, { status: -1 });
+    }
     /**
      * 刷新acces token过期时间
      */
-    refreshToken(): any { }
+    async refreshToken(token: AccessTokenEntity) {
+        const expiresIn = new Date(new Date().setDate(new Date().getTime() + EXPRES_TIME));
+        await this._accessToken.update({
+            access_token: token.access_token
+        }, { expires_in: expiresIn });
+        await this._refreshToken.update({
+            refresh_token: token.refreshToken.refresh_token
+        }, { expires_in: expiresIn });
+    }
     /**
      * 验证access token 获取用户信息
      **/
-    verify(): any { }
+    verify(token: AccessTokenEntity) {
+        return this._user.findOneOrFail({
+            openid: token.openid
+        })
+    }
     /**
      * 根据用户名和密码获取access token
      */
-    token(): any { }
+    token(user: UserEntity) {
+        return this._auth.createToken(user)
+    }
 }

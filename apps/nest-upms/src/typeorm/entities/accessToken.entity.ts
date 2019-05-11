@@ -6,10 +6,9 @@ export const EXPRES_TIME = 60 * 60 * 24;
 })
 export class AccessTokenEntity {
     @PrimaryGeneratedColumn({
-        type: 'int'
+        type: 'bigint'
     })
     access_token_id: number;
-
     /**
      * 根据access_token查询用户Openid，添加Index
      */
@@ -80,15 +79,21 @@ export class AccessTokenEntity {
     })
     update_time: Date;
 
-    @BeforeInsert()
-    protected insterExpresIn() {
-        this.expires_in = new Date(new Date().setDate(new Date().getTime() + EXPRES_TIME));
-    }
+    @Column({
+        type: 'tinyint',
+        comment: '1正常,-1过期/失效'
+    })
+    status: -1 | 0 | 1;
 
-    @BeforeUpdate()
-    protected updateExpresIn() {
-        this.expires_in = new Date(new Date().setDate(new Date().getTime() + EXPRES_TIME));
-    }
+    // @BeforeInsert()
+    // protected insterExpresIn() {
+    //     this.expires_in = new Date(new Date().setDate(new Date().getTime() + EXPRES_TIME));
+    // }
+
+    // @BeforeUpdate()
+    // protected updateExpresIn() {
+    //     this.expires_in = new Date(new Date().setDate(new Date().getTime() + EXPRES_TIME));
+    // }
 
     /**
      * 刷新凭证

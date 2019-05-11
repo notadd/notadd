@@ -30,7 +30,7 @@
     "i18n": "0.8.3",
     "jsonwebtoken": "8.4.0",
     "reflect-metadata": "0.1.13",
-    "rxjs": "6.3.3",
+    "rxjs": "6.5.2",
     "typescript": "3.2.2",
     "snyk": "1.163.1"
   },

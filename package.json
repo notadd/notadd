@@ -108,7 +108,7 @@
         "@types/node": "9.6.48",
         "@types/ora": "3.2.0",
         "globby": "9.2.0",
-        "codelyzer": "4.5.0",
+        "codelyzer": "5.0.1",
         "dotenv": "8.0.0",
         "jasmine-core": "2.99.1",
         "jasmine-marbles": "0.5.0",

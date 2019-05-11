@@ -107,7 +107,7 @@
         "@types/jest": "20.0.8",
         "@types/node": "9.6.48",
         "@types/ora": "3.2.0",
-        "globby": "7.1.1",
+        "globby": "9.2.0",
         "codelyzer": "4.5.0",
         "dotenv": "8.0.0",
         "jasmine-core": "2.99.1",

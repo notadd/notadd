@@ -1,10 +1,10 @@
-import { Entity, Column, PrimaryGeneratedColumn, Timestamp } from 'typeorm'
-
+import { Entity, Column, PrimaryGeneratedColumn, Timestamp, ManyToOne } from 'typeorm'
+import { PermissionEntity } from './permission.entity'
 @Entity({
     name: 'addon_permission'
 })
 export class AddonPermissionEntity {
-    
+
     @PrimaryGeneratedColumn({
         type: 'int'
     })
@@ -15,6 +15,11 @@ export class AddonPermissionEntity {
     })
     addon_id: number;
 
+    /**
+     * 
+     */
+    // @ManyToOne(() => PermissionEntity, t => t.addons)
+    // permission: PermissionEntity;
     @Column({
         type: 'int',
     })
@@ -23,10 +28,10 @@ export class AddonPermissionEntity {
     @Column({
         type: 'timestamp'
     })
-    create_time: Timestamp;
+    create_time: Date;
 
     @Column({
         type: 'timestamp'
     })
-    update_time: Timestamp;
+    update_time: Date;
 }

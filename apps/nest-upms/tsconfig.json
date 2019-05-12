@@ -8,7 +8,7 @@
     "noLib": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es6",
+    "target": "esnext",
     "sourceMap": true,
     "allowJs": true,
     "outDir": "../../dist/apps/nestupms",

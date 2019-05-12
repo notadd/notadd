@@ -2,7 +2,7 @@ import { Entity, PrimaryGeneratedColumn, Column, Timestamp } from 'typeorm';
 @Entity({
     name: 'organization'
 })
-export class Organization {
+export class OrganizationEntity {
     
     @PrimaryGeneratedColumn({
         type: 'int'
@@ -33,18 +33,18 @@ export class Organization {
         type: 'timestamp',
         comment: '创建时间'
     })
-    create_time: Timestamp;
+    create_time: Date;
 
     @Column({
         type: 'timestamp',
         comment: '更新时间'
     })
-    update_time: Timestamp;
+    update_time: Date;
 
     @Column({
         type: 'varchar',
-        length: 20,
+        length: 11,
         comment: '排序'
     })
-    displayorder: string;
+    displayorder: number;
 }

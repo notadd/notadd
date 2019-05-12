@@ -3,8 +3,8 @@ import { Entity, PrimaryGeneratedColumn, Column, Timestamp } from 'typeorm';
 @Entity({
     name: 'logger'
 })
-export class Logger {
-    
+export class LoggerEntity {
+
     @PrimaryGeneratedColumn({
         type: 'int'
     })
@@ -37,7 +37,15 @@ export class Logger {
     @Column({
         type: 'varchar',
         length: 20,
-        comment: '参数'
+        comment: '参数',
+        transformer: {
+            to: (json: any) => {
+                return JSON.stringify(json)
+            },
+            from: (val: string) => {
+                return JSON.parse(val)
+            }
+        }
     })
     params: string;
 

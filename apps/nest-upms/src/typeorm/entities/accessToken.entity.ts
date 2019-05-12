@@ -80,7 +80,7 @@ export class AccessTokenEntity {
     update_time: Date;
 
     @Column({
-        type: 'tinyint',
+        type: 'smallint',
         comment: '1正常,-1过期/失效'
     })
     status: -1 | 0 | 1;

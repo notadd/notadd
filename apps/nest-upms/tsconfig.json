@@ -18,7 +18,7 @@
   "include": ["src/**/*", "e2e/app/token.spec.ts", "e2e/app/token.e2e-spec.ts"],
   "exclude": [
     "../../node_modules",
-    "**/*.spec.ts",
+    "**/e2e/**/*",
     "node_modules/@types/jasmine/**/*"
   ]
 }

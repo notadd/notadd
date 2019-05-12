@@ -4,6 +4,7 @@ import { AuthService, UserEntity, ApplicationModule } from '../../../../src'
 describe('AuthService', () => {
     let app: INestApplication;
     let authService: AuthService;
+    
     beforeAll(async () => {
         const module = await Test.createTestingModule({
             imports: [ApplicationModule]
@@ -28,3 +29,4 @@ describe('AuthService', () => {
         await app.close();
     });
 });
+

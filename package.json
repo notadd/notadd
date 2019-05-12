@@ -69,6 +69,8 @@
     "@ngx-translate/http-loader": "~4.0.0",
     "@notadd/scss": "file:libs/scss",
     "@nrwl/nx": "^7.0.0",
+    "apollo-angular-link-http": "^1.6.0",
+    "apollo-cache-inmemory": "^1.5.1",
     "apollo-server-express": "^2.5.0",
     "cache-manager": "^2.9.0",
     "class-validator": "^0.9.1",
@@ -128,7 +130,7 @@
     "ts-jest": "^20.0.14",
     "ts-loader": "^4.0.0",
     "ts-morph": "^2.1.0",
-    "ts-node": "^7.0.0",
+    "ts-node": "^8.1.0",
     "tsconfig-paths": "^3.8.0",
     "tslint": "~5.11.0",
     "typescript": "3.4.5"

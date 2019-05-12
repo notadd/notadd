@@ -1,6 +1,6 @@
 { 
   "baseBranch":"develop",
-  "semanticCommits":true,
+  "automergeType":true,
   "masterIssue":true,
   "extends": [
     "config:base"

@@ -130,7 +130,7 @@
         "ts-morph": "2.1.0",
         "ts-node": "7.0.1",
         "tsconfig-paths": "3.8.0",
-        "tslint": "5.11.0",
+        "tslint": "5.16.0",
         "typescript": "3.2.2"
     },
     "xplat": {

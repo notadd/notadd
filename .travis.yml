@@ -1,0 +1,21 @@
+sudo: required
+
+language: node_js
+
+node_js:
+    - "10"
+    - "12"
+
+git:
+    submodules: true
+    
+#before_install:
+#    - npm install -g @angular/cli
+
+install: 
+    - npm i
+    - npm install -g codecov
+
+script:
+  - istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec
+  - codecov

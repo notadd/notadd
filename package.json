@@ -95,7 +95,7 @@
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.13.0",
+    "@angular-devkit/build-angular": "^0.13.9",
     "@angular/cli": "7.3.1",
     "@angular/compiler-cli": "~7.2.0",
     "@angular/language-service": "^7.0.0",
@@ -110,9 +110,9 @@
     "@types/jest": "^20.0.8",
     "@types/node": "^9.3.0",
     "@types/ora": "^3.2.0",
-    "globby": "^9.2.0",
     "codelyzer": "~4.5.0",
     "dotenv": "6.2.0",
+    "globby": "^9.2.0",
     "jasmine-core": "~2.99.1",
     "jasmine-marbles": "0.4.0",
     "jasmine-spec-reporter": "~4.2.1",
@@ -133,7 +133,7 @@
     "ts-node": "^8.1.0",
     "tsconfig-paths": "^3.8.0",
     "tslint": "~5.11.0",
-    "typescript": "3.4.5"
+    "typescript": "3.2.2"
   },
   "xplat": {
     "prefix": "foo"

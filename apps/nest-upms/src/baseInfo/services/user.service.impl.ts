@@ -8,10 +8,10 @@ import { UserRoleEntity, UserPermissionEntity, RoleEntity } from '../../typeorm'
 export class UserServiceImpl extends UserService {
 
     constructor(
-        @InjectRepository(UserEntity) private readonly userRepo: Repository<UserEntity>,
-        @InjectRepository(RoleEntity) private readonly roleRepo: Repository<RoleEntity>,
-        @InjectRepository(UserRoleEntity) private readonly userRoleRepo: Repository<UserRoleEntity>,
-        @InjectRepository(UserPermissionEntity) private readonly userPermissionRepo: Repository<UserPermissionEntity>,
+        @InjectRepository(UserEntity) public readonly userRepo: Repository<UserEntity>,
+        @InjectRepository(RoleEntity) public readonly roleRepo: Repository<RoleEntity>,
+        @InjectRepository(UserRoleEntity) public readonly userRoleRepo: Repository<UserRoleEntity>,
+        @InjectRepository(UserPermissionEntity) public readonly userPermissionRepo: Repository<UserPermissionEntity>,
     ) { super() }
 
     /**

@@ -58,4 +58,5 @@ xplat/**/*.d.ts
 xplat/**/*.metadata.json
 xplat/**/*.ngfactory.ts
 xplat/**/*.ngsummary.json
-      
+
+database/data

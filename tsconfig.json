@@ -9,8 +9,9 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "target": "es5",
-    "module": "es2015",
+    "target": "esnext",
+    "module": "commonjs",
+    "noImplicitAny": false,
     "typeRoots": [
       "node_modules/@types"
     ],

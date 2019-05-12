@@ -1,5 +1,7 @@
 { 
   "baseBranch":"develop",
+  "rangeStrategy": "bump",
+  "semanticCommits":true,
   "automergeType":true,
   "masterIssue":true,
   "extends": [

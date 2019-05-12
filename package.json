@@ -60,7 +60,7 @@
         "@nestjs/platform-express": "6.2.0",
         "@nestjs/swagger": "3.0.2",
         "@nestjs/testing": "6.2.0",
-        "@nestjs/typeorm": "6.1.0",
+        "@nestjs/typeorm": "6.1.1",
         "@nestjs/websockets": "6.2.0",
         "@ngrx/effects": "7.4.0",
         "@ngrx/router-store": "7.4.0",

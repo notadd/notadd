@@ -21,7 +21,7 @@ export class PermissionEntity {
     @Column({
         type: 'smallint'
     })
-    type: number;
+    type: 1|2|3;
 
     @Column()
     value: string;
@@ -32,7 +32,7 @@ export class PermissionEntity {
     @Column({
         type: 'smallint',
     })
-    status: number;
+    status: -1|1;
 
     @Column({
         type: 'int',

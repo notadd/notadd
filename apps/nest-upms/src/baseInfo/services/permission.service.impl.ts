@@ -7,7 +7,7 @@ import { DataError, PermissionIsNullError } from '../errors/error';
 export class PermissionServiceImpl extends PermissionService {
 
     constructor(
-        @InjectRepository(PermissionEntity) private readonly permissionRepo: Repository<PermissionEntity>,
+        @InjectRepository(PermissionEntity) public readonly permissionRepo: Repository<PermissionEntity>,
     ) { super() }
 
     /**

@@ -7,7 +7,7 @@ import { AddonIsNullError, DataError } from '../errors/error';
 export class AddonServiceImpl extends AddonService {
 
     constructor(
-        @InjectRepository(AddonEntity) private readonly addonRepo: Repository<AddonEntity>,
+        @InjectRepository(AddonEntity) public readonly addonRepo: Repository<AddonEntity>,
     ) { super() }
 
     addPermission(): Promise<void> {
@@ -25,6 +25,7 @@ export class AddonServiceImpl extends AddonService {
     removePermissions(): Promise<void> {
         throw new Error("Method not implemented.");
     }
+
 
     async get(where: Partial<AddonEntity>): Promise<AddonEntity> {
         if (!where) {

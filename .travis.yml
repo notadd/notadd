@@ -1,0 +1,19 @@
+sudo: required
+
+language: node_js
+
+node_js:
+    - "10"
+
+git:
+    submodules: true
+    
+#before_install:
+#    - npm install -g @angular/cli
+
+install: 
+    - npm i
+    - curl -s https://codecov.io/bash | bash
+    - npm run build
+script:
+    - npm run test

@@ -4,7 +4,7 @@ import { TypeormModule } from './typeorm/index';
 import { ssoProviders } from './sso'
 import { AuthModule } from './auth'
 import { JwtStrategyImpl } from './sso/jwt.strategy.impl'
-
+import coreProviders from './core/index'
 @Module({
   imports: [
     TypeormModule,
@@ -25,6 +25,7 @@ import { JwtStrategyImpl } from './sso/jwt.strategy.impl'
   ],
   controllers: [],
   providers: [
+    ...coreProviders,
     ...ssoProviders
   ]
 })

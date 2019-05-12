@@ -11,16 +11,16 @@ export class SsoResolver {
      * 通过用户名和密码获取token
      */
     @Query()
-    token() {
-        return this.sso.token();
+    token(user: any) {
+        return this.sso.token(user);
     }
 
     /**
      * 验证token
      */
     @Query()
-    verify() {
-        return this.sso.verify();
+    verify(token: any) {
+        return this.sso.verify(token);
     }
 
 
@@ -28,8 +28,8 @@ export class SsoResolver {
      * 刷新token
      */
     @Query()
-    refreshToken() {
-        return this.sso.refreshToken();
+    refreshToken(token: any) {
+        return this.sso.refreshToken(token);
     }
 
 
@@ -37,8 +37,8 @@ export class SsoResolver {
      * 注销
      */
     @Query()
-    logout() {
-        return this.sso.logout();
+    logout(user: any) {
+        return this.sso.logout(user);
     }
 }
 

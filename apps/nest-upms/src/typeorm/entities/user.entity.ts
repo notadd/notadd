@@ -80,8 +80,16 @@ export class UserEntity {
 
     @Column({
         type: 'smallint',
+        // transformer: {
+        //     to: (sex: any) => {
+        //         return sex.toString();
+        //     },
+        //     from: (val: string) => {
+        //         return Number.parseInt(val);
+        //     }
+        // }
     })
-    sex: number;
+    sex: 0|1|2;
 
     @Column({
         type: 'timestamp'

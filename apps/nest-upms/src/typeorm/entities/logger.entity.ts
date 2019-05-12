@@ -47,7 +47,7 @@ export class LoggerEntity {
             }
         }
     })
-    params: string;
+    params: object;
 
     @Column({
         type: 'varchar',

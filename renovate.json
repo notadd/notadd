@@ -1,5 +1,5 @@
 { 
-  "baseBranch":"develop",
+  "baseBranch": ["develop","feature/sso"],
   "rangeStrategy": "bump",
   "semanticCommits":true,
   "masterIssue":true,

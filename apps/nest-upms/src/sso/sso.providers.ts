@@ -14,4 +14,3 @@ export const ssoProviders: Provider[] = [
         useClass: AuthServiceImpl
     }
 ]
-

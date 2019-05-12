@@ -10,7 +10,8 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "esnext",
-    "module": "es2015",
+    "module": "commonjs",
+    "noImplicitAny": false,
     "typeRoots": [
       "node_modules/@types"
     ],

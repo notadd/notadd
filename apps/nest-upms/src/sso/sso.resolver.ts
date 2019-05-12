@@ -3,6 +3,7 @@ import {
     Resolver
 } from '@nestjs/graphql';
 import { SsoService } from './core/sso.service'
+import { UserEntity, AccessTokenEntity, RefreshTokenEntity } from '../typeorm';
 
 @Resolver()
 export class SsoResolver {
@@ -11,7 +12,7 @@ export class SsoResolver {
      * 通过用户名和密码获取token
      */
     @Query()
-    token(user: any) {
+    token(user: UserEntity) {
         return this.sso.token(user);
     }
 
@@ -19,7 +20,7 @@ export class SsoResolver {
      * 验证token
      */
     @Query()
-    verify(token: any) {
+    verify(token: AccessTokenEntity) {
         return this.sso.verify(token);
     }
 
@@ -28,7 +29,7 @@ export class SsoResolver {
      * 刷新token
      */
     @Query()
-    refreshToken(token: any) {
+    refreshToken(token: RefreshTokenEntity) {
         return this.sso.refreshToken(token);
     }
 
@@ -37,7 +38,7 @@ export class SsoResolver {
      * 注销
      */
     @Query()
-    logout(user: any) {
+    logout(user: UserEntity) {
         return this.sso.logout(user);
     }
 }

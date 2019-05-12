@@ -1,10 +1,12 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { TypeormModule } from './typeorm/index';
-import { ssoProviders } from './sso'
-import { AuthModule } from './auth'
-import { JwtStrategyImpl } from './sso/jwt.strategy.impl'
-import coreProviders from './core/index'
+import { ssoProviders } from './sso';
+import { AuthModule } from './auth';
+import { JwtStrategyImpl } from './sso/jwt.strategy.impl';
+import coreProviders from './core/index';
+import baseInfoProviders from './baseInfo';
+
 @Module({
   imports: [
     TypeormModule,
@@ -26,7 +28,8 @@ import coreProviders from './core/index'
   controllers: [],
   providers: [
     ...coreProviders,
-    ...ssoProviders
+    ...ssoProviders,
+    ...baseInfoProviders
   ]
 })
 export class ApplicationModule { }

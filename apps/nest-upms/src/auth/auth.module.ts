@@ -18,19 +18,19 @@ export class AuthRootModule { }
 
 @Module({})
 export class AuthModule {
-    static forRoot(jwtStrategy: Type<JwtStrategy>): DynamicModule {
+    static forRoot(strategy: Type<JwtStrategy>): DynamicModule {
         return {
             module: AuthRootModule,
             providers: [
-                { provide: JwtStrategy, useClass: jwtStrategy }
+                { provide: JwtStrategy, useClass: strategy }
             ]
         }
     }
-    static forChild(jwtStrategy: Type<JwtStrategy>): DynamicModule {
+    static forChild(strategy: Type<JwtStrategy>): DynamicModule {
         return {
             module: AuthModule,
             providers: [
-                { provide: JwtStrategy, useClass: jwtStrategy }
+                { provide: JwtStrategy, useClass: strategy }
             ]
         }
     }

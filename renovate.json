@@ -1,5 +1,5 @@
 { 
-  "baseBranch": ["develop"],
+  "baseBranch": "develop",
   "rangeStrategy": "bump",
   "semanticCommits":true,
   "masterIssue":true,

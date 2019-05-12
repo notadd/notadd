@@ -1,4 +1,4 @@
-import { UserEntity, AccessTokenEntity } from '../../typeorm'
+import { UserEntity, AccessTokenEntity, RefreshTokenEntity } from '../../typeorm'
 export abstract class SsoService {
     /**
      * 注销登录
@@ -7,7 +7,7 @@ export abstract class SsoService {
     /**
      * 刷新acces token过期时间
      */
-    abstract refreshToken(token: AccessTokenEntity): Promise<void>
+    abstract refreshToken(token: RefreshTokenEntity): Promise<void>
     /**
      * 验证access token 获取用户信息
      **/

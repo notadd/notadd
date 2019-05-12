@@ -2,7 +2,7 @@ import { Entity, Column, Index, PrimaryGeneratedColumn, Timestamp, PrimaryColumn
 import { PermissionEntity } from './permission.entity'
 import { RoleEntity } from './role.entity'
 import { OrganizationEntity } from './organization.entity'
-
+export type IUserSex = 0 | 1 | 2
 @Entity({
     name: 'user'
 })
@@ -89,7 +89,7 @@ export class UserEntity {
         //     }
         // }
     })
-    sex: 0|1|2;
+    sex: IUserSex;
 
     @Column({
         type: 'timestamp'

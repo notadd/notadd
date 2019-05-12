@@ -1,6 +1,7 @@
 import { Entity, Index, BeforeUpdate, PrimaryGeneratedColumn, Column, Timestamp, BeforeInsert, OneToOne } from 'typeorm';
 import { RefreshTokenEntity } from './refreshToken.entity';
 export const EXPRES_TIME = 60 * 60 * 24;
+export type IAccessTokenStatus = -1 | 0 | 1;
 @Entity({
     name: 'accessToken'
 })
@@ -80,10 +81,10 @@ export class AccessTokenEntity {
     update_time: Date;
 
     @Column({
-        type: 'tinyint',
+        type: 'smallint',
         comment: '1正常,-1过期/失效'
     })
-    status: -1 | 0 | 1;
+    status: IAccessTokenStatus;
 
     // @BeforeInsert()
     // protected insterExpresIn() {

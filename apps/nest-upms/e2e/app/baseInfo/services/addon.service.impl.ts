@@ -3,8 +3,6 @@ import { Test } from '@nestjs/testing';
 import { AddonEntity } from '../../../../src/typeorm'
 import { ApplicationModule } from '../../../../src'
 import { AddonService } from '../../../../src/baseInfo/core'
-
-import ts from 'typescript'
 describe('AddonServiceImpl', () => {
     let app: INestApplication;
     let addonService: AddonService;
@@ -27,8 +25,7 @@ describe('AddonServiceImpl', () => {
         const where = await addonService.get({ title: '系统1' });
         // 执行更新
         await addonService.save(addon, where);
-
-        // expect(addon).toBe(void 0)
+        expect(addon).toBe(void 0)
     });
 
     it(`delete`, async () => {
@@ -40,7 +37,7 @@ describe('AddonServiceImpl', () => {
         const result = await addonService.insert(addon);
         const add = await addonService.get({ name: 'addon1' });
         const res = await addonService.delete(add);
-        // expect(res).toBe(void 0);
+        expect(res).toBe(void 0);
     });
 
     it(`insert`, async () => {
@@ -50,7 +47,7 @@ describe('AddonServiceImpl', () => {
         addon.title = '系统1',
         addon.appsecret = '123'
         const result = await addonService.insert(addon);
-        // expect(result).toBe(void 0);
+        expect(result).toBe(void 0);
     });
 
     it(`get`, async () => {

@@ -26,13 +26,14 @@ export class SsoServiceImpl extends SsoService {
     /**
      * 刷新acces token过期时间
      */
-    async refreshToken(token: AccessTokenEntity) {
+    async refreshToken(refreshToken: RefreshTokenEntity) {
         const expiresIn = new Date(new Date().setDate(new Date().getTime() + EXPRES_TIME));
+        const accessToken = refreshToken.token;
         await this._accessToken.update({
-            access_token: token.access_token
+            access_token: accessToken.access_token
         }, { expires_in: expiresIn });
         await this._refreshToken.update({
-            refresh_token: token.refreshToken.refresh_token
+            refresh_token: refreshToken.refresh_token
         }, { expires_in: expiresIn });
     }
     /**

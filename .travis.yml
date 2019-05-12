@@ -4,6 +4,7 @@ language: node_js
 
 node_js:
     - "10"
+    - "12"
 
 git:
     submodules: true
@@ -13,7 +14,8 @@ git:
 
 install: 
     - npm i
-    - curl -s https://codecov.io/bash | bash
-    - npm run build
+    - npm install -g codecov
+
 script:
-    - npm run test
+  - istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec
+  - codecov

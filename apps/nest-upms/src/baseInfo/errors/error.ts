@@ -59,3 +59,9 @@ export class AddonIsNullError<T = any> extends CoreError {
         super(11009, '此应用不存在', data);
     }
 }
+
+export class AddonNameError<T = any> extends CoreError {
+    constructor(data?: T) {
+        super(11010, '应用名已存在', data);
+    }
+}

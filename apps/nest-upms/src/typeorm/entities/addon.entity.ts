@@ -17,7 +17,8 @@ export class AddonEntity {
 
     @Column({
         type: 'varchar',
-        length: 255
+        length: 255,
+        default: ''
     })
     icon: string;
 
@@ -34,14 +35,16 @@ export class AddonEntity {
     title: string;
 
     @Column({
-        type: 'text'
+        type: 'text',
+        default: ''
     })
     description: string;
 
     @Column({
         type: 'smallint',
+        default: 1
     })
-    status: number;
+    status: -1|1|0;
 
     @Column({
         type: 'timestamp',

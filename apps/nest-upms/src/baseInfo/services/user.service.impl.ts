@@ -62,7 +62,7 @@ export class UserServiceImpl extends UserService {
      * @param where 查询该用户的条件
      */
     async save(user: UserEntity, where: Partial<UserEntity>): Promise<void> {
-        let exist = await this.get(where);
+        let exist = await this.userRepo.findOne({where: where});
         if (!exist) {
             throw new UserIsNullError();
         }
@@ -84,7 +84,7 @@ export class UserServiceImpl extends UserService {
      * @param where 查询的条件
      */
     async get(where: Partial<UserEntity>): Promise<UserEntity> {
-        return await this.userRepo.findOne({ where: where });
+        return await this.userRepo.findOne(where);
     }
 
     /**

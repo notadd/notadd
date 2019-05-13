@@ -94,12 +94,12 @@ export class UserEntity {
     @Column({
         type: 'timestamp'
     })
-    create_time: Timestamp;
+    create_time: Date;
 
     @Column({
         type: 'timestamp'
     })
-    update_time: Timestamp;
+    update_time: Date;
 
 
     /**

@@ -31,6 +31,7 @@ export class PermissionEntity {
 
     @Column({
         type: 'smallint',
+        default: 1,
     })
     status: -1|1;
 

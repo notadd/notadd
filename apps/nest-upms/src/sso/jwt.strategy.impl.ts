@@ -5,7 +5,7 @@ import { JwtStrategy } from '../auth';
 import { UserEntity, AccessTokenEntity } from '../typeorm'
 export class JwtStrategyImpl extends JwtStrategy {
     constructor(
-        @InjectRepository(UserEntity) private _user: Repository<UserEntity>,
+        // @InjectRepository(UserEntity) private _user: Repository<UserEntity>,
     ) {
         super();
     }
@@ -15,8 +15,9 @@ export class JwtStrategyImpl extends JwtStrategy {
      * @returns Promise<UserEntity>
      */
     async validate(payload: AccessTokenEntity): Promise<UserEntity> {
-        return this._user.findOneOrFail({
-            openid: payload.openid
-        });
+        // return this._user.findOneOrFail({
+        //     openid: payload.openid
+        // });
+        return undefined;
     }
 }

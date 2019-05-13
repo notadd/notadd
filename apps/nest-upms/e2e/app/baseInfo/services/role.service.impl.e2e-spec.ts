@@ -42,7 +42,7 @@ describe('RoleServiceImpl', () => {
         let role: RoleEntity = new RoleEntity();
         role.name = 'wzry';
         role.title = 'hpjy';
-        role.description = '你的酒馆对我打了烊,子弹在我心头上了膛';
+        role.description = 'dddd';
         role.create_time = new Date();
         role.update_time = new Date();
         //从数据库获取一个应用
@@ -55,7 +55,7 @@ describe('RoleServiceImpl', () => {
 
     it(`get`, async () => {
         const add = await roleService.get({ name: 'role1' });
-        expect(add).toBe(void 0);
+        expect(!!add).toBe(true);
     });
 
     afterAll(async () => {

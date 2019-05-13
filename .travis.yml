@@ -10,7 +10,7 @@ cache:
 git:
   depth: 5
 services:
-  - postgres
+  - postgresql
 #  - postgresql
 # addons:
 #   postgresql: "11"

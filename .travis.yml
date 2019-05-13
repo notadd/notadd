@@ -1,14 +1,21 @@
 # sudo: required
-language: node_js
+dist: xenial
 
-node_js:
-    - "10"
-    - "12"
+# language: node_js
 
+# node_js:
+#     - "10"
+#     - "12"
+    
+    
 git:
   depth: 5
+  
+services:
+  - postgresql
 addons:
   postgresql: "10"
+  chromium: "latest"
   apt:
     packages:
     - postgresql-10
@@ -19,11 +26,12 @@ env:
 cache:
   directories:
     - "node_modules"
-addons:
-  chromium: "latest"
+  
 before_script:
+  - nvm install 10
+  - psql -U postgres -c "test"
   - export DISPLAY=:99.0
-  - psql -c 'create database test;' -U postgres
+
 #  - sh -e /etc/init.d/xvfb start
 before_install:
   - npm i -g npm@latest

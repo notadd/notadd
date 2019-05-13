@@ -1,5 +1,6 @@
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
+
 import { JwtStrategy } from '../auth';
 import { UserEntity, AccessTokenEntity } from '../typeorm'
 export class JwtStrategyImpl extends JwtStrategy {
@@ -14,6 +15,7 @@ export class JwtStrategyImpl extends JwtStrategy {
      * @returns Promise<UserEntity>
      */
     async validate(payload: AccessTokenEntity): Promise<UserEntity> {
+
         // return this._user.findOneOrFail({
         //     openid: payload.openid
         // });

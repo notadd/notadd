@@ -19,8 +19,8 @@ describe('RoleServiceImpl', () => {
     it(`insert`, async () => {
         const role = new RoleEntity();
         role.name = 'role1';
-        role.title = '苹果';
-        role.description = '刚打好几十个点';
+        role.title = 'iphone';
+        role.description = 'ddd';
         role.create_time = new Date();
         role.update_time = new Date();
         roleService.insert(role).then((result) => {
@@ -40,9 +40,9 @@ describe('RoleServiceImpl', () => {
 
         /** 创建更新的一个应用 */
         let role: RoleEntity = new RoleEntity();
-        role.name = '王者荣耀',
-            role.title = '和平精英',
-            role.description = '你的酒馆对我打了烊,子弹在我心头上了膛'
+        role.name = 'wzry';
+        role.title = 'hpjy';
+        role.description = '你的酒馆对我打了烊,子弹在我心头上了膛';
         role.create_time = new Date();
         role.update_time = new Date();
         //从数据库获取一个应用

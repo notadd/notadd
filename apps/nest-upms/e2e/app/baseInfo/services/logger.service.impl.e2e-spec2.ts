@@ -6,8 +6,7 @@ import { LoggerService } from '../../../../src/baseInfo/core/logger.service';
 describe('OrganizationServiceImpl', () => {
     let app: INestApplication;
     let loggerService: LoggerService;
-
-
+    
     function testInsert() {
         const log = new LoggerEntity()
         log.ip = `192.185.0.1`

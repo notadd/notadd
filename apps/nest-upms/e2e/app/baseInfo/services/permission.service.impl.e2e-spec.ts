@@ -64,10 +64,7 @@ describe('PermissionServiceImpl', () => {
         let permission2 = await permissionService.get({ value: 'one' })
         expect(permission1).toEqual(permission2);
     });
-
-
-
-
+    
     afterAll(async () => {
         await app.close();
     });

@@ -18,8 +18,8 @@ describe('OrganizationServiceImpl', () => {
     it(`insert`, async () => {
         const organ = new OrganizationEntity();
         organ.name = 'organ2';
-        organ.title = '经理';
-        organ.description = '哦啦啦';
+        organ.title = 'jingli';
+        organ.description = 'olala';
         organ.displayorder = 1;
         organ.create_time = new Date();
         organ.update_time = new Date();
@@ -36,8 +36,8 @@ describe('OrganizationServiceImpl', () => {
     it(`delete`, async () => {
         const organ = new OrganizationEntity();
         organ.name = 'organ2';
-        organ.title = '经理';
-        organ.description = '哦啦啦';
+        organ.title = 'jili';
+        organ.description = 'olala';
         organ.displayorder = 1;
         organ.create_time = new Date();
         organ.update_time = new Date();
@@ -53,9 +53,9 @@ describe('OrganizationServiceImpl', () => {
 
     it(`save`, async () => {
         let organ: OrganizationEntity = new OrganizationEntity();
-        organ.name = '王者荣耀1';
-        organ.title = '刺激战场';
-        organ.description = '你的酒馆对我打了烊,子弹在我心头上了膛,请告诉我今后怎么扛,遍体鳞伤还笑着原谅';
+        organ.name = 'ryzc1';
+        organ.title = 'cjzc';
+        organ.description = 'dddd';
         organ.create_time = new Date();
         organ.update_time = new Date();
         //从数据库获取一个应用
@@ -67,7 +67,7 @@ describe('OrganizationServiceImpl', () => {
     });
 
     it(`get`, async () => {
-        const add = await organService.get({ name: '王者荣耀' });
+        const add = await organService.get({ name: 'wzry' });
         expect(add).toBe(void 0);
     });
 

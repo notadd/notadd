@@ -33,7 +33,6 @@
 npm-debug.log
 yarn-error.log
 testem.log
-/typings
 
 # System Files
 .DS_Store
@@ -57,5 +56,3 @@ xplat/**/*.d.ts
 xplat/**/*.metadata.json
 xplat/**/*.ngfactory.ts
 xplat/**/*.ngsummary.json
-
-database/data

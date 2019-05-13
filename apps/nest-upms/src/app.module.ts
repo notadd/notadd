@@ -16,7 +16,7 @@ const env = process.env;
       host: 'localhost',
       port: 5432,
       username: 'postgres',
-      password: env.PASSWORD || '',
+      password: 'postgres',
       database: 'test',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,

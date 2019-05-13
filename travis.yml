@@ -22,8 +22,7 @@ install:
   - npm ci
   - npm run build:dev
 script:
-  - npm run lint
-  - npm test
-after_success: npm run coverage
+  - npm run test.nest.upms
+after_success: npm run test.nest.upms.coverage
     
  

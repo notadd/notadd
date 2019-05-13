@@ -22,18 +22,20 @@ addons:
     - postgresql-client-11
 env:
   global:
-  - PGPORT=5433
+    - PGPORT=5433
+    - PGDATABASE=test
+    - PGUSER=postgres
+    - PGHOST=localhost
 cache:
   directories:
     - "node_modules"
   
 before_script:
+  - sudo sed -i -e '/local.*peer/s/postgres/all/' -e 's/peer\|md5/trust/g' /etc/postgresql/*/main/pg_hba.conf
+  - sudo service postgresql restart
+  - sleep 1
   - nvm install 10
-  - psql -U postgres -c "test"
   - export DISPLAY=:99.0
-
-#  - sh -e /etc/init.d/xvfb start
-before_install:
   - npm i -g npm@latest
   - npm install -g codecov
 install:

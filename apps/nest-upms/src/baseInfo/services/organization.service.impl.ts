@@ -50,20 +50,14 @@ export class OrganizationServiceImpl extends OrganizationService {
      * @param where 
      */
     async save(organization: OrganizationEntity, where: Partial<OrganizationEntity>) {
-        
         let exist = await this.get(where);
-       
         if (!exist) {
             throw new OrganizationNoExistError();
         }
         if (organization.name) { exist.name = organization.name }
-
         if (organization.title) { exist.title = organization.title }
-
         if(organization.description){exist.description=organization.description}
-
         if(organization.displayorder){exist.displayorder=organization.displayorder}
-
         return await this.organRepo.save(exist)
     }
 

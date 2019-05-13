@@ -8,7 +8,7 @@ export class RoleError extends CoreError {
 
 export class ServerError<T = any> extends CoreError {
     constructor(data?: T) {
-        super(12500, '数据传入有误', data)
+        super(12500, '服务器错误', data)
     }
 }
 export class DataError<T = any> extends CoreError {

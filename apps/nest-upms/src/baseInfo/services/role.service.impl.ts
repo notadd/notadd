@@ -56,7 +56,6 @@ export class RoleServiceIpml extends RoleService {
     * 根据id查询角色
     */
     async getfindRoleById(role_id: number): Promise<RoleEntity> {
-
         return await this.roleRepo.findOne(role_id);
     }
     /**
@@ -68,21 +67,9 @@ export class RoleServiceIpml extends RoleService {
     async save(role: RoleEntity) {
         try {
             return this.roleRepo.save(role);
-            // this.roleRepo.update(role.role_id, role)
-            // this.roleRepo.createQueryBuilder().update(RoleEntity)
-            // .set(role)
-            // .where("id = :id", { id: role.role_id })
-            // .execute();
         } catch (e) {
             throw new ServerError();
         }
-        // let exist = await this.get(where);
-        // if (!exist) {
-        //     throw new RoleNoExistError();
-        // }
-        // if (role.name) { exist.name = role.name }
-        // if (role.title) (exist.title = role.title)
-        // await this.roleRepo.save(exist, where);
     }
 
     search(where: Partial<RoleEntity>): Promise<void> {

@@ -59,16 +59,17 @@ describe('OrganizationServiceImpl', () => {
         organ.create_time = new Date();
         organ.update_time = new Date();
         //从数据库获取一个应用
-        const where = await organService.get({ name: 'organ2' });
-        if (where) { }
-        // 执行更新
-        const res = await organService.save(organ, where);
-        expect(res).toBe(void 0);
+        organService.save(organ, { name: 'ryzc1' }).then(res => {
+            expect(res.description).toBe('dddd');
+        }).catch(e => {
+            expect(e instanceof OrganizationNoExistError).toBeTruthy()
+        });
     });
 
     it(`get`, async () => {
-        const add = await organService.get({ name: 'wzry' });
-        expect(add).toBe(void 0);
+        organService.get({ name: 'wzry' }).then(res => {
+            expect(res.name).toEqual('wzry');
+        }).catch(e => { });
     });
 
     afterAll(async () => {

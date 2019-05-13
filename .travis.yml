@@ -45,7 +45,7 @@ before_script:
 install:
   - npm i
 script:
-  - npm run test.nest.upms
+  - npm run test.nest.upms.e2e
 #   - istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec
 #   - codecov
 after_script:

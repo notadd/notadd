@@ -10,13 +10,14 @@ cache:
 git:
   depth: 5
 services:
-  - postgresql
-addons:
-  postgresql: "11"
-  apt:
-    packages:
-    - postgresql-11
-    - postgresql-client-11
+  - postgres
+#  - postgresql
+# addons:
+#   postgresql: "11"
+#   apt:
+#     packages:
+#     - postgresql-11
+#     - postgresql-client-11
 env:
   global:
     - PGPORT=5432

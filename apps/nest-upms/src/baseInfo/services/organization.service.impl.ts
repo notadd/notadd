@@ -49,7 +49,7 @@ export class OrganizationServiceImpl extends OrganizationService {
      * @param organization 更新角色
      * @param where 
      */
-    async save(organization: OrganizationEntity, where: Partial<OrganizationEntity>): Promise<void> {
+    async save(organization: OrganizationEntity, where: Partial<OrganizationEntity>) {
         
         let exist = await this.get(where);
        
@@ -64,7 +64,7 @@ export class OrganizationServiceImpl extends OrganizationService {
 
         if(organization.displayorder){exist.displayorder=organization.displayorder}
 
-        await this.organRepo.save(exist)
+        return await this.organRepo.save(exist)
     }
 
     search(where: Partial<OrganizationEntity>): Promise<void> {

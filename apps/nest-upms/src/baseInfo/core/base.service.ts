@@ -9,7 +9,7 @@ export abstract class BaseService<Entity>{
      * 更新
      * @returns Promise
      */
-    abstract save(data: Entity, where: Partial<Entity>): Promise<void>;
+    abstract save(data: Entity, where: Partial<Entity>): Promise<Entity>;
     /**
      * 删除
      * @returns Promise

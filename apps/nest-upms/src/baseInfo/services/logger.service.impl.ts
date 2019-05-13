@@ -51,7 +51,7 @@ export class LoggerServiceImpl extends LoggerService {
         if (logger.params) { exist.params = logger.params }
         if (logger.ip) { exist.ip = logger.ip }
         exist.end_time = exist.end_time || new Date();
-        await this.loggerRepo.save(logger);
+        return await this.loggerRepo.save(logger);
     }
     /**
      * 

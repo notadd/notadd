@@ -38,7 +38,7 @@ export class PermissionServiceImpl extends PermissionService {
      * @param permission 更新的权限信息
      * @param where 更新条件
      */
-    async save(permission: PermissionEntity, where: Partial<PermissionEntity>): Promise<void> {
+    async save(permission: PermissionEntity, where: Partial<PermissionEntity>) {
         let exist = await this.getPermissionById(where.permission_id);
         if (!exist) {
             throw new PermissionIsNullError();
@@ -49,7 +49,7 @@ export class PermissionServiceImpl extends PermissionService {
         if (permission.icon) { exist.icon = permission.icon }
         if (permission.displayorder) { exist.displayorder = permission.displayorder }
         if (permission.status) { exist.status = permission.status }
-        await this.permissionRepo.save(exist);
+        return await this.permissionRepo.save(exist);
     }
 
     /**

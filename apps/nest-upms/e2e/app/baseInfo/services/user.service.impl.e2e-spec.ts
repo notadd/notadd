@@ -3,6 +3,7 @@ import { Test } from '@nestjs/testing';
 import { ApplicationModule } from '../../../../src';
 import { UserService } from '../../../../src/baseInfo/core';
 import { UserEntity } from '../../../../src/typeorm';
+import { UserIsNullError } from '../../../../src/baseInfo/errors/error';
 describe('UserServiceImpl', () => {
     let app: INestApplication;
     let userService: UserService;
@@ -25,8 +26,8 @@ describe('UserServiceImpl', () => {
         user.nickname = 'ququ';
         user.avatar = 'avatar';
         user.sex = 1;
-        user.openid = 'd34e0c7a-7529-11e9-8f9e-2a85a4085b59'; 
-        
+        user.openid = 'd34e0c7a-7529-11e9-8f9e-2a85a4085b59';
+
         await userService.insert(user);
         await app.init();
     });
@@ -54,9 +55,11 @@ describe('UserServiceImpl', () => {
         let newUser = new UserEntity();
         // 修改用户的邮箱
         newUser.email = 'mumu@qq.com';
-
-        let res = await userService.save(newUser, { username: 'mumu' });
-        expect(res).toBe(void 0)
+        userService.save(newUser, { username: 'mumu' }).then((res) => {
+            expect(res).toBe(void 0)
+        }).catch(e => {
+            expect(e instanceof UserIsNullError).toBe(true)
+        });
     });
 
     /** 获取用户 */

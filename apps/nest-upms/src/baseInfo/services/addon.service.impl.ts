@@ -39,7 +39,7 @@ export class AddonServiceImpl extends AddonService {
      * @param addon 更新应用的信息
      * @param where 更新应用的条件 
      */
-    async save(addon: AddonEntity, where: Partial<AddonEntity>): Promise<void> {
+    async save(addon: AddonEntity, where: Partial<AddonEntity>) {
         let exist = await this.getAddonById(where.appid);
         if (addon.name) { exist.name = addon.name }
         if (addon.title) { exist.title = addon.title }
@@ -50,7 +50,7 @@ export class AddonServiceImpl extends AddonService {
         if (addon.description) { exist.description = addon.description }
         if (addon.appsecret) { exist.appsecret = addon.appsecret }
         if (addon.status >= -1 && addon.status <= 1) { exist.status = addon.status }
-        await this.addonRepo.save(exist)
+        return await this.addonRepo.save(exist)
     }
 
     /**

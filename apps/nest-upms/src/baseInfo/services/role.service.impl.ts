@@ -65,9 +65,9 @@ export class RoleServiceIpml extends RoleService {
      * @param data 
      * @param where 
      */
-    async save(role: RoleEntity): Promise<void> {
+    async save(role: RoleEntity) {
         try {
-            this.roleRepo.save(role);
+            return this.roleRepo.save(role);
             // this.roleRepo.update(role.role_id, role)
             // this.roleRepo.createQueryBuilder().update(RoleEntity)
             // .set(role)

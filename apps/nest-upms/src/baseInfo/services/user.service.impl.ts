@@ -70,7 +70,7 @@ export class UserServiceImpl extends UserService {
      * @param user 更新用户的信息
      * @param where 查询该用户的条件
      */
-    async save(user: UserEntity, where: Partial<UserEntity>): Promise<void> {
+    async save(user: UserEntity, where: Partial<UserEntity>) {
         let exist = await this.get(where);
         if (!exist) {
             throw new UserIsNullError();
@@ -84,7 +84,7 @@ export class UserServiceImpl extends UserService {
         if (user.phone) { exist.phone = user.phone }
         if (user.email) { exist.email = user.email }
         if (user.avatar) { exist.avatar = user.avatar }
-        await this.userRepo.save(exist);
+        return await this.userRepo.save(exist);
     }
 
 

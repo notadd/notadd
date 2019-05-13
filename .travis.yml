@@ -1,11 +1,9 @@
-sudo: required
-
+# sudo: required
 language: node_js
 
 node_js:
     - "10"
     - "12"
-
 cache:
   directories:
     - "node_modules"

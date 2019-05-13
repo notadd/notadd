@@ -1,26 +1,18 @@
 # sudo: required
 # dist: xenial
-
 language: node_js
-
 node_js:
     - "10"
     - "12"
-env:
-  - DB=postgres
-services:
-  - postgres    
 cache:
   directories:
     - "node_modules"   
 git:
   depth: 5
-  
 services:
   - postgresql
 addons:
   postgresql: "11"
-  chromium: "latest"
   apt:
     packages:
     - postgresql-11
@@ -31,6 +23,7 @@ env:
     - PGDATABASE=test
     - PGUSER=postgres
     - PGHOST=localhost
+    - DB=postgres
   
 before_script:
 #   - sudo sed -i -e '/local.*peer/s/postgres/all/' -e 's/peer\|md5/trust/g' /etc/postgresql/*/main/pg_hba.conf
@@ -51,6 +44,3 @@ script:
 after_script:
   - bash <(curl -s https://codecov.io/bash)
 after_success: npm run test.nest.upms.coverage
-    
- 
-

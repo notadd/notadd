@@ -15,7 +15,6 @@ export class JwtStrategyImpl extends JwtStrategy {
      * @returns Promise<UserEntity>
      */
     async validate(payload: AccessTokenEntity): Promise<UserEntity> {
-
         // return this._user.findOneOrFail({
         //     openid: payload.openid
         // });

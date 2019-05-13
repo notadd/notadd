@@ -40,7 +40,7 @@ export class PermissionServiceImpl extends PermissionService {
      */
     async save(permission: PermissionEntity, where: Partial<PermissionEntity>): Promise<void> {
         let exist = await this.getPermissionById(where.permission_id);
-        if (exist) {
+        if (!exist) {
             throw new PermissionIsNullError();
         }
         if (permission.name) { exist.name = permission.name }
@@ -48,9 +48,8 @@ export class PermissionServiceImpl extends PermissionService {
         if (permission.value) { exist.value = permission.value }
         if (permission.icon) { exist.icon = permission.icon }
         if (permission.displayorder) { exist.displayorder = permission.displayorder }
-        if (permission.type >= 1 && permission.type <= 3) { exist.type = permission.type }
-        if (permission.status === -1 || permission.status === 1) { exist.status = permission.status }
-        await this.permissionRepo.save(permission);
+        if (permission.status) { exist.status = permission.status }
+        await this.permissionRepo.save(exist);
     }
 
     /**

@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn, Timestamp } from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn, Timestamp, CreateDateColumn, UpdateDateColumn } from 'typeorm';
 import { PermissionEntity } from './permission.entity';
 
 @Entity({
@@ -17,7 +17,8 @@ export class AddonEntity {
 
     @Column({
         type: 'varchar',
-        length: 255
+        length: 255,
+        default: ''
     })
     icon: string;
 
@@ -34,22 +35,24 @@ export class AddonEntity {
     title: string;
 
     @Column({
-        type: 'text'
+        type: 'text',
+        default: ''
     })
     description: string;
 
     @Column({
         type: 'smallint',
+        default: 1
     })
-    status: number;
+    status: -1|1|0;
 
-    @Column({
-        type: 'timestamp',
+    @CreateDateColumn({
+        type: 'timestamptz'
     })
     create_time: Date;
 
-    @Column({
-        type: 'timestamp'
+    @UpdateDateColumn({
+        type: 'timestamptz'
     })
     update_time: Date;
 

@@ -2,7 +2,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { AddonEntity } from '../../typeorm';
 import { AddonService } from '../core/addon.service';
-import { AddonIsNullError, DataError } from '../errors/error';
+import { AddonIsNullError, DataError, AddonNameError } from '../errors/error';
 
 export class AddonServiceImpl extends AddonService {
 
@@ -72,6 +72,9 @@ export class AddonServiceImpl extends AddonService {
     async insert(addon: AddonEntity): Promise<void> {
         if (!(addon.name || addon.title || addon.appsecret)) {
             throw new DataError();
+        }
+        if (await this.get({ name: addon.name })) {
+            throw new AddonNameError();
         }
         if (addon.status >= -1 && addon.status <= 1) {
             throw new DataError();

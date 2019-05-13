@@ -27,7 +27,7 @@ addons:
     - postgresql-client-11
 env:
   global:
-    - PGPORT=5433
+    - PGPORT=5432
     - PGDATABASE=test
     - PGUSER=postgres
     - PGHOST=localhost

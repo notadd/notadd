@@ -56,10 +56,7 @@ export class OrganizationServiceImpl extends OrganizationService {
         await this.organRepo.save(exist)
     }
 
-
     search(where: Partial<OrganizationEntity>): Promise<void> {
         throw new Error("Method not implemented.");
     }
-
-
 }

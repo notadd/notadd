@@ -2,7 +2,7 @@ import { OrganizationService } from '../core/organization.service';
 import { OrganizationEntity } from '../../typeorm';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
-import { OrganizationNoExistError, DataError } from '../errors/role.error';
+import { OrganizationNoExistError, DataError,  } from '../errors/role.error';
 
 export class OrganizationServiceImpl extends OrganizationService {
     constructor(@InjectRepository(OrganizationEntity) private readonly organRepo: Repository<OrganizationEntity>) { super() }
@@ -12,7 +12,7 @@ export class OrganizationServiceImpl extends OrganizationService {
      * @param organization 添加组织
      */
     async insert(organization: OrganizationEntity): Promise<void> {
-        if (!organization.name || !organization.create_time || !organization.update_time) {
+        if (!organization.name || !organization.title || !organization.description) {
             throw new DataError();
         }
         await this.organRepo.save(this.organRepo.create(organization));
@@ -37,11 +37,11 @@ export class OrganizationServiceImpl extends OrganizationService {
         }
         return await this.organRepo.findOne(organization_id)
     }
-
+    /**
+     * 
+     * @param where 查询单个组织
+     */
     async get(where: Partial<OrganizationEntity>): Promise<OrganizationEntity> {
-        if (!where) {
-            throw new DataError();
-        }
         return await this.organRepo.findOne(where);
     }
     /**
@@ -50,9 +50,20 @@ export class OrganizationServiceImpl extends OrganizationService {
      * @param where 
      */
     async save(organization: OrganizationEntity, where: Partial<OrganizationEntity>): Promise<void> {
-        let exist = await this.getOrganById(where.organization_id);
+        
+        let exist = await this.get(where);
+       
+        if (!exist) {
+            throw new OrganizationNoExistError();
+        }
         if (organization.name) { exist.name = organization.name }
+
         if (organization.title) { exist.title = organization.title }
+
+        if(organization.description){exist.description=organization.description}
+
+        if(organization.displayorder){exist.displayorder=organization.displayorder}
+
         await this.organRepo.save(exist)
     }
 

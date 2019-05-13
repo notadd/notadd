@@ -26,12 +26,12 @@ export class AddonPermissionEntity {
     permission_id: number;
 
     @Column({
-        type: 'timestamp'
+        type: 'timestamptz'
     })
     create_time: Date;
 
     @Column({
-        type: 'timestamp'
+        type: 'timestamptz'
     })
     update_time: Date;
 }

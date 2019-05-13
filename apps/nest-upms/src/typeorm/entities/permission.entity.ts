@@ -43,12 +43,12 @@ export class PermissionEntity {
     @CreateDateColumn({
         type: 'timestamptz'
     })
-    create_time: Date;
+    create_time: Date = new Date();
 
     @UpdateDateColumn({
         type: 'timestamptz'
     })
-    update_time: Date;
+    update_time: Date= new Date();
 
 
     /**

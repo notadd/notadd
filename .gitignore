@@ -9,8 +9,6 @@
 /node_modules
 /**/node_modules
 /database/data
-apps/nest-upms/e2e/app/baseInfo/services/addon.service.impl.e2e-spec.ts
-
 # IDEs and editors
 /.idea
 .project

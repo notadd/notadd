@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn, Timestamp } from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn, Timestamp, CreateDateColumn, UpdateDateColumn } from 'typeorm';
 import { PermissionEntity } from './permission.entity';
 
 @Entity({
@@ -46,13 +46,13 @@ export class AddonEntity {
     })
     status: -1|1|0;
 
-    @Column({
-        type: 'timestamp',
+    @CreateDateColumn({
+        type: 'timestamptz'
     })
     create_time: Date;
 
-    @Column({
-        type: 'timestamp'
+    @UpdateDateColumn({
+        type: 'timestamptz'
     })
     update_time: Date;
 

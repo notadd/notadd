@@ -1,6 +1,6 @@
 import { UserService } from '../core/user.service';
 import { UserEntity } from '../../typeorm/entities/user.entity';
-import { DataError, UserNameExistError, PhoneExistError, EmileExistError, UserIsNullError } from '../errors/error';
+import { DataError, UserNameExistError, PhoneExistError, EmailFormtError, EmailExistError, UserIsNullError, PhoneFormtError } from '../errors/error';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { UserRoleEntity, UserPermissionEntity, RoleEntity } from '../../typeorm';
@@ -18,10 +18,19 @@ export class UserServiceImpl extends UserService {
      * @param user 添加的用户信息
      */
     async insert(user: UserEntity): Promise<void> {
-        if (!(user.username || user.password || user.phone || user.email) && user.phone.length !== 11) {
+        if (!(user.username || user.password || user.phone || user.email)) {
             throw new DataError();
         }
-        // 判断邮箱格式和手机格式
+        // 验证邮箱
+        let EmailRegExp = /^\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}$/;
+        if (!EmailRegExp.test(user.email)) {
+            throw new EmailFormtError();
+        }
+        // 验证手机
+        let phoneRegExp = /^[1][3-9][0-9]{9}$/;
+        if (!phoneRegExp.test(user.phone)) {
+            throw new PhoneFormtError();
+        }
         if (await this.userRepo.findOne({ where: { username: user.username } })) {
             throw new UserNameExistError();
         }
@@ -29,7 +38,7 @@ export class UserServiceImpl extends UserService {
             throw new PhoneExistError();
         }
         if (await this.userRepo.findOne({ where: { email: user.email } })) {
-            throw new EmileExistError();
+            throw new EmailExistError();
         }
         /** 
          * TODO 加密密码
@@ -62,7 +71,7 @@ export class UserServiceImpl extends UserService {
      * @param where 查询该用户的条件
      */
     async save(user: UserEntity, where: Partial<UserEntity>): Promise<void> {
-        let exist = await this.userRepo.findOne({where: where});
+        let exist = await this.get(where);
         if (!exist) {
             throw new UserIsNullError();
         }

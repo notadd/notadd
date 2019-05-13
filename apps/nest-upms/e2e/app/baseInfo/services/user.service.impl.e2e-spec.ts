@@ -13,29 +13,41 @@ describe('UserServiceImpl', () => {
         app = module.createNestApplication();
         userService = app.get(UserService);
 
-        await app.init();
-    });
-
-    /** 新增用户 */
-    it(`insert`, async () => {
+        /** 新增用户 */
         let user = new UserEntity();
         user.username = 'ququ';
         user.password = '123456';
-        user.phone = '15588888866';
-        user.email = 'ququ@163.com';
-        user.unionid = 'unionid5';
+        user.phone = '13588888888';
+        user.email = 'ququ@qq.com';
+        user.unionid = 'unionid3';
         user.salt = '666666';
         user.realname = 'ququ';
         user.nickname = 'ququ';
         user.avatar = 'avatar';
         user.sex = 1;
-        user.openid = 'd34e0c7a-7529-11e9-8f9e-2a86e4085a59';
-        user.create_time = new Date();
-        user.update_time = new Date();
-
-        let res = await userService.insert(user);
-        expect(res).toBe(void 0);
+        user.openid = 'd34e0c7a-7529-11e9-8f9e-2a85a4085b59'; 
+        
+        await userService.insert(user);
+        await app.init();
     });
+
+    // // 新增用户
+    // it(`insert`, async () => {
+    //     let user = new UserEntity();
+    //     user.username = 'mumu';
+    //     user.password = '123456';
+    //     user.phone = '13568888888';
+    //     user.email = 'mumu@qq.com';
+    //     user.unionid = 'unionid2';
+    //     user.salt = '666666';
+    //     user.realname = 'mumu';
+    //     user.nickname = 'mumu';
+    //     user.avatar = 'avatar';
+    //     user.sex = 1;
+    //     user.openid = 'd34e0c7a-7529-11e9-8f9e-2a85a4185b59'; 
+    //     let res = await userService.insert(user);
+    //     expect(res).toBe(void 0);
+    // });
 
     /** 更新用户 */
     it(`save`, async () => {
@@ -50,7 +62,7 @@ describe('UserServiceImpl', () => {
     /** 获取用户 */
     it(`get`, async () => {
         let user = await userService.get({ username: 'mumu' });
-        let user2 = await userService.get({ phone: '15588888888' })
+        let user2 = await userService.get({ phone: '13568888888' })
         expect(user).toEqual(user2);
     });
 
@@ -60,7 +72,6 @@ describe('UserServiceImpl', () => {
         let res = await userService.delete(user)
         expect(res).toBe(void 0);
     });
-
 
 
     afterAll(async () => {

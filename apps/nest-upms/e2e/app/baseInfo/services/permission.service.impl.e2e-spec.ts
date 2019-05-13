@@ -13,11 +13,7 @@ describe('PermissionServiceImpl', () => {
         app = module.createNestApplication();
         permissionService = app.get(PermissionService);
 
-        await app.init();
-    });
-
-    /** 新增权限 */
-    it(`insert`, async () => {
+        /** 新增权限 */
         let permission = new PermissionEntity();
         permission.value = 'two';
         permission.name = 'two';
@@ -25,12 +21,24 @@ describe('PermissionServiceImpl', () => {
         permission.type = 1;
         permission.icon = 'icon';
         permission.displayorder = 1;
-        permission.create_time = new Date();
-        permission.update_time = new Date();
 
-        let res = await permissionService.insert(permission);
-        expect(res).toBe(void 0);
+        await permissionService.insert(permission);
+        await app.init();
     });
+
+    // /** 新增权限,在beforeAll实现 */
+    // it(`insert`, async () => {
+    //     let permission = new PermissionEntity();
+    //     permission.value = 'one';
+    //     permission.name = 'one';
+    //     permission.pid = 1;
+    //     permission.type = 1;
+    //     permission.icon = 'icon';
+    //     permission.displayorder = 1;
+
+    //     let res = await permissionService.insert(permission);
+    //     expect(0).toBe(0);
+    // });
 
     /** 删除用户 */
     it(`delete`, async () => {
@@ -41,18 +49,19 @@ describe('PermissionServiceImpl', () => {
 
     /** 更新用户 */
     it(`save`, async () => {
-        let newPermission = new PermissionEntity();
+        let newPsn = new PermissionEntity();
+        let oldPsn = await permissionService.get({ name: 'one' });
         // 修改权限状态为禁止
-        newPermission.status = -1;
+        newPsn.status = -1;
 
-        let res = await permissionService.save(newPermission, { permission_id: 11 });
+        let res = await permissionService.save(newPsn, { permission_id: oldPsn.permission_id });
         expect(res).toBe(void 0)
     });
 
     /** 获取用户 */
     it(`get`, async () => {
-        let permission1 = await permissionService.get({ name: 'two' });
-        let permission2 = await permissionService.get({ value: 'two' })
+        let permission1 = await permissionService.get({ name: 'one' });
+        let permission2 = await permissionService.get({ value: 'one' })
         expect(permission1).toEqual(permission2);
     });
 

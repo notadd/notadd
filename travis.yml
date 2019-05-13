@@ -19,8 +19,7 @@ before_script:
 before_install:
   - npm i -g npm@latest
 install:
-  - npm ci
-  - npm run build:dev
+  - npm i
 script:
   - npm run test.nest.upms
 after_success: npm run test.nest.upms.coverage

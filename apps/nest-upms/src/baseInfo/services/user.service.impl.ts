@@ -17,7 +17,7 @@ export class UserServiceImpl extends UserService {
     /**
      * @param user 添加的用户信息
      */
-    async insert(user: UserEntity): Promise<void> {
+    async insert(user: UserEntity) {
         if (!(user.username || user.password || user.phone || user.email)) {
             throw new DataError();
         }
@@ -45,13 +45,13 @@ export class UserServiceImpl extends UserService {
          * 
          */
         // 添加联盟id和open id
-        await this.userRepo.save(this.userRepo.create(user)); // todo 加密密码
+        return await this.userRepo.save(this.userRepo.create(user)); // todo 加密密码
     }
 
     /**
      * @param user 删除的用户信息
      */
-    async delete(user: Partial<UserEntity>): Promise<void> {
+    async delete(user: Partial<UserEntity>) {
         if (!user.user_id) {
             throw new DataError();
         }
@@ -61,7 +61,7 @@ export class UserServiceImpl extends UserService {
         }
         await this.userRepo.delete({ user_id: user.user_id });
         await this.userRoleRepo.delete({ openid: exist.openid });
-        await this.userPermissionRepo.delete({ openid: exist.openid });
+        return await this.userPermissionRepo.delete({ openid: exist.openid });
     }
 
 

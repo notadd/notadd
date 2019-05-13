@@ -42,7 +42,7 @@ export class LoggerServiceImpl extends LoggerService {
      * @param logger 更新日志
      * @param where 
      */
-    async save(logger: LoggerEntity, where: Partial<LoggerEntity>): Promise<void> {
+    async save(logger: LoggerEntity, where: Partial<LoggerEntity>) {
         let exist = await this.getLoggerById(where.logger_id);
         if (!exist) {
             throw new loggerNoExistError();

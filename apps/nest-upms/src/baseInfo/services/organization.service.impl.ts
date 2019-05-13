@@ -11,21 +11,21 @@ export class OrganizationServiceImpl extends OrganizationService {
      * 
      * @param organization 添加组织
      */
-    async insert(organization: OrganizationEntity): Promise<void> {
+    async insert(organization: OrganizationEntity) {
         if (!organization.name || !organization.title || !organization.description) {
             throw new DataError();
         }
-        await this.organRepo.save(this.organRepo.create(organization));
+        return await this.organRepo.save(this.organRepo.create(organization));
     }
     /**
      * 
      * @param organization 删除组织
      */
-    async delete(organization: Partial<OrganizationEntity>): Promise<void> {
+    async delete(organization: Partial<OrganizationEntity>) {
         if (!await this.getOrganById(organization.organization_id)) {
             throw new OrganizationNoExistError();
         }
-        await this.organRepo.delete({ organization_id: organization.organization_id })
+        return await this.organRepo.delete({ organization_id: organization.organization_id })
     }
     /**
      * 

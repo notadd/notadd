@@ -32,7 +32,6 @@ export class AddonServiceImpl extends AddonService {
             throw new DataError();
         }
         return await this.addonRepo.findOne(where);
-
     }
 
     /**
@@ -58,18 +57,18 @@ export class AddonServiceImpl extends AddonService {
      * 删除应用
      * @param data 删除应用的信息
      */
-    async delete(addon: Partial<AddonEntity>): Promise<void> {
+    async delete(addon: Partial<AddonEntity>) {
         if (!await this.getAddonById(addon.appid)) {
             throw new AddonIsNullError();
         }
-        await this.addonRepo.delete({ appid: addon.appid })
+        return await this.addonRepo.delete({ appid: addon.appid })
     }
 
     /**
      * 添加应用
      * @param addon 添加应用的信息
      */
-    async insert(addon: AddonEntity): Promise<void> {
+    async insert(addon: AddonEntity) {
         if (!(addon.name || addon.title || addon.appsecret)) {
             throw new DataError();
         }
@@ -79,7 +78,7 @@ export class AddonServiceImpl extends AddonService {
         if (addon.status >= -1 && addon.status <= 1) {
             throw new DataError();
         }
-        await this.addonRepo.save(this.addonRepo.create(addon));
+        return await this.addonRepo.save(this.addonRepo.create(addon));
     }
 
     /**

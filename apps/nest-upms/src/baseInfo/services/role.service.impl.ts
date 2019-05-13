@@ -15,17 +15,17 @@ export class RoleServiceIpml extends RoleService {
          * 添加角色
          * @param role 
          */
-    async insert(role: RoleEntity): Promise<void> {
+    async insert(role: RoleEntity) {
         if (!role.name || !role.title || !role.description) {
             throw new DataError();
         }
-        await this.roleRepo.save(role);
+        return await this.roleRepo.save(role);
     }
     /**
         * 
         * @param role 删除角色
      */
-    async delete(role: Partial<RoleEntity>): Promise<void> {
+    async delete(role: Partial<RoleEntity>) {
         try {
             if (!role.role_id) {
                 throw new DataError();
@@ -35,10 +35,9 @@ export class RoleServiceIpml extends RoleService {
                 throw new RoleNoExistError();
             }
             // console.log(role_id);
-            await this.roleRepo.delete({ role_id: role.role_id })
+            return await this.roleRepo.delete({ role_id: role.role_id })
         } catch (e) {
             throw new DataError();
-
         }
 
     }

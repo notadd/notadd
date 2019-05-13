@@ -1,49 +1,50 @@
 import { Entity, PrimaryGeneratedColumn, Column, Timestamp } from 'typeorm';
-@Entity('organization')
-export class Organization {
-    //自增id
-    @PrimaryGeneratedColumn()
+@Entity({
+    name: 'organization'
+})
+export class OrganizationEntity {
+    
+    @PrimaryGeneratedColumn({
+        type: 'int'
+    })
     organization_id: number;
 
     @Column({
-        type: "varchar",
-        length: 50,
-        comment: "英文名称"
+        type: 'varchar',
+        length: 20,
+        comment: '英文名称'
     })
     name: string;
 
     @Column({
-        type: "varchar",
-        length: 50,
-        comment: "中文名称"
+        type: 'varchar',
+        length: 20,
+        comment: '中文名称'
     })
     title: string;
 
     @Column({
-        type: "text",
-        length: 100,
-        comment: "描述备注"
+        type: 'text',
+        comment: '描述备注'
     })
-    description: Text;
+    description: string;
 
     @Column({
-        type: "timestamp",
-        length: 50,
-        comment: "创建时间"
+        type: 'timestamp',
+        comment: '创建时间'
     })
-    create_time: Timestamp;
+    create_time: Date;
 
     @Column({
-        type: "timestamp",
-        length: 50,
-        comment: "更新时间"
+        type: 'timestamp',
+        comment: '更新时间'
     })
-    update_time: Timestamp;
+    update_time: Date;
 
     @Column({
-        type: "varchar",
-        length: 20,
-        comment: "排序"
+        type: 'varchar',
+        length: 11,
+        comment: '排序'
     })
-    displayorder: string;
+    displayorder: number;
 }

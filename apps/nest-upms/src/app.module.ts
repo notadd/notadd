@@ -1,12 +1,16 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { GraphQLModule } from '@nestjs/graphql';
-import { GraphqlOptions } from './graphql.options';
+import { TypeormModule } from './typeorm/index';
+import { ssoProviders } from './sso';
+import { AuthModule } from './auth';
+import { JwtStrategyImpl } from './sso/jwt.strategy.impl';
+import coreProviders from './core/index';
+import baseInfoProviders from './baseInfo';
 
 @Module({
   imports: [
+    TypeormModule,
+    AuthModule.forRoot(JwtStrategyImpl),
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: '192.168.1.238',
@@ -17,11 +21,15 @@ import { GraphqlOptions } from './graphql.options';
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
-    GraphQLModule.forRootAsync({
-      useClass: GraphqlOptions,
-    })
+    // GraphQLModule.forRootAsync({
+    //   useClass: GraphqlOptions,
+    // })
   ],
-  controllers: [AppController],
-  providers: [AppService]
+  controllers: [],
+  providers: [
+    ...coreProviders,
+    ...ssoProviders,
+    ...baseInfoProviders
+  ]
 })
 export class ApplicationModule { }

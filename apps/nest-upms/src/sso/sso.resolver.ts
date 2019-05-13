@@ -2,37 +2,44 @@ import {
     Query,
     Resolver
 } from '@nestjs/graphql';
-import { PrismaService } from '../prisma/prisma.service'
+import { SsoService } from './core/sso.service'
+import { UserEntity, AccessTokenEntity, RefreshTokenEntity } from '../typeorm';
 
 @Resolver()
 export class SsoResolver {
-
-    constructor(public prisma: PrismaService) { }
-
+    constructor(public sso: SsoService) { }
     /**
      * 通过用户名和密码获取token
      */
     @Query()
-    token() { }
+    token(user: UserEntity) {
+        return this.sso.token(user);
+    }
 
     /**
      * 验证token
      */
     @Query()
-    verify() { }
+    verify(token: AccessTokenEntity) {
+        return this.sso.verify(token);
+    }
 
 
     /**
      * 刷新token
      */
     @Query()
-    refreshToken() { }
+    refreshToken(token: RefreshTokenEntity) {
+        return this.sso.refreshToken(token);
+    }
 
 
     /**
      * 注销
      */
     @Query()
-    logout() { }
+    logout(user: UserEntity) {
+        return this.sso.logout(user);
+    }
 }
 

@@ -1,16 +1,13 @@
-import { Entity, PrimaryColumn, Column, Timestamp } from 'typeorm';
-
+import { Column, Entity, PrimaryGeneratedColumn, Timestamp } from 'typeorm';
+import { PermissionEntity } from './permission.entity';
 
 @Entity({
     name: 'addon'
 })
 export class AddonEntity {
 
-    @PrimaryColumn({
-        type: 'varchar',
-        length: 20
-    })
-    appid: string;
+    @PrimaryGeneratedColumn()
+    appid: number;
 
     @Column({
         type: 'varchar',
@@ -42,18 +39,22 @@ export class AddonEntity {
     description: string;
 
     @Column({
-        type: 'tinyint',
-        length: 2
+        type: 'smallint',
     })
     status: number;
 
     @Column({
         type: 'timestamp',
     })
-    create_time: Timestamp;
+    create_time: Date;
 
     @Column({
         type: 'timestamp'
     })
-    update_time: Timestamp;
+    update_time: Date;
+
+    /**
+     * 应用权限
+     */
+    permissions: PermissionEntity[];
 }

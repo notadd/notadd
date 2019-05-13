@@ -1,9 +1,10 @@
 
-import { RoleEntity, PermissionEntity } from '../../typeorm';
+import { RoleEntity, PermissionEntity, UserEntity } from '../../typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { Repository, SaveOptions } from 'typeorm';
 import { RoleService } from '../core/role.service';
-import { DataError, RoleExistError, RoleNoExistError } from '../errors/role.error';
+import { DataError, RoleNoExistError, ServerError } from '../errors/role.error';
+import { InternalServerErrorException } from '@nestjs/common';
 
 export class RoleServiceIpml extends RoleService {
     constructor(
@@ -15,11 +16,10 @@ export class RoleServiceIpml extends RoleService {
          * @param role 
          */
     async insert(role: RoleEntity): Promise<void> {
-        if (!role.name || !role.create_time || !role.update_time) {
+        if (!role.name || !role.title || !role.description) {
             throw new DataError();
         }
-        await this.roleRepo.save(this.roleRepo.create(role));
-
+        await this.roleRepo.save(role);
     }
     /**
         * 
@@ -30,13 +30,12 @@ export class RoleServiceIpml extends RoleService {
             if (!role.role_id) {
                 throw new DataError();
             }
-            let existing = await this.roleRepo.findOne({ where: { role_id: role.role_id } });
+            let existing = await this.roleRepo.findOneOrFail({ role_id: role.role_id });
             if (!existing) {
                 throw new RoleNoExistError();
             }
             // console.log(role_id);
             await this.roleRepo.delete({ role_id: role.role_id })
-
         } catch (e) {
             throw new DataError();
 
@@ -48,34 +47,46 @@ export class RoleServiceIpml extends RoleService {
      * @param where 
      */
     async get(where: Partial<RoleEntity>): Promise<RoleEntity> {
-        return await this.roleRepo.findOne({ where: where });
-
+        try {
+            return await this.roleRepo.findOneOrFail({ where: where });
+        } catch (e) {
+            throw new ServerError();
+        }
     }
     /**
     * 根据id查询角色
     */
     async getfindRoleById(role_id: number): Promise<RoleEntity> {
+
         return await this.roleRepo.findOne(role_id);
     }
     /**
      * 更新角色信息
+     * todo
      * @param data 
      * @param where 
      */
-    async save(role: RoleEntity, where: Partial<RoleEntity>): Promise<void> {
-        let exist = await this.get(where);
-        if (!exist) {
-            throw new RoleNoExistError();
+    async save(role: RoleEntity): Promise<void> {
+        try {
+            this.roleRepo.save(role);
+            // this.roleRepo.update(role.role_id, role)
+            // this.roleRepo.createQueryBuilder().update(RoleEntity)
+            // .set(role)
+            // .where("id = :id", { id: role.role_id })
+            // .execute();
+        } catch (e) {
+            throw new ServerError();
         }
-        if (role.name) { exist.name = role.name }
-        await this.roleRepo.save(exist);
+        // let exist = await this.get(where);
+        // if (!exist) {
+        //     throw new RoleNoExistError();
+        // }
+        // if (role.name) { exist.name = role.name }
+        // if (role.title) (exist.title = role.title)
+        // await this.roleRepo.save(exist, where);
     }
 
     search(where: Partial<RoleEntity>): Promise<void> {
         throw new Error("Method not implemented.");
     }
-
-
-
-
 }

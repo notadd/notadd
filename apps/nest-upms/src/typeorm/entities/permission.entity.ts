@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, Timestamp, OneToMany } from 'typeorm'
+import { Entity, PrimaryGeneratedColumn, Column, Timestamp, OneToMany, UpdateDateColumn, CreateDateColumn } from 'typeorm'
 import { AddonEntity } from './addon.entity';
 import { UserEntity } from './user.entity';
 import { RoleEntity } from './role.entity';
@@ -39,15 +39,15 @@ export class PermissionEntity {
     })
     displayorder: number;
 
-    @Column({
+    @CreateDateColumn({
         type: 'timestamp'
     })
-    create_time: Date;
+    create_time: Date = new Date();
 
-    @Column({
+    @UpdateDateColumn({
         type: 'timestamp'
     })
-    update_time: Date;
+    update_time: Date= new Date();
 
 
     /**

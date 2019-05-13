@@ -1,29 +1,31 @@
 import { LoggerService } from '../core/logger.service';
 import { LoggerEntity } from '../../typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
-import { DataError, loggerNoExistError } from '../errors/role.error';
+import { Repository, DeleteResult } from 'typeorm';
+import { DataError, loggerNoExistError, ServerError } from '../errors/role.error';
 export class LoggerServiceImpl extends LoggerService {
     constructor(@InjectRepository(LoggerEntity) private readonly loggerRepo: Repository<LoggerEntity>) { super() }
     /**
      * 
      * @param logger 添加用户日志
      */
-    async insert(logger: LoggerEntity): Promise<void> {
-        if (!logger.openid || !logger.params || !logger.ip) {
-            throw new DataError();
+    insert(logger: LoggerEntity): Promise<LoggerEntity> {
+        try {
+            return this.loggerRepo.save(logger);
+        } catch (e) {
+            throw new ServerError()
         }
-        await this.loggerRepo.save(this.loggerRepo.create(logger));
     }
     /**
      * 
      * @param logger 删除日志
      */
-    async delete(logger: Partial<LoggerEntity>): Promise<void> {
-        if (!(logger || logger.logger_id)) {
-            throw new DataError();
+    delete(logger: Partial<LoggerEntity>): Promise<DeleteResult> {
+        try {
+            return this.loggerRepo.delete({ logger_id: logger.logger_id });
+        } catch (e) {
+            throw new ServerError()
         }
-        await this.loggerRepo.delete({ logger_id: logger.logger_id });
     }
     /**
      * 
@@ -42,12 +44,13 @@ export class LoggerServiceImpl extends LoggerService {
      */
     async save(logger: LoggerEntity, where: Partial<LoggerEntity>): Promise<void> {
         let exist = await this.getLoggerById(where.logger_id);
-        if (exist) {
+        if (!exist) {
             throw new loggerNoExistError();
         }
         if (logger.openid) { exist.openid = logger.openid }
         if (logger.params) { exist.params = logger.params }
         if (logger.ip) { exist.ip = logger.ip }
+        exist.end_time = exist.end_time || new Date();
         await this.loggerRepo.save(logger);
     }
     /**

@@ -13,8 +13,8 @@ import baseInfoProviders from './baseInfo';
     AuthModule.forRoot(JwtStrategyImpl),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: '192.168.1.238',
-      port: 5432,
+      host: 'localhost',
+      port: 5433,
       username: 'prisma',
       password: 'prisma',
       database: 'prisma',

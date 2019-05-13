@@ -1,11 +1,11 @@
 # sudo: required
-dist: trusty
+dist: xenial
 
-language: node_js
+# language: node_js
 
-node_js:
-    - "10"
-    - "12"
+# node_js:
+#     - "10"
+#     - "12"
     
     
 git:
@@ -28,6 +28,7 @@ cache:
     - "node_modules"
   
 before_script:
+  - nvm install 10
   - psql -U postgres -c "test"
   - export DISPLAY=:99.0
 

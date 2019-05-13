@@ -1,47 +1,55 @@
 # sudo: required
-dist: xenial
+# dist: xenial
 
-# language: node_js
+language: node_js
 
-# node_js:
-#     - "10"
-#     - "12"
-    
-    
+node_js:
+    - "10"
+    - "12"
+env:
+  - DB=postgres
+services:
+  - postgres    
+cache:
+  directories:
+    - "node_modules"   
 git:
   depth: 5
   
 services:
   - postgresql
 addons:
-  postgresql: "10"
+  postgresql: "11"
   chromium: "latest"
   apt:
     packages:
-    - postgresql-10
-    - postgresql-client-10
+    - postgresql-11
+    - postgresql-client-11
 env:
   global:
-  - PGPORT=5433
-cache:
-  directories:
-    - "node_modules"
+    - PGPORT=5433
+    - PGDATABASE=test
+    - PGUSER=postgres
+    - PGHOST=localhost
   
 before_script:
-  - nvm install 10
-  - psql -U postgres -c "test"
+#   - sudo sed -i -e '/local.*peer/s/postgres/all/' -e 's/peer\|md5/trust/g' /etc/postgresql/*/main/pg_hba.conf
+#   - sudo service postgresql restart
+#   - sleep 1
+ # - psql -U postgres -c "create extension postgis"
+  - sh -c "if [ '$DB' = 'postgres' ]; then psql -c 'create database test;' -U postgres; echo $DB; fi"
   - export DISPLAY=:99.0
-
-#  - sh -e /etc/init.d/xvfb start
-before_install:
   - npm i -g npm@latest
   - npm install -g codecov
+
 install:
   - npm i
 script:
   - npm run test.nest.upms
-  - istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec
-  - codecov
+#   - istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec
+#   - codecov
+after_script:
+  - bash <(curl -s https://codecov.io/bash)
 after_success: npm run test.nest.upms.coverage
     
  

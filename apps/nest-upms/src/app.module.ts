@@ -6,7 +6,7 @@ import { AuthModule } from './auth';
 import { JwtStrategyImpl } from './sso/jwt.strategy.impl';
 import coreProviders from './core/index';
 import baseInfoProviders from './baseInfo';
-
+const env = process.env;
 @Module({
   imports: [
     TypeormModule,
@@ -16,7 +16,7 @@ import baseInfoProviders from './baseInfo';
       host: 'localhost',
       port: 5432,
       username: 'postgres',
-      password: '',
+      password: env.PASSWORD || '',
       database: 'test',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,

@@ -1,13 +1,18 @@
 # sudo: required
-dist: xenial
+# dist: xenial
 
-# language: node_js
+language: node_js
 
-# node_js:
-#     - "10"
-#     - "12"
-    
-    
+node_js:
+    - "10"
+    - "12"
+env:
+  - DB=postgres
+services:
+  - postgres    
+cache:
+  directories:
+    - "node_modules"   
 git:
   depth: 5
   
@@ -26,25 +31,25 @@ env:
     - PGDATABASE=test
     - PGUSER=postgres
     - PGHOST=localhost
-cache:
-  directories:
-    - "node_modules"
   
 before_script:
 #   - sudo sed -i -e '/local.*peer/s/postgres/all/' -e 's/peer\|md5/trust/g' /etc/postgresql/*/main/pg_hba.conf
 #   - sudo service postgresql restart
 #   - sleep 1
  # - psql -U postgres -c "create extension postgis"
-  - nvm install 10
+  - sh -c "if [ '$DB' = 'postgres' ]; then psql -c 'create database test;' -U postgres; echo $DB; fi"
   - export DISPLAY=:99.0
   - npm i -g npm@latest
   - npm install -g codecov
+
 install:
   - npm i
 script:
   - npm run test.nest.upms
-  - istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec
-  - codecov
+#   - istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec
+#   - codecov
+after_script:
+  - bash <(curl -s https://codecov.io/bash)
 after_success: npm run test.nest.upms.coverage
     
  

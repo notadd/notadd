@@ -12,13 +12,10 @@
     "target": "esnext",
     "module": "commonjs",
     "noImplicitAny": false,
-    "typeRoots": [
-      "node_modules/@types"
-    ],
+    "typeRoots": ["node_modules/@types"],
     "lib": [
       "esnext",
       "dom",
-      
       "es2015.core",
       "es2015.collection",
       "es2015.generator",
@@ -34,21 +31,12 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@notadd/*": [
-        "libs/*"
-      ],
-      "@notadd/nest": [
-        "xplat/nest/index.ts"
-      ],
-      "@notadd/nest/*": [
-        "xplat/nest/*"
-      ],
-      "@notadd/web": [
-        "xplat/web/index.ts"
-      ],
-      "@notadd/web/*": [
-        "xplat/web/*"
-      ]
+      "@notadd/*": ["libs/*"],
+      "@notadd/nest": ["xplat/nest/index.ts"],
+      "@notadd/nest/*": ["xplat/nest/*"],
+      "@notadd/web": ["xplat/web/index.ts"],
+      "@notadd/web/*": ["xplat/web/*"],
+      "@notadd/decorator": ["libs/decorator/src/index.ts"]
     },
     "plugins": [
       {
@@ -56,8 +44,5 @@
       }
     ]
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }

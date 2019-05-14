@@ -1,3 +1,4 @@
+import { DeleteResult } from 'typeorm';
 export abstract class BaseService<Entity>{
     /**
      * 获取单个
@@ -8,17 +9,17 @@ export abstract class BaseService<Entity>{
      * 更新
      * @returns Promise
      */
-    abstract save(data: Entity, where: Partial<Entity>): Promise<void>;
+    abstract save(data: Entity, where: Partial<Entity>): Promise<Entity>;
     /**
      * 删除
      * @returns Promise
      */
-    abstract delete(data: Partial<Entity>): Promise<void>;
+    abstract delete(data: Partial<Entity>): Promise<DeleteResult>;
     /**
      * 插入
      * @returns Promise
      */
-    abstract insert(data: Entity): Promise<void>;
+    abstract insert(data: Entity): Promise<Entity>;
     /**
      * 搜索
      * @returns Promise

@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, Timestamp } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, Timestamp, UpdateDateColumn, CreateDateColumn } from 'typeorm';
 @Entity({
     name: 'organization'
 })
@@ -29,17 +29,17 @@ export class OrganizationEntity {
     })
     description: string;
 
-    @Column({
+    @CreateDateColumn({
         type: 'timestamp',
         comment: '创建时间'
     })
-    create_time: Date;
+    create_time: Date = new Date();
 
-    @Column({
+    @UpdateDateColumn({
         type: 'timestamp',
         comment: '更新时间'
     })
-    update_time: Date;
+    update_time: Date = new Date();
 
     @Column({
         type: 'varchar',

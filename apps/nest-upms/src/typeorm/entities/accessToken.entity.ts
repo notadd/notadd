@@ -1,4 +1,4 @@
-import { Entity, Index, BeforeUpdate, PrimaryGeneratedColumn, Column, Timestamp, BeforeInsert, OneToOne } from 'typeorm';
+import { Entity, Index, BeforeUpdate, PrimaryGeneratedColumn, Column, Timestamp, BeforeInsert, OneToOne, CreateDateColumn, UpdateDateColumn } from 'typeorm';
 import { RefreshTokenEntity } from './refreshToken.entity';
 export const EXPRES_TIME = 60 * 60 * 24;
 export type IAccessTokenStatus = -1 | 0 | 1;
@@ -68,13 +68,13 @@ export class AccessTokenEntity {
     })
     expires_in: Date;
 
-    @Column({
+    @CreateDateColumn({
         type: 'timestamp without time zone',
         comment: '创建时间'
     })
     create_time: Date;
 
-    @Column({
+    @UpdateDateColumn({
         type: 'timestamp without time zone',
         comment: '更新时间'
     })

@@ -6,18 +6,18 @@ import { AuthModule } from './auth';
 import { JwtStrategyImpl } from './sso/jwt.strategy.impl';
 import coreProviders from './core/index';
 import baseInfoProviders from './baseInfo';
-
+const env = process.env;
 @Module({
   imports: [
     TypeormModule,
     AuthModule.forRoot(JwtStrategyImpl),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: '192.168.1.238',
+      host: 'localhost',
       port: 5432,
-      username: 'prisma',
-      password: 'prisma',
-      database: 'prisma',
+      username: 'postgres',
+      password: 'postgres',
+      database: 'test_ci',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),

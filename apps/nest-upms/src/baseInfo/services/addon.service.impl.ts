@@ -2,7 +2,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { AddonEntity } from '../../typeorm';
 import { AddonService } from '../core/addon.service';
-import { AddonIsNullError, DataError } from '../errors/error';
+import { AddonIsNullError, DataError, AddonNameError } from '../errors/error';
 
 export class AddonServiceImpl extends AddonService {
 
@@ -32,7 +32,6 @@ export class AddonServiceImpl extends AddonService {
             throw new DataError();
         }
         return await this.addonRepo.findOne(where);
-
     }
 
     /**
@@ -40,7 +39,7 @@ export class AddonServiceImpl extends AddonService {
      * @param addon 更新应用的信息
      * @param where 更新应用的条件 
      */
-    async save(addon: AddonEntity, where: Partial<AddonEntity>): Promise<void> {
+    async save(addon: AddonEntity, where: Partial<AddonEntity>) {
         let exist = await this.getAddonById(where.appid);
         if (addon.name) { exist.name = addon.name }
         if (addon.title) { exist.title = addon.title }
@@ -51,32 +50,35 @@ export class AddonServiceImpl extends AddonService {
         if (addon.description) { exist.description = addon.description }
         if (addon.appsecret) { exist.appsecret = addon.appsecret }
         if (addon.status >= -1 && addon.status <= 1) { exist.status = addon.status }
-        await this.addonRepo.save(exist)
+        return await this.addonRepo.save(exist)
     }
 
     /**
      * 删除应用
      * @param data 删除应用的信息
      */
-    async delete(addon: Partial<AddonEntity>): Promise<void> {
+    async delete(addon: Partial<AddonEntity>) {
         if (!await this.getAddonById(addon.appid)) {
             throw new AddonIsNullError();
         }
-        await this.addonRepo.delete({ appid: addon.appid })
+        return await this.addonRepo.delete({ appid: addon.appid })
     }
 
     /**
      * 添加应用
      * @param addon 添加应用的信息
      */
-    async insert(addon: AddonEntity): Promise<void> {
+    async insert(addon: AddonEntity) {
         if (!(addon.name || addon.title || addon.appsecret)) {
             throw new DataError();
+        }
+        if (await this.get({ name: addon.name })) {
+            throw new AddonNameError();
         }
         if (addon.status >= -1 && addon.status <= 1) {
             throw new DataError();
         }
-        await this.addonRepo.save(this.addonRepo.create(addon));
+        return await this.addonRepo.save(this.addonRepo.create(addon));
     }
 
     /**

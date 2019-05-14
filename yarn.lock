@@ -600,10 +600,10 @@
   optionalDependencies:
     type-graphql "^0.17.3"
 
-"@nestjs/jwt@6.0.0":
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/@nestjs/jwt/-/jwt-6.0.0.tgz#f220a7ad97327eb76f96ee45b116d63ba4a16d04"
-  integrity sha512-Vq/Y/C+jjNdN510x/HRrjnUjRISvPAtR29JRkKg87lIhcu9K6dXCzgkgJiaIH6ujV0WMg5FE2hMONUbEUBIzUQ==
+"@nestjs/jwt@6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@nestjs/jwt/-/jwt-6.1.0.tgz#ccc08143cbc0bf971b8d2f9cb2f1d39f59fd5a16"
+  integrity sha512-IFwnHE/LrrZQiYqSPt5ePcdx9Xga4nmuTID7qDL2teE0o/oJoW7/TMYq7qXewFg45uVLnc3KSI/ABT/hzZ2fxQ==
   dependencies:
     "@types/jsonwebtoken" "7.2.8"
     jsonwebtoken "8.4.0"

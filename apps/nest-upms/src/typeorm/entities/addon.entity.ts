@@ -42,9 +42,30 @@ export class AddonEntity {
 
     @Column({
         type: 'smallint',
-        default: 1
+        default: 1,
+        transformer: {
+            from: (val) => {
+                return val;
+            },
+            to: (val) => {
+                if (typeof val === 'number' || typeof val === 'string') {
+                    val = Number(val);
+                    switch (val) {
+                        case 0:
+                        case 1:
+                        case -1:
+                            return val;
+                        default:
+                            return 0;
+                    }
+                }
+                else {
+                    return 0;
+                }
+            }
+        }
     })
-    status: -1|1|0;
+    status: -1 | 1 | 0;
 
     @CreateDateColumn({
         type: 'timestamptz'

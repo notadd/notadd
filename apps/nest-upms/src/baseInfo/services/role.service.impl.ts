@@ -8,8 +8,8 @@ import { InternalServerErrorException } from '@nestjs/common';
 
 export class RoleServiceIpml extends RoleService {
     constructor(
-        @InjectRepository(RoleEntity) private readonly roleRepo: Repository<RoleEntity>,
-        @InjectRepository(PermissionEntity) private readonly permissionRepo: Repository<PermissionEntity>
+        @InjectRepository(RoleEntity) public readonly roleRepo: Repository<RoleEntity>,
+        @InjectRepository(PermissionEntity) public readonly permissionRepo: Repository<PermissionEntity>
     ) { super() }
     /**
          * 添加角色

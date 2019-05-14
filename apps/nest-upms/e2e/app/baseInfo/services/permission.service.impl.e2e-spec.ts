@@ -73,9 +73,9 @@ describe('PermissionServiceImpl', () => {
 
     /** 获取用户 */
     it(`get`, async () => {
-        let permission1 = await permissionService.get({ name: 'one' });
-        let permission2 = await permissionService.get({ value: 'one' })
-        expect(permission1).toEqual(permission2);
+        permissionService.get({ value: 'one' }).then(res => {
+            expect(res.value).toEqual('one')
+        }).catch(e => { })
     });
 
     afterAll(async () => {

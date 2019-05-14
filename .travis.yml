@@ -9,8 +9,8 @@ cache:
     - "node_modules"   
 git:
   depth: 5
-# services:
-#   - postgresql
+services:
+  - docker
 # #  - postgresql
 # addons:
 #   postgresql: "11"

@@ -30,7 +30,7 @@ services:
 #       before_script:
 
 #         - bash ./testing/travis/install-postgres-11.s
-after_install
+after_install:
   - npm i -g npm@latest codecov
   - bash <(curl -s https://codecov.io/bash)
 install:

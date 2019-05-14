@@ -9,18 +9,18 @@ cache:
     - "node_modules"   
 git:
   depth: 5
-services:
-  - postgresql
+# services:
+#   - postgresql
 #  - postgresql
-# addons:
-#   postgresql: "11"
-#   apt:
-#     packages:
-#     - postgresql-11
-#     - postgresql-client-11
-# env:
-  # global:
-    # - PGPORT=5432
+addons:
+  postgresql: "11"
+  apt:
+    packages:
+    - postgresql-11
+    - postgresql-client-11
+env:
+  global:
+    - PGPORT=5432
     # - PGDATABASE=test
     # - PGUSER=postgres
     # - PGHOST=localhost

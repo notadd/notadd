@@ -1,4 +1,4 @@
-import { Entity, BeforeInsert, JoinColumn, BeforeUpdate, PrimaryGeneratedColumn, Column, Timestamp, OneToOne } from 'typeorm';
+import { Entity, BeforeInsert, JoinColumn, BeforeUpdate, PrimaryGeneratedColumn, Column, Timestamp, OneToOne, UpdateDateColumn, CreateDateColumn } from 'typeorm';
 import { EXPRES_TIME } from './accessToken.entity'
 import { AccessTokenEntity } from '..';
 @Entity({
@@ -35,17 +35,17 @@ export class RefreshTokenEntity {
     })
     expires_in: Date;
 
-    @Column({
+    @CreateDateColumn({
         type: 'timestamp without time zone',
         comment: '创建时间'
     })
-    create_time: Date;
+    create_time: Date = new Date();
 
-    @Column({
+    @UpdateDateColumn({
         type: 'timestamp without time zone',
         comment: '更新时间'
     })
-    update_time: Date;
+    update_time: Date = new Date();
 
     // @BeforeInsert()
     // protected insterExpresIn() {

@@ -34,7 +34,6 @@ describe('OrganizationServiceImpl', () => {
         }).catch(e => {
             expect(e instanceof DataError).toBe(true);
         });
-
     });
     it(`delete`, async () => {
         const logger = new LoggerEntity();
@@ -56,8 +55,8 @@ describe('OrganizationServiceImpl', () => {
     });
     it(`save`, async () => {
         let logger: LoggerEntity = {} as LoggerEntity;
-        logger.description = '你出现 就沉醉了时间, 没有酒 我像个荒诞的可怜人, 可是你 却不曾施舍二两',
-            logger.result = '你的酒馆对我打了烊,子弹在我心头上了膛,请告诉我今后怎么扛,遍体鳞伤还笑着原谅';
+        logger.description = '你出现 就沉醉了时间, 没有酒 我像个荒诞的可怜人, 可是你 却不曾施舍二两';
+        logger.result = '你的酒馆对我打了烊,子弹在我心头上了膛,请告诉我今后怎么扛,遍体鳞伤还笑着原谅';
         logger.ip = '192.168.1.128';
         logger.openid = 'asdjklas';
         logger.start_time = new Date();
@@ -65,15 +64,13 @@ describe('OrganizationServiceImpl', () => {
         logger.params = { "id": "123" };
         logger.permissions = "123"
         //从数据库获取一个应用
-        const where = await loggerService.get({ ip: '192.168.1.121' });
         // 执行更新
-        const res = await loggerService.save(logger, where).then().catch(e => {
+        loggerService.save(logger, { ip: '192.168.1.121' }).then(res => { 
+            expect(res.ip).toEqual(`192.168.1.121`)
+        }).catch(e => {
             expect(e instanceof loggerNoExistError).toBe(true);
         });
-
     });
-
-
 
     afterAll(async () => {
         await app.close();

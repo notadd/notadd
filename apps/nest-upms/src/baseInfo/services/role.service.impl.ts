@@ -15,17 +15,17 @@ export class RoleServiceIpml extends RoleService {
          * 添加角色
          * @param role 
          */
-    async insert(role: RoleEntity): Promise<void> {
+    async insert(role: RoleEntity) {
         if (!role.name || !role.title || !role.description) {
             throw new DataError();
         }
-        await this.roleRepo.save(role);
+        return await this.roleRepo.save(role);
     }
     /**
         * 
         * @param role 删除角色
      */
-    async delete(role: Partial<RoleEntity>): Promise<void> {
+    async delete(role: Partial<RoleEntity>) {
         try {
             if (!role.role_id) {
                 throw new DataError();
@@ -35,10 +35,9 @@ export class RoleServiceIpml extends RoleService {
                 throw new RoleNoExistError();
             }
             // console.log(role_id);
-            await this.roleRepo.delete({ role_id: role.role_id })
+            return await this.roleRepo.delete({ role_id: role.role_id })
         } catch (e) {
             throw new DataError();
-
         }
 
     }
@@ -57,7 +56,6 @@ export class RoleServiceIpml extends RoleService {
     * 根据id查询角色
     */
     async getfindRoleById(role_id: number): Promise<RoleEntity> {
-
         return await this.roleRepo.findOne(role_id);
     }
     /**
@@ -66,24 +64,12 @@ export class RoleServiceIpml extends RoleService {
      * @param data 
      * @param where 
      */
-    async save(role: RoleEntity): Promise<void> {
+    async save(role: RoleEntity) {
         try {
-            this.roleRepo.save(role);
-            // this.roleRepo.update(role.role_id, role)
-            // this.roleRepo.createQueryBuilder().update(RoleEntity)
-            // .set(role)
-            // .where("id = :id", { id: role.role_id })
-            // .execute();
+            return this.roleRepo.save(role);
         } catch (e) {
             throw new ServerError();
         }
-        // let exist = await this.get(where);
-        // if (!exist) {
-        //     throw new RoleNoExistError();
-        // }
-        // if (role.name) { exist.name = role.name }
-        // if (role.title) (exist.title = role.title)
-        // await this.roleRepo.save(exist, where);
     }
 
     search(where: Partial<RoleEntity>): Promise<void> {

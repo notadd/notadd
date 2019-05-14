@@ -14,12 +14,12 @@ export class PermissionServiceImpl extends PermissionService {
      * 添加权限
      * @param permission 添加权限的信息
      */
-    async insert(permission: PermissionEntity): Promise<void> {
+    async insert(permission: PermissionEntity) {
         if (!(permission.name || permission.pid || permission.type || permission.status)) {
             throw new DataError();
         }
         // 判断type和status的值
-        await this.permissionRepo.save(this.permissionRepo.create(permission))
+        return await this.permissionRepo.save(this.permissionRepo.create(permission))
     }
 
     /**
@@ -38,9 +38,9 @@ export class PermissionServiceImpl extends PermissionService {
      * @param permission 更新的权限信息
      * @param where 更新条件
      */
-    async save(permission: PermissionEntity, where: Partial<PermissionEntity>): Promise<void> {
+    async save(permission: PermissionEntity, where: Partial<PermissionEntity>) {
         let exist = await this.getPermissionById(where.permission_id);
-        if (exist) {
+        if (!exist) {
             throw new PermissionIsNullError();
         }
         if (permission.name) { exist.name = permission.name }
@@ -48,20 +48,19 @@ export class PermissionServiceImpl extends PermissionService {
         if (permission.value) { exist.value = permission.value }
         if (permission.icon) { exist.icon = permission.icon }
         if (permission.displayorder) { exist.displayorder = permission.displayorder }
-        if (permission.type >= 1 && permission.type <= 3) { exist.type = permission.type }
-        if (permission.status === -1 || permission.status === 1) { exist.status = permission.status }
-        await this.permissionRepo.save(permission);
+        if (permission.status) { exist.status = permission.status }
+        return await this.permissionRepo.save(exist);
     }
 
     /**
      * 删除权限
      * @param data 删除的权限信息,根据id删除
      */
-    async delete(permission: Partial<PermissionEntity>): Promise<void> {
+    async delete(permission: Partial<PermissionEntity>) {
         if (!(permission || permission.permission_id)) {
             throw new DataError();
         }
-        await this.permissionRepo.delete({ permission_id: permission.permission_id });
+        return await this.permissionRepo.delete({ permission_id: permission.permission_id });
     }
 
 

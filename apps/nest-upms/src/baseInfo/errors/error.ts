@@ -24,13 +24,13 @@ export class UserIsNullError<T = any> extends CoreError {
     }
 }
 
-export class EmileExistError<T = any> extends CoreError {
+export class EmailExistError<T = any> extends CoreError {
     constructor(data?: T) {
         super(11004, '邮箱已存在', data);
     }
 }
 
-export class EmileFormtError<T = any> extends CoreError {
+export class EmailFormtError<T = any> extends CoreError {
     constructor(data?: T) {
         super(11005, '邮箱格式错误', data);
     }
@@ -57,5 +57,11 @@ export class PermissionIsNullError<T = any> extends CoreError {
 export class AddonIsNullError<T = any> extends CoreError {
     constructor(data?: T) {
         super(11009, '此应用不存在', data);
+    }
+}
+
+export class AddonNameError<T = any> extends CoreError {
+    constructor(data?: T) {
+        super(11010, '应用名已存在', data);
     }
 }

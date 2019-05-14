@@ -1,7 +1,7 @@
-import { Entity, Column, Index, PrimaryGeneratedColumn, Timestamp, PrimaryColumn, CreateDateColumn, UpdateDateColumn } from 'typeorm';
-import { PermissionEntity } from './permission.entity'
-import { RoleEntity } from './role.entity'
-import { OrganizationEntity } from './organization.entity'
+import { Column, CreateDateColumn, Entity, Index, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
+import { OrganizationEntity } from './organization.entity';
+import { PermissionEntity } from './permission.entity';
+import { RoleEntity } from './role.entity';
 export type IUserSex = 0 | 1 | 2
 @Entity({
     name: 'user'
@@ -92,14 +92,14 @@ export class UserEntity {
     sex: IUserSex;
 
     @CreateDateColumn({
-        type: 'timestamp'
+        type: 'timestamptz'
     })
-    create_time:Date = new Date();
+    create_time: Date;
 
     @UpdateDateColumn({
-        type: 'timestamp'
+        type: 'timestamptz'
     })
-    update_time: Date= new Date();
+    update_time: Date;
 
 
     /**

@@ -1,9 +1,9 @@
-import ts from 'typescript'
 import { RoleService } from '../../../../src/baseInfo/core';
 import { INestApplication } from '@nestjs/common';
 import { Test } from '@nestjs/testing';
 import { ApplicationModule, RoleEntity } from '../../../../src';
-import { DataError } from '../../../../src/baseInfo/errors/role.error';
+import { ServerError, DataError } from '../../../../src/baseInfo/errors/role.error';
+
 describe('RoleServiceImpl', () => {
     let app: INestApplication;
     let roleService: RoleService;
@@ -19,43 +19,49 @@ describe('RoleServiceImpl', () => {
     it(`insert`, async () => {
         const role = new RoleEntity();
         role.name = 'role1';
-        role.title = '苹果';
-        role.description = '刚打好几十个点';
+        role.title = 'iphone';
+        role.description = 'ddd';
         role.create_time = new Date();
         role.update_time = new Date();
         roleService.insert(role).then((result) => {
-            expect(result).toBe(void 0);
+            expect(result.name).toEqual('role1');
         }).catch(e => {
-            expect(e instanceof DataError).toBe(true);
+            expect(e instanceof DataError).toEqual(true);
         });
     });
 
     it(`delete`, async () => {
-        const role = await roleService.get({ title: '苹果' });
-        const res = await roleService.delete(role);
+        roleService.delete({ title: 'iphone' }).then(res => {
+            expect(res.affected).toEqual(1)
+        }).catch(e => {
+            expect(e instanceof ServerError).toEqual(true);
+        });
     });
 
     it(`save`, async () => {
         /** 修改角色 */
-
         /** 创建更新的一个应用 */
         let role: RoleEntity = new RoleEntity();
-        role.name = '王者荣耀',
-            role.title = '和平精英',
-            role.description = '你的酒馆对我打了烊,子弹在我心头上了膛'
+        role.name = 'wzry';
+        role.title = 'hpjy';
+        role.description = 'dddd';
         role.create_time = new Date();
         role.update_time = new Date();
         //从数据库获取一个应用
-        const where = await roleService.get({ title: 'boss' });
-        expect(!!where).toBe(true)
-        // 执行更新
-        const res = await roleService.save(role, where);
-        expect(res).toBe(void 0);
+        roleService.save(role, { title: 'boss' }).then(res => {
+            expect(res.title).toBe('hpjy');
+        }).catch(e => {
+            console.log(e)
+            expect(e instanceof ServerError).toEqual(true)
+        });
     });
 
     it(`get`, async () => {
-        const add = await roleService.get({ name: 'role1' });
-        expect(add).toBe(void 0);
+        roleService.get({ name: 'role1' }).then(res => {
+            expect(res.name).toEqual(`role1`);
+        }).catch(e => { 
+            expect(e instanceof ServerError).toEqual(true)
+        });
     });
 
     afterAll(async () => {

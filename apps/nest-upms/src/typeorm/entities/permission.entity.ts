@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, Timestamp, OneToMany, UpdateDateColumn, CreateDateColumn } from 'typeorm'
+import { Entity, PrimaryGeneratedColumn, Column, Timestamp, OneToMany, CreateDateColumn, UpdateDateColumn } from 'typeorm'
 import { AddonEntity } from './addon.entity';
 import { UserEntity } from './user.entity';
 import { RoleEntity } from './role.entity';
@@ -31,6 +31,7 @@ export class PermissionEntity {
 
     @Column({
         type: 'smallint',
+        default: 1,
     })
     status: -1|1;
 
@@ -40,12 +41,12 @@ export class PermissionEntity {
     displayorder: number;
 
     @CreateDateColumn({
-        type: 'timestamp'
+        type: 'timestamptz'
     })
     create_time: Date = new Date();
 
     @UpdateDateColumn({
-        type: 'timestamp'
+        type: 'timestamptz'
     })
     update_time: Date= new Date();
 

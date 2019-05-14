@@ -1,5 +1,6 @@
 {
     "scripts": {
-        "serve": "docker-compose up -d"
+        "serve": "docker-compose up -d",
+        "start": "pm2 start npm --name=database -- run serve"
     }
 }

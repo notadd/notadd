@@ -18,8 +18,8 @@ describe('OrganizationServiceImpl', () => {
     it(`insert`, async () => {
         const organ = new OrganizationEntity();
         organ.name = 'organ2';
-        organ.title = '经理';
-        organ.description = '哦啦啦';
+        organ.title = 'jingli';
+        organ.description = 'olala';
         organ.displayorder = 1;
         organ.create_time = new Date();
         organ.update_time = new Date();
@@ -36,8 +36,8 @@ describe('OrganizationServiceImpl', () => {
     it(`delete`, async () => {
         const organ = new OrganizationEntity();
         organ.name = 'organ2';
-        organ.title = '经理';
-        organ.description = '哦啦啦';
+        organ.title = 'jili';
+        organ.description = 'olala';
         organ.displayorder = 1;
         organ.create_time = new Date();
         organ.update_time = new Date();
@@ -53,22 +53,23 @@ describe('OrganizationServiceImpl', () => {
 
     it(`save`, async () => {
         let organ: OrganizationEntity = new OrganizationEntity();
-        organ.name = '王者荣耀1';
-        organ.title = '刺激战场';
-        organ.description = '你的酒馆对我打了烊,子弹在我心头上了膛,请告诉我今后怎么扛,遍体鳞伤还笑着原谅';
+        organ.name = 'ryzc1';
+        organ.title = 'cjzc';
+        organ.description = 'dddd';
         organ.create_time = new Date();
         organ.update_time = new Date();
         //从数据库获取一个应用
-        const where = await organService.get({ name: 'organ2' });
-        if (where) { }
-        // 执行更新
-        const res = await organService.save(organ, where);
-        expect(res).toBe(void 0);
+        organService.save(organ, { name: 'ryzc1' }).then(res => {
+            expect(res.description).toBe('dddd');
+        }).catch(e => {
+            expect(e instanceof OrganizationNoExistError).toBeTruthy()
+        });
     });
 
     it(`get`, async () => {
-        const add = await organService.get({ name: '王者荣耀' });
-        expect(add).toBe(void 0);
+        organService.get({ name: 'wzry' }).then(res => {
+            expect(res.name).toEqual('wzry');
+        }).catch(e => { });
     });
 
     afterAll(async () => {

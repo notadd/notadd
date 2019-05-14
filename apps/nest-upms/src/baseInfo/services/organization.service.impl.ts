@@ -2,10 +2,10 @@ import { OrganizationService } from '../core/organization.service';
 import { OrganizationEntity } from '../../typeorm';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
-import { OrganizationNoExistError, DataError,  } from '../errors/role.error';
+import { OrganizationNoExistError, DataError, } from '../errors/role.error';
 
 export class OrganizationServiceImpl extends OrganizationService {
-    constructor(@InjectRepository(OrganizationEntity) private readonly organRepo: Repository<OrganizationEntity>) { super() }
+    constructor(@InjectRepository(OrganizationEntity) public readonly organRepo: Repository<OrganizationEntity>) { super() }
 
     /**
      * 
@@ -56,8 +56,8 @@ export class OrganizationServiceImpl extends OrganizationService {
         }
         if (organization.name) { exist.name = organization.name }
         if (organization.title) { exist.title = organization.title }
-        if(organization.description){exist.description=organization.description}
-        if(organization.displayorder){exist.displayorder=organization.displayorder}
+        if (organization.description) { exist.description = organization.description }
+        if (organization.displayorder) { exist.displayorder = organization.displayorder }
         return await this.organRepo.save(exist)
     }
 

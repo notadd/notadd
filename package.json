@@ -32,7 +32,7 @@
     "reflect-metadata": "0.1.13",
     "rxjs": "6.5.2",
     "typescript": "3.2.2",
-    "snyk": "1.163.3"
+    "snyk": "1.164.0"
   },
   "devDependencies": {
     "@types/graphql": "14.2.0",

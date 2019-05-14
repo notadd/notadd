@@ -56,7 +56,7 @@
         "@nestjs/core": "6.2.0",
         "@nestjs/graphql": "6.0.5",
         "@nestjs/microservices": "6.2.0",
-        "@nestjs/passport": "6.0.0",
+        "@nestjs/passport": "6.1.0",
         "@nestjs/platform-express": "6.2.0",
         "@nestjs/swagger": "3.0.2",
         "@nestjs/testing": "6.2.0",

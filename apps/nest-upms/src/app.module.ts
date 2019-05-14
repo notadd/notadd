@@ -6,6 +6,7 @@ import { AuthModule } from './auth';
 import { JwtStrategyImpl } from './sso/jwt.strategy.impl';
 import coreProviders from './core/index';
 import baseInfoProviders from './baseInfo';
+import commonServicesProviders from './commonServices/index';
 const env = process.env;
 @Module({
   imports: [
@@ -29,7 +30,8 @@ const env = process.env;
   providers: [
     ...coreProviders,
     ...ssoProviders,
-    ...baseInfoProviders
+    ...baseInfoProviders,
+    ...commonServicesProviders,
   ]
 })
 export class ApplicationModule { }

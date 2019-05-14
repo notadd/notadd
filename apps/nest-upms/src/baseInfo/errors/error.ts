@@ -6,9 +6,9 @@ export class BaseError extends CoreError {
     }
 }
 
-export class DataError<T = any> extends CoreError {
+export class IdIsNullError<T = any> extends CoreError {
     constructor(data?: T) {
-        super(11001, '数据不能为空', data);
+        super(11001, 'Id不能为空', data);
     }
 }
 
@@ -54,6 +54,12 @@ export class PermissionIsNullError<T = any> extends CoreError {
     }
 }
 
+export class PermissionNameExistError<T = any> extends CoreError {
+    constructor(data?: T) {
+        super(11014, '权限名已存在', data);
+    }
+}
+
 export class AddonIsNullError<T = any> extends CoreError {
     constructor(data?: T) {
         super(11009, '此应用不存在', data);
@@ -63,5 +69,23 @@ export class AddonIsNullError<T = any> extends CoreError {
 export class AddonNameError<T = any> extends CoreError {
     constructor(data?: T) {
         super(11010, '应用名已存在', data);
+    }
+}
+
+export class UserMustDataNullError<T = any> extends CoreError {
+    constructor(data?: T) {
+        super(11011, '用户名,密码,电话不得为空', data);
+    }
+}
+
+export class PermissionMustDataNullError<T = any> extends CoreError {
+    constructor(data?: T) {
+        super(11012, '权限名,权限类型,权限状态不得为空', data);
+    }
+}
+
+export class AddonMustDataNullError<T = any> extends CoreError {
+    constructor(data?: T) {
+        super(11013, '应用中文名,应用英文名,应用状态不得为空', data);
     }
 }

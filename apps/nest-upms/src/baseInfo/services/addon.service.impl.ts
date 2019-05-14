@@ -1,8 +1,8 @@
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { DeleteResult, Repository } from 'typeorm';
 import { AddonEntity } from '../../typeorm';
 import { AddonService } from '../core/addon.service';
-import { AddonIsNullError, DataError, AddonNameError } from '../errors/error';
+import { AddonMustDataNullError, AddonNameError, IdIsNullError, AddonIsNullError } from '../errors/error';
 
 export class AddonServiceImpl extends AddonService {
 
@@ -27,10 +27,11 @@ export class AddonServiceImpl extends AddonService {
     }
 
 
+    /**
+     * 根据条件获取应用
+     * @param where 获取条件
+     */
     async get(where: Partial<AddonEntity>): Promise<AddonEntity> {
-        if (!where) {
-            throw new DataError();
-        }
         return await this.addonRepo.findOne(where);
     }
 
@@ -39,8 +40,11 @@ export class AddonServiceImpl extends AddonService {
      * @param addon 更新应用的信息
      * @param where 更新应用的条件 
      */
-    async save(addon: AddonEntity, where: Partial<AddonEntity>) {
-        let exist = await this.getAddonById(where.appid);
+    async save(addon: AddonEntity, where: Partial<AddonEntity>): Promise<AddonEntity> {
+        let exist = await this.get(where);
+        if (!exist) {
+            throw new AddonIsNullError();
+        }
         if (addon.name) { exist.name = addon.name }
         if (addon.title) { exist.title = addon.title }
         if (addon.icon) { exist.icon = addon.icon }
@@ -55,30 +59,25 @@ export class AddonServiceImpl extends AddonService {
 
     /**
      * 删除应用
-     * @param data 删除应用的信息
+     * @param addon 删除应用的信息
      */
-    async delete(addon: Partial<AddonEntity>) {
-        if (!await this.getAddonById(addon.appid)) {
-            throw new AddonIsNullError();
-        }
-        return await this.addonRepo.delete({ appid: addon.appid })
+    async delete(addon: Partial<AddonEntity>): Promise<DeleteResult> {
+        return await this.addonRepo.delete(addon)
     }
 
     /**
      * 添加应用
      * @param addon 添加应用的信息
      */
-    async insert(addon: AddonEntity) {
-        if (!(addon.name || addon.title || addon.appsecret)) {
-            throw new DataError();
+    async insert(addon: AddonEntity): Promise<AddonEntity> {
+        if (!addon.name || !addon.title || !addon.status) {
+            throw new AddonMustDataNullError();
         }
         if (await this.get({ name: addon.name })) {
             throw new AddonNameError();
         }
-        if (addon.status >= -1 && addon.status <= 1) {
-            throw new DataError();
-        }
-        return await this.addonRepo.save(this.addonRepo.create(addon));
+       
+        return await this.addonRepo.save(addon);
     }
 
     /**
@@ -87,7 +86,7 @@ export class AddonServiceImpl extends AddonService {
      */
     async getAddonById(appid: number): Promise<AddonEntity> {
         if (!appid) {
-            throw new DataError();
+            throw new IdIsNullError();
         }
         return await this.addonRepo.findOne(appid)
     }

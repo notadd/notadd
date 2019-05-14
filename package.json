@@ -44,7 +44,7 @@
     "rxjs-grpc": "1.0.0-rxjs6.0",
     "ts-node": "7.0.1",
     "tsconfig-paths": "3.8.0",
-    "tslint": "5.12.1"
+    "tslint": "5.16.0"
   },
   "snyk": true
 }

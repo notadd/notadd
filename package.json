@@ -98,7 +98,7 @@
         "@angular/compiler-cli": "7.2.15",
         "@angular/language-service": "7.2.15",
         "@nestjs/core": "6.2.0",
-        "@nestjs/jwt": "6.0.0",
+        "@nestjs/jwt": "6.1.0",
         "@nestjs/testing": "6.2.0",
         "@nrwl/builders": "7.8.5",
         "@nrwl/schematics": "7.8.5",

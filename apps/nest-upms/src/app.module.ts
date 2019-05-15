@@ -7,7 +7,7 @@ import { JwtStrategyImpl } from './sso/jwt.strategy.impl';
 import coreProviders from './core/index';
 import baseInfoProviders from './baseInfo';
 import commonServicesProviders from './commonServices/index';
-const env = process.env;
+import casbinProviders from './casbin/providers'
 @Module({
   imports: [
     TypeormModule,
@@ -32,6 +32,7 @@ const env = process.env;
     ...ssoProviders,
     ...baseInfoProviders,
     ...commonServicesProviders,
+    ...casbinProviders
   ]
 })
 export class ApplicationModule { }

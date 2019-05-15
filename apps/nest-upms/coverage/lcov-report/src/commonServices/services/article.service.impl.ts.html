@@ -20,14 +20,14 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">63.16% </span>
+        <span class="strong">57.14% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>12/19</span>
+        <span class='fraction'>12/21</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">28.57% </span>
+        <span class="strong">44.44% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>2/7</span>
+        <span class='fraction'>4/9</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">33.33% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>2/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">58.82% </span>
+        <span class="strong">52.63% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>10/17</span>
+        <span class='fraction'>10/19</span>
       </div>
     </div>
     <p class="quiet">
@@ -89,17 +89,47 @@
 <a name='L41'></a><a href='#L41'>41</a>
 <a name='L42'></a><a href='#L42'>42</a>
 <a name='L43'></a><a href='#L43'>43</a>
-<a name='L44'></a><a href='#L44'>44</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -110,16 +140,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -144,11 +170,24 @@ export class ArticleServiceImpl extends ArticleService {
         @InjectRepository(ArticleEntity) public readonly articleRepo: Repository&lt;ArticleEntity&gt;,
     ) { super() }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    get(</span>where: Partial&lt;ArticleEntity&gt;): Promise&lt;ArticleEntity&gt; {
-<span class="cstat-no" title="statement not covered" >        return null;</span>
+    /**
+     * 获取文章
+     * @param where 获取文章的条件
+     */
+<span class="fstat-no" title="function not covered" >    async </span>get(where: Partial&lt;ArticleEntity&gt;): Promise&lt;ArticleEntity&gt; {
+<span class="cstat-no" title="statement not covered" >        return await this.articleRepo.findOne(where);</span>
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    save(</span>article: ArticleEntity, where: Partial&lt;ArticleEntity&gt;): Promise&lt;ArticleEntity&gt; {
+    /**
+     * 更新文章
+     * @param article 新的文章信息
+     * @param where 更新为文章的条件
+     */
+<span class="fstat-no" title="function not covered" >    async </span>save(article: ArticleEntity, where: Partial&lt;ArticleEntity&gt;): Promise&lt;ArticleEntity&gt; {
+        let exist = <span class="cstat-no" title="statement not covered" >await this.get(where);</span>
+<span class="cstat-no" title="statement not covered" >        if (!exist) {</span>
+            
+        }
 <span class="cstat-no" title="statement not covered" >        return null;</span>
     }
 &nbsp;
@@ -161,7 +200,7 @@ export class ArticleServiceImpl extends ArticleService {
      * @param article 添加文章的数据
      */
     async insert(article: ArticleEntity): Promise&lt;ArticleEntity&gt; {
-        <span class="missing-if-branch" title="else path not taken" >E</span>if (!article.title || <span class="branch-1 cbranch-no" title="branch not covered" >!article.article_category_id </span>|| <span class="branch-2 cbranch-no" title="branch not covered" >article.description)</span> {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (!article.title || !article.article_category_id || article.description) {
             throw new ArticleMustDataError();
         }
 <span class="cstat-no" title="statement not covered" >        if (await this.get({ title: article.title })) {</span>
@@ -181,7 +220,7 @@ export class ArticleServiceImpl extends ArticleService {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue May 14 2019 22:18:45 GMT+0800 (GMT+08:00)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed May 15 2019 14:10:59 GMT+0800 (GMT+08:00)
 </div>
 </div>
 <script src="../../../prettify.js"></script>

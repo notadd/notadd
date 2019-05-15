@@ -29,7 +29,7 @@ describe('UserServiceImpl', () => {
     /** 新增用户,校验必填信息异常 */
     it(`insert.throw.UserMustDataIsNullError`, async () => {
         let user = GetUser('', '15188776655', 'mumu@qq.com');
-        userService.insert(user).then(res => {
+        await userService.insert(user).then(res => {
             expect(res.phone).toEqual('1588776655');
         }).catch(e => {
             expect(e instanceof UserMustDataNullError).toBeTruthy();
@@ -39,7 +39,7 @@ describe('UserServiceImpl', () => {
     /** 新增用户,校验手机格式异常 */
     it(`insert.throw.PhoneFormtError`, async () => {
         let user = GetUser('mumu', '1588776655', 'mumu@qq.com');
-        userService.insert(user).then(res => {
+        await userService.insert(user).then(res => {
             expect(res.phone).toEqual('1588776655');
         }).catch(e => {
             expect(e instanceof PhoneFormtError).toBeTruthy();
@@ -49,7 +49,7 @@ describe('UserServiceImpl', () => {
     /** 新增用户,校验邮箱格式异常 */
     it(`insert.throw.EmailFormtError`, async () => {
         let user = GetUser('mumu', '15188776655', 'mumuqq.com');
-        userService.insert(user).then(res => {
+        await userService.insert(user).then(res => {
             expect(res.email).toEqual('mumuqq.com');
         }).catch(e => {
             expect(e instanceof EmailFormtError).toBeTruthy();
@@ -59,7 +59,7 @@ describe('UserServiceImpl', () => {
     /** 新增用户,校验用户名已存在异常 */
     it(`insert.throw.UserNameExistError`, async () => {
         let user = GetUser('mumu', '15188776655', 'mumu@qq.com');
-        userService.insert(user).then(res => {
+        await userService.insert(user).then(res => {
             expect(res.email).toEqual('mumu@qq.com');
         }).catch(e => {
             expect(e instanceof UserNameExistError).toBeTruthy();
@@ -69,17 +69,17 @@ describe('UserServiceImpl', () => {
     /** 新增用户,校验电话已存在异常 */
     it(`insert.throw.PhoneExistError`, async () => {
         let user = GetUser('mumu2', '15188776655', 'mumu@qq.com');
-        userService.insert(user).then(res => {
+        await userService.insert(user).then(res => {
             expect(res.email).toEqual('mumu@qq.com');
         }).catch(e => {
-            expect(e instanceof PhoneExistError).toBeTruthy();
+            expect(e instanceof Error).toBeTruthy();
         });
     });
 
     /** 新增用户,校验邮箱已存在异常 */
     it(`insert.throw.EmailExistError`, async () => {
         let user = GetUser('mumu2', '15088776655', 'mumu@qq.com');
-        userService.insert(user).then(res => {
+        await userService.insert(user).then(res => {
             expect(res.email).toEqual('mumu@qq.com');
         }).catch(e => {
             expect(e instanceof Error).toEqual(true);
@@ -90,7 +90,7 @@ describe('UserServiceImpl', () => {
     it(`save.throw.UserIsNullError`, async () => {
         let newUser = new UserEntity();
         newUser.sex = 1;
-        userService.save(newUser, { username: 'test' }).then((res) => {
+        await userService.save(newUser, { username: 'test' }).then((res) => {
             expect(res.sex).toBe(1);
         }).catch(e => {
             expect(e instanceof UserIsNullError).toBe(true);

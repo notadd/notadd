@@ -20,14 +20,14 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">75.68% </span>
+        <span class="strong">48.65% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>28/37</span>
+        <span class='fraction'>18/37</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">65.22% </span>
+        <span class="strong">30.43% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>15/23</span>
+        <span class='fraction'>7/23</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">71.43% </span>
@@ -35,16 +35,16 @@
         <span class='fraction'>5/7</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">86.21% </span>
+        <span class="strong">55.17% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>25/29</span>
+        <span class='fraction'>16/29</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line medium'></div>
+  <div class='status-line low'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -124,17 +124,17 @@
 <a name='L76'></a><a href='#L76'>76</a>
 <a name='L77'></a><a href='#L77'>77</a>
 <a name='L78'></a><a href='#L78'>78</a>
-<a name='L79'></a><a href='#L79'>79</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
+<a name='L79'></a><a href='#L79'>79</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -156,7 +156,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -166,16 +166,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -244,16 +244,16 @@ export class PermissionServiceImpl extends PermissionService {
      */
     async save(permission: PermissionEntity, where: Partial&lt;PermissionEntity&gt;) {
         let exist = await this.get(where);
-        if (!exist) {
-            throw new PermissionIsNullError();
+<span class="cstat-no" title="statement not covered" >        if (!exist) {</span>
+<span class="cstat-no" title="statement not covered" >            throw new PermissionIsNullError();</span>
         }
-        <span class="missing-if-branch" title="if path not taken" >I</span>if (permission.name) { <span class="cstat-no" title="statement not covered" >exist.name = permission.name }</span>
-        <span class="missing-if-branch" title="if path not taken" >I</span>if (permission.pid) { <span class="cstat-no" title="statement not covered" >exist.pid = permission.pid }</span>
-        <span class="missing-if-branch" title="if path not taken" >I</span>if (permission.value) { <span class="cstat-no" title="statement not covered" >exist.value = permission.value }</span>
-        <span class="missing-if-branch" title="if path not taken" >I</span>if (permission.icon) { <span class="cstat-no" title="statement not covered" >exist.icon = permission.icon }</span>
-        <span class="missing-if-branch" title="if path not taken" >I</span>if (permission.displayorder) { <span class="cstat-no" title="statement not covered" >exist.displayorder = permission.displayorder }</span>
-        <span class="missing-if-branch" title="else path not taken" >E</span>if (permission.status) { exist.status = permission.status }
-        return await this.permissionRepo.save(exist);
+<span class="cstat-no" title="statement not covered" >        if (permission.name) { <span class="cstat-no" title="statement not covered" >exist.name = permission.name }</span></span>
+<span class="cstat-no" title="statement not covered" >        if (permission.pid) { <span class="cstat-no" title="statement not covered" >exist.pid = permission.pid }</span></span>
+<span class="cstat-no" title="statement not covered" >        if (permission.value) { <span class="cstat-no" title="statement not covered" >exist.value = permission.value }</span></span>
+<span class="cstat-no" title="statement not covered" >        if (permission.icon) { <span class="cstat-no" title="statement not covered" >exist.icon = permission.icon }</span></span>
+<span class="cstat-no" title="statement not covered" >        if (permission.displayorder) { <span class="cstat-no" title="statement not covered" >exist.displayorder = permission.displayorder }</span></span>
+<span class="cstat-no" title="statement not covered" >        if (permission.status) { <span class="cstat-no" title="statement not covered" >exist.status = permission.status }</span></span>
+<span class="cstat-no" title="statement not covered" >        return await this.permissionRepo.save(exist);</span>
     }
 &nbsp;
     /**
@@ -286,7 +286,7 @@ export class PermissionServiceImpl extends PermissionService {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue May 14 2019 22:18:45 GMT+0800 (GMT+08:00)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed May 15 2019 14:10:59 GMT+0800 (GMT+08:00)
 </div>
 </div>
 <script src="../../../prettify.js"></script>

@@ -2,7 +2,7 @@ import { INestApplication } from '@nestjs/common';
 import { Test } from '@nestjs/testing';
 import { ApplicationModule } from '../../../../src';
 import { PermissionService } from '../../../../src/baseInfo/core';
-import { PermissionMustDataNullError, PermissionNameExistError, PermissionIsNullError } from '../../../../src/baseInfo/errors/error';
+import { PermissionMustDataNullError } from '../../../../src/baseInfo/errors/error';
 import { PermissionEntity } from '../../../../src/typeorm';
 describe('PermissionServiceImpl', () => {
     let app: INestApplication;
@@ -107,9 +107,11 @@ describe('PermissionServiceImpl', () => {
     });
 });
 
-export function getPermission(name: string, value: string): PermissionEntity {
+export function getPermission(name: string, title: string): PermissionEntity {
     let permission = new PermissionEntity()
     permission.name = name;
+    permission.title = title;
+    permission.decription = 'decription';
     permission.pid = 1;
     permission.status = 1;
     permission.icon = 'icon';

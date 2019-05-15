@@ -10,6 +10,10 @@ export class AddonEntity {
     appid: number;
 
     @Column({
+        type: 'int',
+        comment: '上级',
+    })
+    @Column({
         type: 'varchar',
         length: 20
     })

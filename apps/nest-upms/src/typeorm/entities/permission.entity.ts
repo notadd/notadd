@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, Timestamp, OneToMany, CreateDateColumn, UpdateDateColumn, ManyToOne } from 'typeorm'
+import { Entity, PrimaryGeneratedColumn, Column, Timestamp, OneToMany, CreateDateColumn, UpdateDateColumn, ManyToOne, Index } from 'typeorm'
 import { AddonEntity } from './addon.entity';
 import { UserEntity } from './user.entity';
 import { RoleEntity } from './role.entity';
@@ -20,6 +20,9 @@ export class PermissionEntity {
      * 上级
      */
     @Column()
+    @Index({
+        unique: true,
+    })
     pid: number;
 
     /**

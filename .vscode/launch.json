@@ -12,8 +12,7 @@
             "args": [
                 "${relativeFile}",
                 "-c",
-                "apps/nest-upms/e2e/jest-e2e.json",
-                "--watch"
+                "apps/nest-upms/e2e/jest-e2e.json"
             ],
             "cwd": "${workspaceRoot}"
         }

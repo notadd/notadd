@@ -12,8 +12,14 @@ export class ArticleMustDataError<T = any> extends CoreError {
     }
 }
 
-export class ArticleNameError<T = any> extends CoreError {
+export class ArticleTitleError<T = any> extends CoreError {
     constructor(data?: T) {
         super(11031, '文章标题已存在', data);
+    }
+}
+
+export class ArticleNullError<T = any> extends CoreError {
+    constructor(data?: T) {
+        super(11032, '该文章不存在', data);
     }
 }

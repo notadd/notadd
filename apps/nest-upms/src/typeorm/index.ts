@@ -14,8 +14,8 @@ import { UserPermissionEntity } from './entities/userPermission.entity'
 import { UserRoleEntity } from './entities/userRole.entity'
 import { AccessTokenEntity, EXPRES_TIME } from './entities/accessToken.entity'
 import { ArticleEntity } from './entities/article.entity';
-import { CategoryEntity } from './entities/category.entity';
-import { CommentEntity } from './entities/comment.entity';
+import { CategoryEntity } from './entities/articleCategory.entity';
+import { CommentEntity } from './entities/articleComment.entity';
 
 
 @Module({

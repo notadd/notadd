@@ -10,11 +10,24 @@ export class ArticleServiceImpl extends ArticleService {
         @InjectRepository(ArticleEntity) public readonly articleRepo: Repository<ArticleEntity>,
     ) { super() }
 
-    get(where: Partial<ArticleEntity>): Promise<ArticleEntity> {
-        return null;
+    /**
+     * 获取文章
+     * @param where 获取文章的条件
+     */
+    async get(where: Partial<ArticleEntity>): Promise<ArticleEntity> {
+        return await this.articleRepo.findOne(where);
     }
 
-    save(article: ArticleEntity, where: Partial<ArticleEntity>): Promise<ArticleEntity> {
+    /**
+     * 更新文章
+     * @param article 新的文章信息
+     * @param where 更新为文章的条件
+     */
+    async save(article: ArticleEntity, where: Partial<ArticleEntity>): Promise<ArticleEntity> {
+        let exist = await this.get(where);
+        if (!exist) {
+            
+        }
         return null;
     }
 

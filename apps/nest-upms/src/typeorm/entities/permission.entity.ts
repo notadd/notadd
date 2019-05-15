@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, Timestamp, OneToMany, CreateDateColumn, UpdateDateColumn } from 'typeorm'
+import { Entity, PrimaryGeneratedColumn, Column, Timestamp, OneToMany, CreateDateColumn, UpdateDateColumn, ManyToOne } from 'typeorm'
 import { AddonEntity } from './addon.entity';
 import { UserEntity } from './user.entity';
 import { RoleEntity } from './role.entity';
@@ -37,8 +37,8 @@ export class PermissionEntity {
     /**
      * 权限值
      */
-    @Column()
-    value: string;
+    // @Column()
+    // value: string;
 
     /**
      * 图标

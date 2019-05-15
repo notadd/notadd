@@ -2,7 +2,7 @@ import { MemberService } from '../core/member.service';
 import { InjectRepository } from '@nestjs/typeorm';
 import { MemberEntity } from '../../typeorm/entities/member.entity';
 import { Repository } from 'typeorm';
-import { DataError, PhoneFormtError, EmailFormtError, MemberUserNameExistError, PhoneExistError, EmailExistError, MemberUserIsNullError } from '../errors/member.error';
+import { DataError, PhoneFormtError, EmailFormtError, MemberUserNameExistError, PhoneExistError, EmailExistError, MemberUserIsNullError, MemberDataNullError } from '../errors/member.error';
 
 export class MemberServiceImpl extends MemberService {
     constructor(
@@ -15,7 +15,7 @@ export class MemberServiceImpl extends MemberService {
      */
     async insert(member: MemberEntity): Promise<MemberEntity> {
         if (!(member.username || member.password || member.phone || member.email)) {
-            throw new DataError();
+            throw new MemberDataNullError();
         }
 
         // 验证手机
@@ -30,7 +30,7 @@ export class MemberServiceImpl extends MemberService {
             throw new EmailFormtError();
         }
         if (await this.memberRepo.findOne({ where: { username: member.username } })) {
-            throw new MemberUserNameExistError();
+            throw new MemberUserIsNullError();
         }
         if (await this.memberRepo.findOne({ where: { phone: member.phone } })) {
             throw new PhoneExistError();
@@ -59,12 +59,22 @@ export class MemberServiceImpl extends MemberService {
     }
 
 
-    get(where: Partial<MemberEntity>): Promise<MemberEntity> {
-        throw new Error("Method not implemented.");
+    
+    async save(member : MemberEntity, where: Partial<MemberEntity>): Promise<MemberEntity> {
+        let exist = await this.get(where);
+        if (!exist) {
+            throw new MemberUserIsNullError();
+        }
+        if (member.username) { exist.username = member.username }
+        if (member.password) {exist.password=member.password
+            // 加密 exist.password = user.password; todo
+        }
+        if (member.phone) { exist.phone = member.phone }
+        if (member.email) { exist.email = member.email }
+        return await this.memberRepo.save(exist);
     }
-
-    save(data: MemberEntity, where: Partial<MemberEntity>): Promise<MemberEntity> {
-        throw new Error("Method not implemented.");
+    async get(where: Partial<MemberEntity>): Promise<MemberEntity> {
+        return await this.memberRepo.findOne(where);
     }
 
 

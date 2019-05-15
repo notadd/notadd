@@ -16,6 +16,9 @@ import { AccessTokenEntity, EXPRES_TIME } from './entities/accessToken.entity'
 import { ArticleEntity } from './entities/article.entity';
 import { CategoryEntity } from './entities/articleCategory.entity';
 import { CommentEntity } from './entities/articleComment.entity';
+import { MemberEntity } from './entities/member.entity';
+import { PostEntity } from './entities/post.entity';
+import { PostCategoryEntity } from './entities/postCategory.entity';
 
 
 @Module({
@@ -36,7 +39,10 @@ import { CommentEntity } from './entities/articleComment.entity';
             AccessTokenEntity,
             ArticleEntity,
             CategoryEntity,
-            CommentEntity
+            CommentEntity,
+            MemberEntity,
+            PostEntity,
+            PostCategoryEntity
         ])
     ]
 })

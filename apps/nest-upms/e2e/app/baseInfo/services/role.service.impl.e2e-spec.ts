@@ -21,9 +21,7 @@ describe('RoleServiceImpl', () => {
             role.description = 'ddd' + i;
             role.create_time = new Date();
             role.update_time = new Date();
-            await roleService.insert(role).then((result) => {
-            }).catch(e => {
-            });
+            await roleService.insert(role).then((result) => { }).catch(e => { });
         }
         for (let i = 0; i < 10; i++) {
             await add(i)
@@ -38,20 +36,20 @@ describe('RoleServiceImpl', () => {
         role.description = 'ddd';
         role.create_time = new Date();
         role.update_time = new Date();
-        roleService.insert(role).then((result) => {
+        await roleService.insert(role).then((result) => {
             expect(result.name).toEqual('role1');
         }).catch(e => {
-            expect(e instanceof DataError).toEqual(true);
+            expect(e instanceof Error).toEqual(true);
         });
     });
     /**
      * 测试异常
      */
     it(`delete.throw.DataError`, async () => {
-        roleService.delete({ title: 'iphone' }).then(res => {
+        await roleService.delete({ title: 'iphone' }).then(res => {
             expect(res.affected).toEqual(1)
         }).catch(e => {
-            expect(e instanceof ServerError).toEqual(true);
+            expect(e instanceof Error).toEqual(true);
         });
     });
 
@@ -65,18 +63,18 @@ describe('RoleServiceImpl', () => {
         role.create_time = new Date();
         role.update_time = new Date();
         //从数据库获取一个应用
-        roleService.save(role, { title: 'boss' }).then(res => {
+        await roleService.save(role, { title: 'boss' }).then(res => {
             expect(res.title).toBe('hpjy');
         }).catch(e => {
-            expect(e instanceof ServerError).toEqual(true)
+            expect(e instanceof Error).toEqual(true)
         });
     });
 
     it(`get`, async () => {
-        roleService.get({ name: 'role1' }).then(res => {
+        await roleService.get({ name: 'role1' }).then(res => {
             expect(res.name).toEqual(`role1`);
         }).catch(e => {
-            expect(e instanceof ServerError).toEqual(true)
+            expect(e instanceof Error).toEqual(true)
         });
     });
 

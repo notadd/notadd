@@ -3,7 +3,9 @@ import { AddonEntity } from './addon.entity';
 import { UserEntity } from './user.entity';
 import { RoleEntity } from './role.entity';
 
-
+/**
+ * 应用权限表
+ */
 @Entity({
     name: 'permission'
 })
@@ -27,13 +29,22 @@ export class PermissionEntity {
     name: string;
 
     /**
-     * 权限类型，1接口，2资源，3ui
+     * 汉语名称
      */
     @Column({
-        type: 'smallint'
+        type: 'varchar',
+        length: 255
     })
-    type: 1 | 2 | 3;
+    title: string;
 
+    /**
+     * 权限简介
+     */
+    @Column({
+        type: 'varchar',
+        length: 255
+    })
+    decription: string;
     /**
      * 权限值
      */
@@ -47,13 +58,13 @@ export class PermissionEntity {
     icon: string;
 
     /**
-     * 状态 -1禁止，1正常
+     * 状态 -1禁止，0开发中,1正常
      */
     @Column({
         type: 'smallint',
         default: 1,
     })
-    status: -1 | 1;
+    status: -1 | 0 | 1;
 
     /**
      * 排序

@@ -2,6 +2,7 @@ import { Enforcer } from 'casbin';
 import { INestApplication } from '@nestjs/common';
 import { Test } from '@nestjs/testing';
 import { ApplicationModule } from '../../../src/app.module'
+
 describe('casbin', () => {
     let app: INestApplication;
     let enforcer: Enforcer;

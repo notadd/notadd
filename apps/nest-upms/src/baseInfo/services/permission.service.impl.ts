@@ -2,7 +2,7 @@ import { PermissionService } from '../core/permission.service';
 import { InjectRepository } from '@nestjs/typeorm';
 import { PermissionEntity } from '../../typeorm';
 import { Repository, DeleteResult } from 'typeorm';
-import { PermissionMustDataNullError, PermissionIsNullError, IdIsNullError, PermissionNameExistError } from '../errors/error';
+import { PermissionMustDataNullError, PermissionIsNullError, PermissionNameExistError } from '../errors/error';
 
 export class PermissionServiceImpl extends PermissionService {
 
@@ -10,7 +10,7 @@ export class PermissionServiceImpl extends PermissionService {
         @InjectRepository(PermissionEntity) public readonly permissionRepo: Repository<PermissionEntity>,
     ) { super() }
 
-    clear(){
+    clear() {
         return this.permissionRepo.clear();
     }
 
@@ -19,7 +19,7 @@ export class PermissionServiceImpl extends PermissionService {
      * @param permission 添加权限的信息
      */
     async insert(permission: PermissionEntity) {
-        if (!permission.name || !permission.type || !permission.status) {
+        if (!permission.name) {
             throw new PermissionMustDataNullError();
         }
         if (await this.get({ name: permission.name })) {
@@ -50,7 +50,6 @@ export class PermissionServiceImpl extends PermissionService {
         // 判断数据库中是否已有该权限名
         if (permission.name) { exist.name = permission.name }
         if (permission.pid) { exist.pid = permission.pid }
-        if (permission.value) { exist.value = permission.value }
         if (permission.icon) { exist.icon = permission.icon }
         if (permission.displayorder) { exist.displayorder = permission.displayorder }
         if (permission.status) { exist.status = permission.status }

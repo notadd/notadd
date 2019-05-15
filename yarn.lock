@@ -647,7 +647,7 @@
   dependencies:
     optional "0.1.4"
 
-"@nestjs/typeorm@6.1.1":
+"@nestjs/typeorm@^6.1.1":
   version "6.1.1"
   resolved "https://registry.yarnpkg.com/@nestjs/typeorm/-/typeorm-6.1.1.tgz#bf1f45f79a2b498dd33b82c1f5bd04e7797cfec3"
   integrity sha512-KCtRYiftUfvU4QE0mlhNUHEVfo9LmFHZ7QPcSxgmV00Tf62lGX0P2vJ0Ee6zHrgPuT4TzUn+SkX70ZdeQxio3Q==
@@ -709,10 +709,10 @@
 "@notadd/scss@file:libs/scss":
   version "1.0.0"
 
-"@nrwl/builders@7.8.5":
-  version "7.8.5"
-  resolved "https://registry.yarnpkg.com/@nrwl/builders/-/builders-7.8.5.tgz#79a73e473337b51b58d2490850cec5a175f1dfbb"
-  integrity sha512-GkKwhel8XeMuEcGvxkJbTrhoE57gWp1uq7qITkIq5s69vpCeunB7hrVNy2i9skAs+f9f4hqNeBUptjEVB9vfuA==
+"@nrwl/builders@7.8.6":
+  version "7.8.6"
+  resolved "https://registry.yarnpkg.com/@nrwl/builders/-/builders-7.8.6.tgz#cd10d3840a1034e65edb5bf031abc59f61d2eedb"
+  integrity sha512-n3rGSRJ24HCA6IGn+W5b0Qfa6r+X+rCHTI71JqyVPMGK3DSmQU3ZfW/cf3Ywbvc4dP1MzCNCAcb263/5KhDE2g==
   dependencies:
     "@angular-devkit/architect" "~0.13.1"
     "@angular-devkit/build-angular" "~0.13.1"
@@ -728,20 +728,21 @@
     rxjs "6.3.3"
     source-map-support "0.5.11"
     ts-loader "5.3.1"
+    tsconfig-paths-webpack-plugin "3.2.0"
     webpack "4.29.0"
     webpack-dev-server "3.1.14"
     webpack-node-externals "1.7.2"
     zone.js "0.8.29"
 
-"@nrwl/nx@7.8.5":
-  version "7.8.5"
-  resolved "https://registry.yarnpkg.com/@nrwl/nx/-/nx-7.8.5.tgz#3ec96d4a2d37aafe96a7f949efc4660b70ca5617"
-  integrity sha512-KRiSPSs3q7/GROneK6RzkIAahLIOwf1nkYX8C5PnhUup6anPqMfkjKFSkDdwkSkO23RmRFYt69G7o6fc1WpcjA==
+"@nrwl/nx@7.8.6":
+  version "7.8.6"
+  resolved "https://registry.yarnpkg.com/@nrwl/nx/-/nx-7.8.6.tgz#96a1b5ece6ffe0053a8c74b5a225e020b6943037"
+  integrity sha512-0mQzBR9xfNcwMl28iwTzmjS/5czeVJNfq1NO/FVlYB0eIRKOGWI78dwFYKPjLMSVmYl+Rc+dcWlgLlekUu+YkQ==
 
-"@nrwl/schematics@7.8.5":
-  version "7.8.5"
-  resolved "https://registry.yarnpkg.com/@nrwl/schematics/-/schematics-7.8.5.tgz#de349eb405643c4661c3b8a24de7f633375cdc04"
-  integrity sha512-HJrW53I2jkkqAJE5ew95BAm3cbiDdYncU4SXVsns9/why+39hchnglAoCbw7kejxpIw0W2p0xTz3VfkJrWHuzA==
+"@nrwl/schematics@7.8.6":
+  version "7.8.6"
+  resolved "https://registry.yarnpkg.com/@nrwl/schematics/-/schematics-7.8.6.tgz#c4ac51a240f8ace5b5e245b58723dfa8ef129998"
+  integrity sha512-en3wDflgLzgZS2sly+nuswae4NETxGiIsLzwQ+7UMGsM6l+n92/2Qn7LCFjO1Zp8aVU3Z3nEM6uP49z2IgEYXA==
   dependencies:
     app-root-path "^2.0.1"
     cosmiconfig "4.0.0"
@@ -10280,7 +10281,16 @@ ts-node@^7.0.1:
     source-map-support "^0.5.6"
     yn "^2.0.0"
 
-tsconfig-paths@3.8.0:
+tsconfig-paths-webpack-plugin@3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/tsconfig-paths-webpack-plugin/-/tsconfig-paths-webpack-plugin-3.2.0.tgz#6e70bd42915ad0efb64d3385163f0c1270f3e04d"
+  integrity sha512-S/gOOPOkV8rIL4LurZ1vUdYCVgo15iX9ZMJ6wx6w2OgcpT/G4wMyHB6WM+xheSqGMrWKuxFul+aXpCju3wmj/g==
+  dependencies:
+    chalk "^2.3.0"
+    enhanced-resolve "^4.0.0"
+    tsconfig-paths "^3.4.0"
+
+tsconfig-paths@3.8.0, tsconfig-paths@^3.4.0:
   version "3.8.0"
   resolved "https://registry.yarnpkg.com/tsconfig-paths/-/tsconfig-paths-3.8.0.tgz#4e34202d5b41958f269cf56b01ed95b853d59f72"
   integrity sha512-zZEYFo4sjORK8W58ENkRn9s+HmQFkkwydDG7My5s/fnfr2YYCaiyXe/HBUcIgU8epEKOXwiahOO+KZYjiXlWyQ==
@@ -10379,7 +10389,7 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typeorm@0.2.17:
+typeorm@^0.2.17:
   version "0.2.17"
   resolved "https://registry.yarnpkg.com/typeorm/-/typeorm-0.2.17.tgz#eb98e9eeb2ce0dfc884620f49de0aeca3dc4e027"
   integrity sha512-a2Yi6aG7qcSQNyYHjAZtRwhuMKt/ZPmNQg8PvpgF52Z3AgJ4LL4T5mtpfTzKgNzM4o4wP0JQcZNoGGlaRovKpw==

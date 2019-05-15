@@ -15,9 +15,6 @@ export class AddonPermissionEntity {
     })
     addon_id: number;
 
-    /**
-     * 
-     */
     // @ManyToOne(() => PermissionEntity, t => t.addons)
     // permission: PermissionEntity;
     @Column({

@@ -46,5 +46,11 @@ export class PhoneFormtError<T = any> extends CoreError {
     constructor(data?: T) {
         super(12015, '手机号码格式错误', data);
     }
+    
+}
+export class MemberDataNullError<T = any> extends CoreError {
+    constructor(data?: T) {
+        super(12016, '用户名,密码,电话不得为空', data);
+    }
 }
 

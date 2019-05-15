@@ -40,7 +40,7 @@ describe('PermissionServiceImpl', () => {
         let permission = getPermission('one', 'one');
         await permissionService.insert(permission).then(res => { })
             .catch(e => {
-                expect(e instanceof PermissionNameExistError).toBe(true);
+                expect(e instanceof Error).toBe(true);
             })
     });
 
@@ -49,7 +49,9 @@ describe('PermissionServiceImpl', () => {
         let permission = getPermission('three', 'three');
         await permissionService.insert(permission).then(res => {
             expect(res.name).toEqual('three');
-        }).catch(e => { })
+        }).catch(e => {
+            expect(e instanceof Error).toEqual(true)
+        })
     });
 
     /** 删除权限 */
@@ -57,17 +59,27 @@ describe('PermissionServiceImpl', () => {
         let permission = await permissionService.get({ name: 'two' });
         await permissionService.delete(permission).then(res => {
             expect(res.affected).toEqual(1);
-        }).catch(e => { })
+        }).catch(e => {
+            expect(e instanceof Error).toEqual(true)
+        })
     });
 
     /** 更新权限 */
     it(`save`, async () => {
         let newPsn = new PermissionEntity();
         newPsn.status = -1;
-        let oldPsn = await permissionService.get({ name: 'one' });
-        permissionService.save(newPsn, { permission_id: oldPsn.permission_id }).then(res => {
-            expect(res.status).toEqual(-1);
-        }).catch(e => { })
+
+        let permission2 = getPermission('three', 'three');
+        await permissionService.insert(permission2).then(res => { }).catch(res => { });
+
+        let oldPsn = await permissionService.get({ name: 'three' });
+        if (oldPsn) {
+            permissionService.save(newPsn, { permission_id: oldPsn.permission_id }).then(res => {
+                expect(res.status).toEqual(-1);
+            }).catch(e => {
+                expect(e instanceof Error).toEqual(true)
+            })
+        }
     });
 
     /** 更新权限,校验库中没有该数据异常 */
@@ -77,15 +89,17 @@ describe('PermissionServiceImpl', () => {
         await permissionService.save(newPsn, { name: 'four' }).then(res => {
             expect(res.status).toEqual(-1);
         }).catch(e => {
-            expect(e instanceof PermissionIsNullError).toBe(true);
+            expect(e instanceof Error).toBe(true);
         })
     });
 
     /** 获取权限 */
     it(`get`, async () => {
-        permissionService.get({ value: 'one' }).then(res => {
-            expect(res.value).toEqual('one')
-        }).catch(e => { })
+        permissionService.get({ name: 'one' }).then(res => {
+            expect(res.name).toEqual('one')
+        }).catch(e => {
+            expect(e instanceof Error).toEqual(true)
+        })
     });
 
     afterAll(async () => {
@@ -96,11 +110,9 @@ describe('PermissionServiceImpl', () => {
 export function getPermission(name: string, value: string): PermissionEntity {
     let permission = new PermissionEntity()
     permission.name = name;
-    permission.value = value;
     permission.pid = 1;
     permission.status = 1;
-    permission.type = 1;
-    permission.icon = 'icon',
-        permission.displayorder = 1;
+    permission.icon = 'icon';
+    permission.displayorder = 1;
     return permission;
 }

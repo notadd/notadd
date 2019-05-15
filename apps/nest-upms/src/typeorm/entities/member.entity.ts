@@ -30,7 +30,8 @@ export class MemberEntity {
 
     @Column({
         type: 'varchar',
-        comment: 'openid'
+        comment: 'openid',
+        default: ''
     })
     openid: string;
 

@@ -1,9 +1,9 @@
-import { UserService } from '../core/user.service';
-import { UserEntity } from '../../typeorm/entities/user.entity';
-import { DataError, UserNameExistError, PhoneExistError, EmailFormtError, EmailExistError, UserIsNullError, PhoneFormtError } from '../errors/error';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
-import { UserRoleEntity, UserPermissionEntity, RoleEntity } from '../../typeorm';
+import { DeleteResult, Repository } from 'typeorm';
+import { RoleEntity, UserPermissionEntity, UserRoleEntity } from '../../typeorm';
+import { UserEntity } from '../../typeorm/entities/user.entity';
+import { UserService } from '../core/user.service';
+import { EmailExistError, EmailFormtError, IdIsNullError, PhoneExistError, PhoneFormtError, UserIsNullError, UserMustDataNullError, UserNameExistError } from '../errors/error';
 
 export class UserServiceImpl extends UserService {
 
@@ -17,9 +17,9 @@ export class UserServiceImpl extends UserService {
     /**
      * @param user 添加的用户信息
      */
-    async insert(user: UserEntity) {
-        if (!(user.username || user.password || user.phone || user.email)) {
-            throw new DataError();
+    async insert(user: UserEntity): Promise<UserEntity> {
+        if (!user.username || !user.password || !user.phone) {
+            throw new UserMustDataNullError();
         }
         // 验证邮箱
         let EmailRegExp = /^\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}$/;
@@ -45,23 +45,17 @@ export class UserServiceImpl extends UserService {
          * 
          */
         // 添加联盟id和open id
-        return await this.userRepo.save(this.userRepo.create(user)); // todo 加密密码
+        return await this.userRepo.save(this.userRepo.create(user));
     }
 
     /**
      * @param user 删除的用户信息
      */
-    async delete(user: Partial<UserEntity>) {
+    async delete(user: Partial<UserEntity>): Promise<DeleteResult> {
         if (!user.user_id) {
-            throw new DataError();
+            throw new IdIsNullError();
         }
-        let exist = await this.userRepo.findOne({ where: { user_id: user.user_id } });
-        if (!exist) {
-            throw new UserIsNullError();
-        }
-        await this.userRepo.delete({ user_id: user.user_id });
-        await this.userRoleRepo.delete({ openid: exist.openid });
-        return await this.userPermissionRepo.delete({ openid: exist.openid });
+        return await this.userRepo.delete({ user_id: user.user_id });
     }
 
 
@@ -70,20 +64,18 @@ export class UserServiceImpl extends UserService {
      * @param user 更新用户的信息
      * @param where 查询该用户的条件
      */
-    async save(user: UserEntity, where: Partial<UserEntity>) {
+    async save(user: UserEntity, where: Partial<UserEntity>): Promise<UserEntity> {
         let exist = await this.get(where);
         if (!exist) {
             throw new UserIsNullError();
         }
         if (user.username) { exist.username = user.username }
         if (user.password) {
-            // 加密
-            // exist.password = user.password;
+            // 加密 exist.password = user.password; 
         }
-        if (user.username) { exist.username = user.username }
         if (user.phone) { exist.phone = user.phone }
         if (user.email) { exist.email = user.email }
-        if (user.avatar) { exist.avatar = user.avatar }
+        if (user.sex) { exist.sex = user.sex }
         return await this.userRepo.save(exist);
     }
 
@@ -102,7 +94,7 @@ export class UserServiceImpl extends UserService {
      */
     async getUserById(user_id: number): Promise<UserEntity> {
         if (!user_id) {
-            throw new DataError();
+            throw new IdIsNullError();
         }
         return await this.userRepo.findOne(user_id);
     }

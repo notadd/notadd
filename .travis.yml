@@ -1,49 +1,49 @@
-# sudo: required
+sudo: false
 # dist: xenial
 language: node_js
 node_js:
     - "10"
     - "12"
+env:
+  - DB=postgres10
+  - DB=postgres11   
 cache:
   directories:
     - "node_modules"   
 git:
   depth: 5
-# services:
-#   - postgresql
-#  - postgresql
-addons:
-  postgresql: "11"
-  apt:
-    packages:
-    - postgresql-11
-    - postgresql-client-11
-env:
-  global:
-    - PGPORT=5432
-    # - PGDATABASE=test
-    # - PGUSER=postgres
-    # - PGHOST=localhost
-    # - DB=postgres
+services:
+  - docker
   
-before_script:
-#   - sudo sed -i -e '/local.*peer/s/postgres/all/' -e 's/peer\|md5/trust/g' /etc/postgresql/*/main/pg_hba.conf
-#   - sudo service postgresql restart
-#   - sleep 1
- # - psql -U postgres -c "create extension postgis"
-  # - sh -c "if [ '$DB' = 'postgres' ]; then psql -c 'create database test_ci;' -U postgres; echo $DB; fi"
-  # - export DISPLAY=:99.0
-  - sh -c "systemctl start postgresql"
-  - sh -c "psql -c 'create database test_ci;' -U postgres;"
-  - npm i -g npm@latest
-  - npm install -g codecov
+# jobs:
+#   include:
+#     - stage: pgsql10
+#       sudo: require
+#       service: 
+#         - docker    
+#       before_script:
+#         - bash ./testing/travis/install-postgres-10.sh
+#     - stage pgsql11
+#       sudo: require
+#       service: 
+#         - docker    
+#       before_script:
 
+#         - bash ./testing/travis/install-postgres-11.s
+after_install:
+  - npm i -g npm@latest codecov
+  - bash <(curl -s https://codecov.io/bash)
 install:
   - npm i
+before_install:
+  - sh -c "if [ '$DB' = 'postgres10' ]; then bash ./testing/travis/install-postgres-10.sh; echo $DB; fi"
+  - sh -c "if [ '$DB' = 'postgres11' ]; then bash ./testing/travis/install-postgres-11.sh; echo $DB; fi"  
 script:
   - npm run test.nest.upms.e2e
 #   - istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec
 #   - codecov
-after_script:
-  - bash <(curl -s https://codecov.io/bash)
+ 
 after_success: npm run test.nest.upms.coverage
+
+notifications:
+    webhooks: https://www.travisbuddy.com/

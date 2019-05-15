@@ -13,6 +13,9 @@ import { UserOrganizationEntity } from './entities/userOrganization.entity'
 import { UserPermissionEntity } from './entities/userPermission.entity'
 import { UserRoleEntity } from './entities/userRole.entity'
 import { AccessTokenEntity, EXPRES_TIME } from './entities/accessToken.entity'
+import { ArticleEntity } from './entities/article.entity';
+import { CategoryEntity } from './entities/category.entity';
+import { CommentEntity } from './entities/comment.entity';
 
 
 @Module({
@@ -30,7 +33,10 @@ import { AccessTokenEntity, EXPRES_TIME } from './entities/accessToken.entity'
             UserOrganizationEntity,
             UserPermissionEntity,
             UserRoleEntity,
-            AccessTokenEntity
+            AccessTokenEntity,
+            ArticleEntity,
+            CategoryEntity,
+            CommentEntity
         ])
     ]
 })

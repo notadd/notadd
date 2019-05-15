@@ -3,7 +3,7 @@
   "transform": {
     "^.+\\.tsx?$": "../../node_modules/ts-jest/preprocessor.js"
   },
-  "testRegex": "./src/.*\\.(test|spec).(ts|tsx|js)$",
+  "testRegex": "./.*\\.(e2e-test|e2e-spec|test|spec).(ts|tsx|js)$",
   "collectCoverageFrom": [
     "src/**/*.{js,jsx,tsx,ts}",
     "!**/node_modules/**",

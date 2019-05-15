@@ -40,12 +40,6 @@ export class ArticleEntity {
     })
     article_category_id	: number;
 
-    @Column({
-        type: 'int',
-        comment: '文章评论',
-    })
-    article_comment_id	: number[];
-
     @CreateDateColumn({
         type: 'timestamptz'
     })

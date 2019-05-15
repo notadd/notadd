@@ -19,12 +19,26 @@ describe('ArticleServiceImpl', () => {
 
     it(`insert.throw.ArticleMustDataError`, async () => {
         let article = getArticle();
-        await articleService.insert(article).then(res => {
-            expect(res.icon).toBe('icon');
+        articleService.insert(article).then(res => {
+
         }).catch(e => {
             expect(e instanceof ArticleMustDataError).toBeTruthy();
         })
     });
+
+    it(`insert`, async () => {
+        let article = getArticle();
+        article.title = 'new title';
+        articleService.insert(article).then(res => {
+            expect(res.title).toEqual('new title');
+        }).catch(e => {
+            expect(e instanceof ArticleMustDataError).toBeTruthy();
+        })
+    });
+
+
+
+
 
 
     afterAll(async () => {

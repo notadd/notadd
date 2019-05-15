@@ -1,5 +1,5 @@
 import { CommonBaseService } from './common.base.service';
-import { CategoryEntity } from '../../typeorm/entities/category.entity';
+import { CategoryEntity } from '../../typeorm/entities/articleCategory.entity';
 
 export abstract class ArticleCategoryService extends CommonBaseService<CategoryEntity> {
 

@@ -1,21 +1,18 @@
-import { Model, Helper } from 'casbin';
-import { CasbinAdapter } from './core/adapter';
-import { PermissionService, ITransformPermissionToPolicyResult } from './core/permission';
+import { CasbinService, IPermission, IRole, isPermission } from './core/casbin';
+import { Adapter, Model, Helper } from 'casbin';
 
-export class NgerCasbinAdapter extends CasbinAdapter {
+export class NgerCasbinAdapter implements Adapter {
     constructor(
-        public permission: PermissionService
-    ) {
-        super();
-    }
+        public casbin: CasbinService
+    ) { }
     /**
      * 加载Policy
      * @param model 
      */
     async loadPolicy(model: Model): Promise<void> {
-        const permissions = await this.permission.getAllPermission();
+        const permissions = await this.casbin.getAllPermission();
         for (const permission of permissions) {
-            const police = await this.permission.transformPermissionToPolicy(permission)
+            const police = await this.casbin.transformPermissionToPolicy(permission)
             this._loadPolicyLine(police, model);
         }
     }
@@ -24,19 +21,84 @@ export class NgerCasbinAdapter extends CasbinAdapter {
      * @param permission 
      * @param model 
      */
-    private _loadPolicyLine(permission: ITransformPermissionToPolicyResult, model: Model) {
-        const result = permission.name + ', ' + [permission.name, permission.addon, permission.addon, permission.action].filter(n => n).join(', ');
-        Helper.loadPolicyLine(result, model);
+    private _loadPolicyLine(val: IPermission | IRole, model: Model) {
+        if (isPermission(val)) {
+            const result = `p,` + [val.name, val.addon, val.addon, val.action].filter(n => n).join(', ');
+            Helper.loadPolicyLine(result, model);
+        } else {
+            const result = `g, ${val.name},${val.permission}`;
+            Helper.loadPolicyLine(result, model);
+        }
     }
     /**
      * 保存
      * @param model 
      */
     async savePolicy(model: Model): Promise<boolean> {
+        await this.casbin.clearTable();
+        /**
+         * 保存权限
+         */
+        let permissions = model.model.get('p');
+        for (const [ptype, ast] of permissions) {
+            for (const rule of ast.policy) {
+                await Promise.all(rule.map(async r => {
+                    const permission = await this.casbin.getPermissionByRule(r)
+                    await this.casbin.savePermission(permission);
+                }))
+            }
+        }
+        /**
+         * 保存角色
+         */
+        let roles = model.model.get('g');
+        for (const [ptype, ast] of roles) {
+            for (const rule of ast.policy) {
+                await Promise.all(rule.map(async r => {
+                    const role = await this.casbin.getRoleByRule(r)
+                    await this.casbin.saveRole(role);
+                }))
+            }
+        }
         return true;
     }
-
-    async addPolicy(sec: string, ptype: string, rule: string[]): Promise<void> { }
-    async removePolicy(sec: string, ptype: string, rule: string[]): Promise<void> { }
-    async removeFilteredPolicy(sec: string, ptype: string, fieldIndex: number, ...fieldValues: string[]): Promise<void> { }
+    /**
+     * 添加警察
+     * @param sec 
+     * @param ptype 
+     * @param rule 
+     */
+    async addPolicy(sec: string, ptype: 'permission' | 'role', rule: string[]): Promise<void> {
+        if (ptype === 'permission') {
+            await Promise.all(rule.map(async r => {
+                const permission = await this.casbin.getPermissionByRule(r)
+                await this.casbin.savePermission(permission);
+            }));
+        } else {
+            await Promise.all(rule.map(async r => {
+                const role = await this.casbin.getRoleByRule(r)
+                await this.casbin.saveRole(role);
+            }))
+        }
+    }
+    /**
+     * 删除警察
+     * @param sec 
+     * @param ptype 
+     * @param rule 
+     */
+    async removePolicy(sec: string, ptype: 'permission' | 'role', rule: string[]): Promise<void> {
+        return this.casbin.removeRoleByName()
+        return await this.casbin.removePolicy(sec, ptype, rule)
+    }
+    /**
+     * 条件删除警察
+     * @param sec 
+     * @param ptype 
+     * @param fieldIndex 
+     * @param fieldValues 
+     */
+    async removeFilteredPolicy(sec: string, ptype: string, fieldIndex: number, ...fieldValues: string[]): Promise<void> {
+        return await this.casbin.removeFilteredPolicy(sec, ptype, fieldIndex, ...fieldValues);
+    }
 }

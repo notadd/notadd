@@ -42,7 +42,7 @@
     "@types/node": "10.14.6",
     "nodemon": "1.19.0",
     "rxjs-grpc": "1.0.0-rxjs6.0",
-    "ts-node": "7.0.1",
+    "ts-node": "8.1.0",
     "tsconfig-paths": "3.8.0",
     "tslint": "5.16.0"
   },

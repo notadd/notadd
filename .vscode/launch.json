@@ -10,8 +10,10 @@
             "name": "Launch Program",
             "program": "${workspaceFolder}/node_modules/.bin/jest",
             "args": [
+                "${relativeFile}",
                 "-c",
-                "apps/nest-upms/e2e/jest-e2e.json"
+                "apps/nest-upms/e2e/jest-e2e.json",
+                "--watch"
             ],
             "cwd": "${workspaceRoot}"
         }

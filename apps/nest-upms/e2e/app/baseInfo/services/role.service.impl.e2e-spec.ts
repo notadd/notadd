@@ -13,6 +13,21 @@ describe('RoleServiceImpl', () => {
         }).compile();
         app = module.createNestApplication();
         roleService = app.get(RoleService);
+
+        async function add(i: number) {
+            const role = new RoleEntity();
+            role.name = 'role' + i;
+            role.title = 'iphone' + i;
+            role.description = 'ddd' + i;
+            role.create_time = new Date();
+            role.update_time = new Date();
+            await roleService.insert(role).then((result) => {
+            }).catch(e => {
+            });
+        }
+        for (let i = 0; i < 10; i++) {
+            await add(i)
+        }
         await app.init();
     })
 
@@ -29,8 +44,10 @@ describe('RoleServiceImpl', () => {
             expect(e instanceof DataError).toEqual(true);
         });
     });
-
-    it(`delete`, async () => {
+    /**
+     * 测试异常
+     */
+    it(`delete.throw.DataError`, async () => {
         roleService.delete({ title: 'iphone' }).then(res => {
             expect(res.affected).toEqual(1)
         }).catch(e => {
@@ -51,7 +68,6 @@ describe('RoleServiceImpl', () => {
         roleService.save(role, { title: 'boss' }).then(res => {
             expect(res.title).toBe('hpjy');
         }).catch(e => {
-            console.log(e)
             expect(e instanceof ServerError).toEqual(true)
         });
     });
@@ -59,7 +75,7 @@ describe('RoleServiceImpl', () => {
     it(`get`, async () => {
         roleService.get({ name: 'role1' }).then(res => {
             expect(res.name).toEqual(`role1`);
-        }).catch(e => { 
+        }).catch(e => {
             expect(e instanceof ServerError).toEqual(true)
         });
     });

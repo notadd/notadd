@@ -49,6 +49,6 @@ export class UserNoExistError<T = any> extends CoreError {
 }
 export class loggerNoExistError<T = any> extends CoreError {
     constructor(data?: T) {
-        super(12007, '日志不存在', data)
+        super(12008, '日志不存在', data)
     }
 }

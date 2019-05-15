@@ -29,7 +29,12 @@ describe('OrganizationServiceImpl', () => {
         loggerService.insert(logger).then(async (result) => {
             expect(result).toBe(void 0);
             // get
-            const getOne = await loggerService.get({ result: '電話撒謊' })
+            let getOne: any;
+            try {
+                getOne = await loggerService.get({ result: '電話撒謊' })
+            } catch (e) {
+                getOne = {}
+            }
             expect(getOne.result).toBe('電話撒謊');
         }).catch(e => {
             expect(e instanceof DataError).toBe(true);
@@ -65,7 +70,7 @@ describe('OrganizationServiceImpl', () => {
         logger.permissions = "123"
         //从数据库获取一个应用
         // 执行更新
-        loggerService.save(logger, { ip: '192.168.1.121' }).then(res => { 
+        loggerService.save(logger, { ip: '192.168.1.121' }).then(res => {
             expect(res.ip).toEqual(`192.168.1.121`)
         }).catch(e => {
             expect(e instanceof loggerNoExistError).toBe(true);

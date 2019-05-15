@@ -4,7 +4,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository, DeleteResult } from 'typeorm';
 import { DataError, loggerNoExistError, ServerError } from '../errors/role.error';
 export class LoggerServiceImpl extends LoggerService {
-    constructor(@InjectRepository(LoggerEntity) private readonly loggerRepo: Repository<LoggerEntity>) { super() }
+    constructor(@InjectRepository(LoggerEntity) public readonly loggerRepo: Repository<LoggerEntity>) { super() }
     /**
      * 
      * @param logger 添加用户日志

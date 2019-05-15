@@ -2,7 +2,7 @@ import { Injectable, Module } from "@nestjs/common";
 import { JwtService } from "@nestjs/jwt";
 import { AuthService, JwtStrategy } from "./abstracts";
 import { Token, User } from "./models/model";
-import { NestUpmsModule } from ".";
+import { NestUpmsModule } from "./jwt.module";
 
 @Injectable()
 export class TestJwtService extends AuthService {

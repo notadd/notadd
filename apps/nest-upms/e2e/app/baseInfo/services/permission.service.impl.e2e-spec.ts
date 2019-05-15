@@ -36,7 +36,7 @@ describe('PermissionServiceImpl', () => {
     /** 新增权限,校验权限名重复 */
     it(`insertThrowPermissionNameExistError`, async () => {
         let permission = getPermission('one', 'one');
-        await permissionService.insert(permission).then(res => { })
+        permissionService.insert(permission).then(res => { })
             .catch(e => {
                 expect(e instanceof PermissionNameExistError).toBe(true);
             })
@@ -45,7 +45,7 @@ describe('PermissionServiceImpl', () => {
     /** 删除权限 */
     it(`delete`, async () => {
         let permission = await permissionService.get({ name: 'two' });
-        await permissionService.delete(permission).then(res => {
+        permissionService.delete(permission).then(res => {
             expect(res.affected).toEqual(1);
         });
     });
@@ -55,7 +55,7 @@ describe('PermissionServiceImpl', () => {
         let newPsn = new PermissionEntity();
         newPsn.status = -1;
         let oldPsn = await permissionService.get({ name: 'one' });
-        await permissionService.save(newPsn, { permission_id: oldPsn.permission_id }).then(res => {
+        permissionService.save(newPsn, { permission_id: oldPsn.permission_id }).then(res => {
             expect(res.status).toEqual(-1);
         });
     });
@@ -64,18 +64,18 @@ describe('PermissionServiceImpl', () => {
     it(`save`, async () => {
         let newPsn = new PermissionEntity();
         newPsn.status = -1;
-        await permissionService.save(newPsn, {name: 'three'}).then(res => {
+        permissionService.save(newPsn, { name: 'three' }).then(res => {
             expect(res.status).toEqual(-1);
         }).catch(e => {
-            expect( e instanceof PermissionIsNullError ).toBe(true);
+            expect(e instanceof PermissionIsNullError).toBe(true);
         })
     });
 
     /** 获取用户 */
     it(`get`, async () => {
-        let permission1 = await permissionService.get({ name: 'one' });
-        let permission2 = await permissionService.get({ value: 'one' })
-        expect(permission1).toEqual(permission2);
+        permissionService.get({ value: 'one' }).then(res => {
+            expect(res.value).toEqual('one')
+        }).catch(e => { })
     });
 
     afterAll(async () => {

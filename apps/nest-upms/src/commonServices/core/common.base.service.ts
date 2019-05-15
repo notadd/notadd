@@ -1,5 +1,4 @@
 import { DeleteResult } from 'typeorm';
-
 export abstract class CommonBaseService<Entity>{
     /**
      * 获取单个

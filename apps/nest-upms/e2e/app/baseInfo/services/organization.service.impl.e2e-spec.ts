@@ -3,7 +3,7 @@ import { INestApplication } from "@nestjs/common";
 import { Test } from '@nestjs/testing';
 import { OrganizationService } from "../../../../src/baseInfo/core";
 import { ApplicationModule, OrganizationEntity } from '../../../../src';
-import { DataError, OrganizationNoExistError } from '../../../../src/baseInfo/errors/role.error'
+import { DataError, OrganizationNoExistError, ServerError } from '../../../../src/baseInfo/errors/role.error'
 describe('OrganizationServiceImpl', () => {
     let app: INestApplication;
     let organService: OrganizationService;
@@ -17,7 +17,7 @@ describe('OrganizationServiceImpl', () => {
     })
     it(`insert`, async () => {
         const organ = new OrganizationEntity();
-        organ.name = 'organ2';
+        organ.name = 'organ3';
         organ.title = 'jingli';
         organ.description = 'olala';
         organ.displayorder = 1;
@@ -69,7 +69,9 @@ describe('OrganizationServiceImpl', () => {
     it(`get`, async () => {
         organService.get({ name: 'wzry' }).then(res => {
             expect(res.name).toEqual('wzry');
-        }).catch(e => { });
+        }).catch(e => {
+            expect(e instanceof ServerError).toBeTruthy()
+        });
     });
 
     afterAll(async () => {

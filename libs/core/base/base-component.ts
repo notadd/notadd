@@ -1,7 +1,5 @@
 import { OnDestroy } from '@angular/core';
 
-console.log(process.env)
-
 // libs
 import { Subject } from 'rxjs';
 

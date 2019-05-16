@@ -1,0 +1,5 @@
+{
+    "id can not be null": "Id不能为空",
+    "user has existed": "用户名已存在",
+    "user not existed": "此用户不存在"
+}

@@ -3,10 +3,12 @@ export interface ICoreAddonPermission {
     name: string;
     value: string[];
 }
+
 export interface ICoreAddon {
     name: string;
     permission: ICoreAddonPermission[];
 }
+
 export interface ICoreAddonMessage {
     /**
      * -1 操作成功
@@ -18,6 +20,7 @@ export interface ICoreAddonMessage {
      */
     message?: string;
 }
+
 export abstract class CoreAddon {
     
     /**
@@ -25,13 +28,11 @@ export abstract class CoreAddon {
      * @param {ICoreAddon} addon
      */
     abstract install(addon: ICoreAddon): Promise<ICoreAddonMessage>;
-
     /**
      * 卸载应用
      * @param {ICoreAddon} addon
      */
     abstract uninstall(addon: ICoreAddon): Promise<ICoreAddonMessage>;
-
     /**
      * 更新应用
      * @param {ICoreAddon} addon

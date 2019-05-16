@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn, Timestamp, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn, Timestamp, CreateDateColumn, UpdateDateColumn, OneToMany } from 'typeorm';
 import { PermissionEntity } from './permission.entity';
 
 @Entity({
@@ -84,5 +84,6 @@ export class AddonEntity {
     /**
      * 应用权限
      */
+    @OneToMany(() => PermissionEntity, type => type.fromAddon)
     permissions: PermissionEntity[];
 }

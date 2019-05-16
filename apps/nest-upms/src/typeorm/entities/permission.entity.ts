@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, Timestamp, OneToMany, CreateDateColumn, UpdateDateColumn, ManyToOne, Index } from 'typeorm'
+import { Entity, PrimaryColumn, Column, Timestamp, OneToMany, CreateDateColumn, UpdateDateColumn, ManyToOne } from 'typeorm'
 import { AddonEntity } from './addon.entity';
 import { UserEntity } from './user.entity';
 import { RoleEntity } from './role.entity';
@@ -11,19 +11,10 @@ import { RoleEntity } from './role.entity';
 })
 export class PermissionEntity {
     /**
-     * id
-     */
-    @PrimaryGeneratedColumn()
-    permission_id: number;
-
-    /**
      * 上级
      */
-    @Column()
-    @Index({
-        unique: true,
-    })
-    pid: number;
+    @PrimaryColumn()
+    father_name: number;
 
     /**
      * 英文代号
@@ -51,8 +42,19 @@ export class PermissionEntity {
     /**
      * 权限值
      */
-    // @Column()
-    // value: string;
+    @Column({
+        transformer: {
+            // 存
+            to: (val: string[]) => {
+                return JSON.stringify(val)
+            },
+            // 取
+            from: (val: string) => {
+                return JSON.parse(val)
+            }
+        }
+    })
+    value: string[];
 
     /**
      * 图标
@@ -65,7 +67,7 @@ export class PermissionEntity {
      */
     @Column({
         type: 'smallint',
-        default: 1,
+        default: 0
     })
     status: -1 | 0 | 1;
 

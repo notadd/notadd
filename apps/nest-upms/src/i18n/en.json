@@ -1,3 +1,6 @@
 {
-
+    "10004": "This account is forbidden to use",
+    "10005": "Insufficient authority",
+    "10006": "The operation is too frequent. Please try again later.",
+    "10007": "Scope cannot be empty"
 }

@@ -74,7 +74,7 @@ describe('PermissionServiceImpl', () => {
 
         let oldPsn = await permissionService.get({ name: 'three' });
         if (oldPsn) {
-            permissionService.save(newPsn, { permission_id: oldPsn.permission_id }).then(res => {
+            permissionService.save(newPsn, { name: oldPsn.name }).then(res => {
                 expect(res.status).toEqual(-1);
             }).catch(e => {
                 expect(e instanceof Error).toEqual(true)
@@ -110,7 +110,7 @@ describe('PermissionServiceImpl', () => {
 export function getPermission(name: string, value: string): PermissionEntity {
     let permission = new PermissionEntity()
     permission.name = name;
-    permission.pid = 1;
+    permission.father_name = null;
     permission.status = 1;
     permission.icon = 'icon';
     permission.displayorder = 1;

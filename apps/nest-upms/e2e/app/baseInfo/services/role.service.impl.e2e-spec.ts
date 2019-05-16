@@ -2,7 +2,6 @@ import { RoleService } from '../../../../src/baseInfo/core';
 import { INestApplication } from '@nestjs/common';
 import { Test } from '@nestjs/testing';
 import { ApplicationModule, RoleEntity } from '../../../../src';
-import { ServerError, DataError } from '../../../../src/baseInfo/errors/role.error';
 
 describe('RoleServiceImpl', () => {
     let app: INestApplication;

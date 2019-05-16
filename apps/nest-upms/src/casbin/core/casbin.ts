@@ -1,3 +1,12 @@
+/*
+ * @Author: zhangyan 
+ * @Date: 2019-05-15 18:54:56 
+ * @Last Modified by:   zhangyan 
+ * @Last Modified time: 2019-05-15 18:54:56 
+ */
+
+
+
 import { PermissionEntity, RoleEntity } from '../../typeorm';
 
 interface BasePermise { }

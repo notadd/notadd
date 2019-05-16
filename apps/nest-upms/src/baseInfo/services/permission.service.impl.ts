@@ -49,7 +49,7 @@ export class PermissionServiceImpl extends PermissionService {
         }
         // 判断数据库中是否已有该权限名
         if (permission.name) { exist.name = permission.name }
-        if (permission.pid) { exist.pid = permission.pid }
+        // if (permission.pid) { exist.pid = permission.pid }
         if (permission.icon) { exist.icon = permission.icon }
         if (permission.displayorder) { exist.displayorder = permission.displayorder }
         if (permission.status) { exist.status = permission.status }
@@ -61,7 +61,7 @@ export class PermissionServiceImpl extends PermissionService {
      * @param data 删除的权限信息,根据id删除
      */
     async delete(permission: Partial<PermissionEntity>): Promise<DeleteResult> {
-        return await this.permissionRepo.delete({ permission_id: permission.permission_id });
+        return await this.permissionRepo.delete({ name: permission.name });
     }
 
     search(where: Partial<PermissionEntity>): Promise<void> {

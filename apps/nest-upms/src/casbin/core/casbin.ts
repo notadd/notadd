@@ -23,6 +23,7 @@ export interface IPermission extends BasePermise {
      */
     action: string;
 }
+
 export function isPermission(val: any): val is IPermission {
     return val.ptype && val.ptype === 'permission'
 }
@@ -54,22 +55,19 @@ export abstract class CasbinService {
      */
     abstract transformPermissionToPolicy(permission: PermissionEntity): Promise<IPermission | IRole>;
     /**
-     * 获取所有权限
+     * 获取所有角色和角色响应的权限
      */
-    abstract getAllPermission(): Promise<PermissionEntity[]>;
+    abstract getAllRoleWithPermission(): Promise<RoleEntity[]>;
 
     /**
      * 清空数据表
      */
     abstract clearTable(): Promise<void>;
-
-
     /**
      * 从rule获取权限
      * @param rule 
      */
     abstract getPermissionByRule(rule: string): Promise<PermissionEntity>;
-
     /**
      * 保存权限
      * @param {PermissionEntity} permission 
@@ -109,4 +107,3 @@ export abstract class CasbinService {
      */
     abstract removeFilteredPolicy(sec: string, ptype: string, fieldIndex: number, ...fieldValues: string[]): Promise<any>;
 }
-

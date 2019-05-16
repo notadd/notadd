@@ -7,11 +7,20 @@ export class NgerCasbinAdapter implements Adapter {
     ) { }
     /**
      * 加载Policy
+     * 从数据库中查询role，permission
+     * 组合成casbin
      * @param model 
      */
     async loadPolicy(model: Model): Promise<void> {
-        const permissions = await this.casbin.getAllPermission();
-        for (const permission of permissions) {
+        // 从数据库中查询所有角色和角色对应的权限
+        const roles = await this.casbin.getAllRoleWithPermission();
+        roles.map(role => {
+            const { permissions } = role;
+            permissions.map(permission => { 
+                permission.from_addon_id
+            })
+        });
+        for (const role of roles) {
             const police = await this.casbin.transformPermissionToPolicy(permission)
             this._loadPolicyLine(police, model);
         }

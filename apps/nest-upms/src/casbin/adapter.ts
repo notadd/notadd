@@ -40,12 +40,12 @@ export class NgerCasbinAdapter implements Adapter {
                 vals.map(val => {
                     const line = `p, ${role.name}, ${addon.name}.${permission.name}, ${val}`
                     Helper.loadPolicyLine(line, model);
-                })
-            })
+                });
+            });
         });
     }
     /**
-     * 保存
+     * 保存 
      * @param model 
      */
     async savePolicy(model: Model): Promise<boolean> {
@@ -69,7 +69,7 @@ export class NgerCasbinAdapter implements Adapter {
      * @param rule 
      */
     async removePolicy(sec: string, ptype: PType, rule: RemovePolicyRule): Promise<void> {
-        // 移除警察
+        // 移除警察 暂时不用实现
     }
     /**
      * 条件删除警察
@@ -79,7 +79,7 @@ export class NgerCasbinAdapter implements Adapter {
      * @param fieldValues 
      */
     async removeFilteredPolicy(sec: string, ptype: PType, fieldIndex: number, ...fieldValues: string[]): Promise<void> {
-        // 条件移除
+        // 条件移除 暂时不用实现
         if (ptype === 'g') {
             // 移除 用户表
         } else {

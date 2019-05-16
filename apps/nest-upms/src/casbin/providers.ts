@@ -1,13 +1,21 @@
-import { Enforcer, newEnforcer } from 'casbin'
+import { Enforcer, newEnforcer, Adapter } from 'casbin'
 import { join } from 'path'
 import { Provider } from '@nestjs/common';
+import { CasbinService } from './core/casbin';
+import { CasbinServiceImpl } from './services/casbin';
 
 const casbinProviders: Provider[] = [{
     provide: Enforcer,
-    useFactory: async () => {
-        return await newEnforcer(join(__dirname, 'rbac_model.conf'), '');
+    useFactory: async (a: Adapter) => {
+        const e = await newEnforcer(join(__dirname, 'rbac_model.conf'), a);
+        await e.loadPolicy();
+        return e;
     },
-    inject: []
+    inject: [
+        CasbinService
+    ]
+}, {
+    provide: CasbinService,
+    useClass: CasbinServiceImpl
 }];
-
 export default casbinProviders;

@@ -22,7 +22,7 @@ export class PermissionEntity {
      * 唯一
      */
     @PrimaryColumn()
-    @Index()
+    // @Index()
     name: string;
 
     /**
@@ -115,7 +115,7 @@ export class PermissionEntity {
 
     @ManyToOne(() => AddonEntity, type => type.permissions)
     @JoinTable()
-    @Index()
+    // @Index()
     fromAddon: AddonEntity;
     /**
      * 常用的，所以定义一下，查询后挂载到Permission上
@@ -124,15 +124,15 @@ export class PermissionEntity {
     /**
      * 拥有此权限的所有模块
      */
-    addons: AddonEntity[];
+    addons: AddonEntity[] = [];
 
     /**
      * 拥有此权限的所有用户
      */
-    users: UserEntity[];
+    users: UserEntity[] = [];
 
     /**
      * 拥有此权限的所有角色
      */
-    roles: RoleEntity[];
+    roles: RoleEntity[] = [];
 }

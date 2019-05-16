@@ -18,7 +18,7 @@ export class AccessTokenEntity {
         length: 50,
         comment: '授权凭证'
     })
-    @Index()
+    // @Index()
     access_token: string;
 
     @Column({

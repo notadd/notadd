@@ -12,13 +12,13 @@ export class UserPermissionEntity {
         type: 'varchar',
         length: 20
     })
-    @Index()
+    // @Index()
     openid: string;
 
     @Column({
         type: 'int',
     })
-    @Index()
+    // @Index()
     permission_id: number;
 
     @Column({

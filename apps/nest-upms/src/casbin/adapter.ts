@@ -39,7 +39,7 @@ export class NgerCasbinAdapter implements Adapter {
                 const addon = permission.fromAddon;
                 const vals = permission.value;
                 vals.map(val => {
-                    const line = `p, ${role.name}, ${addon.name}.${permission.name}, ${val}`
+                    const line = `p, ${role.name}, ${addon.name},${permission.name}, ${val}`
                     Helper.loadPolicyLine(line, model);
                 });
             });

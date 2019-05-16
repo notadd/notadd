@@ -30,6 +30,6 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: test_ci
     volumes:
-      - ./data/postgres:/var/lib/postgresql/data
+      - ~/data/postgres:/var/lib/postgresql/data
 volumes:
   postgres:

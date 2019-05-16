@@ -14,7 +14,6 @@ describe('casbin', () => {
         enforcer = app.get(Enforcer);
         await app.init();
     });
-
     it(`enforcer should exist`, () => {
         expect(!!enforcer).toEqual(true)
     });

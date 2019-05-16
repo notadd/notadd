@@ -29,6 +29,7 @@ export class AddonServiceImpl extends AddonService {
 
     /**
      * 根据条件获取应用
+     * query addon by filter
      * @param where 获取条件
      */
     async get(where: Partial<AddonEntity>): Promise<AddonEntity> {

@@ -6,8 +6,7 @@ import { DataError, loggerNoExistError, ServerError } from '../errors/role.error
 export class LoggerServiceImpl extends LoggerService {
     constructor(@InjectRepository(LoggerEntity) public readonly loggerRepo: Repository<LoggerEntity>) { super() }
     /**
-     * 
-     * @param logger 添加用户日志
+     * @param logger add user log
      */
     insert(logger: LoggerEntity): Promise<LoggerEntity> {
         try {
@@ -17,8 +16,7 @@ export class LoggerServiceImpl extends LoggerService {
         }
     }
     /**
-     * 
-     * @param logger 删除日志
+     * @param logger delete log
      */
     delete(logger: Partial<LoggerEntity>): Promise<DeleteResult> {
         try {
@@ -28,9 +26,8 @@ export class LoggerServiceImpl extends LoggerService {
         }
     }
     /**
-     * 
-     * @param where 查询单个日志
-     */
+     * @param where query a single log
+     */ 
     async get(where: Partial<LoggerEntity>): Promise<LoggerEntity> {
         if (!where) {
             throw new DataError();
@@ -38,10 +35,9 @@ export class LoggerServiceImpl extends LoggerService {
         return await this.loggerRepo.findOne(where);
     }
     /**
-     * 
-     * @param logger 更新日志
-     * @param where 
-     */
+     * @param logger update log
+     * @param where
+     */ 
     async save(logger: LoggerEntity, where: Partial<LoggerEntity>) {
         let exist = await this.getLoggerById(where.logger_id);
         if (!exist) {
@@ -54,9 +50,8 @@ export class LoggerServiceImpl extends LoggerService {
         return await this.loggerRepo.save(logger);
     }
     /**
-     * 
-     * @param logger_id 根据id查询日志
-     */
+     * @param logger_id Query logs based on id
+     */ 
     async getLoggerById(logger_id: number): Promise<LoggerEntity> {
         if (!logger_id) {
             throw new DataError();

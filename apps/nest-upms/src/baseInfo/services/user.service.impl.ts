@@ -15,18 +15,18 @@ export class UserServiceImpl extends UserService {
     ) { super() }
 
     /**
-     * @param user 添加的用户信息
+     *@param user added user information
      */
     async insert(user: UserEntity): Promise<UserEntity> {
         if (!user.username || !user.password || !user.phone) {
             throw new UserMustDataNullError();
         }
-        // 验证邮箱
+        //Verify the mailbox
         let EmailRegExp = /^\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}$/;
         if (!EmailRegExp.test(user.email)) {
             throw new EmailFormtError();
         }
-        // 验证手机
+        //Verify the phone 
         let phoneRegExp = /^[1][3-9][0-9]{9}$/;
         if (!phoneRegExp.test(user.phone)) {
             throw new PhoneFormtError();
@@ -40,17 +40,17 @@ export class UserServiceImpl extends UserService {
         if (await this.userRepo.findOne({ where: { email: user.email } })) {
             throw new EmailExistError();
         }
-        /** 
-         * TODO 加密密码
-         * 
-         */
-        // 添加联盟id和open id
+        /**
+          *TODO encrypted password
+          *
+          */
+        //Add alliance id and open id
         return await this.userRepo.save(this.userRepo.create(user));
     }
 
-    /**
-     * @param user 删除的用户信息
-     */
+   /**
+     *@param user Deleted user information
+     */ 
     async delete(user: Partial<UserEntity>): Promise<DeleteResult> {
         if (!user.user_id) {
             throw new IdIsNullError();
@@ -60,10 +60,9 @@ export class UserServiceImpl extends UserService {
 
 
     /**
-     * 
-     * @param user 更新用户的信息
-     * @param where 查询该用户的条件
-     */
+     *@param user Update user information
+     *@param where query the condition of the user
+     */ 
     async save(user: UserEntity, where: Partial<UserEntity>): Promise<UserEntity> {
         let exist = await this.get(where);
         if (!exist) {
@@ -81,17 +80,17 @@ export class UserServiceImpl extends UserService {
 
 
     /**
-     * 获取单个User
-     * @param where 查询的条件
-     */
+     *Get a single User
+     *@param where the conditions of the query
+     */ 
     async get(where: Partial<UserEntity>): Promise<UserEntity> {
         return await this.userRepo.findOne(where);
     }
 
     /**
-     * 根据Id获取单个User
-     * @param id 根据Id查询
-     */
+     *Get a single User based on Id
+     *@param id Query based on Id
+     */ 
     async getUserById(user_id: number): Promise<UserEntity> {
         if (!user_id) {
             throw new IdIsNullError();

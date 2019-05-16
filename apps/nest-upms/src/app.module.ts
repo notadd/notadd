@@ -8,6 +8,8 @@ import coreProviders from './core/index';
 import baseInfoProviders from './baseInfo';
 import commonServicesProviders from './commonServices/index';
 import casbinProviders from './casbin/providers'
+import { GraphQLModule } from '@nestjs/graphql';
+import { GraphqlOptions } from './graphql.options'
 @Module({
   imports: [
     TypeormModule,
@@ -22,9 +24,9 @@ import casbinProviders from './casbin/providers'
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
-    // GraphQLModule.forRootAsync({
-    //   useClass: GraphqlOptions,
-    // })
+    GraphQLModule.forRootAsync({
+      useClass: GraphqlOptions,
+    })
   ],
   controllers: [],
   providers: [

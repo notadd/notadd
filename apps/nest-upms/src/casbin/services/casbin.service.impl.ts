@@ -1,97 +1,46 @@
 /*
  * @Author: lijiansheng 
  * @Date: 2019-05-15 18:53:47 
- * @Last Modified by:   lijiansheng 
- * @Last Modified time: 2019-05-15 18:53:47 
+ * @Last Modified by: lijiansheng
+ * @Last Modified time: 2019-05-16 15:38:40
  */
 
-import { CasbinService, IPermission, IRole } from '../core/casbin';
-import { PermissionEntity, RoleEntity } from '../../typeorm';
+import { CasbinService } from '../core/casbin';
+import { RoleEntity, PermissionEntity, RolePermissionEntity, AddonPermissionEntity, AddonEntity } from '../../typeorm';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 
 export class CasbinServiceImpl extends CasbinService {
 
-    /**
-     * 权限数据获取
-     * @param permission 
-     */
-    transformPermissionToPolicy(permission: PermissionEntity): Promise<IPermission | IRole> {
-        return null;
-    }
+    constructor(
+        @InjectRepository(RoleEntity) public readonly roleRepo: Repository<RoleEntity>,
+        @InjectRepository(PermissionEntity) public readonly perRepo: Repository<PermissionEntity>,
+        @InjectRepository(AddonEntity) public readonly addonRepo: Repository<AddonEntity>,
+        @InjectRepository(RolePermissionEntity) public readonly rolePerRepo: Repository<RolePermissionEntity>,
+        @InjectRepository(AddonPermissionEntity) public readonly addonPerRepo: Repository<AddonPermissionEntity>,
+    ) { super() }
 
-    /**
-     * 获取所有权限
-     */
-    getAllPermission(): Promise<PermissionEntity[]> {
-        return null;
+    async getAllRoleWithPermission(): Promise<RoleEntity[]> {
+        // 临时，笨方法
+        let roles = await this.roleRepo.find();
+        for (let role of roles) {
+            // 拿到角色对应的权限id
+            let permissionIds = await this.rolePerRepo.find({ where: { role_id: role.role_id } });
+            // 根据权限id查询对应权限
+            for (let perId of permissionIds) {
+                let permission = await this.perRepo.findOne({ where: { role_id: perId.role_id } })
+                // 根据权限id查询该权限所有应用的id
+                let addonIds = await this.addonPerRepo.find({ where: { permission_id: permission } })
+                for (let addonId of addonIds) {
+                    let addon = await this.addonRepo.findOne({ where: { appid: addonId } })
+                    // 将应用存入权限
+                    permission.addons.push(addon);
+                }
+                // 将权限放入角色
+                role.permissions.push(permission);
+            }
+        }
+        return roles;
     }
-
-    /**
-     * 清空数据表
-     */
-    clearTable(): Promise<void> {
-        return null;
-    }
-
-    /**
-     * 从rule获取权限
-     * @param rule 
-     */
-    getPermissionByRule(rule: string): Promise<PermissionEntity> {
-        return null;
-    }
-
-    /**
-     * 保存权限
-     * @param {PermissionEntity} permission 
-     */
-    savePermission(permission: PermissionEntity): Promise<void> {
-        return null;
-    }
-
-    /**
-    * 从rule获取权限
-    * @param rule 
-    */
-    getRoleByRule(rule: string): Promise<RoleEntity> {
-        return null;
-    }
-
-    /**
-     * 保存角色
-     * @param {RoleEntity} permission 
-     */
-    saveRole(role: RoleEntity): Promise<void> {
-        return null;
-    }
-
-    /**
-    * 移除角色
-    * @param role 
-    */
-    removeRoleByName(name: string): Promise<void> {
-        return null;
-    }
-
-    /**
-    * 移除警察
-     * @param sec 
-     * @param ptype 
-     * @param rule 
-     */
-    removePolicy(sec: string, ptype: string, rule: string[]): Promise<any> {
-        return null;
-    }
-
-    /**
-     * 条件移除警察
-     * @param sec 
-     * @param ptype 
-     * @param fieldIndex 
-     * @param fieldValues 
-     */
-    removeFilteredPolicy(sec: string, ptype: string, fieldIndex: number, ...fieldValues: string[]): Promise<any> {
-        return null;
-    }
-
 
 }

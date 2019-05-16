@@ -2,7 +2,8 @@ import { Enforcer, newEnforcer, Adapter } from 'casbin'
 import { join } from 'path'
 import { Provider } from '@nestjs/common';
 import { CasbinService } from './core/casbin';
-import { CasbinServiceImpl } from './services/casbin.service.impl';
+import { CasbinServiceImpl } from './services/casbin';
+import { NgerCasbinAdapter } from './adapter';
 
 const casbinProviders: Provider[] = [{
     provide: Enforcer,
@@ -12,10 +13,17 @@ const casbinProviders: Provider[] = [{
         return e;
     },
     inject: [
+        NgerCasbinAdapter
+    ]
+}, {
+    provide: NgerCasbinAdapter,
+    useFactory: (service: CasbinService) => new NgerCasbinAdapter(service),
+    inject: [
         CasbinService
     ]
 }, {
     provide: CasbinService,
     useClass: CasbinServiceImpl
 }];
+
 export default casbinProviders;

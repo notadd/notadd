@@ -30,24 +30,24 @@ export class PermissionServiceImpl extends PermissionService {
     }
 
     /**
-     * 根据条件获取单个权限信息
-     * @param where 查询条件
-     */
+     *Get individual permission information based on criteria
+     *@param where query condition
+     */ 
     async get(where: Partial<PermissionEntity>): Promise<PermissionEntity> {
         return await this.permissionRepo.findOne(where);
     }
 
     /**
-     * 更新权限
-     * @param permission 更新的权限信息
-     * @param where 更新条件
-     */
+     *Update permissions
+     *@param permission Updated permission information
+     *@param where update conditions
+     */ 
     async save(permission: PermissionEntity, where: Partial<PermissionEntity>) {
         let exist = await this.get(where);
         if (!exist) {
             throw new PermissionIsNullError();
         }
-        // 判断数据库中是否已有该权限名
+        //Determine whether the permission name exists in the database 
         if (permission.name) { exist.name = permission.name }
         if (permission.icon) { exist.icon = permission.icon }
         if (permission.displayorder) { exist.displayorder = permission.displayorder }
@@ -56,9 +56,9 @@ export class PermissionServiceImpl extends PermissionService {
     }
 
     /**
-     * 删除权限
-     * @param data 删除的权限信息,根据id删除
-     */
+     *Delete permission
+     *@param data Deleted permission information, deleted according to id
+     */ 
     async delete(permission: Partial<PermissionEntity>): Promise<DeleteResult> {
         return await this.permissionRepo.delete({ name: permission.name });
     }

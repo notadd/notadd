@@ -22,8 +22,7 @@ export class RoleServiceIpml extends RoleService {
         return await this.roleRepo.save(role);
     }
     /**
-        * 
-        * @param role 删除角色
+     *@param role delete role
      */
     async delete(role: Partial<RoleEntity>) {
         try {
@@ -42,8 +41,8 @@ export class RoleServiceIpml extends RoleService {
 
     }
     /**
-     * 查询单个角色
-     * @param where 
+     *Query a single role
+     *@param where
      */
     async get(where: Partial<RoleEntity>): Promise<RoleEntity> {
         try {
@@ -53,16 +52,16 @@ export class RoleServiceIpml extends RoleService {
         }
     }
     /**
-    * 根据id查询角色
+    *Query role based on id
     */
     async getfindRoleById(role_id: number): Promise<RoleEntity> {
         return await this.roleRepo.findOne(role_id);
     }
     /**
-     * 更新角色信息
+     * Update role information
      * todo
-     * @param data 
-     * @param where 
+     * @param data
+     * @param where
      */
     async save(role: RoleEntity) {
         try {

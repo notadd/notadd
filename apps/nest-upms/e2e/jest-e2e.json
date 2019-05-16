@@ -1,7 +1,7 @@
 {
   "moduleFileExtensions": ["ts", "tsx", "js", "json"],
   "transform": {
-    "^.+\\.tsx?$": "../../../node_modules/ts-jest/preprocessor.js"
+    "^.+\\.tsx?$": "ts-jest"
   },
   "testRegex": "/.*\\.(e2e-test|e2e-spec).(ts|tsx|js)$",
   "collectCoverageFrom": [

@@ -19,14 +19,18 @@ type RefreshTokenResult{
 	refresh_token: String!
 }
 
-## 变更
-type Mutation {
+## 查询
+type Query {
 	## 登录
 	token(username: String!, password: String!): TokenResult!
 	## 获取用户信息
 	verify(access_token: String!): UserInfo!
+}
+
+## 变更
+type Mutation {
 	## 刷新access token
 	refreshToken(refresh_token: String!): RefreshTokenResult!
 	## 退出登录
-	logout(access_token: String): LogoutResult
+	logout(access_token: String!): LogoutResult
 }

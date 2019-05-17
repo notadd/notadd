@@ -25,6 +25,7 @@ export class SsoServiceImpl extends SsoService {
             access_token
         }, { status: -1 });
     }
+
     /**
      * 刷新acces token过期时间
      */
@@ -39,6 +40,7 @@ export class SsoServiceImpl extends SsoService {
             refresh_token: refreshToken.refresh_token
         }, { expires_in: expiresIn });
     }
+
     /**
      * 验证access token 获取用户信息
      **/
@@ -48,6 +50,7 @@ export class SsoServiceImpl extends SsoService {
             openid: token.openid
         })
     }
+
     /**
      * 根据用户名和密码获取access token
      */
@@ -62,6 +65,7 @@ export class SsoServiceImpl extends SsoService {
     getUserByNameAndPsd(username: string, password: string) {
         return this._user.findOne({ where: { username, password } });
     }
+
     /**
      * 根据授权凭证获取token信息
      * @param access_token 
@@ -69,7 +73,5 @@ export class SsoServiceImpl extends SsoService {
     getTokenByAccessToken(access_token: string): Promise<AccessTokenEntity> {
         return this._accessToken.findOne(access_token);
     }
-    /**
-     * 根据token_id获取RefreshToken
-     */
+
 }

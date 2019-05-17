@@ -14,7 +14,7 @@ export class GraphqlOptions implements GqlOptionsFactory {
             },
             definitions: {
                 path: join(process.cwd(), 'apps/nest-upms/src/graphql.schema.d.ts'),
-                outputAs: 'class',
+                outputAs: 'interface',
             },
         };
     }

@@ -22,15 +22,28 @@ type RefreshTokenResult{
 ## 查询
 type Query {
 	## 登录
-	token(username: String!, password: String!): TokenResult!
+	token(token_request: TokenRequest!): TokenResult!
 	## 获取用户信息
-	verify(access_token: String!): UserInfo!
+	verify(access_token_request: AccessTokenRequest!): UserInfo!
 }
 
 ## 变更
 type Mutation {
 	## 刷新access token
-	refreshToken(refresh_token: String!): RefreshTokenResult!
+	refreshToken(refresh_token_request: RefreshTokenRequest!): RefreshTokenResult!
 	## 退出登录
-	logout(access_token: String!): LogoutResult
+	logout(access_token_request: AccessTokenRequest!): LogoutResult!
+}
+
+input TokenRequest {
+	username: String!
+	password: String!
+}
+
+input AccessTokenRequest {
+	access_token: String!
+}
+
+input RefreshTokenRequest {
+	refresh_token: String!
 }

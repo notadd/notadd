@@ -22,5 +22,8 @@ export abstract class SsoService {
      */
     abstract getUserByNameAndPsd(username: string, password: string): Promise<UserEntity>;
 
+    /**
+     * 根据授权凭证获取AccessToken
+     */
     abstract getTokenByAccessToken(access_token: string): Promise<AccessTokenEntity>;
 }

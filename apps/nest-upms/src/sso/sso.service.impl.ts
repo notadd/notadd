@@ -2,7 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { UserEntity, AccessTokenEntity, RefreshTokenEntity, EXPRES_TIME } from '../typeorm';
-import { SsoService, AuthService } from './core/index'
+import { SsoService, AuthService } from './core/index';
+
 @Injectable()
 export class SsoServiceImpl extends SsoService {
     constructor(

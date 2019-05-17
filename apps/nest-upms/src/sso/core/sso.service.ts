@@ -17,4 +17,3 @@ export abstract class SsoService {
      */
     abstract token(user: UserEntity): Promise<AccessTokenEntity>;
 }
-

@@ -1,15 +1,16 @@
 import { Module } from '@nestjs/common';
+import { GraphQLModule } from '@nestjs/graphql';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { TypeormModule } from './typeorm/index';
-import { ssoProviders } from './sso';
 import { AuthModule } from './auth';
-import { JwtStrategyImpl } from './sso/jwt.strategy.impl';
-import coreProviders from './core/index';
 import baseInfoProviders from './baseInfo';
+import casbinProviders from './casbin/providers';
 import commonServicesProviders from './commonServices/index';
-import casbinProviders from './casbin/providers'
-// import { GraphQLModule } from '@nestjs/graphql';
-// import { GraphqlOptions } from './graphql.options'
+import coreProviders from './core/index';
+import { GraphqlOptions } from './graphql.options';
+import { ssoProviders } from './sso';
+import { JwtStrategyImpl } from './sso/jwt.strategy.impl';
+import { SsoResolver } from './sso/sso.resolver';
+import { TypeormModule } from './typeorm/index';
 @Module({
   imports: [
     TypeormModule,
@@ -24,11 +25,13 @@ import casbinProviders from './casbin/providers'
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
-    // GraphQLModule.forRootAsync({
-    //   useClass: GraphqlOptions,
-    // })
+    GraphQLModule.forRootAsync({
+      useClass: GraphqlOptions,
+    })
   ],
-  controllers: [],
+  controllers: [
+    SsoResolver
+  ],
   providers: [
     ...coreProviders,
     ...ssoProviders,

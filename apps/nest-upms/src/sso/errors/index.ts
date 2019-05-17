@@ -4,9 +4,16 @@ export class SsoError extends Error {
     }
 }
 
+/**
+ * 
+ * {
+ *  "accpit forbidden":" 此账号被禁止使用"
+ * }
+ */
+
 export class SsoForbidError<T = any> extends SsoError {
     constructor(data?: T) {
-        super(10004, '此账号被禁止使用', data)
+        super(10004, 'account forbidden ', data)
     }
 }
 

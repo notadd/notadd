@@ -23,6 +23,7 @@ export interface ICoreAddonMessage {
 }
 
 export abstract class CoreAddon {
+    
     /**
      * 安装应用 install addon
      * @param {ICoreAddon} addon

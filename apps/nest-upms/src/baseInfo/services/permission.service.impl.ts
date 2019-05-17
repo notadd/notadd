@@ -49,6 +49,7 @@ export class PermissionServiceImpl extends PermissionService {
         }
         //Determine whether the permission name exists in the database 
         if (permission.name) { exist.name = permission.name }
+        // if (permission.pid) { exist.pid = permission.pid }
         if (permission.icon) { exist.icon = permission.icon }
         if (permission.displayorder) { exist.displayorder = permission.displayorder }
         if (permission.status) { exist.status = permission.status }

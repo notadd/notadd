@@ -21,11 +21,11 @@ export class CasbinServiceImpl extends CasbinService {
     ) { super() }
 
     async getAllRoleWithPermission(): Promise<RoleEntity[]> {
-        // 临时，笨方法
+        // 临时
         let roles = await this.roleRepo.find();
         for (let role of roles) {
             // 拿到角色对应的权限id
-            let permissionIds = await this.rolePerRepo.find({ where: { role_id: role.role_id } });
+            let permissionIds = await this.rolePerRepo.find({ where: { role_id: role.role_id }});
             // 根据权限id查询对应权限
             for (let perId of permissionIds) {
                 let permission = await this.perRepo.findOne({ where: { role_id: perId.role_id } })

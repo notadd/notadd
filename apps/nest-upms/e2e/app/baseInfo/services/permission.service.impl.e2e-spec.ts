@@ -110,7 +110,10 @@ describe('PermissionServiceImpl', () => {
 export function getPermission(name: string, title: string): PermissionEntity {
     let permission = new PermissionEntity()
     permission.name = name;
-    permission.father_name = null;
+    permission.title = title;
+    permission.decription = 'decription';
+    permission.value = ['value'];
+    permission.father_name = 1;
     permission.status = 1;
     permission.icon = 'icon';
     permission.displayorder = 1;

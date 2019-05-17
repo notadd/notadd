@@ -2,5 +2,12 @@
     "10004": "This account is forbidden to use",
     "10005": "Insufficient authority",
     "10006": "The operation is too frequent. Please try again later.",
-    "10007": "Scope cannot be empty"
+    "10007": "Scope cannot be empty",
+
+    "11031": "Article title, type, description must not be empty",
+    "11032": "Article title already exists",
+    "11033": "The article does not exist",
+    "11035": "Article classification title, name, description must not be empty",
+    "11036": "Category title already exists",
+    "11037": "This category does not exist",
 }

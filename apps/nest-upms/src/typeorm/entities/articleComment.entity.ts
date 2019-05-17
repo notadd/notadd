@@ -3,7 +3,7 @@ import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateCol
 @Entity({
     name: 'article_comment'
 })
-export class CommentEntity {
+export class ArticleCommentEntity {
 
     @PrimaryGeneratedColumn()
     article_comment_id: number;

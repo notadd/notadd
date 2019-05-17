@@ -1,0 +1,21 @@
+type UserEntity {
+	username: String!
+	password: String!
+}
+
+type AccessTokenEntity{
+    access_token: String!
+    expires_in: Int!
+}
+
+## 查询
+type Query {
+	token(user: UserEntity!): AccessTokenEntity!
+}
+
+## 变更
+type Mutation {
+
+}
+
+

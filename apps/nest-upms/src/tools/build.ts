@@ -22,11 +22,11 @@ export function build(path: string, output: string) {
                 } else if (text === 'Resolver') {
                     // 如果是Resolver 解析成graphql
                     transformClassDeclarationToGraphql(cls, file, project)
+                    const code = creater.create();
+                    fs.writeFileSync(output, code)
                 } else {
                     // 不用处理
                 }
-                const code = creater.create();
-                fs.writeFileSync(output, code)
                 return true;
             })
         });

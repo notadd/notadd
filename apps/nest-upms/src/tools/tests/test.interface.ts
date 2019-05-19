@@ -1,8 +1,12 @@
 import { Args, Mutation, Query, Resolver, Subscription } from '@nestjs/graphql';
 import { Controller } from '@nestjs/common';
 import { GrpcMethod } from '@nestjs/microservices';
-export interface Type1 { }
-export interface Type2 { }
+export interface Type1 { 
+    title: string;
+}
+export interface Type2 { 
+    title: string;
+}
 export type DemoType = Type1 | Type2;
 
 export interface TestResult {

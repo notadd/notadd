@@ -3,6 +3,8 @@ import { transformClassDeclarationToProto } from './transformClassDeclarationToP
 import { transformClassDeclarationToGraphql } from './transformClassDeclarationToGraphql';
 import { GraphqlCreater } from './graphql'
 import fs from 'fs';
+import { join } from 'path';
+const root = process.cwd();
 import { ProtobufCreater } from './protobuf';
 export function build(path: string, output: string) {
     const project = createProject();
@@ -22,7 +24,7 @@ export function build(path: string, output: string) {
                     const creater = new ProtobufCreater();
                     transformClassDeclarationToProto(cls, file, project, creater)
                     const code = creater.create();
-                    fs.writeFileSync(`${output}.proto`, code)
+                    fs.writeFileSync(join(root, 'apps/nest-upms/src/main.proto'), code)
                 } else if (text === 'Resolver') {
                     // 如果是Resolver 解析成graphql
                     const creater = new GraphqlCreater();

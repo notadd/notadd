@@ -21,6 +21,7 @@
 /**/*.graphql
 /**/*.proto
 /**/graphql.schema.d.ts
+/**/dist
 
 # IDE - VSCode
 .vscode/*

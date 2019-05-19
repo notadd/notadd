@@ -12,7 +12,10 @@ export class AddonEntity {
     @Column({
         type: 'int',
         comment: '上级',
+        default: 0
     })
+    pid: number;
+
     @Column({
         type: 'varchar',
         length: 20

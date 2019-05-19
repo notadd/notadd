@@ -29,9 +29,20 @@ export class AddonServiceImpl extends AddonService {
      * Get apps based on criteria
      * query addon by filter
      * @param where Get the condition query filter
+     * where {name: string}
      */
     async get(where: Partial<AddonEntity>): Promise<AddonEntity> {
-        return await this.addonRepo.findOne(where);
+        if (where.name) {
+            const addon = await this.addonRepo.findOneOrFail({
+                where: {
+                    name: where.name
+                },
+                relations: ['permissions']
+            });
+            return addon;
+        } else {
+            throw new Error(`应用名不能为空`)
+        }
     }
 
     /**

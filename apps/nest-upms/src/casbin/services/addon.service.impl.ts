@@ -1,10 +1,9 @@
 
 import { CoreAddon, ICoreAddonMessage, ICoreAddon } from '../core/addon';
 import { InjectRepository } from '@nestjs/typeorm';
-import { AddonEntity,  PermissionEntity } from '../..';
+import { AddonEntity, PermissionEntity } from '../..';
 import { Repository } from 'typeorm';
 export class AddonServiceImpl extends CoreAddon {
-
     constructor(
         @InjectRepository(AddonEntity) public readonly addonRepo: Repository<AddonEntity>,
         @InjectRepository(PermissionEntity) public readonly permissionRepo: Repository<PermissionEntity>,
@@ -25,7 +24,6 @@ export class AddonServiceImpl extends CoreAddon {
                 // 插入应用表
                 const addonEntity = new AddonEntity();
                 addonEntity.name = addon.name;
-                await this.addonRepo.insert(addonEntity);
                 // 插入权限
                 await Promise.all(addon.permission.map(async per => {
                     // 构造一个权限
@@ -35,6 +33,7 @@ export class AddonServiceImpl extends CoreAddon {
                     item.value = per.value;
                     await this.permissionRepo.insert(item);
                 }));
+                await this.addonRepo.insert(addonEntity);
             }
             return { code: 1, message: '操作成功' }
         } catch (e) {
@@ -61,8 +60,6 @@ export class AddonServiceImpl extends CoreAddon {
         } catch (e) {
             return { code: -1, message: e.message }
         }
-
-
     }
     /**
      * 更新应用
@@ -81,7 +78,7 @@ export class AddonServiceImpl extends CoreAddon {
     async upgrade(addon: ICoreAddon): Promise<ICoreAddonMessage> {
         try {
             // 通过模块名程找到数据库中所对应的模块
-            let exist = await this.addonRepo.findOne({ where: { name: addon.name } });
+            let exist = await this.addonRepo.findOne({ where: { name: addon.name }});
             //  对比判断是否有新增的权限,如果有就插入
             for (let addonPer of addon.permission) {
                 const res = exist.permissions.find(item => item.name === addonPer.name);

@@ -33,7 +33,6 @@ export class RoleServiceIpml extends RoleService {
             if (!existing) {
                 throw new RoleNoExistError();
             }
-            // console.log(role_id);
             return await this.roleRepo.delete({ role_id: role.role_id })
         } catch (e) {
             throw new DataError();

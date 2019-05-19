@@ -77,6 +77,7 @@
         "@ngx-translate/http-loader": "4.0.0",
         "@notadd/scss": "file:libs/scss",
         "@nrwl/nx": "7.8.6",
+        "@types/lodash": "^4.14.129",
         "apollo-server-express": "2.5.0",
         "cache-manager": "2.9.0",
         "casbin": "^2.0.4",

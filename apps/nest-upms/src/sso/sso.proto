@@ -20,7 +20,7 @@ message LogoutResult {
 }
 
 message TokenResult { 
-    int32 code = 1; 
+  int32 code = 1; 
 }
 
 message RefreshTokenResult {

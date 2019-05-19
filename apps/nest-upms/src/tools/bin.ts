@@ -7,6 +7,6 @@ chokidar.watch(join(root, 'apps/nest-upms/src')).on('all', (opt: string, path: s
     if (path.endsWith('.ts')) {
         const ext = extname(path)
         const name = path.replace(ext, '')
-        build(path, `${name}.graphql`)
+        build(path, name)
     }
 });

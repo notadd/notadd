@@ -1,5 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn, Timestamp, ManyToOne } from 'typeorm'
-import { PermissionEntity } from './permission.entity'
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
 @Entity({
     name: 'addon_permission'
 })

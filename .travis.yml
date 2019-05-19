@@ -39,12 +39,12 @@ install:
 before_install:
   - sh -c "if [ '$DB' = 'postgres10' ]; then bash ./testing/travis/install-postgres-10.sh; echo $DB; fi"
   - sh -c "if [ '$DB' = 'postgres11' ]; then bash ./testing/travis/install-postgres-11.sh; echo $DB; fi"  
+  - 
 script:
   - npm run test.nest.upms.e2e
-  - rm -rf tsconfig.json && cp -r ./apps/nest-upms/tsconfig.json ./
-  - ncc build ./apps/nest-upms/src/main.ts -o ncc
-#   - node ./dist/apps/nestupms/main.js
-  - node ./ncc/index.js
+#   - rm -rf tsconfig.json && cp  ./apps/nest-upms/tsconfig.json ./
+  - cd ./apps/nest-upms && ncc build ./src/main.ts -o dist -m
+  - node ./dist/index.js
 #   - istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec
 #   - codecov
  

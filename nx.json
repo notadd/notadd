@@ -22,6 +22,9 @@
     },
     "web-admin-e2e": {
       "tags": []
+    },
+    "nest-casbin": {
+      "tags": []
     }
   }
 }

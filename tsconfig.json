@@ -12,7 +12,9 @@
     "target": "esnext",
     "module": "commonjs",
     "noImplicitAny": false,
-    "typeRoots": ["node_modules/@types"],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
     "lib": [
       "esnext",
       "dom",
@@ -31,12 +33,27 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@notadd/*": ["libs/*"],
-      "@notadd/nest": ["xplat/nest/index.ts"],
-      "@notadd/nest/*": ["xplat/nest/*"],
-      "@notadd/web": ["xplat/web/index.ts"],
-      "@notadd/web/*": ["xplat/web/*"],
-      "@notadd/decorator": ["libs/decorator/src/index.ts"]
+      "@notadd/*": [
+        "libs/*"
+      ],
+      "@notadd/nest": [
+        "xplat/nest/index.ts"
+      ],
+      "@notadd/nest/*": [
+        "xplat/nest/*"
+      ],
+      "@notadd/web": [
+        "xplat/web/index.ts"
+      ],
+      "@notadd/web/*": [
+        "xplat/web/*"
+      ],
+      "@notadd/decorator": [
+        "libs/decorator/src/index.ts"
+      ],
+      "@notadd/xplat/auth": [
+        "libs/xplat/auth/src/index.ts"
+      ]
     },
     "plugins": [
       {
@@ -44,5 +61,8 @@
       }
     ]
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }

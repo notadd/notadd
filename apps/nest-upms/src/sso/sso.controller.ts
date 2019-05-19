@@ -15,7 +15,6 @@ import { AccessTokenEntity, UserEntity } from '../typeorm';
 @Controller()
 export class SsoController {
     constructor(public sso: SsoService) { }
-
     @GrpcMethod('SsoService')
     token(body: { username: string, password: string }): Observable<AccessTokenEntity> {
         console.log(body.password)

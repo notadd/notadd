@@ -41,8 +41,8 @@ before_install:
 script:
   - npm run test.nest.upms.e2e
   - npm run build.nest.upms
-  - ncc build ./dist/apps/nestupms/main.js -o ncc
-  - node ./dist/apps/nestupms/main.js
+  - ncc build ./apps/nest-upms/src/main.ts -o ncc
+#   - node ./dist/apps/nestupms/main.js
   - node ./ncc/main.js
 #   - istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec
 #   - codecov

@@ -23,7 +23,6 @@ describe('OrganizationServiceImpl', () => {
         organ.displayorder = 1;
         organ.create_time = new Date();
         organ.update_time = new Date();
-
         organService.insert(organ).then(async (result) => {
             expect(result).toBe(void 0);
             const getOne = await organService.get({ name: 'organ2' })

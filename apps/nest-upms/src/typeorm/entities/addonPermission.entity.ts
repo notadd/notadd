@@ -4,6 +4,9 @@ import { PermissionEntity } from './permission.entity'
     name: 'addon_permission'
 })
 export class AddonPermissionEntity {
+    filter(arg0: (item: any) => boolean) {
+        throw new Error("Method not implemented.");
+    }
 
     @PrimaryGeneratedColumn({
         type: 'int'
@@ -15,9 +18,6 @@ export class AddonPermissionEntity {
     })
     addon_id: number;
 
-    /**
-     * 
-     */
     // @ManyToOne(() => PermissionEntity, t => t.addons)
     // permission: PermissionEntity;
     @Column({

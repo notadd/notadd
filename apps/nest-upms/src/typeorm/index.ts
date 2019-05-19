@@ -14,8 +14,11 @@ import { UserPermissionEntity } from './entities/userPermission.entity'
 import { UserRoleEntity } from './entities/userRole.entity'
 import { AccessTokenEntity, EXPRES_TIME } from './entities/accessToken.entity'
 import { ArticleEntity } from './entities/article.entity';
-import { CategoryEntity } from './entities/articleCategory.entity';
-import { CommentEntity } from './entities/articleComment.entity';
+import { ArticleCategoryEntity } from './entities/articleCategory.entity';
+import { ArticleCommentEntity } from './entities/articleComment.entity';
+import { MemberEntity } from './entities/member.entity';
+import { PostEntity } from './entities/post.entity';
+import { PostCategoryEntity } from './entities/postCategory.entity';
 
 
 @Module({
@@ -35,8 +38,11 @@ import { CommentEntity } from './entities/articleComment.entity';
             UserRoleEntity,
             AccessTokenEntity,
             ArticleEntity,
-            CategoryEntity,
-            CommentEntity
+            ArticleCategoryEntity,
+            ArticleCommentEntity,
+            MemberEntity,
+            PostEntity,
+            PostCategoryEntity
         ])
     ]
 })

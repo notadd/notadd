@@ -12,12 +12,12 @@ export class UserRoleEntity {
         type: 'varchar',
         length: 20
     })
-    @Index()
+    // @Index()
     openid: string;
 
     @Column({
         type: 'int',
     })
-    @Index()
+    // @Index()
     role_id: number;
 }

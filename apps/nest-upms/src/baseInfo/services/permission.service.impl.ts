@@ -2,7 +2,7 @@ import { PermissionService } from '../core/permission.service';
 import { InjectRepository } from '@nestjs/typeorm';
 import { PermissionEntity } from '../../typeorm';
 import { Repository, DeleteResult } from 'typeorm';
-import { PermissionMustDataNullError, PermissionIsNullError, IdIsNullError, PermissionNameExistError } from '../errors/error';
+import { PermissionMustDataNullError, PermissionIsNullError, PermissionNameExistError } from '../errors/error';
 
 export class PermissionServiceImpl extends PermissionService {
 
@@ -10,12 +10,16 @@ export class PermissionServiceImpl extends PermissionService {
         @InjectRepository(PermissionEntity) public readonly permissionRepo: Repository<PermissionEntity>,
     ) { super() }
 
+    clear() {
+        return this.permissionRepo.clear();
+    }
+
     /**
      * 添加权限
      * @param permission 添加权限的信息
      */
     async insert(permission: PermissionEntity) {
-        if (!permission.name || !permission.type || !permission.status) {
+        if (!permission.name) {
             throw new PermissionMustDataNullError();
         }
         if (await this.get({ name: permission.name })) {
@@ -26,26 +30,26 @@ export class PermissionServiceImpl extends PermissionService {
     }
 
     /**
-     * 根据条件获取单个权限信息
-     * @param where 查询条件
-     */
+     *Get individual permission information based on criteria
+     *@param where query condition
+     */ 
     async get(where: Partial<PermissionEntity>): Promise<PermissionEntity> {
         return await this.permissionRepo.findOne(where);
     }
 
     /**
-     * 更新权限
-     * @param permission 更新的权限信息
-     * @param where 更新条件
-     */
+     *Update permissions
+     *@param permission Updated permission information
+     *@param where update conditions
+     */ 
     async save(permission: PermissionEntity, where: Partial<PermissionEntity>) {
         let exist = await this.get(where);
         if (!exist) {
             throw new PermissionIsNullError();
         }
+        //Determine whether the permission name exists in the database 
         if (permission.name) { exist.name = permission.name }
-        if (permission.pid) { exist.pid = permission.pid }
-        if (permission.value) { exist.value = permission.value }
+        // if (permission.pid) { exist.pid = permission.pid }
         if (permission.icon) { exist.icon = permission.icon }
         if (permission.displayorder) { exist.displayorder = permission.displayorder }
         if (permission.status) { exist.status = permission.status }
@@ -53,23 +57,11 @@ export class PermissionServiceImpl extends PermissionService {
     }
 
     /**
-     * 删除权限
-     * @param data 删除的权限信息,根据id删除
-     */
+     *Delete permission
+     *@param data Deleted permission information, deleted according to id
+     */ 
     async delete(permission: Partial<PermissionEntity>): Promise<DeleteResult> {
-        return await this.permissionRepo.delete({ permission_id: permission.permission_id });
-    }
-
-
-    /**
-     * 根据id查询权限
-     * @param permission_id id
-     */
-    async getPermissionById(permission_id: number): Promise<PermissionEntity> {
-        if (!permission_id) {
-            throw new IdIsNullError();
-        }
-        return await this.permissionRepo.findOne(permission_id);
+        return await this.permissionRepo.delete({ name: permission.name });
     }
 
     search(where: Partial<PermissionEntity>): Promise<void> {

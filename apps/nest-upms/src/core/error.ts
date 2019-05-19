@@ -3,4 +3,3 @@ export abstract class CoreError extends Error {
         super(message)
     }
 }
-

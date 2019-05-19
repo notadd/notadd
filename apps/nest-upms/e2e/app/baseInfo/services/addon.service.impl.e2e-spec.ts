@@ -3,7 +3,7 @@ import { Test } from '@nestjs/testing';
 import { AddonEntity } from '../../../../src/typeorm'
 import { ApplicationModule } from '../../../../src'
 import { AddonService } from '../../../../src/baseInfo/core'
-import { AddonNameError, AddonIsNullError, AddonMustDataNullError } from '../../../../src/baseInfo/errors/error';
+import { AddonIsNullError, AddonMustDataNullError } from '../../../../src/baseInfo/errors/error';
 import { ServerError } from '../../../../src/baseInfo/errors/role.error';
 
 describe('AddonServiceImpl', () => {
@@ -90,6 +90,5 @@ export function getAddon(name: string, title: string): AddonEntity {
     addon.status = 1;
     addon.appsecret = '123456';
     addon.description = '123456';
-    
     return  addon;
 }

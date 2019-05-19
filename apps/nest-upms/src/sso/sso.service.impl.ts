@@ -1,10 +1,12 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { UserEntity, AccessTokenEntity, RefreshTokenEntity, EXPRES_TIME } from '../typeorm';
-import { SsoService, AuthService } from './core/index'
+import { AccessTokenEntity, EXPRES_TIME, RefreshTokenEntity, UserEntity } from '../typeorm';
+import { AuthService, SsoService } from './core/index';
+
 @Injectable()
 export class SsoServiceImpl extends SsoService {
+
     constructor(
         @InjectRepository(UserEntity) private _user: Repository<UserEntity>,
         @InjectRepository(AccessTokenEntity) private _accessToken: Repository<AccessTokenEntity>,
@@ -16,19 +18,20 @@ export class SsoServiceImpl extends SsoService {
     /**
      * 注销登录
      */
-    async logout(user: UserEntity) {
+    async logout(access_token: string) {
         // 清空缓存
         // 更新数据库
         await this._accessToken.update({
-            openid: user.openid
+            access_token
         }, { status: -1 });
     }
     /**
      * 刷新acces token过期时间
      */
-    async refreshToken(refreshToken: RefreshTokenEntity) {
+    async refreshToken(access_token: string) {
+        const accessToken = await this.getTokenByAccessToken(access_token);
+        const refreshToken = await this._refreshToken.findOne({ where: { token: accessToken } });
         const expiresIn = new Date(new Date().setDate(new Date().getTime() + EXPRES_TIME));
-        const accessToken = refreshToken.token;
         await this._accessToken.update({
             access_token: accessToken.access_token
         }, { expires_in: expiresIn });
@@ -39,15 +42,34 @@ export class SsoServiceImpl extends SsoService {
     /**
      * 验证access token 获取用户信息
      **/
-    verify(token: AccessTokenEntity) {
-        return this._user.findOneOrFail({
+    async verify(access_token: string) {
+        const token = await this.getTokenByAccessToken(access_token);
+        return await this._user.findOneOrFail({
             openid: token.openid
         })
     }
     /**
      * 根据用户名和密码获取access token
      */
-    token(user: UserEntity) {
-        return this._auth.createToken(user)
+    async token(username: string, password: string): Promise<AccessTokenEntity> {
+        const user = await this.getUserByNameAndPsd(username, password);
+        return this._auth.createToken(user);
     }
+
+    /**
+     * 根据用户名获取用户信息
+     */
+    getUserByNameAndPsd(username: string, password: string) {
+        return this._user.findOne({ where: { username, password } });
+    }
+    /**
+     * 根据授权凭证获取token信息
+     * @param access_token 
+     */
+    getTokenByAccessToken(access_token: string): Promise<AccessTokenEntity> {
+        return this._accessToken.findOne(access_token);
+    }
+    /**
+     * 根据token_id获取RefreshToken
+     */
 }

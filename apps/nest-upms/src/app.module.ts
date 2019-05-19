@@ -10,10 +10,9 @@ import { GraphqlOptions } from './graphql.options';
 import { ssoProviders } from './sso';
 import { JwtStrategyImpl } from './sso/jwt.strategy.impl';
 import { SsoResolver } from './sso/sso.resolver';
-import { TypeormModule } from './typeorm/index';
+import allEntities from './typeorm'
 @Module({
   imports: [
-    TypeormModule,
     AuthModule.forRoot(JwtStrategyImpl),
     TypeOrmModule.forRoot({
       type: 'postgres',
@@ -22,12 +21,17 @@ import { TypeormModule } from './typeorm/index';
       username: 'postgres',
       password: 'postgres',
       database: 'test_ci',
-      entities: [__dirname + '/**/*.entity{.ts,.js}'],
+      entities: [
+        ...allEntities
+      ],
       synchronize: true,
     }),
     GraphQLModule.forRootAsync({
       useClass: GraphqlOptions,
-    })
+    }),
+    TypeOrmModule.forFeature([
+      ...allEntities
+    ])
   ],
   controllers: [
     SsoResolver

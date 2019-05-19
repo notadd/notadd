@@ -1,5 +1,3 @@
-import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
 import { AddonEntity } from './entities/addon.entity'
 import { AddonPermissionEntity } from './entities/addonPermission.entity'
 import { LoggerEntity } from './entities/logger.entity'
@@ -20,34 +18,6 @@ import { MemberEntity } from './entities/member.entity';
 import { PostEntity } from './entities/post.entity';
 import { PostCategoryEntity } from './entities/postCategory.entity';
 
-
-@Module({
-    imports: [
-        TypeOrmModule.forFeature([
-            AddonEntity,
-            AddonPermissionEntity,
-            LoggerEntity,
-            OrganizationEntity,
-            PermissionEntity,
-            RefreshTokenEntity,
-            RoleEntity,
-            RolePermissionEntity,
-            UserEntity,
-            UserOrganizationEntity,
-            UserPermissionEntity,
-            UserRoleEntity,
-            AccessTokenEntity,
-            ArticleEntity,
-            ArticleCategoryEntity,
-            ArticleCommentEntity,
-            MemberEntity,
-            PostEntity,
-            PostCategoryEntity
-        ])
-    ]
-})
-export class TypeormModule { }
-
 export {
     AccessTokenEntity,
     AddonEntity,
@@ -64,3 +34,25 @@ export {
     UserRoleEntity,
     EXPRES_TIME
 }
+
+export default [
+    AddonEntity,
+    AddonPermissionEntity,
+    LoggerEntity,
+    OrganizationEntity,
+    PermissionEntity,
+    RefreshTokenEntity,
+    RoleEntity,
+    RolePermissionEntity,
+    UserEntity,
+    UserOrganizationEntity,
+    UserPermissionEntity,
+    UserRoleEntity,
+    AccessTokenEntity,
+    ArticleEntity,
+    ArticleCategoryEntity,
+    ArticleCommentEntity,
+    MemberEntity,
+    PostEntity,
+    PostCategoryEntity
+]

@@ -1,5 +1,4 @@
-import { Entity, BeforeInsert, JoinColumn, BeforeUpdate, PrimaryGeneratedColumn, Column, Timestamp, OneToOne, UpdateDateColumn, CreateDateColumn } from 'typeorm';
-import { EXPRES_TIME } from './accessToken.entity'
+import { Entity, JoinColumn, PrimaryGeneratedColumn, Column, OneToOne, UpdateDateColumn, CreateDateColumn } from 'typeorm';
 import { AccessTokenEntity } from '..';
 @Entity({
     name: 'refreshToken'

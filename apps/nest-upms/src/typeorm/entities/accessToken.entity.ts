@@ -1,4 +1,4 @@
-import { Entity, Index, BeforeUpdate, PrimaryGeneratedColumn, Column, Timestamp, BeforeInsert, OneToOne, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import { Entity,  PrimaryGeneratedColumn, Column, OneToOne, CreateDateColumn, UpdateDateColumn } from 'typeorm';
 import { RefreshTokenEntity } from './refreshToken.entity';
 export const EXPRES_TIME = 60 * 60 * 24;
 export type IAccessTokenStatus = -1 | 0 | 1;

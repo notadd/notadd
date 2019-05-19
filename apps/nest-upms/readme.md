@@ -1,6 +1,6 @@
 ##  权限不足bug
 
 ```ts
-sudo chown -R gj002:gj002 database
+sudo chown -R gj003:gj003 database
 ```
 

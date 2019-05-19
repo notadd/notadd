@@ -1,35 +1,68 @@
 
 import { CoreAddon, ICoreAddonMessage, ICoreAddon } from '../core/addon';
 import { InjectRepository } from '@nestjs/typeorm';
-import { AddonEntity, AddonPermissionEntity, PermissionEntity } from '../..';
+import { AddonEntity,  PermissionEntity } from '../..';
 import { Repository } from 'typeorm';
-export class AddonserviceImpl extends CoreAddon {
+export class AddonServiceImpl extends CoreAddon {
 
     constructor(
         @InjectRepository(AddonEntity) public readonly addonRepo: Repository<AddonEntity>,
-        @InjectRepository(AddonPermissionEntity) public readonly addPerRepo: Repository<AddonPermissionEntity>,
-        @InjectRepository(PermissionEntity) public readonly permissionRepo: Repository<AddonPermissionEntity>,
+        @InjectRepository(PermissionEntity) public readonly permissionRepo: Repository<PermissionEntity>,
     ) { super() }
     /**
-     * 安装应用
+     * 安装应用 Todo
      * @param {ICoreAddon} addon
      * 1. 解析配置文件,添加权限
      */
     async install(addon: ICoreAddon): Promise<ICoreAddonMessage> {
-
-        //创建安装程序的路径
-
-        //
-
-        throw new Error("");
+        try {
+            // 先检查是否已经安装
+            const res = await this.addonRepo.findOneOrFail({ name: addon.name });
+            if (res) {
+                // 如果已经安装了,就跳转到更新
+                this.upgrade(addon)
+            } else {
+                // 插入应用表
+                const addonEntity = new AddonEntity();
+                addonEntity.name = addon.name;
+                await this.addonRepo.insert(addonEntity);
+                // 插入权限
+                await Promise.all(addon.permission.map(async per => {
+                    // 构造一个权限
+                    const item = new PermissionEntity();
+                    item.fromAddon = addonEntity;
+                    item.name = `${addon.name}.${per.name}`
+                    item.value = per.value;
+                    await this.permissionRepo.insert(item);
+                }));
+            }
+            return { code: 1, message: '操作成功' }
+        } catch (e) {
+            return { code: -1, message: e.message }
+        }
     }
     /**
-     * 卸载应用
+     * 卸载应用 
      * @param {ICoreAddon} addon
-     * 1. 根据应用拿到权限,删掉
+     * 1. 根据应用名称拿到权限,删掉
      */
-    uninstall(addon: ICoreAddon): Promise<ICoreAddonMessage> {
-        throw new Error("");
+    async uninstall(addon: ICoreAddon): Promise<ICoreAddonMessage> {
+        try {
+            let permissions = await this.addonRepo.find({ where: { name: addon.name } });
+            for (let permission of permissions) {
+                if (permission) {
+                    await this.permissionRepo.delete(name);
+                }
+            }
+            return {
+                code: 1,
+                message: '操作成功'
+            }
+        } catch (e) {
+            return { code: -1, message: e.message }
+        }
+
+
     }
     /**
      * 更新应用
@@ -53,7 +86,7 @@ export class AddonserviceImpl extends CoreAddon {
             for (let addonPer of addon.permission) {
                 const res = exist.permissions.find(item => item.name === addonPer.name);
                 if (!res) {
-                    this.addPerRepo.insert(res);
+                    this.permissionRepo.insert(res);
                 } else {
 
                 }
@@ -63,9 +96,9 @@ export class AddonserviceImpl extends CoreAddon {
             for (let addonPer of addon.permission) {
                 const res = exist.permissions.find(item => item.name === addonPer.name);
                 if (res) {
-                    this.addPerRepo.delete(res)
+                    this.permissionRepo.delete(res)
                 } else {
-                    this.addPerRepo.save(res);
+                    this.permissionRepo.save(res);
                 }
             }
             return {

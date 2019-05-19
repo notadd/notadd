@@ -3,8 +3,6 @@ import { CoreAddon, ICoreAddonMessage, ICoreAddon } from '../core/addon';
 import { InjectRepository } from '@nestjs/typeorm';
 import { AddonEntity, AddonPermissionEntity, PermissionEntity } from '../..';
 import { Repository } from 'typeorm';
-import { PermissionNameExistError } from '../../baseInfo/errors/error';
-import { Permission } from '../../decorator';
 export class AddonserviceImpl extends CoreAddon {
 
     constructor(

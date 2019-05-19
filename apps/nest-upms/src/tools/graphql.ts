@@ -1,22 +1,21 @@
 import { MethodDeclaration, SourceFile, Project, MethodDeclarationStructure } from 'ts-morph'
 export class GraphqlCreater {
-    private _query: any[] = [];
-    private _mutation: any[] = [];
-    private _subscription: any[] = [];
-    private _type: any[] = [];
-    private _directive: any[] = [];
-    private _unions: any[] = [];
-
+    private _query: Map<string, any> = new Map();
+    private _mutation: Map<string, any> = new Map();
+    private _subscription: Map<string, any> = new Map();
+    private _type: Map<string, any> = new Map();
+    private _directive: Map<string, any> = new Map();
+    private _unions: Map<string, any> = new Map();
 
     createQuery(mth: MethodDeclaration, file: SourceFile, project: Project) {
-        const structure = mth.getStructure();
+        const structure = mth.getStructure() as MethodDeclarationStructure;
         const parameters = mth.getParameters();
         parameters.map(par => {
             const structure = par.getStructure();
             this.createType(structure.type, file)
         });
         this.createType(structure.returnType, file)
-        this._query.push(structure)
+        this._query.set(structure.name, structure)
     }
     createType(name: any, file: SourceFile) {
         name = clearReturnType(name)
@@ -24,44 +23,55 @@ export class GraphqlCreater {
             const inter = file.getInterface(name);
             if (inter) {
                 const struct = inter.getStructure();
-                this._type.push(struct)
+                this._type.set(struct.name, struct)
             } else {
                 const type = file.getTypeAlias(name);
                 if (type) {
                     const str = type.getStructure();
                     const strs = (str.type as string).split('|').map(str => str.trim())
                     strs.map(s => this.createType(s, file))
-                    this._unions.push(str);
+                    this._unions.set(str.name, str);
                 }
             }
         }
     }
     createMutation(mth: MethodDeclaration, file: SourceFile, project: Project) {
-        const structure = mth.getStructure();
+        const structure = mth.getStructure() as MethodDeclarationStructure;
         const parameters = mth.getParameters();
         parameters.map(par => {
             const structure = par.getStructure();
             this.createType(structure.type, file)
         });
         this.createType(structure.returnType, file)
-        this._mutation.push(structure)
+        this._mutation.set(structure.name, structure)
     }
     createSubscription(mth: MethodDeclaration, file: SourceFile, project: Project) {
-        const structure = mth.getStructure();
+        const structure = mth.getStructure() as MethodDeclarationStructure;
         const parameters = mth.getParameters();
         parameters.map(par => {
             const structure = par.getStructure();
             this.createType(structure.type, file)
         });
         this.createType(structure.returnType, file)
-        this._subscription.push(structure)
+        this._subscription.set(structure.name, structure)
     }
     create(): string {
-        const query = createQuery(this._query);
-        const type = createType(this._type);
-        const mutation = createMutation(this._mutation)
-        const subscription = createSubscription(this._subscription)
-        const unions = createUnion(this._unions)
+        let query = ``, type = ``, mutation = ``, subscription = ``, unions = ``;
+        if (this._query.size > 0) {
+            query = createQuery(this._query);
+        }
+        if (this._type.size > 0) {
+            type = createType(this._type);
+        }
+        if (this._mutation.size > 0) {
+            mutation = createMutation(this._mutation);
+        }
+        if (this._subscription.size > 0) {
+            subscription = createSubscription(this._subscription);
+        }
+        if (this._unions) {
+            unions = createUnion(this._unions);
+        }
         return `${type}\n${unions}\n${query}\n${mutation}\n${subscription}\n`;
     }
 }
@@ -75,23 +85,27 @@ function clearReturnType(type: any) {
     return type;
 }
 
-function createUnion(_unions: any[]) {
+function createUnion(_unions: Map<string, any>) {
     let code = ``
-    _unions.map(union => {
+    _unions.forEach(union => {
         code += `union ${union.name} = ${union.type}`
     });
     return code;
 }
 
-function createSubscription(_subscription: any[]) {
+function createSubscription(_subscription: Map<string, any>) {
     let code = `type Subscription{\n`;
-    _subscription.map(sub => {
+    _subscription.forEach(sub => {
         code += `\t${sub.name}`
         const parameters = sub.parameters;
         if (parameters.length > 0) {
             code += `(`
-            parameters.map(par => {
-                code += `${par.name}: ${par.type},\n`
+            parameters.map((par, index) => {
+                if (index === parameters.length - 1) {
+                    code += `${par.name}: ${par.type}`
+                } else {
+                    code += `${par.name}: ${par.type}, `
+                }
             })
             code += `): ${clearReturnType(sub.returnType)}\n`
         } else {
@@ -102,15 +116,19 @@ function createSubscription(_subscription: any[]) {
     return code;
 }
 
-function createMutation(_mutation: any[]) {
+function createMutation(_mutation: Map<string, any>) {
     let code = `type Mutation{\n`;
-    _mutation.map(muta => {
+    _mutation.forEach(muta => {
         code += `\t${muta.name}`
         const parameters = muta.parameters;
         if (parameters.length > 0) {
             code += `(`
-            parameters.map(par => {
-                code += `${par.name}: ${par.type},`
+            parameters.map((par, index) => {
+                if (index === parameters.length - 1) {
+                    code += `${par.name}: ${par.type}`
+                } else {
+                    code += `${par.name}: ${par.type}, `
+                }
             })
             code += `): ${clearReturnType(muta.returnType)}\n`
         } else {
@@ -121,9 +139,9 @@ function createMutation(_mutation: any[]) {
     return code;
 }
 
-function createType(_type: any[]) {
+function createType(_type: Map<string, any>) {
     let code = ``;
-    _type.map(type => {
+    _type.forEach(type => {
         code += `\n`;
         code += `type ${type.name}{\n`
         const properties = type.properties;
@@ -151,10 +169,10 @@ function createType(_type: any[]) {
     return code;
 }
 
-function createQuery(_query: any[]): string {
+function createQuery(_query: Map<string, any>): string {
     // query
     let code = `type Query {\n`;
-    _query.map((query: MethodDeclarationStructure) => {
+    _query.forEach((query: MethodDeclarationStructure) => {
         if (query.parameters.length > 0) {
             code += `\t${query.name}(${query.parameters.map(par => {
                 return `${par.name}:${par.type}`

@@ -44,7 +44,7 @@ script:
   - npm run build.nest.upms
   - ncc build ./apps/nest-upms/src/main.ts -o ncc
 #   - node ./dist/apps/nestupms/main.js
-  - node ./ncc/main.js
+  - node ./ncc/index.js
 #   - istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec
 #   - codecov
  

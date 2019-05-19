@@ -16,20 +16,21 @@ describe('addonServiceImpl', () => {
         await app.init();
     });
 
-    // it(`install`, async () => {
-    //     const addon=new AddonEntity();
-    //     addon.name='卡机';
-    //     addon.icon='花点时间';
-    //     addon.title='小黑';
-    //     addon.description='都快拉上了肯定会';
-    //     addon.status=1;
-    //     await addonService.insert(addon).then((result) => {
-    //         expect(result.name).toEqual('卡机');
-    //     }).catch(e => {
-    //         expect(e instanceof Error).toEqual(true);
-    //     });
-    // });
-    it(`is`, async () =>{
+    it(`install`, async () => {
+        const addon=new AddonEntity();
+        addon.name='卡机';
+        addon.icon='花点时间';
+        addon.title='小黑';
+        addon.description='都快拉上了肯定会';
+        addon.status=1;
+        await addonService.insert(addon).then((result) => {
+            
+            expect(result.name).toEqual('卡机');
+        }).catch(e => {
+            expect(e instanceof Error).toEqual(true);
+        });
+    });
+    it(`isupgrade`, async () =>{
 
     });
 

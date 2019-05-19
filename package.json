@@ -39,7 +39,15 @@
         "run:tools": "ts-node --project ./tools/tsconfig.tools.json -r tsconfig-paths/register",
         "hotfix": "npm run run:tools ./tools/hotfix/hotfix.ts",
         "task:lodash-optimize": "npm run run:tools  ./tools/tasks/lodash-optimize",
-        "postinstall": "npm run hotfix"
+        "postinstall": "npm run hotfix",
+        "serve.nest.casbin": "ts-node -P apps/nest-casbin/tsconfig.json apps/nest-casbin/src/main.ts",
+        "start.nest.casbin": "npm-run-all -p serve.nest.casbin",
+        "build.nest.casbin": "tsc -p apps/nest-casbin/tsconfig.json",
+        "test.nest.casbin": "jest --config=apps/nest-casbin/jest.json",
+        "test.nest.casbin.coverage": "jest --config=apps/nest-casbin/jest.json --coverage --coverageDirectory=coverage",
+        "test.nest.casbin.watch": "jest --config=apps/nest-casbin/jest.json --watch",
+        "test.nest.casbin.e2e": "jest --config=apps/nest-casbin/e2e/jest-e2e.json --forceExit",
+        "test.nest.casbin.e2e.watch": "jest --config=apps/nest-casbin/e2e/jest-e2e.json --watch"
     },
     "private": true,
     "dependencies": {
@@ -82,16 +90,13 @@
         "graphql-tools": "4.0.4",
         "grpc": "1.20.3",
         "helmet": "3.18.0",
-        "mysql": "2.17.1",
+        "mocha": "^6.1.4",
         "passport": "^0.4.0",
         "passport-jwt": "4.0.0",
         "pg": "7.11.0",
-        "prisma-binding": "2.3.10",
         "reflect-metadata": "0.1.13",
         "rxjs": "6.5.2",
-        "type-graphql": "0.17.4",
         "typeorm": "^0.2.17",
-        "typeorm-adapter": "^1.0.3",
         "zone.js": "0.9.1"
     },
     "devDependencies": {

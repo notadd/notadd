@@ -18,6 +18,9 @@
 .settings/
 *.sublime-workspace
 
+/**/*.graphql
+/**/*.proto
+/**/graphql.schema.d.ts
 
 # IDE - VSCode
 .vscode/*

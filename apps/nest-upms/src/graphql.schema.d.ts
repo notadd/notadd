@@ -9,7 +9,7 @@ export class LogoutBodyRequest {
     access_token: string;
 }
 
-export class RefreshTokenRequest {
+export class RefreshTokenBodyRequest {
     access_token: string;
 }
 
@@ -23,13 +23,13 @@ export class VerifyBodyRequest {
 }
 
 export abstract class IMutation {
-    abstract refreshToken(body?: RefreshTokenRequest): Result | Promise<Result>;
-    abstract logout(body?: LogoutBodyRequest): Result | Promise<Result>;
+    abstract refreshToken(body: RefreshTokenBodyRequest): Result | Promise<Result>;
+    abstract logout(body: LogoutBodyRequest): Result | Promise<Result>;
 }
 
 export abstract class IQuery {
-    abstract token(body?: TokenBodyRequest): TokenResult | Promise<TokenResult>;
-    abstract verify(body?: VerifyBodyRequest): Result | Promise<Result>;
+    abstract token(body: TokenBodyRequest): TokenResult | Promise<TokenResult>;
+    abstract verify(body: VerifyBodyRequest): Result | Promise<Result>;
 }
 
 export class Result {

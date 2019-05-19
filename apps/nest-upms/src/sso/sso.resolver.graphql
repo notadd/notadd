@@ -14,19 +14,19 @@ type Result{
 	code: Int!
 	msg: String!
 }
-input RefreshTokenRequest{
+input RefreshTokenBodyRequest{
 	access_token: String!
 }
-
 input LogoutBodyRequest{
 	access_token: String!
 }
 
 type Query {
-	token(body:TokenBodyRequest):TokenResult!
-	verify(body:VerifyBodyRequest):Result!
+	token(body: TokenBodyRequest!): TokenResult!
+	verify(body: VerifyBodyRequest!): Result!
 }
 type Mutation{
-	refreshToken(body: RefreshTokenRequest): Result!
-	logout(body: LogoutBodyRequest): Result!
+	refreshToken(body: RefreshTokenBodyRequest!): Result!
+	logout(body: LogoutBodyRequest!): Result!
 }
+

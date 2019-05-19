@@ -16,7 +16,7 @@ export class SsoResolver {
     @Query()
     @GrpcMethod('SsoService')
     token(@Args() body: TokenBodyRequest): Observable<TokenResult> {
-        // 暂放
+        // 暂放console
         console.log(body.password)
         return from(this.sso.token(body.username, body.password))
             .pipe(
@@ -52,7 +52,7 @@ export class SsoResolver {
      */
     @Mutation()
     @GrpcMethod('SsoService')
-    refreshToken(@Args() body: RefreshTokenRequest): Observable<Result> {
+    refreshToken(@Args() body: RefreshTokenBodyRequest): Observable<Result> {
         return from(this.sso.refreshToken(body.access_token))
             .pipe(
                 map(res => {
@@ -69,21 +69,17 @@ export class SsoResolver {
      */
     @Mutation()
     @GrpcMethod('SsoService')
-     logout(@Args() body: LogoutBodyRequest): Result {
-        // let token = await this.sso.getTokenByAccessToken(body.access_token);
-        return {
-            code: 200,
-            msg: '注销成功',
-        }
-        //     return from(this.sso.logout(body.access_token))
-        //         .pipe(
-        //             map(res => {
-        //                 return {
-        //                     code: 200,
-        //                     msg: '注销成功',
-        //                 }
-        //             }),
-        //         );
+    logout(@Args() body: LogoutBodyRequest): Observable<Result> {
+        let token = this.sso.getTokenByAccessToken(body.access_token);
+        return from(this.sso.logout(body.access_token))
+            .pipe(
+                map(res => {
+                    return {
+                        code: 200,
+                        msg: '注销成功',
+                    }
+                }),
+            );
     }
 }
 
@@ -100,7 +96,7 @@ export interface VerifyBodyRequest {
     access_token: string;
 }
 
-export interface RefreshTokenRequest {
+export interface RefreshTokenBodyRequest {
     access_token: string;
 }
 

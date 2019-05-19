@@ -1,0 +1,60 @@
+
+type TokenBodyRequest{
+	username: String!
+	password: String!
+}
+type TokenResult{
+	code: String!
+	message: String!
+}
+type VerifyBodyRequest{
+	access_token: String!
+}
+type Result{
+	code: Int!
+	msg: String!
+}
+type RefreshTokenBodyRequest{
+	access_token: String!
+}
+type LogoutBodyRequest{
+	access_token: String!
+}
+type TokenBody{
+	username: String!
+	password: String!
+}
+type VerifyBody{
+	access_token: String!
+}
+type VerifyResult{
+	code: String!
+	message: String!
+}
+type RefreshToken{
+	code: String!
+	message: String!
+	refresh_token: String!
+}
+type LoginResult{
+	code: String!
+	message: String!
+}
+type Type1{
+	title: String!
+}
+type Type2{
+	title: String!
+}
+union DemoType = Type1 | Type2
+type Query {
+	token(body:TokenBody):TokenResult
+	verify(body:VerifyBody):VerifyResult
+}
+type Mutation{
+	refreshToken(body: VerifyBody): RefreshToken
+	logout(body: VerifyBody): LoginResult
+}
+type Subscription{
+	test: DemoType
+}

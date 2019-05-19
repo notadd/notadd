@@ -1,0 +1,14 @@
+
+type LogoutBody{
+	access_token: String!
+}
+
+type Query {
+	token(body:{ username: string, password: string }):undefined
+	verify(body:{ access_token: string }):undefined
+}
+type Mutation{
+	refreshToken(body: { access_token: string }): undefined
+	logout(body: LogoutBody): undefined
+}
+

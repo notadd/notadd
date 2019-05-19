@@ -1,33 +1,22 @@
 
-type TokenResult{
+type Result{
 	code: Int!
-	msg: String!
-}
-type SsoResult{
-	code: Int!
-	msg: String!
 }
 
-input TokenBodyRequest{
+input TokenBody{
 	username: String!
 	password: String!
 }
-input VerifyBodyRequest{
-	access_token: String!
-}
-input RefreshTokenBodyRequest{
-	access_token: String!
-}
-input LogoutBodyRequest{
+input LogoutBody{
 	access_token: String!
 }
 
 type Query {
-	token(body: TokenBodyRequest!): TokenResult
-	verify(body: VerifyBodyRequest!): SsoResult
+	token(body: TokenBody!): Result
+	verify(body: LogoutBody!): Result
 }
 type Mutation{
-	refreshToken(body: RefreshTokenBodyRequest!): SsoResult
-	logout(body: LogoutBodyRequest!): SsoResult
+	refreshToken(body: LogoutBody!): Result
+	logout(body: LogoutBody!): Result
 }
 

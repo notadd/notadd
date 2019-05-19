@@ -5,40 +5,25 @@
  */
 
 /* tslint:disable */
-export class LogoutBodyRequest {
+export class LogoutBody {
     access_token: string;
 }
 
-export class RefreshTokenBodyRequest {
-    access_token: string;
-}
-
-export class TokenBodyRequest {
+export class TokenBody {
     username: string;
     password: string;
 }
 
-export class VerifyBodyRequest {
-    access_token: string;
-}
-
 export abstract class IMutation {
-    abstract refreshToken(body: RefreshTokenBodyRequest): SsoResult | Promise<SsoResult>;
-    abstract logout(body: LogoutBodyRequest): SsoResult | Promise<SsoResult>;
+    abstract refreshToken(body: LogoutBody): Result | Promise<Result>;
+    abstract logout(body: LogoutBody): Result | Promise<Result>;
 }
 
 export abstract class IQuery {
-    abstract token(body: TokenBodyRequest): TokenResult | Promise<TokenResult>;
-    abstract verify(body: VerifyBodyRequest): SsoResult | Promise<SsoResult>;
+    abstract token(body: TokenBody): Result | Promise<Result>;
+    abstract verify(body: LogoutBody): Result | Promise<Result>;
 }
 
-export class SsoResult {
+export class Result {
     code: number;
-    msg: string;
-    data?: number[];
-}
-
-export class TokenResult {
-    code: number;
-    msg: string;
 }

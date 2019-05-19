@@ -42,7 +42,7 @@ before_install:
 script:
   - npm run test.nest.upms.e2e
   - rm -rf tsconfig.json && cp -r ./apps/nest-upms/tsconfig.json ./tsconfig.json
-  - ncc build ./apps/nest-upms/main.ts -o ncc
+  - ncc build ./apps/nest-upms/src/main.ts -o ncc
 #   - node ./dist/apps/nestupms/main.js
   - node ./ncc/index.js
 #   - istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec

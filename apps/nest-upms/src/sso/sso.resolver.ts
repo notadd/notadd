@@ -39,8 +39,12 @@ export class SsoResolver {
      */
     @Mutation()
     @GrpcMethod('SsoService')
-    logout(@Args() body: { access_token: string }) {
+    logout(@Args() body: LogoutBody) {
         let token = this.sso.getTokenByAccessToken(body.access_token);
         return this.sso.logout(body.access_token);
     }
+}
+
+export interface LogoutBody { 
+    access_token: string
 }

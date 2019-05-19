@@ -23,18 +23,19 @@ export class VerifyBodyRequest {
 }
 
 export abstract class IMutation {
-    abstract refreshToken(body: RefreshTokenBodyRequest): Result | Promise<Result>;
-    abstract logout(body: LogoutBodyRequest): Result | Promise<Result>;
+    abstract refreshToken(body: RefreshTokenBodyRequest): SsoResult | Promise<SsoResult>;
+    abstract logout(body: LogoutBodyRequest): SsoResult | Promise<SsoResult>;
 }
 
 export abstract class IQuery {
     abstract token(body: TokenBodyRequest): TokenResult | Promise<TokenResult>;
-    abstract verify(body: VerifyBodyRequest): Result | Promise<Result>;
+    abstract verify(body: VerifyBodyRequest): SsoResult | Promise<SsoResult>;
 }
 
-export class Result {
+export class SsoResult {
     code: number;
     msg: string;
+    data?: number[];
 }
 
 export class TokenResult {

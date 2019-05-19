@@ -1,18 +1,19 @@
 
-input TokenBodyRequest{
-	username: String!
-	password: String!
-}
 type TokenResult{
 	code: Int!
 	msg: String!
 }
-input VerifyBodyRequest{
-	access_token: String!
-}
-type Result{
+type SsoResult{
 	code: Int!
 	msg: String!
+}
+
+input TokenBodyRequest{
+	username: String!
+	password: String!
+}
+input VerifyBodyRequest{
+	access_token: String!
 }
 input RefreshTokenBodyRequest{
 	access_token: String!
@@ -22,11 +23,11 @@ input LogoutBodyRequest{
 }
 
 type Query {
-	token(body: TokenBodyRequest!): TokenResult!
-	verify(body: VerifyBodyRequest!): Result!
+	token(body: TokenBodyRequest!): TokenResult
+	verify(body: VerifyBodyRequest!): SsoResult
 }
 type Mutation{
-	refreshToken(body: RefreshTokenBodyRequest!): Result!
-	logout(body: LogoutBodyRequest!): Result!
+	refreshToken(body: RefreshTokenBodyRequest!): SsoResult
+	logout(body: LogoutBodyRequest!): SsoResult
 }
 

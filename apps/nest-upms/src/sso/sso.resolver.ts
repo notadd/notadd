@@ -51,5 +51,5 @@ export interface LogoutBody {
 
 export interface TokenBody {
     username?: string;
-    password: string;
+    password: string[];
 }

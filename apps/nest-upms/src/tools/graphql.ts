@@ -1,9 +1,9 @@
-import { MethodDeclaration, SourceFile, Project, MethodDeclarationStructure } from 'ts-morph'
+import { MethodDeclaration, SourceFile, InterfaceDeclaration, ParameterDeclaration, Project, MethodDeclarationStructure } from 'ts-morph'
 export class GraphqlCreater {
     private _query: Map<string, any> = new Map();
     private _mutation: Map<string, any> = new Map();
     private _subscription: Map<string, any> = new Map();
-    private _type: Map<string, any> = new Map();
+    private _type: Map<string, InterfaceDeclaration> = new Map();
     private _directive: Map<string, any> = new Map();
     private _unions: Map<string, any> = new Map();
     private _inputs: Map<string, any> = new Map();
@@ -13,18 +13,17 @@ export class GraphqlCreater {
         const parameters = mth.getParameters();
         parameters.map(par => {
             const structure = par.getStructure();
-            this.createInput(structure.type, file)
+            this.createInput(structure.type, par, file)
         });
         this.createType(structure.returnType, file)
         this._query.set(structure.name, structure)
     }
-    createInput(name: any, file: SourceFile) {
+    createInput(name: any, parameter: ParameterDeclaration, file: SourceFile) {
         name = clearReturnType(name)
         if (typeof name === 'string') {
             const inter = file.getInterface(name);
             if (inter) {
-                const struct = inter.getStructure();
-                this._inputs.set(struct.name, struct)
+                this._inputs.set(name, inter)
             } else {
                 const type = file.getTypeAlias(name);
                 if (type) {
@@ -41,8 +40,7 @@ export class GraphqlCreater {
         if (typeof name === 'string') {
             const inter = file.getInterface(name);
             if (inter) {
-                const struct = inter.getStructure();
-                this._type.set(struct.name, struct)
+                this._type.set(name, inter)
             } else {
                 const type = file.getTypeAlias(name);
                 if (type) {
@@ -59,7 +57,7 @@ export class GraphqlCreater {
         const parameters = mth.getParameters();
         parameters.map(par => {
             const structure = par.getStructure();
-            this.createInput(structure.type, file)
+            this.createInput(structure.type, par, file)
         });
         this.createType(structure.returnType, file)
         this._mutation.set(structure.name, structure)
@@ -69,7 +67,7 @@ export class GraphqlCreater {
         const parameters = mth.getParameters();
         parameters.map(par => {
             const structure = par.getStructure();
-            this.createInput(structure.type, file)
+            this.createInput(structure.type, par, file)
         });
         this.createType(structure.returnType, file)
         this._subscription.set(structure.name, structure)
@@ -100,44 +98,19 @@ export class GraphqlCreater {
 
 export default new GraphqlCreater()
 
-function createInput(_type: Map<string, any>) {
-    let code = ``;
-    _type.forEach(type => {
-        code += `\n`;
-        code += `input ${type.name}{\n`
-        const properties = type.properties;
-        properties.map(pro => {
-            code += `\t${pro.name}: `;
-            if (pro.type === 'string') {
-                code += `String`
-            } else if (pro.type === 'number') {
-                code += `Int`
-            } else if (pro.type === 'boolean') {
-                code += `Boolean`
-            } else if (pro.type === 'Float') {
-                code += `Float`
-            } else if (pro.type === 'ID') {
-                code += `ID`
-            } else {
-                debugger;
-            }
-            if (!pro.hasQuestionToken) {
-                code += `!`
-            }
-            code += `\n`
-        })
-        code += `}`;
-    });
-    return code;
-}
-
+/**
+ * return
+ */
 function clearReturnType(type: any) {
     if (typeof type === 'string') {
         return type.replace(/.*<(.*?)>/, '$1')
     }
     return type;
 }
-
+/**
+ * union
+ * @param _unions 
+ */
 function createUnion(_unions: Map<string, any>) {
     let code = ``
     _unions.forEach(union => {
@@ -145,7 +118,10 @@ function createUnion(_unions: Map<string, any>) {
     });
     return code;
 }
-
+/**
+ * subscription
+ * @param _subscription 
+ */
 function createSubscription(_subscription: Map<string, any>) {
     let code = `type Subscription{\n`;
     _subscription.forEach(sub => {
@@ -170,7 +146,10 @@ function createSubscription(_subscription: Map<string, any>) {
     code += `}`
     return code;
 }
-
+/**
+ * mutation
+ * @param _mutation 
+ */
 function createMutation(_mutation: Map<string, any>) {
     let code = `type Mutation{\n`;
     _mutation.forEach(muta => {
@@ -195,29 +174,55 @@ function createMutation(_mutation: Map<string, any>) {
     code += `}`;
     return code;
 }
+/**
+ * input
+ * @param _type 
+ */
+function createInput(_type: Map<string, InterfaceDeclaration>) {
+    return createType(_type, 'input')
+}
 
-function createType(_type: Map<string, any>) {
+function transformType(type: string) {
+    switch (type) {
+        case "string":
+        case "String":
+            return "String";
+        case "number":
+        case "Number":
+            return "Int";
+        case "boolean":
+        case "Boolean":
+            return "Boolean";
+        default:
+            return type;
+    }
+}
+function createType(_type: Map<string, InterfaceDeclaration>, typeName: 'type' | 'input' = 'type') {
     let code = ``;
-    _type.forEach(type => {
+    _type.forEach((item, name) => {
         code += `\n`;
-        code += `type ${type.name}{\n`
-        const properties = type.properties;
+        code += `${typeName} ${name}{\n`;
+        let properties = item.getProperties();
         properties.map(pro => {
-            code += `\t${pro.name}: `;
-            if (pro.type === 'string') {
+            const struct = pro.getStructure();
+            code += `\t${struct.name}: `;
+            if (struct.type === 'string') {
                 code += `String`
-            } else if (pro.type === 'number') {
+            } else if (struct.type === 'number') {
                 code += `Int`
-            } else if (pro.type === 'boolean') {
+            } else if (struct.type === 'boolean') {
                 code += `Boolean`
-            } else if (pro.type === 'Float') {
+            } else if (struct.type === 'Float') {
                 code += `Float`
-            } else if (pro.type === 'ID') {
+            } else if (struct.type === 'ID') {
                 code += `ID`
+            } else if ((struct.type as string).endsWith('[]')) {
+                const tName = (struct.type as string).replace('[]', '')
+                code += `[${transformType(tName)}]`
             } else {
                 debugger;
             }
-            if (!pro.hasQuestionToken) {
+            if (!struct.hasQuestionToken) {
                 code += `!`
             }
             code += `\n`

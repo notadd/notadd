@@ -43,7 +43,7 @@ before_install:
 script:
   - npm run test.nest.upms.e2e
 #   - rm -rf tsconfig.json && cp  ./apps/nest-upms/tsconfig.json ./
-  - cd ./apps/nest-upms && ncc build ./src/main.ts -o dist -m
+  - export NODE_OPTIONS=--max_old_space_size=4096 && cd ./apps/nest-upms && ncc build ./src/main.ts -o dist -m
   - node ./dist/index.js
 #   - istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec
 #   - codecov

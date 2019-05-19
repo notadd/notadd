@@ -1,9 +1,10 @@
 import { createProject } from './project'
 import { transformClassDeclarationToProto } from './transformClassDeclarationToProto';
 import { transformClassDeclarationToGraphql } from './transformClassDeclarationToGraphql';
-import creater from './graphql'
+import { GraphqlCreater } from './graphql'
 import fs from 'fs';
 export function build(path: string, output: string) {
+    const creater = new GraphqlCreater();
     const project = createProject();
     project.addExistingSourceFiles(path)
     const sourceFiles = project.getSourceFiles(path);
@@ -21,7 +22,7 @@ export function build(path: string, output: string) {
                     transformClassDeclarationToProto(cls, file, project)
                 } else if (text === 'Resolver') {
                     // 如果是Resolver 解析成graphql
-                    transformClassDeclarationToGraphql(cls, file, project)
+                    transformClassDeclarationToGraphql(cls, file, project, creater)
                     const code = creater.create();
                     fs.writeFileSync(output, code)
                 } else {

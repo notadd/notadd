@@ -12,7 +12,7 @@ export class SsoResolver {
      */
     @Query()
     @GrpcMethod('SsoService')
-    async token(@Args() body: { username: string, password: string }) {
+    async token(@Args() body?: TokenBody) {
         console.log(body.password)
         return await this.sso.token(body.username, body.password);
     }
@@ -22,7 +22,7 @@ export class SsoResolver {
      */
     @Query()
     @GrpcMethod('SsoService')
-    async verify(@Args() body: { access_token: string }) {
+    async verify(@Args() body?: LogoutBody) {
         return await this.sso.verify(body.access_token);
     }
 
@@ -31,7 +31,7 @@ export class SsoResolver {
      */
     @Mutation()
     @GrpcMethod('SsoService')
-    refreshToken(@Args() body: { access_token: string }) {
+    refreshToken(@Args() body: LogoutBody) {
         return this.sso.refreshToken(body.access_token);
     }
     /**
@@ -39,12 +39,17 @@ export class SsoResolver {
      */
     @Mutation()
     @GrpcMethod('SsoService')
-    logout(@Args() body: LogoutBody) {
+    logout(@Args() body?: LogoutBody) {
         let token = this.sso.getTokenByAccessToken(body.access_token);
         return this.sso.logout(body.access_token);
     }
 }
 
-export interface LogoutBody { 
-    access_token: string
+export interface LogoutBody {
+    access_token?: string;
+}
+
+export interface TokenBody {
+    username?: string;
+    password: string;
 }

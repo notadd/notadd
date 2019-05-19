@@ -15,9 +15,7 @@ export class SsoResolver {
      */
     @Query()
     @GrpcMethod('SsoService')
-    token(@Args() body: TokenBodyRequest): Observable<TokenResult> {
-        // 暂放console
-        console.log(body.password)
+    token(@Args('body') body: TokenBodyRequest): Observable<TokenResult> {
         return from(this.sso.token(body.username, body.password))
             .pipe(
                 map(res => {
@@ -35,7 +33,7 @@ export class SsoResolver {
      */
     @Query()
     @GrpcMethod('SsoService')
-    verify(@Args() body: VerifyBodyRequest): Observable<Result> {
+    verify(@Args('body') body: VerifyBodyRequest): Observable<SsoResult> {
         return from(this.sso.verify(body.access_token))
             .pipe(
                 map(res => {
@@ -52,7 +50,7 @@ export class SsoResolver {
      */
     @Mutation()
     @GrpcMethod('SsoService')
-    refreshToken(@Args() body: RefreshTokenBodyRequest): Observable<Result> {
+    refreshToken(@Args('body') body: RefreshTokenBodyRequest): Observable<SsoResult> {
         return from(this.sso.refreshToken(body.access_token))
             .pipe(
                 map(res => {
@@ -69,7 +67,7 @@ export class SsoResolver {
      */
     @Mutation()
     @GrpcMethod('SsoService')
-    logout(@Args() body: LogoutBodyRequest): Observable<Result> {
+    logout(@Args('body') body: LogoutBodyRequest): Observable<SsoResult> {
         let token = this.sso.getTokenByAccessToken(body.access_token);
         return from(this.sso.logout(body.access_token))
             .pipe(
@@ -105,7 +103,9 @@ export interface TokenResult {
     msg: string;
 }
 
-export interface Result {
+export interface SsoResult {
     code: number;
     msg: string;
 }
+
+

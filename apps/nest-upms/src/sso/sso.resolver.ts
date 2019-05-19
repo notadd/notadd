@@ -2,6 +2,18 @@ import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { SsoService } from './core/sso.service';
 import { Controller } from '@nestjs/common';
 import { GrpcMethod } from '@nestjs/microservices';
+import { of, Observable } from 'rxjs';
+
+export interface RefreshTokenResult {
+    code: number;
+    access_token: string;
+    refresh_token: string;
+}
+
+
+export interface Result {
+    code: number;
+}
 
 @Controller()
 @Resolver()
@@ -12,9 +24,11 @@ export class SsoResolver {
      */
     @Query()
     @GrpcMethod('SsoService')
-    async token(@Args() body?: TokenBody) {
-        console.log(body.password)
-        return await this.sso.token(body.username, body.password);
+    token(@Args() body: TokenBody): Observable<Result> {
+        // const token = await this.sso.token(body.username, body.password);
+        return of({
+            code: 1
+        })
     }
 
     /**
@@ -22,8 +36,10 @@ export class SsoResolver {
      */
     @Query()
     @GrpcMethod('SsoService')
-    async verify(@Args() body?: LogoutBody) {
-        return await this.sso.verify(body.access_token);
+    verify(@Args() body: LogoutBody): Observable<Result> {
+        return of({
+            code: 1
+        })
     }
 
     /**
@@ -31,25 +47,28 @@ export class SsoResolver {
      */
     @Mutation()
     @GrpcMethod('SsoService')
-    refreshToken(@Args() body: LogoutBody) {
-        return this.sso.refreshToken(body.access_token);
+    refreshToken(@Args() body: LogoutBody): Observable<Result> {
+        return of({
+            code: 1
+        })
     }
     /**
      * 注销
      */
     @Mutation()
     @GrpcMethod('SsoService')
-    logout(@Args() body?: LogoutBody) {
-        let token = this.sso.getTokenByAccessToken(body.access_token);
-        return this.sso.logout(body.access_token);
+    logout(@Args() body: LogoutBody): Observable<Result> {
+        return of({
+            code: 1
+        })
     }
 }
 
 export interface LogoutBody {
-    access_token?: string;
+    access_token: string;
 }
 
 export interface TokenBody {
-    username?: string;
+    username: string;
     password: string;
 }

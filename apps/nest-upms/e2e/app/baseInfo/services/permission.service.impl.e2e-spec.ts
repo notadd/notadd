@@ -2,7 +2,7 @@ import { INestApplication } from '@nestjs/common';
 import { Test } from '@nestjs/testing';
 import { ApplicationModule } from '../../../../src';
 import { PermissionService } from '../../../../src/baseInfo/core';
-import { PermissionMustDataNullError, PermissionNameExistError, PermissionIsNullError } from '../../../../src/baseInfo/errors/error';
+import { PermissionMustDataNullError } from '../../../../src/baseInfo/errors/error';
 import { PermissionEntity } from '../../../../src/typeorm';
 describe('PermissionServiceImpl', () => {
     let app: INestApplication;
@@ -74,7 +74,7 @@ describe('PermissionServiceImpl', () => {
 
         let oldPsn = await permissionService.get({ name: 'three' });
         if (oldPsn) {
-            permissionService.save(newPsn, { permission_id: oldPsn.permission_id }).then(res => {
+            permissionService.save(newPsn, { name: oldPsn.name }).then(res => {
                 expect(res.status).toEqual(-1);
             }).catch(e => {
                 expect(e instanceof Error).toEqual(true)
@@ -107,10 +107,13 @@ describe('PermissionServiceImpl', () => {
     });
 });
 
-export function getPermission(name: string, value: string): PermissionEntity {
+export function getPermission(name: string, title: string): PermissionEntity {
     let permission = new PermissionEntity()
     permission.name = name;
-    permission.pid = 1;
+    permission.title = title;
+    permission.decription = 'decription';
+    permission.value = ['value'];
+    permission.father_name = 1;
     permission.status = 1;
     permission.icon = 'icon';
     permission.displayorder = 1;

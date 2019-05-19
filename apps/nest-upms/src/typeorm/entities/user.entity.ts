@@ -14,7 +14,7 @@ export class UserEntity {
     @Column({
         type: 'uuid',
     })
-    @Index({ unique: true })
+    // @Index({ unique: true })
     openid: string;
 
     @Column({
@@ -22,7 +22,7 @@ export class UserEntity {
         length: 20,
         comment: '联盟id'
     })
-    @Index({ unique: true })
+    // @Index({ unique: true })
     unionid: string;
 
 
@@ -30,7 +30,7 @@ export class UserEntity {
         type: 'varchar',
         length: 50
     })
-    @Index({ unique: true })
+    // @Index({ unique: true })
     username: string;
 
     @Column({

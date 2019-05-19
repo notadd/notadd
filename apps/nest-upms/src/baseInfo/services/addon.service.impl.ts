@@ -25,20 +25,19 @@ export class AddonServiceImpl extends AddonService {
     removePermissions(): Promise<void> {
         throw new Error("Method not implemented.");
     }
-
-
     /**
-     * 根据条件获取应用
-     * @param where 获取条件
+     * Get apps based on criteria
+     * query addon by filter
+     * @param where Get the condition query filter
      */
     async get(where: Partial<AddonEntity>): Promise<AddonEntity> {
         return await this.addonRepo.findOne(where);
     }
 
     /**
-     * 更新应用
-     * @param addon 更新应用的信息
-     * @param where 更新应用的条件 
+     * 更新应用 upgrade addon
+     * @param addon 更新应用的信息 upgrade addon info
+     * @param where 更新应用的条件  upgrade addon filter
      */
     async save(addon: AddonEntity, where: Partial<AddonEntity>): Promise<AddonEntity> {
         let exist = await this.get(where);
@@ -58,16 +57,16 @@ export class AddonServiceImpl extends AddonService {
     }
 
     /**
-     * 删除应用
-     * @param addon 删除应用的信息
+     * Delete application delete addon
+     * @param addon Delete application information delete addon info
      */
     async delete(addon: Partial<AddonEntity>): Promise<DeleteResult> {
         return await this.addonRepo.delete(addon)
     }
 
     /**
-     * 添加应用
-     * @param addon 添加应用的信息
+     * Add application addon info
+     * @param addon Add app information Add app information
      */
     async insert(addon: AddonEntity): Promise<AddonEntity> {
         if (!addon.name || !addon.title || !addon.status) {
@@ -76,12 +75,12 @@ export class AddonServiceImpl extends AddonService {
         if (await this.get({ name: addon.name })) {
             throw new AddonNameError();
         }
-       
+
         return await this.addonRepo.save(addon);
     }
 
     /**
-     * 根据id获取应用
+     * 根据id获取应用 Get an app based on id
      * @param appid id
      */
     async getAddonById(appid: number): Promise<AddonEntity> {
@@ -94,8 +93,4 @@ export class AddonServiceImpl extends AddonService {
     search(where: Partial<AddonEntity>): Promise<void> {
         throw new Error("Method not implemented.");
     }
-
-
-
-
 }

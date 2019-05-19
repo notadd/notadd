@@ -1,21 +1,25 @@
-import { Helper, Enforcer, newModel } from 'casbin';
+import { Enforcer } from 'casbin';
 import { INestApplication } from '@nestjs/common';
 import { Test } from '@nestjs/testing';
 import { ApplicationModule } from '../../../src/app.module'
-describe('casbin helper', () => {
+import { CasbinService } from '../../../src/casbin/core/casbin';
+
+describe('casbinServiceImpl', () => {
     let app: INestApplication;
-    let enforcer: Enforcer;
+    let casbinService: CasbinService;
     beforeAll(async () => {
         const module = await Test.createTestingModule({
             imports: [ApplicationModule]
         }).compile();
         app = module.createNestApplication();
-        enforcer = app.get(Enforcer);
+        casbinService = app.get(CasbinService);
         await app.init();
     });
 
-    it(`helper hello`, () => {
-        expect(`hello`).toEqual('hello')
+    it(`getAllRoleWithPermission`, async () => {
+        await casbinService.getAllRoleWithPermission().then(res => {
+           
+        }).catch(e => { })
     });
 
     afterAll(async () => {

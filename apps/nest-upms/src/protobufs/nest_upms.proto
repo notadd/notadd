@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-package nest_upms;
-
-message placeholder {}
-
-service UpmsUserService {
-    
-}

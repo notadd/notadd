@@ -1,8 +1,8 @@
 import { Provider } from '@nestjs/common';
-import { SsoResolver } from './sso.resolver';
-import { SsoService, AuthService } from './core/index';
-import { SsoServiceImpl } from './sso.service.impl';
 import { AuthServiceImpl } from './auth.service.impl';
+import { AuthService, SsoService } from './core/index';
+import { SsoResolver } from './sso.resolver';
+import { SsoServiceImpl } from './sso.service.impl';
 export const ssoProviders: Provider[] = [
     SsoResolver,
     {
@@ -14,3 +14,4 @@ export const ssoProviders: Provider[] = [
         useClass: AuthServiceImpl
     }
 ]
+

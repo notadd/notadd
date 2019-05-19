@@ -1,4 +1,4 @@
-import { Entity, PrimaryColumn, Column, Timestamp, OneToMany, CreateDateColumn, UpdateDateColumn, ManyToOne } from 'typeorm'
+import { Entity, PrimaryColumn, Column, Timestamp, OneToMany, CreateDateColumn, UpdateDateColumn, ManyToOne, Index, JoinTable } from 'typeorm'
 import { AddonEntity } from './addon.entity';
 import { UserEntity } from './user.entity';
 import { RoleEntity } from './role.entity';
@@ -13,13 +13,16 @@ export class PermissionEntity {
     /**
      * 上级
      */
-    @PrimaryColumn()
+    @Column()
     father_name: number;
 
     /**
      * 英文代号
+     * 格式: addonName.permissionName
+     * 唯一
      */
-    @Column()
+    @PrimaryColumn()
+    // @Index()
     name: string;
 
     /**
@@ -39,10 +42,14 @@ export class PermissionEntity {
         length: 255
     })
     decription: string;
+
     /**
-     * 权限值
+     * 权限值,即操作符
+     * 如：read,write,all...
      */
     @Column({
+        type: "varchar",
+        length: 255,
         transformer: {
             // 存
             to: (val: string[]) => {
@@ -69,6 +76,7 @@ export class PermissionEntity {
         type: 'smallint',
         default: 0
     })
+    @Index()
     status: -1 | 0 | 1;
 
     /**
@@ -98,28 +106,33 @@ export class PermissionEntity {
     /**
      * 应用id
      */
-    @Column({
-        comment: '应用id',
-        default: 0
-    })
-    addon_id: number;
+    // @Column({
+    //     comment: '权限来源模块',
+    //     default: 0
+    // })
+    // @Index()
+    // from_addon_id: number;
 
+    @ManyToOne(() => AddonEntity, type => type.permissions)
+    @JoinTable()
+    // @Index()
+    fromAddon: AddonEntity;
     /**
      * 常用的，所以定义一下，查询后挂载到Permission上
      */
 
     /**
-     * 某个权限下面的所有应用
+     * 拥有此权限的所有模块
      */
-    addons: AddonEntity[];
+    addons: AddonEntity[] = [];
 
     /**
-     * 某个权限下面的用户
+     * 拥有此权限的所有用户
      */
-    users: UserEntity[];
+    users: UserEntity[] = [];
 
     /**
-     * 某个权限下面的角色
+     * 拥有此权限的所有角色
      */
-    roles: RoleEntity[];
+    roles: RoleEntity[] = [];
 }

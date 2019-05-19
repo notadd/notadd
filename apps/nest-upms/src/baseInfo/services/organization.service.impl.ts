@@ -7,10 +7,9 @@ import { OrganizationNoExistError, DataError, } from '../errors/role.error';
 export class OrganizationServiceImpl extends OrganizationService {
     constructor(@InjectRepository(OrganizationEntity) public readonly organRepo: Repository<OrganizationEntity>) { super() }
 
-    /**
-     * 
-     * @param organization 添加组织
-     */
+   /**
+     * @param organization Add organization
+     */ 
     async insert(organization: OrganizationEntity) {
         if (!organization.name || !organization.title || !organization.description) {
             throw new DataError();

@@ -6,7 +6,6 @@
  */
 
 syntax = "proto3";
-
 package sso;
 
 message UserInfo {

@@ -1,4 +1,4 @@
-import { Entity, Column , PrimaryGeneratedColumn, Timestamp, UpdateDateColumn, CreateDateColumn } from 'typeorm';
+import { Entity, Column , PrimaryGeneratedColumn, UpdateDateColumn, CreateDateColumn } from 'typeorm';
 import { PermissionEntity } from './permission.entity';
 
 @Entity({

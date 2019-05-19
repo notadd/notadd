@@ -3,8 +3,10 @@ import { transformClassDeclarationToProto } from './transformClassDeclarationToP
 import { transformClassDeclarationToGraphql } from './transformClassDeclarationToGraphql';
 import { GraphqlCreater } from './graphql'
 import fs from 'fs';
+import { join } from 'path';
+const root = process.cwd();
+import { ProtobufCreater } from './protobuf';
 export function build(path: string, output: string) {
-    const creater = new GraphqlCreater();
     const project = createProject();
     project.addExistingSourceFiles(path)
     const sourceFiles = project.getSourceFiles(path);
@@ -19,12 +21,16 @@ export function build(path: string, output: string) {
                 const text = expression.getText();
                 if (text === 'Controller') {
                     // 如果是Controller 解析成proto
-                    transformClassDeclarationToProto(cls, file, project)
+                    const creater = new ProtobufCreater();
+                    transformClassDeclarationToProto(cls, file, project, creater)
+                    const code = creater.create();
+                    fs.writeFileSync(join(root, 'apps/nest-upms/src/main.proto'), code)
                 } else if (text === 'Resolver') {
                     // 如果是Resolver 解析成graphql
+                    const creater = new GraphqlCreater();
                     transformClassDeclarationToGraphql(cls, file, project, creater)
                     const code = creater.create();
-                    fs.writeFileSync(output, code)
+                    fs.writeFileSync(`${output}.graphql`, code)
                 } else {
                     // 不用处理
                 }

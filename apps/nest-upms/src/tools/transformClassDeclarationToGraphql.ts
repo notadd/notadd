@@ -1,5 +1,6 @@
-import { ClassDeclaration, SourceFile, Project, Decorator } from 'ts-morph'
+import { ClassDeclaration, SourceFile, Project } from 'ts-morph'
 import { GraphqlCreater } from './graphql'
+import { isQueryDecorator, isMutationDecorator, isSubscription } from './util'
 export function transformClassDeclarationToGraphql(cls: ClassDeclaration, file: SourceFile, project: Project, creater: GraphqlCreater) {
     const methods = cls.getMethods();
     // 扫描每个方法 根据装饰器生成对应的文件
@@ -20,16 +21,4 @@ export function transformClassDeclarationToGraphql(cls: ClassDeclaration, file: 
             // 啥都不做
         }
     })
-}
-export const isQueryDecorator = isDecorator('Query');
-export const isMutationDecorator = isDecorator('Mutation');
-export const isSubscription = isDecorator('Subscription')
-export function isDecorator(name: string) {
-    return (decorators: Decorator[]): boolean => {
-        return !!decorators.find(dec => {
-            const call = dec.getCallExpression();
-            const exp = call.getExpression();
-            return exp.getText() === name;
-        })
-    }
 }

@@ -15,12 +15,15 @@ export abstract class SsoService {
     /**
      * 根据用户名和密码获取access token
      */
-    abstract token(username: string,password: string): Promise<AccessTokenEntity>;
+    abstract token(username: string, password: string): Promise<AccessTokenEntity>;
 
     /**
      * 根据用户名获取用户信息
      */
     abstract getUserByNameAndPsd(username: string, password: string): Promise<UserEntity>;
 
+    /**
+     * 根据access_token获取token信息
+     */
     abstract getTokenByAccessToken(access_token: string): Promise<AccessTokenEntity>;
 }

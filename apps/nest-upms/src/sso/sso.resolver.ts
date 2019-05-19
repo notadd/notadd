@@ -10,7 +10,6 @@ export interface RefreshTokenResult {
     refresh_token: string;
 }
 
-
 export interface Result {
     code: number;
 }
@@ -23,7 +22,7 @@ export class SsoResolver {
      * 通过用户名和密码获取token
      */
     @Query()
-    @GrpcMethod('SsoService')
+    @GrpcMethod()
     token(@Args() body: TokenBody): Observable<Result> {
         // const token = await this.sso.token(body.username, body.password);
         return of({
@@ -35,7 +34,7 @@ export class SsoResolver {
      * 验证token
      */
     @Query()
-    @GrpcMethod('SsoService')
+    @GrpcMethod()
     verify(@Args() body: LogoutBody): Observable<Result> {
         return of({
             code: 1
@@ -46,17 +45,18 @@ export class SsoResolver {
      * 刷新token
      */
     @Mutation()
-    @GrpcMethod('SsoService')
+    @GrpcMethod()
     refreshToken(@Args() body: LogoutBody): Observable<Result> {
         return of({
             code: 1
         })
     }
+
     /**
      * 注销
      */
     @Mutation()
-    @GrpcMethod('SsoService')
+    @GrpcMethod()
     logout(@Args() body: LogoutBody): Observable<Result> {
         return of({
             code: 1
@@ -72,3 +72,15 @@ export interface TokenBody {
     username: string;
     password: string;
 }
+
+export interface TokenResult {
+    code: number;
+    msg: string;
+}
+
+export interface SsoResult {
+    code: number;
+    msg: string;
+}
+
+

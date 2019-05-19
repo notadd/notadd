@@ -1030,6 +1030,11 @@
   dependencies:
     "@types/node" "*"
 
+"@types/lodash@^4.14.129":
+  version "4.14.129"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.129.tgz#9aaca391db126802482655c48dd79a814488202f"
+  integrity sha512-oYaV0eSlnOacOr7i4X1FFdH8ttSlb57gu3I9MuStIv2CYkISEY84dNHYsC3bF6sNH7qYcu1BtVrCtQ8Q4KPTfQ==
+
 "@types/long@^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@types/long/-/long-4.0.0.tgz#719551d2352d301ac8b81db732acb6bdc28dbdef"
@@ -4570,7 +4575,7 @@ glob@7.1.3:
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
-glob@^7.0.0, glob@^7.0.3, glob@^7.0.5, glob@^7.0.6, glob@^7.1.1, glob@^7.1.2, glob@^7.1.3, glob@~7.1.1:
+glob@^7.0.0, glob@^7.0.3, glob@^7.0.5, glob@^7.0.6, glob@^7.1.1, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4, glob@~7.1.1:
   version "7.1.4"
   resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.4.tgz#aa608a2f6c577ad357e1ae5a5c26d9a8d1969255"
   integrity sha512-hkLPepehmnKk41pUGm3sYxoFs/umurYfYJCerbXEyFIWcAzvpipAgVkBqqT9RBKMGjnq6kMuyYwha6csxbiM1A==

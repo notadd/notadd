@@ -31,7 +31,7 @@ services:
 
 #         - bash ./testing/travis/install-postgres-11.s
 after_install:
-  - npm i -g npm@latest codecov
+  - npm i -g npm@latest codecov @zeit/ncc
   - bash <(curl -s https://codecov.io/bash)
 install:
   - npm i
@@ -41,7 +41,9 @@ before_install:
 script:
   - npm run test.nest.upms.e2e
   - npm run build.nest.upms
+  - ncc build ./dist/apps/nestupms/main.js -o ncc
   - node ./dist/apps/nestupms/main.js
+  - node ./ncc/main.js
 #   - istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec
 #   - codecov
  

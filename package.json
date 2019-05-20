@@ -59,7 +59,7 @@
         "@angular/platform-browser": "7.2.15",
         "@angular/platform-browser-dynamic": "7.2.15",
         "@angular/router": "7.2.15",
-        "@grpc/proto-loader": "0.5.0",
+        "@grpc/proto-loader": "0.5.1",
         "@nestjs/common": "6.2.0",
         "@nestjs/core": "6.2.0",
         "@nestjs/graphql": "6.2.1",

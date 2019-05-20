@@ -104,9 +104,9 @@ function createEnum(_enum: Map<string, EnumDeclaration>) {
     _enum.forEach((e, name) => {
         code += `enum ${name} {\n`
         const members = e.getMembers();
-        members.map(m => {
+        members.map((m, index) => {
             const struct = m.getStructure();
-            code += `\t${struct.name} = ${struct.initializer};\n`
+            code += `\t${struct.name} = ${index};\n`
         });
         code += `}\n`
     });

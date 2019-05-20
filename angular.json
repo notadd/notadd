@@ -80,11 +80,17 @@
             "tsConfig": "apps/web-admin/tsconfig.app.json",
             "assets": [
               "apps/web-admin/src/favicon.ico",
-              "apps/web-admin/src/assets"
+              "apps/web-admin/src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
+              }
             ],
             "styles": [
               "xplat/web/scss/_index.scss",
-              "apps/web-admin/src/styles.scss"
+              "apps/web-admin/src/styles.scss",
+              "node_modules/ng-zorro-antd/ng-zorro-antd.min.css"
             ],
             "scripts": [],
             "es5BrowserSupport": true

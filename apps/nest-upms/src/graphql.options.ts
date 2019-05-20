@@ -13,7 +13,7 @@ export class GraphqlOptions implements GqlOptionsFactory {
                 requireResolversForResolveType: false,
             },
             definitions: {
-                path: join(process.cwd(), 'apps/nest-upms/src/graphql.schema.d.ts'),
+                path: join(__dirname, 'graphql.schema.d.ts'),
                 outputAs: 'class',
             },
         };

@@ -40,8 +40,8 @@ export class ProtobufCreater {
     }
 }
 
-function transformType(type: string) { 
-    switch(type){
+function transformType(type: string) {
+    switch (type) {
         case 'number':
             return 'int32';
         default:
@@ -57,8 +57,13 @@ function createMessage(_message: Map<string, InterfaceDeclaration>) {
         const properties = item.getProperties();
         properties.map((pro, index) => {
             const struct = pro.getStructure();
-            code += `\t${transformType(struct.type as string)} ${struct.name} = ${index + 1}`
-            code += `;\n`
+            if ((struct.type as string).endsWith('[]')) {
+                const tName = (struct.type as string).replace('[]', '')
+                code += `repeat ${transformType(tName)}`
+            } else {
+                code += `\t${transformType(struct.type as string)} ${struct.name} = ${index + 1}`
+                code += `;\n`
+            }
         })
         code += `}\n`
     })

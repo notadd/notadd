@@ -1,0 +1,18 @@
+<div nz-form>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24">管理员用户名</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <nz-input-group>
+                <input nz-input [(ngModel)]="data.username" type="text" placeholder="请输入管理员用户名">
+            </nz-input-group>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24">管理员密码</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <nz-input-group>
+                <input nz-input [(ngModel)]="data.password" type="password" placeholder="请输入管理员密码">
+            </nz-input-group>
+        </nz-form-control>
+    </nz-form-item>
+</div>

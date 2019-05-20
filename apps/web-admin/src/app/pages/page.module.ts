@@ -2,27 +2,42 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AdminLoginPage } from './login'
 import { AdminRegisterPage } from './register'
-import gql from 'graphql-tag';
 import { ApolloModule, APOLLO_OPTIONS } from 'apollo-angular';
 import { HttpLinkModule, HttpLink } from "apollo-angular-link-http";
 import { InMemoryCache } from "apollo-cache-inmemory";
+import { NgZorroAntdModule, NzFormModule } from 'ng-zorro-antd'
+import { WebAdminInstallPage, AddonSetting, DbSetting, UserSetting, InstallStore } from './install'
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 @NgModule({
     imports: [
+        NzFormModule,
+        NgZorroAntdModule,
+        CommonModule,
+        FormsModule,
         RouterModule.forChild([{
             path: 'login',
             component: AdminLoginPage
         }, {
             path: 'register',
             component: AdminRegisterPage
+        }, {
+            path: 'install',
+            component: WebAdminInstallPage
         }]),
         ApolloModule,
         HttpLinkModule
     ],
     declarations: [
         AdminLoginPage,
-        AdminRegisterPage
+        AdminRegisterPage,
+        WebAdminInstallPage,
+        AddonSetting,
+        DbSetting,
+        UserSetting
     ],
     providers: [
+        InstallStore,
         {
             provide: APOLLO_OPTIONS,
             useFactory: (httpLink: HttpLink) => {

@@ -34,8 +34,8 @@ before_install:
   - npm i -g npm@latest 
 
 install:
-  - npm i
-  - npm i -g codecov @zeit/ncc@beta
+  - npm intall
+  - npm install -g codecov @zeit/ncc@beta
   
 before_script:
   - sh -c "if [ '$DB' = 'postgres10' ]; then bash ./testing/travis/install-postgres-10.sh; echo $DB; fi"

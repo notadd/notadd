@@ -20,6 +20,8 @@ export class SsoResolver {
     constructor(public sso: SsoService) { }
     /**
      * 通过用户名和密码获取token
+     * @param {TokenBody} body
+     * @returns Observable<Result>
      */
     @Query()
     @GrpcMethod()

@@ -13,8 +13,11 @@ export enum PermissionStatus {
     fail = -1,
     success = 0
 }
+// 123
 interface Permission {
+    // 权限中文名
     title: string;
+    /** 权限英文名 */
     name: string;
     value: string[];
     desc: string;
@@ -43,17 +46,11 @@ interface DbConfig {
     synchronize: boolean;
 }
 interface InstallData {
-    /**
-     * 管理员账号
-     */
     admin: Admin;
     /**
      * 数据库配置
      */
     db: DbConfig,
-    /**
-     * 所有子系统
-     */
     addons: Addon[]
 }
 

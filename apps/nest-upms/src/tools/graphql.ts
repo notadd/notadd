@@ -173,7 +173,6 @@ function createInput(_type: Map<string, InterfaceDeclaration>) {
     return createType(_type, 'input')
 }
 
-
 function createType(_type: Map<string, InterfaceDeclaration>, typeName: 'type' | 'input' = 'type') {
     let code = ``;
     _type.forEach((item, name) => {
@@ -197,7 +196,7 @@ function createType(_type: Map<string, InterfaceDeclaration>, typeName: 'type' |
                 const tName = (struct.type as string).replace('[]', '')
                 code += `[${transformType(tName)}]`
             } else {
-                debugger;
+                code += struct.type;
             }
             if (!struct.hasQuestionToken) {
                 code += `!`

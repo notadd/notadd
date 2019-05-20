@@ -38,8 +38,17 @@ interface DbConfig {
     dbname: string;
 }
 interface InstallData {
+    /**
+     * 管理员账号
+     */
     admin: Admin;
+    /**
+     * 数据库配置
+     */
     db: DbConfig,
+    /**
+     * 所有子系统
+     */
     addons: Addon[]
 }
 

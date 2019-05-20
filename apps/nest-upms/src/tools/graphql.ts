@@ -1,4 +1,4 @@
-import { MethodDeclaration, SourceFile, InterfaceDeclaration, CommentStatement, ParameterDeclaration, Project, MethodDeclarationStructure, EnumDeclaration } from 'ts-morph'
+import { MethodDeclaration, SourceFile, InterfaceDeclaration, ParameterDeclaration, Project, MethodDeclarationStructure, EnumDeclaration } from 'ts-morph'
 import { clearReturnType, transformType } from './util'
 
 export class GraphqlCreater {
@@ -137,14 +137,27 @@ function createUnion(_unions: Map<string, any>) {
     return code;
 }
 
+function getDocs(eSt: any) {
+    let desc = ``;
+    eSt.docs.map(doc => {
+        if (typeof doc === 'string') {
+            desc += doc;
+        } else {
+            desc += doc.description
+        }
+    })
+    return desc;
+}
+
 function createEnum(_enum: Map<string, EnumDeclaration>) {
     let code = ``;
     _enum.forEach((e, name) => {
-        code += `enum ${name} {\n`
+        const eSt = e.getStructure();
+        code += `"""${getDocs(eSt)}"""\nenum ${name} {\n`
         const members = e.getMembers();
         members.map((m, index) => {
             const struct = m.getStructure();
-            code += `\t${struct.name}\n`
+            code += `\t"""${getDocs(struct)}"""\t${struct.name}\n`
         });
         code += `}\n`
     });
@@ -157,7 +170,15 @@ function createEnum(_enum: Map<string, EnumDeclaration>) {
 function createSubscription(_subscription: Map<string, MethodDeclarationStructure>) {
     let code = `type Subscription{\n`;
     _subscription.forEach(sub => {
-        code += `\t${sub.name}`
+        let desc = ``;
+        sub.docs.map(doc => {
+            if (typeof doc === 'string') {
+                desc += doc;
+            } else {
+                desc += doc.description
+            }
+        })
+        code += `\t"""${desc}"""\n\t${sub.name}`
         const parameters = sub.parameters;
         if (parameters.length > 0) {
             code += `(`
@@ -185,7 +206,15 @@ function createSubscription(_subscription: Map<string, MethodDeclarationStructur
 function createMutation(_mutation: Map<string, MethodDeclarationStructure>) {
     let code = `type Mutation{\n`;
     _mutation.forEach(muta => {
-        code += `\t${muta.name}`
+        let desc = ``;
+        muta.docs.map(doc => {
+            if (typeof doc === 'string') {
+                desc += doc;
+            } else {
+                desc += doc.description
+            }
+        });
+        code += `\t"""${desc}"""\n\t${muta.name}`
         const parameters = muta.parameters;
         if (parameters.length > 0) {
             code += `(`
@@ -218,11 +247,28 @@ function createType(_type: Map<string, InterfaceDeclaration>, typeName: 'type' |
     let code = ``;
     _type.forEach((item, name) => {
         code += `\n`;
-        code += `${typeName} ${name}{\n`;
+        const itemS = item.getStructure();
+        let desc = ``;
+        itemS.docs.map(doc => {
+            if (typeof doc === 'string') {
+                desc += doc;
+            } else {
+                desc += doc.description
+            }
+        });
+        code += `"""${desc}"""\n${typeName} ${name}{\n`;
         let properties = item.getProperties();
         properties.map(pro => {
             const struct = pro.getStructure();
-            code += `\t${struct.name}: `;
+            let desc = ``;
+            struct.docs.map(doc => {
+                if (typeof doc === 'string') {
+                    desc += doc;
+                } else {
+                    desc += doc.description
+                }
+            });
+            code += `\t"""${desc}"""\n\t${struct.name}: `;
             if (struct.type === 'string') {
                 code += `String`
             } else if (struct.type === 'number') {

@@ -63,19 +63,19 @@ export class AccessTokenEntity {
     scope: string;
 
     @Column({
-        type: 'timestamp without time zone',
+        type: 'timestamptz',
         comment: '过期时间'
     })
     expires_in: Date;
 
     @CreateDateColumn({
-        type: 'timestamp without time zone',
+        type: 'timestamptz',
         comment: '创建时间'
     })
     create_time: Date;
 
     @UpdateDateColumn({
-        type: 'timestamp without time zone',
+        type: 'timestamptz',
         comment: '更新时间'
     })
     update_time: Date;

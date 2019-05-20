@@ -1,7 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { ApplicationModule } from './app.module';
 import { Transport } from '@nestjs/common/enums/transport.enum';
-export async function bootstrap(status?: boolean) {
+export async function bootstrap() {
   const app = await NestFactory.create(ApplicationModule);
   app.connectMicroservice({
     transport: Transport.GRPC,
@@ -11,11 +11,7 @@ export async function bootstrap(status?: boolean) {
       protoPath: `${__dirname}/main.proto`
     }
   })
-  if (status === false) {
-    await app.close();
-  } else {
-    await app.startAllMicroservicesAsync();
-    await app.listen(9000);
-  }
+  await app.startAllMicroservicesAsync();
+  await app.listen(9000);
 }
 bootstrap();

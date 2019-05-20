@@ -59,7 +59,8 @@ function createMessage(_message: Map<string, InterfaceDeclaration>) {
             const struct = pro.getStructure();
             if ((struct.type as string).endsWith('[]')) {
                 const tName = (struct.type as string).replace('[]', '')
-                code += `repeat ${transformType(tName)}`
+                code += `repeated ${transformType(tName)} ${struct.name} = ${index + 1}`
+                code += `;\n`
             } else {
                 code += `\t${transformType(struct.type as string)} ${struct.name} = ${index + 1}`
                 code += `;\n`

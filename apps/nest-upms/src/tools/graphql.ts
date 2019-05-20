@@ -1,10 +1,10 @@
-import { MethodDeclaration, SourceFile, InterfaceDeclaration, ParameterDeclaration, Project, MethodDeclarationStructure, EnumDeclaration } from 'ts-morph'
+import { MethodDeclaration, SourceFile, InterfaceDeclaration, CommentStatement, ParameterDeclaration, Project, MethodDeclarationStructure, EnumDeclaration } from 'ts-morph'
 import { clearReturnType, transformType } from './util'
 
 export class GraphqlCreater {
-    private _query: Map<string, any> = new Map();
-    private _mutation: Map<string, any> = new Map();
-    private _subscription: Map<string, any> = new Map();
+    private _query: Map<string, MethodDeclarationStructure> = new Map();
+    private _mutation: Map<string, MethodDeclarationStructure> = new Map();
+    private _subscription: Map<string, MethodDeclarationStructure> = new Map();
     private _type: Map<string, InterfaceDeclaration> = new Map();
     private _directive: Map<string, any> = new Map();
     private _unions: Map<string, any> = new Map();
@@ -154,7 +154,7 @@ function createEnum(_enum: Map<string, EnumDeclaration>) {
  * subscription
  * @param _subscription 
  */
-function createSubscription(_subscription: Map<string, any>) {
+function createSubscription(_subscription: Map<string, MethodDeclarationStructure>) {
     let code = `type Subscription{\n`;
     _subscription.forEach(sub => {
         code += `\t${sub.name}`
@@ -182,7 +182,7 @@ function createSubscription(_subscription: Map<string, any>) {
  * mutation
  * @param _mutation 
  */
-function createMutation(_mutation: Map<string, any>) {
+function createMutation(_mutation: Map<string, MethodDeclarationStructure>) {
     let code = `type Mutation{\n`;
     _mutation.forEach(muta => {
         code += `\t${muta.name}`
@@ -249,11 +249,19 @@ function createType(_type: Map<string, InterfaceDeclaration>, typeName: 'type' |
     return code;
 }
 
-function createQuery(_query: Map<string, any>): string {
+function createQuery(_query: Map<string, MethodDeclarationStructure>): string {
     // query
     let code = `type Query {\n`;
     _query.forEach((query: MethodDeclarationStructure) => {
-        code += `\t${query.name}`
+        let desc = ``;
+        query.docs.map(doc => {
+            if (typeof doc === 'string') {
+                desc += doc;
+            } else {
+                desc += doc.description
+            }
+        })
+        code += `\t"""${desc}"""\n\t${query.name}`
         const parameters = query.parameters;
         if (parameters.length > 0) {
             code += `(`

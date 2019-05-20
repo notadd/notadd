@@ -11,16 +11,22 @@ import { ssoProviders } from './sso';
 import { JwtStrategyImpl } from './sso/jwt.strategy.impl';
 import { SsoResolver } from './sso/sso.resolver';
 import allEntities from './typeorm'
+// type: 'postgres',
+// host: 'localhost',
+// port: 5432,
+// username: 'postgres',
+// password: 'postgres',
+// database: 'test_ci',
 @Module({
   imports: [
     AuthModule.forRoot(JwtStrategyImpl),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
+      host: '192.168.1.130',
       port: 5432,
-      username: 'postgres',
-      password: 'postgres',
-      database: 'test_ci',
+      username: 'root',
+      password: 'root',
+      database: 'postgres',
       entities: [
         ...allEntities
       ],

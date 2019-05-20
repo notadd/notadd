@@ -1,11 +1,16 @@
 <div class="login">
     <div class="login-item">
-        <div class="login-item-label">用户名</div>
-        <input />
+        <nz-input-group [nzSuffix]="suffixTemplate" [nzPrefix]="prefixTemplate">
+            <input type="text" nz-input placeholder="请输入用户名" />
+        </nz-input-group>
+        <ng-template #prefixTemplate><i nz-icon type="user"></i></ng-template>
+        <ng-template #suffixTemplate><i nz-icon nz-tooltip nzTitle="Extra information" type="info-circle"></i>
+        </ng-template>
     </div>
     <div class="login-item">
-        <div class="login-item-label">密码</div>
-        <input />
+        <nz-input-group>
+            <input type="text" nz-input placeholder="请输入密码" />
+        </nz-input-group>
     </div>
     <div class="login-item">
         <button (click)="login()">提交</button>

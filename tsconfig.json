@@ -36,11 +36,11 @@
       "@notadd/*": [
         "libs/*"
       ],
-      "@notadd/nest": [
-        "xplat/nest/index.ts"
+      "@notadd/nest-sso": [
+        "xplat/nest/sso/src/index.ts"
       ],
-      "@notadd/nest/*": [
-        "xplat/nest/*"
+      "@notadd/nest-sso/*": [
+        "xplat/nest/sso/*"
       ],
       "@notadd/web": [
         "xplat/web/index.ts"
@@ -53,6 +53,12 @@
       ],
       "@notadd/xplat/auth": [
         "libs/xplat/auth/src/index.ts"
+      ],
+      "core-js/es6/*": [
+        "./node_modules/core-js/es/*"
+      ],
+      "core-js/es7/reflect": [
+        "./node_modules/core-js/proposals/reflect-metadata"
       ]
     },
     "plugins": [

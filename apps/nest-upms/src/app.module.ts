@@ -22,11 +22,11 @@ import allEntities from './typeorm'
     AuthModule.forRoot(JwtStrategyImpl),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: '192.168.1.130',
+      host: 'localhost',
       port: 5432,
-      username: 'root',
-      password: 'root',
-      database: 'postgres',
+      username: 'postgres',
+      password: 'postgres',
+      database: 'test_ci',
       entities: [
         ...allEntities
       ],

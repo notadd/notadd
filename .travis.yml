@@ -30,16 +30,16 @@ services:
 #       before_script:
 
 #         - bash ./testing/travis/install-postgres-11.s
-after_install:
+before_install:
   - npm i -g npm@latest 
   - bash <(curl -s https://codecov.io/bash)
 install:
   - npm i
   - npm i -g codecov @zeit/ncc@beta
-before_install:
+after_install:
   - sh -c "if [ '$DB' = 'postgres10' ]; then bash ./testing/travis/install-postgres-10.sh; echo $DB; fi"
   - sh -c "if [ '$DB' = 'postgres11' ]; then bash ./testing/travis/install-postgres-11.sh; echo $DB; fi"  
-  - 
+
 script:
   - npm run test.nest.upms.e2e
 #   - rm -rf tsconfig.json && cp  ./apps/nest-upms/tsconfig.json ./

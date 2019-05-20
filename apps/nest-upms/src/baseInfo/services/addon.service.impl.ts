@@ -80,12 +80,12 @@ export class AddonServiceImpl extends AddonService {
      * @param addon Add app information Add app information
      */
     async insert(addon: AddonEntity): Promise<AddonEntity> {
-        if (!addon.name || !addon.title || !addon.status) {
-            throw new AddonMustDataNullError();
-        }
-        if (await this.get({ name: addon.name })) {
-            throw new AddonNameError();
-        }
+        // if (!addon.name || !addon.title || !addon.status) {
+        //     throw new AddonMustDataNullError();
+        // }
+        // if (await this.get({ name: addon.name })) {
+        //     throw new AddonNameError();
+        // }
 
         return await this.addonRepo.save(addon);
     }

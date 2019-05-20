@@ -9,7 +9,7 @@ export class AddonServiceImpl extends CoreAddon {
         @InjectRepository(PermissionEntity) public readonly permissionRepo: Repository<PermissionEntity>,
     ) { super() }
     /**
-     * 安装应用 Todo
+     * 安装应用 
      * @param {ICoreAddon} addon
      * 1. 解析配置文件,添加权限
      */
@@ -80,37 +80,28 @@ export class AddonServiceImpl extends CoreAddon {
             // 通过模块名程找到数据库中所对应的模块
             let exist = await this.addonRepo.findOne({ where: { name: addon.name } });
             //  对比判断是否有新增的权限,如果有就插入
-
-            addon.permission = addon.permission || [];
+         //   addon.permission = addon.permission || [];
             for (let addonPer of addon.permission) {
-                const res = exist.permissions.find(item => item.name === addonPer.name);
+               const res=await this.permissionRepo.findOne({name:addonPer.name})
                 if (!res) {
-                    this.permissionRepo.insert(res);
-                } else {
-                    if (res) {
-                        this.permissionRepo.delete(res)
-                    } else {
-                        this.permissionRepo.save(res);
-                    }
-                }
+                   await this.permissionRepo.insert(res);
+                } 
+                //判断有权限就更新
+                if(res){
+                   await this.permissionRepo.save(addonPer);
+                }               
             }
-            //根据模块名找到所有已存在的权限
-            // let permissions = await this.addonRepo.find({ where: { name: addon.name } });
-            // for (let addonPer of addon.permission) {
-            //     const res = exist.permissions.find(item => item.name === addonPer.name);
-            //     if (res) {
-            //         this.permissionRepo.delete(res)
-            //     } else {
-            //         this.permissionRepo.save(res);
-            //     }
+            //判断数据库中跟应用里面的权限是否相同,不相同的话,把多余的给删除了
+            // [1,2,3]  [3,2,4]
+            // for (let existPer of exist.permissions) {
+            //   for(){}
             // }
             return {
                 code: 1
             }
         } catch (e) {
+            console.log(e);
             return { code: -1, message: e.message }
         }
     }
-
-
-}
+};

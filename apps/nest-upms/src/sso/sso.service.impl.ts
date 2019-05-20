@@ -18,7 +18,7 @@ export class SsoServiceImpl extends SsoService {
     /**
      * 注销登录
      */
-    async logout(access_token: string) {
+    async logout(access_token: string): Promise<void> {
         // 清空缓存
         // 更新数据库
         await this._accessToken.update({
@@ -28,7 +28,7 @@ export class SsoServiceImpl extends SsoService {
     /**
      * 刷新acces token过期时间
      */
-    async refreshToken(access_token: string) {
+    async refreshToken(access_token: string): Promise<void> {
         const accessToken = await this.getTokenByAccessToken(access_token);
         const refreshToken = await this._refreshToken.findOne({ where: { token: accessToken } });
         const expiresIn = new Date(new Date().setDate(new Date().getTime() + EXPRES_TIME));
@@ -42,7 +42,7 @@ export class SsoServiceImpl extends SsoService {
     /**
      * 验证access token 获取用户信息
      **/
-    async verify(access_token: string) {
+    async verify(access_token: string): Promise<UserEntity> {
         const token = await this.getTokenByAccessToken(access_token);
         return await this._user.findOneOrFail({
             openid: token.openid
@@ -59,17 +59,14 @@ export class SsoServiceImpl extends SsoService {
     /**
      * 根据用户名获取用户信息
      */
-    getUserByNameAndPsd(username: string, password: string) {
-        return this._user.findOne({ where: { username, password } });
+    async getUserByNameAndPsd(username: string, password: string): Promise<UserEntity> {
+        return await this._user.findOne({ where: { username, password } });
     }
     /**
      * 根据授权凭证获取token信息
      * @param access_token 
      */
-    getTokenByAccessToken(access_token: string): Promise<AccessTokenEntity> {
-        return this._accessToken.findOne(access_token);
+    async getTokenByAccessToken(access_token: string): Promise<AccessTokenEntity> {
+        return await this._accessToken.findOne(access_token);
     }
-    /**
-     * 根据token_id获取RefreshToken
-     */
 }

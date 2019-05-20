@@ -1,4 +1,4 @@
-import { Column, CreateDateColumn, Entity, Index, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 import { OrganizationEntity } from './organization.entity';
 import { PermissionEntity } from './permission.entity';
 import { RoleEntity } from './role.entity';

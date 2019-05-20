@@ -1,4 +1,6 @@
 import { MethodDeclaration, SourceFile, InterfaceDeclaration, ParameterDeclaration, Project, MethodDeclarationStructure } from 'ts-morph'
+import { clearReturnType, transformType } from './util'
+
 export class GraphqlCreater {
     private _query: Map<string, any> = new Map();
     private _mutation: Map<string, any> = new Map();
@@ -6,7 +8,7 @@ export class GraphqlCreater {
     private _type: Map<string, InterfaceDeclaration> = new Map();
     private _directive: Map<string, any> = new Map();
     private _unions: Map<string, any> = new Map();
-    private _inputs: Map<string, any> = new Map();
+    private _inputs: Map<string, InterfaceDeclaration> = new Map();
 
     createQuery(mth: MethodDeclaration, file: SourceFile, project: Project) {
         const structure = mth.getStructure() as MethodDeclarationStructure;
@@ -96,17 +98,6 @@ export class GraphqlCreater {
     }
 }
 
-export default new GraphqlCreater()
-
-/**
- * return
- */
-function clearReturnType(type: any) {
-    if (typeof type === 'string') {
-        return type.replace(/.*<(.*?)>/, '$1')
-    }
-    return type;
-}
 /**
  * union
  * @param _unions 
@@ -182,21 +173,7 @@ function createInput(_type: Map<string, InterfaceDeclaration>) {
     return createType(_type, 'input')
 }
 
-function transformType(type: string) {
-    switch (type) {
-        case "string":
-        case "String":
-            return "String";
-        case "number":
-        case "Number":
-            return "Int";
-        case "boolean":
-        case "Boolean":
-            return "Boolean";
-        default:
-            return type;
-    }
-}
+
 function createType(_type: Map<string, InterfaceDeclaration>, typeName: 'type' | 'input' = 'type') {
     let code = ``;
     _type.forEach((item, name) => {

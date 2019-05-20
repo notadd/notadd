@@ -1,4 +1,4 @@
-import { Entity, PrimaryColumn, Column, Timestamp, OneToMany, CreateDateColumn, UpdateDateColumn, ManyToOne, Index, JoinTable } from 'typeorm'
+import { Entity, PrimaryColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToOne, Index, JoinTable } from 'typeorm'
 import { AddonEntity } from './addon.entity';
 import { UserEntity } from './user.entity';
 import { RoleEntity } from './role.entity';

@@ -46,7 +46,7 @@ describe('addonServiceImpl', () => {
         const per: ICoreAddonPermission = { name: 'three', value: ['value'] }
         const addon: ICoreAddon = { name: 'addon1', permission: [per] }
         await coreAdd.upgrade(addon).then(res => {
-            expect(res.code).toBe(-1);
+            expect(res.code).toBe(1);
         })
     });
 

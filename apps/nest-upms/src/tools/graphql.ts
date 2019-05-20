@@ -1,4 +1,4 @@
-import { MethodDeclaration, SourceFile, InterfaceDeclaration, ParameterDeclaration, Project, MethodDeclarationStructure } from 'ts-morph'
+import { MethodDeclaration, SourceFile, InterfaceDeclaration, ParameterDeclaration, Project, MethodDeclarationStructure, EnumDeclaration } from 'ts-morph'
 import { clearReturnType, transformType } from './util'
 
 export class GraphqlCreater {
@@ -9,7 +9,7 @@ export class GraphqlCreater {
     private _directive: Map<string, any> = new Map();
     private _unions: Map<string, any> = new Map();
     private _inputs: Map<string, InterfaceDeclaration> = new Map();
-
+    private _enum: Map<string, EnumDeclaration> = new Map();
     createQuery(mth: MethodDeclaration, file: SourceFile, project: Project) {
         const structure = mth.getStructure() as MethodDeclarationStructure;
         const parameters = mth.getParameters();
@@ -45,6 +45,10 @@ export class GraphqlCreater {
                     }
                 })
             }
+            const _enum = file.getEnum(name);
+            if (_enum) {
+                this._enum.set(name, _enum);
+            }
         }
     }
     createType(name: any, file: SourceFile) {
@@ -70,6 +74,10 @@ export class GraphqlCreater {
                         this.createType(type, file)
                     }
                 })
+            }
+            const _enum = file.getEnum(name);
+            if (_enum) {
+                this._enum.set(name, _enum);
             }
         }
     }
@@ -113,7 +121,7 @@ export class GraphqlCreater {
         if (this._inputs) {
             input = createInput(this._inputs)
         }
-        return `${type}\n${input}\n${unions}\n${query}\n${mutation}\n${subscription}\n`;
+        return `${createEnum(this._enum)}\n${type}\n${input}\n${unions}\n${query}\n${mutation}\n${subscription}\n`;
     }
 }
 
@@ -125,6 +133,20 @@ function createUnion(_unions: Map<string, any>) {
     let code = ``
     _unions.forEach(union => {
         code += `union ${union.name} = ${union.type}`
+    });
+    return code;
+}
+
+function createEnum(_enum: Map<string, EnumDeclaration>) {
+    let code = ``;
+    _enum.forEach((e, name) => {
+        code += `enum ${name} {\n`
+        const members = e.getMembers();
+        members.map((m, index) => {
+            const struct = m.getStructure();
+            code += `\t${struct.name}\n`
+        });
+        code += `}\n`
     });
     return code;
 }

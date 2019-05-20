@@ -20,20 +20,30 @@ export class GraphqlCreater {
         this.createType(structure.returnType, file)
         this._query.set(structure.name, structure)
     }
+
     createInput(name: any, parameter: ParameterDeclaration, file: SourceFile) {
         name = clearReturnType(name)
         if (typeof name === 'string') {
             const inter = file.getInterface(name);
             if (inter) {
                 this._inputs.set(name, inter)
-            } else {
-                const type = file.getTypeAlias(name);
-                if (type) {
-                    const str = type.getStructure();
-                    const strs = (str.type as string).split('|').map(str => str.trim())
-                    strs.map(s => this.createType(s, file))
-                    this._unions.set(str.name, str);
-                }
+                const properties = inter.getProperties();
+                properties.map(pro => {
+                    const struct = pro.getStructure();
+                    const type = struct.type as string;
+                    // 检查数组
+                    if (type.endsWith('[]')) {
+                        const tName = type.replace('[]', '')
+                        this.createType(tName, file)
+                    } else if (type.indexOf('|')) {
+                        const types = type.split('|');
+                        types.map(t => {
+                            this.createType(t, file)
+                        });
+                    } else {
+                        this.createType(type, file)
+                    }
+                })
             }
         }
     }
@@ -43,14 +53,23 @@ export class GraphqlCreater {
             const inter = file.getInterface(name);
             if (inter) {
                 this._type.set(name, inter)
-            } else {
-                const type = file.getTypeAlias(name);
-                if (type) {
-                    const str = type.getStructure();
-                    const strs = (str.type as string).split('|').map(str => str.trim())
-                    strs.map(s => this.createType(s, file))
-                    this._unions.set(str.name, str);
-                }
+                const properties = inter.getProperties();
+                properties.map(pro => {
+                    const struct = pro.getStructure();
+                    const type = struct.type as string;
+                    // 检查数组
+                    if (type.endsWith('[]')) {
+                        const tName = type.replace('[]', '')
+                        this.createType(tName, file)
+                    } else if (type.indexOf('|')) {
+                        const types = type.split('|');
+                        types.map(t => {
+                            this.createType(t, file)
+                        });
+                    } else {
+                        this.createType(type, file)
+                    }
+                })
             }
         }
     }

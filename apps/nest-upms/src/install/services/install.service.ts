@@ -4,15 +4,19 @@ import { GrpcMethod } from '@nestjs/microservices';
 import { InjectRepository } from '@nestjs/typeorm';
 import { join } from 'path';
 import { Repository } from 'typeorm';
-import { bootstrap } from '../../main';
 import { AddonEntity, PermissionEntity, UserEntity, UserPermissionEntity, AddonPermissionEntity } from '../../typeorm';
 import { writeFileSync } from 'fs';
+export enum PermissionStatus {
+    default = 0,
+    fail = -1,
+    success = 0
+}
 interface Permission {
     title: string;
     name: string;
     value: string[];
     desc: string;
-    status: 0 | 1 | -1;
+    status: PermissionStatus;
     icon: string;
     displayorder: number;
 }
@@ -48,7 +52,6 @@ interface Config {
     db: DbConfig;
     admin: number[];
 }
-
 @Resolver()
 @Controller()
 export class InstallResolver {
@@ -68,7 +71,6 @@ export class InstallResolver {
             // 生成配置文件 ormconfig.json
             await this.writeConfig(join(__dirname, '../../ormconfig.json'), { db: data.db, admin: [] });
             // 启动数据库
-            bootstrap();
             // 添加admin
             const user = await this.addAdmin(data.admin);
             // 应用安装
@@ -76,8 +78,6 @@ export class InstallResolver {
             // 重新生成配置文件 ormconfig.json
             this.writeConfig(join(__dirname, '../../ormconfig.json'), { db: data.db, admin: [user.user_id] });
             // 重启应用
-            bootstrap(false);
-            bootstrap();
             return {
                 code: 200, msg: 'success'
             }
@@ -87,7 +87,6 @@ export class InstallResolver {
             }
         }
     }
-
 
     /**
      * @param path 输出文件的路径及文件名

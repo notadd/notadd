@@ -51,17 +51,14 @@ export class ProtobufCreater {
     }
 
     create() {
-        let message = ``, service = ``, _enum = ``;
+        let message = ``, service = ``;
         if (ProtobufCreater._message.size > 0) {
-            message += createMessage(ProtobufCreater._message);
+            message += createMessage(ProtobufCreater._message, ProtobufCreater._enum);
         }
         if (ProtobufCreater._service.size > 0) {
             service += createService(ProtobufCreater._service)
         }
-        if (ProtobufCreater._enum.size > 0) {
-            _enum += createEnum(ProtobufCreater._enum)
-        }
-        return `syntax = "proto3";\npackage notadd;\n${_enum}\n${message}\n${service}\n`
+        return `syntax = "proto3";\npackage notadd;\n${message}\n${service}\n`
     }
 }
 
@@ -69,12 +66,14 @@ function transformType(type: string) {
     switch (type) {
         case 'number':
             return 'int32';
+        case 'any':
+            return 'Any';
         default:
             return type;
     }
 }
 
-function createMessage(_message: Map<string, InterfaceDeclaration>) {
+function createMessage(_message: Map<string, InterfaceDeclaration>, _enum: Map<string, EnumDeclaration>) {
     let code = ``;
     _message.forEach(item => {
         const structure = item.getStructure();
@@ -83,14 +82,18 @@ function createMessage(_message: Map<string, InterfaceDeclaration>) {
         properties.map((pro, index) => {
             const struct = pro.getStructure();
             const type = struct.type as string;
-
             if (type.endsWith('[]')) {
                 const tName = (struct.type as string).replace('[]', '')
-                const typeName = transformType(tName)
+                const typeName = transformType(tName);
+                // 判断是否引入enum
+                code += createEnum(_enum, typeName)
                 code += `\trepeated ${typeName} ${struct.name} = ${index + 1}`
                 code += `;\n`;
             } else {
-                code += `\t${transformType(struct.type as string)} ${struct.name} = ${index + 1}`
+                // 判断是否引入enum
+                const typeName = transformType(struct.type as string);
+                code += createEnum(_enum, typeName)
+                code += `\t${typeName} ${struct.name} = ${index + 1}`
                 code += `;\n`
             }
         })
@@ -99,17 +102,31 @@ function createMessage(_message: Map<string, InterfaceDeclaration>) {
     return code;
 }
 
-function createEnum(_enum: Map<string, EnumDeclaration>) {
+function createEnum(_enum: Map<string, EnumDeclaration>, requireName?: string) {
     let code = ``;
-    _enum.forEach((e, name) => {
-        code += `enum ${name} {\n`
-        const members = e.getMembers();
-        members.map(m => {
-            const struct = m.getStructure();
-            code += `\t${struct.name} = ${struct.initializer};\n`
+    if (requireName) {
+        const name = requireName;
+        const e = _enum.get(requireName);
+        if (e) {
+            code += `\tenum ${name} {\n`
+            const members = e.getMembers();
+            members.map((m, index) => {
+                const struct = m.getStructure();
+                code += `\t\t${struct.name} = ${index};\n`
+            });
+            code += `\t}\n`
+        }
+    } else {
+        _enum.forEach((e, name) => {
+            code += `enum ${name} {\n`
+            const members = e.getMembers();
+            members.map((m, index) => {
+                const struct = m.getStructure();
+                code += `\t${struct.name} = ${index};\n`
+            });
+            code += `}\n`
         });
-        code += `}\n`
-    });
+    }
     return code;
 }
 

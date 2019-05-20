@@ -1,11 +1,13 @@
 import { Controller } from '@nestjs/common';
-import { Mutation, Resolver } from '@nestjs/graphql';
+import { Mutation, Resolver, Args } from '@nestjs/graphql';
 import { GrpcMethod } from '@nestjs/microservices';
 import { InjectRepository } from '@nestjs/typeorm';
 import { join } from 'path';
 import { Repository } from 'typeorm';
 import { AddonEntity, PermissionEntity, UserEntity, UserPermissionEntity, AddonPermissionEntity } from '../../typeorm';
 import { writeFileSync } from 'fs';
+import { Observable, of } from 'rxjs';
+import { UserService, PermissionService } from '../../baseInfo/core';
 export enum PermissionStatus {
     default = 0,
     fail = -1,
@@ -31,11 +33,14 @@ interface Addon {
 }
 
 interface DbConfig {
+    type: string;
     host: string;
     port: number;
     username: string;
     password: string;
     dbname: string;
+    entity: string[];
+    synchronize: boolean;
 }
 interface InstallData {
     admin: Admin;
@@ -62,11 +67,13 @@ export class InstallResolver {
         @InjectRepository(UserPermissionEntity) private readonly _userPer: Repository<UserPermissionEntity>,
         @InjectRepository(AddonPermissionEntity) private readonly _addonPer: Repository<AddonPermissionEntity>,
         @InjectRepository(AddonEntity) private readonly _addon: Repository<AddonEntity>,
+        private readonly _userService: UserService,
+        private readonly _perService: PermissionService,
     ) { }
 
     @Mutation()
-    @GrpcMethod()
-    async install(data: InstallData): Promise<InstallResult> {
+    @GrpcMethod('InstallResolver')
+    async install(@Args('data') data: InstallData): Promise<InstallResult> {
         try {
             // 生成配置文件 ormconfig.json
             await this.writeConfig(join(__dirname, '../../ormconfig.json'), { db: data.db, admin: [] });
@@ -82,26 +89,30 @@ export class InstallResolver {
                 code: 200, msg: 'success'
             }
         } catch (e) {
+            console.log(e)
             return {
-                code: 500, msg: `fail ${e.message}`
+                code: 500, msg: `fail`
             }
         }
     }
 
     @Mutation()
-    @GrpcMethod()
-    async installAddon(data: Addon): Promise<InstallResult> {
-        try {
-            let addon: Addon[] = [data];
-            await this.saveAddon(addon);
-            return {
-                code: 200, msg: 'success'
-            }
-        } catch (e) {
-            return {
-                code: 500, msg: `fail ${e.message}`
-            }
-        }
+    @GrpcMethod('InstallResolver')
+    installAddon(@Args('data') data: Addon): Observable<InstallResult> {
+        // try {
+        //     let addon: Addon[] = [data];
+        //     await this.saveAddon(addon);
+        //     return {
+        //         code: 200, msg: 'success'
+        //     }
+        // } catch (e) {
+        //     return {
+        //         code: 500, msg: `fail ${e.message}`
+        //     }
+        // }
+        return of({
+            code: 200, msg: `success`
+        })
     }
 
     /**
@@ -122,13 +133,16 @@ export class InstallResolver {
         const user = new UserEntity();
         user.username = admin.username;
         user.password = admin.password; // todo 加盐,密码加密
-        user.phone = '';
-        user.email = '';
+        user.phone = '18888888888';
+        user.email = 'admin@gmail.com';
         user.realname = '';
         user.nickname = '';
+        user.unionid = '';
+        user.salt = '';
+        user.avatar = ''
         user.sex = 0;
         user.openid = 'ce92b3e2-7ab1-11e9-8f9e-2a86e4085a59';
-        const userExist = await this._user.save(user);
+        const userExist = await this._userService.insert(user);
         // 添加admin权限
         const permission = new PermissionEntity();
         permission.value = ['*'];
@@ -139,10 +153,11 @@ export class InstallResolver {
         permission.father_name = 0;
         permission.displayorder = 0;
         permission.status = 1;
-        const perExist = await this._permission.save(permission);
+        const perExist = await this._perService.insert(permission);
         // 添加到关联表
         const userPer = new UserPermissionEntity();
         userPer.openid = userExist.openid;
+        userPer.type = 1;
         userPer.permission_id = 1; // todo 权限id当前无,暂放
         await this._userPer.save(userPer);
         return userExist;

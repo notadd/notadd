@@ -9,8 +9,7 @@ export class UserPermissionEntity {
     user_permission_id: number;
 
     @Column({
-        type: 'varchar',
-        length: 20
+        type: 'uuid',
     })
     // @Index()
     openid: string;
@@ -24,5 +23,5 @@ export class UserPermissionEntity {
     @Column({
         type: 'smallint',
     })
-    type: number;
+    type: -1|1;
 }

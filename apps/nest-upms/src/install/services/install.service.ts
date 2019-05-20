@@ -179,7 +179,12 @@ export class InstallResolver {
 
 }
 
+// 安装结果
 interface InstallResult {
+    /**
+     * 状态码
+     */
     code: number;
+    // 消息
     msg: string;
 }

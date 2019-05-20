@@ -55,12 +55,8 @@ export class SsoServiceImpl extends SsoService {
      */
     async token(username: string, password: string): Promise<AccessTokenEntity> {
         const user = await this._userService.get({ username, password });
-        if (!user) {
-            
-        }
         return this._auth.createToken(user);
     }
-
     /**
      * 根据授权凭证获取token信息
      * @param access_token 

@@ -137,27 +137,28 @@ function createUnion(_unions: Map<string, any>) {
     return code;
 }
 
-function getDocs(eSt: any) {
+function getDocs(eSt: any, withT: boolean = false) {
     let desc = ``;
+    eSt.docs = eSt.docs || [];
     eSt.docs.map(doc => {
         if (typeof doc === 'string') {
             desc += doc;
         } else {
             desc += doc.description
         }
-    })
-    return desc;
+    });
+    return desc.length > 0 ? `${withT ? `\t` : ``}"""${desc}"""\n` : ``;
 }
 
 function createEnum(_enum: Map<string, EnumDeclaration>) {
     let code = ``;
     _enum.forEach((e, name) => {
         const eSt = e.getStructure();
-        code += `"""${getDocs(eSt)}"""\nenum ${name} {\n`
+        code += `${getDocs(eSt)}enum ${name} {\n`
         const members = e.getMembers();
         members.map((m, index) => {
             const struct = m.getStructure();
-            code += `\t"""${getDocs(struct)}"""\t${struct.name}\n`
+            code += `\t${getDocs(struct)}\t${struct.name}\n`
         });
         code += `}\n`
     });
@@ -170,15 +171,7 @@ function createEnum(_enum: Map<string, EnumDeclaration>) {
 function createSubscription(_subscription: Map<string, MethodDeclarationStructure>) {
     let code = `type Subscription{\n`;
     _subscription.forEach(sub => {
-        let desc = ``;
-        sub.docs.map(doc => {
-            if (typeof doc === 'string') {
-                desc += doc;
-            } else {
-                desc += doc.description
-            }
-        })
-        code += `\t"""${desc}"""\n\t${sub.name}`
+        code += `\t${getDocs(sub)}\t${sub.name}`
         const parameters = sub.parameters;
         if (parameters.length > 0) {
             code += `(`
@@ -206,15 +199,7 @@ function createSubscription(_subscription: Map<string, MethodDeclarationStructur
 function createMutation(_mutation: Map<string, MethodDeclarationStructure>) {
     let code = `type Mutation{\n`;
     _mutation.forEach(muta => {
-        let desc = ``;
-        muta.docs.map(doc => {
-            if (typeof doc === 'string') {
-                desc += doc;
-            } else {
-                desc += doc.description
-            }
-        });
-        code += `\t"""${desc}"""\n\t${muta.name}`
+        code += `\t${getDocs(muta)}\t${muta.name}`
         const parameters = muta.parameters;
         if (parameters.length > 0) {
             code += `(`
@@ -248,47 +233,31 @@ function createType(_type: Map<string, InterfaceDeclaration>, typeName: 'type' |
     _type.forEach((item, name) => {
         code += `\n`;
         const itemS = item.getStructure();
-        let desc = ``;
-        itemS.docs.map(doc => {
-            if (typeof doc === 'string') {
-                desc += doc;
-            } else {
-                desc += doc.description
-            }
-        });
-        code += `"""${desc}"""\n${typeName} ${name}{\n`;
+        code += `${getDocs(itemS)}${typeName} ${name}{\n`;
         let properties = item.getProperties();
         properties.map(pro => {
             const struct = pro.getStructure();
-            let desc = ``;
-            struct.docs.map(doc => {
-                if (typeof doc === 'string') {
-                    desc += doc;
-                } else {
-                    desc += doc.description
-                }
-            });
-            code += `\t"""${desc}"""\n\t${struct.name}: `;
+            code += `${getDocs(struct, true)}\t${struct.name}: `;
             if (struct.type === 'string') {
-                code += `String`
+                code += `String`;
             } else if (struct.type === 'number') {
-                code += `Int`
+                code += `Int`;
             } else if (struct.type === 'boolean') {
-                code += `Boolean`
+                code += `Boolean`;
             } else if (struct.type === 'Float') {
-                code += `Float`
+                code += `Float`;
             } else if (struct.type === 'ID') {
-                code += `ID`
+                code += `ID`;
             } else if ((struct.type as string).endsWith('[]')) {
-                const tName = (struct.type as string).replace('[]', '')
-                code += `[${transformType(tName)}]`
+                const tName = (struct.type as string).replace('[]', '');
+                code += `[${transformType(tName)}]`;
             } else {
                 code += struct.type;
             }
             if (!struct.hasQuestionToken) {
-                code += `!`
+                code += `!`;
             }
-            code += `\n`
+            code += `\n`;
         })
         code += `}`;
     });
@@ -299,15 +268,7 @@ function createQuery(_query: Map<string, MethodDeclarationStructure>): string {
     // query
     let code = `type Query {\n`;
     _query.forEach((query: MethodDeclarationStructure) => {
-        let desc = ``;
-        query.docs.map(doc => {
-            if (typeof doc === 'string') {
-                desc += doc;
-            } else {
-                desc += doc.description
-            }
-        })
-        code += `\t"""${desc}"""\n\t${query.name}`
+        code += `\t${getDocs(query)}\t${query.name}`
         const parameters = query.parameters;
         if (parameters.length > 0) {
             code += `(`

@@ -72,7 +72,7 @@ export class InstallResolver {
             // 添加admin
             const user = await this.addAdmin(data.admin);
             // 应用安装
-            await this.addonInstall(data.addons);
+            await this.saveAddon(data.addons);
             // 重新生成配置文件 ormconfig.json
             this.writeConfig(join(__dirname, '../../ormconfig.json'), { db: data.db, admin: [user.user_id] });
             // 重启应用
@@ -81,9 +81,25 @@ export class InstallResolver {
             return {
                 code: 200, msg: 'success'
             }
-        } catch {
+        } catch (e) {
             return {
-                code: 500, msg: 'fail'
+                code: 500, msg: `fail ${e.message}`
+            }
+        }
+    }
+
+    @Mutation()
+    @GrpcMethod()
+    async installAddon(data: Addon): Promise<InstallResult> {
+        try {
+            let addon: Addon[] = [data];
+            await this.saveAddon(addon);
+            return {
+                code: 200, msg: 'success'
+            }
+        } catch (e) {
+            return {
+                code: 500, msg: `fail ${e.message}`
             }
         }
     }
@@ -137,7 +153,7 @@ export class InstallResolver {
      * 添加应用
      * @param addons 应用信息
      */
-    private async addonInstall(addons: Addon[]) {
+    private async saveAddon(addons: Addon[]) {
         for (let addon of addons) {
             // 添加应用
             const addonEntity = new AddonEntity();

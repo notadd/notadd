@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { AccessTokenEntity, EXPRES_TIME, RefreshTokenEntity, UserEntity } from '../typeorm';
 import { AuthService, SsoService } from './core/index';
+import { UserService } from '../baseInfo/core';
 
 @Injectable()
 export class SsoServiceImpl extends SsoService {
@@ -11,6 +12,7 @@ export class SsoServiceImpl extends SsoService {
         @InjectRepository(UserEntity) private _user: Repository<UserEntity>,
         @InjectRepository(AccessTokenEntity) private _accessToken: Repository<AccessTokenEntity>,
         @InjectRepository(RefreshTokenEntity) private _refreshToken: Repository<RefreshTokenEntity>,
+        private _userService: UserService,
         private _auth: AuthService
     ) {
         super();
@@ -52,16 +54,13 @@ export class SsoServiceImpl extends SsoService {
      * 根据用户名和密码获取access token
      */
     async token(username: string, password: string): Promise<AccessTokenEntity> {
-        const user = await this.getUserByNameAndPsd(username, password);
+        const user = await this._userService.get({ username, password });
+        if (!user) {
+            
+        }
         return this._auth.createToken(user);
     }
 
-    /**
-     * 根据用户名获取用户信息
-     */
-    async getUserByNameAndPsd(username: string, password: string): Promise<UserEntity> {
-        return await this._user.findOne({ where: { username, password } });
-    }
     /**
      * 根据授权凭证获取token信息
      * @param access_token 

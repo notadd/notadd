@@ -9,10 +9,12 @@ export class AddonEntity {
     @PrimaryGeneratedColumn()
     appid: number;
 
-    @Column({
-        type: 'int',
-        comment: '上级',
-    })
+    // @Column({
+    //     type: 'int',
+    //     comment: '上级',
+    // })
+    // pid: number;
+
     @Column({
         type: 'varchar',
         length: 20

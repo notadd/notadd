@@ -34,14 +34,14 @@ export class GraphqlCreater {
                     // 检查数组
                     if (type.endsWith('[]')) {
                         const tName = type.replace('[]', '')
-                        this.createType(tName, file)
+                        this.createInput(tName, parameter, file)
                     } else if (type.indexOf('|')) {
                         const types = type.split('|');
                         types.map(t => {
-                            this.createType(t, file)
+                            this.createInput(t, parameter, file)
                         });
                     } else {
-                        this.createType(type, file)
+                        this.createInput(type, parameter, file)
                     }
                 })
             }

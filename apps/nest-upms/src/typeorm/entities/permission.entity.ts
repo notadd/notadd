@@ -93,7 +93,7 @@ export class PermissionEntity {
     @CreateDateColumn({
         type: 'timestamptz'
     })
-    create_time: Date = new Date();
+    create_time: Date;
 
     /**
      * 更新时间
@@ -101,7 +101,7 @@ export class PermissionEntity {
     @UpdateDateColumn({
         type: 'timestamptz'
     })
-    update_time: Date = new Date();
+    update_time: Date;
 
     /**
      * 应用id

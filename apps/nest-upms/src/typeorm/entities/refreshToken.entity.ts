@@ -29,22 +29,22 @@ export class RefreshTokenEntity {
     refresh_token: string;
 
     @Column({
-        type: 'timestamp without time zone',
+        type: 'timestamptz',
         comment: '过期时间'
     })
     expires_in: Date;
 
     @CreateDateColumn({
-        type: 'timestamp without time zone',
+        type: 'timestamptz',
         comment: '创建时间'
     })
-    create_time: Date = new Date();
+    create_time: Date;
 
     @UpdateDateColumn({
-        type: 'timestamp without time zone',
+        type: 'timestamptz',
         comment: '更新时间'
     })
-    update_time: Date = new Date();
+    update_time: Date;
 
     // @BeforeInsert()
     // protected insterExpresIn() {

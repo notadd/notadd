@@ -1,5 +1,5 @@
 sudo: false
-# dist: xenial
+dist: xenial
 language: node_js
 node_js:
     - "10"
@@ -30,25 +30,27 @@ services:
 #       before_script:
 
 #         - bash ./testing/travis/install-postgres-11.s
-after_install:
+before_install:
   - npm i -g npm@latest 
-  - bash <(curl -s https://codecov.io/bash)
+
 install:
   - npm i
   - npm i -g codecov @zeit/ncc@beta
-before_install:
+  
+before_script:
   - sh -c "if [ '$DB' = 'postgres10' ]; then bash ./testing/travis/install-postgres-10.sh; echo $DB; fi"
   - sh -c "if [ '$DB' = 'postgres11' ]; then bash ./testing/travis/install-postgres-11.sh; echo $DB; fi"  
-  - 
+
 script:
   - npm run test.nest.upms.e2e
+  - bash <(curl -s https://codecov.io/bash)
 #   - rm -rf tsconfig.json && cp  ./apps/nest-upms/tsconfig.json ./
-  - cd ./apps/nest-upms && ncc build ./src/main.ts -o dist
-  - node ./dist/index.js
+  - export NODE_OPTIONS=--max_old_space_size=4096 && cd ./apps/nest-upms && ncc build ./src/main.ts -o dist -m
+
 #   - istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec
 #   - codecov
  
-after_success: npm run test.nest.upms.coverage
+after_success: cd ../../ && npm run test.nest.upms.coverage
 
 notifications:
     webhooks: https://www.travisbuddy.com/

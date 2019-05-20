@@ -33,16 +33,14 @@ export class RoleEntity {
     description: string;
 
     @CreateDateColumn({
-        type: 'timestamp',
-        default: new Date()
+        type: 'timestamptz',
     })
-    create_time: Date = new Date();
+    create_time: Date;
 
     @UpdateDateColumn({
-        type: 'timestamp',
-        default: new Date()
+        type: 'timestamptz',
     })
-    update_time: Date = new Date();
+    update_time: Date;
 
     /**
      * 角色权限，常用，定义一下

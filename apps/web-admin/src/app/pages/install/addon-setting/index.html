@@ -3,5 +3,10 @@
         <div class="logo"></div>
         <div class="title">{{addon.title}}</div>
         <div class="desc">{{addon.desc}}</div>
+        <div class="permission">
+            <div *ngFor="let per of addon.permission">
+                {{per.title}}({{per.name}})
+            </div>
+        </div>
     </li>
 </ul>

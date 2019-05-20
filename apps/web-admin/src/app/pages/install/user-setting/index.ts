@@ -1,17 +1,14 @@
 import { Component, OnInit } from '@angular/core'
-interface UserSettingData {
-    username: string;
-    password: string;
-}
+import { Admin, InstallStore } from '../install.store'
 @Component({
     selector: 'user-setting',
     templateUrl: './index.html',
     styleUrls: ['./index.scss']
 })
 export class UserSetting implements OnInit {
-    data: UserSettingData = {
-        username: 'admin',
-        password: '123456'
+    data: Admin;
+    constructor(public install: InstallStore) {
+        this.data = this.install.data.admin;
     }
     ngOnInit() { }
 }

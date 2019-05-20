@@ -1,4 +1,5 @@
 import { Component } from '@angular/core'
+import { InstallStore } from './install.store';
 interface InstallStep {
     title: string;
 }
@@ -17,6 +18,8 @@ export class WebAdminInstallPage {
         title: '子模块'
     }];
 
+    constructor(public install: InstallStore) { }
+
     pre(): void {
         this.current -= 1;
     }
@@ -26,6 +29,6 @@ export class WebAdminInstallPage {
     }
 
     done(): void {
-        console.log('done');
+        this.install.finish();
     }
 }

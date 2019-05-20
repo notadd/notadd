@@ -6,7 +6,7 @@ import { ApolloModule, APOLLO_OPTIONS } from 'apollo-angular';
 import { HttpLinkModule, HttpLink } from "apollo-angular-link-http";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { NgZorroAntdModule, NzFormModule } from 'ng-zorro-antd'
-import { WebAdminInstallPage, AddonSetting, DbSetting, UserSetting } from './install'
+import { WebAdminInstallPage, AddonSetting, DbSetting, UserSetting, InstallStore } from './install'
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 @NgModule({
@@ -37,6 +37,7 @@ import { FormsModule } from '@angular/forms';
         UserSetting
     ],
     providers: [
+        InstallStore,
         {
             provide: APOLLO_OPTIONS,
             useFactory: (httpLink: HttpLink) => {

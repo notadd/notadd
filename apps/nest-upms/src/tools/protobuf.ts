@@ -65,9 +65,13 @@ export class ProtobufCreater {
 function transformType(type: string) {
     switch (type) {
         case 'number':
+        case 'Number':
             return 'int32';
         case 'any':
             return 'Any';
+        case 'boolean':
+        case 'Boolean':
+            return 'bool';
         default:
             return type;
     }

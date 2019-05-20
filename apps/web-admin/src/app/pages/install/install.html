@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="logo"> I am a logo!</div>
+    <nz-steps [nzCurrent]="current">
+        <nz-step *ngFor="let step of steps" [nzTitle]="step.title"></nz-step>
+    </nz-steps>
+    <div class="steps-content">
+        <addon-setting *ngIf="current===2"></addon-setting>
+        <db-setting *ngIf="current===1"></db-setting>
+        <user-setting *ngIf="current===0"></user-setting>
+    </div>
+    <div class="steps-action">
+        <button nz-button nzType="default" (click)="pre()" *ngIf="current > 0">
+            <span>上一步</span>
+        </button>
+        <button nz-button nzType="default" (click)="next()" *ngIf="current < 2">
+            <span>下一步</span>
+        </button>
+        <button nz-button nzType="primary" (click)="done()" *ngIf="current === 2">
+            <span>完成</span>
+        </button>
+    </div>
+</div>

@@ -78,26 +78,32 @@ export class AddonServiceImpl extends CoreAddon {
     async upgrade(addon: ICoreAddon): Promise<ICoreAddonMessage> {
         try {
             // 通过模块名程找到数据库中所对应的模块
-            let exist = await this.addonRepo.findOne({ where: { name: addon.name }});
+            let exist = await this.addonRepo.findOne({ where: { name: addon.name } });
             //  对比判断是否有新增的权限,如果有就插入
+
+            addon.permission = addon.permission || [];
             for (let addonPer of addon.permission) {
                 const res = exist.permissions.find(item => item.name === addonPer.name);
                 if (!res) {
                     this.permissionRepo.insert(res);
                 } else {
-
+                    if (res) {
+                        this.permissionRepo.delete(res)
+                    } else {
+                        this.permissionRepo.save(res);
+                    }
                 }
             }
             //根据模块名找到所有已存在的权限
-            let permissions = await this.addonRepo.find({ where: { name: addon.name } });
-            for (let addonPer of addon.permission) {
-                const res = exist.permissions.find(item => item.name === addonPer.name);
-                if (res) {
-                    this.permissionRepo.delete(res)
-                } else {
-                    this.permissionRepo.save(res);
-                }
-            }
+            // let permissions = await this.addonRepo.find({ where: { name: addon.name } });
+            // for (let addonPer of addon.permission) {
+            //     const res = exist.permissions.find(item => item.name === addonPer.name);
+            //     if (res) {
+            //         this.permissionRepo.delete(res)
+            //     } else {
+            //         this.permissionRepo.save(res);
+            //     }
+            // }
             return {
                 code: 1
             }

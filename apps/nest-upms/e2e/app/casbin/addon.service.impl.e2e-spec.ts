@@ -3,6 +3,7 @@ import { ApplicationModule } from "../../../src/app.module";
 import { Test } from "@nestjs/testing";
 import { AddonEntity } from "../../../src";
 import { CoreAddon, ICoreAddon, ICoreAddonPermission } from "../../../src/casbin/core/addon";
+import { async } from "q";
 describe('addonServiceImpl', () => {
     let app: INestApplication;
     let coreAdd: CoreAddon;
@@ -18,17 +19,41 @@ describe('addonServiceImpl', () => {
         // 插入测试数据
         await app.init();
     });
+    /**
+     * 安装应用
+     */
+    it(`install`,async()=>{
+
+    })
+
+    /**
+     * 卸载应用
+     */
+    it(`uninstall`,async() =>{
+        const per: ICoreAddonPermission = { name: 'one', value: ['value'] };
+        const addon: ICoreAddon = { name: 'addon1', permission: [per] };
+        await coreAdd.uninstall(addon).then(res=>{
+            expect(res.code).toBe(1);
+        })
+    })
+    /**
+     * 查询所有权限,如果有多余的就删除
+     */
+    it(`deletePermission`,async () =>{
+       
+    })
+
 
     /**
    * 更新权限 如果没有就插入
     */
-    // it(`insert`, async () => {
-    //     const per: ICoreAddonPermission = { name: 'one1', value: ['value'] };
-    //     const addon: ICoreAddon = { name: 'addon2', permission: [per] };
-    //     await coreAdd.upgrade(addon).then(res => {
-    //         expect(res.code).toBe(-1);
-    //     })
-    // });
+    it(`insert`, async () => {
+        const per: ICoreAddonPermission = { name: 'one1', value: ['value'] };
+        const addon: ICoreAddon = { name: 'addon2', permission: [per] };
+        await coreAdd.upgrade(addon).then(res => {
+            expect(res.code).toBe(-1);
+        })
+    });
 
     /**
      * 如果有权限,就更新
@@ -65,6 +90,6 @@ function getRandomSecret(): string {
     return `secret_${new Date().getTime()}`
 }
 
-function getRandomTitle(): string{
+function getRandomTitle(): string {
     return `title_${new Date().getTime()}`
 }

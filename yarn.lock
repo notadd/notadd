@@ -562,19 +562,19 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@nestjs/common@6.2.2":
-  version "6.2.2"
-  resolved "https://registry.yarnpkg.com/@nestjs/common/-/common-6.2.2.tgz#3ce58bd5c90c333fa7ffc3e05e49cb27504735f8"
-  integrity sha512-oyU7J/lCQrF54ymVB2inc9W6pP3TNSMnAkh6PGUCBKmnWciF9ECk36TMr8cJdDyUg3BMb2sHIbSGENrxPoiDYQ==
+"@nestjs/common@6.2.3":
+  version "6.2.3"
+  resolved "https://registry.yarnpkg.com/@nestjs/common/-/common-6.2.3.tgz#d8ace5f9a9820419d09df7bfca2d0be3a927c57c"
+  integrity sha512-XHlQGfeM5IbPd0zixEVQPj/xMqPLdaETV8DDwRh8YQXoQN32zPvwM4zrxiKAIU7WjTj+VWy87HCsnX8trZ3MxA==
   dependencies:
     axios "0.18.0"
     cli-color "1.4.0"
     uuid "3.3.2"
 
-"@nestjs/core@6.2.2":
-  version "6.2.2"
-  resolved "https://registry.yarnpkg.com/@nestjs/core/-/core-6.2.2.tgz#db5c11910beaed498a028982ed2417daa91363ba"
-  integrity sha512-X72n8TtWQcOQbw4rKowY6sFMLzMgig90xV7+6CZnu+LnDijCdGfW4f7vwvOBhYMjRovfL/73C1I/jkbEqxCiyg==
+"@nestjs/core@6.2.3":
+  version "6.2.3"
+  resolved "https://registry.yarnpkg.com/@nestjs/core/-/core-6.2.3.tgz#4b1ce3e0c3f9e7b157b29bc8ca865404024defad"
+  integrity sha512-AM6YkvCf6L9MK5Nxx5WXV1+hl6Jku1JmcEr4fCspwaW92GwS8MpXxfO24hsR9voQ9u4FKaAqNRdWULcg5VlIcg==
   dependencies:
     "@nuxtjs/opencollective" "0.2.1"
     fast-safe-stringify "2.0.6"
@@ -608,10 +608,10 @@
     "@types/jsonwebtoken" "7.2.8"
     jsonwebtoken "8.4.0"
 
-"@nestjs/microservices@6.2.2":
-  version "6.2.2"
-  resolved "https://registry.yarnpkg.com/@nestjs/microservices/-/microservices-6.2.2.tgz#659aa873b6a2479cef1c51cbe6462cf5e4a6966f"
-  integrity sha512-CALt6ikJ2vnVY3c80UA8F52UvVNkfhmYpOlG60P/JJ9oX//Z1cl810x9xh/UWx0GzdusanWHBzc1LC/dlOAgZw==
+"@nestjs/microservices@6.2.3":
+  version "6.2.3"
+  resolved "https://registry.yarnpkg.com/@nestjs/microservices/-/microservices-6.2.3.tgz#5d3967c451afe28196b44122ea0ab23af6969c9a"
+  integrity sha512-jnkC7T9PMRA5Nu5ti4K93kDqLj75UL7THWgoS1IxqKMBvozBWZGvCwik1MRanTBTvHad0d+e8PnjZBNKFyON5g==
   dependencies:
     iterare "1.1.2"
     json-socket "0.3.0"
@@ -622,10 +622,10 @@
   resolved "https://registry.yarnpkg.com/@nestjs/passport/-/passport-6.1.0.tgz#80da326cc976a82530648d8025b04c8e2d41c10e"
   integrity sha512-V4KdtFFLsdZQ/HlIECpiK6byzGz57Y12TAc+Iatykk8jWuVFE1jq8RJbpTfB0zG0PTfcGm9crQ6Ut2Rwdmis4Q==
 
-"@nestjs/platform-express@6.2.2":
-  version "6.2.2"
-  resolved "https://registry.yarnpkg.com/@nestjs/platform-express/-/platform-express-6.2.2.tgz#6d477948616a265d234449ee4b93228e6238899d"
-  integrity sha512-WhKzMdGvChoIQHusbRkd4s6bFKCGiqhS5pJs3ajdhXFkrfx74QY2K7ehfJ5vpslSdrm0TDJTk2ndZ7+ISqIJrw==
+"@nestjs/platform-express@6.2.3":
+  version "6.2.3"
+  resolved "https://registry.yarnpkg.com/@nestjs/platform-express/-/platform-express-6.2.3.tgz#5efaa688c30a88daed4544c1ababa4f422c2f7e7"
+  integrity sha512-kpnBN6+YR3dXO6h+p0JrJxLnGRUzvyPPVCP9YPZ7n0c/1SvAAVKN26uRNGZo8jOpD72taL8+rTLyjgezooh1QA==
   dependencies:
     body-parser "1.19.0"
     cors "2.8.5"
@@ -640,10 +640,10 @@
     lodash "4.17.11"
     path-to-regexp "3.0.0"
 
-"@nestjs/testing@6.2.2":
-  version "6.2.2"
-  resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-6.2.2.tgz#4e5a04c8fcdfd17447e76e5ae69ae8367b2830fe"
-  integrity sha512-w+qJyOkxBU1aeBfzdwDAkfASiH9aPzMSdJ3HlFzKh99Ukkqv25oTMzPmH2gy7pkU4D+Gj34q3GJvRWVIivK6Ow==
+"@nestjs/testing@6.2.3":
+  version "6.2.3"
+  resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-6.2.3.tgz#5e36d49b9c55bf7bd6b1430bbc41f152c0001031"
+  integrity sha512-et3zvLE8xBjJqoYBjyub9LyuYDf9qbL7Go7WDmsiYEGzV6FELA1t0pHBFr8bKRtRWGQviOIf/4cd0YwilhoZUQ==
   dependencies:
     optional "0.1.4"
 
@@ -654,10 +654,10 @@
   dependencies:
     uuid "3.3.2"
 
-"@nestjs/websockets@6.2.2":
-  version "6.2.2"
-  resolved "https://registry.yarnpkg.com/@nestjs/websockets/-/websockets-6.2.2.tgz#fa900c27a4c6165101f86f6c9e09d494702c18df"
-  integrity sha512-i2lmwlMsxpppLYtPlYnAd3r36L4B5ekQIJLf/WHFm8VbA/M9UgJ4hELbJwAmL3w+rty7j+6XEWeEzSoRkuugLw==
+"@nestjs/websockets@6.2.3":
+  version "6.2.3"
+  resolved "https://registry.yarnpkg.com/@nestjs/websockets/-/websockets-6.2.3.tgz#fc53bd7391f9060164ac1a5fc57e1fbde6e49727"
+  integrity sha512-D4HK2sVYYIyCjUEFLCd8lhp9F20ibLflBdOEKe+H78reWEcNC629myMsRQsZupaFnVJ7/Q5o8/8UnUzYstLmeg==
   dependencies:
     iterare "1.1.2"
 

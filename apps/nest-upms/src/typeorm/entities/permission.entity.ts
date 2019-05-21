@@ -45,6 +45,7 @@ export class PermissionEntity {
         default: ''
     })
     decription: string;
+    // description
 
     /**
      * 权限值,即操作符

@@ -134,7 +134,7 @@
         "supertest": "4.0.2",
         "ts-jest": "24.0.2",
         "ts-loader": "6.0.1",
-        "ts-morph": "2.1.0",
+        "ts-morph": "2.1.2",
         "ts-node": "8.1.0",
         "tsconfig-paths": "3.8.0",
         "tslint": "5.16.0",

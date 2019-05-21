@@ -2,7 +2,7 @@
 * @Author: lijiansheng 
 * @Date: 2019-05-17 09:44:40 
  * @Last Modified by: lijiansheng
- * @Last Modified time: 2019-05-17 10:24:51
+ * @Last Modified time: 2019-05-21 12:21:18
 */
 
 import { ArticleCategoryService } from '../core';
@@ -14,35 +14,45 @@ import { ArticleCategoryMustDataError, ArticleCategoryTitleError, ArticleCategor
 export class ArticleCategoryServiceImpl extends ArticleCategoryService {
 
     constructor(
-        @InjectRepository(ArticleCategoryEntity) private readonly categoryRepo: Repository<ArticleCategoryEntity>,
+        @InjectRepository(ArticleCategoryEntity) public readonly categoryRepo: Repository<ArticleCategoryEntity>,
     ) { super() }
 
     /**
-     * Add article
-     *@param category Add article information
+     * Add article category
+     *@param category Add article category information
      */
     async insert(category: ArticleCategoryEntity): Promise<ArticleCategoryEntity> {
-        if (!category.title || !category.title || category.description) {
+        if (!category.title || !category.name || !category.description) {
             throw new ArticleCategoryMustDataError();
         }
-        let exist = await this.categoryRepo.findOne(category.title);
+        let exist = await this.categoryRepo.findOne({ where: { title: category.title } });
         if (exist) {
             throw new ArticleCategoryTitleError();
         }
         return await this.categoryRepo.save(category);
+
     }
 
     /**
-     * Update article classification information
-     *@param category Updated article classification information
-     *@param where to update the conditions of the article classification information
-     */
+     * Update article category information
+     *@param category Updated article category information
+     *@param where to update the conditions of the article category information
+     */
     async save(category: ArticleCategoryEntity, where: Partial<ArticleCategoryEntity>): Promise<ArticleCategoryEntity> {
         let exist = await this.categoryRepo.findOne(where);
         if (!exist) {
             throw new ArticleCategoryNullError();
         }
-        return await this.categoryRepo.save(category);
+        if (category.title) {
+            if (await this.categoryRepo.findOne({ where: { title: category.title } })) {
+                throw new ArticleCategoryTitleError();
+            }
+            exist.title = category.title;
+        }
+        if (category.name) { exist.name = category.name }
+        if (category.icon) { exist.icon = category.icon }
+        if (category.description) { exist.description = category.description }
+        return await this.categoryRepo.save(exist);
     }
 
     get(where: Partial<ArticleCategoryEntity>): Promise<ArticleCategoryEntity> {
@@ -63,5 +73,8 @@ export class ArticleCategoryServiceImpl extends ArticleCategoryService {
         throw new Error("没有实现");
     }
 
+    clear(): Promise<void> {
+        return this.categoryRepo.clear();
+    }
 
 }

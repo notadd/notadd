@@ -32,6 +32,9 @@ export {
     UserOrganizationEntity,
     UserPermissionEntity,
     UserRoleEntity,
+    ArticleEntity,
+    ArticleCategoryEntity,
+    ArticleCommentEntity,
     EXPRES_TIME
 }
 

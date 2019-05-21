@@ -95,10 +95,10 @@ export class InstallStore {
 
     finish() {
         const mutation = gql`
-        mutation install($install: Install!) {
+        mutation install($install: InstallData!) {
             install(data: $install) {
                 code,
-                message
+                msg
             }
         }`;
         this._apollo.mutate({

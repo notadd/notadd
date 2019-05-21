@@ -19,12 +19,9 @@ const GET_DOGS = gql`
 export class AdminLoginPage implements OnInit {
     constructor(private _apollo: Apollo) { }
 
-    ngOnInit() {
-        console.log('ng on init')
-    }
+    ngOnInit() {}
 
     login() {
-        console.log(`click`)
         this._apollo.watchQuery({
             query: GET_DOGS
         });

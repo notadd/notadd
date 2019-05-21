@@ -1,5 +1,5 @@
 import { MethodDeclaration, SourceFile, EnumDeclaration, InterfaceDeclaration, Project, MethodDeclarationStructure } from 'ts-morph'
-import { clearReturnType } from './util';
+import { clearReturnType, transformProtoType } from './util';
 import { upperFirst } from 'lodash';
 export class ProtobufCreater {
     static _message: Map<string, InterfaceDeclaration> = new Map();
@@ -62,20 +62,6 @@ export class ProtobufCreater {
     }
 }
 
-function transformType(type: string) {
-    switch (type) {
-        case 'number':
-        case 'Number':
-            return 'int32';
-        case 'any':
-            return 'Any';
-        case 'boolean':
-        case 'Boolean':
-            return 'bool';
-        default:
-            return type;
-    }
-}
 
 function createMessage(_message: Map<string, InterfaceDeclaration>, _enum: Map<string, EnumDeclaration>) {
     let code = ``;
@@ -88,14 +74,14 @@ function createMessage(_message: Map<string, InterfaceDeclaration>, _enum: Map<s
             const type = struct.type as string;
             if (type.endsWith('[]')) {
                 const tName = (struct.type as string).replace('[]', '')
-                const typeName = transformType(tName);
+                const typeName = transformProtoType(tName);
                 // 判断是否引入enum
                 code += createEnum(_enum, typeName)
                 code += `\trepeated ${typeName} ${struct.name} = ${index + 1}`
                 code += `;\n`;
             } else {
                 // 判断是否引入enum
-                const typeName = transformType(struct.type as string);
+                const typeName = transformProtoType(struct.type as string);
                 code += createEnum(_enum, typeName)
                 code += `\t${typeName} ${struct.name} = ${index + 1}`
                 code += `;\n`

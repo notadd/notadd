@@ -1,6 +1,5 @@
 import { MethodDeclaration, SourceFile, InterfaceDeclaration, ParameterDeclaration, Project, MethodDeclarationStructure, EnumDeclaration } from 'ts-morph'
-import { clearReturnType, transformType } from './util'
-
+import { clearReturnType, transformGraphqlType } from './util'
 export class GraphqlCreater {
     private _query: Map<string, MethodDeclarationStructure> = new Map();
     private _mutation: Map<string, MethodDeclarationStructure> = new Map();
@@ -250,7 +249,7 @@ function createType(_type: Map<string, InterfaceDeclaration>, typeName: 'type' |
                 code += `ID`;
             } else if ((struct.type as string).endsWith('[]')) {
                 const tName = (struct.type as string).replace('[]', '');
-                code += `[${transformType(tName)}]`;
+                code += `[${transformGraphqlType(tName)}]`;
             } else {
                 code += struct.type;
             }

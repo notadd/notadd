@@ -1,6 +1,6 @@
-import { ClassDeclaration, SourceFile, Project } from 'ts-morph'
-import { GraphqlCreater } from './graphql'
-import { isQueryDecorator, isMutationDecorator, isSubscription } from './util'
+import { ClassDeclaration, SourceFile, Project } from 'ts-morph';
+import { GraphqlCreater } from './graphql';
+import { isQueryDecorator, isMutationDecorator, isSubscription } from './util';
 export function transformClassDeclarationToGraphql(cls: ClassDeclaration, file: SourceFile, project: Project, creater: GraphqlCreater) {
     const methods = cls.getMethods();
     // 扫描每个方法 根据装饰器生成对应的文件

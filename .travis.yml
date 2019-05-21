@@ -34,7 +34,7 @@ before_install:
   - npm i -g npm@latest 
 
 install:
-  - npm intall
+  - npm install
   - npm install -g codecov @zeit/ncc@beta
   
 before_script:

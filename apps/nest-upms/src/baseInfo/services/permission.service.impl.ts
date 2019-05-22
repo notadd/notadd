@@ -26,7 +26,7 @@ export class PermissionServiceImpl extends PermissionService {
             throw new PermissionNameExistError();
         }
         // 判断type和status的值
-        return await this.permissionRepo.save(this.permissionRepo.create(permission))
+        return await this.permissionRepo.save(permission);
     }
 
     /**

@@ -8,7 +8,6 @@ import { RoleEntity } from './entities/role.entity'
 import { RolePermissionEntity } from './entities/rolePermision.entity'
 import { UserEntity } from './entities/user.entity'
 import { UserOrganizationEntity } from './entities/userOrganization.entity'
-import { UserPermissionEntity } from './entities/userPermission.entity'
 import { UserRoleEntity } from './entities/userRole.entity'
 import { AccessTokenEntity, EXPRES_TIME } from './entities/accessToken.entity'
 import { ArticleEntity } from './entities/article.entity';
@@ -30,8 +29,10 @@ export {
     RolePermissionEntity,
     UserEntity,
     UserOrganizationEntity,
-    UserPermissionEntity,
     UserRoleEntity,
+    ArticleEntity,
+    ArticleCategoryEntity,
+    ArticleCommentEntity,
     EXPRES_TIME
 }
 
@@ -46,7 +47,6 @@ export default [
     RolePermissionEntity,
     UserEntity,
     UserOrganizationEntity,
-    UserPermissionEntity,
     UserRoleEntity,
     AccessTokenEntity,
     ArticleEntity,

@@ -38,6 +38,18 @@ export class ArticleCategoryTitleError<T = any> extends CoreError {
 
 export class ArticleCategoryNullError<T = any> extends CoreError {
     constructor(data?: T) {
-        super(11037, '该分类不存在', data);
+        super(11037, '更新失败,该分类不存在', data);
+    }
+}
+
+export class ArticleCommentMustDataError<T = any> extends CoreError {
+    constructor(data?: T) {
+        super(11040, '评论者,评论文章,评论内容不得为空', data);
+    }
+}
+
+export class ArticleCommentNullError<T = any> extends CoreError {
+    constructor(data?: T) {
+        super(11041, '更新失败,该评论不存在', data);
     }
 }

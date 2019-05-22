@@ -10,12 +10,7 @@ import { ssoProviders } from './sso';
 import { JwtStrategyImpl } from './sso/jwt.strategy.impl';
 import { SsoResolver } from './sso/sso.resolver';
 import { InstallResolver } from './install/services/install.service';
-// type: 'postgres',
-// host: 'localhost',
-// port: 5432,
-// username: 'postgres',
-// password: 'postgres',
-// database: 'test_ci',
+// GqlModuleOptions
 @Module({
   imports: [
     AuthModule.forRoot(JwtStrategyImpl),

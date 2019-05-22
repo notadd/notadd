@@ -113,7 +113,7 @@ export function getPermission(name: string, title: string): PermissionEntity {
     permission.title = title;
     permission.decription = 'decription';
     permission.value = ['value'];
-    permission.father_name = 1;
+    permission.father_name = 'h';
     permission.status = 1;
     permission.icon = 'icon';
     permission.displayorder = 1;

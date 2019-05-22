@@ -9,11 +9,12 @@ export class AddonEntity {
     @PrimaryGeneratedColumn()
     appid: number;
 
-    // @Column({
-    //     type: 'int',
-    //     comment: '上级',
-    // })
-    // pid: number;
+    @Column({
+        type: 'int',
+        comment: '上级',
+        default: 0
+    })
+    pid: number;
 
     @Column({
         type: 'varchar',
@@ -71,7 +72,7 @@ export class AddonEntity {
             }
         }
     })
-    status: -1 | 1 | 0;
+    status: number;
 
     @CreateDateColumn({
         type: 'timestamptz'

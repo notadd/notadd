@@ -13,8 +13,10 @@ export class PermissionEntity {
     /**
      * 上级
      */
-    @Column()
-    father_name: number;
+    @Column({
+        type: 'varchar'
+    })
+    father_name: string;
 
     /**
      * 英文代号
@@ -39,9 +41,11 @@ export class PermissionEntity {
      */
     @Column({
         type: 'varchar',
-        length: 255
+        length: 255,
+        default: ''
     })
     decription: string;
+    // description
 
     /**
      * 权限值,即操作符
@@ -66,7 +70,11 @@ export class PermissionEntity {
     /**
      * 图标
      */
-    @Column()
+    @Column({
+        type: 'varchar',
+        length: 255,
+        default: ''
+    })
     icon: string;
 
     /**
@@ -77,13 +85,14 @@ export class PermissionEntity {
         default: 0
     })
     @Index()
-    status: -1 | 0 | 1;
+    status: number;
 
     /**
      * 排序
      */
     @Column({
         type: 'int',
+        default: 0
     })
     displayorder: number;
 
@@ -125,7 +134,6 @@ export class PermissionEntity {
      * 拥有此权限的所有模块
      */
     addons: AddonEntity[] = [];
-
     /**
      * 拥有此权限的所有用户
      */

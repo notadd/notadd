@@ -84,7 +84,7 @@ export class PermissionEntity {
         default: 0
     })
     @Index()
-    status: -1 | 0 | 1;
+    status: number;
 
     /**
      * 排序

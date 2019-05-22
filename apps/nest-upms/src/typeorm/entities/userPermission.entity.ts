@@ -23,5 +23,5 @@ export class UserPermissionEntity {
     @Column({
         type: 'smallint',
     })
-    type: -1|1;
+    type: number;
 }

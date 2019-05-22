@@ -1,4 +1,3 @@
-
 import { join, extname } from 'path';
 import chokidar from 'chokidar';
 import { build } from './build'

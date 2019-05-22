@@ -1,14 +1,14 @@
 import { MethodDeclaration, SourceFile, InterfaceDeclaration, ParameterDeclaration, Project, MethodDeclarationStructure, EnumDeclaration } from 'ts-morph'
-import { clearReturnType, transformGraphqlType } from './util'
+import { clearReturnType, transformGraphqlType, getDocs } from './util'
 export class GraphqlCreater {
-    private _query: Map<string, MethodDeclarationStructure> = new Map();
-    private _mutation: Map<string, MethodDeclarationStructure> = new Map();
-    private _subscription: Map<string, MethodDeclarationStructure> = new Map();
-    private _type: Map<string, InterfaceDeclaration> = new Map();
-    private _directive: Map<string, any> = new Map();
-    private _unions: Map<string, any> = new Map();
-    private _inputs: Map<string, InterfaceDeclaration> = new Map();
-    private _enum: Map<string, EnumDeclaration> = new Map();
+    static _query: Map<string, MethodDeclarationStructure> = new Map();
+    static _mutation: Map<string, MethodDeclarationStructure> = new Map();
+    static _subscription: Map<string, MethodDeclarationStructure> = new Map();
+    static _type: Map<string, InterfaceDeclaration> = new Map();
+    static _directive: Map<string, any> = new Map();
+    static _unions: Map<string, any> = new Map();
+    static _inputs: Map<string, InterfaceDeclaration> = new Map();
+    static _enum: Map<string, EnumDeclaration> = new Map();
     createQuery(mth: MethodDeclaration, file: SourceFile, project: Project) {
         const structure = mth.getStructure() as MethodDeclarationStructure;
         const parameters = mth.getParameters();
@@ -17,7 +17,7 @@ export class GraphqlCreater {
             this.createInput(structure.type, par, file)
         });
         this.createType(structure.returnType, file)
-        this._query.set(structure.name, structure)
+        GraphqlCreater._query.set(structure.name, structure)
     }
 
     createInput(name: any, parameter: ParameterDeclaration, file: SourceFile) {
@@ -25,7 +25,7 @@ export class GraphqlCreater {
         if (typeof name === 'string') {
             const inter = file.getInterface(name);
             if (inter) {
-                this._inputs.set(name, inter)
+                GraphqlCreater._inputs.set(name, inter)
                 const properties = inter.getProperties();
                 properties.map(pro => {
                     const struct = pro.getStructure();
@@ -46,7 +46,7 @@ export class GraphqlCreater {
             }
             const _enum = file.getEnum(name);
             if (_enum) {
-                this._enum.set(name, _enum);
+                GraphqlCreater._enum.set(name, _enum);
             }
         }
     }
@@ -55,7 +55,7 @@ export class GraphqlCreater {
         if (typeof name === 'string') {
             const inter = file.getInterface(name);
             if (inter) {
-                this._type.set(name, inter)
+                GraphqlCreater._type.set(name, inter)
                 const properties = inter.getProperties();
                 properties.map(pro => {
                     const struct = pro.getStructure();
@@ -76,7 +76,7 @@ export class GraphqlCreater {
             }
             const _enum = file.getEnum(name);
             if (_enum) {
-                this._enum.set(name, _enum);
+                GraphqlCreater._enum.set(name, _enum);
             }
         }
     }
@@ -88,7 +88,7 @@ export class GraphqlCreater {
             this.createInput(structure.type, par, file)
         });
         this.createType(structure.returnType, file)
-        this._mutation.set(structure.name, structure)
+        GraphqlCreater._mutation.set(structure.name, structure)
     }
     createSubscription(mth: MethodDeclaration, file: SourceFile, project: Project) {
         const structure = mth.getStructure() as MethodDeclarationStructure;
@@ -98,9 +98,9 @@ export class GraphqlCreater {
             this.createInput(structure.type, par, file)
         });
         this.createType(structure.returnType, file)
-        this._subscription.set(structure.name, structure)
+        GraphqlCreater._subscription.set(structure.name, structure)
     }
-    create(): string {
+    static create(): string {
         let query = ``, type = ``, mutation = ``, subscription = ``, unions = ``, input = ``;
         if (this._query.size > 0) {
             query = createQuery(this._query);
@@ -136,19 +136,6 @@ function createUnion(_unions: Map<string, any>) {
     return code;
 }
 
-function getDocs(eSt: any, withT: boolean = false) {
-    let desc = ``;
-    eSt.docs = eSt.docs || [];
-    eSt.docs.map(doc => {
-        if (typeof doc === 'string') {
-            desc += doc;
-        } else {
-            desc += doc.description
-        }
-    });
-    return desc.length > 0 ? `${withT ? `\t` : ``}"""${desc}"""\n` : ``;
-}
-
 function createEnum(_enum: Map<string, EnumDeclaration>) {
     let code = ``;
     _enum.forEach((e, name) => {
@@ -157,7 +144,7 @@ function createEnum(_enum: Map<string, EnumDeclaration>) {
         const members = e.getMembers();
         members.map((m, index) => {
             const struct = m.getStructure();
-            code += `\t${getDocs(struct)}\t${struct.name}\n`
+            code += `${getDocs(struct)}\t${struct.name}\n`
         });
         code += `}\n`
     });
@@ -198,7 +185,7 @@ function createSubscription(_subscription: Map<string, MethodDeclarationStructur
 function createMutation(_mutation: Map<string, MethodDeclarationStructure>) {
     let code = `type Mutation{\n`;
     _mutation.forEach(muta => {
-        code += `\t${getDocs(muta)}\t${muta.name}`
+        code += `${getDocs(muta)}\t${muta.name}`
         const parameters = muta.parameters;
         if (parameters.length > 0) {
             code += `(`
@@ -232,7 +219,7 @@ function createType(_type: Map<string, InterfaceDeclaration>, typeName: 'type' |
     _type.forEach((item, name) => {
         code += `\n`;
         const itemS = item.getStructure();
-        code += `${getDocs(itemS)}${typeName} ${name}{\n`;
+        code += `${getDocs(itemS)}\n${typeName} ${name}{\n`;
         let properties = item.getProperties();
         properties.map(pro => {
             const struct = pro.getStructure();

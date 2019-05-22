@@ -3,6 +3,36 @@ export const isQueryDecorator = isDecorator('Query');
 export const isMutationDecorator = isDecorator('Mutation');
 export const isSubscription = isDecorator('Subscription')
 export const isGrpcMethod = isDecorator('GrpcMethod');
+
+/**
+ * typeorm
+ */
+export const isEntity = isDecorator('Entity');
+export const isColumn = isDecorator('Column');
+export const isPrimaryGeneratedColumn = isDecorator('PrimaryGeneratedColumn');
+export const isPrimaryColumn = isDecorator('PrimaryColumn');
+
+export const isCreateDateColumn = isDecorator('CreateDateColumn');
+export const isUpdateDateColumn = isDecorator('UpdateDateColumn');
+export const OneToOne = isDecorator('OneToOne');
+export const OneToMany = isDecorator('OneToMany');
+export const ManyToOne = isDecorator('ManyToOne');
+export const ManyToMany = isDecorator('ManyToMany');
+export const PrimaryColumn = isDecorator('PrimaryColumn');
+
+export function getDocs(eSt: any, withT: boolean = false) {
+    let desc = ``;
+    eSt.docs = eSt.docs || [];
+    eSt.docs.map(doc => {
+        if (typeof doc === 'string') {
+            desc += doc;
+        } else {
+            desc += doc.description
+        }
+    });
+    return desc.length > 0 ? `${withT ? `\t` : ``}"""${desc}"""\n` : ``;
+}
+
 export function isDecorator(name: string) {
     return (decorators: Decorator[]): boolean => {
         return !!decorators.find(dec => {

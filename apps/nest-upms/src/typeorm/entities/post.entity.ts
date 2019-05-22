@@ -25,7 +25,7 @@ export class PostEntity {
         type: 'smallint',
         comment: '业务状态(0待处理，1处理中，2已处理，3无法处理)'
     })
-    status: 0 | 1 | 2 | 3;
+    status: number;
 
     @Column({
         type: 'varchar',

@@ -6,6 +6,8 @@ import fs from 'fs';
 import { join } from 'path';
 const root = process.cwd();
 import { ProtobufCreater } from './protobuf';
+import { PrismaCreator } from './prisma';
+import { transformEntityToPrisma } from './transformEntityToPrisma';
 export function build(path: string, output: string) {
     const project = createProject();
     project.addExistingSourceFiles(path)
@@ -23,19 +25,27 @@ export function build(path: string, output: string) {
                     // 如果是Controller 解析成proto
                     const creater = new ProtobufCreater();
                     transformClassDeclarationToProto(cls, file, project, creater)
-                    const code = creater.create();
-                    fs.writeFileSync(join(root, 'apps/nest-upms/src/main.proto'), code)
+
                 } else if (text === 'Resolver') {
                     // 如果是Resolver 解析成graphql
                     const creater = new GraphqlCreater();
                     transformClassDeclarationToGraphql(cls, file, project, creater)
-                    const code = creater.create();
-                    fs.writeFileSync(`${output}.graphql`, code)
+
+                } else if (text === 'Entity') {
+                    // 解析Typeorm Entity
+                    const creater = new PrismaCreator();
+                    transformEntityToPrisma(cls, file, project, creater)
                 } else {
                     // 不用处理
                 }
                 return true;
             })
         });
+        const graphql = GraphqlCreater.create();
+        fs.writeFileSync(join(root, 'apps/nest-upms/src/main.graphql'), graphql)
+        const proto = ProtobufCreater.create();
+        fs.writeFileSync(join(root, 'apps/nest-upms/src/main.proto'), proto)
+        const prisma = PrismaCreator.create();
+        fs.writeFileSync(join(root, 'apps/nest-upms/src/main.prisma'), prisma)
     })
 }

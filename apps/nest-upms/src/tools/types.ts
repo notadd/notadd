@@ -12,3 +12,4 @@ export type Sfixed32 = number;
 export type Sfixed64 = number;
 export type Bytes = string;
 export type Double = number;
+export type Json = any;

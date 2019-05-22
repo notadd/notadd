@@ -50,7 +50,7 @@ export class ProtobufCreater {
         ProtobufCreater._service.set(name, service)
     }
 
-    create() {
+    static create() {
         let message = ``, service = ``;
         if (ProtobufCreater._message.size > 0) {
             message += createMessage(ProtobufCreater._message, ProtobufCreater._enum);

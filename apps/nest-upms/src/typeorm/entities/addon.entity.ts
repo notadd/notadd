@@ -72,7 +72,7 @@ export class AddonEntity {
             }
         }
     })
-    status: -1 | 1 | 0;
+    status: number;
 
     @CreateDateColumn({
         type: 'timestamptz'

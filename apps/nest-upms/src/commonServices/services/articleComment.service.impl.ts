@@ -17,9 +17,9 @@ export class ArticleCommentServiceImpl extends ArticleCommentService {
     ) { super() }
 
     /**
-     * 更新评论
-     * @param comment 新的评论信息
-     * @param where 评论的条件
+     * Update comment
+     * @param comment New comment information
+     * @param where Condition of comment
      */
     async save(comment: ArticleCommentEntity, where: Partial<ArticleCommentEntity>): Promise<ArticleCommentEntity> {
         const exist = await this.commentRepo.findOne(where);
@@ -31,16 +31,16 @@ export class ArticleCommentServiceImpl extends ArticleCommentService {
     }
 
     /**
-     * 删除评论
-     * @param data 评论信息
+     * Delete comment
+     * @param data Comment information
      */
     async delete(comment: Partial<ArticleCommentEntity>): Promise<DeleteResult> {
         return await this.commentRepo.delete(comment);
     }
 
     /**
-     * 添加评论
-     * @param data 评论信息
+     * add comment
+     * @param data Comment information
      */
     async insert(comment: ArticleCommentEntity): Promise<ArticleCommentEntity> {
         if (!comment.article_id || !comment.from_user_id || !comment.content) {
@@ -50,31 +50,31 @@ export class ArticleCommentServiceImpl extends ArticleCommentService {
     }
 
     /**
-     * 根据文章查找所有的评论
-     * @param article 文章信息
+     * Find all comments by article
+     * @param article Article information
      */
     async getByArticle(article: Partial<ArticleEntity>): Promise<ArticleCommentEntity[]> {
         return await this.commentRepo.find({ where: { article_id: article.article_id } })
     }
 
     /**
-     * 根据用户查找所有评论
-     * @param user 用户信息
+     * Find all comments based on the user
+     * @param user User Info
      */
     async getByUser(user: Partial<UserEntity>): Promise<ArticleCommentEntity[]> {
         return await this.commentRepo.find({ where: { from_user_id: user.openid } })
     }
 
     /**
-     * 根据条件查询一个评论
-     * @param where 条件
+     * Find a comment based on criteria
+     * @param where condition
      */
     async get(where: Partial<ArticleCommentEntity>): Promise<ArticleCommentEntity> {
         return await this.commentRepo.findOne(where);
     }
 
-    async clear(): Promise<void> {
-        return await this.commentRepo.clear();
+    clear(): Promise<void> {
+        return this.commentRepo.clear();
     }
 
     search(where: Partial<ArticleCommentEntity>): Promise<void> {

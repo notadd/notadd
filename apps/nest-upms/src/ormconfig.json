@@ -1,1 +1,1 @@
-{"db":{"host":"localhost","port":5432,"username":"postgras","password":"postgras","dbname":"test-ci"},"admin":[1]}
+{"db":{"type":"postgres","host":"localhost","port":5432,"username":"postgras","password":"postgras","dbname":"test-ci","entity":[""],"synchronize":true},"admin":[]}

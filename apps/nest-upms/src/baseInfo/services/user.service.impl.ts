@@ -1,6 +1,6 @@
 import { InjectRepository } from '@nestjs/typeorm';
 import { DeleteResult, Repository } from 'typeorm';
-import { RoleEntity, UserPermissionEntity, UserRoleEntity } from '../../typeorm';
+import { RoleEntity, UserRoleEntity } from '../../typeorm';
 import { UserEntity } from '../../typeorm/entities/user.entity';
 import { UserService } from '../core/user.service';
 import { EmailExistError, EmailFormtError, IdIsNullError, PhoneExistError, PhoneFormtError, UserIsNullError, UserMustDataNullError, UserNameExistError } from '../errors/error';
@@ -11,7 +11,6 @@ export class UserServiceImpl extends UserService {
         @InjectRepository(UserEntity) public readonly userRepo: Repository<UserEntity>,
         @InjectRepository(RoleEntity) public readonly roleRepo: Repository<RoleEntity>,
         @InjectRepository(UserRoleEntity) public readonly userRoleRepo: Repository<UserRoleEntity>,
-        @InjectRepository(UserPermissionEntity) public readonly userPermissionRepo: Repository<UserPermissionEntity>,
     ) { super() }
 
     /**
@@ -45,7 +44,7 @@ export class UserServiceImpl extends UserService {
           *
           */
         //Add alliance id and open id
-        return await this.userRepo.save(this.userRepo.create(user));
+        return await this.userRepo.save(user);
     }
 
    /**

@@ -4,14 +4,14 @@ import { GrpcMethod } from '@nestjs/microservices';
 import { InjectRepository } from '@nestjs/typeorm';
 import { join } from 'path';
 import { Repository } from 'typeorm';
-import { AddonEntity, PermissionEntity, UserEntity, UserPermissionEntity, AddonPermissionEntity } from '../../typeorm';
+import { AddonEntity, PermissionEntity, UserEntity, AddonPermissionEntity } from '../../typeorm';
 import { writeFileSync } from 'fs';
 import { Observable, of } from 'rxjs';
 import { UserService, PermissionService } from '../../baseInfo/core';
 export enum PermissionStatus {
     default = 0,
     fail = -1,
-    success = 0
+    success = 1
 }
 // 123
 interface Permission {
@@ -70,7 +70,6 @@ export class InstallResolver {
     constructor(
         @InjectRepository(UserEntity) private readonly _user: Repository<UserEntity>,
         @InjectRepository(PermissionEntity) private readonly _permission: Repository<PermissionEntity>,
-        @InjectRepository(UserPermissionEntity) private readonly _userPer: Repository<UserPermissionEntity>,
         @InjectRepository(AddonPermissionEntity) private readonly _addonPer: Repository<AddonPermissionEntity>,
         @InjectRepository(AddonEntity) private readonly _addon: Repository<AddonEntity>,
         private readonly _userService: UserService,
@@ -148,24 +147,20 @@ export class InstallResolver {
         user.avatar = ''
         user.sex = 0;
         user.openid = 'ce92b3e2-7ab1-11e9-8f9e-2a86e4085a59';
-        const userExist = await this._userService.insert(user);
         // 添加admin权限
         const permission = new PermissionEntity();
         permission.value = ['*'];
-        permission.name = '*';
+        permission.name = 'public1';
         permission.title = '*';
         permission.icon = '';
         permission.decription = '';
         permission.father_name = 0;
         permission.displayorder = 0;
         permission.status = 1;
-        const perExist = await this._perService.insert(permission);
-        // 添加到关联表
-        const userPer = new UserPermissionEntity();
-        userPer.openid = userExist.openid;
-        userPer.type = 1;
-        userPer.permission_id = 1; // todo 权限id当前无,暂放
-        await this._userPer.save(userPer);
+        user.permissions = [];
+        user.permissions.push(permission);
+        await this._perService.insert(permission);
+        const userExist = await this._userService.insert(user);
         return userExist;
     }
 
@@ -182,25 +177,20 @@ export class InstallResolver {
             addonEntity.name = addon.name;
             addonEntity.description = addon.desc;
             addonEntity.appsecret = addon.appsecret;
-            // addonEntity.pid = addon.pid;
-            // 状态默认正常
             addonEntity.status = 1;
-            const addonExist = await this._addon.save(addonEntity);
             // 添加应用的权限
-            const perEntity = new PermissionEntity();
-            perEntity.name = addon.permissions.name;
-            perEntity.title = addon.permissions.title;
-            perEntity.value = addon.permissions.value;
-            perEntity.decription = addon.permissions.desc;
-            perEntity.displayorder = addon.permissions.displayorder;
-            perEntity.icon = addon.permissions.icon;
-            perEntity.status = addon.permissions.status;
-            const perExist = await this._permission.save(perEntity);
-            // 添加到关联表
-            const addonPer = new AddonPermissionEntity();
-            addonPer.addon_id = addonExist.appid;
-            addonPer.permission_id = 1; // todo 权限当前没有id,先写1
-            await this._addonPer.save(addonPer);
+            const permission = new PermissionEntity();
+            permission.name = addon.permissions.name;
+            permission.title = addon.permissions.title;
+            permission.value = addon.permissions.value;
+            permission.decription = addon.permissions.desc;
+            permission.displayorder = addon.permissions.displayorder;
+            permission.icon = addon.permissions.icon;
+            permission.status = addon.permissions.status;
+            addonEntity.permissions = [];
+            addonEntity.permissions.push(permission);
+            const addonExist = await this._addon.save(addonEntity);
+            // const perExist = await this._permission.save(perEntity);
         }
     }
 

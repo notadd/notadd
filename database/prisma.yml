@@ -1,6 +1,5 @@
 endpoint: http://localhost:4466
-datamodel: apps/nest-upms/src/main.prisma
-
-# generate:
-#   - generator: typescript-client
-#     output: ./generated/prisma-client/
+datamodel: ../apps/nest-upms/src/main.prisma
+generate:
+  - generator: typescript-client
+    output: ../apps/nest-upms/src/prisma/

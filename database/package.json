@@ -1,6 +1,11 @@
 {
     "scripts": {
         "serve": "docker-compose up -d",
-        "start": "pm2 start npm --name=database -- run serve"
+        "start": "pm2 start npm --name=database -- run serve",
+        "deploy": "prisma deploy",
+        "generate": "prisma generate"
+    },
+    "dependencies": {
+        "prisma": "^1.33.0"
     }
 }

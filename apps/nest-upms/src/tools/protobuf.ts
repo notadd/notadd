@@ -51,7 +51,7 @@ export class ProtobufCreater {
     }
 
     static create() {
-        let message = ``, service = ``, empty = `message EmptyMessage{}`;
+        let message = ``, service = ``, empty = `message EmptyMessage {}`;
         if (ProtobufCreater._message.size > 0) {
             message += createMessage(ProtobufCreater._message, ProtobufCreater._enum);
         }
@@ -138,7 +138,7 @@ function createService(_service: Map<string, Map<string, MethodDeclaration>>) {
                 })
                 code += `) returns (${clearReturnType(structure.returnType)}) {}\n`;
             } else {
-                code += `\trpc ${upperFirst(structure.name)}(EmptyMessage) returns (${clearReturnType(structure.returnType)});\n`
+                code += `\trpc ${upperFirst(structure.name)}(EmptyMessage) returns (${clearReturnType(structure.returnType)}) {}\n`
             }
         });
         code += `}`

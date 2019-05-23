@@ -2,7 +2,6 @@ import { Column, CreateDateColumn, Entity, JoinTable, ManyToMany, PrimaryGenerat
 import { OrganizationEntity } from './organization.entity';
 import { PermissionEntity } from './permission.entity';
 import { RoleEntity } from './role.entity';
-export type IUserSex = 0 | 1 | 2
 @Entity({
     name: 'user'
 })
@@ -80,16 +79,9 @@ export class UserEntity {
 
     @Column({
         type: 'smallint',
-        // transformer: {
-        //     to: (sex: any) => {
-        //         return sex.toString();
-        //     },
-        //     from: (val: string) => {
-        //         return Number.parseInt(val);
-        //     }
-        // }
+        default: 0
     })
-    sex: IUserSex;
+    sex: number;
 
     @CreateDateColumn({
         type: 'timestamptz'

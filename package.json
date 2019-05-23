@@ -97,7 +97,7 @@
     "prisma-binding": "^2.3.10",
     "protocol-buffers-schema": "^3.3.2",
     "protons": "^1.0.1",
-    "reflect-metadata": "^0.1.12",
+    "reflect-metadata": "^0.1.13",
     "rxjs": "6.5.2",
     "typeorm": "^0.2.9",
     "zone.js": "0.9.1"

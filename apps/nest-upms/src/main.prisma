@@ -216,12 +216,6 @@ type UserOrganizationEntity{
 	openid: String!
 	orgainization_id: Int!
 }
-type UserPermissionEntity{
-	user_permission_id: Int! @unique
-	openid: String!
-	permission_id: Int!
-	type: Int!
-}
 type UserRoleEntity{
 	user_role_id: Int! @unique
 	openid: String!

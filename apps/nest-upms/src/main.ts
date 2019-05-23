@@ -2,7 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { ApplicationModule } from './app.module';
 import { Transport } from '@nestjs/common/enums/transport.enum';
 export async function bootstrap() {
-  const app = await NestFactory.create(ApplicationModule);
+  const app = await NestFactory.create(ApplicationModule, { bodyParser: false });
   app.connectMicroservice({
     transport: Transport.GRPC,
     options: {

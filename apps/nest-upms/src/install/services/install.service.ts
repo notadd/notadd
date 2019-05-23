@@ -154,7 +154,7 @@ export class InstallResolver {
         permission.title = '*';
         permission.icon = '';
         permission.decription = '';
-        permission.father_name = 0;
+        permission.father_name = 'addon';
         permission.displayorder = 0;
         permission.status = 1;
         user.permissions = [];

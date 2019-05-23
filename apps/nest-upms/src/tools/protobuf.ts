@@ -51,14 +51,14 @@ export class ProtobufCreater {
     }
 
     static create() {
-        let message = ``, service = ``;
+        let message = ``, service = ``, empty = `message EmptyMessage{}`;
         if (ProtobufCreater._message.size > 0) {
             message += createMessage(ProtobufCreater._message, ProtobufCreater._enum);
         }
         if (ProtobufCreater._service.size > 0) {
             service += createService(ProtobufCreater._service)
         }
-        return `syntax = "proto3";\npackage notadd;\n${message}\n${service}\n`
+        return `syntax = "proto3";\npackage notadd;\n${empty}\n${message}\n${service}\n`
     }
 }
 
@@ -126,16 +126,20 @@ function createService(_service: Map<string, Map<string, MethodDeclaration>>) {
         code += `service ${serviceName}{\n`;
         items.forEach(item => {
             const structure = item.getStructure() as MethodDeclarationStructure;
-            code += `\trpc ${upperFirst(structure.name)} (`;
             let parameters = item.getParameters();
-            parameters.map((pro, index) => {
-                const struct = pro.getStructure();
-                code += `${struct.type}`
-                if (index !== parameters.length - 1) {
-                    code += `,`
-                }
-            })
-            code += `) returns (${clearReturnType(structure.returnType)});\n`;
+            if (parameters.length > 0) {
+                code += `\trpc ${upperFirst(structure.name)} (`;
+                parameters.map((pro, index) => {
+                    const struct = pro.getStructure();
+                    code += `${struct.type}`
+                    if (index !== parameters.length - 1) {
+                        code += `,`
+                    }
+                })
+                code += `) returns (${clearReturnType(structure.returnType)}) {}\n`;
+            } else {
+                code += `\trpc ${upperFirst(structure.name)}(EmptyMessage) returns (${clearReturnType(structure.returnType)});\n`
+            }
         });
         code += `}`
         code += `\n`;

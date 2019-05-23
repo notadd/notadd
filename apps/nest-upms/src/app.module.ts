@@ -13,22 +13,22 @@ import { InstallResolver } from './install/services/install.service';
 // GqlModuleOptions
 @Module({
   imports: [
-    AuthModule.forRoot(JwtStrategyImpl),
+    // AuthModule.forRoot(JwtStrategyImpl),
     GraphQLModule.forRootAsync({
       useClass: GraphqlOptions,
     })
   ],
   controllers: [
-    SsoResolver,
-    InstallResolver
+    // SsoResolver,
+    // InstallResolver
   ],
   providers: [
-    InstallResolver,
-    ...coreProviders,
+    // InstallResolver,
+    // ...coreProviders,
     ...ssoProviders,
-    ...baseInfoProviders,
-    ...commonServicesProviders,
-    ...casbinProviders
+    // ...baseInfoProviders,
+    // ...commonServicesProviders,
+    // ...casbinProviders
   ]
 })
 export class ApplicationModule { }

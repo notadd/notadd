@@ -1,5 +1,5 @@
 { 
-  "baseBranch": "develop",
+  "baseBranch": "feature/sso",
   "automerge": true,
   "rangeStrategy": "bump",
   "semanticCommits":true,

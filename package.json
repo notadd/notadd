@@ -81,7 +81,7 @@
     "class-validator": "0.9.1",
     "compression": "^1.7.3",
     "core-js": "^3.1.0",
-    "csurf": "^1.9.0",
+    "csurf": "^1.10.0",
     "dotenv": "^6.2.0",
     "express-rate-limit": "^3.3.2",
     "glob": "^7.1.4",

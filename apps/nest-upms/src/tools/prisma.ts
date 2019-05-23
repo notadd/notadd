@@ -1,5 +1,5 @@
 import { ClassDeclaration, SourceFile, InterfaceDeclaration, EnumDeclaration, PropertyDeclaration, Project } from 'ts-morph'
-import { getDocs, clearReturnType, transformGraphqlType, isPrimaryGeneratedColumn, isPrimaryColumn } from './util'
+import { getDocs, clearReturnType, transformGraphqlType, isUpdateDateColumn, isPrimaryGeneratedColumn, isPrimaryColumn, isCreateDateColumn } from './util'
 export class PrismaItem {
     private _columns: Map<string, PropertyDeclaration> = new Map();
     private _enum: Map<string, EnumDeclaration> = new Map();
@@ -86,8 +86,14 @@ export class PrismaItem {
             if (!struct.hasQuestionToken) {
                 code += `!`;
             }
-            if (isPrimaryColumn(decorators) || isPrimaryGeneratedColumn(decorators)) {
+            if (isPrimaryGeneratedColumn(decorators)) {
+                code += `@id`
+            } else if (isPrimaryColumn(decorators)) {
                 code += ` @unique`
+            } else if (isCreateDateColumn(decorators)) {
+                code += `@createdAt`
+            } else if (isUpdateDateColumn(decorators)) {
+                code += `@updatedAt`
             }
             code += `\n`;
         })

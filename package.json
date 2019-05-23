@@ -65,7 +65,7 @@
     "@ngrx/effects": "8.0.0-beta.2",
     "@ngrx/router-store": "8.0.0-beta.2",
     "@ngrx/store": "8.0.0-beta.2",
-    "@ngx-translate/core": "~11.0.0",
+    "@ngx-translate/core": "~11.0.1",
     "@ngx-translate/http-loader": "~4.0.0",
     "@notadd/scss": "file:libs/scss",
     "@nrwl/nx": "^7.0.0",

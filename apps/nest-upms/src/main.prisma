@@ -1,5 +1,5 @@
 type AccessTokenEntity{
-	access_token_id: Int! @unique
+	access_token_id: Int!@id
 	"""根据access_token查询用户Openid，添加Index"""
 	access_token: String!
 	openid: String!
@@ -9,14 +9,14 @@ type AccessTokenEntity{
 	grant_type: Int!
 	scope: String!
 	expires_in: DateTime!
-	create_time: DateTime!
-	update_time: DateTime!
+	create_time: DateTime!@createdAt
+	update_time: DateTime!@updatedAt
 	status: Int!
 	"""刷新凭证"""
 	refreshToken: RefreshTokenEntity!
 }
 type AddonEntity{
-	appid: Int! @unique
+	appid: Int!@id
 	pid: Int!
 	appsecret: String!
 	icon: String!
@@ -24,48 +24,48 @@ type AddonEntity{
 	title: String!
 	description: String!
 	status: Int!
-	create_time: DateTime!
-	update_time: DateTime!
+	create_time: DateTime!@createdAt
+	update_time: DateTime!@updatedAt
 	"""应用权限"""
 	permissions: [PermissionEntity]!
 }
 type AddonPermissionEntity{
-	addon_permission_id: Int! @unique
+	addon_permission_id: Int!@id
 	addon_id: Int!
 	permission_id: Int!
 	create_time: DateTime!
 	update_time: DateTime!
 }
 type ArticleEntity{
-	article_id: Int! @unique
+	article_id: Int!@id
 	title: String!
 	description: String!
 	thumbs: String!
 	icon: String!
 	article_category_id: Int!
-	create_time: DateTime!
-	update_time: DateTime!
+	create_time: DateTime!@createdAt
+	update_time: DateTime!@updatedAt
 }
 type ArticleCategoryEntity{
-	article_category_id: Int! @unique
+	article_category_id: Int!@id
 	title: String!
 	name: String!
 	icon: String!
 	description: String!
-	create_time: DateTime!
-	update_time: DateTime!
+	create_time: DateTime!@createdAt
+	update_time: DateTime!@updatedAt
 }
 type ArticleCommentEntity{
-	article_comment_id: Int! @unique
+	article_comment_id: Int!@id
 	content: String!
 	pid: Int!
 	article_id: Int!
 	from_user_id: String!
-	create_time: DateTime!
-	update_time: DateTime!
+	create_time: DateTime!@createdAt
+	update_time: DateTime!@updatedAt
 }
 type LoggerEntity{
-	logger_id: Int! @unique
+	logger_id: Int!@id
 	description: String!
 	openid: String!
 	start_time: DateTime!
@@ -76,7 +76,7 @@ type LoggerEntity{
 	permissions: String!
 }
 type MemberEntity{
-	member_id: Int! @unique
+	member_id: Int!@id
 	name: String!
 	realname: String!
 	phone: String!
@@ -85,11 +85,11 @@ type MemberEntity{
 	username: String!
 	password: String!
 	salt: String!
-	create_time: DateTime!
-	update_time: DateTime!
+	create_time: DateTime!@createdAt
+	update_time: DateTime!@updatedAt
 }
 type MessageEntity{
-	msg_id: Int! @unique
+	msg_id: Int!@id
 	content: String!
 	msg_type: Int!
 	pic_url: String!
@@ -103,16 +103,16 @@ type MessageEntity{
 	description: String!
 	from_user: String!
 	to_user: String!
-	create_time: DateTime!
-	update_time: DateTime!
+	create_time: DateTime!@createdAt
+	update_time: DateTime!@updatedAt
 }
 type OrganizationEntity{
-	organization_id: Int! @unique
+	organization_id: Int!@id
 	name: String!
 	title: String!
 	description: String!
-	create_time: DateTime!
-	update_time: DateTime!
+	create_time: DateTime!@createdAt
+	update_time: DateTime!@updatedAt
 	displayorder: Int!
 }
 """应用权限表"""
@@ -137,9 +137,9 @@ type PermissionEntity{
 	"""排序"""
 	displayorder: Int!
 	"""创建时间"""
-	create_time: DateTime!
+	create_time: DateTime!@createdAt
 	"""更新时间"""
-	update_time: DateTime!
+	update_time: DateTime!@updatedAt
 	"""应用id"""
 	fromAddon: AddonEntity!
 	"""常用的，所以定义一下，查询后挂载到Permission上拥有此权限的所有模块"""
@@ -150,47 +150,47 @@ type PermissionEntity{
 	roles: [RoleEntity]!
 }
 type PostEntity{
-	post_id: Int! @unique
+	post_id: Int!@id
 	title: String!
 	content: String!
 	status: Int!
 	handler_user: String!
-	create_time: DateTime!
-	update_time: DateTime!
+	create_time: DateTime!@createdAt
+	update_time: DateTime!@updatedAt
 }
 type PostCategoryEntity{
-	post_post_category_idid: Int! @unique
+	post_post_category_idid: Int!@id
 	title: String!
 	icon: String!
 	description: String!
-	create_time: DateTime!
-	update_time: DateTime!
+	create_time: DateTime!@createdAt
+	update_time: DateTime!@updatedAt
 }
 type RefreshTokenEntity{
-	refresh_token_id: Int! @unique
+	refresh_token_id: Int!@id
 	token: AccessTokenEntity!
 	refresh_token: String!
 	expires_in: DateTime!
-	create_time: DateTime!
-	update_time: DateTime!
+	create_time: DateTime!@createdAt
+	update_time: DateTime!@updatedAt
 }
 type RoleEntity{
-	role_id: Int! @unique
+	role_id: Int!@id
 	name: String!
 	title: String!
 	description: String!
-	create_time: DateTime!
-	update_time: DateTime!
+	create_time: DateTime!@createdAt
+	update_time: DateTime!@updatedAt
 	"""角色权限，常用，定义一下"""
 	permissions: [PermissionEntity]!
 }
 type RolePermissionEntity{
-	role_permission_id: Int! @unique
+	role_permission_id: Int!@id
 	role_id: Int!
 	permission_id: Int!
 }
 type UserEntity{
-	user_id: Int! @unique
+	user_id: Int!@id
 	openid: String!
 	unionid: String!
 	username: String!
@@ -202,8 +202,8 @@ type UserEntity{
 	phone: String!
 	email: String!
 	sex: Int!
-	create_time: DateTime!
-	update_time: DateTime!
+	create_time: DateTime!@createdAt
+	update_time: DateTime!@updatedAt
 	"""常用，定义一下用户拥有的权限，一个用户可以有多个权限"""
 	permissions: [PermissionEntity]!
 	"""用户拥有的角色，一个用户可以分配多个角色"""
@@ -212,12 +212,12 @@ type UserEntity{
 	organizations: [OrganizationEntity]!
 }
 type UserOrganizationEntity{
-	user_orgainization_id: Int! @unique
+	user_orgainization_id: Int!@id
 	openid: String!
 	orgainization_id: Int!
 }
 type UserRoleEntity{
-	user_role_id: Int! @unique
+	user_role_id: Int!@id
 	openid: String!
 	role_id: Int!
 }

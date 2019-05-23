@@ -41,19 +41,9 @@ export class LoggerEntity {
     @Column({
         type: 'varchar',
         length: 20,
-        comment: '参数',
-        default: '',
-        transformer: {
-            to: (json: any) => {
-                json = json || {};
-                return JSON.stringify(json)
-            },
-            from: (val: string) => {
-                return JSON.parse(val)
-            }
-        }
+        comment: '参数'
     })
-    params: object;
+    params: string;
 
     @Column({
         type: 'varchar',

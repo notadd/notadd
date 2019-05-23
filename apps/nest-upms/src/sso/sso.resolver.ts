@@ -27,7 +27,6 @@ export interface Result {
 @Controller()
 @Resolver()
 export class SsoResolver {
-    constructor(public sso: SsoService) { }
     /**
      * 通过用户名和密码获取token
      * @param {TokenBody} body
@@ -35,7 +34,7 @@ export class SsoResolver {
      */
     @Query()
     @GrpcMethod()
-    token(@Args() body: TokenBody): Observable<Result> {
+    token(): Observable<Result> {
         // const token = await this.sso.token(body.username, body.password);
         return of({
             code: 1
@@ -47,7 +46,7 @@ export class SsoResolver {
      */
     @Query()
     @GrpcMethod()
-    verify(@Args() body: LogoutBody): Observable<Result> {
+    verify(): Observable<Result> {
         return of({
             code: 1
         })
@@ -58,7 +57,7 @@ export class SsoResolver {
      */
     @Mutation()
     @GrpcMethod()
-    refreshToken(@Args() body: LogoutBody): Observable<Result> {
+    refreshToken(): Observable<Result> {
         return of({
             code: 1
         })
@@ -69,7 +68,7 @@ export class SsoResolver {
      */
     @Mutation()
     @GrpcMethod()
-    logout(@Args() body: LogoutBody): Observable<Result> {
+    logout(): Observable<Result> {
         return of({
             code: 1
         })

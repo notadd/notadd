@@ -185,7 +185,7 @@ function createSubscription(_subscription: Map<string, MethodDeclarationStructur
 function createMutation(_mutation: Map<string, MethodDeclarationStructure>) {
     let code = `type Mutation{\n`;
     _mutation.forEach(muta => {
-        code += `${getDocs(muta)}\t${muta.name}`
+        code += `${getDocs(muta, true)}\t${muta.name}`
         const parameters = muta.parameters;
         if (parameters.length > 0) {
             code += `(`

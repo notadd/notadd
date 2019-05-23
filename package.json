@@ -68,7 +68,7 @@
     "@ngx-translate/core": "~11.0.0",
     "@ngx-translate/http-loader": "~4.0.0",
     "@notadd/scss": "file:libs/scss",
-    "@nrwl/nx": "^7.0.0",
+    "@nrwl/nx": "^7.8.6",
     "@types/lodash": "^4.14.129",
     "apollo-angular": "^1.5.0",
     "apollo-angular-link-http": "^1.6.0",

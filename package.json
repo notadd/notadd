@@ -79,7 +79,7 @@
     "cache-manager": "^2.9.0",
     "casbin": "^2.0.4",
     "class-validator": "0.9.1",
-    "compression": "^1.7.3",
+    "compression": "^1.7.4",
     "core-js": "^3.1.0",
     "csurf": "^1.9.0",
     "dotenv": "^6.2.0",

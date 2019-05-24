@@ -9,6 +9,10 @@
 /node_modules
 /**/node_modules
 /database/data
+/**/*.prisma
+/**/*.graphql
+/**/*.proto
+
 # IDEs and editors
 /.idea
 .project

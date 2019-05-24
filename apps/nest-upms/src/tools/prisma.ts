@@ -1,5 +1,5 @@
 import { ClassDeclaration, SourceFile, InterfaceDeclaration, EnumDeclaration, PropertyDeclaration, Project } from 'ts-morph'
-import { getDocs, clearReturnType, transformGraphqlType, isUpdateDateColumn, isPrimaryGeneratedColumn, isPrimaryColumn, isCreateDateColumn } from './util'
+import { getDocs, clearReturnType, isOneToMany, isManyToOne, isManyToMany, isOneToOne, transformGraphqlType, isUpdateDateColumn, isPrimaryGeneratedColumn, isPrimaryColumn, isCreateDateColumn } from './util'
 export class PrismaItem {
     private _columns: Map<string, PropertyDeclaration> = new Map();
     private _enum: Map<string, EnumDeclaration> = new Map();
@@ -99,6 +99,14 @@ export class PrismaItem {
                 code += `@createdAt`
             } else if (isUpdateDateColumn(decorators)) {
                 code += `@updatedAt`
+            } else if (isOneToOne(decorators)) {
+                code += `@relation(link: INLINE)`
+            } else if (isManyToMany(decorators)) {
+                code += `@relation(link: INLINE)`
+            } else if (isOneToMany(decorators)) {
+                code += `@relation(link: INLINE)`
+            } else if (isManyToOne(decorators)) {
+                code += `@relation(link: INLINE)`
             }
             code += `\n`;
         })

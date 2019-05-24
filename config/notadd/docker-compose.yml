@@ -4,7 +4,7 @@ services:
     image: prismagraphql/prisma:1.33
     restart: always
     ports:
-    - "4466:4466"
+      - "4466:4466"
     environment:
       PRISMA_CONFIG: |
         port: 4466

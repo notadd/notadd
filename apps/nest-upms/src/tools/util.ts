@@ -11,14 +11,12 @@ export const isEntity = isDecorator('Entity');
 export const isColumn = isDecorator('Column');
 export const isPrimaryGeneratedColumn = isDecorator('PrimaryGeneratedColumn');
 export const isPrimaryColumn = isDecorator('PrimaryColumn');
-
 export const isCreateDateColumn = isDecorator('CreateDateColumn');
 export const isUpdateDateColumn = isDecorator('UpdateDateColumn');
-export const OneToOne = isDecorator('OneToOne');
-export const OneToMany = isDecorator('OneToMany');
-export const ManyToOne = isDecorator('ManyToOne');
-export const ManyToMany = isDecorator('ManyToMany');
-export const PrimaryColumn = isDecorator('PrimaryColumn');
+export const isOneToOne = isDecorator('OneToOne');
+export const isOneToMany = isDecorator('OneToMany');
+export const isManyToOne = isDecorator('ManyToOne');
+export const isManyToMany = isDecorator('ManyToMany');
 
 export function getDocs(eSt: any, withT: boolean = false) {
     let desc = ``;

@@ -103,13 +103,13 @@ export class PrismaItem {
             } else if (isUpdateDateColumn(decorators)) {
                 code += `@updatedAt`
             } else if (isOneToOne(decorators)) {
-                code += `@relation(name: ${tableName})`
+                code += `@relation(name: "${tableName}")`
             } else if (isManyToMany(decorators)) {
-                code += `@relation(name: ${tableName})`
+                code += `@relation(name: "${tableName}")`
             } else if (isOneToMany(decorators)) {
-                code += `@relation(name: ${tableName})`
+                code += `@relation(name: "${tableName}")`
             } else if (isManyToOne(decorators)) {
-                code += `@relation(name: ${tableName})`
+                code += `@relation(name: "${tableName}")`
             }
             code += `\n`;
         })

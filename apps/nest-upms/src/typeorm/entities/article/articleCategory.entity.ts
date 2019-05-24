@@ -1,12 +1,15 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn } from "typeorm";
-
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToOne, OneToMany } from "typeorm";
+import { ArticleEntity } from '../..';
+/**
+ * 文章分类表
+ */
 @Entity({
     name: 'article_category'
 })
 export class ArticleCategoryEntity {
 
     @PrimaryGeneratedColumn()
-    article_category_id	: number;
+    article_category_id: number;
 
     @Column({
         type: 'varchar',
@@ -27,6 +30,24 @@ export class ArticleCategoryEntity {
         comment: '图标'
     })
     icon: string;
+
+    /**
+     * 分类的上级
+     */
+    @ManyToOne(() => ArticleCategoryEntity, type => type.children)
+    parent: ArticleCategoryEntity;
+
+    /**
+     * 分类下面的子分类
+     */
+    @OneToMany(() => ArticleCategoryEntity, type => type.parent)
+    children: ArticleCategoryEntity[];
+
+    /**
+     * 分类下面的文章
+     */
+    @OneToMany(() => ArticleEntity, type => type.category)
+    articles: ArticleEntity[];
 
     @Column({
         type: 'text',

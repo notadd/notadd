@@ -1,4 +1,4 @@
-import { Entity, Column , PrimaryGeneratedColumn, UpdateDateColumn, CreateDateColumn } from 'typeorm';
+import { Entity, Column, ManyToMany, JoinTable, PrimaryGeneratedColumn, UpdateDateColumn, CreateDateColumn } from 'typeorm';
 import { PermissionEntity } from './permission.entity';
 
 @Entity({
@@ -45,5 +45,7 @@ export class RoleEntity {
     /**
      * 角色权限，常用，定义一下
      */
-    permissions: PermissionEntity[] = [];
+    @ManyToMany(type => PermissionEntity)
+    @JoinTable()
+    permissions: PermissionEntity[];
 }

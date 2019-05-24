@@ -1,18 +1,15 @@
-import { AddonEntity } from './entities/addon.entity'
-import { AddonPermissionEntity } from './entities/addonPermission.entity'
+import { AddonEntity } from './entities/permission/addon.entity'
 import { LoggerEntity } from './entities/logger.entity'
-import { OrganizationEntity } from './entities/organization.entity'
-import { PermissionEntity } from './entities/permission.entity'
-import { RefreshTokenEntity } from './entities/refreshToken.entity'
-import { RoleEntity } from './entities/role.entity'
-import { RolePermissionEntity } from './entities/rolePermision.entity'
-import { UserEntity } from './entities/user.entity'
-import { UserOrganizationEntity } from './entities/userOrganization.entity'
-import { UserRoleEntity } from './entities/userRole.entity'
-import { AccessTokenEntity, EXPRES_TIME } from './entities/accessToken.entity'
-import { ArticleEntity } from './entities/article.entity';
-import { ArticleCategoryEntity } from './entities/articleCategory.entity';
-import { ArticleCommentEntity } from './entities/articleComment.entity';
+import { OrganizationEntity } from './entities/permission/organization.entity'
+import { PermissionEntity } from './entities/permission/permission.entity'
+import { RefreshTokenEntity } from './entities/token/refreshToken.entity'
+import { RoleEntity } from './entities/permission/role.entity'
+import { UserEntity } from './entities/permission/user.entity'
+import { UserRoleEntity } from './entities/permission/userRole.entity'
+import { AccessTokenEntity, EXPRES_TIME } from './entities/token/accessToken.entity'
+import { ArticleEntity } from './entities/article/article.entity';
+import { ArticleCategoryEntity } from './entities/article/articleCategory.entity';
+import { ArticleCommentEntity } from './entities/article/articleComment.entity';
 import { MemberEntity } from './entities/member.entity';
 import { PostEntity } from './entities/post.entity';
 import { PostCategoryEntity } from './entities/postCategory.entity';
@@ -20,15 +17,12 @@ import { PostCategoryEntity } from './entities/postCategory.entity';
 export {
     AccessTokenEntity,
     AddonEntity,
-    AddonPermissionEntity,
     LoggerEntity,
     OrganizationEntity,
     PermissionEntity,
     RefreshTokenEntity,
     RoleEntity,
-    RolePermissionEntity,
     UserEntity,
-    UserOrganizationEntity,
     UserRoleEntity,
     ArticleEntity,
     ArticleCategoryEntity,
@@ -38,15 +32,12 @@ export {
 
 export default [
     AddonEntity,
-    AddonPermissionEntity,
     LoggerEntity,
     OrganizationEntity,
     PermissionEntity,
     RefreshTokenEntity,
     RoleEntity,
-    RolePermissionEntity,
     UserEntity,
-    UserOrganizationEntity,
     UserRoleEntity,
     AccessTokenEntity,
     ArticleEntity,

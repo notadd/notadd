@@ -1,5 +1,6 @@
 import { Entity, JoinColumn, PrimaryGeneratedColumn, Column, OneToOne, UpdateDateColumn, CreateDateColumn } from 'typeorm';
-import { AccessTokenEntity } from '..';
+import { AccessTokenEntity } from './accessToken.entity';
+
 @Entity({
     name: 'refreshToken'
 })
@@ -9,12 +10,6 @@ export class RefreshTokenEntity {
     })
     refresh_token_id: number;
 
-    // @Column({
-    //     type: 'varchar',
-    //     length: 20,
-    //     comment: 'access token的id'
-    // })
-    // token_id: number;
     @OneToOne(() => AccessTokenEntity, type => type.refreshToken)
     @JoinColumn({
         name: 'token_id'
@@ -45,14 +40,4 @@ export class RefreshTokenEntity {
         comment: '更新时间'
     })
     update_time: Date;
-
-    // @BeforeInsert()
-    // protected insterExpresIn() {
-    //     this.expires_in = new Date(new Date().setDate(new Date().getTime() + EXPRES_TIME));
-    // }
-
-    // @BeforeUpdate()
-    // protected updateExpresIn() {
-    //     this.expires_in = new Date(new Date().setDate(new Date().getTime() + EXPRES_TIME));
-    // }
 }

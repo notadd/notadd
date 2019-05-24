@@ -59,10 +59,12 @@ export class PrismaItem {
         code += createEnum(this._enum);
         code += createType(this._type)
         code += `${getDocs(struct)}type ${this.name}{\n`;
+        let tableName = ''
         this._columns.forEach(column => {
             const struct = column.getStructure();
             code += `${getDocs(struct, true)}\t${struct.name}: `;
             const decorators = column.getDecorators()
+            tableName = struct.type as string;
             if (struct.type === 'string') {
                 code += `String`;
             } else if (struct.type === 'number') {
@@ -82,6 +84,7 @@ export class PrismaItem {
             } else if ((struct.type as string).endsWith('[]')) {
                 const tName = (struct.type as string).replace('[]', '');
                 code += `[${transformGraphqlType(tName)}]`;
+                tableName = transformGraphqlType(tName);
             } else if ((struct.type as string).includes('|')) {
                 throw new Error(`不支持 ${struct.type} 这种格式的数据，请使用简单类型`)
             } else {
@@ -100,13 +103,13 @@ export class PrismaItem {
             } else if (isUpdateDateColumn(decorators)) {
                 code += `@updatedAt`
             } else if (isOneToOne(decorators)) {
-                code += `@relation(link: INLINE)`
+                code += `@relation(name: ${tableName})`
             } else if (isManyToMany(decorators)) {
-                code += `@relation(link: INLINE)`
+                code += `@relation(name: ${tableName})`
             } else if (isOneToMany(decorators)) {
-                code += `@relation(link: INLINE)`
+                code += `@relation(name: ${tableName})`
             } else if (isManyToOne(decorators)) {
-                code += `@relation(link: INLINE)`
+                code += `@relation(name: ${tableName})`
             }
             code += `\n`;
         })

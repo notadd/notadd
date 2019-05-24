@@ -1,11 +1,10 @@
-import { Column, Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, OneToMany } from 'typeorm';
+import { Column, JoinTable, Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, ManyToMany } from 'typeorm';
 import { PermissionEntity } from './permission.entity';
 
 @Entity({
     name: 'addon'
 })
 export class AddonEntity {
-
     @PrimaryGeneratedColumn()
     appid: number;
 
@@ -15,49 +14,41 @@ export class AddonEntity {
         default: 0
     })
     pid: number;
-
     @Column({
         type: 'varchar',
         length: 20
     })
     appsecret: string;
-
     @Column({
         type: 'varchar',
         length: 255,
         default: ''
     })
     icon: string;
-
     @Column({
         type: 'varchar',
         length: 20
     })
     name: string;
-
     @Column({
         type: 'varchar',
         length: 20
     })
     title: string;
-
     @Column({
         type: 'text',
         default: ''
     })
     description: string;
-
     @Column({
         type: 'smallint',
         default: 1
     })
     status: number;
-
     @CreateDateColumn({
         type: 'timestamptz'
     })
     create_time: Date;
-
     @UpdateDateColumn({
         type: 'timestamptz'
     })
@@ -65,7 +56,10 @@ export class AddonEntity {
 
     /**
      * 应用权限
+     * 一个应用有多个权限
+     * 一个权限也可以有多个应用
      */
-    @OneToMany(() => PermissionEntity, type => type.fromAddon)
+    @ManyToMany(() => PermissionEntity)
+    @JoinTable()
     permissions: PermissionEntity[];
 }

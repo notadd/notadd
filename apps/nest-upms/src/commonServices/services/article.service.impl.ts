@@ -1,5 +1,5 @@
 import { ArticleService } from '../core';
-import { ArticleEntity } from '../../typeorm/entities/article.entity';
+import { ArticleEntity } from '../../typeorm/entities/article/article.entity';
 import { DeleteResult, Repository } from 'typeorm';
 import { ArticleMustDataError, ArticleTitleError, ArticleNullError } from '../errors/error';
 import { InjectRepository } from '@nestjs/typeorm';

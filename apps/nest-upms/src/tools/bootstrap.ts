@@ -19,7 +19,7 @@ export async function bootstrap() {
     }).then(connection => {
         connection.close()
     }).catch(e => {
-        console.log(`数据库连接错误`)
+        console.log(`数据库连接错误`, e)
     });
     glob(join(root, 'apps/nest-upms/src/**/*.ts'), {}, (err, files) => {
         files.map(path => {

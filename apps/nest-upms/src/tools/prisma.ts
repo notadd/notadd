@@ -1,123 +1,159 @@
-import { ClassDeclaration, SourceFile, InterfaceDeclaration, EnumDeclaration, PropertyDeclaration, Project } from 'ts-morph'
+import { ClassDeclaration, SourceFile, PropertyAssignmentStructure, InterfaceDeclaration, EnumDeclaration, PropertyDeclaration, Project, ObjectLiteralExpression, Decorator } from 'ts-morph'
 import { getDocs, clearReturnType, isOneToMany, isManyToOne, isManyToMany, isOneToOne, transformGraphqlType, isUpdateDateColumn, isPrimaryGeneratedColumn, isPrimaryColumn, isCreateDateColumn } from './util'
 export class PrismaItem {
-    private _columns: Map<string, PropertyDeclaration> = new Map();
-    private _enum: Map<string, EnumDeclaration> = new Map();
-    private _type: Map<string, InterfaceDeclaration> = new Map();
-    private name: string;
+    private code: string = ``
     constructor(public cls: ClassDeclaration, public file: SourceFile, public project: Project) {
+        const decorators = cls.getDecorators();
         const properties = cls.getProperties();
         const struct = cls.getStructure();
-        this.name = struct.name;
+        this.code += `${getDocs(struct)}type ${struct.name} `
+        this.code += this.getDbName(decorators)
+        this.code += `{\n`;
         properties.map(pro => {
+            const decorators = pro.getDecorators();
             const sturct = pro.getStructure();
-            this._columns.set(sturct.name, pro);
             const type = sturct.type as string;
-            this.createType(type, file)
+            this.code += `${getDocs(sturct, true)}\t${sturct.name}: `;
+            this.code += `${this.getType(type, decorators)}${this.getRequire(sturct)} ${this.getDefault(decorators)} ${this.getDbName(decorators)}${this.getDirective(decorators)}\n`
         });
+        this.code += `}\n`;
     }
-
-    createType(name: any, file: SourceFile) {
-        name = clearReturnType(name)
-        if (typeof name === 'string') {
-            const inter = file.getInterface(name);
-            const _enum = file.getEnum(name);
-            if (inter) {
-                this._type.set(name, inter)
-                const properties = inter.getProperties();
-                properties.map(pro => {
-                    const struct = pro.getStructure();
-                    const type = struct.type as string;
-                    // 检查数组
-                    if (type.endsWith('[]')) {
-                        const tName = type.replace('[]', '')
-                        this.createType(tName, file)
-                    } else if (type.indexOf('|')) {
-                        const types = type.split('|');
-                        types.map(t => {
-                            this.createType(t, file)
-                        });
-                    } else {
-                        this.createType(type, file)
-                    }
-                })
-            } else if (_enum) {
-                this._enum.set(name, _enum);
-            } else {
-                if (['number', 'string', 'Date'].includes(name)) {
-
+    getDefault(decorators: Decorator[]) {
+        let code = ``
+        decorators && decorators.map(dec => {
+            const call = dec.getCallExpression();
+            const args = call.getArguments();
+            args && args.map((arg: ObjectLiteralExpression) => {
+                if (arg && arg.getProperties) {
+                    const properties = arg.getProperties()
+                    properties.map(pro => {
+                        const s = pro.getStructure() as PropertyAssignmentStructure;
+                        if (s.name === 'default') {
+                            code += `@default(value: ${this.trimString(s.initializer as string)}) `;
+                        }
+                    })
                 }
-            }
+            });
+        })
+        return code.length > 0 ? code : '';
+    }
+    trimString(s: string) {
+        if (s.includes(`'`)) {
+            s = s.replace(`'`, ``)
+            s = s.replace(`'`, ``)
+            return s.length > 0 ? s : `""`;
+        } else {
+            return s;
         }
     }
-    /**
-     * 创建
-     */
-    create() {
-        const struct = this.cls.getStructure();
-        let code = ``;
-        code += createEnum(this._enum);
-        code += createType(this._type)
-        code += `${getDocs(struct)}type ${this.name}{\n`;
-        let tableName = ''
-        let isArray = false;
-        this._columns.forEach(column => {
-            const struct = column.getStructure();
-            code += `${getDocs(struct, true)}\t${struct.name}: `;
-            const decorators = column.getDecorators()
-            tableName = struct.type as string;
-            if (struct.type === 'string') {
+    getType(type: string, decorators: Decorator[]) {
+        let code = ``
+        switch (type) {
+            case 'string':
                 code += `String`;
-            } else if (struct.type === 'number') {
+                break;
+            case 'number':
                 if (isPrimaryGeneratedColumn(decorators)) {
                     code += `ID`
                 } else {
                     code += `Int`;
                 }
-            } else if (struct.type === 'boolean') {
-                code += `Boolean`;
-            } else if (struct.type === 'Float') {
-                code += `Float`;
-            } else if (struct.type === 'ID') {
-                code += `ID`;
-            } else if (struct.type === 'Date') {
-                code += `DateTime`
-            } else if ((struct.type as string).endsWith('[]')) {
-                const tName = (struct.type as string).replace('[]', '');
-                code += `[${transformGraphqlType(tName)}]`;
-                tableName = transformGraphqlType(tName);
-                isArray = true;
-            } else if ((struct.type as string).includes('|')) {
-                throw new Error(`不支持 ${struct.type} 这种格式的数据，请使用简单类型`)
-            } else {
-                code += struct.type;
-            }
-            if (!struct.hasQuestionToken) {
-                code += `!`;
-            }
-
-            code += ` `
-            if (isPrimaryGeneratedColumn(decorators)) {
-                code += `@id`
-            } else if (isPrimaryColumn(decorators)) {
-                code += ` @unique`
-            } else if (isCreateDateColumn(decorators)) {
-                code += `@createdAt`
-            } else if (isUpdateDateColumn(decorators)) {
-                code += `@updatedAt`
-            } else if (isOneToOne(decorators)) {
-                code += `@relation(link: INLINE name: "${tableName}")`
-            } else if (isManyToMany(decorators)) {
-                code += `@relation(link: TABLE name: "${tableName}")`
-            } else if (isOneToMany(decorators)) {
-                code += `@relation(link: TABLE name: "${tableName}")`
-            } else if (isManyToOne(decorators)) {
-                code += `@relation(link: INLINE name: "${tableName}")`
-            }
-            code += `\n`;
-        })
-        code += `}\n`
+                break;
+            case 'boolean':
+                code += 'Boolean';
+                break;
+            case 'Float':
+                code += 'Float';
+                break;
+            case 'ID':
+                code += 'ID';
+                break;
+            case 'Date':
+                code += 'DateTime';
+                break;
+            default:
+                if (type.endsWith('[]')) {
+                    const tName = type.replace('[]', '');
+                    code += `[${transformGraphqlType(tName)}]`;
+                } else if (type.includes('|')) {
+                    throw new Error(`不支持 ${type} 这种格式的数据，请使用简单类型`)
+                } else {
+                    code += type;
+                }
+                break;
+        }
         return code;
+    }
+    getRequire(struct: any) {
+        let code = ``
+        if (!struct.hasQuestionToken) {
+            code += `!`;
+        }
+        return code;
+    }
+    getDbName(decorators: Decorator[]) {
+        let code = ``
+        decorators && decorators.map(dec => {
+            const call = dec.getCallExpression();
+            const args = call.getArguments();
+            args && args.map((arg: ObjectLiteralExpression) => {
+                if (arg && arg.getProperties) {
+                    const properties = arg.getProperties()
+                    properties.map(pro => {
+                        const s = pro.getStructure() as PropertyAssignmentStructure;
+                        if (s.name === 'name') {
+                            // code += `@db(${s.initializer as string}) `;
+                        }
+                    })
+                }
+            });
+        })
+        return code.length > 0 ? code : '';
+    }
+
+    getDirective(decorators: Decorator[]) {
+        let code = ` `;
+        if (isPrimaryGeneratedColumn(decorators)) {
+            code += `@id`
+        } else if (isPrimaryColumn(decorators)) {
+            code += `@unique`
+        } else if (isCreateDateColumn(decorators)) {
+            code += `@createdAt`
+        } else if (isUpdateDateColumn(decorators)) {
+            code += `@updatedAt`
+        } else if (isOneToOne(decorators)) {
+            code += `@relation(link: INLINE)`
+        } else if (isManyToMany(decorators)) {
+            code += `@relation(link: TABLE)`
+        } else if (isOneToMany(decorators)) {
+            code += `@relation(link: TABLE)`
+        } else if (isManyToOne(decorators)) {
+            code += `@relation(link: INLINE)`
+        }
+        return code;
+    }
+
+    /**
+     * 创建
+     */
+    create() {
+        return this.code;
+        // const struct = this.cls.getStructure();
+        // let code = ``;
+        // code += createEnum(this._enum);
+        // code += createType(this._type)
+        // code += `${getDocs(struct)}type ${this.name} @db(${this.tablename}) {\n`;
+        // let tableName = ''
+        // let isArray = false;
+        // this._columns.forEach(column => {
+
+
+
+
+        //     code += `\n`;
+        // })
+        // code += `}\n`
+        // return code;
     }
 }
 

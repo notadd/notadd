@@ -26,17 +26,15 @@ export class LoggerEntity {
 
     @Column({
         type: 'timestamp',
-        comment: '开始时间',
-        default: new Date()
+        comment: '开始时间'
     })
-    start_time: Date = new Date();
+    start_time: Date;
 
     @Column({
         type: 'timestamp',
-        comment: '结束时间',
-        default: new Date()
+        comment: '结束时间'
     })
-    end_time: Date = new Date();
+    end_time: Date;
 
     @Column({
         type: 'varchar',

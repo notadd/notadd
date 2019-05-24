@@ -1,5 +1,5 @@
-import { bootstrap as db } from '../bootstrap'
-export async function bootstrap() {
-    await db();
-}
-bootstrap();
+import * as p from 'prisma-binding'
+
+const prisma = p;
+
+debugger;

@@ -25,7 +25,6 @@ export function build(path: string, output: string) {
                     // 如果是Controller 解析成proto
                     const creater = new ProtobufCreater();
                     transformClassDeclarationToProto(cls, file, project, creater)
-
                 } else if (text === 'Resolver') {
                     // 如果是Resolver 解析成graphql
                     const creater = new GraphqlCreater();

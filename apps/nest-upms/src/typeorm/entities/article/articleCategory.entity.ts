@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToOne, OneToMany } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column,OneToOne, CreateDateColumn, UpdateDateColumn, ManyToOne, OneToMany, JoinColumn } from "typeorm";
 import { ArticleEntity } from '../..';
 /**
  * 文章分类表
@@ -35,6 +35,9 @@ export class ArticleCategoryEntity {
      * 分类的上级
      */
     @ManyToOne(() => ArticleCategoryEntity, type => type.children)
+    @JoinColumn({
+        name: 'pid'
+    })
     parent: ArticleCategoryEntity;
 
     /**

@@ -107,19 +107,16 @@ export class PermissionEntity {
      * 拥有此权限的所有模块
      */
     @ManyToMany(() => AddonEntity)
-    @JoinTable()
     addons: AddonEntity[];
     /**
      * 拥有此权限的所有用户
      */
-    @ManyToMany(type => UserEntity)
-    @JoinTable()
+    @ManyToMany(() => UserEntity)
     users: UserEntity[];
 
     /**
      * 拥有此权限的所有角色
      */
-    @ManyToMany(type => RoleEntity)
-    @JoinTable()
+    @ManyToMany(() => RoleEntity)
     roles: RoleEntity[];
 }

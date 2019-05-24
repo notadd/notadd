@@ -1,4 +1,4 @@
-import { Entity, JoinColumn, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToOne } from "typeorm";
+import { Entity, Tree, JoinColumn, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToOne, OneToOne, OneToMany } from "typeorm";
 import { ArticleEntity } from './article.entity';
 /**
  * 文章评论表
@@ -20,11 +20,15 @@ export class ArticleCommentEntity {
     /**
      * 回复
      */
-    @Column({
-        type: 'int',
-        comment: '上级',
+    @ManyToOne(() => ArticleCommentEntity, type => type.children)
+    @JoinColumn({
+        name: 'parent_id'
     })
-    pid: number;
+    parent: ArticleCommentEntity;
+
+
+    @OneToMany(() => ArticleCommentEntity, type => type.parent)
+    children: ArticleCommentEntity[];
 
 
     @Column({
@@ -43,7 +47,7 @@ export class ArticleCommentEntity {
     })
     update_time: Date;
 
-    @ManyToOne(() => ArticleEntity, type => type.category)
+    @OneToOne(() => ArticleEntity, type => type.category)
     @JoinColumn({
         name: 'article_id'
     })

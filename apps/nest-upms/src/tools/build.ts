@@ -33,8 +33,8 @@ export function build(path: string, output: string) {
 
                 } else if (text === 'Entity') {
                     // 解析Typeorm Entity
-                    const creater = new PrismaCreator();
-                    transformEntityToPrisma(cls, file, project, creater)
+                    // const creater = new PrismaCreator();
+                    // transformEntityToPrisma(cls, file, project, creater)
                 } else {
                     // 不用处理
                 }

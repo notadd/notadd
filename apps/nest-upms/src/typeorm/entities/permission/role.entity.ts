@@ -45,7 +45,7 @@ export class RoleEntity {
     /**
      * 角色权限，常用，定义一下
      */
-    @ManyToMany(type => PermissionEntity)
+    @ManyToMany(() => PermissionEntity)
     @JoinTable()
     permissions: PermissionEntity[];
 }

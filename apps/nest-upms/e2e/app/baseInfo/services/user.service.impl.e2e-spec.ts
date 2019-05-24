@@ -12,7 +12,7 @@ describe('UserServiceImpl', () => {
         }).compile();
         app = module.createNestApplication();
         userService = app.get(UserServiceImpl);
-        /** 新增用户 */
+        /** 新用户用户 */
         let user = GetUser('mumu', '15188776655', 'mumu@qq.com');
         const result = await userService.insert(user)
         console.log(result)

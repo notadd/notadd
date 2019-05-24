@@ -5,7 +5,6 @@ import { PermissionEntity } from './entities/permission/permission.entity'
 import { RefreshTokenEntity } from './entities/token/refreshToken.entity'
 import { RoleEntity } from './entities/permission/role.entity'
 import { UserEntity } from './entities/permission/user.entity'
-import { UserRoleEntity } from './entities/permission/userRole.entity'
 import { AccessTokenEntity, EXPRES_TIME } from './entities/token/accessToken.entity'
 import { ArticleEntity } from './entities/article/article.entity';
 import { ArticleCategoryEntity } from './entities/article/articleCategory.entity';
@@ -23,7 +22,6 @@ export {
     RefreshTokenEntity,
     RoleEntity,
     UserEntity,
-    UserRoleEntity,
     ArticleEntity,
     ArticleCategoryEntity,
     ArticleCommentEntity,
@@ -38,7 +36,6 @@ export default [
     RefreshTokenEntity,
     RoleEntity,
     UserEntity,
-    UserRoleEntity,
     AccessTokenEntity,
     ArticleEntity,
     ArticleCategoryEntity,

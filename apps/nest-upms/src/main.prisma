@@ -1,223 +1,223 @@
 type AccessTokenEntity{
-	access_token_id: Int!@id
+	access_token_id: ID! @id
 	"""根据access_token查询用户Openid，添加Index"""
-	access_token: String!
-	openid: String!
-	appid: String!
-	ip: String!
-	platform: String!
-	grant_type: Int!
-	scope: String!
-	expires_in: DateTime!
-	create_time: DateTime!@createdAt
-	update_time: DateTime!@updatedAt
-	status: Int!
+	access_token: String! 
+	openid: String! 
+	appid: String! 
+	ip: String! 
+	platform: String! 
+	grant_type: Int! 
+	scope: String! 
+	expires_in: DateTime! 
+	create_time: DateTime! @createdAt
+	update_time: DateTime! @updatedAt
+	status: Int! 
 	"""刷新凭证"""
-	refreshToken: RefreshTokenEntity!
+	refreshToken: RefreshTokenEntity! 
 }
 type AddonEntity{
-	appid: Int!@id
-	pid: Int!
-	appsecret: String!
-	icon: String!
-	name: String!
-	title: String!
-	description: String!
-	status: Int!
-	create_time: DateTime!@createdAt
-	update_time: DateTime!@updatedAt
+	appid: ID! @id
+	pid: Int! 
+	appsecret: String! 
+	icon: String! 
+	name: String! 
+	title: String! 
+	description: String! 
+	status: Int! 
+	create_time: DateTime! @createdAt
+	update_time: DateTime! @updatedAt
 	"""应用权限"""
-	permissions: [PermissionEntity]!
+	permissions: [PermissionEntity]! 
 }
 type AddonPermissionEntity{
-	addon_permission_id: Int!@id
-	addon_id: Int!
-	permission_id: Int!
-	create_time: DateTime!
-	update_time: DateTime!
+	addon_permission_id: ID! @id
+	addon_id: Int! 
+	permission_id: Int! 
+	create_time: DateTime! 
+	update_time: DateTime! 
 }
 type ArticleEntity{
-	article_id: Int!@id
-	title: String!
-	description: String!
-	thumbs: String!
-	icon: String!
-	article_category_id: Int!
-	create_time: DateTime!@createdAt
-	update_time: DateTime!@updatedAt
+	article_id: ID! @id
+	title: String! 
+	description: String! 
+	thumbs: String! 
+	icon: String! 
+	article_category_id: Int! 
+	create_time: DateTime! @createdAt
+	update_time: DateTime! @updatedAt
 }
 type ArticleCategoryEntity{
-	article_category_id: Int!@id
-	title: String!
-	name: String!
-	icon: String!
-	description: String!
-	create_time: DateTime!@createdAt
-	update_time: DateTime!@updatedAt
+	article_category_id: ID! @id
+	title: String! 
+	name: String! 
+	icon: String! 
+	description: String! 
+	create_time: DateTime! @createdAt
+	update_time: DateTime! @updatedAt
 }
 type ArticleCommentEntity{
-	article_comment_id: Int!@id
-	content: String!
-	pid: Int!
-	article_id: Int!
-	from_user_id: String!
-	create_time: DateTime!@createdAt
-	update_time: DateTime!@updatedAt
+	article_comment_id: ID! @id
+	content: String! 
+	pid: Int! 
+	article_id: Int! 
+	from_user_id: String! 
+	create_time: DateTime! @createdAt
+	update_time: DateTime! @updatedAt
 }
 type LoggerEntity{
-	logger_id: Int!@id
-	description: String!
-	openid: String!
-	start_time: DateTime!
-	end_time: DateTime!
-	params: String!
-	ip: String!
-	result: String!
-	permissions: String!
+	logger_id: ID! @id
+	description: String! 
+	openid: String! 
+	start_time: DateTime! 
+	end_time: DateTime! 
+	params: String! 
+	ip: String! 
+	result: String! 
+	permissions: String! 
 }
 type MemberEntity{
-	member_id: Int!@id
-	name: String!
-	realname: String!
-	phone: String!
-	openid: String!
-	email: String!
-	username: String!
-	password: String!
-	salt: String!
-	create_time: DateTime!@createdAt
-	update_time: DateTime!@updatedAt
+	member_id: ID! @id
+	name: String! 
+	realname: String! 
+	phone: String! 
+	openid: String! 
+	email: String! 
+	username: String! 
+	password: String! 
+	salt: String! 
+	create_time: DateTime! @createdAt
+	update_time: DateTime! @updatedAt
 }
 type MessageEntity{
-	msg_id: Int!@id
-	content: String!
-	msg_type: Int!
-	pic_url: String!
-	media_id: Int!
-	thumb_media_id: Int!
-	location_x: String!
-	location_y: String!
-	label: String!
-	title: String!
-	url: String!
-	description: String!
-	from_user: String!
-	to_user: String!
-	create_time: DateTime!@createdAt
-	update_time: DateTime!@updatedAt
+	msg_id: ID! @id
+	content: String! 
+	msg_type: Int! 
+	pic_url: String! 
+	media_id: Int! 
+	thumb_media_id: Int! 
+	location_x: String! 
+	location_y: String! 
+	label: String! 
+	title: String! 
+	url: String! 
+	description: String! 
+	from_user: String! 
+	to_user: String! 
+	create_time: DateTime! @createdAt
+	update_time: DateTime! @updatedAt
 }
 type OrganizationEntity{
-	organization_id: Int!@id
-	name: String!
-	title: String!
-	description: String!
-	create_time: DateTime!@createdAt
-	update_time: DateTime!@updatedAt
-	displayorder: Int!
+	organization_id: ID! @id
+	name: String! 
+	title: String! 
+	description: String! 
+	create_time: DateTime! @createdAt
+	update_time: DateTime! @updatedAt
+	displayorder: Int! 
 }
 """应用权限表"""
 type PermissionEntity{
 	"""上级"""
-	father_name: String!
+	father_name: String! 
 	"""英文代号
 格式: addonName.permissionName
 唯一"""
-	name: String! @unique
+	name: String!  @unique
 	"""汉语名称"""
-	title: String!
+	title: String! 
 	"""权限简介"""
-	decription: String!
+	decription: String! 
 	"""权限值,即操作符
 如：read,write,all..."""
-	value: [String]!
+	value: [String]! 
 	"""图标"""
-	icon: String!
+	icon: String! 
 	"""状态 -1禁止，0开发中,1正常"""
-	status: Int!
+	status: Int! 
 	"""排序"""
-	displayorder: Int!
+	displayorder: Int! 
 	"""创建时间"""
-	create_time: DateTime!@createdAt
+	create_time: DateTime! @createdAt
 	"""更新时间"""
-	update_time: DateTime!@updatedAt
+	update_time: DateTime! @updatedAt
 	"""应用id"""
-	fromAddon: AddonEntity!
+	fromAddon: AddonEntity! 
 	"""常用的，所以定义一下，查询后挂载到Permission上拥有此权限的所有模块"""
-	addons: [AddonEntity]!
+	addons: [AddonEntity]! 
 	"""拥有此权限的所有用户"""
-	users: [UserEntity]!
+	users: [UserEntity]! 
 	"""拥有此权限的所有角色"""
-	roles: [RoleEntity]!
+	roles: [RoleEntity]! 
 }
 type PostEntity{
-	post_id: Int!@id
-	title: String!
-	content: String!
-	status: Int!
-	handler_user: String!
-	create_time: DateTime!@createdAt
-	update_time: DateTime!@updatedAt
+	post_id: ID! @id
+	title: String! 
+	content: String! 
+	status: Int! 
+	handler_user: String! 
+	create_time: DateTime! @createdAt
+	update_time: DateTime! @updatedAt
 }
 type PostCategoryEntity{
-	post_post_category_idid: Int!@id
-	title: String!
-	icon: String!
-	description: String!
-	create_time: DateTime!@createdAt
-	update_time: DateTime!@updatedAt
+	post_post_category_idid: ID! @id
+	title: String! 
+	icon: String! 
+	description: String! 
+	create_time: DateTime! @createdAt
+	update_time: DateTime! @updatedAt
 }
 type RefreshTokenEntity{
-	refresh_token_id: Int!@id
-	token: AccessTokenEntity!
-	refresh_token: String!
-	expires_in: DateTime!
-	create_time: DateTime!@createdAt
-	update_time: DateTime!@updatedAt
+	refresh_token_id: ID! @id
+	token: AccessTokenEntity! 
+	refresh_token: String! 
+	expires_in: DateTime! 
+	create_time: DateTime! @createdAt
+	update_time: DateTime! @updatedAt
 }
 type RoleEntity{
-	role_id: Int!@id
-	name: String!
-	title: String!
-	description: String!
-	create_time: DateTime!@createdAt
-	update_time: DateTime!@updatedAt
+	role_id: ID! @id
+	name: String! 
+	title: String! 
+	description: String! 
+	create_time: DateTime! @createdAt
+	update_time: DateTime! @updatedAt
 	"""角色权限，常用，定义一下"""
-	permissions: [PermissionEntity]!
+	permissions: [PermissionEntity]! 
 }
 type RolePermissionEntity{
-	role_permission_id: Int!@id
-	role_id: Int!
-	permission_id: Int!
+	role_permission_id: ID! @id
+	role_id: Int! 
+	permission_id: Int! 
 }
 type UserEntity{
-	user_id: Int!@id
-	openid: String!
-	unionid: String!
-	username: String!
-	password: String!
-	salt: String!
-	realname: String!
-	nickname: String!
-	avatar: String!
-	phone: String!
-	email: String!
-	sex: Int!
-	create_time: DateTime!@createdAt
-	update_time: DateTime!@updatedAt
+	user_id: ID! @id
+	openid: String! 
+	unionid: String! 
+	username: String! 
+	password: String! 
+	salt: String! 
+	realname: String! 
+	nickname: String! 
+	avatar: String! 
+	phone: String! 
+	email: String! 
+	sex: Int! 
+	create_time: DateTime! @createdAt
+	update_time: DateTime! @updatedAt
 	"""常用，定义一下用户拥有的权限，一个用户可以有多个权限"""
-	permissions: [PermissionEntity]!
+	permissions: [PermissionEntity]! 
 	"""用户拥有的角色，一个用户可以分配多个角色"""
-	roles: [RoleEntity]!
+	roles: [RoleEntity]! 
 	"""用户所属组织，一个用户可以有多个组织，"""
-	organizations: [OrganizationEntity]!
+	organizations: [OrganizationEntity]! 
 }
 type UserOrganizationEntity{
-	user_orgainization_id: Int!@id
-	openid: String!
-	orgainization_id: Int!
+	user_orgainization_id: ID! @id
+	openid: String! 
+	orgainization_id: Int! 
 }
 type UserRoleEntity{
-	user_role_id: Int!@id
-	openid: String!
-	role_id: Int!
+	user_role_id: ID! @id
+	openid: String! 
+	role_id: Int! 
 }

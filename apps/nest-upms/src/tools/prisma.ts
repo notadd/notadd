@@ -66,7 +66,11 @@ export class PrismaItem {
             if (struct.type === 'string') {
                 code += `String`;
             } else if (struct.type === 'number') {
-                code += `Int`;
+                if (isPrimaryGeneratedColumn(decorators)) {
+                    code += `ID`
+                } else {
+                    code += `Int`;
+                }
             } else if (struct.type === 'boolean') {
                 code += `Boolean`;
             } else if (struct.type === 'Float') {
@@ -86,6 +90,7 @@ export class PrismaItem {
             if (!struct.hasQuestionToken) {
                 code += `!`;
             }
+            code += ` `
             if (isPrimaryGeneratedColumn(decorators)) {
                 code += `@id`
             } else if (isPrimaryColumn(decorators)) {

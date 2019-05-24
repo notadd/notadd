@@ -5,7 +5,7 @@ import glob from 'glob';
 import { createConnection } from 'typeorm';
 import entities from '../typeorm'
 async function bootstrap() {
-    const connection = await createConnection({
+    createConnection({
         type: 'postgres',
         host: 'localhost',
         port: 5432,
@@ -16,8 +16,11 @@ async function bootstrap() {
         entities: [
             ...entities
         ]
+    }).then(connection => {
+        connection.close()
+    }).catch(e => {
+        console.log(`数据库连接错误`)
     });
-    await connection.close();
     glob(join(root, 'apps/nest-upms/src/**/*.ts'), {}, (err, files) => {
         files.map(path => {
             if (path.endsWith('.ts')) {

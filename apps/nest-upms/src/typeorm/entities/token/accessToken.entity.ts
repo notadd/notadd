@@ -1,6 +1,7 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToOne, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToOne, CreateDateColumn, UpdateDateColumn, JoinColumn } from 'typeorm';
 import { RefreshTokenEntity } from './refreshToken.entity';
 export const EXPRES_TIME = 60 * 60 * 24;
+
 @Entity({
     name: 'accessToken'
 })
@@ -84,16 +85,6 @@ export class AccessTokenEntity {
         comment: '1正常,-1过期/失效'
     })
     status: number;
-
-    // @BeforeInsert()
-    // protected insterExpresIn() {
-    //     this.expires_in = new Date(new Date().setDate(new Date().getTime() + EXPRES_TIME));
-    // }
-
-    // @BeforeUpdate()
-    // protected updateExpresIn() {
-    //     this.expires_in = new Date(new Date().setDate(new Date().getTime() + EXPRES_TIME));
-    // }
 
     /**
      * 刷新凭证

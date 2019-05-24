@@ -1,68 +1,43 @@
-type AccessTokenEntity{
-	access_token_id: ID! @id
-	"""根据access_token查询用户Openid，添加Index"""
-	access_token: String! 
-	openid: String! 
-	appid: String! 
-	ip: String! 
-	platform: String! 
-	grant_type: Int! 
-	scope: String! 
-	expires_in: DateTime! 
-	create_time: DateTime! @createdAt
-	update_time: DateTime! @updatedAt
-	status: Int! 
-	"""刷新凭证"""
-	refreshToken: RefreshTokenEntity! 
-}
-type AddonEntity{
-	appid: ID! @id
-	pid: Int! 
-	appsecret: String! 
-	icon: String! 
-	name: String! 
-	title: String! 
-	description: String! 
-	status: Int! 
-	create_time: DateTime! @createdAt
-	update_time: DateTime! @updatedAt
-	"""应用权限"""
-	permissions: [PermissionEntity]! 
-}
-type AddonPermissionEntity{
-	addon_permission_id: ID! @id
-	addon_id: Int! 
-	permission_id: Int! 
-	create_time: DateTime! 
-	update_time: DateTime! 
-}
+"""文章表"""
 type ArticleEntity{
 	article_id: ID! @id
 	title: String! 
 	description: String! 
 	thumbs: String! 
 	icon: String! 
-	article_category_id: Int! 
+	"""文章的类型"""
+	category: ArticleCategoryEntity! @relation(name: ArticleCategoryEntity)
+	"""文章下面的评论"""
+	comments: [ArticleCommentEntity]! @relation(name: ArticleCommentEntity)
 	create_time: DateTime! @createdAt
 	update_time: DateTime! @updatedAt
 }
+"""文章分类表"""
 type ArticleCategoryEntity{
 	article_category_id: ID! @id
 	title: String! 
 	name: String! 
 	icon: String! 
+	"""分类的上级"""
+	parent: ArticleCategoryEntity! @relation(name: ArticleCategoryEntity)
+	"""分类下面的子分类"""
+	children: [ArticleCategoryEntity]! @relation(name: ArticleCategoryEntity)
+	"""分类下面的文章"""
+	articles: [ArticleEntity]! @relation(name: ArticleEntity)
 	description: String! 
 	create_time: DateTime! @createdAt
 	update_time: DateTime! @updatedAt
 }
+"""文章评论表"""
 type ArticleCommentEntity{
 	article_comment_id: ID! @id
 	content: String! 
+	"""回复"""
 	pid: Int! 
-	article_id: Int! 
 	from_user_id: String! 
 	create_time: DateTime! @createdAt
 	update_time: DateTime! @updatedAt
+	article: ArticleEntity! @relation(name: ArticleEntity)
 }
 type LoggerEntity{
 	logger_id: ID! @id
@@ -106,6 +81,22 @@ type MessageEntity{
 	create_time: DateTime! @createdAt
 	update_time: DateTime! @updatedAt
 }
+type AddonEntity{
+	appid: ID! @id
+	pid: Int! 
+	appsecret: String! 
+	icon: String! 
+	name: String! 
+	title: String! 
+	description: String! 
+	status: Int! 
+	create_time: DateTime! @createdAt
+	update_time: DateTime! @updatedAt
+	"""应用权限
+一个应用有多个权限
+一个权限也可以有多个应用"""
+	permissions: [PermissionEntity]! @relation(name: PermissionEntity)
+}
 type OrganizationEntity{
 	organization_id: ID! @id
 	name: String! 
@@ -117,12 +108,13 @@ type OrganizationEntity{
 }
 """应用权限表"""
 type PermissionEntity{
-	"""上级"""
-	father_name: String! 
+	id: ID! @id
 	"""英文代号
 格式: addonName.permissionName
 唯一"""
-	name: String!  @unique
+	name: String! 
+	"""上级"""
+	father_name: String! 
 	"""汉语名称"""
 	title: String! 
 	"""权限简介"""
@@ -140,14 +132,49 @@ type PermissionEntity{
 	create_time: DateTime! @createdAt
 	"""更新时间"""
 	update_time: DateTime! @updatedAt
-	"""应用id"""
-	fromAddon: AddonEntity! 
 	"""常用的，所以定义一下，查询后挂载到Permission上拥有此权限的所有模块"""
-	addons: [AddonEntity]! 
+	addons: [AddonEntity]! @relation(name: AddonEntity)
 	"""拥有此权限的所有用户"""
-	users: [UserEntity]! 
+	users: [UserEntity]! @relation(name: UserEntity)
 	"""拥有此权限的所有角色"""
+	roles: [RoleEntity]! @relation(name: RoleEntity)
+}
+type RoleEntity{
+	role_id: ID! @id
+	name: String! 
+	title: String! 
+	description: String! 
+	create_time: DateTime! @createdAt
+	update_time: DateTime! @updatedAt
+	"""角色权限，常用，定义一下"""
+	permissions: [PermissionEntity]! @relation(name: PermissionEntity)
+}
+type UserEntity{
+	user_id: ID! @id
+	openid: String! 
+	unionid: String! 
+	username: String! 
+	password: String! 
+	salt: String! 
+	realname: String! 
+	nickname: String! 
+	avatar: String! 
+	phone: String! 
+	email: String! 
+	sex: Int! 
+	create_time: DateTime! @createdAt
+	update_time: DateTime! @updatedAt
+	"""常用，定义一下用户拥有的权限，一个用户可以有多个权限"""
+	permissions: [PermissionEntity]! @relation(name: PermissionEntity)
+	"""用户拥有的角色，一个用户可以分配多个角色"""
 	roles: [RoleEntity]! 
+	"""用户所属组织，一个用户可以有多个组织，"""
+	organizations: [OrganizationEntity]! 
+}
+type UserRoleEntity{
+	user_role_id: ID! @id
+	openid: String! 
+	role_id: Int! 
 }
 type PostEntity{
 	post_id: ID! @id
@@ -166,58 +193,28 @@ type PostCategoryEntity{
 	create_time: DateTime! @createdAt
 	update_time: DateTime! @updatedAt
 }
+type AccessTokenEntity{
+	access_token_id: ID! @id
+	"""根据access_token查询用户Openid，添加Index"""
+	access_token: String! 
+	openid: String! 
+	appid: String! 
+	ip: String! 
+	platform: String! 
+	grant_type: Int! 
+	scope: String! 
+	expires_in: DateTime! 
+	create_time: DateTime! @createdAt
+	update_time: DateTime! @updatedAt
+	status: Int! 
+	"""刷新凭证"""
+	refreshToken: RefreshTokenEntity! @relation(name: RefreshTokenEntity)
+}
 type RefreshTokenEntity{
 	refresh_token_id: ID! @id
-	token: AccessTokenEntity! 
+	token: AccessTokenEntity! @relation(name: AccessTokenEntity)
 	refresh_token: String! 
 	expires_in: DateTime! 
 	create_time: DateTime! @createdAt
 	update_time: DateTime! @updatedAt
-}
-type RoleEntity{
-	role_id: ID! @id
-	name: String! 
-	title: String! 
-	description: String! 
-	create_time: DateTime! @createdAt
-	update_time: DateTime! @updatedAt
-	"""角色权限，常用，定义一下"""
-	permissions: [PermissionEntity]! 
-}
-type RolePermissionEntity{
-	role_permission_id: ID! @id
-	role_id: Int! 
-	permission_id: Int! 
-}
-type UserEntity{
-	user_id: ID! @id
-	openid: String! 
-	unionid: String! 
-	username: String! 
-	password: String! 
-	salt: String! 
-	realname: String! 
-	nickname: String! 
-	avatar: String! 
-	phone: String! 
-	email: String! 
-	sex: Int! 
-	create_time: DateTime! @createdAt
-	update_time: DateTime! @updatedAt
-	"""常用，定义一下用户拥有的权限，一个用户可以有多个权限"""
-	permissions: [PermissionEntity]! 
-	"""用户拥有的角色，一个用户可以分配多个角色"""
-	roles: [RoleEntity]! 
-	"""用户所属组织，一个用户可以有多个组织，"""
-	organizations: [OrganizationEntity]! 
-}
-type UserOrganizationEntity{
-	user_orgainization_id: ID! @id
-	openid: String! 
-	orgainization_id: Int! 
-}
-type UserRoleEntity{
-	user_role_id: ID! @id
-	openid: String! 
-	role_id: Int! 
 }

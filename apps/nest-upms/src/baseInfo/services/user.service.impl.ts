@@ -1,5 +1,5 @@
 import { prisma , UserEntityCreateInput, UserEntityNullablePromise, UserEntityPromise, UserEntityUpdateInput, UserEntityWhereUniqueInput } from '../../prisma/index';
-import { UserEntity } from '../../typeorm/entities/user.entity';
+import { UserEntity } from '../../typeorm/entities/addon/user.entity';
 import { EmailFormtError, PhoneFormtError, UserIsNullError, UserMustDataNullError } from '../errors/error';
 
 export class UserServiceImpl {

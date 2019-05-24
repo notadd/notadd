@@ -1,5 +1,8 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn } from "typeorm";
-
+import { Entity, JoinColumn, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToOne } from "typeorm";
+import { ArticleEntity } from './article.entity';
+/**
+ * 文章评论表
+ */
 @Entity({
     name: 'article_comment'
 })
@@ -14,18 +17,15 @@ export class ArticleCommentEntity {
         comment: '评论内容',
     })
     content: string;
-
+    /**
+     * 回复
+     */
     @Column({
         type: 'int',
         comment: '上级',
     })
     pid: number;
 
-    @Column({
-        type: 'int',
-        comment: '文章id'
-    })
-    article_id: number;
 
     @Column({
         type: 'uuid',
@@ -43,5 +43,9 @@ export class ArticleCommentEntity {
     })
     update_time: Date;
 
-
+    @ManyToOne(() => ArticleEntity, type => type.category)
+    @JoinColumn({
+        name: 'article_id'
+    })
+    article: ArticleEntity;
 }

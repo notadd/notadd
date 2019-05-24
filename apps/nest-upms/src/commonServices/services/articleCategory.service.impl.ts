@@ -6,7 +6,7 @@
 */
 
 import { ArticleCategoryService } from '../core';
-import { ArticleCategoryEntity } from '../../typeorm/entities/articleCategory.entity';
+import { ArticleCategoryEntity } from '../../typeorm/entities/article/articleCategory.entity';
 import { DeleteResult, Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import { ArticleCategoryMustDataError, ArticleCategoryTitleError, ArticleCategoryNullError } from '../errors/error';

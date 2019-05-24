@@ -13,7 +13,8 @@
                 "tsconfig-paths/register",
                 "${relativeFile}"
             ],
-            "cwd": "${workspaceRoot}"
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": "/Users/ims/.nvm/versions/node/v12.3.1/bin/node"
         }
     ]
 }

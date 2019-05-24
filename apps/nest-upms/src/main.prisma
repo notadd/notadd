@@ -1,280 +1,258 @@
-"""
-文章表
-"""
-type ArticleEntity {
-  article_id: ID! @id
-  title: String!
-  description: String!
-  thumbs: String!
-  icon: String!
-  """
-  文章的类型
-  """
-  category: ArticleCategoryEntity! @relation(link: INLINE)
-  """
-  文章下面的评论
-  """
-  comments: [ArticleCommentEntity]! @relation(link: TABLE)
-  create_time: DateTime! @createdAt
-  update_time: DateTime! @updatedAt
-}
-"""
-文章分类表
-"""
-type ArticleCategoryEntity {
-  article_category_id: ID! @id
-  title: String!
-  name: String!
-  icon: String!
-  """
-  分类的上级
-  """
-  parent: ArticleCategoryEntity! @relation(link: INLINE)
-  """
-  分类下面的子分类
-  """
-  children: [ArticleCategoryEntity]! @relation(link: TABLE)
-  """
-  分类下面的文章
-  """
-  articles: [ArticleEntity]! @relation(link: TABLE)
-  description: String!
-  create_time: DateTime! @createdAt
-  update_time: DateTime! @updatedAt
-}
-"""
-文章评论表
-"""
-type ArticleCommentEntity {
-  article_comment_id: ID! @id
-  content: String!
-  """
-  回复
-  """
-  pid: Int!
-  from_user_id: String!
-  create_time: DateTime! @createdAt
-  update_time: DateTime! @updatedAt
-  article: ArticleEntity! @relation(link: INLINE)
-}
-type LoggerEntity {
-  logger_id: ID! @id
-  description: String! @default(value: "")
-  openid: String! @default(value: "")
-  start_time: DateTime!
-  end_time: DateTime!
-  params: String!
-  ip: String! @default(value: "")
-  result: String! @default(value: "")
-  permissions: String! @default(value: "")
-}
-type MemberEntity {
-  member_id: ID! @id
-  name: String!
-  realname: String!
-  phone: String!
-  openid: String! @default(value: "")
-  email: String!
-  username: String!
-  password: String!
-  salt: String!
-  create_time: DateTime! @createdAt
-  update_time: DateTime! @updatedAt
-}
-type MessageEntity {
-  msg_id: ID! @id
-  content: String!
-  msg_type: Int!
-  pic_url: String!
-  media_id: Int!
-  thumb_media_id: Int!
-  location_x: String!
-  location_y: String!
-  label: String!
-  title: String!
-  url: String!
-  description: String!
-  from_user: String!
-  to_user: String!
-  create_time: DateTime! @createdAt
-  update_time: DateTime! @updatedAt
-}
-type AddonEntity {
-  appid: ID! @id
-  pid: Int! @default(value: 0)
-  appsecret: String!
-  icon: String! @default(value: "")
-  name: String!
-  title: String!
-  description: String! @default(value: "")
-  status: Int! @default(value: 1)
-  create_time: DateTime! @createdAt
-  update_time: DateTime! @updatedAt
-  """
-  应用权限
-  一个应用有多个权限
-  一个权限也可以有多个应用
-  """
-  permissions: [PermissionEntity]! @relation(link: TABLE)
-}
-type OrganizationEntity {
-  organization_id: ID! @id
-  name: String!
-  title: String!
-  description: String!
-  create_time: DateTime! @createdAt
-  update_time: DateTime! @updatedAt
-  displayorder: Int!
-}
-"""
-应用权限表
-"""
-type PermissionEntity {
-  id: ID! @id
-  """
-  英文代号
-  格式: addonName.permissionName
-  唯一
-  """
-  name: String!
-  """
-  上级
-  """
-  father_name: String!
-  """
-  汉语名称
-  """
-  title: String!
-  """
-  权限简介
-  """
-  decription: String! @default(value: "")
-  """
-  权限值,即操作符
-  如：read,write,all...
-  """
-  value: [String]!
-  """
-  图标
-  """
-  icon: String! @default(value: "")
-  """
-  状态 -1禁止，0开发中,1正常
-  """
-  status: Int! @default(value: 0)
-  """
-  排序
-  """
-  displayorder: Int! @default(value: 0)
-  """
-  创建时间
-  """
-  create_time: DateTime! @createdAt
-  """
-  更新时间
-  """
-  update_time: DateTime! @updatedAt
-  """
-  常用的，所以定义一下，查询后挂载到Permission上拥有此权限的所有模块
-  """
-  addons: [AddonEntity]! @relation(link: TABLE)
-  """
-  拥有此权限的所有用户
-  """
-  users: [UserEntity]! @relation(link: TABLE)
-  """
-  拥有此权限的所有角色
-  """
-  roles: [RoleEntity]! @relation(link: TABLE)
-}
-type RoleEntity {
-  role_id: ID! @id
-  name: String! @default(value: "")
-  title: String! @default(value: "")
-  description: String! @default(value: "")
-  create_time: DateTime! @createdAt
-  update_time: DateTime! @updatedAt
-  """
-  角色权限，常用，定义一下
-  """
-  permissions: [PermissionEntity]! @relation(link: TABLE)
-}
-type UserEntity {
-  user_id: ID! @id
-  openid: String!
-  unionid: String!
-  username: String!
-  password: String!
-  salt: String!
-  realname: String!
-  nickname: String!
-  avatar: String!
-  phone: String!
-  email: String!
-  sex: Int! @default(value: 0)
-  create_time: DateTime! @createdAt
-  update_time: DateTime! @updatedAt
-  """
-  常用，定义一下用户拥有的权限，一个用户可以有多个权限
-  """
-  permissions: [PermissionEntity]! @relation(link: TABLE)
-  """
-  用户拥有的角色，一个用户可以分配多个角色
-  """
-  roles: [RoleEntity]!
-  """
-  用户所属组织，一个用户可以有多个组织，
-  """
-  organizations: [OrganizationEntity]!
-}
-type UserRoleEntity {
-  user_role_id: ID! @id
-  openid: String!
-  role_id: Int!
-}
-type PostEntity {
-  post_id: ID! @id
-  title: String!
-  content: String!
-  status: Int!
-  handler_user: String!
-  create_time: DateTime! @createdAt
-  update_time: DateTime! @updatedAt
-}
-type PostCategoryEntity {
-  post_post_category_idid: ID! @id
-  title: String!
-  icon: String!
-  description: String!
-  create_time: DateTime! @createdAt
-  update_time: DateTime! @updatedAt
-}
-type AccessTokenEntity {
-  access_token_id: ID! @id
-  """
-  根据access_token查询用户Openid，添加Index
-  """
-  access_token: String!
-  openid: String!
+type AccessToken @db(name: "accessToken") {
+  access_token_id: Int! @id(strategy: SEQUENCE) @sequence(name: "accessToken_access_token_id_seq", initialValue: 1, allocationSize: 1)
+  accessToken: String! @db(name: "access_token")
   appid: String!
+  createTime: DateTime! @db(name: "create_time")
+  expiresIn: DateTime! @db(name: "expires_in")
+  grantType: Int! @db(name: "grant_type")
   ip: String!
+  openid: String!
   platform: String!
-  grant_type: Int!
+  refreshToken: RefreshToken
   scope: String!
-  expires_in: DateTime!
-  create_time: DateTime! @createdAt
-  update_time: DateTime! @updatedAt
   status: Int!
-  """
-  刷新凭证
-  """
-  refreshToken: RefreshTokenEntity! @relation(link: INLINE)
+  updateTime: DateTime! @db(name: "update_time")
 }
-type RefreshTokenEntity {
-  refresh_token_id: ID! @id
-  token: AccessTokenEntity! @relation(link: INLINE)
-  refresh_token: String!
-  expires_in: DateTime!
-  create_time: DateTime! @createdAt
-  update_time: DateTime! @updatedAt
+
+type Addon @db(name: "addon") {
+  appid: Int! @id(strategy: SEQUENCE) @sequence(name: "addon_appid_seq", initialValue: 1, allocationSize: 1)
+  addonPermissionsPermission: [AddonPermissionsPermission]
+  appsecret: String!
+  createTime: DateTime! @db(name: "create_time")
+  description: String! @default(value: "")
+  icon: String! @default(value: "")
+  name: String!
+  permissionAddonsAddon: [PermissionAddonsAddon]
+  pid: Int! @default(value: 0)
+  status: Int! @default(value: 1)
+  title: String!
+  updateTime: DateTime! @db(name: "update_time")
+}
+
+type AddonPermission @db(name: "addon_permission") {
+  addon_permission_id: Int! @id(strategy: SEQUENCE) @sequence(name: "addon_permission_addon_permission_id_seq", initialValue: 1, allocationSize: 1)
+  addonId: Int! @db(name: "addon_id")
+  createTime: DateTime! @db(name: "create_time")
+  permissionId: Int! @db(name: "permission_id")
+  updateTime: DateTime! @db(name: "update_time")
+}
+
+type AddonPermissionsPermission @db(name: "addon_permissions_permission") @relationTable {
+  addonAppid: Addon!
+  permissionId: Permission!
+}
+
+type Article @db(name: "article") {
+  article_id: Int! @id(strategy: SEQUENCE) @sequence(name: "article_article_id_seq", initialValue: 1, allocationSize: 1)
+  articleCateogry: ArticleCategory @db(name: "article_cateogry_id")
+  articleComment: ArticleComment
+  createTime: DateTime! @db(name: "create_time")
+  description: String!
+  icon: String!
+  thumbs: String!
+  title: String!
+  updateTime: DateTime! @db(name: "update_time")
+}
+
+type ArticleCategory @db(name: "article_category") {
+  article_category_id: Int! @id(strategy: SEQUENCE) @sequence(name: "article_category_article_category_id_seq", initialValue: 1, allocationSize: 1)
+  article: [Article]
+  articleCategory: [ArticleCategory]
+  createTime: DateTime! @db(name: "create_time")
+  description: String!
+  icon: String!
+  name: String!
+  pid: ArticleCategory
+  title: String!
+  updateTime: DateTime! @db(name: "update_time")
+}
+
+type ArticleComment @db(name: "article_comment") {
+  article_comment_id: Int! @id(strategy: SEQUENCE) @sequence(name: "article_comment_article_comment_id_seq", initialValue: 1, allocationSize: 1)
+  article: Article @db(name: "article_id") @unique
+  content: String!
+  createTime: DateTime! @db(name: "create_time")
+  fromUserId: UUID! @db(name: "from_user_id")
+  pid: Int!
+  updateTime: DateTime! @db(name: "update_time")
+}
+
+type Logger @db(name: "logger") {
+  logger_id: Int! @id(strategy: SEQUENCE) @sequence(name: "logger_logger_id_seq", initialValue: 1, allocationSize: 1)
+  description: String! @default(value: "")
+  # 结束时间
+  endTime: DateTime! @db(name: "end_time")
+  ip: String! @default(value: "")
+  openid: String! @default(value: "")
+  params: String!
+  permissions: String! @default(value: "")
+  result: String! @default(value: "")
+  # 开始时间
+  startTime: DateTime! @db(name: "start_time")
+}
+
+type Member @db(name: "member") {
+  member_id: Int! @id(strategy: SEQUENCE) @sequence(name: "member_member_id_seq", initialValue: 1, allocationSize: 1)
+  createTime: DateTime! @db(name: "create_time")
+  email: String!
+  name: String!
+  openid: String! @default(value: "")
+  password: String!
+  phone: String!
+  realname: String!
+  salt: String!
+  updateTime: DateTime! @db(name: "update_time")
+  username: String!
+}
+
+type Organization @db(name: "organization") {
+  organization_id: Int! @id(strategy: SEQUENCE) @sequence(name: "organization_organization_id_seq", initialValue: 1, allocationSize: 1)
+  createTime: DateTime! @db(name: "create_time")
+  description: String!
+  displayorder: String!
+  name: String!
+  title: String!
+  updateTime: DateTime! @db(name: "update_time")
+  userOrganizationsOrganization: [UserOrganizationsOrganization]
+  userRolesOrganization: [UserRolesOrganization]
+}
+
+type Permission @db(name: "permission") {
+  id: Int! @id(strategy: SEQUENCE) @sequence(name: "permission_id_seq", initialValue: 1, allocationSize: 1)
+  addonPermissionsPermission: [AddonPermissionsPermission]
+  createTime: DateTime! @db(name: "create_time")
+  decription: String! @default(value: "")
+  displayorder: Int! @default(value: 0)
+  fatherName: String! @db(name: "father_name")
+  icon: String! @default(value: "")
+  name: String!
+  permissionAddonsAddon: [PermissionAddonsAddon]
+  permissionRolesRole: [PermissionRolesRole]
+  permissionUsersUser: [PermissionUsersUser]
+  rolePermissionsPermission: [RolePermissionsPermission]
+  status: Int! @default(value: 0)
+  title: String!
+  updateTime: DateTime! @db(name: "update_time")
+  userPermission: [UserPermission]
+  userPermissionsPermission: [UserPermissionsPermission]
+  value: String!
+}
+
+type PermissionAddonsAddon @db(name: "permission_addons_addon") @relationTable {
+  addonAppid: Addon!
+  permissionId: Permission!
+}
+
+type PermissionRolesRole @db(name: "permission_roles_role") @relationTable {
+  permissionId: Permission!
+  roleRoleId: Role!
+}
+
+type PermissionUsersUser @db(name: "permission_users_user") @relationTable {
+  permissionId: Permission!
+  userUserId: User!
+}
+
+type PostCategory @db(name: "postCategory") {
+  post_post_category_idid: Int! @id(strategy: SEQUENCE) @sequence(name: "postCategory_post_post_category_idid_seq", initialValue: 1, allocationSize: 1)
+  createTime: DateTime! @db(name: "create_time")
+  description: String!
+  icon: String!
+  title: String!
+  updateTime: DateTime! @db(name: "update_time")
+}
+
+type RefreshToken @db(name: "refreshToken") {
+  refresh_token_id: Int! @id(strategy: SEQUENCE) @sequence(name: "refreshToken_refresh_token_id_seq", initialValue: 1, allocationSize: 1)
+  createTime: DateTime! @db(name: "create_time")
+  expiresIn: DateTime! @db(name: "expires_in")
+  refreshToken: String! @db(name: "refresh_token")
+  token: AccessToken @db(name: "token_id") @unique
+  updateTime: DateTime! @db(name: "update_time")
+}
+
+type Role @db(name: "role") {
+  role_id: Int! @id(strategy: SEQUENCE) @sequence(name: "role_role_id_seq", initialValue: 1, allocationSize: 1)
+  createTime: DateTime! @db(name: "create_time")
+  description: String! @default(value: "")
+  name: String! @default(value: "")
+  permissionRolesRole: [PermissionRolesRole]
+  rolePermissionsPermission: [RolePermissionsPermission]
+  title: String! @default(value: "")
+  updateTime: DateTime! @db(name: "update_time")
+}
+
+type RolePermission @db(name: "role_permission") {
+  role_permission_id: Int! @id(strategy: SEQUENCE) @sequence(name: "role_permission_role_permission_id_seq", initialValue: 1, allocationSize: 1)
+  permissionId: Int! @db(name: "permission_id")
+  roleId: Int! @db(name: "role_id")
+}
+
+type RolePermissionsPermission @db(name: "role_permissions_permission") @relationTable {
+  permissionId: Permission!
+  roleRoleId: Role!
+}
+
+type Task @db(name: "tasks") {
+  post_id: Int! @id(strategy: SEQUENCE) @sequence(name: "tasks_post_id_seq", initialValue: 1, allocationSize: 1)
+  content: String!
+  createTime: DateTime! @db(name: "create_time")
+  handlerUser: String! @db(name: "handler_user")
+  status: Int!
+  title: String!
+  updateTime: DateTime! @db(name: "update_time")
+}
+
+type User @db(name: "user") {
+  user_id: Int! @id(strategy: SEQUENCE) @sequence(name: "user_user_id_seq", initialValue: 1, allocationSize: 1)
+  avatar: String!
+  createTime: DateTime! @db(name: "create_time")
+  email: String!
+  nickname: String!
+  openid: UUID!
+  password: String!
+  permissionUsersUser: [PermissionUsersUser]
+  phone: String!
+  realname: String!
+  salt: String!
+  sex: Int! @default(value: 0)
+  unionid: String!
+  updateTime: DateTime! @db(name: "update_time")
+  username: String!
+  userOrganizationsOrganization: [UserOrganizationsOrganization]
+  userPermission: [UserPermission]
+  userPermissionsPermission: [UserPermissionsPermission]
+  userRolesOrganization: [UserRolesOrganization]
+}
+
+type UserOrganization @db(name: "user_organization") {
+  user_orgainization_id: Int! @id(strategy: SEQUENCE) @sequence(name: "user_organization_user_orgainization_id_seq", initialValue: 1, allocationSize: 1)
+  openid: String!
+  orgainizationId: Int! @db(name: "orgainization_id")
+}
+
+type UserOrganizationsOrganization @db(name: "user_organizations_organization") @relationTable {
+  organizationOrganizationId: Organization!
+  userUserId: User!
+}
+
+type UserPermission @db(name: "user_permission") @relationTable {
+  name: Permission!
+  user: User! @db(name: "user_id")
+}
+
+type UserPermissionsPermission @db(name: "user_permissions_permission") @relationTable {
+  permissionId: Permission!
+  userUserId: User!
+}
+
+type UserRole @db(name: "user_role") {
+  user_role_id: Int! @id(strategy: SEQUENCE) @sequence(name: "user_role_user_role_id_seq", initialValue: 1, allocationSize: 1)
+  openid: String!
+  roleId: Int! @db(name: "role_id")
+}
+
+type UserRolesOrganization @db(name: "user_roles_organization") @relationTable {
+  organizationOrganizationId: Organization!
+  userUserId: User!
 }

@@ -1,5 +1,5 @@
-import { Tree, Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToOne, OneToMany, JoinColumn } from "typeorm";
-import { ArticleEntity } from '../..';
+import { Entity, PrimaryGeneratedColumn, Column,OneToOne, CreateDateColumn, UpdateDateColumn, ManyToOne, OneToMany, JoinColumn } from "typeorm";
+import { ArticleEntity } from './article.entity';
 /**
  * 文章分类表
  */

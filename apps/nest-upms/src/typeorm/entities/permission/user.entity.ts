@@ -101,24 +101,19 @@ export class UserEntity {
     /**
      * 用户拥有的权限，一个用户可以有多个权限
      */
-    @ManyToMany(type => PermissionEntity, permission => permission.users)
-    @JoinTable({
-        name: 'user_permission',
-        joinColumn: {
-            name: 'user_id'
-        },
-        inverseJoinColumn:
-        {
-            name: 'name'
-        }
-    })
+    @ManyToMany(() => PermissionEntity)
+    @JoinTable()
     permissions: PermissionEntity[];
     /**
      * 用户拥有的角色，一个用户可以分配多个角色
      */
+    @ManyToMany(() => OrganizationEntity)
+    @JoinTable()
     roles: RoleEntity[];
     /**
      * 用户所属组织，一个用户可以有多个组织，
      */
+    @ManyToMany(() => OrganizationEntity)
+    @JoinTable()
     organizations: OrganizationEntity[];
 }

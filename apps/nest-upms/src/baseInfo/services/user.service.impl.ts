@@ -1,11 +1,10 @@
-import { prisma , UserEntityCreateInput, UserEntityNullablePromise, UserEntityPromise, UserEntityUpdateInput, UserEntityWhereUniqueInput } from '../../prisma/index';
-import { UserEntity } from '../../typeorm/entities/addon/user.entity';
-import { EmailFormtError, PhoneFormtError, UserIsNullError, UserMustDataNullError } from '../errors/error';
+import { prisma, UserEntityCreateInput, UserEntityNullablePromise, UserEntityWhereUniqueInput } from '../../prisma/index';
+import { EmailFormtError, PhoneFormtError, UserMustDataNullError } from '../errors/error';
 
 export class UserServiceImpl {
 
     /**
-     *@param user added user information
+     *@param user Added user information
      */
     insert(user: UserEntityCreateInput) {
         if (!user.username || !user.password || !user.phone) {
@@ -45,7 +44,7 @@ export class UserServiceImpl {
     //     return prisma.deleteUserEntity(user);
     // }
 
-
+   
     // /**
     //  *@param user Update user information
     //  *@param where query the condition of the user
@@ -74,8 +73,4 @@ export class UserServiceImpl {
         return prisma.userEntity(where);
     }
 
-
-    search(where: Partial<UserEntity>): Promise<void> {
-        throw new Error("Method not implemented.");
-    }
 }

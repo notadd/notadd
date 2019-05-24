@@ -74,7 +74,4 @@ export class MemberEntity {
         comment: '更新时间'
     })
     update_time: Date;
-
-
-
 }

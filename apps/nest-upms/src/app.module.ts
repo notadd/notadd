@@ -10,13 +10,26 @@ import { ssoProviders } from './sso';
 import { JwtStrategyImpl } from './sso/jwt.strategy.impl';
 import { SsoResolver } from './sso/sso.resolver';
 import { InstallResolver } from './install/services/install.service';
+import { UserServiceImpl } from './baseInfo/services/user.service.impl';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import entity from './typeorm/index';
 // GqlModuleOptions
 @Module({
   imports: [
     // AuthModule.forRoot(JwtStrategyImpl),
     GraphQLModule.forRootAsync({
       useClass: GraphqlOptions,
-    })
+    }),
+    // TypeOrmModule.forRoot({
+    //   type: 'postgres',
+    //   host: 'localhost',
+    //   port: 5432,
+    //   database: 'test_ci',
+    //   username: 'postgres',
+    //   password: 'postgres',
+    //   synchronize: true,
+    //   entities: entity
+    // }),
   ],
   controllers: [
     // SsoResolver,
@@ -26,7 +39,7 @@ import { InstallResolver } from './install/services/install.service';
     // InstallResolver,
     // ...coreProviders,
     ...ssoProviders,
-    // ...baseInfoProviders,
+    ...baseInfoProviders,
     // ...commonServicesProviders,
     // ...casbinProviders
   ]

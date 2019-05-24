@@ -13,23 +13,26 @@ import { LoggerService } from './core/logger.service';
 import { LoggerServiceImpl } from './services/logger.service.impl';
 
 
-export default [{
-    provide: AddonService,
-    useClass: AddonServiceImpl
-}, {
-    provide: PermissionService,
-    useClass: PermissionServiceImpl
-}, {
-    provide: UserService,
+export default [
+    // {
+//     provide: AddonService,
+//     useClass: AddonServiceImpl
+// }, {
+//     provide: PermissionService,
+//     useClass: PermissionServiceImpl
+// },
+ {
+    provide: UserServiceImpl,
     useClass: UserServiceImpl
-}, {
-    provide: RoleService,
-    useClass: RoleServiceIpml
-},{
-    provide: OrganizationService,
-    useClass: OrganizationServiceImpl
-},{
-    provide: LoggerService,
-    useClass: LoggerServiceImpl
-}
+}, 
+// {
+//     provide: RoleService,
+//     useClass: RoleServiceIpml
+// },{
+//     provide: OrganizationService,
+//     useClass: OrganizationServiceImpl
+// },{
+//     provide: LoggerService,
+//     useClass: LoggerServiceImpl
+// }
 ];

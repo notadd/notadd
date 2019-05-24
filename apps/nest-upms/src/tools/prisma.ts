@@ -95,7 +95,7 @@ export class PrismaItem {
             if (!struct.hasQuestionToken) {
                 code += `!`;
             }
-            
+
             code += ` `
             if (isPrimaryGeneratedColumn(decorators)) {
                 code += `@id`
@@ -106,13 +106,13 @@ export class PrismaItem {
             } else if (isUpdateDateColumn(decorators)) {
                 code += `@updatedAt`
             } else if (isOneToOne(decorators)) {
-                code += `@relation(link: INLINE)`
+                code += `@relation(link: INLINE name: "${tableName}")`
             } else if (isManyToMany(decorators)) {
-                code += `@relation(link: TABLE)`
+                code += `@relation(link: TABLE name: "${tableName}")`
             } else if (isOneToMany(decorators)) {
-                code += `@relation(link: TABLE)`
+                code += `@relation(link: TABLE name: "${tableName}")`
             } else if (isManyToOne(decorators)) {
-                code += `@relation(link: INLINE)`
+                code += `@relation(link: INLINE name: "${tableName}")`
             }
             code += `\n`;
         })

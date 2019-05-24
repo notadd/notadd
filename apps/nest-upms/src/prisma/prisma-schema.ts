@@ -25,7 +25,7 @@ type AccessTokenEntityConnection {
 }
 
 input AccessTokenEntityCreateInput {
-  access_token_id: Int!
+  access_token_id: Int
   access_token: String!
   openid: String!
   appid: String!
@@ -34,8 +34,6 @@ input AccessTokenEntityCreateInput {
   grant_type: Int!
   scope: String!
   expires_in: DateTime!
-  create_time: DateTime!
-  update_time: DateTime!
   status: Int!
   refreshToken: RefreshTokenEntityCreateOneWithoutTokenInput!
 }
@@ -46,7 +44,7 @@ input AccessTokenEntityCreateOneWithoutRefreshTokenInput {
 }
 
 input AccessTokenEntityCreateWithoutRefreshTokenInput {
-  access_token_id: Int!
+  access_token_id: Int
   access_token: String!
   openid: String!
   appid: String!
@@ -55,8 +53,6 @@ input AccessTokenEntityCreateWithoutRefreshTokenInput {
   grant_type: Int!
   scope: String!
   expires_in: DateTime!
-  create_time: DateTime!
-  update_time: DateTime!
   status: Int!
 }
 
@@ -126,7 +122,6 @@ input AccessTokenEntitySubscriptionWhereInput {
 }
 
 input AccessTokenEntityUpdateInput {
-  access_token_id: Int
   access_token: String
   openid: String
   appid: String
@@ -135,14 +130,11 @@ input AccessTokenEntityUpdateInput {
   grant_type: Int
   scope: String
   expires_in: DateTime
-  create_time: DateTime
-  update_time: DateTime
   status: Int
   refreshToken: RefreshTokenEntityUpdateOneRequiredWithoutTokenInput
 }
 
 input AccessTokenEntityUpdateManyMutationInput {
-  access_token_id: Int
   access_token: String
   openid: String
   appid: String
@@ -151,8 +143,6 @@ input AccessTokenEntityUpdateManyMutationInput {
   grant_type: Int
   scope: String
   expires_in: DateTime
-  create_time: DateTime
-  update_time: DateTime
   status: Int
 }
 
@@ -164,7 +154,6 @@ input AccessTokenEntityUpdateOneRequiredWithoutRefreshTokenInput {
 }
 
 input AccessTokenEntityUpdateWithoutRefreshTokenDataInput {
-  access_token_id: Int
   access_token: String
   openid: String
   appid: String
@@ -173,8 +162,6 @@ input AccessTokenEntityUpdateWithoutRefreshTokenDataInput {
   grant_type: Int
   scope: String
   expires_in: DateTime
-  create_time: DateTime
-  update_time: DateTime
   status: Int
 }
 
@@ -347,7 +334,7 @@ type AddonEntityConnection {
 }
 
 input AddonEntityCreateInput {
-  appid: Int!
+  appid: Int
   pid: Int!
   appsecret: String!
   icon: String!
@@ -355,8 +342,6 @@ input AddonEntityCreateInput {
   title: String!
   description: String!
   status: Int!
-  create_time: DateTime!
-  update_time: DateTime!
   permissions: PermissionEntityCreateManyInput
 }
 
@@ -546,7 +531,6 @@ input AddonEntitySubscriptionWhereInput {
 }
 
 input AddonEntityUpdateDataInput {
-  appid: Int
   pid: Int
   appsecret: String
   icon: String
@@ -554,13 +538,10 @@ input AddonEntityUpdateDataInput {
   title: String
   description: String
   status: Int
-  create_time: DateTime
-  update_time: DateTime
   permissions: PermissionEntityUpdateManyInput
 }
 
 input AddonEntityUpdateInput {
-  appid: Int
   pid: Int
   appsecret: String
   icon: String
@@ -568,13 +549,10 @@ input AddonEntityUpdateInput {
   title: String
   description: String
   status: Int
-  create_time: DateTime
-  update_time: DateTime
   permissions: PermissionEntityUpdateManyInput
 }
 
 input AddonEntityUpdateManyDataInput {
-  appid: Int
   pid: Int
   appsecret: String
   icon: String
@@ -582,8 +560,6 @@ input AddonEntityUpdateManyDataInput {
   title: String
   description: String
   status: Int
-  create_time: DateTime
-  update_time: DateTime
 }
 
 input AddonEntityUpdateManyInput {
@@ -599,7 +575,6 @@ input AddonEntityUpdateManyInput {
 }
 
 input AddonEntityUpdateManyMutationInput {
-  appid: Int
   pid: Int
   appsecret: String
   icon: String
@@ -607,8 +582,6 @@ input AddonEntityUpdateManyMutationInput {
   title: String
   description: String
   status: Int
-  create_time: DateTime
-  update_time: DateTime
 }
 
 input AddonEntityUpdateManyWithWhereNestedInput {
@@ -777,7 +750,7 @@ type AddonPermissionEntityConnection {
 }
 
 input AddonPermissionEntityCreateInput {
-  addon_permission_id: Int!
+  addon_permission_id: Int
   addon_id: Int!
   permission_id: Int!
   create_time: DateTime!
@@ -829,7 +802,6 @@ input AddonPermissionEntitySubscriptionWhereInput {
 }
 
 input AddonPermissionEntityUpdateInput {
-  addon_permission_id: Int
   addon_id: Int
   permission_id: Int
   create_time: DateTime
@@ -837,7 +809,6 @@ input AddonPermissionEntityUpdateInput {
 }
 
 input AddonPermissionEntityUpdateManyMutationInput {
-  addon_permission_id: Int
   addon_id: Int
   permission_id: Int
   create_time: DateTime
@@ -987,13 +958,11 @@ type ArticleCategoryEntityConnection {
 }
 
 input ArticleCategoryEntityCreateInput {
-  article_category_id: Int!
+  article_category_id: Int
   title: String!
   name: String!
   icon: String!
   description: String!
-  create_time: DateTime!
-  update_time: DateTime!
 }
 
 type ArticleCategoryEntityEdge {
@@ -1047,23 +1016,17 @@ input ArticleCategoryEntitySubscriptionWhereInput {
 }
 
 input ArticleCategoryEntityUpdateInput {
-  article_category_id: Int
   title: String
   name: String
   icon: String
   description: String
-  create_time: DateTime
-  update_time: DateTime
 }
 
 input ArticleCategoryEntityUpdateManyMutationInput {
-  article_category_id: Int
   title: String
   name: String
   icon: String
   description: String
-  create_time: DateTime
-  update_time: DateTime
 }
 
 input ArticleCategoryEntityWhereInput {
@@ -1173,13 +1136,11 @@ type ArticleCommentEntityConnection {
 }
 
 input ArticleCommentEntityCreateInput {
-  article_comment_id: Int!
+  article_comment_id: Int
   content: String!
   pid: Int!
   article_id: Int!
   from_user_id: String!
-  create_time: DateTime!
-  update_time: DateTime!
 }
 
 type ArticleCommentEntityEdge {
@@ -1233,23 +1194,17 @@ input ArticleCommentEntitySubscriptionWhereInput {
 }
 
 input ArticleCommentEntityUpdateInput {
-  article_comment_id: Int
   content: String
   pid: Int
   article_id: Int
   from_user_id: String
-  create_time: DateTime
-  update_time: DateTime
 }
 
 input ArticleCommentEntityUpdateManyMutationInput {
-  article_comment_id: Int
   content: String
   pid: Int
   article_id: Int
   from_user_id: String
-  create_time: DateTime
-  update_time: DateTime
 }
 
 input ArticleCommentEntityWhereInput {
@@ -1348,14 +1303,12 @@ type ArticleEntityConnection {
 }
 
 input ArticleEntityCreateInput {
-  article_id: Int!
+  article_id: Int
   title: String!
   description: String!
   thumbs: String!
   icon: String!
   article_category_id: Int!
-  create_time: DateTime!
-  update_time: DateTime!
 }
 
 type ArticleEntityEdge {
@@ -1412,25 +1365,19 @@ input ArticleEntitySubscriptionWhereInput {
 }
 
 input ArticleEntityUpdateInput {
-  article_id: Int
   title: String
   description: String
   thumbs: String
   icon: String
   article_category_id: Int
-  create_time: DateTime
-  update_time: DateTime
 }
 
 input ArticleEntityUpdateManyMutationInput {
-  article_id: Int
   title: String
   description: String
   thumbs: String
   icon: String
   article_category_id: Int
-  create_time: DateTime
-  update_time: DateTime
 }
 
 input ArticleEntityWhereInput {
@@ -1556,7 +1503,7 @@ type LoggerEntityConnection {
 }
 
 input LoggerEntityCreateInput {
-  logger_id: Int!
+  logger_id: Int
   description: String!
   openid: String!
   start_time: DateTime!
@@ -1624,7 +1571,6 @@ input LoggerEntitySubscriptionWhereInput {
 }
 
 input LoggerEntityUpdateInput {
-  logger_id: Int
   description: String
   openid: String
   start_time: DateTime
@@ -1636,7 +1582,6 @@ input LoggerEntityUpdateInput {
 }
 
 input LoggerEntityUpdateManyMutationInput {
-  logger_id: Int
   description: String
   openid: String
   start_time: DateTime
@@ -1788,7 +1733,7 @@ type MemberEntityConnection {
 }
 
 input MemberEntityCreateInput {
-  member_id: Int!
+  member_id: Int
   name: String!
   realname: String!
   phone: String!
@@ -1797,8 +1742,6 @@ input MemberEntityCreateInput {
   username: String!
   password: String!
   salt: String!
-  create_time: DateTime!
-  update_time: DateTime!
 }
 
 type MemberEntityEdge {
@@ -1864,7 +1807,6 @@ input MemberEntitySubscriptionWhereInput {
 }
 
 input MemberEntityUpdateInput {
-  member_id: Int
   name: String
   realname: String
   phone: String
@@ -1873,12 +1815,9 @@ input MemberEntityUpdateInput {
   username: String
   password: String
   salt: String
-  create_time: DateTime
-  update_time: DateTime
 }
 
 input MemberEntityUpdateManyMutationInput {
-  member_id: Int
   name: String
   realname: String
   phone: String
@@ -1887,8 +1826,6 @@ input MemberEntityUpdateManyMutationInput {
   username: String
   password: String
   salt: String
-  create_time: DateTime
-  update_time: DateTime
 }
 
 input MemberEntityWhereInput {
@@ -2063,7 +2000,7 @@ type MessageEntityConnection {
 }
 
 input MessageEntityCreateInput {
-  msg_id: Int!
+  msg_id: Int
   content: String!
   msg_type: Int!
   pic_url: String!
@@ -2077,8 +2014,6 @@ input MessageEntityCreateInput {
   description: String!
   from_user: String!
   to_user: String!
-  create_time: DateTime!
-  update_time: DateTime!
 }
 
 type MessageEntityEdge {
@@ -2159,7 +2094,6 @@ input MessageEntitySubscriptionWhereInput {
 }
 
 input MessageEntityUpdateInput {
-  msg_id: Int
   content: String
   msg_type: Int
   pic_url: String
@@ -2173,12 +2107,9 @@ input MessageEntityUpdateInput {
   description: String
   from_user: String
   to_user: String
-  create_time: DateTime
-  update_time: DateTime
 }
 
 input MessageEntityUpdateManyMutationInput {
-  msg_id: Int
   content: String
   msg_type: Int
   pic_url: String
@@ -2192,8 +2123,6 @@ input MessageEntityUpdateManyMutationInput {
   description: String
   from_user: String
   to_user: String
-  create_time: DateTime
-  update_time: DateTime
 }
 
 input MessageEntityWhereInput {
@@ -2538,12 +2467,10 @@ type OrganizationEntityConnection {
 }
 
 input OrganizationEntityCreateInput {
-  organization_id: Int!
+  organization_id: Int
   name: String!
   title: String!
   description: String!
-  create_time: DateTime!
-  update_time: DateTime!
   displayorder: Int!
 }
 
@@ -2683,32 +2610,23 @@ input OrganizationEntitySubscriptionWhereInput {
 }
 
 input OrganizationEntityUpdateDataInput {
-  organization_id: Int
   name: String
   title: String
   description: String
-  create_time: DateTime
-  update_time: DateTime
   displayorder: Int
 }
 
 input OrganizationEntityUpdateInput {
-  organization_id: Int
   name: String
   title: String
   description: String
-  create_time: DateTime
-  update_time: DateTime
   displayorder: Int
 }
 
 input OrganizationEntityUpdateManyDataInput {
-  organization_id: Int
   name: String
   title: String
   description: String
-  create_time: DateTime
-  update_time: DateTime
   displayorder: Int
 }
 
@@ -2725,12 +2643,9 @@ input OrganizationEntityUpdateManyInput {
 }
 
 input OrganizationEntityUpdateManyMutationInput {
-  organization_id: Int
   name: String
   title: String
   description: String
-  create_time: DateTime
-  update_time: DateTime
   displayorder: Int
 }
 
@@ -2873,8 +2788,6 @@ input PermissionEntityCreateInput {
   icon: String!
   status: Int!
   displayorder: Int!
-  create_time: DateTime!
-  update_time: DateTime!
   fromAddon: AddonEntityCreateOneInput!
   addons: AddonEntityCreateManyInput
   users: UserEntityCreateManyWithoutPermissionsInput
@@ -2909,8 +2822,6 @@ input PermissionEntityCreateWithoutRolesInput {
   icon: String!
   status: Int!
   displayorder: Int!
-  create_time: DateTime!
-  update_time: DateTime!
   fromAddon: AddonEntityCreateOneInput!
   addons: AddonEntityCreateManyInput
   users: UserEntityCreateManyWithoutPermissionsInput
@@ -2925,8 +2836,6 @@ input PermissionEntityCreateWithoutUsersInput {
   icon: String!
   status: Int!
   displayorder: Int!
-  create_time: DateTime!
-  update_time: DateTime!
   fromAddon: AddonEntityCreateOneInput!
   addons: AddonEntityCreateManyInput
   roles: RoleEntityCreateManyWithoutPermissionsInput
@@ -3106,8 +3015,6 @@ input PermissionEntityUpdateDataInput {
   icon: String
   status: Int
   displayorder: Int
-  create_time: DateTime
-  update_time: DateTime
   fromAddon: AddonEntityUpdateOneRequiredInput
   addons: AddonEntityUpdateManyInput
   users: UserEntityUpdateManyWithoutPermissionsInput
@@ -3123,8 +3030,6 @@ input PermissionEntityUpdateInput {
   icon: String
   status: Int
   displayorder: Int
-  create_time: DateTime
-  update_time: DateTime
   fromAddon: AddonEntityUpdateOneRequiredInput
   addons: AddonEntityUpdateManyInput
   users: UserEntityUpdateManyWithoutPermissionsInput
@@ -3140,8 +3045,6 @@ input PermissionEntityUpdateManyDataInput {
   icon: String
   status: Int
   displayorder: Int
-  create_time: DateTime
-  update_time: DateTime
 }
 
 input PermissionEntityUpdateManyInput {
@@ -3165,8 +3068,6 @@ input PermissionEntityUpdateManyMutationInput {
   icon: String
   status: Int
   displayorder: Int
-  create_time: DateTime
-  update_time: DateTime
 }
 
 input PermissionEntityUpdateManyWithoutRolesInput {
@@ -3211,8 +3112,6 @@ input PermissionEntityUpdateWithoutRolesDataInput {
   icon: String
   status: Int
   displayorder: Int
-  create_time: DateTime
-  update_time: DateTime
   fromAddon: AddonEntityUpdateOneRequiredInput
   addons: AddonEntityUpdateManyInput
   users: UserEntityUpdateManyWithoutPermissionsInput
@@ -3227,8 +3126,6 @@ input PermissionEntityUpdateWithoutUsersDataInput {
   icon: String
   status: Int
   displayorder: Int
-  create_time: DateTime
-  update_time: DateTime
   fromAddon: AddonEntityUpdateOneRequiredInput
   addons: AddonEntityUpdateManyInput
   roles: RoleEntityUpdateManyWithoutPermissionsInput
@@ -3405,12 +3302,10 @@ type PostCategoryEntityConnection {
 }
 
 input PostCategoryEntityCreateInput {
-  post_post_category_idid: Int!
+  post_post_category_idid: Int
   title: String!
   icon: String!
   description: String!
-  create_time: DateTime!
-  update_time: DateTime!
 }
 
 type PostCategoryEntityEdge {
@@ -3461,21 +3356,15 @@ input PostCategoryEntitySubscriptionWhereInput {
 }
 
 input PostCategoryEntityUpdateInput {
-  post_post_category_idid: Int
   title: String
   icon: String
   description: String
-  create_time: DateTime
-  update_time: DateTime
 }
 
 input PostCategoryEntityUpdateManyMutationInput {
-  post_post_category_idid: Int
   title: String
   icon: String
   description: String
-  create_time: DateTime
-  update_time: DateTime
 }
 
 input PostCategoryEntityWhereInput {
@@ -3571,13 +3460,11 @@ type PostEntityConnection {
 }
 
 input PostEntityCreateInput {
-  post_id: Int!
+  post_id: Int
   title: String!
   content: String!
   status: Int!
   handler_user: String!
-  create_time: DateTime!
-  update_time: DateTime!
 }
 
 type PostEntityEdge {
@@ -3631,23 +3518,17 @@ input PostEntitySubscriptionWhereInput {
 }
 
 input PostEntityUpdateInput {
-  post_id: Int
   title: String
   content: String
   status: Int
   handler_user: String
-  create_time: DateTime
-  update_time: DateTime
 }
 
 input PostEntityUpdateManyMutationInput {
-  post_id: Int
   title: String
   content: String
   status: Int
   handler_user: String
-  create_time: DateTime
-  update_time: DateTime
 }
 
 input PostEntityWhereInput {
@@ -3811,12 +3692,10 @@ type RefreshTokenEntityConnection {
 }
 
 input RefreshTokenEntityCreateInput {
-  refresh_token_id: Int!
+  refresh_token_id: Int
   token: AccessTokenEntityCreateOneWithoutRefreshTokenInput!
   refresh_token: String!
   expires_in: DateTime!
-  create_time: DateTime!
-  update_time: DateTime!
 }
 
 input RefreshTokenEntityCreateOneWithoutTokenInput {
@@ -3825,11 +3704,9 @@ input RefreshTokenEntityCreateOneWithoutTokenInput {
 }
 
 input RefreshTokenEntityCreateWithoutTokenInput {
-  refresh_token_id: Int!
+  refresh_token_id: Int
   refresh_token: String!
   expires_in: DateTime!
-  create_time: DateTime!
-  update_time: DateTime!
 }
 
 type RefreshTokenEntityEdge {
@@ -3877,20 +3754,14 @@ input RefreshTokenEntitySubscriptionWhereInput {
 }
 
 input RefreshTokenEntityUpdateInput {
-  refresh_token_id: Int
   token: AccessTokenEntityUpdateOneRequiredWithoutRefreshTokenInput
   refresh_token: String
   expires_in: DateTime
-  create_time: DateTime
-  update_time: DateTime
 }
 
 input RefreshTokenEntityUpdateManyMutationInput {
-  refresh_token_id: Int
   refresh_token: String
   expires_in: DateTime
-  create_time: DateTime
-  update_time: DateTime
 }
 
 input RefreshTokenEntityUpdateOneRequiredWithoutTokenInput {
@@ -3901,11 +3772,8 @@ input RefreshTokenEntityUpdateOneRequiredWithoutTokenInput {
 }
 
 input RefreshTokenEntityUpdateWithoutTokenDataInput {
-  refresh_token_id: Int
   refresh_token: String
   expires_in: DateTime
-  create_time: DateTime
-  update_time: DateTime
 }
 
 input RefreshTokenEntityUpsertWithoutTokenInput {
@@ -3987,12 +3855,10 @@ type RoleEntityConnection {
 }
 
 input RoleEntityCreateInput {
-  role_id: Int!
+  role_id: Int
   name: String!
   title: String!
   description: String!
-  create_time: DateTime!
-  update_time: DateTime!
   permissions: PermissionEntityCreateManyWithoutRolesInput
 }
 
@@ -4007,12 +3873,10 @@ input RoleEntityCreateManyWithoutPermissionsInput {
 }
 
 input RoleEntityCreateWithoutPermissionsInput {
-  role_id: Int!
+  role_id: Int
   name: String!
   title: String!
   description: String!
-  create_time: DateTime!
-  update_time: DateTime!
 }
 
 type RoleEntityEdge {
@@ -4135,32 +3999,23 @@ input RoleEntitySubscriptionWhereInput {
 }
 
 input RoleEntityUpdateDataInput {
-  role_id: Int
   name: String
   title: String
   description: String
-  create_time: DateTime
-  update_time: DateTime
   permissions: PermissionEntityUpdateManyWithoutRolesInput
 }
 
 input RoleEntityUpdateInput {
-  role_id: Int
   name: String
   title: String
   description: String
-  create_time: DateTime
-  update_time: DateTime
   permissions: PermissionEntityUpdateManyWithoutRolesInput
 }
 
 input RoleEntityUpdateManyDataInput {
-  role_id: Int
   name: String
   title: String
   description: String
-  create_time: DateTime
-  update_time: DateTime
 }
 
 input RoleEntityUpdateManyInput {
@@ -4176,12 +4031,9 @@ input RoleEntityUpdateManyInput {
 }
 
 input RoleEntityUpdateManyMutationInput {
-  role_id: Int
   name: String
   title: String
   description: String
-  create_time: DateTime
-  update_time: DateTime
 }
 
 input RoleEntityUpdateManyWithoutPermissionsInput {
@@ -4202,12 +4054,9 @@ input RoleEntityUpdateManyWithWhereNestedInput {
 }
 
 input RoleEntityUpdateWithoutPermissionsDataInput {
-  role_id: Int
   name: String
   title: String
   description: String
-  create_time: DateTime
-  update_time: DateTime
 }
 
 input RoleEntityUpdateWithWhereUniqueNestedInput {
@@ -4324,7 +4173,7 @@ type RolePermissionEntityConnection {
 }
 
 input RolePermissionEntityCreateInput {
-  role_permission_id: Int!
+  role_permission_id: Int
   role_id: Int!
   permission_id: Int!
 }
@@ -4368,13 +4217,11 @@ input RolePermissionEntitySubscriptionWhereInput {
 }
 
 input RolePermissionEntityUpdateInput {
-  role_permission_id: Int
   role_id: Int
   permission_id: Int
 }
 
 input RolePermissionEntityUpdateManyMutationInput {
-  role_permission_id: Int
   role_id: Int
   permission_id: Int
 }
@@ -4462,7 +4309,7 @@ type UserEntityConnection {
 }
 
 input UserEntityCreateInput {
-  user_id: Int!
+  user_id: Int
   openid: String!
   unionid: String!
   username: String!
@@ -4474,8 +4321,6 @@ input UserEntityCreateInput {
   phone: String!
   email: String!
   sex: Int!
-  create_time: DateTime!
-  update_time: DateTime!
   permissions: PermissionEntityCreateManyWithoutUsersInput
   roles: RoleEntityCreateManyInput
   organizations: OrganizationEntityCreateManyInput
@@ -4487,7 +4332,7 @@ input UserEntityCreateManyWithoutPermissionsInput {
 }
 
 input UserEntityCreateWithoutPermissionsInput {
-  user_id: Int!
+  user_id: Int
   openid: String!
   unionid: String!
   username: String!
@@ -4499,8 +4344,6 @@ input UserEntityCreateWithoutPermissionsInput {
   phone: String!
   email: String!
   sex: Int!
-  create_time: DateTime!
-  update_time: DateTime!
   roles: RoleEntityCreateManyInput
   organizations: OrganizationEntityCreateManyInput
 }
@@ -4755,7 +4598,6 @@ input UserEntitySubscriptionWhereInput {
 }
 
 input UserEntityUpdateInput {
-  user_id: Int
   openid: String
   unionid: String
   username: String
@@ -4767,15 +4609,12 @@ input UserEntityUpdateInput {
   phone: String
   email: String
   sex: Int
-  create_time: DateTime
-  update_time: DateTime
   permissions: PermissionEntityUpdateManyWithoutUsersInput
   roles: RoleEntityUpdateManyInput
   organizations: OrganizationEntityUpdateManyInput
 }
 
 input UserEntityUpdateManyDataInput {
-  user_id: Int
   openid: String
   unionid: String
   username: String
@@ -4787,12 +4626,9 @@ input UserEntityUpdateManyDataInput {
   phone: String
   email: String
   sex: Int
-  create_time: DateTime
-  update_time: DateTime
 }
 
 input UserEntityUpdateManyMutationInput {
-  user_id: Int
   openid: String
   unionid: String
   username: String
@@ -4804,8 +4640,6 @@ input UserEntityUpdateManyMutationInput {
   phone: String
   email: String
   sex: Int
-  create_time: DateTime
-  update_time: DateTime
 }
 
 input UserEntityUpdateManyWithoutPermissionsInput {
@@ -4826,7 +4660,6 @@ input UserEntityUpdateManyWithWhereNestedInput {
 }
 
 input UserEntityUpdateWithoutPermissionsDataInput {
-  user_id: Int
   openid: String
   unionid: String
   username: String
@@ -4838,8 +4671,6 @@ input UserEntityUpdateWithoutPermissionsDataInput {
   phone: String
   email: String
   sex: Int
-  create_time: DateTime
-  update_time: DateTime
   roles: RoleEntityUpdateManyInput
   organizations: OrganizationEntityUpdateManyInput
 }
@@ -5059,7 +4890,7 @@ type UserOrganizationEntityConnection {
 }
 
 input UserOrganizationEntityCreateInput {
-  user_orgainization_id: Int!
+  user_orgainization_id: Int
   openid: String!
   orgainization_id: Int!
 }
@@ -5103,13 +4934,11 @@ input UserOrganizationEntitySubscriptionWhereInput {
 }
 
 input UserOrganizationEntityUpdateInput {
-  user_orgainization_id: Int
   openid: String
   orgainization_id: Int
 }
 
 input UserOrganizationEntityUpdateManyMutationInput {
-  user_orgainization_id: Int
   openid: String
   orgainization_id: Int
 }
@@ -5167,7 +4996,7 @@ type UserRoleEntityConnection {
 }
 
 input UserRoleEntityCreateInput {
-  user_role_id: Int!
+  user_role_id: Int
   openid: String!
   role_id: Int!
 }
@@ -5211,13 +5040,11 @@ input UserRoleEntitySubscriptionWhereInput {
 }
 
 input UserRoleEntityUpdateInput {
-  user_role_id: Int
   openid: String
   role_id: Int
 }
 
 input UserRoleEntityUpdateManyMutationInput {
-  user_role_id: Int
   openid: String
   role_id: Int
 }

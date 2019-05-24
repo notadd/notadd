@@ -1,0 +1,14 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:11-alpine
+    restart: always
+    # Uncomment the next two lines to connect to your your database from outside the Docker environment, e.g. using a database GUI like Postico
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: test_ci
+volumes:
+  postgres:

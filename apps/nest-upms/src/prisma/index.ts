@@ -1272,12 +1272,10 @@ export type RefreshTokenEntityOrderByInput =
   | "update_time_DESC";
 
 export interface RoleEntityCreateWithoutPermissionsInput {
-  role_id: Int;
+  role_id?: Maybe<Int>;
   name: String;
   title: String;
   description: String;
-  create_time: DateTimeInput;
-  update_time: DateTimeInput;
 }
 
 export type AccessTokenEntityWhereUniqueInput = AtLeastOne<{
@@ -1285,7 +1283,6 @@ export type AccessTokenEntityWhereUniqueInput = AtLeastOne<{
 }>;
 
 export interface MemberEntityUpdateInput {
-  member_id?: Maybe<Int>;
   name?: Maybe<String>;
   realname?: Maybe<String>;
   phone?: Maybe<String>;
@@ -1294,8 +1291,6 @@ export interface MemberEntityUpdateInput {
   username?: Maybe<String>;
   password?: Maybe<String>;
   salt?: Maybe<String>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
 }
 
 export interface RoleEntityUpdateWithWhereUniqueWithoutPermissionsInput {
@@ -1304,7 +1299,7 @@ export interface RoleEntityUpdateWithWhereUniqueWithoutPermissionsInput {
 }
 
 export interface MemberEntityCreateInput {
-  member_id: Int;
+  member_id?: Maybe<Int>;
   name: String;
   realname: String;
   phone: String;
@@ -1313,8 +1308,6 @@ export interface MemberEntityCreateInput {
   username: String;
   password: String;
   salt: String;
-  create_time: DateTimeInput;
-  update_time: DateTimeInput;
 }
 
 export interface AddonEntityUpsertWithWhereUniqueNestedInput {
@@ -1324,7 +1317,6 @@ export interface AddonEntityUpsertWithWhereUniqueNestedInput {
 }
 
 export interface LoggerEntityUpdateManyMutationInput {
-  logger_id?: Maybe<Int>;
   description?: Maybe<String>;
   openid?: Maybe<String>;
   start_time?: Maybe<DateTimeInput>;
@@ -1356,7 +1348,6 @@ export interface UserRoleEntitySubscriptionWhereInput {
 }
 
 export interface LoggerEntityUpdateInput {
-  logger_id?: Maybe<Int>;
   description?: Maybe<String>;
   openid?: Maybe<String>;
   start_time?: Maybe<DateTimeInput>;
@@ -1409,7 +1400,7 @@ export interface UserEntitySubscriptionWhereInput {
 }
 
 export interface LoggerEntityCreateInput {
-  logger_id: Int;
+  logger_id?: Maybe<Int>;
   description: String;
   openid: String;
   start_time: DateTimeInput;
@@ -1438,14 +1429,11 @@ export interface RoleEntitySubscriptionWhereInput {
 }
 
 export interface ArticleEntityUpdateManyMutationInput {
-  article_id?: Maybe<Int>;
   title?: Maybe<String>;
   description?: Maybe<String>;
   thumbs?: Maybe<String>;
   icon?: Maybe<String>;
   article_category_id?: Maybe<Int>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
 }
 
 export type AddonPermissionEntityWhereUniqueInput = AtLeastOne<{
@@ -1453,14 +1441,11 @@ export type AddonPermissionEntityWhereUniqueInput = AtLeastOne<{
 }>;
 
 export interface ArticleEntityUpdateInput {
-  article_id?: Maybe<Int>;
   title?: Maybe<String>;
   description?: Maybe<String>;
   thumbs?: Maybe<String>;
   icon?: Maybe<String>;
   article_category_id?: Maybe<Int>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
 }
 
 export interface AddonPermissionEntityWhereInput {
@@ -1540,14 +1525,12 @@ export interface PostCategoryEntitySubscriptionWhereInput {
 }
 
 export interface ArticleEntityCreateInput {
-  article_id: Int;
+  article_id?: Maybe<Int>;
   title: String;
   description: String;
   thumbs: String;
   icon: String;
   article_category_id: Int;
-  create_time: DateTimeInput;
-  update_time: DateTimeInput;
 }
 
 export interface OrganizationEntitySubscriptionWhereInput {
@@ -1630,13 +1613,10 @@ export interface MessageEntitySubscriptionWhereInput {
 }
 
 export interface ArticleCommentEntityUpdateManyMutationInput {
-  article_comment_id?: Maybe<Int>;
   content?: Maybe<String>;
   pid?: Maybe<Int>;
   article_id?: Maybe<Int>;
   from_user_id?: Maybe<String>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
 }
 
 export interface MemberEntitySubscriptionWhereInput {
@@ -1657,13 +1637,10 @@ export interface MemberEntitySubscriptionWhereInput {
 }
 
 export interface ArticleCommentEntityUpdateInput {
-  article_comment_id?: Maybe<Int>;
   content?: Maybe<String>;
   pid?: Maybe<Int>;
   article_id?: Maybe<Int>;
   from_user_id?: Maybe<String>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
 }
 
 export interface ArticleEntitySubscriptionWhereInput {
@@ -1684,13 +1661,11 @@ export interface ArticleEntitySubscriptionWhereInput {
 }
 
 export interface ArticleCommentEntityCreateInput {
-  article_comment_id: Int;
+  article_comment_id?: Maybe<Int>;
   content: String;
   pid: Int;
   article_id: Int;
   from_user_id: String;
-  create_time: DateTimeInput;
-  update_time: DateTimeInput;
 }
 
 export type ArticleCommentEntityWhereUniqueInput = AtLeastOne<{
@@ -1698,13 +1673,10 @@ export type ArticleCommentEntityWhereUniqueInput = AtLeastOne<{
 }>;
 
 export interface ArticleCategoryEntityUpdateManyMutationInput {
-  article_category_id?: Maybe<Int>;
   title?: Maybe<String>;
   name?: Maybe<String>;
   icon?: Maybe<String>;
   description?: Maybe<String>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
 }
 
 export interface ArticleCommentEntityWhereInput {
@@ -1810,13 +1782,10 @@ export interface AddonPermissionEntitySubscriptionWhereInput {
 }
 
 export interface ArticleCategoryEntityUpdateInput {
-  article_category_id?: Maybe<Int>;
   title?: Maybe<String>;
   name?: Maybe<String>;
   icon?: Maybe<String>;
   description?: Maybe<String>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
 }
 
 export interface AccessTokenEntitySubscriptionWhereInput {
@@ -1876,29 +1845,24 @@ export interface UserRoleEntityWhereInput {
 }
 
 export interface UserRoleEntityUpdateManyMutationInput {
-  user_role_id?: Maybe<Int>;
   openid?: Maybe<String>;
   role_id?: Maybe<Int>;
 }
 
 export interface ArticleCategoryEntityCreateInput {
-  article_category_id: Int;
+  article_category_id?: Maybe<Int>;
   title: String;
   name: String;
   icon: String;
   description: String;
-  create_time: DateTimeInput;
-  update_time: DateTimeInput;
 }
 
 export interface UserRoleEntityUpdateInput {
-  user_role_id?: Maybe<Int>;
   openid?: Maybe<String>;
   role_id?: Maybe<Int>;
 }
 
 export interface AddonPermissionEntityUpdateManyMutationInput {
-  addon_permission_id?: Maybe<Int>;
   addon_id?: Maybe<Int>;
   permission_id?: Maybe<Int>;
   create_time?: Maybe<DateTimeInput>;
@@ -1906,13 +1870,11 @@ export interface AddonPermissionEntityUpdateManyMutationInput {
 }
 
 export interface UserOrganizationEntityUpdateManyMutationInput {
-  user_orgainization_id?: Maybe<Int>;
   openid?: Maybe<String>;
   orgainization_id?: Maybe<Int>;
 }
 
 export interface AddonPermissionEntityUpdateInput {
-  addon_permission_id?: Maybe<Int>;
   addon_id?: Maybe<Int>;
   permission_id?: Maybe<Int>;
   create_time?: Maybe<DateTimeInput>;
@@ -1924,7 +1886,7 @@ export type LoggerEntityWhereUniqueInput = AtLeastOne<{
 }>;
 
 export interface AddonPermissionEntityCreateInput {
-  addon_permission_id: Int;
+  addon_permission_id?: Maybe<Int>;
   addon_id: Int;
   permission_id: Int;
   create_time: DateTimeInput;
@@ -2046,7 +2008,6 @@ export interface LoggerEntityWhereInput {
 }
 
 export interface AddonEntityUpdateManyMutationInput {
-  appid?: Maybe<Int>;
   pid?: Maybe<Int>;
   appsecret?: Maybe<String>;
   icon?: Maybe<String>;
@@ -2054,8 +2015,6 @@ export interface AddonEntityUpdateManyMutationInput {
   title?: Maybe<String>;
   description?: Maybe<String>;
   status?: Maybe<Int>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
 }
 
 export interface PermissionEntityUpsertWithWhereUniqueWithoutUsersInput {
@@ -2104,7 +2063,7 @@ export interface PermissionEntityUpdateManyWithoutUsersInput {
 }
 
 export interface AccessTokenEntityCreateInput {
-  access_token_id: Int;
+  access_token_id?: Maybe<Int>;
   access_token: String;
   openid: String;
   appid: String;
@@ -2113,14 +2072,11 @@ export interface AccessTokenEntityCreateInput {
   grant_type: Int;
   scope: String;
   expires_in: DateTimeInput;
-  create_time: DateTimeInput;
-  update_time: DateTimeInput;
   status: Int;
   refreshToken: RefreshTokenEntityCreateOneWithoutTokenInput;
 }
 
 export interface UserEntityUpdateInput {
-  user_id?: Maybe<Int>;
   openid?: Maybe<String>;
   unionid?: Maybe<String>;
   username?: Maybe<String>;
@@ -2132,8 +2088,6 @@ export interface UserEntityUpdateInput {
   phone?: Maybe<String>;
   email?: Maybe<String>;
   sex?: Maybe<Int>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
   permissions?: Maybe<PermissionEntityUpdateManyWithoutUsersInput>;
   roles?: Maybe<RoleEntityUpdateManyInput>;
   organizations?: Maybe<OrganizationEntityUpdateManyInput>;
@@ -2155,11 +2109,9 @@ export interface PermissionEntityCreateManyWithoutUsersInput {
 }
 
 export interface RefreshTokenEntityCreateWithoutTokenInput {
-  refresh_token_id: Int;
+  refresh_token_id?: Maybe<Int>;
   refresh_token: String;
   expires_in: DateTimeInput;
-  create_time: DateTimeInput;
-  update_time: DateTimeInput;
 }
 
 export type MessageEntityWhereUniqueInput = AtLeastOne<{
@@ -2167,7 +2119,6 @@ export type MessageEntityWhereUniqueInput = AtLeastOne<{
 }>;
 
 export interface AccessTokenEntityUpdateInput {
-  access_token_id?: Maybe<Int>;
   access_token?: Maybe<String>;
   openid?: Maybe<String>;
   appid?: Maybe<String>;
@@ -2176,8 +2127,6 @@ export interface AccessTokenEntityUpdateInput {
   grant_type?: Maybe<Int>;
   scope?: Maybe<String>;
   expires_in?: Maybe<DateTimeInput>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
   status?: Maybe<Int>;
   refreshToken?: Maybe<RefreshTokenEntityUpdateOneRequiredWithoutTokenInput>;
 }
@@ -2384,26 +2333,20 @@ export interface RefreshTokenEntityUpdateOneRequiredWithoutTokenInput {
 }
 
 export interface RolePermissionEntityCreateInput {
-  role_permission_id: Int;
+  role_permission_id?: Maybe<Int>;
   role_id: Int;
   permission_id: Int;
 }
 
 export interface RefreshTokenEntityUpdateWithoutTokenDataInput {
-  refresh_token_id?: Maybe<Int>;
   refresh_token?: Maybe<String>;
   expires_in?: Maybe<DateTimeInput>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
 }
 
 export interface RoleEntityUpdateInput {
-  role_id?: Maybe<Int>;
   name?: Maybe<String>;
   title?: Maybe<String>;
   description?: Maybe<String>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
   permissions?: Maybe<PermissionEntityUpdateManyWithoutRolesInput>;
 }
 
@@ -2413,15 +2356,11 @@ export interface RefreshTokenEntityUpsertWithoutTokenInput {
 }
 
 export interface RefreshTokenEntityUpdateManyMutationInput {
-  refresh_token_id?: Maybe<Int>;
   refresh_token?: Maybe<String>;
   expires_in?: Maybe<DateTimeInput>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
 }
 
 export interface AccessTokenEntityUpdateManyMutationInput {
-  access_token_id?: Maybe<Int>;
   access_token?: Maybe<String>;
   openid?: Maybe<String>;
   appid?: Maybe<String>;
@@ -2430,13 +2369,10 @@ export interface AccessTokenEntityUpdateManyMutationInput {
   grant_type?: Maybe<Int>;
   scope?: Maybe<String>;
   expires_in?: Maybe<DateTimeInput>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
   status?: Maybe<Int>;
 }
 
 export interface AccessTokenEntityUpdateWithoutRefreshTokenDataInput {
-  access_token_id?: Maybe<Int>;
   access_token?: Maybe<String>;
   openid?: Maybe<String>;
   appid?: Maybe<String>;
@@ -2445,8 +2381,6 @@ export interface AccessTokenEntityUpdateWithoutRefreshTokenDataInput {
   grant_type?: Maybe<Int>;
   scope?: Maybe<String>;
   expires_in?: Maybe<DateTimeInput>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
   status?: Maybe<Int>;
 }
 
@@ -2470,7 +2404,7 @@ export interface RoleEntityUpsertWithWhereUniqueWithoutPermissionsInput {
 }
 
 export interface AccessTokenEntityCreateWithoutRefreshTokenInput {
-  access_token_id: Int;
+  access_token_id?: Maybe<Int>;
   access_token: String;
   openid: String;
   appid: String;
@@ -2479,13 +2413,11 @@ export interface AccessTokenEntityCreateWithoutRefreshTokenInput {
   grant_type: Int;
   scope: String;
   expires_in: DateTimeInput;
-  create_time: DateTimeInput;
-  update_time: DateTimeInput;
   status: Int;
 }
 
 export interface AddonEntityCreateInput {
-  appid: Int;
+  appid?: Maybe<Int>;
   pid: Int;
   appsecret: String;
   icon: String;
@@ -2493,8 +2425,6 @@ export interface AddonEntityCreateInput {
   title: String;
   description: String;
   status: Int;
-  create_time: DateTimeInput;
-  update_time: DateTimeInput;
   permissions?: Maybe<PermissionEntityCreateManyInput>;
 }
 
@@ -2511,12 +2441,10 @@ export interface PermissionEntityCreateManyInput {
 }
 
 export interface RefreshTokenEntityCreateInput {
-  refresh_token_id: Int;
+  refresh_token_id?: Maybe<Int>;
   token: AccessTokenEntityCreateOneWithoutRefreshTokenInput;
   refresh_token: String;
   expires_in: DateTimeInput;
-  create_time: DateTimeInput;
-  update_time: DateTimeInput;
 }
 
 export interface PermissionEntityCreateInput {
@@ -2528,8 +2456,6 @@ export interface PermissionEntityCreateInput {
   icon: String;
   status: Int;
   displayorder: Int;
-  create_time: DateTimeInput;
-  update_time: DateTimeInput;
   fromAddon: AddonEntityCreateOneInput;
   addons?: Maybe<AddonEntityCreateManyInput>;
   users?: Maybe<UserEntityCreateManyWithoutPermissionsInput>;
@@ -2537,13 +2463,10 @@ export interface PermissionEntityCreateInput {
 }
 
 export interface PostEntityUpdateInput {
-  post_id?: Maybe<Int>;
   title?: Maybe<String>;
   content?: Maybe<String>;
   status?: Maybe<Int>;
   handler_user?: Maybe<String>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
 }
 
 export interface PermissionEntityCreatevalueInput {
@@ -2645,12 +2568,9 @@ export interface AddonEntityCreateManyInput {
 }
 
 export interface PostCategoryEntityUpdateInput {
-  post_post_category_idid?: Maybe<Int>;
   title?: Maybe<String>;
   icon?: Maybe<String>;
   description?: Maybe<String>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
 }
 
 export interface UserEntityCreateManyWithoutPermissionsInput {
@@ -2670,12 +2590,10 @@ export interface PermissionEntityUpdateManyMutationInput {
   icon?: Maybe<String>;
   status?: Maybe<Int>;
   displayorder?: Maybe<Int>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
 }
 
 export interface UserEntityCreateWithoutPermissionsInput {
-  user_id: Int;
+  user_id?: Maybe<Int>;
   openid: String;
   unionid: String;
   username: String;
@@ -2687,8 +2605,6 @@ export interface UserEntityCreateWithoutPermissionsInput {
   phone: String;
   email: String;
   sex: Int;
-  create_time: DateTimeInput;
-  update_time: DateTimeInput;
   roles?: Maybe<RoleEntityCreateManyInput>;
   organizations?: Maybe<OrganizationEntityCreateManyInput>;
 }
@@ -2838,22 +2754,17 @@ export interface RoleEntityCreateManyInput {
 }
 
 export interface OrganizationEntityUpdateManyMutationInput {
-  organization_id?: Maybe<Int>;
   name?: Maybe<String>;
   title?: Maybe<String>;
   description?: Maybe<String>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
   displayorder?: Maybe<Int>;
 }
 
 export interface RoleEntityCreateInput {
-  role_id: Int;
+  role_id?: Maybe<Int>;
   name: String;
   title: String;
   description: String;
-  create_time: DateTimeInput;
-  update_time: DateTimeInput;
   permissions?: Maybe<PermissionEntityCreateManyWithoutRolesInput>;
 }
 
@@ -2872,7 +2783,6 @@ export interface PermissionEntityCreateManyWithoutRolesInput {
 }
 
 export interface MessageEntityUpdateInput {
-  msg_id?: Maybe<Int>;
   content?: Maybe<String>;
   msg_type?: Maybe<Int>;
   pic_url?: Maybe<String>;
@@ -2886,8 +2796,6 @@ export interface MessageEntityUpdateInput {
   description?: Maybe<String>;
   from_user?: Maybe<String>;
   to_user?: Maybe<String>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
 }
 
 export interface PermissionEntityCreateWithoutRolesInput {
@@ -2899,8 +2807,6 @@ export interface PermissionEntityCreateWithoutRolesInput {
   icon: String;
   status: Int;
   displayorder: Int;
-  create_time: DateTimeInput;
-  update_time: DateTimeInput;
   fromAddon: AddonEntityCreateOneInput;
   addons?: Maybe<AddonEntityCreateManyInput>;
   users?: Maybe<UserEntityCreateManyWithoutPermissionsInput>;
@@ -2954,12 +2860,10 @@ export interface RolePermissionEntityWhereInput {
 }
 
 export interface OrganizationEntityCreateInput {
-  organization_id: Int;
+  organization_id?: Maybe<Int>;
   name: String;
   title: String;
   description: String;
-  create_time: DateTimeInput;
-  update_time: DateTimeInput;
   displayorder: Int;
 }
 
@@ -3179,12 +3083,9 @@ export interface RolePermissionEntitySubscriptionWhereInput {
 }
 
 export interface RoleEntityUpdateWithoutPermissionsDataInput {
-  role_id?: Maybe<Int>;
   name?: Maybe<String>;
   title?: Maybe<String>;
   description?: Maybe<String>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
 }
 
 export interface PostEntitySubscriptionWhereInput {
@@ -3205,7 +3106,6 @@ export interface PostEntitySubscriptionWhereInput {
 }
 
 export interface AddonEntityUpdateInput {
-  appid?: Maybe<Int>;
   pid?: Maybe<Int>;
   appsecret?: Maybe<String>;
   icon?: Maybe<String>;
@@ -3213,8 +3113,6 @@ export interface AddonEntityUpdateInput {
   title?: Maybe<String>;
   description?: Maybe<String>;
   status?: Maybe<Int>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
   permissions?: Maybe<PermissionEntityUpdateManyInput>;
 }
 
@@ -3395,8 +3293,6 @@ export interface PermissionEntityUpdateDataInput {
   icon?: Maybe<String>;
   status?: Maybe<Int>;
   displayorder?: Maybe<Int>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
   fromAddon?: Maybe<AddonEntityUpdateOneRequiredInput>;
   addons?: Maybe<AddonEntityUpdateManyInput>;
   users?: Maybe<UserEntityUpdateManyWithoutPermissionsInput>;
@@ -3423,13 +3319,12 @@ export interface AddonEntityUpdateOneRequiredInput {
 }
 
 export interface UserRoleEntityCreateInput {
-  user_role_id: Int;
+  user_role_id?: Maybe<Int>;
   openid: String;
   role_id: Int;
 }
 
 export interface AddonEntityUpdateDataInput {
-  appid?: Maybe<Int>;
   pid?: Maybe<Int>;
   appsecret?: Maybe<String>;
   icon?: Maybe<String>;
@@ -3437,13 +3332,11 @@ export interface AddonEntityUpdateDataInput {
   title?: Maybe<String>;
   description?: Maybe<String>;
   status?: Maybe<Int>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
   permissions?: Maybe<PermissionEntityUpdateManyInput>;
 }
 
 export interface UserOrganizationEntityCreateInput {
-  user_orgainization_id: Int;
+  user_orgainization_id?: Maybe<Int>;
   openid: String;
   orgainization_id: Int;
 }
@@ -3462,8 +3355,6 @@ export interface PermissionEntityUpdateWithoutUsersDataInput {
   icon?: Maybe<String>;
   status?: Maybe<Int>;
   displayorder?: Maybe<Int>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
   fromAddon?: Maybe<AddonEntityUpdateOneRequiredInput>;
   addons?: Maybe<AddonEntityUpdateManyInput>;
   roles?: Maybe<RoleEntityUpdateManyWithoutPermissionsInput>;
@@ -3642,7 +3533,7 @@ export interface AddonEntityUpdateWithWhereUniqueNestedInput {
 }
 
 export interface UserEntityCreateInput {
-  user_id: Int;
+  user_id?: Maybe<Int>;
   openid: String;
   unionid: String;
   username: String;
@@ -3654,8 +3545,6 @@ export interface UserEntityCreateInput {
   phone: String;
   email: String;
   sex: Int;
-  create_time: DateTimeInput;
-  update_time: DateTimeInput;
   permissions?: Maybe<PermissionEntityCreateManyWithoutUsersInput>;
   roles?: Maybe<RoleEntityCreateManyInput>;
   organizations?: Maybe<OrganizationEntityCreateManyInput>;
@@ -3742,7 +3631,6 @@ export interface OrganizationEntityWhereInput {
 }
 
 export interface RolePermissionEntityUpdateInput {
-  role_permission_id?: Maybe<Int>;
   role_id?: Maybe<Int>;
   permission_id?: Maybe<Int>;
 }
@@ -3877,7 +3765,6 @@ export type PermissionEntityWhereUniqueInput = AtLeastOne<{
 }>;
 
 export interface AddonEntityUpdateManyDataInput {
-  appid?: Maybe<Int>;
   pid?: Maybe<Int>;
   appsecret?: Maybe<String>;
   icon?: Maybe<String>;
@@ -3885,8 +3772,6 @@ export interface AddonEntityUpdateManyDataInput {
   title?: Maybe<String>;
   description?: Maybe<String>;
   status?: Maybe<Int>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
 }
 
 export type PostCategoryEntityWhereUniqueInput = AtLeastOne<{
@@ -3918,13 +3803,10 @@ export interface UserEntityUpdateManyWithoutPermissionsInput {
 }
 
 export interface PostEntityUpdateManyMutationInput {
-  post_id?: Maybe<Int>;
   title?: Maybe<String>;
   content?: Maybe<String>;
   status?: Maybe<Int>;
   handler_user?: Maybe<String>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
 }
 
 export interface UserEntityUpdateWithWhereUniqueWithoutPermissionsInput {
@@ -3933,16 +3815,12 @@ export interface UserEntityUpdateWithWhereUniqueWithoutPermissionsInput {
 }
 
 export interface PostCategoryEntityUpdateManyMutationInput {
-  post_post_category_idid?: Maybe<Int>;
   title?: Maybe<String>;
   icon?: Maybe<String>;
   description?: Maybe<String>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
 }
 
 export interface UserEntityUpdateWithoutPermissionsDataInput {
-  user_id?: Maybe<Int>;
   openid?: Maybe<String>;
   unionid?: Maybe<String>;
   username?: Maybe<String>;
@@ -3954,19 +3832,15 @@ export interface UserEntityUpdateWithoutPermissionsDataInput {
   phone?: Maybe<String>;
   email?: Maybe<String>;
   sex?: Maybe<Int>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
   roles?: Maybe<RoleEntityUpdateManyInput>;
   organizations?: Maybe<OrganizationEntityUpdateManyInput>;
 }
 
 export interface PostCategoryEntityCreateInput {
-  post_post_category_idid: Int;
+  post_post_category_idid?: Maybe<Int>;
   title: String;
   icon: String;
   description: String;
-  create_time: DateTimeInput;
-  update_time: DateTimeInput;
 }
 
 export interface RoleEntityUpdateManyInput {
@@ -3999,8 +3873,6 @@ export interface PermissionEntityUpdateInput {
   icon?: Maybe<String>;
   status?: Maybe<Int>;
   displayorder?: Maybe<Int>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
   fromAddon?: Maybe<AddonEntityUpdateOneRequiredInput>;
   addons?: Maybe<AddonEntityUpdateManyInput>;
   users?: Maybe<UserEntityUpdateManyWithoutPermissionsInput>;
@@ -4013,7 +3885,6 @@ export interface RoleEntityUpdateWithWhereUniqueNestedInput {
 }
 
 export interface MessageEntityUpdateManyMutationInput {
-  msg_id?: Maybe<Int>;
   content?: Maybe<String>;
   msg_type?: Maybe<Int>;
   pic_url?: Maybe<String>;
@@ -4027,22 +3898,16 @@ export interface MessageEntityUpdateManyMutationInput {
   description?: Maybe<String>;
   from_user?: Maybe<String>;
   to_user?: Maybe<String>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
 }
 
 export interface RoleEntityUpdateDataInput {
-  role_id?: Maybe<Int>;
   name?: Maybe<String>;
   title?: Maybe<String>;
   description?: Maybe<String>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
   permissions?: Maybe<PermissionEntityUpdateManyWithoutRolesInput>;
 }
 
 export interface MemberEntityUpdateManyMutationInput {
-  member_id?: Maybe<Int>;
   name?: Maybe<String>;
   realname?: Maybe<String>;
   phone?: Maybe<String>;
@@ -4051,8 +3916,6 @@ export interface MemberEntityUpdateManyMutationInput {
   username?: Maybe<String>;
   password?: Maybe<String>;
   salt?: Maybe<String>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
 }
 
 export interface PermissionEntityUpdateManyWithoutRolesInput {
@@ -4340,8 +4203,6 @@ export interface PermissionEntityUpdateWithoutRolesDataInput {
   icon?: Maybe<String>;
   status?: Maybe<Int>;
   displayorder?: Maybe<Int>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
   fromAddon?: Maybe<AddonEntityUpdateOneRequiredInput>;
   addons?: Maybe<AddonEntityUpdateManyInput>;
   users?: Maybe<UserEntityUpdateManyWithoutPermissionsInput>;
@@ -4502,7 +4363,6 @@ export interface PermissionEntityScalarWhereInput {
 }
 
 export interface UserOrganizationEntityUpdateInput {
-  user_orgainization_id?: Maybe<Int>;
   openid?: Maybe<String>;
   orgainization_id?: Maybe<Int>;
 }
@@ -4525,12 +4385,9 @@ export interface PermissionEntityUpdateManyDataInput {
   icon?: Maybe<String>;
   status?: Maybe<Int>;
   displayorder?: Maybe<Int>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
 }
 
 export interface RolePermissionEntityUpdateManyMutationInput {
-  role_permission_id?: Maybe<Int>;
   role_id?: Maybe<Int>;
   permission_id?: Maybe<Int>;
 }
@@ -4749,21 +4606,15 @@ export interface RefreshTokenEntityWhereInput {
 }
 
 export interface RoleEntityUpdateManyDataInput {
-  role_id?: Maybe<Int>;
   name?: Maybe<String>;
   title?: Maybe<String>;
   description?: Maybe<String>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
 }
 
 export interface OrganizationEntityUpdateInput {
-  organization_id?: Maybe<Int>;
   name?: Maybe<String>;
   title?: Maybe<String>;
   description?: Maybe<String>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
   displayorder?: Maybe<Int>;
 }
 
@@ -4885,12 +4736,9 @@ export type ArticleCategoryEntityWhereUniqueInput = AtLeastOne<{
 }>;
 
 export interface OrganizationEntityUpdateDataInput {
-  organization_id?: Maybe<Int>;
   name?: Maybe<String>;
   title?: Maybe<String>;
   description?: Maybe<String>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
   displayorder?: Maybe<Int>;
 }
 
@@ -5003,8 +4851,6 @@ export interface PermissionEntityCreateWithoutUsersInput {
   icon: String;
   status: Int;
   displayorder: Int;
-  create_time: DateTimeInput;
-  update_time: DateTimeInput;
   fromAddon: AddonEntityCreateOneInput;
   addons?: Maybe<AddonEntityCreateManyInput>;
   roles?: Maybe<RoleEntityCreateManyWithoutPermissionsInput>;
@@ -5097,12 +4943,9 @@ export interface OrganizationEntityScalarWhereInput {
 }
 
 export interface RefreshTokenEntityUpdateInput {
-  refresh_token_id?: Maybe<Int>;
   token?: Maybe<AccessTokenEntityUpdateOneRequiredWithoutRefreshTokenInput>;
   refresh_token?: Maybe<String>;
   expires_in?: Maybe<DateTimeInput>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
 }
 
 export interface OrganizationEntityUpdateManyWithWhereNestedInput {
@@ -5115,12 +4958,9 @@ export type RefreshTokenEntityWhereUniqueInput = AtLeastOne<{
 }>;
 
 export interface OrganizationEntityUpdateManyDataInput {
-  organization_id?: Maybe<Int>;
   name?: Maybe<String>;
   title?: Maybe<String>;
   description?: Maybe<String>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
   displayorder?: Maybe<Int>;
 }
 
@@ -5151,7 +4991,6 @@ export interface UserEntityUpsertWithWhereUniqueWithoutPermissionsInput {
 }
 
 export interface UserEntityUpdateManyMutationInput {
-  user_id?: Maybe<Int>;
   openid?: Maybe<String>;
   unionid?: Maybe<String>;
   username?: Maybe<String>;
@@ -5163,8 +5002,6 @@ export interface UserEntityUpdateManyMutationInput {
   phone?: Maybe<String>;
   email?: Maybe<String>;
   sex?: Maybe<Int>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
 }
 
 export interface RoleEntityUpdateManyWithoutPermissionsInput {
@@ -5192,7 +5029,6 @@ export interface RoleEntityUpdateManyWithoutPermissionsInput {
 }
 
 export interface UserEntityUpdateManyDataInput {
-  user_id?: Maybe<Int>;
   openid?: Maybe<String>;
   unionid?: Maybe<String>;
   username?: Maybe<String>;
@@ -5204,8 +5040,6 @@ export interface UserEntityUpdateManyDataInput {
   phone?: Maybe<String>;
   email?: Maybe<String>;
   sex?: Maybe<Int>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
 }
 
 export interface UserEntityUpdateManyWithWhereNestedInput {
@@ -5392,12 +5226,9 @@ export interface UserEntityScalarWhereInput {
 }
 
 export interface RoleEntityUpdateManyMutationInput {
-  role_id?: Maybe<Int>;
   name?: Maybe<String>;
   title?: Maybe<String>;
   description?: Maybe<String>;
-  create_time?: Maybe<DateTimeInput>;
-  update_time?: Maybe<DateTimeInput>;
 }
 
 export interface ArticleCategoryEntitySubscriptionWhereInput {
@@ -5421,7 +5252,7 @@ export interface ArticleCategoryEntitySubscriptionWhereInput {
 }
 
 export interface MessageEntityCreateInput {
-  msg_id: Int;
+  msg_id?: Maybe<Int>;
   content: String;
   msg_type: Int;
   pic_url: String;
@@ -5435,18 +5266,14 @@ export interface MessageEntityCreateInput {
   description: String;
   from_user: String;
   to_user: String;
-  create_time: DateTimeInput;
-  update_time: DateTimeInput;
 }
 
 export interface PostEntityCreateInput {
-  post_id: Int;
+  post_id?: Maybe<Int>;
   title: String;
   content: String;
   status: Int;
   handler_user: String;
-  create_time: DateTimeInput;
-  update_time: DateTimeInput;
 }
 
 export interface NodeNode {

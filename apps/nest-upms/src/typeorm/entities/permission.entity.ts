@@ -53,17 +53,7 @@ export class PermissionEntity {
      */
     @Column({
         type: "varchar",
-        length: 255,
-        transformer: {
-            // 存
-            to: (val: string[]) => {
-                return JSON.stringify(val)
-            },
-            // 取
-            from: (val: string) => {
-                return JSON.parse(val)
-            }
-        }
+        length: 255
     })
     value: string[];
 

@@ -6,9 +6,9 @@ type ArticleEntity{
 	thumbs: String! 
 	icon: String! 
 	"""文章的类型"""
-	category: ArticleCategoryEntity! @relation(name: ArticleCategoryEntity)
+	category: ArticleCategoryEntity! @relation(name: "ArticleCategoryEntity")
 	"""文章下面的评论"""
-	comments: [ArticleCommentEntity]! @relation(name: ArticleCommentEntity)
+	comments: [ArticleCommentEntity]! @relation(name: "ArticleCommentEntity")
 	create_time: DateTime! @createdAt
 	update_time: DateTime! @updatedAt
 }
@@ -19,11 +19,11 @@ type ArticleCategoryEntity{
 	name: String! 
 	icon: String! 
 	"""分类的上级"""
-	parent: ArticleCategoryEntity! @relation(name: ArticleCategoryEntity)
+	parent: ArticleCategoryEntity! @relation(name: "ArticleCategoryEntity")
 	"""分类下面的子分类"""
-	children: [ArticleCategoryEntity]! @relation(name: ArticleCategoryEntity)
+	children: [ArticleCategoryEntity]! @relation(name: "ArticleCategoryEntity")
 	"""分类下面的文章"""
-	articles: [ArticleEntity]! @relation(name: ArticleEntity)
+	articles: [ArticleEntity]! @relation(name: "ArticleEntity")
 	description: String! 
 	create_time: DateTime! @createdAt
 	update_time: DateTime! @updatedAt
@@ -37,7 +37,7 @@ type ArticleCommentEntity{
 	from_user_id: String! 
 	create_time: DateTime! @createdAt
 	update_time: DateTime! @updatedAt
-	article: ArticleEntity! @relation(name: ArticleEntity)
+	article: ArticleEntity! @relation(name: "ArticleEntity")
 }
 type LoggerEntity{
 	logger_id: ID! @id
@@ -95,7 +95,7 @@ type AddonEntity{
 	"""应用权限
 一个应用有多个权限
 一个权限也可以有多个应用"""
-	permissions: [PermissionEntity]! @relation(name: PermissionEntity)
+	permissions: [PermissionEntity]! @relation(name: "PermissionEntity")
 }
 type OrganizationEntity{
 	organization_id: ID! @id
@@ -133,11 +133,11 @@ type PermissionEntity{
 	"""更新时间"""
 	update_time: DateTime! @updatedAt
 	"""常用的，所以定义一下，查询后挂载到Permission上拥有此权限的所有模块"""
-	addons: [AddonEntity]! @relation(name: AddonEntity)
+	addons: [AddonEntity]! @relation(name: "AddonEntity")
 	"""拥有此权限的所有用户"""
-	users: [UserEntity]! @relation(name: UserEntity)
+	users: [UserEntity]! @relation(name: "UserEntity")
 	"""拥有此权限的所有角色"""
-	roles: [RoleEntity]! @relation(name: RoleEntity)
+	roles: [RoleEntity]! @relation(name: "RoleEntity")
 }
 type RoleEntity{
 	role_id: ID! @id
@@ -147,7 +147,7 @@ type RoleEntity{
 	create_time: DateTime! @createdAt
 	update_time: DateTime! @updatedAt
 	"""角色权限，常用，定义一下"""
-	permissions: [PermissionEntity]! @relation(name: PermissionEntity)
+	permissions: [PermissionEntity]! @relation(name: "PermissionEntity")
 }
 type UserEntity{
 	user_id: ID! @id
@@ -165,7 +165,7 @@ type UserEntity{
 	create_time: DateTime! @createdAt
 	update_time: DateTime! @updatedAt
 	"""常用，定义一下用户拥有的权限，一个用户可以有多个权限"""
-	permissions: [PermissionEntity]! @relation(name: PermissionEntity)
+	permissions: [PermissionEntity]! @relation(name: "PermissionEntity")
 	"""用户拥有的角色，一个用户可以分配多个角色"""
 	roles: [RoleEntity]! 
 	"""用户所属组织，一个用户可以有多个组织，"""
@@ -208,11 +208,11 @@ type AccessTokenEntity{
 	update_time: DateTime! @updatedAt
 	status: Int! 
 	"""刷新凭证"""
-	refreshToken: RefreshTokenEntity! @relation(name: RefreshTokenEntity)
+	refreshToken: RefreshTokenEntity! @relation(name: "RefreshTokenEntity")
 }
 type RefreshTokenEntity{
 	refresh_token_id: ID! @id
-	token: AccessTokenEntity! @relation(name: AccessTokenEntity)
+	token: AccessTokenEntity! @relation(name: "AccessTokenEntity")
 	refresh_token: String! 
 	expires_in: DateTime! 
 	create_time: DateTime! @createdAt

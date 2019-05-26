@@ -63,7 +63,6 @@ export class PermissionEntity {
         default: ''
     })
     icon: string;
-
     /**
      * 状态 -1禁止，0开发中,1正常
      */
@@ -73,7 +72,6 @@ export class PermissionEntity {
     })
     @Index()
     status: number;
-
     /**
      * 排序
      */
@@ -82,7 +80,6 @@ export class PermissionEntity {
         default: 0
     })
     displayorder: number;
-
     /**
      * 创建时间
      */
@@ -90,7 +87,6 @@ export class PermissionEntity {
         type: 'timestamptz'
     })
     create_time: Date;
-
     /**
      * 更新时间
      */
@@ -98,7 +94,6 @@ export class PermissionEntity {
         type: 'timestamptz'
     })
     update_time: Date;
-
     /**
      * 常用的，所以定义一下，查询后挂载到Permission上
      */

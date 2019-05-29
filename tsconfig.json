@@ -70,5 +70,8 @@
   "exclude": [
     "node_modules",
     "tmp"
+  ],
+  "include": [
+    "node_modules/@notadd/magnus"
   ]
 }

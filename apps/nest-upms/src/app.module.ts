@@ -1,31 +1,32 @@
 import { Module } from '@nestjs/common';
-import { GraphQLModule } from '@nestjs/graphql';
 import baseInfoProviders from './baseInfo';
-import { GraphqlOptions } from './graphql.options';
 import { ssoProviders } from './sso';
-// GqlModuleOptions
+import { MagnusServerModule, MAGNUS_CONFIG } from '@notadd/magnus';
+import entity from './typeorm'
 @Module({
   imports: [
-    // AuthModule.forRoot(JwtStrategyImpl),
-    GraphQLModule.forRootAsync({
-      useClass: GraphqlOptions,
+    MagnusServerModule.forRoot({
+      type: 'postgres',
+      host: 'localhost',
+      port: 5432,
+      database: 'test_ci',
+      username: 'postgres',
+      password: 'postgres',
+      synchronize: true,
+      entities: entity
     }),
-    // TypeOrmModule.forRoot({
-    //   type: 'postgres',
-    //   host: 'localhost',
-    //   port: 5432,
-    //   database: 'test_ci',
-    //   username: 'postgres',
-    //   password: 'postgres',
-    //   synchronize: true,
-    //   entities: entity
-    // }),
+    // AuthModule.forRoot(JwtStrategyImpl),
+    
   ],
   controllers: [
     // SsoResolver,
     // InstallResolver
   ],
   providers: [
+    {
+      provide: MAGNUS_CONFIG,
+      useValue: {}
+    },
     // InstallResolver,
     // ...coreProviders,
     ...ssoProviders,

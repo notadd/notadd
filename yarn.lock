@@ -108,15 +108,15 @@
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
 
-"@notadd/magnus-client@^0.0.25":
-  version "0.0.25"
-  resolved "https://registry.yarnpkg.com/@notadd/magnus-client/-/magnus-client-0.0.25.tgz#6de625cd53a8c0371760b558dace9f7e4e5ee10f"
-  integrity sha512-ecjwgHMx/4vcpGi5ZNw67Ujq71ZYiHi3YP/hkO5/sAcNsmWqv0tBMhwutfawPIITnixKwLkECfMDij+xxNqxZQ==
+"@notadd/magnus-client@^0.0.21":
+  version "0.0.21"
+  resolved "https://registry.yarnpkg.com/@notadd/magnus-client/-/magnus-client-0.0.21.tgz#169f4819e93e01e9bb487621dd24a126bbbcc8c2"
+  integrity sha512-qdkT83rKvPdbCNQtE4iUCQv9EY0fzCq7PJSeBKYtMmjirLOGrVH3MSiJMfkxCJyof1YtBzii7LNLuGUtmte4gg==
 
-"@notadd/magnus@^0.0.23":
-  version "0.0.23"
-  resolved "https://registry.yarnpkg.com/@notadd/magnus/-/magnus-0.0.23.tgz#964812f0f98f16392fe3415093a47a3effa226b6"
-  integrity sha512-DwjQdqX2NqJqNSyr4eplxMbh3BAztdorw8XLYwHzhrH0JoBMqt1oFuZ4E5NqyAkheH/WCHZZZGIxoGWImBtQVQ==
+"@notadd/magnus@^0.0.22":
+  version "0.0.22"
+  resolved "https://registry.yarnpkg.com/@notadd/magnus/-/magnus-0.0.22.tgz#3ea737377754d4727ffd146e2f630f5f5b6821da"
+  integrity sha512-iJMWb7IyDCkaSmq0+2rzAr/9JiVEo2TW0AAGOns4nkAeIi3mTgS6NW7yrCE7eg/BcbqExjEpTOjEtM9JN2NOEg==
   dependencies:
     "@nestjs/common" "^6.2.4"
     "@nestjs/core" "^6.2.4"

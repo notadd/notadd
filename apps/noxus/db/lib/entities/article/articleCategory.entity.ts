@@ -36,7 +36,7 @@ export class ArticleCategoryEntity {
      */
     @ManyToOne(() => ArticleCategoryEntity, type => type.children)
     @JoinColumn({
-        name: 'pid'
+        name: 'pid',
     })
     parent: ArticleCategoryEntity;
 

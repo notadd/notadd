@@ -4,5 +4,9 @@
         "**/node_modules/**": true,
         "**/attachment/**": true,
         "**/.temp/**": true
+    },
+    "files.exclude": {
+        "**/*.js": true,
+        "**/*.ts": true
     }
 }

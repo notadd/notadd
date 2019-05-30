@@ -11,8 +11,8 @@
     // "declarationMap": true,                /* Generates a sourcemap for each corresponding '.d.ts' file. */
     // "sourceMap": true,                     /* Generates corresponding '.map' file. */
     // "outFile": "./",                       /* Concatenate and emit output to single file. */
-    // "outDir": "./",                        /* Redirect output structure to the directory. */
-    // "rootDir": "./",                       /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */
+    "outDir": ".", /* Redirect output structure to the directory. */
+    "rootDir": ".", /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */
     // "composite": true,                     /* Enable project compilation */
     // "incremental": true,                   /* Enable incremental compilation */
     // "tsBuildInfoFile": "./",               /* Specify file to store incremental compilation information */
@@ -27,18 +27,17 @@
     // "strictNullChecks": true,              /* Enable strict null checks. */
     // "strictFunctionTypes": true,           /* Enable strict checking of function types. */
     // "strictBindCallApply": true,           /* Enable strict 'bind', 'call', and 'apply' methods on functions. */
-    // "strictPropertyInitialization": true,  /* Enable strict checking of property initialization in classes. */
+    "strictPropertyInitialization": false, /* Enable strict checking of property initialization in classes. */
     // "noImplicitThis": true,                /* Raise error on 'this' expressions with an implied 'any' type. */
     // "alwaysStrict": true,                  /* Parse in strict mode and emit "use strict" for each source file. */
     /* Additional Checks */
-    // "noUnusedLocals": true,                /* Report errors on unused locals. */
-    // "noUnusedParameters": true,            /* Report errors on unused parameters. */
+    "noUnusedLocals": false, /* Report errors on unused locals. */
+    "noUnusedParameters": false, /* Report errors on unused parameters. */
     // "noImplicitReturns": true,             /* Report error when not all code paths in function return a value. */
     // "noFallthroughCasesInSwitch": true,    /* Report errors for fallthrough cases in switch statement. */
     /* Module Resolution Options */
-    // "moduleResolution": "node",            /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */
-    // "baseUrl": "./",                       /* Base directory to resolve non-absolute module names. */
-    // "paths": {},                           /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
+    "moduleResolution": "node", /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */
+    "baseUrl": ".", /* Base directory to resolve non-absolute module names. */
     // "rootDirs": [],                        /* List of root folders whose combined content represents the structure of the project at runtime. */
     // "typeRoots": [],                       /* List of folders to include type definitions from. */
     // "types": [],                           /* Type declaration files to be included in compilation. */
@@ -54,14 +53,35 @@
     "experimentalDecorators": true, /* Enables experimental support for ES7 decorators. */
     "emitDecoratorMetadata": true, /* Enables experimental support for emitting type metadata for decorators. */
     "paths": {
-      "@noxus/*": [
-        "apps/noxus/*"
+      "@noxus/db": [
+        "apps/noxus/db/lib/index.ts"
+      ],
+      "@noxus/basic": [
+        "apps/noxus/basic/lib/index.ts"
+      ],
+      "@noxus/casbin": [
+        "apps/noxus/casbin/lib/index.ts"
+      ],
+      "@noxus/cms": [
+        "apps/noxus/cms/lib/index.ts"
+      ],
+      "@noxus/device": [
+        "apps/noxus/device/lib/index.ts"
+      ],
+      "@noxus/magnus": [
+        "apps/noxus/magnus/lib/index.ts"
+      ],
+      "@noxus/services": [
+        "apps/noxus/services/lib/index.ts"
+      ],
+      "@noxus/sso": [
+        "apps/noxus/sso/lib/index.ts"
       ]
     }
   },
   "include": [
-    "noxus",
-    "tools"
+    "tools",
+    "apps"
   ],
   "exclude": [
     "node_modules"

@@ -1,5 +1,13 @@
+/*
+ * @Author: lijiansheng 
+ * @Date: 2019-05-30 17:37:52 
+ * @Last Modified by: lijiansheng
+ * @Last Modified time: 2019-05-30 17:40:55
+ */
 import { MagnusClient, gql } from '@notadd/magnus-client'
 import { Article } from '@noxus/db';
+import { Injectable } from '@nestjs/common';
+@Injectable()
 export class ArticleService {
     constructor(
         public client: MagnusClient<Article>
@@ -14,15 +22,19 @@ export class ArticleService {
     //         }
     //         `,
     //         variables:{}
-    //     })
+    //     })Query bQuery by ID and titlele
 
     //     this.client.insertA
     // }
 
-    async findOneArticle(where: Partial<Article>): Promise<any> {
+    /**
+     * Query an article
+     * @param where Query by ID and title
+     */
+    async articleFindOne(where: Partial<Article>): Promise<any> {
         const result = this.client.query({
             query: gql`
-            articleEntityFindOne(options: $options){
+            articleFindOne(options: $options){
             article_id,
             title,
             description,
@@ -33,6 +45,7 @@ export class ArticleService {
                 "options": {
                     "where": {
                         "article_id": where.article_id,
+                        "title": where.title,
                     }
                 }
             }

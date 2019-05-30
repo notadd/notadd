@@ -8,12 +8,13 @@ export async function bootstrap() {
     app.connectMicroservice({
         transport: Transport.GRPC,
         options: {
-            url: `${options.host}:${options.grpcPort}`,
+            url: `${options.host}:3001`,
             package: 'noxus',
             protoPath: `${__dirname}/main.proto`
         }
     })
     await app.startAllMicroservicesAsync();
-    await app.listen(options.graphqlPort);
+    // await app.listen(options.graphqlPort);
+    await app.listen(9001);
 }
 bootstrap();

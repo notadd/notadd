@@ -5,6 +5,8 @@
 	"main": "index.js",
 	"scripts": {
 		"start.magnus": "yarn tsc && ts-node -P ./tsconfig.json -r ts-node/register -r tsconfig-paths/register apps/noxus/magnus/lib/main.ts",
+		"start.cms": "yarn tsc && ts-node -P ./tsconfig.json -r ts-node/register -r tsconfig-paths/register apps/noxus/cms/lib/main.ts",
+		"start.cms.env": "cross-env graphqlPort=9001 grpcPort=3001 yarn start.cms",
 		"compiler": "tsc -p tsconfig.json",
 		"clear": "ts-node -r ts-node/register -r tsconfig-paths/register src/clear.ts"
 	},
@@ -38,6 +40,7 @@
 		"apollo-boost": "^0.4.0",
 		"apollo-server": "^2.5.0",
 		"apollo-server-express": "^2.5.0",
+		"cross-env": "^5.2.0",
 		"graphql": "^14.3.1",
 		"pg": "^7.11.0",
 		"reflect-metadata": "^0.1.13",

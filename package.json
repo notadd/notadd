@@ -5,8 +5,8 @@
 	"main": "index.js",
 	"scripts": {
 		"start.magnus": "yarn tsc && ts-node -P ./tsconfig.json -r ts-node/register -r tsconfig-paths/register apps/noxus/magnus/lib/main.ts",
-		"start.src": "ts-node -r ts-node/register -r tsconfig-paths/register src/index.ts",
-		"tsc": "tsc -p tsconfig.json"
+		"compiler": "tsc -p tsconfig.json",
+		"clear": "ts-node -r ts-node/register -r tsconfig-paths/register src/clear.ts"
 	},
 	"repository": {
 		"type": "git",

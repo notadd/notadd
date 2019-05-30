@@ -1,6 +1,5 @@
 import { Column, JoinTable, Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, ManyToMany } from 'typeorm';
 import { PermissionEntity } from './permission.entity';
-
 @Entity({
     name: 'addon'
 })
@@ -71,3 +70,4 @@ export class AddonEntity {
     @JoinTable()
     permissions: PermissionEntity[];
 }
+

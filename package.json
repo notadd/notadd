@@ -4,7 +4,8 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"start.magnus": "ts-node -r ts-node/register -r tsconfig-paths/register apps/noxus/magnus/lib/main.ts --watch"
+		"start.magnus": "ts-node -P ./tsconfig.json -r ts-node/register -r tsconfig-paths/register apps/noxus/magnus/lib/main.ts",
+		"start.src": "ts-node -r ts-node/register -r tsconfig-paths/register src/index.ts"
 	},
 	"repository": {
 		"type": "git",
@@ -17,21 +18,27 @@
 	},
 	"homepage": "https://github.com/notadd/notadd#readme",
 	"devDependencies": {
-		"@types/node": "^12.0.3",
+		"@types/mocha": "^5.2.6",
+		"@types/node": "~10.14.7",
+		"mocha": "^6.1.4",
 		"ts-node": "^8.2.0",
 		"tsconfig-paths": "^3.8.0",
-		"typescript": "^3.5.1"
+		"typescript": "^3.3"
 	},
 	"dependencies": {
 		"@nestjs/common": "^6.2.4",
 		"@nestjs/core": "^6.2.4",
+		"@nestjs/platform-express": "^6.2.4",
 		"@notadd/magnus": "^0.0.19",
 		"@notadd/magnus-client": "^0.0.19",
 		"apollo-boost": "^0.4.0",
 		"apollo-server": "^2.5.0",
 		"apollo-server-express": "^2.5.0",
 		"graphql": "^14.3.1",
+		"pg": "^7.11.0",
 		"reflect-metadata": "^0.1.13",
+		"rxjs": "^6.5.2",
+		"ts-morph": "^2.3.0",
 		"tslib": "^1.9.3",
 		"typeorm": "^0.2.17"
 	}

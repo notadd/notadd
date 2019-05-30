@@ -7,6 +7,7 @@
     },
     "files.exclude": {
         "**/*.js": true,
-        "**/*.ts": true
+        "**/*.d.ts": true,
+        "**/*.js.map": true
     }
 }

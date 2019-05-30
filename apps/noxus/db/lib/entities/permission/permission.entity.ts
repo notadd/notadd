@@ -1,7 +1,7 @@
 import { Column, CreateDateColumn, Entity, Index, JoinTable, ManyToMany, ManyToOne, PrimaryColumn, UpdateDateColumn, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
-import { AddonEntity } from './addon.entity';
-import { RoleEntity } from './role.entity';
-import { UserEntity } from './user.entity';
+import { Addon } from './addon.entity';
+import { Role } from './role.entity';
+import { User } from './user.entity';
 
 /**
  * 应用权限表
@@ -9,7 +9,7 @@ import { UserEntity } from './user.entity';
 @Entity({
     name: 'permission'
 })
-export class PermissionEntity {
+export class Permission {
     @PrimaryGeneratedColumn()
     id: number;
     /**
@@ -101,17 +101,17 @@ export class PermissionEntity {
     /**
      * 拥有此权限的所有模块
      */
-    @ManyToMany(() => AddonEntity)
-    addons: AddonEntity[];
+    @ManyToMany(() => Addon)
+    addons: Addon[];
     /**
      * 拥有此权限的所有用户
      */
-    @ManyToMany(() => UserEntity)
-    users: UserEntity[];
+    @ManyToMany(() => User)
+    users: User[];
 
     /**
      * 拥有此权限的所有角色
      */
-    @ManyToMany(() => RoleEntity)
-    roles: RoleEntity[];
+    @ManyToMany(() => Role)
+    roles: Role[];
 }

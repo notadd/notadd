@@ -2,7 +2,7 @@ import { Entity, PrimaryGeneratedColumn, Column, UpdateDateColumn, CreateDateCol
 @Entity({
     name: 'organization'
 })
-export class OrganizationEntity {
+export class Organization {
     @PrimaryGeneratedColumn({
         type: 'int'
     })

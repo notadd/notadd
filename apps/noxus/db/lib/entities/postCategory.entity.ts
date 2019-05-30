@@ -1,9 +1,9 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn } from 'typeorm';
 
 @Entity({
-    name: 'postCategory'
+    name: 'post_category'
 })
-export class PostCategoryEntity {
+export class PostCategory {
     @PrimaryGeneratedColumn()
     post_post_category_idid: number;
 

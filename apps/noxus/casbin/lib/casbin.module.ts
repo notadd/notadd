@@ -1,7 +1,6 @@
-import { MagnusClientModule } from '@notadd/magnus-client'
 import { Module } from '@nestjs/common';
+import { MagnusClientModule, getConfig } from '@notadd/magnus-client'
 import { join } from 'path';
-import { getConfig } from '@notadd/magnus-client'
 const options = getConfig();
 @Module({
     imports: [
@@ -9,9 +8,9 @@ const options = getConfig();
             inputGolb: join(__dirname, '/**/*.ts'),
             outputPath: __dirname,
             apollo: {
-                uri: `http://${options.magnusHost}:${options.magnusPort}`
+                uri: `http://${options.host}:${options.magnusPort}`
             }
         })
     ]
 })
-export class CmsModule { }
+export class CasbinModule { }

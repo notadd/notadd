@@ -1,12 +1,12 @@
 import { Entity, PrimaryGeneratedColumn, Column,OneToOne, CreateDateColumn, UpdateDateColumn, ManyToOne, OneToMany, JoinColumn } from "typeorm";
-import { ArticleEntity } from './article.entity';
+import { Article } from './article.entity';
 /**
  * 文章分类表
  */
 @Entity({
     name: 'article_category'
 })
-export class ArticleCategoryEntity {
+export class ArticleCategory {
 
     @PrimaryGeneratedColumn()
     article_category_id: number;
@@ -34,23 +34,23 @@ export class ArticleCategoryEntity {
     /**
      * 分类的上级
      */
-    @ManyToOne(() => ArticleCategoryEntity, type => type.children)
+    @ManyToOne(() => ArticleCategory, type => type.children)
     @JoinColumn({
         name: 'pid',
     })
-    parent: ArticleCategoryEntity;
+    parent: ArticleCategory;
 
     /**
      * 分类下面的子分类
      */
-    @OneToMany(() => ArticleCategoryEntity, type => type.parent)
-    children: ArticleCategoryEntity[];
+    @OneToMany(() => ArticleCategory, type => type.parent)
+    children: ArticleCategory[];
 
     /**
      * 分类下面的文章
      */
-    @OneToMany(() => ArticleEntity, type => type.category)
-    articles: ArticleEntity[];
+    @OneToMany(() => Article, type => type.category)
+    articles: Article[];
 
     @Column({
         type: 'text',

@@ -1,9 +1,9 @@
 import { Column, JoinTable, Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, ManyToMany } from 'typeorm';
-import { PermissionEntity } from './permission.entity';
+import { Permission } from './permission.entity';
 @Entity({
     name: 'addon'
 })
-export class AddonEntity {
+export class Addon {
     @PrimaryGeneratedColumn()
     appid: number;
 
@@ -66,8 +66,8 @@ export class AddonEntity {
      * 一个应用有多个权限
      * 一个权限也可以有多个应用
      */
-    @ManyToMany(() => PermissionEntity)
+    @ManyToMany(() => Permission)
     @JoinTable()
-    permissions: PermissionEntity[];
+    permissions: Permission[];
 }
 

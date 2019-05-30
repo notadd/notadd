@@ -1,10 +1,10 @@
 import { NestFactory } from '@nestjs/core';
-import { CmsModule } from './cms.module';
+import { CasbinModule } from './casbin.module';
 import { Transport } from '@nestjs/common/enums/transport.enum';
 import { getConfig } from '@notadd/magnus-client'
-const options = getConfig();
 export async function bootstrap() {
-    const app = await NestFactory.create(CmsModule, { bodyParser: false });
+    const app = await NestFactory.create(CasbinModule, { bodyParser: false });
+    const options = getConfig();
     app.connectMicroservice({
         transport: Transport.GRPC,
         options: {

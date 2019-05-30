@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { MagnusServerModule } from '@notadd/magnus';
-import { } from '@noxus/db';
+import entities from '@noxus/db';
 @Module({
     imports: [
         MagnusServerModule.forRoot({
@@ -9,7 +9,8 @@ import { } from '@noxus/db';
             port: 5432,
             username: 'magnus',
             password: 'magnus',
-            database: 'magnus'
+            database: 'magnus',
+            entities
         })
     ]
 })

@@ -4,5 +4,10 @@
         "**/node_modules/**": true,
         "**/attachment/**": true,
         "**/.temp/**": true
+    },
+    "files.exclude": {
+        "**/*.js": true,
+        "**/*.d.ts": true,
+        "**/*.js.map": true
     }
 }

@@ -35,9 +35,15 @@
 		"@nestjs/graphql": "^6.2.1",
 		"@nestjs/microservices": "^6.2.4",
 		"@nestjs/platform-express": "^6.2.4",
+<<<<<<< HEAD
 		"@notadd/magnus": "^0.0.22",
 		"@notadd/magnus-client": "^0.0.21",
 		"apollo-boost": "^0.3.1",
+=======
+		"@notadd/magnus": "^0.0.23",
+		"@notadd/magnus-client": "^0.0.23",
+		"apollo-boost": "^0.4.0",
+>>>>>>> 98ac90e3327b8e33b0329c635b2491c4f9462f39
 		"apollo-server": "^2.5.0",
 		"apollo-server-express": "^2.5.0",
 		"cross-env": "^5.2.0",

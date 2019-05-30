@@ -1,0 +1,19 @@
+{
+  "name": "notadd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "create.libs": "lerna create name libs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/notadd/notadd.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/notadd/notadd/issues"
+  },
+  "homepage": "https://github.com/notadd/notadd#readme"
+}

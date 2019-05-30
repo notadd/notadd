@@ -1,20 +1,20 @@
 import { Entity, JoinColumn, PrimaryGeneratedColumn, Column, OneToOne, UpdateDateColumn, CreateDateColumn } from 'typeorm';
-import { AccessTokenEntity } from './accessToken.entity';
+import { AccessToken } from './accessToken.entity';
 
 @Entity({
     name: 'refreshToken'
 })
-export class RefreshTokenEntity {
+export class RefreshToken {
     @PrimaryGeneratedColumn({
         type: 'int'
     })
     refresh_token_id: number;
 
-    @OneToOne(() => AccessTokenEntity, type => type.refreshToken)
+    @OneToOne(() => AccessToken, type => type.refreshToken)
     @JoinColumn({
         name: 'token_id'
     })
-    token: AccessTokenEntity;
+    token: AccessToken;
 
     @Column({
         type: 'varchar',

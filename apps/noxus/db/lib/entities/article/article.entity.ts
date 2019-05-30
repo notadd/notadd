@@ -1,13 +1,13 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToOne, OneToMany, OneToOne, JoinColumn } from 'typeorm';
-import { ArticleCategoryEntity } from './articleCategory.entity';
-import { ArticleCommentEntity } from './articleComment.entity';
+import { ArticleCategory } from './articleCategory.entity';
+import { ArticleComment } from './articleComment.entity';
 /**
  * 文章表
  */
 @Entity({
     name: 'article',
 })
-export class ArticleEntity {
+export class Article {
     @PrimaryGeneratedColumn()
     article_id: number;
 
@@ -40,17 +40,17 @@ export class ArticleEntity {
     /**
      * 文章的类型
      */
-    @ManyToOne(() => ArticleCategoryEntity, type => type.article_category_id)
+    @ManyToOne(() => ArticleCategory, type => type.article_category_id)
     @JoinColumn({
         name: 'article_cateogry_id'
     })
-    category: ArticleCategoryEntity;
+    category: ArticleCategory;
 
     /**
      * 文章下面的评论
      */
-    @OneToMany(() => ArticleCommentEntity, type => type.article)
-    comments: ArticleCommentEntity[];
+    @OneToMany(() => ArticleComment, type => type.article)
+    comments: ArticleComment[];
 
     @CreateDateColumn({
         type: 'timestamptz'

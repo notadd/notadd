@@ -3,7 +3,7 @@ import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateCol
 @Entity({
     name: 'tasks'
 })
-export class PostEntity {
+export class Post {
     @PrimaryGeneratedColumn()
     post_id: number;
 

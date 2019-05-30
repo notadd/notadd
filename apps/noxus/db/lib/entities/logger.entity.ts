@@ -3,7 +3,7 @@ import { Entity, PrimaryGeneratedColumn, Column, Timestamp, CreateDateColumn } f
 @Entity({
     name: 'logger'
 })
-export class LoggerEntity {
+export class Logger {
 
     @PrimaryGeneratedColumn({
         type: 'int'

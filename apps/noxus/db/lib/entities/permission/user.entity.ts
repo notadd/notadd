@@ -1,11 +1,11 @@
 import { Column, CreateDateColumn, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
-import { OrganizationEntity } from './organization.entity';
-import { PermissionEntity } from './permission.entity';
-import { RoleEntity } from './role.entity';
+import { Organization } from './organization.entity';
+import { Permission } from './permission.entity';
+import { Role } from './role.entity';
 @Entity({
     name: 'user'
 })
-export class UserEntity {
+export class User {
 
     @PrimaryGeneratedColumn()
     user_id: number;
@@ -101,19 +101,19 @@ export class UserEntity {
     /**
      * 用户拥有的权限，一个用户可以有多个权限
      */
-    @ManyToMany(() => PermissionEntity)
+    @ManyToMany(() => Permission)
     @JoinTable()
-    permissions: PermissionEntity[];
+    permissions: Permission[];
     /**
      * 用户拥有的角色，一个用户可以分配多个角色
      */
-    @ManyToMany(() => OrganizationEntity)
+    @ManyToMany(() => Organization)
     @JoinTable()
-    roles: RoleEntity[];
+    roles: Role[];
     /**
      * 用户所属组织，一个用户可以有多个组织，
      */
-    @ManyToMany(() => OrganizationEntity)
+    @ManyToMany(() => Organization)
     @JoinTable()
-    organizations: OrganizationEntity[];
+    organizations: Organization[];
 }

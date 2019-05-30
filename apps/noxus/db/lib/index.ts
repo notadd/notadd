@@ -1,46 +1,46 @@
-import { AddonEntity } from './entities/permission/addon.entity'
-import { LoggerEntity } from './entities/logger.entity'
-import { OrganizationEntity } from './entities/permission/organization.entity'
-import { PermissionEntity } from './entities/permission/permission.entity'
-import { RefreshTokenEntity } from './entities/token/refreshToken.entity'
-import { RoleEntity } from './entities/permission/role.entity'
-import { UserEntity } from './entities/permission/user.entity'
-import { AccessTokenEntity, EXPRES_TIME } from './entities/token/accessToken.entity'
-import { ArticleEntity } from './entities/article/article.entity';
-import { ArticleCategoryEntity } from './entities/article/articleCategory.entity';
-import { ArticleCommentEntity } from './entities/article/articleComment.entity';
-import { MemberEntity } from './entities/member.entity';
-import { PostEntity } from './entities/post.entity';
-import { PostCategoryEntity } from './entities/postCategory.entity';
+import { Addon } from './entities/permission/addon.entity'
+import { Logger } from './entities/logger.entity'
+import { Organization } from './entities/permission/organization.entity'
+import { Permission } from './entities/permission/permission.entity'
+import { RefreshToken } from './entities/token/refreshToken.entity'
+import { Role } from './entities/permission/role.entity'
+import { User } from './entities/permission/user.entity'
+import { AccessToken, EXPRES_TIME } from './entities/token/accessToken.entity'
+import { Article } from './entities/article/article.entity';
+import { ArticleCategory } from './entities/article/articleCategory.entity';
+import { ArticleComment } from './entities/article/articleComment.entity';
+import { Member } from './entities/member.entity';
+import { Post } from './entities/post.entity';
+import { PostCategory } from './entities/postCategory.entity';
 
-export { AddonEntity } from './entities/permission/addon.entity'
-export { LoggerEntity } from './entities/logger.entity'
-export { OrganizationEntity } from './entities/permission/organization.entity'
-export { PermissionEntity } from './entities/permission/permission.entity'
-export { RefreshTokenEntity } from './entities/token/refreshToken.entity'
-export { RoleEntity } from './entities/permission/role.entity'
-export { UserEntity } from './entities/permission/user.entity'
-export { AccessTokenEntity, EXPRES_TIME } from './entities/token/accessToken.entity'
-export { ArticleEntity } from './entities/article/article.entity';
-export { ArticleCategoryEntity } from './entities/article/articleCategory.entity';
-export { ArticleCommentEntity } from './entities/article/articleComment.entity';
-export { MemberEntity } from './entities/member.entity';
-export { PostEntity } from './entities/post.entity';
-export { PostCategoryEntity } from './entities/postCategory.entity';
+export { Addon } from './entities/permission/addon.entity'
+export { Logger } from './entities/logger.entity'
+export { Organization } from './entities/permission/organization.entity'
+export { Permission } from './entities/permission/permission.entity'
+export { RefreshToken } from './entities/token/refreshToken.entity'
+export { Role } from './entities/permission/role.entity'
+export { User } from './entities/permission/user.entity'
+export { AccessToken, EXPRES_TIME } from './entities/token/accessToken.entity'
+export { Article } from './entities/article/article.entity';
+export { ArticleCategory } from './entities/article/articleCategory.entity';
+export { ArticleComment } from './entities/article/articleComment.entity';
+export { Member } from './entities/member.entity';
+export { Post } from './entities/post.entity';
+export { PostCategory } from './entities/postCategory.entity';
 
 export default [
-    AddonEntity,
-    LoggerEntity,
-    OrganizationEntity,
-    PermissionEntity,
-    RefreshTokenEntity,
-    RoleEntity,
-    UserEntity,
-    AccessTokenEntity,
-    ArticleEntity,
-    ArticleCategoryEntity,
-    ArticleCommentEntity,
-    MemberEntity,
-    PostEntity,
-    PostCategoryEntity
+    Addon,
+    Logger,
+    Organization,
+    Permission,
+    RefreshToken,
+    Role,
+    User,
+    AccessToken,
+    Article,
+    ArticleCategory,
+    ArticleComment,
+    Member,
+    Post,
+    PostCategory
 ]

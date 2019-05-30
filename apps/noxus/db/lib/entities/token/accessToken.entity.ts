@@ -1,11 +1,11 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToOne, CreateDateColumn, UpdateDateColumn, JoinColumn } from 'typeorm';
-import { RefreshTokenEntity } from './refreshToken.entity';
+import { RefreshToken } from './refreshToken.entity';
 export const EXPRES_TIME = 60 * 60 * 24;
 
 @Entity({
     name: 'accessToken'
 })
-export class AccessTokenEntity {
+export class AccessToken {
     @PrimaryGeneratedColumn({
         type: 'bigint'
     })
@@ -89,6 +89,6 @@ export class AccessTokenEntity {
     /**
      * 刷新凭证
      */
-    @OneToOne(() => RefreshTokenEntity, type => type.token)
-    refreshToken: RefreshTokenEntity;
+    @OneToOne(() => RefreshToken, type => type.token)
+    refreshToken: RefreshToken;
 }

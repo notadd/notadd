@@ -1,12 +1,12 @@
 import { Entity, Tree, JoinColumn, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToOne, OneToOne, OneToMany } from "typeorm";
-import { ArticleEntity } from './article.entity';
+import { Article } from './article.entity';
 /**
  * 文章评论表
  */
 @Entity({
     name: 'article_comment'
 })
-export class ArticleCommentEntity {
+export class ArticleComment {
 
     @PrimaryGeneratedColumn()
     article_comment_id: number;
@@ -20,16 +20,15 @@ export class ArticleCommentEntity {
     /**
      * 回复
      */
-    @ManyToOne(() => ArticleCommentEntity, type => type.children)
+    @ManyToOne(() => ArticleComment, type => type.children)
     @JoinColumn({
         name: 'parent_id'
     })
-    parent: ArticleCommentEntity;
+    parent: ArticleComment;
 
 
-    @OneToMany(() => ArticleCommentEntity, type => type.parent)
-    children: ArticleCommentEntity[];
-
+    @OneToMany(() => ArticleComment, type => type.parent)
+    children: ArticleComment[];
 
     @Column({
         type: 'uuid',
@@ -47,9 +46,9 @@ export class ArticleCommentEntity {
     })
     update_time: Date;
 
-    @OneToOne(() => ArticleEntity, type => type.category)
+    @OneToOne(() => Article, type => type.category)
     @JoinColumn({
         name: 'article_id'
     })
-    article: ArticleEntity;
+    article: Article;
 }

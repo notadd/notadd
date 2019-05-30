@@ -1,4 +1,4 @@
 {
-	"packages": [ "apps/*" ],
+	"packages": [ "apps/noxus/*" ],
 	"version": "0.0.5"
 }

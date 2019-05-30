@@ -1,9 +1,9 @@
 {
-	"name": "@noxus/cli",
+	"name": "@noxus/device",
 	"version": "0.0.5",
 	"description": "> TODO: description",
 	"author": "imeepos <1037483576@qq.com>",
-	"homepage": "https://github.com/notadd/notadd/tree/master/libs/cli#readme",
+	"homepage": "https://github.com/notadd/notadd/tree/master/noxus/device#readme",
 	"license": "ISC",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",

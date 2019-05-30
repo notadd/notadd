@@ -1,0 +1,27 @@
+{
+  "name": "@noxus/db",
+  "version": "0.0.5",
+  "description": "> TODO: description",
+  "author": "imeepos <1037483576@qq.com>",
+  "homepage": "https://github.com/notadd/notadd/tree/master/apps/noxus/db#readme",
+  "license": "ISC",
+  "main": "lib/index.js",
+	"typings": "lib/index.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/notadd/notadd.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/notadd/notadd/issues"
+  }
+}

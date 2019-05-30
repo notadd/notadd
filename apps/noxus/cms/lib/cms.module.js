@@ -17,7 +17,8 @@ CmsModule = tslib_1.__decorate([
                 inputGolb: path_1.join(__dirname, '/**/*.ts'),
                 outputPath: __dirname,
                 apollo: {
-                    uri: `http://${options.magnusHost}:${options.magnusPort}`
+                    uri: `http://${options.magnusHost}:${options.magnusPort}`,
+                    fetch: require('node-fetch')
                 }
             })
         ],

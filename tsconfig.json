@@ -12,6 +12,8 @@
     "strict": false,
     "target": "esnext",
     "module": "commonjs",
+    "allowJs": true,
+    "checkJs": true,
     "typeRoots": [
       "node_modules/@types"
     ],

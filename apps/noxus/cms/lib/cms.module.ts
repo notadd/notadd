@@ -11,7 +11,8 @@ const options = getConfig();
             inputGolb: join(__dirname, '/**/*.ts'),
             outputPath: __dirname,
             apollo: {
-                uri: `http://${options.magnusHost}:${options.magnusPort}`
+                uri: `http://${options.magnusHost}:${options.magnusPort}`,
+                fetch: require('node-fetch')
             }
         })
     ],

@@ -14,4 +14,4 @@ import entities from '@noxus/db';
         })
     ]
 })
-export class AppModule { }
+export class ApplicationModule { }

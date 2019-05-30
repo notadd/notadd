@@ -1,27 +1,27 @@
 import { Controller } from "@nestjs/common";
-import { Resolver, Mutation, Args, Info } from '@nestjs/graphql';
-import { MagnusClient, gql} from '@notadd/magnus-client'
+import { Args, Mutation, Resolver } from '@nestjs/graphql';
 import { GrpcMethod } from '@nestjs/microservices';
-import { Observable, of } from 'rxjs';
+import { Article } from '@noxus/db';
+import { Observable, of, from } from 'rxjs';
+import { ArticleService } from '../service/article.service';
+import { map } from 'rxjs/operators';
 @Resolver()
 @Controller()
 export class ArticleController {
     constructor(
-        public mangusClient: MagnusClient,
+        public articleService: ArticleService,
     ) { }
 
-    @GrpcMethod()
     @Mutation()
-    insertArticle(@Args() args: any): Observable<any> {
-        this.mangusClient.mutate({
-            mutation: gql`
-            insertArticle(){
-    
-    
-            }
-            `,
-            variables:{}
-        })
-        return of('123');
+    @GrpcMethod()
+    articleFindOne(@Args() article: Article): Observable<any> {
+        return from(this.articleService.articleFindOne(article))
+            .pipe(
+                map(res => {
+                    return {
+                        res
+                    }
+                })
+            )
     }
 }

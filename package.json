@@ -1,32 +1,32 @@
 {
-  "name": "notadd",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "create.libs": "lerna create name libs"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/notadd/notadd.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/notadd/notadd/issues"
-  },
-  "homepage": "https://github.com/notadd/notadd#readme",
-  "devDependencies": {
-    "@types/node": "^12.0.3",
-    "ts-node": "^8.2.0",
-    "typescript": "^3.5.1"
-  },
-  "dependencies": {
-    "@nestjs/common": "^6.2.4",
-    "@nestjs/core": "^6.2.4",
-    "@notadd/magnus": "^0.0.19",
-    "@notadd/magnus-client": "^0.0.19",
-    "apollo-boost": "^0.4.0",
-    "typeorm": "^0.2.17"
-  }
+	"name": "notadd",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start.magnus": "ts-node"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/notadd/notadd.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/notadd/notadd/issues"
+	},
+	"homepage": "https://github.com/notadd/notadd#readme",
+	"devDependencies": {
+		"@types/node": "^12.0.3",
+		"ts-node": "^8.2.0",
+		"typescript": "^3.5.1"
+	},
+	"dependencies": {
+		"@nestjs/common": "^6.2.4",
+		"@nestjs/core": "^6.2.4",
+		"@notadd/magnus": "^0.0.19",
+		"@notadd/magnus-client": "^0.0.19",
+		"apollo-boost": "^0.4.0",
+		"typeorm": "^0.2.17"
+	}
 }

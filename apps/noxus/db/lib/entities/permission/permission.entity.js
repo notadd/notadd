@@ -8,29 +8,29 @@ const user_entity_1 = require("./user.entity");
 /**
  * 应用权限表
  */
-let PermissionEntity = class PermissionEntity {
+let Permission = class Permission {
 };
 tslib_1.__decorate([
     typeorm_1.PrimaryGeneratedColumn(),
     tslib_1.__metadata("design:type", Number)
-], PermissionEntity.prototype, "id", void 0);
+], Permission.prototype, "id", void 0);
 tslib_1.__decorate([
     typeorm_1.Column(),
     tslib_1.__metadata("design:type", String)
-], PermissionEntity.prototype, "name", void 0);
+], Permission.prototype, "name", void 0);
 tslib_1.__decorate([
     typeorm_1.Column({
         type: 'varchar'
     }),
     tslib_1.__metadata("design:type", String)
-], PermissionEntity.prototype, "father_name", void 0);
+], Permission.prototype, "father_name", void 0);
 tslib_1.__decorate([
     typeorm_1.Column({
         type: 'varchar',
         length: 255
     }),
     tslib_1.__metadata("design:type", String)
-], PermissionEntity.prototype, "title", void 0);
+], Permission.prototype, "title", void 0);
 tslib_1.__decorate([
     typeorm_1.Column({
         type: 'varchar',
@@ -38,14 +38,14 @@ tslib_1.__decorate([
         default: ''
     }),
     tslib_1.__metadata("design:type", String)
-], PermissionEntity.prototype, "decription", void 0);
+], Permission.prototype, "decription", void 0);
 tslib_1.__decorate([
     typeorm_1.Column({
         type: "varchar",
         length: 255
     }),
     tslib_1.__metadata("design:type", Array)
-], PermissionEntity.prototype, "value", void 0);
+], Permission.prototype, "value", void 0);
 tslib_1.__decorate([
     typeorm_1.Column({
         type: 'varchar',
@@ -53,7 +53,7 @@ tslib_1.__decorate([
         default: ''
     }),
     tslib_1.__metadata("design:type", String)
-], PermissionEntity.prototype, "icon", void 0);
+], Permission.prototype, "icon", void 0);
 tslib_1.__decorate([
     typeorm_1.Column({
         type: 'smallint',
@@ -61,42 +61,42 @@ tslib_1.__decorate([
     }),
     typeorm_1.Index(),
     tslib_1.__metadata("design:type", Number)
-], PermissionEntity.prototype, "status", void 0);
+], Permission.prototype, "status", void 0);
 tslib_1.__decorate([
     typeorm_1.Column({
         type: 'int',
         default: 0
     }),
     tslib_1.__metadata("design:type", Number)
-], PermissionEntity.prototype, "displayorder", void 0);
+], Permission.prototype, "displayorder", void 0);
 tslib_1.__decorate([
     typeorm_1.CreateDateColumn({
         type: 'timestamptz'
     }),
     tslib_1.__metadata("design:type", Date)
-], PermissionEntity.prototype, "create_time", void 0);
+], Permission.prototype, "create_time", void 0);
 tslib_1.__decorate([
     typeorm_1.UpdateDateColumn({
         type: 'timestamptz'
     }),
     tslib_1.__metadata("design:type", Date)
-], PermissionEntity.prototype, "update_time", void 0);
+], Permission.prototype, "update_time", void 0);
 tslib_1.__decorate([
-    typeorm_1.ManyToMany(() => addon_entity_1.AddonEntity),
+    typeorm_1.ManyToMany(() => addon_entity_1.Addon),
     tslib_1.__metadata("design:type", Array)
-], PermissionEntity.prototype, "addons", void 0);
+], Permission.prototype, "addons", void 0);
 tslib_1.__decorate([
-    typeorm_1.ManyToMany(() => user_entity_1.UserEntity),
+    typeorm_1.ManyToMany(() => user_entity_1.User),
     tslib_1.__metadata("design:type", Array)
-], PermissionEntity.prototype, "users", void 0);
+], Permission.prototype, "users", void 0);
 tslib_1.__decorate([
-    typeorm_1.ManyToMany(() => role_entity_1.RoleEntity),
+    typeorm_1.ManyToMany(() => role_entity_1.Role),
     tslib_1.__metadata("design:type", Array)
-], PermissionEntity.prototype, "roles", void 0);
-PermissionEntity = tslib_1.__decorate([
+], Permission.prototype, "roles", void 0);
+Permission = tslib_1.__decorate([
     typeorm_1.Entity({
         name: 'permission'
     })
-], PermissionEntity);
-exports.PermissionEntity = PermissionEntity;
+], Permission);
+exports.Permission = Permission;
 //# sourceMappingURL=permission.entity.js.map

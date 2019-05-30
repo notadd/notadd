@@ -8,6 +8,7 @@ const config: ConnectionOptions = {
     username: 'magnus',
     password: 'magnus',
     database: 'magnus',
+    synchronize: true,
     ...process.env
 }
 @Module({

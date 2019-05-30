@@ -1,8 +1,8 @@
 import { MagnusClient, gql } from '@notadd/magnus-client'
-import { ArticleEntity } from '@noxus/db';
+import { Article } from '@noxus/db';
 export class ArticleService {
     constructor(
-        public client: MagnusClient<ArticleEntity>
+        public client: MagnusClient<Article>
     ) { }
 
     // async insertArticle(article: ArticleEntity): Promise<ArticleEntity> {
@@ -19,7 +19,7 @@ export class ArticleService {
     //     this.client.insertA
     // }
 
-    async findOneArticle(article: ArticleEntity): Promise<any> {
+    async findOneArticle(where: Partial<Article>): Promise<any> {
         const result = this.client.query({
             query: gql`
             articleEntityFindOne(options: $options){
@@ -32,7 +32,7 @@ export class ArticleService {
             variables: {
                 "options": {
                     "where": {
-                        "article_id": article.article_id,
+                        "article_id": where.article_id,
                     }
                 }
             }

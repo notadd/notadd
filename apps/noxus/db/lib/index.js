@@ -15,48 +15,48 @@ const member_entity_1 = require("./entities/member.entity");
 const post_entity_1 = require("./entities/post.entity");
 const postCategory_entity_1 = require("./entities/postCategory.entity");
 var addon_entity_2 = require("./entities/permission/addon.entity");
-exports.AddonEntity = addon_entity_2.AddonEntity;
+exports.Addon = addon_entity_2.Addon;
 var logger_entity_2 = require("./entities/logger.entity");
-exports.LoggerEntity = logger_entity_2.LoggerEntity;
+exports.Logger = logger_entity_2.Logger;
 var organization_entity_2 = require("./entities/permission/organization.entity");
-exports.OrganizationEntity = organization_entity_2.OrganizationEntity;
+exports.Organization = organization_entity_2.Organization;
 var permission_entity_2 = require("./entities/permission/permission.entity");
-exports.PermissionEntity = permission_entity_2.PermissionEntity;
+exports.Permission = permission_entity_2.Permission;
 var refreshToken_entity_2 = require("./entities/token/refreshToken.entity");
-exports.RefreshTokenEntity = refreshToken_entity_2.RefreshTokenEntity;
+exports.RefreshToken = refreshToken_entity_2.RefreshToken;
 var role_entity_2 = require("./entities/permission/role.entity");
-exports.RoleEntity = role_entity_2.RoleEntity;
+exports.Role = role_entity_2.Role;
 var user_entity_2 = require("./entities/permission/user.entity");
-exports.UserEntity = user_entity_2.UserEntity;
+exports.User = user_entity_2.User;
 var accessToken_entity_2 = require("./entities/token/accessToken.entity");
-exports.AccessTokenEntity = accessToken_entity_2.AccessTokenEntity;
+exports.AccessToken = accessToken_entity_2.AccessToken;
 exports.EXPRES_TIME = accessToken_entity_2.EXPRES_TIME;
 var article_entity_2 = require("./entities/article/article.entity");
-exports.ArticleEntity = article_entity_2.ArticleEntity;
+exports.Article = article_entity_2.Article;
 var articleCategory_entity_2 = require("./entities/article/articleCategory.entity");
-exports.ArticleCategoryEntity = articleCategory_entity_2.ArticleCategoryEntity;
+exports.ArticleCategory = articleCategory_entity_2.ArticleCategory;
 var articleComment_entity_2 = require("./entities/article/articleComment.entity");
-exports.ArticleCommentEntity = articleComment_entity_2.ArticleCommentEntity;
+exports.ArticleComment = articleComment_entity_2.ArticleComment;
 var member_entity_2 = require("./entities/member.entity");
-exports.MemberEntity = member_entity_2.MemberEntity;
+exports.Member = member_entity_2.Member;
 var post_entity_2 = require("./entities/post.entity");
-exports.PostEntity = post_entity_2.PostEntity;
+exports.Post = post_entity_2.Post;
 var postCategory_entity_2 = require("./entities/postCategory.entity");
-exports.PostCategoryEntity = postCategory_entity_2.PostCategoryEntity;
+exports.PostCategory = postCategory_entity_2.PostCategory;
 exports.default = [
-    addon_entity_1.AddonEntity,
-    logger_entity_1.LoggerEntity,
-    organization_entity_1.OrganizationEntity,
-    permission_entity_1.PermissionEntity,
-    refreshToken_entity_1.RefreshTokenEntity,
-    role_entity_1.RoleEntity,
-    user_entity_1.UserEntity,
-    accessToken_entity_1.AccessTokenEntity,
-    article_entity_1.ArticleEntity,
-    articleCategory_entity_1.ArticleCategoryEntity,
-    articleComment_entity_1.ArticleCommentEntity,
-    member_entity_1.MemberEntity,
-    post_entity_1.PostEntity,
-    postCategory_entity_1.PostCategoryEntity
+    addon_entity_1.Addon,
+    logger_entity_1.Logger,
+    organization_entity_1.Organization,
+    permission_entity_1.Permission,
+    refreshToken_entity_1.RefreshToken,
+    role_entity_1.Role,
+    user_entity_1.User,
+    accessToken_entity_1.AccessToken,
+    article_entity_1.Article,
+    articleCategory_entity_1.ArticleCategory,
+    articleComment_entity_1.ArticleComment,
+    member_entity_1.Member,
+    post_entity_1.Post,
+    postCategory_entity_1.PostCategory
 ];
 //# sourceMappingURL=index.js.map

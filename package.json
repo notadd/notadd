@@ -4,8 +4,9 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"start.magnus": "ts-node -P ./tsconfig.json -r ts-node/register -r tsconfig-paths/register apps/noxus/magnus/lib/main.ts",
-		"start.src": "ts-node -r ts-node/register -r tsconfig-paths/register src/index.ts"
+		"start.magnus": "yarn tsc && ts-node -P ./tsconfig.json -r ts-node/register -r tsconfig-paths/register apps/noxus/magnus/lib/main.ts",
+		"start.src": "ts-node -r ts-node/register -r tsconfig-paths/register src/index.ts",
+		"tsc": "tsc -p tsconfig.json"
 	},
 	"repository": {
 		"type": "git",
@@ -29,6 +30,8 @@
 	"dependencies": {
 		"@nestjs/common": "^6.2.4",
 		"@nestjs/core": "^6.2.4",
+		"@nestjs/graphql": "^6.2.1",
+		"@nestjs/microservices": "^6.2.4",
 		"@nestjs/platform-express": "^6.2.4",
 		"@notadd/magnus": "^0.0.21",
 		"@notadd/magnus-client": "^0.0.21",

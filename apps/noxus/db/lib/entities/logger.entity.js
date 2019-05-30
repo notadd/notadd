@@ -2,14 +2,14 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const typeorm_1 = require("typeorm");
-let LoggerEntity = class LoggerEntity {
+let Logger = class Logger {
 };
 tslib_1.__decorate([
     typeorm_1.PrimaryGeneratedColumn({
         type: 'int'
     }),
     tslib_1.__metadata("design:type", Number)
-], LoggerEntity.prototype, "logger_id", void 0);
+], Logger.prototype, "logger_id", void 0);
 tslib_1.__decorate([
     typeorm_1.Column({
         type: 'text',
@@ -17,7 +17,7 @@ tslib_1.__decorate([
         default: ''
     }),
     tslib_1.__metadata("design:type", String)
-], LoggerEntity.prototype, "description", void 0);
+], Logger.prototype, "description", void 0);
 tslib_1.__decorate([
     typeorm_1.Column({
         type: 'varchar',
@@ -25,21 +25,21 @@ tslib_1.__decorate([
         default: ''
     }),
     tslib_1.__metadata("design:type", String)
-], LoggerEntity.prototype, "openid", void 0);
+], Logger.prototype, "openid", void 0);
 tslib_1.__decorate([
     typeorm_1.Column({
         type: 'timestamp',
         comment: '开始时间'
     }),
     tslib_1.__metadata("design:type", Date)
-], LoggerEntity.prototype, "start_time", void 0);
+], Logger.prototype, "start_time", void 0);
 tslib_1.__decorate([
     typeorm_1.Column({
         type: 'timestamp',
         comment: '结束时间'
     }),
     tslib_1.__metadata("design:type", Date)
-], LoggerEntity.prototype, "end_time", void 0);
+], Logger.prototype, "end_time", void 0);
 tslib_1.__decorate([
     typeorm_1.Column({
         type: 'varchar',
@@ -47,7 +47,7 @@ tslib_1.__decorate([
         comment: '参数'
     }),
     tslib_1.__metadata("design:type", String)
-], LoggerEntity.prototype, "params", void 0);
+], Logger.prototype, "params", void 0);
 tslib_1.__decorate([
     typeorm_1.Column({
         type: 'varchar',
@@ -56,7 +56,7 @@ tslib_1.__decorate([
         default: ''
     }),
     tslib_1.__metadata("design:type", String)
-], LoggerEntity.prototype, "ip", void 0);
+], Logger.prototype, "ip", void 0);
 tslib_1.__decorate([
     typeorm_1.Column({
         type: 'varchar',
@@ -65,7 +65,7 @@ tslib_1.__decorate([
         default: ''
     }),
     tslib_1.__metadata("design:type", String)
-], LoggerEntity.prototype, "result", void 0);
+], Logger.prototype, "result", void 0);
 tslib_1.__decorate([
     typeorm_1.Column({
         type: 'varchar',
@@ -74,11 +74,11 @@ tslib_1.__decorate([
         default: ''
     }),
     tslib_1.__metadata("design:type", String)
-], LoggerEntity.prototype, "permissions", void 0);
-LoggerEntity = tslib_1.__decorate([
+], Logger.prototype, "permissions", void 0);
+Logger = tslib_1.__decorate([
     typeorm_1.Entity({
         name: 'logger'
     })
-], LoggerEntity);
-exports.LoggerEntity = LoggerEntity;
+], Logger);
+exports.Logger = Logger;
 //# sourceMappingURL=logger.entity.js.map

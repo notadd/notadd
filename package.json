@@ -23,6 +23,7 @@
 		"mocha": "^6.1.4",
 		"ts-node": "^8.2.0",
 		"tsconfig-paths": "^3.8.0",
+		"tslint": "^5.16.0",
 		"typescript": "^3.5.1"
 	},
 	"dependencies": {

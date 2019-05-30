@@ -66,15 +66,26 @@
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
 
-"@notadd/magnus-client@^0.0.19":
-  version "0.0.19"
-  resolved "https://registry.yarnpkg.com/@notadd/magnus-client/-/magnus-client-0.0.19.tgz#26364abf390bebd36c54701484960a8b37e96665"
-  integrity sha512-xgEZw7ziuv+SU4Yy/45s3ODWARcVna3kk7wWqlnzKf5BEaoAUSOVhlgJAbMWjI6mj1ycetrH9qMZFhPVxFPMyw==
+"@notadd/magnus-client@^0.0.21":
+  version "0.0.21"
+  resolved "https://registry.yarnpkg.com/@notadd/magnus-client/-/magnus-client-0.0.21.tgz#169f4819e93e01e9bb487621dd24a126bbbcc8c2"
+  integrity sha512-qdkT83rKvPdbCNQtE4iUCQv9EY0fzCq7PJSeBKYtMmjirLOGrVH3MSiJMfkxCJyof1YtBzii7LNLuGUtmte4gg==
 
-"@notadd/magnus@^0.0.19":
-  version "0.0.19"
-  resolved "https://registry.yarnpkg.com/@notadd/magnus/-/magnus-0.0.19.tgz#abd1187c0a9b4d0640dffdd9769802d2bb39dc11"
-  integrity sha512-AII9+mssZ1TQq+eHK2L/yDac4Z8/WI/+o0xsPxNjX5dezotpCLRp5rAcOb2soVcyPV5TWVKBa2XjAsyOxPax6Q==
+"@notadd/magnus@^0.0.21":
+  version "0.0.21"
+  resolved "https://registry.yarnpkg.com/@notadd/magnus/-/magnus-0.0.21.tgz#73a0eb1b2af5b14db5ce65835f72759656e5ef47"
+  integrity sha512-5/t1orGbwFlHv0I5Y41KGsSVtkY7yBeqMfOOiZE8i5KdQ2lM418QpuSPPjXel9La/S1YlfnQYYs+tBE6vQID9Q==
+  dependencies:
+    "@nestjs/common" "^6.2.4"
+    "@nestjs/core" "^6.2.4"
+    apollo-server "^2.5.0"
+    apollo-server-express "^2.5.0"
+    fs-extra "^8.0.1"
+    graphql "^14.3.1"
+    graphql-tools "^4.0.4"
+    lodash "^4.17.11"
+    pg "^7.11.0"
+    typeorm "^0.2.17"
 
 "@nuxtjs/opencollective@0.2.1":
   version "0.2.1"
@@ -1434,6 +1445,15 @@ fs-extra@^7.0.0:
     jsonfile "^4.0.0"
     universalify "^0.1.0"
 
+fs-extra@^8.0.1:
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-8.0.1.tgz#90294081f978b1f182f347a440a209154344285b"
+  integrity sha512-W+XLrggcDzlle47X/XnS7FXrXu9sDo+Ze9zpndeBxdgv88FHLm1HtmkhEwavruS6koanBjp098rUpHs65EmG7A==
+  dependencies:
+    graceful-fs "^4.1.2"
+    jsonfile "^4.0.0"
+    universalify "^0.1.0"
+
 fs.realpath@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
@@ -1540,7 +1560,7 @@ graphql-tag@^2.4.2, graphql-tag@^2.9.2:
   resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.10.1.tgz#10aa41f1cd8fae5373eaf11f1f67260a3cad5e02"
   integrity sha512-jApXqWBzNXQ8jYa/HLkZJaVw9jgwNqZkywa2zfFn16Iv1Zb7ELNHkJaXHR7Quvd5SIGsy6Ny7SUKATgnu05uEg==
 
-graphql-tools@^4.0.0:
+graphql-tools@^4.0.0, graphql-tools@^4.0.4:
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/graphql-tools/-/graphql-tools-4.0.4.tgz#ca08a63454221fdde825fe45fbd315eb2a6d566b"
   integrity sha512-chF12etTIGVVGy3fCTJ1ivJX2KB7OSG4c6UOJQuqOHCmBQwTyNgCDuejZKvpYxNZiEx7bwIjrodDgDe9RIkjlw==

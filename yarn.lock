@@ -1678,12 +1678,12 @@ apollo-angular-link-http@1.6.0:
     extract-files "5.0.1"
     tslib "^1.9.0"
 
-apollo-angular@1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/apollo-angular/-/apollo-angular-1.5.0.tgz#da653b76189fb72ea801c51996ea87fe19aa064f"
-  integrity sha512-zAyMev+bU7cdqRm2AbAH0hJqJOVRN/PpllJ+eqqA0O9dV570RUs2sGehn3dtOcwPHNRof/qrCRoWBEwGrP6hog==
+apollo-angular@1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/apollo-angular/-/apollo-angular-1.6.0.tgz#d71cce64d388f4b8e46583f3bf87802eb3458f10"
+  integrity sha512-c8wEskvbGs7n6GNOnVzax6ng4RZtBctzUk9HqqjyLO8TCH4SWGBh1zuShG/9wDqJjTJAb3EcKd5XUJxFybAXeA==
   dependencies:
-    semver "^5.5.1"
+    semver "^6.0.0"
     tslib "^1.9.0"
 
 apollo-cache-control@0.6.0:
@@ -11041,7 +11041,7 @@ semver-intersect@1.4.0:
   dependencies:
     semver "^5.0.0"
 
-"semver@2 || 3 || 4 || 5", semver@^5.0.0, semver@^5.0.1, semver@^5.0.3, semver@^5.1.0, semver@^5.3.0, semver@^5.4.1, semver@^5.5.0, semver@^5.5.1, semver@^5.6.0, semver@^5.7.0:
+"semver@2 || 3 || 4 || 5", semver@^5.0.0, semver@^5.0.1, semver@^5.0.3, semver@^5.1.0, semver@^5.3.0, semver@^5.4.1, semver@^5.5.0, semver@^5.6.0, semver@^5.7.0:
   version "5.7.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.7.0.tgz#790a7cf6fea5459bac96110b29b60412dc8ff96b"
   integrity sha512-Ya52jSX2u7QKghxeoFGpLwCtGlt7j0oY9DYb5apt9nPlJ42ID+ulTXESnt/qAQcoSERyZ5sl3LDIOw0nAn/5DA==

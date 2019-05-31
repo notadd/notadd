@@ -21,6 +21,7 @@
     "strictBindCallApply": false,
     "strictNullChecks": false,
     "strictFunctionTypes": false,
+    "allowSyntheticDefaultImports": true,
     "paths": {
       "@noxus/sso": ["apps/noxus/sso/src/index.ts"],
       "@noxus/services": ["apps/noxus/services/src/index.ts"],

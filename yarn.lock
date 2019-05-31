@@ -658,10 +658,10 @@
   resolved "https://registry.yarnpkg.com/@notadd/magnus-client/-/magnus-client-0.0.32.tgz#f322c0af3b23302791816d22f6ad3b35c1d45686"
   integrity sha512-nFSgVdu3QDagXVHWla3+asl1ObCAsmgpapM0fxz3aOEZ2iho199Al2XC0Ur3l+RSBarLjIRwT1lz1HymaTjsuQ==
 
-"@notadd/magnus@^0.0.23":
-  version "0.0.23"
-  resolved "https://registry.yarnpkg.com/@notadd/magnus/-/magnus-0.0.23.tgz#964812f0f98f16392fe3415093a47a3effa226b6"
-  integrity sha512-DwjQdqX2NqJqNSyr4eplxMbh3BAztdorw8XLYwHzhrH0JoBMqt1oFuZ4E5NqyAkheH/WCHZZZGIxoGWImBtQVQ==
+"@notadd/magnus@^0.0.32":
+  version "0.0.32"
+  resolved "https://registry.yarnpkg.com/@notadd/magnus/-/magnus-0.0.32.tgz#703fcf5be5049eecb793de7d62f033e01ab11a5e"
+  integrity sha512-d/goj4Vb65HIlxPQVlvfE+BsHsuwN6GTPNyVhcHin1Fu01BuNWsrDAisz8DRg5b6ygQuAbD4/j6N0belZsrV1A==
   dependencies:
     "@nestjs/common" "^6.2.4"
     "@nestjs/core" "^6.2.4"

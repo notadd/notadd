@@ -1,0 +1,42 @@
+{
+  "npmScope": "magnus",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": "*",
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "noxus-sso": {
+      "tags": []
+    },
+    "noxus-services": {
+      "tags": []
+    },
+    "noxus-magnus": {
+      "tags": []
+    },
+    "noxus-device": {
+      "tags": []
+    },
+    "noxus-cms": {
+      "tags": []
+    },
+    "noxus-casbin": {
+      "tags": []
+    },
+    "noxus-basic": {
+      "tags": []
+    },
+    "db": {
+      "tags": []
+    },
+    "server": {
+      "tags": []
+    },
+    "client": {
+      "tags": []
+    }
+  }
+}

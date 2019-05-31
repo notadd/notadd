@@ -7,52 +7,32 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
     "importHelpers": true,
-    "strict": false,
-    "target": "esnext",
-    "module": "commonjs",
-    "allowJs": true,
-    "checkJs": true,
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2017",
-      "dom"
-    ],
+    "target": "es2015",
+    "module": "esnext",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
+    "strict": false,
+    "strictPropertyInitialization": false,
+    "noStrictGenericChecks": true,
+    "strictBindCallApply": false,
+    "strictNullChecks": false,
+    "strictFunctionTypes": false,
     "paths": {
-      "@noxus/db": [
-        "apps/noxus/db/lib/index.ts"
-      ],
-      "@noxus/basic": [
-        "apps/noxus/basic/lib/index.ts"
-      ],
-      "@noxus/casbin": [
-        "apps/noxus/casbin/lib/index.ts"
-      ],
-      "@noxus/cms": [
-        "apps/noxus/cms/lib/index.ts"
-      ],
-      "@noxus/device": [
-        "apps/noxus/device/lib/index.ts"
-      ],
-      "@noxus/magnus": [
-        "apps/noxus/magnus/lib/index.ts"
-      ],
-      "@noxus/services": [
-        "apps/noxus/services/lib/index.ts"
-      ],
-      "@noxus/sso": [
-        "apps/noxus/sso/lib/index.ts"
-      ]
+      "@noxus/sso": ["apps/noxus/sso/src/index.ts"],
+      "@noxus/services": ["apps/noxus/services/src/index.ts"],
+      "@noxus/magnus": ["apps/noxus/magnus/src/index.ts"],
+      "@noxus/device": ["apps/noxus/device/src/index.ts"],
+      "@noxus/cms": ["apps/noxus/cms/src/index.ts"],
+      "@noxus/casbin": ["apps/noxus/casbin/src/index.ts"],
+      "@noxus/basic": ["apps/noxus/casbin/src/index.ts"],
+      "@magnus/db": ["libs/db/src/index.ts"],
+      "@magnus/server": ["libs/server/src/index.ts"],
+      "@magnus/client": ["libs/client/src/index.ts"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }

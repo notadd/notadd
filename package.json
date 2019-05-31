@@ -25,7 +25,7 @@
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
-    "commit": "git add . && git pull && git-cz"
+    "commit": "git pull && git status && git-cz"
   },
   "private": true,
   "dependencies": {

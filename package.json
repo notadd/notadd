@@ -71,7 +71,7 @@
     "@notadd/scss": "file:libs/scss",
     "@nrwl/nx": "7.8.6",
     "@types/lodash": "4.14.129",
-    "apollo-angular": "1.5.0",
+    "apollo-angular": "1.6.0",
     "apollo-angular-link-http": "1.6.0",
     "apollo-cache-inmemory": "1.5.1",
     "apollo-client": "2.5.1",

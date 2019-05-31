@@ -1,7 +1,7 @@
 import { Addon, Permission, Role, User, Organization } from './entities/permission.entity'
 import { Article, ArticleCategory, ArticleComment } from './entities/article.entity';
 import { RefreshToken, AccessToken } from './entities/token.entity'
-
+import { DeviceIp, Device, DeviceCategory } from './entities/device.entity';
 import { Logger } from './entities/logger.entity'
 import { Member } from './entities/member.entity';
 import { Post } from './entities/post.entity';
@@ -14,6 +14,7 @@ export { Article, ArticleCategory, ArticleComment } from './entities/article.ent
 export { Member } from './entities/member.entity';
 export { Post } from './entities/post.entity';
 export { PostCategory } from './entities/postCategory.entity';
+export { DeviceIp, Device, DeviceCategory } from './entities/device.entity';
 
 export default [
     Addon,
@@ -29,5 +30,8 @@ export default [
     ArticleComment,
     Member,
     Post,
-    PostCategory
+    PostCategory,
+    DeviceIp,
+    Device,
+    DeviceCategory
 ]

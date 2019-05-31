@@ -2,7 +2,7 @@
 
 This project was generated using [Nx](https://nx.dev).
 
-<p align="center"><img src="./namespace.svg" width="450"></p>
+<p align="center"><img src="./namespace.svg" width="650"></p>
 
 🔎 **Nx is a set of Angular CLI power-ups for modern development.**
 

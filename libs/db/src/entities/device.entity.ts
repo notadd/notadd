@@ -1,11 +1,29 @@
 import { Entity, OneToOne, JoinColumn, PrimaryGeneratedColumn, OneToMany, Column, ManyToOne } from 'typeorm'
-
+export interface IDeviceCategory{
+    device_category_id: number;
+    title: string;
+    devices: IDevice[];
+}
+export interface IDeviceIp{
+    device: IDevice
+    ip: string;
+}
+export interface IDevice{
+    device_id: number;
+    deviceNum: string;
+    category: IDeviceCategory;
+    ip: IDeviceIp;
+}
 @Entity({
     name: 'device_ip'
 })
 export class DeviceIp {
+
+    @PrimaryGeneratedColumn()
+    device_ip_id: number;
+
     @OneToOne(() => Device)
-    device: Device
+    device: IDevice
 
     @Column()
     ip: string;
@@ -23,10 +41,10 @@ export class Device {
 
     @ManyToOne(() => DeviceCategory, type => type.devices)
     @JoinColumn()
-    category: DeviceCategory;
+    category: IDeviceCategory;
 
     @OneToOne(() => DeviceIp)
-    ip: DeviceIp;
+    ip: IDeviceIp;
 }
 
 @Entity({
@@ -41,5 +59,5 @@ export class DeviceCategory {
     title: string;
 
     @OneToMany(() => Device, type => type.category)
-    devices: Device[];
+    devices: IDevice[];
 }

@@ -653,10 +653,10 @@
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
 
-"@notadd/magnus-client@^0.0.30":
-  version "0.0.30"
-  resolved "https://registry.yarnpkg.com/@notadd/magnus-client/-/magnus-client-0.0.30.tgz#a3296b5393c16e6ffd736b02a69d061c68169120"
-  integrity sha512-4Y3wSrxnvM5Ed1iHo3GKP5reKYt/NdmY4s50dxREHdElPa+mSU9l7RXmH8k1njHIT2seL7dKj76VCcBfeDZ4IQ==
+"@notadd/magnus-client@^0.0.32":
+  version "0.0.32"
+  resolved "https://registry.yarnpkg.com/@notadd/magnus-client/-/magnus-client-0.0.32.tgz#f322c0af3b23302791816d22f6ad3b35c1d45686"
+  integrity sha512-nFSgVdu3QDagXVHWla3+asl1ObCAsmgpapM0fxz3aOEZ2iho199Al2XC0Ur3l+RSBarLjIRwT1lz1HymaTjsuQ==
 
 "@notadd/magnus@^0.0.23":
   version "0.0.23"

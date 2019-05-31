@@ -2,16 +2,14 @@ import { MagnusClientModule as NotaddMagnusClient } from '@notadd/magnus-client'
 import { Module, DynamicModule } from '@nestjs/common';
 import { join } from 'path';
 
-@Module({
-    imports: []
-})
+@Module({})
 export class MagnusClientModule {
-    static forRoot(path: string): DynamicModule {
+    static forRoot(path: string, uri: string = 'http://localhost:3333/api'): DynamicModule {
         return NotaddMagnusClient.create({
             inputGolb: join(path, '**/*.ts'),
             outputPath: path,
             apollo: {
-                uri: 'http://localhost:3333',
+                uri: uri,
                 fetch: require('node-fetch')
             }
         })

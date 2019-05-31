@@ -78,7 +78,7 @@
     "apollo-server": "2.5.1",
     "apollo-server-core": "2.5.0",
     "apollo-server-express": "2.5.0",
-    "cache-manager": "2.9.0",
+    "cache-manager": "2.9.1",
     "casbin": "2.0.4",
     "class-validator": "0.9.1",
     "compression": "1.7.4",

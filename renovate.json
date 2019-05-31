@@ -1,7 +1,6 @@
 { 
   "baseBranch": "feature/proto",
   "automerge": true,
-  "rangeStrategy": "bump",
   "semanticCommits":true,
   "unpublishSafe":true,
   "prCreation":"not-pending",

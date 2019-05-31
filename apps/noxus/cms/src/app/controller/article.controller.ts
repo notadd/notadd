@@ -8,7 +8,7 @@ export class ArticleController {
     ) { }
 
     @Get(':id')
-    findOneArticle(@Param('id') article_id: number): any {
-        return this.articleService.findOneArticle(article_id);
+    findOneArticle(@Param('id') title: string): any {
+        return this.articleService.findOneArticle(title);
     }
 }

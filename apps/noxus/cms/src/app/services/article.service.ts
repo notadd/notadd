@@ -7,33 +7,41 @@ export class ArticleService {
         public readonly client: MagnusClient,
     ) { }
 
-    async findOneArticle(article_id: number): Promise<any> {
-        this.client.query({
+    async findOneArticle(title: string): Promise<any> {
+        const a =  await this.client.query({
             query: gql`
-            articleFindOne(options: $options){
-                article_id,
-                title,
-                icon,
-                description,
-                create_time,
-                update_time,
-                category{
-                article_category_id,
-                name,
-                create_time,
-                update_time
-                     }
-                  }
+            query ArticleFindOne($options: ArticleFindOneOptions!){
+                articleFindOne(options: $options){
+                    article_id,
+                    title,
+                    icon,
+                    description,
+                    create_time,
+                    update_time,
+                    category{
+                    article_category_id,
+                    name,
+                    create_time,
+                    update_time
+                    }
+                }
+            }
             `,
             variables: {
                 "options": {
                     "where": {
-                        "article_id": article_id
+                        title
                     }
                 }
             }
-        })
+        });
+        a.data.articleFindOne.create_time = new Date(a.data.articleFindOne.create_time).toLocaleString();
+        console.log(a.data.articleFindOne.create_time)
+        return a;
     }
 
-    
+    async ArticleSave(title: ): Promise<any>{
+
+    }
+
 }

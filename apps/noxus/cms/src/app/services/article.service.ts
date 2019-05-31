@@ -1,50 +1,130 @@
 import { MagnusClient, gql } from '@notadd/magnus-client'
 import { Injectable } from '@nestjs/common';
-
+import { Article } from '@magnus/db';
+import { DeleteResult } from 'typeorm';
 @Injectable()
 export class ArticleService {
     constructor(
         public readonly client: MagnusClient,
     ) { }
 
-    async findOneArticle(title: string): Promise<any> {
-        const a =  await this.client.query({
+    /**
+     * 根据条件查询文章及其类型
+     */
+    async articleFindOne(where: Partial<Article>): Promise<Article> {
+        const result = await this.client.query({
             query: gql`
             query ArticleFindOne($options: ArticleFindOneOptions!){
                 articleFindOne(options: $options){
                     article_id,
                     title,
-                    icon,
                     description,
+                    thumbs,
+                    icon,
                     create_time,
                     update_time,
+                    # 分类,parent暂时未添加
                     category{
-                    article_category_id,
-                    name,
-                    create_time,
-                    update_time
-                    }
+                        article_category_id,
+                        title
+                        name,
+                        icon,
+                        create_time,
+                        update_time
+                    },
                 }
             }
             `,
             variables: {
                 "options": {
                     "where": {
-                        title
+                        "article_id": where.article_id
                     }
                 }
             }
         });
-        a.data.articleFindOne.create_time = new Date(a.data.articleFindOne.create_time).toLocaleString();
-        console.log(a.data.articleFindOne.create_time)
-        return a;
+        return result.data;
     }
 
-    async ArticleSave(title: ): Promise<any>{
-
+    /**
+     * 查询多个文章
+     * @param where 查询的条件
+     */
+    async articleFind(where: Partial<Article>): Promise<Article[]> {
+        const result = await this.client.query({
+            query: gql`
+                query ArticleFind($options: ArticleFindConditions!){
+                    articleFind(options: $options){
+                    data {
+                        article_id,
+                        title,
+                        description,
+                        thumbs,
+                        icon,
+                        create_time,
+                        update_time,
+                        # 分类,parent暂时未添加
+                        category{
+                            article_category_id,
+                            title
+                            name,
+                            icon,
+                            create_time,
+                            update_time
+                        },
+                    }
+                }
+            }
+            `,
+            variables: {
+                "options": {
+                    "title": where.title
+                }
+            }
+        });
+        return result.data;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> e4ea993491a5e0d5a5b60d2aec3b503510353417
+    async ArticleSave(article: Article): Promise<Article> {
+        return await this.client.mutate({
+            mutation: gql`
+                mutation ArticleSave($entity: Article!,$options: SaveOptions!){
+                    articleSave(entity: $entity,options: $options){
+                    article_id,
+                    title,
+                    create_time,
+                    update_time,
+                }
+            }
+            `,
+            variables: {
+                "entity": {
+                    "title": article.title,
+                    "description": article.description,
+                    "icon": article.icon,
+                    "thumbs": article.thumbs
+                },
+                "options": {
+                }
+            }
+        })
+    }
+
+    // todo id string
+    async ArticleDelete(where: Partial<Article>): Promise<DeleteResult> {
+        return await this.client.mutate({
+            mutation: gql`
+            mutation ArticleDelete($where: ArticleFindConditions!){
+                articleDelete(where: $where){
+                    affected
+                }
+            }
+            `,
+            variables: {
+                "where": {
+                    "article_id": where.article_id
+                }
+            }
+        });
+    }
 }

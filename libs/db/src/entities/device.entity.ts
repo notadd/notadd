@@ -22,6 +22,10 @@ export class DeviceIp {
     @PrimaryGeneratedColumn()
     device_ip_id: number;
 
+
+    /**
+     * 设备
+     */
     @OneToOne(() => Device)
     device: IDevice
     /**
@@ -32,7 +36,15 @@ export class DeviceIp {
     family: number;
 
     /**
-     * 地址
+     * 端口号
+     */
+    @Column()
+    port: number;
+
+
+    /**
+     * 分配的Ip地址
+     * 192.168.0.1
      */
     @Column()
     address: string;
@@ -45,14 +57,26 @@ export class Device {
     @PrimaryGeneratedColumn()
     device_id: number;
 
+    /**
+     * 设备编号
+     */
     @Column()
     deviceNum: string;
 
+
+    /**
+     * 设备分类
+     */
     @ManyToOne(() => DeviceCategory, type => type.devices)
     @JoinColumn()
     category: IDeviceCategory;
 
+
+    /**
+     * 设备ip
+     */
     @OneToOne(() => DeviceIp)
+    @JoinColumn()
     ip: IDeviceIp;
 }
 
@@ -64,9 +88,15 @@ export class DeviceCategory {
     @PrimaryGeneratedColumn()
     device_category_id: number;
 
+    /**
+     * 分类名
+     */
     @Column()
     title: string;
 
+    /**
+     * 分类里面的所有设备
+     */
     @OneToMany(() => Device, type => type.category)
     devices: IDevice[];
 }

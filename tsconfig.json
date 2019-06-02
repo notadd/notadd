@@ -32,7 +32,8 @@
       "@noxus/basic": ["apps/noxus/casbin/src/index.ts"],
       "@magnus/db": ["libs/db/src/index.ts"],
       "@magnus/server": ["libs/server/src/index.ts"],
-      "@magnus/client": ["libs/client/src/index.ts"]
+      "@magnus/client": ["libs/client/src/index.ts"],
+      "@magnus/types": ["libs/types/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

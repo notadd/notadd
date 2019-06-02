@@ -1,14 +1,14 @@
 import { Entity, OneToOne, JoinColumn, PrimaryGeneratedColumn, OneToMany, Column, ManyToOne } from 'typeorm'
-export interface IDeviceCategory{
+export interface IDeviceCategory {
     device_category_id: number;
     title: string;
     devices: IDevice[];
 }
-export interface IDeviceIp{
+export interface IDeviceIp {
     device: IDevice
     ip: string;
 }
-export interface IDevice{
+export interface IDevice {
     device_id: number;
     deviceNum: string;
     category: IDeviceCategory;
@@ -24,9 +24,18 @@ export class DeviceIp {
 
     @OneToOne(() => Device)
     device: IDevice
-
+    /**
+     * 4 ip4
+     * 6 ip6
+     */
     @Column()
-    ip: string;
+    family: number;
+
+    /**
+     * 地址
+     */
+    @Column()
+    address: string;
 }
 
 @Entity({

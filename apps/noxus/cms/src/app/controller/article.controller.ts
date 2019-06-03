@@ -1,17 +1,16 @@
-import { Controller, Get, Inject, Param, Post, Body, Delete } from "@nestjs/common";
+import { Controller, Get , Param, Post, Body } from "@nestjs/common";
 import { ArticleService } from '../services/article.service';
 import { Article } from '@magnus/db';
 
 @Controller('article')
 export class ArticleController {
     constructor(
-        @Inject(ArticleService) public readonly articleService: ArticleService,
+        public readonly articleService: ArticleService,
     ) { }
 
     // 根据id查找单个
-    @Post('post')
+    @Post('find')
     articleFindOne(@Body() body: { article_id: number }): any {
-        console.log(typeof (body.article_id))
         return this.articleService.articleFindOne(body);
     }
 
@@ -22,15 +21,19 @@ export class ArticleController {
     }
 
     // 保存
-    @Post()
+    @Post('save')
     articleSave(@Body() article: Article): any {
-        return this.articleService.ArticleSave(article);
+        return this.articleService.articleSave(article);
+    }
+    // 更新
+    @Post('update')
+    articleUpdate(@Body() article: Article): any {
+        return this.articleService.articleUpdate(article);
     }
 
     // 删除
-    @Delete(':id')
-    articleDelete(@Param('id') article_id: number): any {
-        console.log(article_id)
-        return this.articleService.ArticleDelete({ article_id });
+    @Post('delete')
+    articleDelete(@Body() body: { article_id: number }): any {
+        return this.articleService.articleDelete(body);
     }
 }

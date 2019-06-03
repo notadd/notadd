@@ -62,15 +62,10 @@ export class ArticleService {
                         thumbs,
                         icon,
                         create_time,
-                        update_time,
-                        # 分类,parent暂时未添加
+                        update_time, 
+                        # parent暂时未添加
                         category{
                             article_category_id,
-                            title
-                            name,
-                            icon,
-                            create_time,
-                            update_time
                         },
                     }
                 }
@@ -85,7 +80,11 @@ export class ArticleService {
         return result.data;
     }
 
-    async ArticleSave(article: Article): Promise<Article> {
+    /**
+     * 添加文章
+     * @param article 添加文章的数据
+     */
+    async articleSave(article: Article): Promise<Article> {
         return await this.client.mutate({
             mutation: gql`
                 mutation ArticleSave($entity: Article!,$options: SaveOptions!){
@@ -110,8 +109,45 @@ export class ArticleService {
         })
     }
 
-    // todo id string
-    async ArticleDelete(where: Partial<Article>): Promise<DeleteResult> {
+
+    /**
+     * 更新文章
+     * @param article 添加文章的数据
+     */
+    async articleUpdate(article: Article): Promise<Article> {
+        return await this.client.mutate({
+            mutation: gql`
+                mutation ArticleSave($entity: Article!,$options: SaveOptions!){
+                    articleSave(entity: $entity,options: $options){
+                    article_id,
+                    title,
+                    create_time,
+                    update_time,
+                }
+            }
+            `,
+            variables: {
+                "entity": {
+                    "article_id": article.article_id,
+                    "title": article.title,
+                    "description": article.description,
+                    "icon": article.icon,
+                    "thumbs": article.thumbs,
+                    "category": {
+                        "article_cateogry_id": article.category.article_category_id
+                    }
+                },
+                "options": {
+                }
+            }
+        })
+    }
+
+    /**
+     * 根据条件删除id
+     * @param where 删除的条件,根据article_id删除
+     */
+    async articleDelete(where: Partial<Article>): Promise<DeleteResult> {
         return await this.client.mutate({
             mutation: gql`
             mutation ArticleDelete($where: ArticleFindConditions!){

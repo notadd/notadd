@@ -150,7 +150,9 @@ export class ArticleComment {
     /**
      * 回复
      */
-    @ManyToOne(() => ArticleComment, type => type.children)
+    @ManyToOne(() => ArticleComment, type => type.children,{
+        onDelete: 'CASCADE'
+    })
     @JoinColumn({
         name: 'parent_id'
     })
@@ -175,7 +177,7 @@ export class ArticleComment {
     })
     update_time: Date;
 
-    @OneToOne(() => Article, type => type.category)
+    @ManyToOne(() => Article, type => type.category)
     @JoinColumn({
         name: 'article_id'
     })

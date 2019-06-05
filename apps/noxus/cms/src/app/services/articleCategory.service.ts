@@ -1,7 +1,14 @@
+/*
+ * @Author: lijiansheng 
+ * @Date: 2019-06-04 09:44:59 
+ * @Last Modified by:   lijiansheng 
+ * @Last Modified time: 2019-06-04 09:44:59 
+ */
+
 import { Injectable } from '@nestjs/common';
 import { MagnusClient, gql } from '@notadd/magnus-client'
 import { ArticleCategory } from '@magnus/db';
-import { DeleteResult } from 'typeorm';
+import { DeleteResult, InsertResult } from 'typeorm';
 
 @Injectable()
 export class ArticleCategoryService {
@@ -14,15 +21,13 @@ export class ArticleCategoryService {
      * @param parent_id 该分类的上级id
      * @param category 分类信息
      */
-    async categorySave(category: ArticleCategory): Promise<ArticleCategory> {
+    async categorySave(category: ArticleCategory): Promise<InsertResult> {
         return await this.client.mutate({
             mutation: gql`
-                mutation categorySave($entity: ArticleCategory!,$options: SaveOptions){
-                    articleCategorySave(entity: $entity,options: $options){
-                        article_category_id, title, name, icon, description, create_time, update_time,
-                        parent{
-                            article_category_id, title, name, icon, description, create_time, update_time,
-                        }
+                mutation CategoryInsert($entity: ArticleCategoryInput!){
+                    articleCategoryInsert(entity: $entity){
+                        identifiers,
+                        generatedMaps,
                     }
                 }
             `,
@@ -34,10 +39,6 @@ export class ArticleCategoryService {
                     "icon": category.icon,
                     "parent": {
                         "article_category_id": category.parent.article_category_id,
-                        "title": category.parent.title,
-                        "name": category.parent.name,
-                        "icon": category.parent.icon,
-                        "description": category.parent.description
                     }
                 }
             }
@@ -97,10 +98,6 @@ export class ArticleCategoryService {
                     "description": options.description,
                     "parent": {
                         "article_category_id": options.parent.article_category_id,
-                        "title": options.parent.title,
-                        "name": options.parent.name,
-                        "icon": options.parent.icon,
-                        "description": options.parent.description
                     }
                 }
             }

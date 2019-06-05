@@ -1,3 +1,10 @@
+/*
+ * @Author: lijiansheng 
+ * @Date: 2019-06-04 09:44:48 
+ * @Last Modified by: lijiansheng
+ * @Last Modified time: 2019-06-04 09:45:17
+ */
+
 import { Injectable } from '@nestjs/common';
 import { MagnusClient, gql } from '@notadd/magnus-client';
 import { ArticleComment } from '@magnus/db';
@@ -35,10 +42,6 @@ export class ArticleCommentService {
         })
     }
 
-    async commentFind(where: Partial<ArticleComment>): Promise<ArticleComment> {
-        
-    }
-
     /**
      * 删除评论,子级的评论会被一并删除
      * @param where 删除的条件asdf asd
@@ -57,6 +60,31 @@ export class ArticleCommentService {
                     "article_comment_id": where.article_comment_id
                 }
             }
+        })
+    }
+
+    /**
+     * 根据用户id查询所有评论
+     */
+    async commentFindByUserId(): Promise<ArticleComment> {
+        return await this.client.mutate({
+            mutation: gql`
+            query CommentFind($options: ArticleCommentFindManyOptions!){
+                articleCommentFind(options: $options){
+                    data{
+                        article_comment_id,
+                        content,
+                        from_user_id,
+                        create_time,
+                        update_time,
+                        article{
+                            article_id,
+                            title
+                        }
+                    }
+                }
+                }
+            `
         })
     }
 }

@@ -28,12 +28,6 @@ export class DeviceIp {
      */
     @OneToOne(() => Device)
     device: IDevice
-    /**
-     * 4 ip4
-     * 6 ip6
-     */
-    @Column()
-    family: number;
 
     /**
      * 端口号
@@ -47,7 +41,7 @@ export class DeviceIp {
      * 192.168.0.1
      */
     @Column()
-    address: string;
+    ip: string;
 }
 
 @Entity({
@@ -56,6 +50,7 @@ export class DeviceIp {
 export class Device {
     @PrimaryGeneratedColumn()
     device_id: number;
+
 
     /**
      * 设备编号

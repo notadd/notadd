@@ -1,503 +1,451 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1,
-  "newProjectRoot": "",
-  "projects": {
-    "noxus-sso": {
-      "root": "apps/noxus/sso",
-      "sourceRoot": "apps/noxus/sso/src",
-      "projectType": "application",
-      "prefix": "noxus-sso",
-      "schematics": {},
-      "architect": {
-        "build": {
-          "builder": "@nrwl/node:build",
-          "options": {
-            "outputPath": "dist/apps/noxus/sso",
-            "main": "apps/noxus/sso/src/main.ts",
-            "tsConfig": "apps/noxus/sso/tsconfig.app.json",
-            "assets": ["apps/noxus/sso/src/assets"]
-          },
-          "configurations": {
-            "production": {
-              "optimization": true,
-              "extractLicenses": true,
-              "inspect": false,
-              "fileReplacements": [
-                {
-                  "replace": "apps/noxus/sso/src/environments/environment.ts",
-                  "with": "apps/noxus/sso/src/environments/environment.prod.ts"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "builder": "@nrwl/node:execute",
-          "options": {
-            "buildTarget": "noxus-sso:build"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "apps/noxus/sso/tsconfig.app.json",
-              "apps/noxus/sso/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "apps/noxus/sso/jest.config.js",
-            "tsConfig": "apps/noxus/sso/tsconfig.spec.json"
-          }
-        }
-      }
-    },
-    "noxus-services": {
-      "root": "apps/noxus/services",
-      "sourceRoot": "apps/noxus/services/src",
-      "projectType": "application",
-      "prefix": "noxus-services",
-      "schematics": {},
-      "architect": {
-        "build": {
-          "builder": "@nrwl/node:build",
-          "options": {
-            "outputPath": "dist/apps/noxus/services",
-            "main": "apps/noxus/services/src/main.ts",
-            "tsConfig": "apps/noxus/services/tsconfig.app.json",
-            "assets": ["apps/noxus/services/src/assets"]
-          },
-          "configurations": {
-            "production": {
-              "optimization": true,
-              "extractLicenses": true,
-              "inspect": false,
-              "fileReplacements": [
-                {
-                  "replace": "apps/noxus/services/src/environments/environment.ts",
-                  "with": "apps/noxus/services/src/environments/environment.prod.ts"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "builder": "@nrwl/node:execute",
-          "options": {
-            "buildTarget": "noxus-services:build"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "apps/noxus/services/tsconfig.app.json",
-              "apps/noxus/services/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "apps/noxus/services/jest.config.js",
-            "tsConfig": "apps/noxus/services/tsconfig.spec.json"
-          }
-        }
-      }
-    },
-    "noxus-magnus": {
-      "root": "apps/noxus/magnus",
-      "sourceRoot": "apps/noxus/magnus/src",
-      "projectType": "application",
-      "prefix": "noxus-magnus",
-      "schematics": {},
-      "architect": {
-        "build": {
-          "builder": "@nrwl/node:build",
-          "options": {
-            "outputPath": "dist/apps/noxus/magnus",
-            "main": "apps/noxus/magnus/src/main.ts",
-            "tsConfig": "apps/noxus/magnus/tsconfig.app.json",
-            "assets": ["apps/noxus/magnus/src/assets"]
-          },
-          "configurations": {
-            "production": {
-              "optimization": true,
-              "extractLicenses": true,
-              "inspect": false,
-              "fileReplacements": [
-                {
-                  "replace": "apps/noxus/magnus/src/environments/environment.ts",
-                  "with": "apps/noxus/magnus/src/environments/environment.prod.ts"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "builder": "@nrwl/node:execute",
-          "options": {
+	"$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+	"version": 1,
+	"newProjectRoot": "",
+	"projects": {
+		"noxus-sso": {
+			"root": "apps/noxus/sso",
+			"sourceRoot": "apps/noxus/sso/src",
+			"projectType": "application",
+			"prefix": "noxus-sso",
+			"schematics": {},
+			"architect": {
+				"build": {
+					"builder": "@nrwl/node:build",
+					"options": {
+						"outputPath": "dist/apps/noxus/sso",
+						"main": "apps/noxus/sso/src/main.ts",
+						"tsConfig": "apps/noxus/sso/tsconfig.app.json",
+						"assets": [ "apps/noxus/sso/src/assets" ]
+					},
+					"configurations": {
+						"production": {
+							"optimization": true,
+							"extractLicenses": true,
+							"inspect": false,
+							"fileReplacements": [
+								{
+									"replace": "apps/noxus/sso/src/environments/environment.ts",
+									"with": "apps/noxus/sso/src/environments/environment.prod.ts"
+								}
+							]
+						}
+					}
+				},
+				"serve": {
+					"builder": "@nrwl/node:execute",
+					"options": {
+						"buildTarget": "noxus-sso:build"
+					}
+				},
+				"lint": {
+					"builder": "@angular-devkit/build-angular:tslint",
+					"options": {
+						"tsConfig": [ "apps/noxus/sso/tsconfig.app.json", "apps/noxus/sso/tsconfig.spec.json" ],
+						"exclude": [ "**/node_modules/**" ]
+					}
+				},
+				"test": {
+					"builder": "@nrwl/jest:jest",
+					"options": {
+						"jestConfig": "apps/noxus/sso/jest.config.js",
+						"tsConfig": "apps/noxus/sso/tsconfig.spec.json"
+					}
+				}
+			}
+		},
+		"noxus-services": {
+			"root": "apps/noxus/services",
+			"sourceRoot": "apps/noxus/services/src",
+			"projectType": "application",
+			"prefix": "noxus-services",
+			"schematics": {},
+			"architect": {
+				"build": {
+					"builder": "@nrwl/node:build",
+					"options": {
+						"outputPath": "dist/apps/noxus/services",
+						"main": "apps/noxus/services/src/main.ts",
+						"tsConfig": "apps/noxus/services/tsconfig.app.json",
+						"assets": [ "apps/noxus/services/src/assets" ]
+					},
+					"configurations": {
+						"production": {
+							"optimization": true,
+							"extractLicenses": true,
+							"inspect": false,
+							"fileReplacements": [
+								{
+									"replace": "apps/noxus/services/src/environments/environment.ts",
+									"with": "apps/noxus/services/src/environments/environment.prod.ts"
+								}
+							]
+						}
+					}
+				},
+				"serve": {
+					"builder": "@nrwl/node:execute",
+					"options": {
+						"buildTarget": "noxus-services:build"
+					}
+				},
+				"lint": {
+					"builder": "@angular-devkit/build-angular:tslint",
+					"options": {
+						"tsConfig": [
+							"apps/noxus/services/tsconfig.app.json",
+							"apps/noxus/services/tsconfig.spec.json"
+						],
+						"exclude": [ "**/node_modules/**" ]
+					}
+				},
+				"test": {
+					"builder": "@nrwl/jest:jest",
+					"options": {
+						"jestConfig": "apps/noxus/services/jest.config.js",
+						"tsConfig": "apps/noxus/services/tsconfig.spec.json"
+					}
+				}
+			}
+		},
+		"noxus-magnus": {
+			"root": "apps/noxus/magnus",
+			"sourceRoot": "apps/noxus/magnus/src",
+			"projectType": "application",
+			"prefix": "noxus-magnus",
+			"schematics": {},
+			"architect": {
+				"build": {
+					"builder": "@nrwl/node:build",
+					"options": {
+						"outputPath": "dist/apps/noxus/magnus",
+						"main": "apps/noxus/magnus/src/main.ts",
+						"tsConfig": "apps/noxus/magnus/tsconfig.app.json",
+						"assets": [ "apps/noxus/magnus/src/assets" ]
+					},
+					"configurations": {
+						"production": {
+							"optimization": true,
+							"extractLicenses": true,
+							"inspect": false,
+							"fileReplacements": [
+								{
+									"replace": "apps/noxus/magnus/src/environments/environment.ts",
+									"with": "apps/noxus/magnus/src/environments/environment.prod.ts"
+								}
+							]
+						}
+					}
+				},
+				"serve": {
+					"builder": "@nrwl/node:execute",
+					"options": {
             "buildTarget": "noxus-magnus:build",
             "inspect": false
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "apps/noxus/magnus/tsconfig.app.json",
-              "apps/noxus/magnus/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "apps/noxus/magnus/jest.config.js",
-            "tsConfig": "apps/noxus/magnus/tsconfig.spec.json"
-          }
-        }
-      }
-    },
-    "noxus-device": {
-      "root": "apps/noxus/device",
-      "sourceRoot": "apps/noxus/device/src",
-      "projectType": "application",
-      "prefix": "noxus-device",
-      "schematics": {},
-      "architect": {
-        "build": {
-          "builder": "@nrwl/node:build",
-          "options": {
-            "outputPath": "dist/apps/noxus/device",
-            "main": "apps/noxus/device/src/main.ts",
-            "tsConfig": "apps/noxus/device/tsconfig.app.json",
-            "assets": ["apps/noxus/device/src/assets"]
-          },
-          "configurations": {
-            "production": {
-              "optimization": true,
-              "extractLicenses": true,
-              "inspect": false,
-              "fileReplacements": [
-                {
-                  "replace": "apps/noxus/device/src/environments/environment.ts",
-                  "with": "apps/noxus/device/src/environments/environment.prod.ts"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "builder": "@nrwl/node:execute",
-          "options": {
-            "buildTarget": "noxus-device:build"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "apps/noxus/device/tsconfig.app.json",
-              "apps/noxus/device/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "apps/noxus/device/jest.config.js",
-            "tsConfig": "apps/noxus/device/tsconfig.spec.json"
-          }
-        }
-      }
-    },
-    "noxus-cms": {
-      "root": "apps/noxus/cms",
-      "sourceRoot": "apps/noxus/cms/src",
-      "projectType": "application",
-      "prefix": "noxus-cms",
-      "schematics": {},
-      "architect": {
-        "build": {
-          "builder": "@nrwl/node:build",
-          "options": {
-            "outputPath": "dist/apps/noxus/cms",
-            "main": "apps/noxus/cms/src/main.ts",
-            "tsConfig": "apps/noxus/cms/tsconfig.app.json",
-            "assets": ["apps/noxus/cms/src/assets"]
-          },
-          "configurations": {
-            "production": {
-              "optimization": true,
-              "extractLicenses": true,
-              "inspect": false,
-              "fileReplacements": [
-                {
-                  "replace": "apps/noxus/cms/src/environments/environment.ts",
-                  "with": "apps/noxus/cms/src/environments/environment.prod.ts"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "builder": "@nrwl/node:execute",
-          "options": {
-            "buildTarget": "noxus-cms:build"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "apps/noxus/cms/tsconfig.app.json",
-              "apps/noxus/cms/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "apps/noxus/cms/jest.config.js",
-            "tsConfig": "apps/noxus/cms/tsconfig.spec.json"
-          }
-        }
-      }
-    },
-    "noxus-casbin": {
-      "root": "apps/noxus/casbin",
-      "sourceRoot": "apps/noxus/casbin/src",
-      "projectType": "application",
-      "prefix": "noxus-casbin",
-      "schematics": {},
-      "architect": {
-        "build": {
-          "builder": "@nrwl/node:build",
-          "options": {
-            "outputPath": "dist/apps/noxus/casbin",
-            "main": "apps/noxus/casbin/src/main.ts",
-            "tsConfig": "apps/noxus/casbin/tsconfig.app.json",
-            "assets": ["apps/noxus/casbin/src/assets"]
-          },
-          "configurations": {
-            "production": {
-              "optimization": true,
-              "extractLicenses": true,
-              "inspect": false,
-              "fileReplacements": [
-                {
-                  "replace": "apps/noxus/casbin/src/environments/environment.ts",
-                  "with": "apps/noxus/casbin/src/environments/environment.prod.ts"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "builder": "@nrwl/node:execute",
-          "options": {
-            "buildTarget": "noxus-casbin:build"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "apps/noxus/casbin/tsconfig.app.json",
-              "apps/noxus/casbin/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "apps/noxus/casbin/jest.config.js",
-            "tsConfig": "apps/noxus/casbin/tsconfig.spec.json"
-          }
-        }
-      }
-    },
-    "noxus-basic": {
-      "root": "apps/noxus/basic",
-      "sourceRoot": "apps/noxus/basic/src",
-      "projectType": "application",
-      "prefix": "noxus-basic",
-      "schematics": {},
-      "architect": {
-        "build": {
-          "builder": "@nrwl/node:build",
-          "options": {
-            "outputPath": "dist/apps/noxus/basic",
-            "main": "apps/noxus/basic/src/main.ts",
-            "tsConfig": "apps/noxus/basic/tsconfig.app.json",
-            "assets": ["apps/noxus/basic/src/assets"]
-          },
-          "configurations": {
-            "production": {
-              "optimization": true,
-              "extractLicenses": true,
-              "inspect": false,
-              "fileReplacements": [
-                {
-                  "replace": "apps/noxus/basic/src/environments/environment.ts",
-                  "with": "apps/noxus/basic/src/environments/environment.prod.ts"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "builder": "@nrwl/node:execute",
-          "options": {
-            "buildTarget": "noxus-basic:build"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "apps/noxus/basic/tsconfig.app.json",
-              "apps/noxus/basic/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "apps/noxus/basic/jest.config.js",
-            "tsConfig": "apps/noxus/basic/tsconfig.spec.json"
-          }
-        }
-      }
-    },
-    "db": {
-      "root": "libs/db",
-      "sourceRoot": "libs/db/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/db/tsconfig.lib.json",
-              "libs/db/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/db/jest.config.js",
-            "tsConfig": "libs/db/tsconfig.spec.json"
-          }
-        }
-      }
-    },
-    "server": {
-      "root": "libs/server",
-      "sourceRoot": "libs/server/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/server/tsconfig.lib.json",
-              "libs/server/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/server/jest.config.js",
-            "tsConfig": "libs/server/tsconfig.spec.json"
-          }
-        }
-      }
-    },
-    "client": {
-      "root": "libs/client",
-      "sourceRoot": "libs/client/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/client/tsconfig.lib.json",
-              "libs/client/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/client/jest.config.js",
-            "tsConfig": "libs/client/tsconfig.spec.json"
-          }
-        }
-      }
-    },
-    "types": {
-      "root": "libs/types",
-      "sourceRoot": "libs/types/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/types/tsconfig.lib.json",
-              "libs/types/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/types/jest.config.js",
-            "tsConfig": "libs/types/tsconfig.spec.json"
-          }
-        }
-      }
-    }
-  },
-  "cli": {
-    "warnings": {
-      "typescriptMismatch": false,
-      "versionMismatch": false
-    },
-    "defaultCollection": "@nrwl/angular"
-  },
-  "schematics": {
-    "@nrwl/angular:application": {
-      "unitTestRunner": "jest",
-      "e2eTestRunner": "cypress"
-    },
-    "@nrwl/angular:library": {
-      "unitTestRunner": "jest"
-    }
-  },
-  "defaultProject": "magnus"
+					}
+				},
+				"lint": {
+					"builder": "@angular-devkit/build-angular:tslint",
+					"options": {
+						"tsConfig": [ "apps/noxus/magnus/tsconfig.app.json", "apps/noxus/magnus/tsconfig.spec.json" ],
+						"exclude": [ "**/node_modules/**" ]
+					}
+				},
+				"test": {
+					"builder": "@nrwl/jest:jest",
+					"options": {
+						"jestConfig": "apps/noxus/magnus/jest.config.js",
+						"tsConfig": "apps/noxus/magnus/tsconfig.spec.json"
+					}
+				}
+			}
+		},
+		"noxus-device": {
+			"root": "apps/noxus/device",
+			"sourceRoot": "apps/noxus/device/src",
+			"projectType": "application",
+			"prefix": "noxus-device",
+			"schematics": {},
+			"architect": {
+				"build": {
+					"builder": "@nrwl/node:build",
+					"options": {
+						"outputPath": "dist/apps/noxus/device",
+						"main": "apps/noxus/device/src/main.ts",
+						"tsConfig": "apps/noxus/device/tsconfig.app.json",
+						"assets": [ "apps/noxus/device/src/assets" ]
+					},
+					"configurations": {
+						"production": {
+							"optimization": true,
+							"extractLicenses": true,
+							"inspect": false,
+							"fileReplacements": [
+								{
+									"replace": "apps/noxus/device/src/environments/environment.ts",
+									"with": "apps/noxus/device/src/environments/environment.prod.ts"
+								}
+							]
+						}
+					}
+				},
+				"serve": {
+					"builder": "@nrwl/node:execute",
+					"options": {
+						"buildTarget": "noxus-device:build"
+					}
+				},
+				"lint": {
+					"builder": "@angular-devkit/build-angular:tslint",
+					"options": {
+						"tsConfig": [ "apps/noxus/device/tsconfig.app.json", "apps/noxus/device/tsconfig.spec.json" ],
+						"exclude": [ "**/node_modules/**" ]
+					}
+				},
+				"test": {
+					"builder": "@nrwl/jest:jest",
+					"options": {
+						"jestConfig": "apps/noxus/device/jest.config.js",
+						"tsConfig": "apps/noxus/device/tsconfig.spec.json"
+					}
+				}
+			}
+		},
+		"noxus-cms": {
+			"root": "apps/noxus/cms",
+			"sourceRoot": "apps/noxus/cms/src",
+			"projectType": "application",
+			"prefix": "noxus-cms",
+			"schematics": {},
+			"architect": {
+				"build": {
+					"builder": "@nrwl/node:build",
+					"options": {
+						"outputPath": "dist/apps/noxus/cms",
+						"main": "apps/noxus/cms/src/main.ts",
+						"tsConfig": "apps/noxus/cms/tsconfig.app.json",
+						"assets": [ "apps/noxus/cms/src/assets" ]
+					},
+					"configurations": {
+						"production": {
+							"optimization": true,
+							"extractLicenses": true,
+							"inspect": false,
+							"fileReplacements": [
+								{
+									"replace": "apps/noxus/cms/src/environments/environment.ts",
+									"with": "apps/noxus/cms/src/environments/environment.prod.ts"
+								}
+							]
+						}
+					}
+				},
+				"serve": {
+					"builder": "@nrwl/node:execute",
+					"options": {
+						"buildTarget": "noxus-cms:build"
+					}
+				},
+				"lint": {
+					"builder": "@angular-devkit/build-angular:tslint",
+					"options": {
+						"tsConfig": [ "apps/noxus/cms/tsconfig.app.json", "apps/noxus/cms/tsconfig.spec.json" ],
+						"exclude": [ "**/node_modules/**" ]
+					}
+				},
+				"test": {
+					"builder": "@nrwl/jest:jest",
+					"options": {
+						"jestConfig": "apps/noxus/cms/jest.config.js",
+						"tsConfig": "apps/noxus/cms/tsconfig.spec.json"
+					}
+				}
+			}
+		},
+		"noxus-casbin": {
+			"root": "apps/noxus/casbin",
+			"sourceRoot": "apps/noxus/casbin/src",
+			"projectType": "application",
+			"prefix": "noxus-casbin",
+			"schematics": {},
+			"architect": {
+				"build": {
+					"builder": "@nrwl/node:build",
+					"options": {
+						"outputPath": "dist/apps/noxus/casbin",
+						"main": "apps/noxus/casbin/src/main.ts",
+						"tsConfig": "apps/noxus/casbin/tsconfig.app.json",
+						"assets": [ "apps/noxus/casbin/src/assets" ]
+					},
+					"configurations": {
+						"production": {
+							"optimization": true,
+							"extractLicenses": true,
+							"inspect": false,
+							"fileReplacements": [
+								{
+									"replace": "apps/noxus/casbin/src/environments/environment.ts",
+									"with": "apps/noxus/casbin/src/environments/environment.prod.ts"
+								}
+							]
+						}
+					}
+				},
+				"serve": {
+					"builder": "@nrwl/node:execute",
+					"options": {
+						"buildTarget": "noxus-casbin:build"
+					}
+				},
+				"lint": {
+					"builder": "@angular-devkit/build-angular:tslint",
+					"options": {
+						"tsConfig": [ "apps/noxus/casbin/tsconfig.app.json", "apps/noxus/casbin/tsconfig.spec.json" ],
+						"exclude": [ "**/node_modules/**" ]
+					}
+				},
+				"test": {
+					"builder": "@nrwl/jest:jest",
+					"options": {
+						"jestConfig": "apps/noxus/casbin/jest.config.js",
+						"tsConfig": "apps/noxus/casbin/tsconfig.spec.json"
+					}
+				}
+			}
+		},
+		"noxus-basic": {
+			"root": "apps/noxus/basic",
+			"sourceRoot": "apps/noxus/basic/src",
+			"projectType": "application",
+			"prefix": "noxus-basic",
+			"schematics": {},
+			"architect": {
+				"build": {
+					"builder": "@nrwl/node:build",
+					"options": {
+						"outputPath": "dist/apps/noxus/basic",
+						"main": "apps/noxus/basic/src/main.ts",
+						"tsConfig": "apps/noxus/basic/tsconfig.app.json",
+						"assets": [ "apps/noxus/basic/src/assets" ]
+					},
+					"configurations": {
+						"production": {
+							"optimization": true,
+							"extractLicenses": true,
+							"inspect": false,
+							"fileReplacements": [
+								{
+									"replace": "apps/noxus/basic/src/environments/environment.ts",
+									"with": "apps/noxus/basic/src/environments/environment.prod.ts"
+								}
+							]
+						}
+					}
+				},
+				"serve": {
+					"builder": "@nrwl/node:execute",
+					"options": {
+						"buildTarget": "noxus-basic:build"
+					}
+				},
+				"lint": {
+					"builder": "@angular-devkit/build-angular:tslint",
+					"options": {
+						"tsConfig": [ "apps/noxus/basic/tsconfig.app.json", "apps/noxus/basic/tsconfig.spec.json" ],
+						"exclude": [ "**/node_modules/**" ]
+					}
+				},
+				"test": {
+					"builder": "@nrwl/jest:jest",
+					"options": {
+						"jestConfig": "apps/noxus/basic/jest.config.js",
+						"tsConfig": "apps/noxus/basic/tsconfig.spec.json"
+					}
+				}
+			}
+		},
+		"db": {
+			"root": "libs/db",
+			"sourceRoot": "libs/db/src",
+			"projectType": "library",
+			"schematics": {},
+			"architect": {
+				"lint": {
+					"builder": "@angular-devkit/build-angular:tslint",
+					"options": {
+						"tsConfig": [ "libs/db/tsconfig.lib.json", "libs/db/tsconfig.spec.json" ],
+						"exclude": [ "**/node_modules/**" ]
+					}
+				},
+				"test": {
+					"builder": "@nrwl/jest:jest",
+					"options": {
+						"jestConfig": "libs/db/jest.config.js",
+						"tsConfig": "libs/db/tsconfig.spec.json"
+					}
+				}
+			}
+		},
+		"server": {
+			"root": "libs/server",
+			"sourceRoot": "libs/server/src",
+			"projectType": "library",
+			"schematics": {},
+			"architect": {
+				"lint": {
+					"builder": "@angular-devkit/build-angular:tslint",
+					"options": {
+						"tsConfig": [ "libs/server/tsconfig.lib.json", "libs/server/tsconfig.spec.json" ],
+						"exclude": [ "**/node_modules/**" ]
+					}
+				},
+				"test": {
+					"builder": "@nrwl/jest:jest",
+					"options": {
+						"jestConfig": "libs/server/jest.config.js",
+						"tsConfig": "libs/server/tsconfig.spec.json"
+					}
+				}
+			}
+		},
+		"client": {
+			"root": "libs/client",
+			"sourceRoot": "libs/client/src",
+			"projectType": "library",
+			"schematics": {},
+			"architect": {
+				"lint": {
+					"builder": "@angular-devkit/build-angular:tslint",
+					"options": {
+						"tsConfig": [ "libs/client/tsconfig.lib.json", "libs/client/tsconfig.spec.json" ],
+						"exclude": [ "**/node_modules/**" ]
+					}
+				},
+				"test": {
+					"builder": "@nrwl/jest:jest",
+					"options": {
+						"jestConfig": "libs/client/jest.config.js",
+						"tsConfig": "libs/client/tsconfig.spec.json"
+					}
+				}
+			}
+		}
+	},
+	"cli": {
+		"warnings": {
+			"typescriptMismatch": false,
+			"versionMismatch": false
+		},
+		"defaultCollection": "@nrwl/angular"
+	},
+	"schematics": {
+		"@nrwl/angular:application": {
+			"unitTestRunner": "jest",
+			"e2eTestRunner": "cypress"
+		},
+		"@nrwl/angular:library": {
+			"unitTestRunner": "jest"
+		}
+	},
+	"defaultProject": "magnus"
 }

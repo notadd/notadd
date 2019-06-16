@@ -8,8 +8,8 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "target": "esnext",
-    "module": "commonjs",
+    "target": "es2015",
+    "module": "esnext",
     "typeRoots": ["node_modules/@types"],
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
@@ -32,8 +32,7 @@
       "@noxus/basic": ["apps/noxus/casbin/src/index.ts"],
       "@magnus/db": ["libs/db/src/index.ts"],
       "@magnus/server": ["libs/server/src/index.ts"],
-      "@magnus/client": ["libs/client/src/index.ts"],
-      "@magnus/types": ["libs/types/src/index.ts"]
+      "@magnus/client": ["libs/client/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

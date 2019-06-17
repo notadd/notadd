@@ -21,16 +21,18 @@ export class ArticleController {
         return this.articleService.articleFind({ title });
     }
 
+    
+
     // 保存
-    @Post()
+    @Post('insert')
     articleSave(@Body() article: Article): any {
-        return this.articleService.ArticleSave(article);
+        return this.articleService.articleInsert(article);
     }
 
-    // 删除
-    @Delete(':id')
-    articleDelete(@Param('id') article_id: number): any {
-        console.log(article_id)
-        return this.articleService.ArticleDelete({ article_id });
-    }
+    // // 删除
+    // @Delete(':id')
+    // articleDelete(@Param('id') article_id: number): any {
+    //     console.log(article_id)
+    //     return this.articleService.ArticleDelete({ article_id });
+    // }
 }

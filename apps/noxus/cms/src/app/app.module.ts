@@ -8,6 +8,7 @@ import { ArticleService } from './services/article.service';
 @Module({
   imports: [
     MagnusClientModule.forRoot(__dirname)
+    
   ],
   controllers: [
     AppController,

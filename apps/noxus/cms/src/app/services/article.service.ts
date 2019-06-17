@@ -85,7 +85,36 @@ export class ArticleService {
         return result.data;
     }
 
-    async ArticleSave(article: Article): Promise<Article> {
+    async articleInsert(article: Article): Promise<any> {
+        const result = await this.client.mutate({
+            mutation: gql`
+                mutation ArticleInsert($entity: ArticleInput!) {
+                    articleInsert(entity: $entity) {
+                        identifiers
+                    }
+                }
+            `, variables: {
+                "entity": {
+                    "title": article.title,
+                    "description": article.description,
+                    "thumbs": article.thumbs,
+                    "icon": article.icon,
+                    "category": {
+                        "article_category_id": article.category.article_category_id
+                    }
+                }
+            }
+        });
+        const type = result.data.articleInsert.identifiers;
+        return type;
+        
+    }
+
+    /**
+     * 修改文章
+     * @param article 修改文章的内容
+     */
+    async articleSave(article: Article): Promise<Article> {
         return await this.client.mutate({
             mutation: gql`
                 mutation ArticleSave($entity: Article!,$options: SaveOptions!){
@@ -110,8 +139,11 @@ export class ArticleService {
         })
     }
 
-    // todo id string
-    async ArticleDelete(where: Partial<Article>): Promise<DeleteResult> {
+    /**
+     * 
+     * @param where 根据条件删除文章
+     */
+    async articleDelete(where: Partial<Article>): Promise<DeleteResult> {
         return await this.client.mutate({
             mutation: gql`
             mutation ArticleDelete($where: ArticleFindConditions!){

@@ -74,7 +74,7 @@ export class ArticleService {
                         },
                     }
                 }
-            }
+            } 
             `,
             variables: {
                 "options": {

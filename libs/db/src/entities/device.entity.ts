@@ -43,7 +43,9 @@ export class DeviceIp {
     @Column()
     ip: string;
 }
-
+    /**
+     * 设备
+     */
 @Entity({
     name: 'device'
 })
@@ -74,12 +76,13 @@ export class Device {
     @JoinColumn()
     ip: IDeviceIp;
 }
-
+    /**
+     * 设备分类
+     */
 @Entity({
     name: 'device_category'
 })
 export class DeviceCategory {
-
     @PrimaryGeneratedColumn()
     device_category_id: number;
 

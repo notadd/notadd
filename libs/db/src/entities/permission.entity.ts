@@ -68,7 +68,6 @@ export class Addon {
      * 一个权限也可以有多个应用
      */
     @ManyToMany(() => Permission)
-    @JoinTable()
     permissions: Permission[];
 }
 

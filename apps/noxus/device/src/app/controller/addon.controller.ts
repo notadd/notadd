@@ -18,7 +18,7 @@ export class AddonController{
         return await this.addService.AddonFind(addon);
     }
 
-    @Get()
+    @Post('title')
     async AddonFindOne(@Body() body:{title:string}):Promise<any>{
         return await this.addService.AddonFindOne(body);
     }

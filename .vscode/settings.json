@@ -6,8 +6,8 @@
         "**/.temp/**": true
     },
     "files.exclude": {
-        "**/*.js": true,
         "**/*.d.ts": true,
-        "**/*.js.map": true
+        "**/*.js": true,
+        "**/*.map": true
     }
 }

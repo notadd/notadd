@@ -10,12 +10,12 @@ export class DeviceCategoryController{
      * 
      * @param devCategory 
      */
-    @Get()
+    @Post()
     async deviceCategoryFind(@Body() devCategory:DeviceCategory):Promise<any>{
         return  this.devCatService.DeviceCategoryFind(devCategory);
     } 
     @Post('insert')
-    async deviceCategoryInsert(@Body()deviceCategory:DeviceCategory):Promise<any>{
+    async DeviceCategoryInsert(@Body()deviceCategory:DeviceCategory):Promise<any>{
        return this.devCatService.DeviceCategoryInsert(deviceCategory);
     }
 } 

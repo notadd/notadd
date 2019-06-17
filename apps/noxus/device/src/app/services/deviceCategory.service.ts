@@ -15,10 +15,14 @@ export class DeviceCategoryService {
         const result = await this.client.query({
             query: gql`query deviceCategoryFind($options:DeviceCategoryFindManyOptions!){
             deviceCategoryFind(options:$options){
-              data{
-                device_category_id,
-                title
-              }
+                data{
+                   device_category_id,
+                   title
+                  devices{
+                    deviceNum,
+                    device_id
+      }
+    }
             }
         }
         `,
@@ -30,23 +34,24 @@ export class DeviceCategoryService {
         })
         return result.data;
     }
+    
     /**
      * 插入设备分类
      * @param devcat 
      */
-    async DeviceCategoryInsert(devcat: DeviceCategory): Promise<DeviceCategory> {
+    async DeviceCategoryInsert(device: DeviceCategory): Promise<DeviceCategory> {
         return await this.client.mutate({
             mutation: gql`
-           mutation DeviceCategoryInsert($entity: !){
-            deviceCategoryInsert(entity:$entity){
-            identifiers
-            generatedMaps
+             mutation DeviceCategoryInsert($entity: DeviceCategoryInput!){
+              deviceCategoryInsert(entity:$entity){
+              identifiers
+              generatedMaps
     }
   }
            `,
             variables: {
                 "entity": {
-                    "title": "nihaome"
+                    "title": device.title
                 }
 
             }
@@ -59,7 +64,7 @@ export class DeviceCategoryService {
     async DeviceCategoryDelete(where: Partial<DeviceCategory>): Promise<DeviceCategory> {
         return await this.client.mutate({
             mutation: gql`
-            mutation DeviceCategoryDelete($where:DeviceCategoryFindConditions!){
+            mutation DeviceCategoryDelete($where:DeviceCategoyFindConditions!){
              deviceCategoryDelete(where:$where){
              affected
   }
@@ -67,12 +72,10 @@ export class DeviceCategoryService {
             `,
             variables: {
                 "where": {
-                    "device_category_id": 2
+                    "device_category_id": where.device_category_id
                 }
 
             }
         })
-    }
-
-
+    }  
 }

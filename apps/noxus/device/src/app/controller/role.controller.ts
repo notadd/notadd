@@ -11,7 +11,7 @@ export class RoleController{
     async RoleInsert(@Body() role:Role):Promise<any>{
         return await this.roleService.RoleInsert(role);
     }
-    @Get()
+    @Post('role_id')
     async RoleFindOne(@Body() body:{role_id:number}):Promise<any>{
         return await this.roleService.RoleFindOne(body);
     }

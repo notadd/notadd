@@ -67,7 +67,7 @@
     "@ngrx/store": "8.0.0-beta.2",
     "@ngx-translate/core": "11.0.1",
     "@ngx-translate/http-loader": "4.0.0",
-    "@notadd/magnus": "0.0.3",
+    "@notadd/magnus": "0.0.44",
     "@notadd/scss": "file:libs/scss",
     "@nrwl/nx": "7.8.6",
     "@types/lodash": "4.14.129",

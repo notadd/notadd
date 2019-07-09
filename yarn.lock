@@ -685,10 +685,10 @@
 "@notadd/scss@file:libs/scss":
   version "1.0.0"
 
-"@nrwl/builders@7.8.6":
-  version "7.8.6"
-  resolved "https://registry.yarnpkg.com/@nrwl/builders/-/builders-7.8.6.tgz#cd10d3840a1034e65edb5bf031abc59f61d2eedb"
-  integrity sha512-n3rGSRJ24HCA6IGn+W5b0Qfa6r+X+rCHTI71JqyVPMGK3DSmQU3ZfW/cf3Ywbvc4dP1MzCNCAcb263/5KhDE2g==
+"@nrwl/builders@7.8.7":
+  version "7.8.7"
+  resolved "https://registry.yarnpkg.com/@nrwl/builders/-/builders-7.8.7.tgz#7145eb22b4095e71fd4c3afe4ebe9e658890e930"
+  integrity sha512-crcR9sgnqKblcdcK6TB2QYHL2m7gc4HXKV9djhzThjPrbyoFy4j67j6+R+CRtocJPNj15SmS6xZnEb5RH98mtg==
   dependencies:
     "@angular-devkit/architect" "~0.13.1"
     "@angular-devkit/build-angular" "~0.13.1"
@@ -710,10 +710,10 @@
     webpack-node-externals "1.7.2"
     zone.js "0.8.29"
 
-"@nrwl/nx@7.8.6":
-  version "7.8.6"
-  resolved "https://registry.yarnpkg.com/@nrwl/nx/-/nx-7.8.6.tgz#96a1b5ece6ffe0053a8c74b5a225e020b6943037"
-  integrity sha512-0mQzBR9xfNcwMl28iwTzmjS/5czeVJNfq1NO/FVlYB0eIRKOGWI78dwFYKPjLMSVmYl+Rc+dcWlgLlekUu+YkQ==
+"@nrwl/nx@7.8.7":
+  version "7.8.7"
+  resolved "https://registry.yarnpkg.com/@nrwl/nx/-/nx-7.8.7.tgz#a85dc5ab30d33ac6cc2234bbc51e229ad85b9b9b"
+  integrity sha512-a/pOozIT86IIWue6MSwN2EKO4grJ8My7QMl+g535/vrDg75riyBTkWF+nX6VM/JjGz40Y5nFZaX94924cZWt5g==
 
 "@nrwl/schematics@7.8.6":
   version "7.8.6"

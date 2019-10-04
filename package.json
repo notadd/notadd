@@ -55,7 +55,7 @@
     "@grpc/proto-loader": "0.5.0",
     "@nestjs/common": "6.2.4",
     "@nestjs/core": "6.2.4",
-    "@nestjs/graphql": "6.2.1",
+    "@nestjs/graphql": "6.5.3",
     "@nestjs/microservices": "6.2.4",
     "@nestjs/passport": "6.1.0",
     "@nestjs/platform-express": "6.2.4",

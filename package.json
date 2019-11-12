@@ -142,7 +142,7 @@
     "ts-node": "7.0.1",
     "tsconfig-paths": "3.8.0",
     "tslint": "5.16.0",
-    "typescript": "3.5.1"
+    "typescript": "3.7.2"
   },
   "xplat": {
     "prefix": "foo"

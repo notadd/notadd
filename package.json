@@ -103,7 +103,7 @@
     "protons": "1.0.1",
     "reflect-metadata": "0.1.13",
     "rxjs": "6.5.2",
-    "typeorm": "0.2.17",
+    "typeorm": "0.2.20",
     "zone.js": "0.9.1"
   },
   "devDependencies": {

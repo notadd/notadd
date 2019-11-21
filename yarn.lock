@@ -3125,14 +3125,14 @@ cardinal@^2.1.1:
     ansicolors "~0.3.2"
     redeyed "~2.1.0"
 
-casbin@2.0.4:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/casbin/-/casbin-2.0.4.tgz#a6b778b34e0298bdea17d1392fad63fd6e2dbb73"
-  integrity sha512-ddc1KsoMXurw1RAjXI5nbvKNfRrlCGfjvcwp29MH6RfXVLF1q7HVjFMr1Wdttck2y+DAKESQ2hdz1joNTuACDA==
+casbin@3.0.7:
+  version "3.0.7"
+  resolved "https://registry.yarnpkg.com/casbin/-/casbin-3.0.7.tgz#8bd156a7c6461e5a4dad9f4eb6d56473bc55d56c"
+  integrity sha512-3qpbDLhzmdBz1rAR2doJEtnvjPbSzwfKocKzwmznBnjZROBVwcBtr6hetEBQi9+5UF2gSsM5ICIf5T82APT8AA==
   dependencies:
-    expression-eval "^1.3.0"
+    expression-eval "^2.0.0"
     ip "^1.1.5"
-    lodash "^4.17.10"
+    lodash "^4.17.15"
 
 caseless@~0.12.0:
   version "0.12.0"
@@ -4932,10 +4932,10 @@ express@^4.16.2:
     utils-merge "1.0.1"
     vary "~1.1.2"
 
-expression-eval@^1.3.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/expression-eval/-/expression-eval-1.4.0.tgz#3e250c110ff9bb6606d0c8ad0ecb9600e388f76d"
-  integrity sha512-CvpqG2feKjGcr+6NB/ZOA2csOeVL+2DSiWrF/4h0mrdYv4SxR2vCZhLHSst4Sp+xHtN/LQtPfi6i7K9EJwzRGw==
+expression-eval@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/expression-eval/-/expression-eval-2.0.0.tgz#156bc71a700b0c7797f47d8a7167ce4fba5c060c"
+  integrity sha512-8cFzfco37CdZQd4DTyZ+ncxQtPUTE0dcxvbGXYc17Ji+3MQSBkT+11GdfC7eO2duvLNuWjN7Ejqb0kLX/u2bBw==
   dependencies:
     jsep "^0.3.0"
 
@@ -7932,6 +7932,11 @@ lodash@4.17.11, lodash@^4.0.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.4,
   version "4.17.11"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
   integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
+
+lodash@^4.17.15:
+  version "4.17.15"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
+  integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
 
 log-symbols@2.2.0, log-symbols@^2.2.0:
   version "2.2.0"

@@ -6859,10 +6859,10 @@ istanbul-api@^1.1.1:
     mkdirp "^0.5.1"
     once "^1.4.0"
 
-istanbul-api@^2.1.1:
-  version "2.1.7"
-  resolved "https://registry.yarnpkg.com/istanbul-api/-/istanbul-api-2.1.7.tgz#82786b79f3b93d481349c7aa1e2c2b4eeb48c8a8"
-  integrity sha512-LYTOa2UrYFyJ/aSczZi/6lBykVMjCCvUmT64gOe+jPZFy4w6FYfPGqFT2IiQ2BxVHHDOvCD7qrIXb0EOh4uGWw==
+istanbul-api@^2.1.6:
+  version "2.1.6"
+  resolved "https://registry.yarnpkg.com/istanbul-api/-/istanbul-api-2.1.6.tgz#d61702a9d1c66ad89d92e66d401e16b0bda4a35f"
+  integrity sha512-x0Eicp6KsShG1k1rMgBAi/1GgY7kFGEBwQpw3PXGEmu+rBcBNhqU8g2DgY9mlepAsLPzrzrbqSgCGANnki4POA==
   dependencies:
     async "^2.6.2"
     compare-versions "^3.4.0"
@@ -6872,7 +6872,7 @@ istanbul-api@^2.1.1:
     istanbul-lib-instrument "^3.3.0"
     istanbul-lib-report "^2.0.8"
     istanbul-lib-source-maps "^3.0.6"
-    istanbul-reports "^2.2.5"
+    istanbul-reports "^2.2.4"
     js-yaml "^3.13.1"
     make-dir "^2.1.0"
     minimatch "^3.0.4"
@@ -6986,10 +6986,10 @@ istanbul-reports@^1.5.1:
   dependencies:
     handlebars "^4.0.3"
 
-istanbul-reports@^2.2.5:
-  version "2.2.5"
-  resolved "https://registry.yarnpkg.com/istanbul-reports/-/istanbul-reports-2.2.5.tgz#7fd354847124b46861365ac41165a4dfe5f67ea5"
-  integrity sha512-ilCSjE6f7elNIRxnSnIhnOpXdf3ryUT7Zkl+TaADItM638SWXjfNW40cujZCIjex4g4DTkzIy9kzwkaLruB50Q==
+istanbul-reports@^2.2.4:
+  version "2.2.6"
+  resolved "https://registry.yarnpkg.com/istanbul-reports/-/istanbul-reports-2.2.6.tgz#7b4f2660d82b29303a8fe6091f8ca4bf058da1af"
+  integrity sha512-SKi4rnMyLBKe0Jy2uUdx28h8oG7ph2PPuQPvIAh31d+Ci+lSiEu4C+h3oBPuJ9+mPKhOyW0M8gY4U5NM1WLeXA==
   dependencies:
     handlebars "^4.1.2"
 
@@ -7493,12 +7493,12 @@ karma-chrome-launcher@2.2.0:
     fs-access "^1.0.0"
     which "^1.2.1"
 
-karma-coverage-istanbul-reporter@2.0.5:
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/karma-coverage-istanbul-reporter/-/karma-coverage-istanbul-reporter-2.0.5.tgz#ca5899d4905e44a5984dd4f963adfc1a74dce767"
-  integrity sha512-yPvAlKtY3y+rKKWbOo0CzBMVTvJEeMOgbMXuVv3yWvS8YtYKC98AU9vFF0mVBZ2RP1E9SgS90+PT6Kf14P3S4w==
+karma-coverage-istanbul-reporter@2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/karma-coverage-istanbul-reporter/-/karma-coverage-istanbul-reporter-2.1.1.tgz#37a775fbfbb3cbe98cebf19605c94c6277c3b88a"
+  integrity sha512-CH8lTi8+kKXGvrhy94+EkEMldLCiUA0xMOiL31vvli9qK0T+qcXJAwWBRVJWnVWxYkTmyWar8lPz63dxX6/z1A==
   dependencies:
-    istanbul-api "^2.1.1"
+    istanbul-api "^2.1.6"
     minimatch "^3.0.4"
 
 karma-jasmine-html-reporter@1.4.2:

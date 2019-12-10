@@ -1,8 +1,24 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.13.3
+version: v1.14.0
 ignore: {}
 # patches apply the minimum changes required to fix a vulnerability
 patch:
   SNYK-JS-AXIOS-174505:
     - '@nestjs/common > axios':
         patched: '2019-05-06T23:43:51.735Z'
+  SNYK-JS-HTTPSPROXYAGENT-469131:
+    - snyk > proxy-agent > https-proxy-agent:
+        patched: '2019-12-10T01:36:47.399Z'
+    - snyk > proxy-agent > pac-proxy-agent > https-proxy-agent:
+        patched: '2019-12-10T01:36:47.399Z'
+  SNYK-JS-LODASH-450202:
+    - snyk > lodash:
+        patched: '2019-12-10T01:36:47.399Z'
+    - snyk > @snyk/dep-graph > lodash:
+        patched: '2019-12-10T01:36:47.399Z'
+    - snyk > inquirer > lodash:
+        patched: '2019-12-10T01:36:47.399Z'
+    - snyk > snyk-config > lodash:
+        patched: '2019-12-10T01:36:47.399Z'
+    - snyk > snyk-nodejs-lockfile-parser > lodash:
+        patched: '2019-12-10T01:36:47.399Z'

@@ -11,7 +11,7 @@
     "fix": "tslint -p tsconfig.json -c tslint.json --fix",
     "grpc:gen": "./node_modules/.bin/rxjs-grpc -o src/grpc/generated.ts src/grpc/protobufs/*.proto",
     "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect"
+    "prepublish": "yarn run snyk-protect"
   },
   "author": "notadd",
   "license": "Apache-2.0",
@@ -32,7 +32,7 @@
     "reflect-metadata": "0.1.13",
     "rxjs": "6.5.2",
     "typescript": "3.4.5",
-    "snyk": "1.165.0"
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@types/graphql": "14.2.0",

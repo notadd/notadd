@@ -134,7 +134,7 @@
     "npm-run-all": "4.1.5",
     "ora": "3.4.0",
     "prettier": "1.17.1",
-    "protractor": "5.4.2",
+    "protractor": "5.4.4",
     "supertest": "3.4.2",
     "ts-jest": "20.0.14",
     "ts-loader": "4.5.0",

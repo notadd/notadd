@@ -120,7 +120,7 @@
     "@types/jest": "20.0.8",
     "@types/node": "9.6.48",
     "@types/ora": "3.2.0",
-    "codelyzer": "5.0.1",
+    "codelyzer": "5.2.2",
     "globby": "11.0.1",
     "jasmine-core": "3.4.0",
     "jasmine-marbles": "0.5.0",

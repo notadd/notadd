@@ -82,7 +82,7 @@
     "casbin": "2.0.4",
     "class-validator": "0.12.2",
     "compression": "1.7.4",
-    "core-js": "3.4.1",
+    "core-js": "3.6.5",
     "csurf": "1.10.0",
     "dotenv": "6.2.0",
     "express-rate-limit": "5.1.3",

@@ -1329,10 +1329,10 @@
     is-absolute "^1.0.0"
     is-negated-glob "^1.0.0"
 
-"@grpc/proto-loader@0.5.0":
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/@grpc/proto-loader/-/proto-loader-0.5.0.tgz#6d21930530db6089ed68a90f10a22b76fdc3387d"
-  integrity sha512-kF5toaC4A7PRjAuIxE0fYAv8WarJ6JELYlmHpkoo4EGTFvXUsQwVfyj2bgPV2023M77s2TtDn36wPMJB0sz8nA==
+"@grpc/proto-loader@0.5.4":
+  version "0.5.4"
+  resolved "https://registry.yarnpkg.com/@grpc/proto-loader/-/proto-loader-0.5.4.tgz#038a3820540f621eeb1b05d81fbedfb045e14de0"
+  integrity sha512-HTM4QpI9B2XFkPz7pjwMyMgZchJ93TVkL3kWPW8GDMDKYxsMnmf4w2TNMJK7+KNiYHS5cJrCEAFlF+AwtXWVPA==
   dependencies:
     lodash.camelcase "^4.3.0"
     protobufjs "^6.8.6"

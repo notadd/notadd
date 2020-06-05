@@ -1566,10 +1566,10 @@
     webpack-node-externals "1.7.2"
     zone.js "0.8.29"
 
-"@nrwl/nx@7.8.6":
-  version "7.8.6"
-  resolved "https://registry.yarnpkg.com/@nrwl/nx/-/nx-7.8.6.tgz#96a1b5ece6ffe0053a8c74b5a225e020b6943037"
-  integrity sha512-0mQzBR9xfNcwMl28iwTzmjS/5czeVJNfq1NO/FVlYB0eIRKOGWI78dwFYKPjLMSVmYl+Rc+dcWlgLlekUu+YkQ==
+"@nrwl/nx@7.8.7":
+  version "7.8.7"
+  resolved "https://registry.yarnpkg.com/@nrwl/nx/-/nx-7.8.7.tgz#a85dc5ab30d33ac6cc2234bbc51e229ad85b9b9b"
+  integrity sha512-a/pOozIT86IIWue6MSwN2EKO4grJ8My7QMl+g535/vrDg75riyBTkWF+nX6VM/JjGz40Y5nFZaX94924cZWt5g==
 
 "@nrwl/schematics@7.8.6":
   version "7.8.6"

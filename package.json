@@ -93,7 +93,7 @@
     "helmet": "3.22.0",
     "mocha": "6.1.4",
     "ng-zorro-antd": "7.4.0",
-    "passport": "0.4.0",
+    "passport": "0.4.1",
     "passport-jwt": "4.0.0",
     "pg": "7.11.0",
     "prisma": "1.33.0",

@@ -22,6 +22,6 @@
     "@nestjs/core": "6.2.4",
     "@nestjs/jwt": "6.1.1",
     "@nestjs/microservices": "6.2.4",
-    "@types/graphql": "14.2.0"
+    "@types/graphql": "14.2.3"
   }
 }

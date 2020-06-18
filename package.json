@@ -100,7 +100,7 @@
     "prisma-binding": "2.3.16",
     "prisma-client-lib": "1.33.0",
     "protocol-buffers-schema": "3.3.2",
-    "protons": "1.0.1",
+    "protons": "1.2.0",
     "reflect-metadata": "0.1.13",
     "rxjs": "6.5.5",
     "typeorm": "0.2.25",

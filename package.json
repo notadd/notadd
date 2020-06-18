@@ -95,7 +95,7 @@
     "ng-zorro-antd": "7.4.0",
     "passport": "0.4.1",
     "passport-jwt": "4.0.0",
-    "pg": "7.11.0",
+    "pg": "8.2.1",
     "prisma": "1.33.0",
     "prisma-binding": "2.3.16",
     "prisma-client-lib": "1.33.0",

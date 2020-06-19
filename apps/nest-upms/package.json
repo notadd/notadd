@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@nestjs/common": "^6.2.2",
-    "@nestjs/passport": "^6.1.0",
+    "@nestjs/passport": "^7.0.0",
     "passport-jwt": "^4.0.0",
     "rxjs": "^6.5.2"
   },

@@ -1813,12 +1813,12 @@
   dependencies:
     optional "0.1.4"
 
-"@nestjs/typeorm@6.1.1":
-  version "6.1.1"
-  resolved "https://registry.yarnpkg.com/@nestjs/typeorm/-/typeorm-6.1.1.tgz#bf1f45f79a2b498dd33b82c1f5bd04e7797cfec3"
-  integrity sha512-KCtRYiftUfvU4QE0mlhNUHEVfo9LmFHZ7QPcSxgmV00Tf62lGX0P2vJ0Ee6zHrgPuT4TzUn+SkX70ZdeQxio3Q==
+"@nestjs/typeorm@7.1.0":
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/@nestjs/typeorm/-/typeorm-7.1.0.tgz#ea964ff1724524e585f75bf7469784ca787e7983"
+  integrity sha512-xKqvhMF68TDFjptBerLD6HDe7qrb9RpZ2X1zBTdGKipFQrlVBTJtgs6Hmy+deuPJ3OnFzw0oe78U57Ur87xq8g==
   dependencies:
-    uuid "3.3.2"
+    uuid "8.1.0"
 
 "@nestjs/websockets@6.2.4":
   version "6.2.4"

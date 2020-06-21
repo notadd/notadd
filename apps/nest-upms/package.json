@@ -13,15 +13,15 @@
     "url": "https://github.com/nstudio/xplat"
   },
   "dependencies": {
-    "@nestjs/common": "^6.2.2",
+    "@nestjs/common": "^7.0.0",
     "@nestjs/passport": "^7.0.0",
     "passport-jwt": "^4.0.0",
     "rxjs": "^6.5.2"
   },
   "devDependencies": {
-    "@nestjs/core": "6.2.4",
+    "@nestjs/core": "7.2.0",
     "@nestjs/jwt": "7.0.0",
-    "@nestjs/microservices": "6.2.4",
+    "@nestjs/microservices": "7.2.0",
     "@types/graphql": "14.2.3"
   }
 }

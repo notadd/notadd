@@ -136,7 +136,7 @@
     "prettier": "2.0.5",
     "protractor": "7.0.0",
     "supertest": "3.4.2",
-    "ts-jest": "26.1.0",
+    "ts-jest": "26.1.1",
     "ts-loader": "7.0.5",
     "ts-morph": "7.1.2",
     "ts-node": "7.0.1",

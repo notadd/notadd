@@ -92,7 +92,7 @@
     "grpc": "1.24.3",
     "helmet": "3.23.1",
     "mocha": "8.0.1",
-    "ng-zorro-antd": "9.2.1",
+    "ng-zorro-antd": "9.2.2",
     "passport": "0.4.1",
     "passport-jwt": "4.0.0",
     "pg": "8.2.1",

@@ -469,22 +469,22 @@
   dependencies:
     "@ant-design/colors" "^3.1.0"
 
-"@apollo/federation@^0.16.0", "@apollo/federation@^0.16.8":
-  version "0.16.8"
-  resolved "https://registry.yarnpkg.com/@apollo/federation/-/federation-0.16.8.tgz#c70efa20e2a27de3ebb801ab5c9046c23e1e13c5"
-  integrity sha512-kaGyvKGHeu3J4MGr/heEc+e1NfG57hkRHN1MmBT6XQMcMVt4+IaDlbZCVQ5rpe69Foj1IVsOQGOSw9fLfUnJAw==
+"@apollo/federation@^0.16.9":
+  version "0.16.9"
+  resolved "https://registry.yarnpkg.com/@apollo/federation/-/federation-0.16.9.tgz#58cf18420f15a1338e321bed7771491344f2b9f9"
+  integrity sha512-eYs8s6HjHncpEUu4lVd2xONw8ZI7NjXSCIXs4pI3+X5jb6JNSOrr7hfBi9S9+ZHeQyX58BB7V0MF0ijQvh4Q+A==
   dependencies:
     apollo-graphql "^0.4.0"
     apollo-server-env "^2.4.4"
     core-js "^3.4.0"
     lodash.xorby "^4.7.0"
 
-"@apollo/gateway@^0.16.0":
-  version "0.16.8"
-  resolved "https://registry.yarnpkg.com/@apollo/gateway/-/gateway-0.16.8.tgz#479028decc78907fb8d25f84b08bf4ff94fa3774"
-  integrity sha512-KVG91FZEnDdUwv4L9Dr10dHd7Hi8ZAq+ay8kZi9Jgj+kXXuDNTxIneZT9vq+tB2loUcLxCF6Z86UOWmAo8CaAg==
+"@apollo/gateway@^0.16.9":
+  version "0.16.9"
+  resolved "https://registry.yarnpkg.com/@apollo/gateway/-/gateway-0.16.9.tgz#dc9036cd8acd9de820f0c272d8398d5cdabd9f1d"
+  integrity sha512-AlVQQoledShjgg1ZCyeMFW8PP6LuVVXhvoifW/3M0mIrWNtqHLn2KXrYOwWQ1lAZ9e4L3VBPkr9m2gPEumPHwg==
   dependencies:
-    "@apollo/federation" "^0.16.8"
+    "@apollo/federation" "^0.16.9"
     "@types/node-fetch" "2.5.4"
     apollo-engine-reporting-protobuf "^0.5.1"
     apollo-env "^0.6.1"
@@ -1899,15 +1899,6 @@
     "@graphql-tools/utils" "6.0.10"
     tslib "~2.0.0"
 
-"@graphql-tools/merge@6.0.3":
-  version "6.0.3"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/merge/-/merge-6.0.3.tgz#e8c21f0258bbc98a56d39a2c285cab29c3379b7d"
-  integrity sha512-Tdt6r6n/LvmBnYruRRykBOzOZTcAzp5q5d753tsMg57RC8AmShmGXDUpDPPwX6qIxPkra5r9f0pPH18h0mPpYQ==
-  dependencies:
-    "@graphql-tools/schema" "6.0.3"
-    "@graphql-tools/utils" "6.0.3"
-    tslib "~2.0.0"
-
 "@graphql-tools/mock@6.0.10":
   version "6.0.10"
   resolved "https://registry.yarnpkg.com/@graphql-tools/mock/-/mock-6.0.10.tgz#f1ccea09ec7244d93147a69e58cc44d808fafcd4"
@@ -1949,14 +1940,6 @@
     "@graphql-tools/utils" "6.0.10"
     tslib "~2.0.0"
 
-"@graphql-tools/schema@6.0.3":
-  version "6.0.3"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/schema/-/schema-6.0.3.tgz#e242ecbf1fbfe152dfb598d75fef055eb4dab217"
-  integrity sha512-HThJuZvlHbrH6++Zb60LMx/4ZPwJ+VqfRDg2lvgFvfiU7EtEbnidU0S+x9rg8inx30LzMg1Oc+pdLoyIZCAYaw==
-  dependencies:
-    "@graphql-tools/utils" "6.0.3"
-    tslib "~2.0.0"
-
 "@graphql-tools/stitch@6.0.10":
   version "6.0.10"
   resolved "https://registry.yarnpkg.com/@graphql-tools/stitch/-/stitch-6.0.10.tgz#d688eb768565dcc016262f9f1288fb373e8d271e"
@@ -1990,13 +1973,6 @@
   integrity sha512-1s3vBnYUIDLBGEaV1VF3lv1Xq54lT8Oz7tNNypv7K7cv3auKX7idRtjP8RM6hKpGod46JNZgu3NNOshMUEyEyA==
   dependencies:
     aggregate-error "3.0.1"
-    camel-case "4.1.1"
-
-"@graphql-tools/utils@6.0.3":
-  version "6.0.3"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/utils/-/utils-6.0.3.tgz#54a2ff019707d84227771a7b1c11536ee32fc563"
-  integrity sha512-uS01PqtjOeEoG309orxYlnb8TIehsI27N4Z8NxmadTzkkLW98FfbUm62CjSHvc1IqgiQZSkqDuKqS4vy8lbUFQ==
-  dependencies:
     camel-case "4.1.1"
 
 "@graphql-tools/wrap@6.0.10":
@@ -2278,23 +2254,22 @@
     tslib "2.0.0"
     uuid "8.1.0"
 
-"@nestjs/graphql@7.4.1":
-  version "7.4.1"
-  resolved "https://registry.yarnpkg.com/@nestjs/graphql/-/graphql-7.4.1.tgz#406a7b4be00117ab3c484f3f203b7d0a57f63794"
-  integrity sha512-ClZoMyf3HZYh2tAy374H/Jcj9EA2osPuafyMoFj6lJyQid9kxHJ1ERtl8E3Mk2UP/9V2mgBXqgfew5WJSsBcKw==
+"@nestjs/graphql@7.4.6":
+  version "7.4.6"
+  resolved "https://registry.yarnpkg.com/@nestjs/graphql/-/graphql-7.4.6.tgz#cd4394302c5a17fdebd3df67e426e7f0b0045ece"
+  integrity sha512-OTrEeKPeQw/RCow+ztAmPTGb7lBBNGZqPpGfZehu9awOJkER45Hz4dcQyjae7Zl8jaGOLZ382IlC9467rwVQyQ==
   dependencies:
-    "@graphql-tools/merge" "6.0.3"
+    "@graphql-tools/merge" "6.0.10"
     "@nestjs/mapped-types" "0.0.5"
     chokidar "3.4.0"
-    fast-glob "3.2.2"
+    fast-glob "3.2.4"
     iterall "1.2.2"
     lodash "4.17.15"
     normalize-path "3.0.0"
     tslib "2.0.0"
-    uuid "8.1.0"
+    uuid "8.2.0"
   optionalDependencies:
-    "@apollo/federation" "^0.16.0"
-    "@apollo/gateway" "^0.16.0"
+    "@apollo/gateway" "^0.16.9"
     ts-morph "^7.0.0"
 
 "@nestjs/jwt@7.0.0":
@@ -8092,10 +8067,10 @@ fast-deep-equal@^3.1.1:
   resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-3.1.1.tgz#545145077c501491e33b15ec408c294376e94ae4"
   integrity sha512-8UEa58QDLauDNfpbrX55Q9jrGHThw2ZMdOky5Gl1CDtVeJDPVrG4Jxx1N8jw2gkWaff5UUuX1KJd+9zGe2B+ZA==
 
-fast-glob@3.2.2, fast-glob@^3.1.1:
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/fast-glob/-/fast-glob-3.2.2.tgz#ade1a9d91148965d4bf7c51f72e1ca662d32e63d"
-  integrity sha512-UDV82o4uQyljznxwMxyVRJgZZt3O5wENYojjzbaGEGZgeOxkLFf+V4cnUD+krzb2F72E18RhamkMZ7AdeggF7A==
+fast-glob@3.2.4, fast-glob@^3.0.3, fast-glob@^3.1.0, fast-glob@^3.2.2:
+  version "3.2.4"
+  resolved "https://registry.yarnpkg.com/fast-glob/-/fast-glob-3.2.4.tgz#d20aefbf99579383e7f3cc66529158c9b98554d3"
+  integrity sha512-kr/Oo6PX51265qeuCYsyGypiO5uJFgBS0jksyG7FUeCyQzNwYnzrNIMR1NXfkZXsMYXYLRAHgISHBz8gQcxKHQ==
   dependencies:
     "@nodelib/fs.stat" "^2.0.2"
     "@nodelib/fs.walk" "^1.2.3"
@@ -8128,10 +8103,10 @@ fast-glob@^2.2.2:
     merge2 "^1.2.3"
     micromatch "^3.1.10"
 
-fast-glob@^3.0.3, fast-glob@^3.1.0, fast-glob@^3.2.2:
-  version "3.2.4"
-  resolved "https://registry.yarnpkg.com/fast-glob/-/fast-glob-3.2.4.tgz#d20aefbf99579383e7f3cc66529158c9b98554d3"
-  integrity sha512-kr/Oo6PX51265qeuCYsyGypiO5uJFgBS0jksyG7FUeCyQzNwYnzrNIMR1NXfkZXsMYXYLRAHgISHBz8gQcxKHQ==
+fast-glob@^3.1.1:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/fast-glob/-/fast-glob-3.2.2.tgz#ade1a9d91148965d4bf7c51f72e1ca662d32e63d"
+  integrity sha512-UDV82o4uQyljznxwMxyVRJgZZt3O5wENYojjzbaGEGZgeOxkLFf+V4cnUD+krzb2F72E18RhamkMZ7AdeggF7A==
   dependencies:
     "@nodelib/fs.stat" "^2.0.2"
     "@nodelib/fs.walk" "^1.2.3"
@@ -18184,6 +18159,11 @@ uuid@8.1.0, uuid@^8.0.0:
   version "8.1.0"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.1.0.tgz#6f1536eb43249f473abc6bd58ff983da1ca30d8d"
   integrity sha512-CI18flHDznR0lq54xBycOVmphdCYnQLKn8abKn7PXUiKUGdEd+/l9LWNJmugXel4hXq7S+RMNl34ecyC9TntWg==
+
+uuid@8.2.0:
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.2.0.tgz#cb10dd6b118e2dada7d0cd9730ba7417c93d920e"
+  integrity sha512-CYpGiFTUrmI6OBMkAdjSDM0k5h8SkkiTP4WAjQgDgNB1S3Ou9VBEvr6q0Kv2H1mMk7IWfxYGpMH5sd5AvcIV2Q==
 
 uuid@^3.4.0:
   version "3.4.0"

@@ -2455,10 +2455,12 @@
     tree-kill "1.2.1"
     webpack-sources "1.3.0"
 
-"@ngx-translate/core@12.1.2":
-  version "12.1.2"
-  resolved "https://registry.yarnpkg.com/@ngx-translate/core/-/core-12.1.2.tgz#0c6f24249953a79cfc2d581b2cd1b5d6d338d9db"
-  integrity sha512-ZudJsqIxTKlLmPoqK8gJY3UpMGujR0Xm7HfXL6AR79yGRS23QqpjAhMfx4v5qUCcHMmQ9/78bW8QJLfp31c7vQ==
+"@ngx-translate/core@13.0.0":
+  version "13.0.0"
+  resolved "https://registry.yarnpkg.com/@ngx-translate/core/-/core-13.0.0.tgz#60547cb8a0845a2a0abfde6b0bf5ec6516a63fd6"
+  integrity sha512-+tzEp8wlqEnw0Gc7jtVRAJ6RteUjXw6JJR4O65KlnxOmJrCGPI0xjV/lKRnQeU0w4i96PQs/jtpL921Wrb7PWg==
+  dependencies:
+    tslib "^2.0.0"
 
 "@ngx-translate/http-loader@5.0.0":
   version "5.0.0"

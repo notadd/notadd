@@ -4145,13 +4145,13 @@ apollo-angular-link-http@1.10.0:
     extract-files "6.0.0"
     tslib "^1.11.0"
 
-apollo-angular@1.9.1:
-  version "1.9.1"
-  resolved "https://registry.yarnpkg.com/apollo-angular/-/apollo-angular-1.9.1.tgz#2098c6cf078bc5f905dcce500c433c1c321f7c1f"
-  integrity sha512-QNJdjoxSTFszGAE1ZM4kCN0b2lJfUziJ+iVDC+4z4S0j4ePvmE/yNUJOuqSlIswMnQEGopySYhMHqyR2MsgBJQ==
+apollo-angular@1.10.0:
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/apollo-angular/-/apollo-angular-1.10.0.tgz#da95875d3065da53624fcbe4b8aa273e5ace18ac"
+  integrity sha512-VPSNk8Li5KRDhZ3GSJPEYg1r57KySND2m1XWgkLNYmQExzNDs/Su9EeWThwOqjZ7x9JbGjpvWiQeUQaCs96PjA==
   dependencies:
     semver "^7.0.0"
-    tslib "^1.11.0"
+    tslib "^2.0.0"
 
 apollo-cache-control@^0.11.0:
   version "0.11.0"

@@ -19,9 +19,9 @@
     "rxjs": "^6.5.2"
   },
   "devDependencies": {
-    "@nestjs/core": "7.3.1",
+    "@nestjs/core": "7.3.2",
     "@nestjs/jwt": "7.0.0",
-    "@nestjs/microservices": "7.3.1",
+    "@nestjs/microservices": "7.3.2",
     "@types/graphql": "14.2.3"
   }
 }

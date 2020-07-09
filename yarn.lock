@@ -2364,10 +2364,10 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@nestjs/common@7.3.1":
-  version "7.3.1"
-  resolved "https://registry.yarnpkg.com/@nestjs/common/-/common-7.3.1.tgz#9ed4ccf0086c308985c785fb9ac0c9265596d7e6"
-  integrity sha512-zrd/C+g2QVg2ebVN22Bs8U2Je9aHDWcysNfZFSGpqc+rLRjqDr0ixr1GL3WEhQSyxAm4YRa0yvZiiFicbVAV7Q==
+"@nestjs/common@7.3.2":
+  version "7.3.2"
+  resolved "https://registry.yarnpkg.com/@nestjs/common/-/common-7.3.2.tgz#ce9e63085cf74948f00a167c4b55243c288b5eaa"
+  integrity sha512-qK8szqv0PuHDVDPbQjVV+Z91QasDIe7cbzULqtNDARIRkgU4LGk/Q+32E3kBWfp8gh5axRkgVuKtpCiq2s55Cg==
   dependencies:
     axios "0.19.2"
     cli-color "2.0.0"
@@ -2385,10 +2385,10 @@
     tslib "1.11.1"
     uuid "7.0.1"
 
-"@nestjs/core@7.3.1":
-  version "7.3.1"
-  resolved "https://registry.yarnpkg.com/@nestjs/core/-/core-7.3.1.tgz#42241b048445d41016c26d9056083609b8cf64a9"
-  integrity sha512-UHhptzOIXDeZV6IiqnrG1ITj6qZkfMG8KuXmUssLXd2jexgxZDTxH6EDlb7ZjatljIS8EMRBf6VZUWj+BxucYQ==
+"@nestjs/core@7.3.2":
+  version "7.3.2"
+  resolved "https://registry.yarnpkg.com/@nestjs/core/-/core-7.3.2.tgz#64b4eebcfcf7beb909504b1a74fc89fc6ecc7e26"
+  integrity sha512-oL1iDfkJyM/0L+LKS+/Yo7GUJkiEcYsZY/ndONdiv1XqiBC5t76DDXry9CuJmcRH36FJ+QbI5jwpKXjRa9D5dQ==
   dependencies:
     "@nuxtjs/opencollective" "0.2.2"
     fast-safe-stringify "2.0.7"
@@ -2429,10 +2429,10 @@
   resolved "https://registry.yarnpkg.com/@nestjs/mapped-types/-/mapped-types-0.0.5.tgz#0c3462de4125eea0e85e3a520f0de4e7e8dcfa40"
   integrity sha512-QjZCSMHHy8IW4UUTS49QJQ0NrA8MHv6XevNrPLJwh4n3lN7wY9aSRwd1+cBIUDBXEHRKngcYdPtC4oG0fimw+A==
 
-"@nestjs/microservices@7.3.1":
-  version "7.3.1"
-  resolved "https://registry.yarnpkg.com/@nestjs/microservices/-/microservices-7.3.1.tgz#813baac3c5a2bbaa7cab1b453b0987dc1390055a"
-  integrity sha512-U8R778Ho13gAygcttmwk1cINad2x7EUABsH4IjNg5EZA+yN3aUtF+wK/SBu/ctcPZT63KRR8ksRKjp1rYuFVHA==
+"@nestjs/microservices@7.3.2":
+  version "7.3.2"
+  resolved "https://registry.yarnpkg.com/@nestjs/microservices/-/microservices-7.3.2.tgz#44bd001a1e80377fbb3f7065960f3598b00ef68d"
+  integrity sha512-YqQkhmnJWa3nkmTGJiIekas5z3Zf1RPagmBoRZZx7mNaCxSpioE/w+bWgO2gsa7k1PfsX2gL/FuHuu51ycKJfg==
   dependencies:
     iterare "1.2.1"
     json-socket "0.3.0"
@@ -2443,10 +2443,10 @@
   resolved "https://registry.yarnpkg.com/@nestjs/passport/-/passport-7.1.0.tgz#04cbb6dec4b6fd92b943e131a2ad89da42c2a9f0"
   integrity sha512-TdXqEwQ9PWWdpZsWp6jnora+zN+jg7h9Om9CAxXDMCqnmB+IJknkY0OyyplxbMjRyep1zvsc3IptuPHIXb27tA==
 
-"@nestjs/platform-express@7.3.1":
-  version "7.3.1"
-  resolved "https://registry.yarnpkg.com/@nestjs/platform-express/-/platform-express-7.3.1.tgz#cb7a214ea2f62cde5ad489b1ab645be515f308b1"
-  integrity sha512-3tccSPCOGO+cOIGSDnFN1SrId2cw9ZCsNHa7wXsJu9ATcPprbAnmr9EGG4vYJSxwNt2AR/bZc8ygbwnPUfLyMQ==
+"@nestjs/platform-express@7.3.2":
+  version "7.3.2"
+  resolved "https://registry.yarnpkg.com/@nestjs/platform-express/-/platform-express-7.3.2.tgz#82175751e2d776e854efe48316efa0564bb36352"
+  integrity sha512-HxfVxAuqIe4vMt+dVyhq7iMIe3RN8PLIo2n1CWW2Xla5MRCUjXJww8clJtVk2AUwnjzxs77h9DR1D803gzd+zQ==
   dependencies:
     body-parser "1.19.0"
     cors "2.8.5"
@@ -2454,10 +2454,10 @@
     multer "1.4.2"
     tslib "2.0.0"
 
-"@nestjs/testing@7.3.1":
-  version "7.3.1"
-  resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-7.3.1.tgz#dd1d152ce7d843bafed498f3f6ec57246b40fcd2"
-  integrity sha512-95u/S2CMBr3bxzt0C4FE6uKPmTQJAAEnARFzNwoWBJgRnMixMZ81+eYGr8CwNcHLsiyHlX4N4Sq5W111XBNzLQ==
+"@nestjs/testing@7.3.2":
+  version "7.3.2"
+  resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-7.3.2.tgz#5ee7c9fad7efac0cf92e8bf328628edfd906fa1f"
+  integrity sha512-hkk/Ew9aseQtTTCGLnAWO05hy4Yq19nM+gI9d5SLiZVFES3iPGdXBJT3aDw0LLfi1K7LNMKbkdNkaFowilCmIg==
   dependencies:
     optional "0.1.4"
     tslib "2.0.0"
@@ -2469,10 +2469,10 @@
   dependencies:
     uuid "8.1.0"
 
-"@nestjs/websockets@7.3.1":
-  version "7.3.1"
-  resolved "https://registry.yarnpkg.com/@nestjs/websockets/-/websockets-7.3.1.tgz#a5d9cd79ac42b19a4ba02e4d7b448ebd59728ef2"
-  integrity sha512-FNT4QRU9SF9tJtXIS7RNExCdNwvPQLVnfeWGRJiBWsRTH22VoDzyMSEj3Ub3+Ei3/DUlzvUrzm+kI19dT+6iug==
+"@nestjs/websockets@7.3.2":
+  version "7.3.2"
+  resolved "https://registry.yarnpkg.com/@nestjs/websockets/-/websockets-7.3.2.tgz#21f2d710d7b02898054f3c9c265bc6e22c4ff11a"
+  integrity sha512-9TM6jEuyLmhEsP+mxYR3qolEOGgZYSqf0YcSF//76xb0gq9Z3PvadvAroXXeO0xQNiqvQv583nToRl2Wozvb5g==
   dependencies:
     iterare "1.2.1"
     tslib "2.0.0"

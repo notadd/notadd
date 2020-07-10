@@ -2416,12 +2416,12 @@
     "@apollo/gateway" "^0.16.9"
     ts-morph "^7.0.0"
 
-"@nestjs/jwt@7.0.0":
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/@nestjs/jwt/-/jwt-7.0.0.tgz#977390ea2d5f61cbf49d3da4df740311b98998db"
-  integrity sha512-2GWFcW4jl3Ey7YutEIx0d4ZkKKIeHW5BLE92jpETmdZUwI+510mSHxkByTcjAbtKdpdSubiKuyDeU9IQZ5tPEQ==
+"@nestjs/jwt@7.1.0":
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/@nestjs/jwt/-/jwt-7.1.0.tgz#0ad6633399641cbba327e275827fcd935207930f"
+  integrity sha512-zx317Te9cTx6RjSBcOkIWeu7oHSZAVGGwyyKzIYQ6JUjG2Q+RaUGZJRn5wNkONg3K2MH4iutvDCBLBDfdaxrJw==
   dependencies:
-    "@types/jsonwebtoken" "8.3.8"
+    "@types/jsonwebtoken" "8.5.0"
     jsonwebtoken "8.5.1"
 
 "@nestjs/mapped-types@0.0.5":
@@ -3242,10 +3242,10 @@
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
   integrity sha1-7ihweulOEdK4J7y+UnC86n8+ce4=
 
-"@types/jsonwebtoken@8.3.8":
-  version "8.3.8"
-  resolved "https://registry.yarnpkg.com/@types/jsonwebtoken/-/jsonwebtoken-8.3.8.tgz#b27c9156dde2049ae03e56528a53ef5a8294aa82"
-  integrity sha512-g2ke5+AR/RKYpQxd+HJ2yisLHGuOV0uourOcPtKlcT5Zqv4wFg9vKhFpXEztN4H/6Y6RSUKioz/2PTFPP30CTA==
+"@types/jsonwebtoken@8.5.0":
+  version "8.5.0"
+  resolved "https://registry.yarnpkg.com/@types/jsonwebtoken/-/jsonwebtoken-8.5.0.tgz#2531d5e300803aa63279b232c014acf780c981c5"
+  integrity sha512-9bVao7LvyorRGZCw0VmH/dr7Og+NdjYSsKAxB43OQoComFbBgsEpoR9JW6+qSq/ogwVBg8GI2MfAlk4SYI4OLg==
   dependencies:
     "@types/node" "*"
 
@@ -12801,10 +12801,10 @@ next-tick@1, next-tick@^1.0.0, next-tick@~1.0.0:
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
   integrity sha1-yobR/ogoFpsBICCOPchCS524NCw=
 
-ng-zorro-antd@9.2.2:
-  version "9.2.2"
-  resolved "https://registry.yarnpkg.com/ng-zorro-antd/-/ng-zorro-antd-9.2.2.tgz#77045504dc3f8bae4c783d979dfb07594b3c24e4"
-  integrity sha512-bBmqc14kKPJTtVC7+5Un5zTToSFzkJBs61ZZD3KhuBzdxBqChM3+C3Zbvm9gMYlZQBm9ZgEs7+8uQMvNYNa4YQ==
+ng-zorro-antd@9.3.0:
+  version "9.3.0"
+  resolved "https://registry.yarnpkg.com/ng-zorro-antd/-/ng-zorro-antd-9.3.0.tgz#f80dbe2715e578c475728773449442f0099f152c"
+  integrity sha512-O7uRCnsFTGHn/74ly8VCUoaMlED3cWLJfvbD0FLzDjBlnz77kcuM5qd+yGMT2hAYXmXYWu2ZRRJWLx5QUGLHkA==
   dependencies:
     "@angular/cdk" "^9.0.0"
     "@ant-design/icons-angular" "^9.0.0"

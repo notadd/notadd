@@ -111,7 +111,7 @@
     "@angular/cli": "10.0.1",
     "@angular/compiler-cli": "10.0.3",
     "@angular/language-service": "10.0.3",
-    "@nestjs/jwt": "7.0.0",
+    "@nestjs/jwt": "7.1.0",
     "@nrwl/builders": "7.8.6",
     "@nrwl/schematics": "8.12.11",
     "@nstudio/schematics": "9.0.4",

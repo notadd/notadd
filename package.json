@@ -52,7 +52,7 @@
     "@angular/platform-browser": "10.0.3",
     "@angular/platform-browser-dynamic": "10.0.3",
     "@angular/router": "10.0.3",
-    "@grpc/proto-loader": "0.5.4",
+    "@grpc/proto-loader": "0.5.5",
     "@nestjs/common": "7.3.2",
     "@nestjs/core": "7.3.2",
     "@nestjs/graphql": "7.5.5",

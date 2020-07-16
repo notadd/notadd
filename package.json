@@ -137,7 +137,7 @@
     "protractor": "7.0.0",
     "supertest": "3.4.2",
     "ts-jest": "26.1.2",
-    "ts-loader": "8.0.0",
+    "ts-loader": "8.0.1",
     "ts-morph": "7.1.2",
     "ts-node": "7.0.1",
     "tsconfig-paths": "3.8.0",

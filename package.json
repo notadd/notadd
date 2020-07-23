@@ -107,8 +107,8 @@
     "zone.js": "0.10.3"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "0.1000.3",
-    "@angular/cli": "10.0.3",
+    "@angular-devkit/build-angular": "0.1000.4",
+    "@angular/cli": "10.0.4",
     "@angular/compiler-cli": "10.0.5",
     "@angular/language-service": "10.0.5",
     "@nestjs/jwt": "7.1.0",

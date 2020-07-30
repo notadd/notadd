@@ -2043,13 +2043,13 @@
     unixify "1.0.0"
     valid-url "1.0.9"
 
-"@graphql-tools/merge@6.0.12":
-  version "6.0.12"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/merge/-/merge-6.0.12.tgz#680c14e6c486a47237468f2e34c52c14feb38540"
-  integrity sha512-GGvdIoTad6PJk/d1omPlGQ25pCFWmjuGkARYZ71qWI/c4FEA8EdGoOoPz3shhaKXyLdRiu84S758z4ZtDQiYVw==
+"@graphql-tools/merge@6.0.13":
+  version "6.0.13"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/merge/-/merge-6.0.13.tgz#d7d6c5d4b1fe7a525a99d276d18beb814d4990d8"
+  integrity sha512-t8M1ytadf8JAKBSappzWqDzpCoufYPRPimadqxFxgeGZ/LrwzsJ7lCw8EIT1eZZYT7DbqYfAUalIQ124GazuEQ==
   dependencies:
-    "@graphql-tools/schema" "6.0.12"
-    "@graphql-tools/utils" "6.0.12"
+    "@graphql-tools/schema" "6.0.13"
+    "@graphql-tools/utils" "6.0.13"
     tslib "~2.0.0"
 
 "@graphql-tools/merge@6.0.15":
@@ -2094,12 +2094,12 @@
     "@graphql-tools/utils" "6.0.15"
     lodash "4.17.19"
 
-"@graphql-tools/schema@6.0.12":
-  version "6.0.12"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/schema/-/schema-6.0.12.tgz#549ae14fa200cf7135e1d4f0b9e85db868cad6be"
-  integrity sha512-XUmKJ+ipENaxuXIX4GapsLAUl1dFQBUg+S4ZbgtKVlwrPhZJ9bkjIqnUHk3wg4S4VXqzLX97ol1e4g9N6XLkYg==
+"@graphql-tools/schema@6.0.13":
+  version "6.0.13"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/schema/-/schema-6.0.13.tgz#bc08d914cbd055ead08e9deecd9e122194dcb4df"
+  integrity sha512-Uy2J7L3rr8QeIr+SwWltcAlvAu3q0EKuq41qMhL23dgqpoTAg1BIWlvYSoOdoGaRZP95bvLCEiyf/X5Q1VMEFw==
   dependencies:
-    "@graphql-tools/utils" "6.0.12"
+    "@graphql-tools/utils" "6.0.13"
     tslib "~2.0.0"
 
 "@graphql-tools/schema@6.0.15":
@@ -2138,10 +2138,10 @@
     valid-url "1.0.9"
     websocket "1.0.31"
 
-"@graphql-tools/utils@6.0.12":
-  version "6.0.12"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/utils/-/utils-6.0.12.tgz#3c58729f1bdb7881e675544016b56e0508c2541b"
-  integrity sha512-MuFSkxXCe2QoD5QJPJ/1WIm0YnBzzXpkq9d/XznVAWptHFRwtwIbZ1xcREjYquFvoZ7ddsjZfyvUN/5ulmHhhg==
+"@graphql-tools/utils@6.0.13":
+  version "6.0.13"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/utils/-/utils-6.0.13.tgz#5ea073e8aafa766e88a018432d0f0737e92f41ff"
+  integrity sha512-9jTI1HAM9HoXU2tV5CV8w7XXvJe7r37rythgo2FTe1Mws0+O6pQNjVVg7GDDr6FJ/eyMccyMx2SIf+5t7/XPrQ==
   dependencies:
     "@ardatan/aggregate-error" "0.0.1"
     camel-case "4.1.1"
@@ -2433,21 +2433,21 @@
     tslib "2.0.0"
     uuid "8.2.0"
 
-"@nestjs/graphql@7.5.5":
-  version "7.5.5"
-  resolved "https://registry.yarnpkg.com/@nestjs/graphql/-/graphql-7.5.5.tgz#2a0670a3b019b561fc55933d881b17c0780354cb"
-  integrity sha512-2A3ezVOzvaglMENrw7GmViSmtDLrygMXLfy2xVlb5fJj7UWT0cLOH4IoP/zJqsFw+LNHbCzdoDR4szqbxhe15g==
+"@nestjs/graphql@7.6.0":
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/@nestjs/graphql/-/graphql-7.6.0.tgz#1db5db1e9772a9c75dadae59dfe563fad69816d2"
+  integrity sha512-pBxeHdlJES+ZPh98d9eHTk/OJZvAoy6Mxo08mPG2UMXV09D9oJZTPs8ukPY16bAaf5vHYb8HmEaeSXkzdHCB9w==
   dependencies:
-    "@graphql-tools/merge" "6.0.12"
+    "@graphql-tools/merge" "6.0.13"
     "@nestjs/mapped-types" "0.0.5"
-    apollo-server-core "2.15.1"
-    chokidar "3.4.0"
+    apollo-server-core "2.16.1"
+    chokidar "3.4.1"
     fast-glob "3.2.4"
     iterall "1.2.2"
     lodash "4.17.19"
     normalize-path "3.0.0"
     tslib "2.0.0"
-    uuid "8.2.0"
+    uuid "8.3.0"
   optionalDependencies:
     "@apollo/gateway" "^0.17.0"
     ts-morph "^7.0.0"
@@ -4393,10 +4393,10 @@ apollo-server-caching@^0.5.2:
   dependencies:
     lru-cache "^5.0.0"
 
-apollo-server-core@2.15.1, apollo-server-core@^2.15.1:
-  version "2.15.1"
-  resolved "https://registry.yarnpkg.com/apollo-server-core/-/apollo-server-core-2.15.1.tgz#3a6871c2a47a3240639b2a970f25c9f457a1ed07"
-  integrity sha512-ZRSK3uVPS6YkIV3brm2CjzVphg6NHY0PRhFojZD8BjoQlGo3+pPRP1IHFDvC3UzybGWfyCelcfF4YiVqh4GJHw==
+apollo-server-core@2.16.1, apollo-server-core@^2.16.1:
+  version "2.16.1"
+  resolved "https://registry.yarnpkg.com/apollo-server-core/-/apollo-server-core-2.16.1.tgz#5b5b8245ab9c0cb6c2367ec19ab855dea6ccea3a"
+  integrity sha512-nuwn5ZBbmzPwDetb3FgiFFJlNK7ZBFg8kis/raymrjd3eBGdNcOyMTJDl6J9673X9Xqp+dXQmFYDW/G3G8S1YA==
   dependencies:
     "@apollographql/apollo-tools" "^0.4.3"
     "@apollographql/graphql-playground-html" "1.6.26"
@@ -4404,7 +4404,7 @@ apollo-server-core@2.15.1, apollo-server-core@^2.15.1:
     "@types/ws" "^7.0.0"
     apollo-cache-control "^0.11.1"
     apollo-datasource "^0.7.2"
-    apollo-engine-reporting "^2.2.1"
+    apollo-engine-reporting "^2.3.0"
     apollo-server-caching "^0.5.2"
     apollo-server-env "^2.4.5"
     apollo-server-errors "^2.4.2"
@@ -4421,10 +4421,10 @@ apollo-server-core@2.15.1, apollo-server-core@^2.15.1:
     subscriptions-transport-ws "^0.9.11"
     ws "^6.0.0"
 
-apollo-server-core@2.16.1, apollo-server-core@^2.16.1:
-  version "2.16.1"
-  resolved "https://registry.yarnpkg.com/apollo-server-core/-/apollo-server-core-2.16.1.tgz#5b5b8245ab9c0cb6c2367ec19ab855dea6ccea3a"
-  integrity sha512-nuwn5ZBbmzPwDetb3FgiFFJlNK7ZBFg8kis/raymrjd3eBGdNcOyMTJDl6J9673X9Xqp+dXQmFYDW/G3G8S1YA==
+apollo-server-core@^2.15.1:
+  version "2.15.1"
+  resolved "https://registry.yarnpkg.com/apollo-server-core/-/apollo-server-core-2.15.1.tgz#3a6871c2a47a3240639b2a970f25c9f457a1ed07"
+  integrity sha512-ZRSK3uVPS6YkIV3brm2CjzVphg6NHY0PRhFojZD8BjoQlGo3+pPRP1IHFDvC3UzybGWfyCelcfF4YiVqh4GJHw==
   dependencies:
     "@apollographql/apollo-tools" "^0.4.3"
     "@apollographql/graphql-playground-html" "1.6.26"
@@ -4432,7 +4432,7 @@ apollo-server-core@2.16.1, apollo-server-core@^2.16.1:
     "@types/ws" "^7.0.0"
     apollo-cache-control "^0.11.1"
     apollo-datasource "^0.7.2"
-    apollo-engine-reporting "^2.3.0"
+    apollo-engine-reporting "^2.2.1"
     apollo-server-caching "^0.5.2"
     apollo-server-env "^2.4.5"
     apollo-server-errors "^2.4.2"
@@ -5959,7 +5959,22 @@ chokidar@3.3.1:
   optionalDependencies:
     fsevents "~2.1.2"
 
-chokidar@3.4.0, "chokidar@>=2.0.0 <4.0.0", chokidar@^3.0.0, chokidar@^3.0.2, chokidar@^3.3.0, chokidar@^3.4.0:
+chokidar@3.4.1:
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.4.1.tgz#e905bdecf10eaa0a0b1db0c664481cc4cbc22ba1"
+  integrity sha512-TQTJyr2stihpC4Sya9hs2Xh+O2wf+igjL36Y75xx2WdHuiICcn/XJza46Jwt0eT5hVpQOzo3FpY3cj3RVYLX0g==
+  dependencies:
+    anymatch "~3.1.1"
+    braces "~3.0.2"
+    glob-parent "~5.1.0"
+    is-binary-path "~2.1.0"
+    is-glob "~4.0.1"
+    normalize-path "~3.0.0"
+    readdirp "~3.4.0"
+  optionalDependencies:
+    fsevents "~2.1.2"
+
+"chokidar@>=2.0.0 <4.0.0", chokidar@^3.0.0, chokidar@^3.0.2, chokidar@^3.3.0, chokidar@^3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.4.0.tgz#b30611423ce376357c765b9b8f904b9fba3c0be8"
   integrity sha512-aXAaho2VJtisB/1fg1+3nlLJqGOuewTzQpd/Tz0yTg2R0e4IGtshYvtjowyEumcBv2z+y4+kc75Mz7j5xJskcQ==
@@ -18521,6 +18536,11 @@ uuid@8.2.0:
   version "8.2.0"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.2.0.tgz#cb10dd6b118e2dada7d0cd9730ba7417c93d920e"
   integrity sha512-CYpGiFTUrmI6OBMkAdjSDM0k5h8SkkiTP4WAjQgDgNB1S3Ou9VBEvr6q0Kv2H1mMk7IWfxYGpMH5sd5AvcIV2Q==
+
+uuid@8.3.0:
+  version "8.3.0"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.0.tgz#ab738085ca22dc9a8c92725e459b1d507df5d6ea"
+  integrity sha512-fX6Z5o4m6XsXBdli9g7DtWgAx+osMsRRZFKma1mIUsLCz6vRvv+pz5VNbyu9UEDzpMWulZfvpgb/cmDXVulYFQ==
 
 uuid@^3.4.0:
   version "3.4.0"

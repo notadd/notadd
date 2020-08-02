@@ -140,7 +140,7 @@
     "ts-loader": "8.0.1",
     "ts-morph": "7.1.3",
     "ts-node": "7.0.1",
-    "tsconfig-paths": "3.8.0",
+    "tsconfig-paths": "3.9.0",
     "tslint": "6.1.3",
     "typescript": "3.9.7"
   },

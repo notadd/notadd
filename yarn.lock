@@ -5878,10 +5878,10 @@ cardinal@^2.1.1:
     ansicolors "~0.3.2"
     redeyed "~2.1.0"
 
-casbin@5.0.7:
-  version "5.0.7"
-  resolved "https://registry.yarnpkg.com/casbin/-/casbin-5.0.7.tgz#f1f0ea86c44e7ea7c0b717856a143e624d14501f"
-  integrity sha512-dpZA/GVjZbwNAigeenbPfb1mtStc8WewuyLEa65hAH3EVLN8rGHAVtQZudOWE6DRNQToU9hL+BG/ayMhCWUBGQ==
+casbin@5.1.2:
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/casbin/-/casbin-5.1.2.tgz#1fe4ae413d597099a32e726f8005e679e8ad6269"
+  integrity sha512-ovnjGl8QYwFVfClOKM5sxuoXnOeC5sjj9Iml8nMg+sFJGlhzP31jI+FKELrAoFPq3HFfzlhmEX9MwPvvHyGVVw==
   dependencies:
     await-lock "^2.0.1"
     expression-eval "^2.0.0"

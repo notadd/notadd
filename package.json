@@ -90,7 +90,7 @@
     "graphql": "15.3.0",
     "graphql-tools": "6.0.18",
     "grpc": "1.24.3",
-    "helmet": "4.0.0",
+    "helmet": "4.1.0",
     "mocha": "8.1.1",
     "ng-zorro-antd": "9.3.0",
     "passport": "0.4.1",

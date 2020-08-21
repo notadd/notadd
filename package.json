@@ -114,7 +114,7 @@
     "@nestjs/jwt": "7.1.0",
     "@nrwl/builders": "7.8.6",
     "@nrwl/schematics": "8.12.11",
-    "@nstudio/schematics": "9.0.4",
+    "@nstudio/schematics": "10.0.6",
     "@types/jasmine": "3.5.12",
     "@types/jasminewd2": "2.0.8",
     "@types/jest": "26.0.10",

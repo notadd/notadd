@@ -60,7 +60,7 @@
     "@nestjs/passport": "7.1.0",
     "@nestjs/platform-express": "7.4.2",
     "@nestjs/testing": "7.4.2",
-    "@nestjs/typeorm": "7.1.0",
+    "@nestjs/typeorm": "7.1.1",
     "@nestjs/websockets": "7.4.2",
     "@ngrx/effects": "10.0.0",
     "@ngrx/router-store": "10.0.0",

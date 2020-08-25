@@ -70,7 +70,7 @@
     "@notadd/magnus": "3.8.9",
     "@notadd/scss": "file:libs/scss",
     "@nrwl/nx": "7.8.7",
-    "@types/lodash": "4.14.159",
+    "@types/lodash": "4.14.160",
     "apollo-angular": "2.0.3",
     "apollo-angular-link-http": "1.11.0",
     "apollo-cache-inmemory": "1.6.6",

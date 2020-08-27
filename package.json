@@ -115,7 +115,7 @@
     "@nrwl/builders": "7.8.6",
     "@nrwl/schematics": "8.12.11",
     "@nstudio/schematics": "10.0.6",
-    "@types/jasmine": "3.5.13",
+    "@types/jasmine": "3.5.14",
     "@types/jasminewd2": "2.0.8",
     "@types/jest": "26.0.10",
     "@types/node": "9.6.48",

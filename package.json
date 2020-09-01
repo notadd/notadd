@@ -96,7 +96,7 @@
     "passport": "0.4.1",
     "passport-jwt": "4.0.0",
     "pg": "8.3.3",
-    "prisma": "1.33.0",
+    "prisma": "1.34.10",
     "prisma-binding": "2.3.16",
     "prisma-client-lib": "1.33.0",
     "protocol-buffers-schema": "3.4.0",

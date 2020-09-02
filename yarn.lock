@@ -4316,10 +4316,10 @@ apollo-angular-link-http@1.11.0:
     extract-files "6.0.0"
     tslib "^2.0.0"
 
-apollo-angular@2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/apollo-angular/-/apollo-angular-2.0.3.tgz#3027db049d8ba2a2b8a2ac5b6474abd1b97c9981"
-  integrity sha512-eUYOnYDbdiLLMrPW8zMLAoaULOBudjuiSsmg/STCnXjFk5l1aXqljWoxpdO8G5166i/lSAAnHW4wieWOZekMyw==
+apollo-angular@2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/apollo-angular/-/apollo-angular-2.0.4.tgz#9f6e13aec1856f6db62d58d868c7ef9dddfa5320"
+  integrity sha512-AEODc7Ba4u11zhsVm5DENpFaEQ5RdmN67kN5gE9FSuTlcd5SB4aqCReX/u9BQh9lAcKkpgTtD1TyRt2j/csTDQ==
   dependencies:
     extract-files "^9.0.0"
     semver "^7.0.0"

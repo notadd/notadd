@@ -79,7 +79,7 @@
     "apollo-server-core": "2.17.0",
     "apollo-server-express": "2.17.0",
     "cache-manager": "3.4.0",
-    "casbin": "5.1.4",
+    "casbin": "5.1.5",
     "class-validator": "0.12.2",
     "compression": "1.7.4",
     "core-js": "3.6.5",

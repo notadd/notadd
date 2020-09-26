@@ -135,7 +135,7 @@
     "ora": "5.1.0",
     "prettier": "2.1.2",
     "protractor": "7.0.0",
-    "supertest": "3.4.2",
+    "supertest": "5.0.0",
     "ts-jest": "26.4.0",
     "ts-loader": "8.0.4",
     "ts-morph": "8.1.1",

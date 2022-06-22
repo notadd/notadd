@@ -22,7 +22,7 @@
     "@nestjs/core": "6.2.0",
     "@nestjs/graphql": "6.2.1",
     "@nestjs/microservices": "6.2.0",
-    "apollo-server-express": "2.5.0",
+    "apollo-server-express": "3.0.0",
     "graphql": "14.3.0",
     "graphql-tools": "4.0.4",
     "graphql-type-json": "0.3.0",

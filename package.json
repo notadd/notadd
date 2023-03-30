@@ -20,7 +20,7 @@
     "@grpc/proto-loader": "0.5.0",
     "@nestjs/common": "6.2.0",
     "@nestjs/core": "6.2.0",
-    "@nestjs/graphql": "6.2.1",
+    "@nestjs/graphql": "6.4.0",
     "@nestjs/microservices": "6.2.0",
     "apollo-server-express": "2.5.0",
     "graphql": "14.3.0",

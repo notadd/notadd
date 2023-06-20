@@ -28,11 +28,11 @@
     "graphql-type-json": "0.3.0",
     "grpc": "1.20.3",
     "i18n": "0.8.3",
-    "jsonwebtoken": "8.5.1",
+    "jsonwebtoken": "9.0.0",
     "reflect-metadata": "0.1.13",
     "rxjs": "6.5.2",
     "typescript": "3.4.5",
-    "snyk": "1.165.0"
+    "snyk": "1.685.0"
   },
   "devDependencies": {
     "@types/graphql": "14.2.0",

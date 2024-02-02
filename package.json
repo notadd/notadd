@@ -26,7 +26,7 @@
     "graphql": "14.3.0",
     "graphql-tools": "4.0.4",
     "graphql-type-json": "0.3.0",
-    "grpc": "1.20.3",
+    "grpc": "1.24.11",
     "i18n": "0.8.3",
     "jsonwebtoken": "8.5.1",
     "reflect-metadata": "0.1.13",
